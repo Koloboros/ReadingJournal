@@ -561,7 +561,10 @@
    "status": "read",
    "title": "Kuşların ve Yılanların Şarkısı",
    "id": "g35",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#dbb4bf",
+   "format": "ebook",
+   "updatedAt": 1793176977672
   },
   {
    "author": "Suzanne Collins",
@@ -729,7 +732,10 @@
    "status": "read",
    "title": "Hasatta Gündoğumu",
    "id": "g47",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c9a27a",
+   "format": "ebook",
+   "updatedAt": 1793176980131
   },
   {
    "author": "Sarah J. Maas",
