@@ -630,8 +630,10 @@
    "infoTried": true,
    "color": "#dcc7a1",
    "format": "print",
-   "updatedAt": 1793216510214,
-   "pages": 128
+   "updatedAt": 1793216542966,
+   "pages": 128,
+   "year": 2021,
+   "startDate": "2026-05-01"
   },
   {
    "author": "Gene Luen Yang",
