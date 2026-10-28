@@ -1826,11 +1826,11 @@
      },
      {
       "b": null,
-      "p": "Kitap hakkında kitap"
+      "p": "Bir günde biten"
      },
      {
       "b": null,
-      "p": "Kütüphaneden"
+      "p": "Tarihi roman"
      },
      {
       "b": "g12",
@@ -1842,7 +1842,7 @@
      },
      {
       "b": null,
-      "p": "Anı / biyografi"
+      "p": "E-kitap"
      },
      {
       "b": "g03",
@@ -1874,7 +1874,7 @@
      },
      {
       "b": null,
-      "p": "Bilim kurgu"
+      "p": "Doğa / bilim"
      },
      {
       "b": "g07",
@@ -1882,7 +1882,7 @@
      },
      {
       "b": null,
-      "p": "Hiç okumadığın tür"
+      "p": "Polisiye"
      },
      {
       "b": "g55",
@@ -1894,7 +1894,7 @@
      },
      {
       "b": null,
-      "p": "Mavi kapaklı"
+      "p": "Rafta en uzun bekleyen"
      },
      {
       "b": "g52",
@@ -1906,7 +1906,7 @@
      },
      {
       "b": null,
-      "p": "Çeviri kitap"
+      "p": "Rus edebiyatı"
      },
      {
       "b": "g32",
@@ -1914,7 +1914,7 @@
      },
      {
       "b": null,
-      "p": "Sesli kitap"
+      "p": "Yazarın ilk kitabı"
      }
     ]
    }
