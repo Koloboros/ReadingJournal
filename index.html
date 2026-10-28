@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="tr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Okuma Defteri</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap">
+<style>
+/* Layout: a painted reading nook — a watercolour sky-and-hills header (night sky in dark mode), a dotted journal page, wooden shelves with plants and trinkets between topics, covers and postage stamps. */
+:root{
+  --paper:#F6EFE2; --sheet:#FFFAF1; --ink:#3D2F28; --ink-2:#7B695C; --line:#E3D5BF; --dot:#DDCDB4;
+  --accent:#4E7A58; --accent-ink:#FFFAF1; --accent-soft:#E3ECD8;
+  --wood:#BC8A58; --wood-2:#8B5B35; --wood-3:#D4A877; --postmark:#B5533C; --gold:#D6A13F; --on-pastel:#3A2C24;
+  --sky-1:#A6D0EA; --sky-2:#EAF3EC; --cloud:#FFFFFF; --hill-1:#B4CF9F; --hill-2:#88AE77; --hill-3:#5F8A57; --star-op:0; --glow:#F4D27C;
+  --wash-1:rgba(167,199,150,.28); --wash-2:rgba(166,208,234,.26); --wash-3:rgba(236,190,150,.22);
+  --shadow:0 1px 2px rgba(80,55,35,.10),0 8px 22px rgba(80,55,35,.10);
+  --f-display:"Young Serif",Georgia,"Times New Roman",serif;
+  --f-hand:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1A2030; --sheet:#232A3C; --ink:#F2E7D3; --ink-2:#B6AA96; --line:#363E54; --dot:#2D3548;
+  --accent:#A9D09C; --accent-ink:#18211C; --accent-soft:#2A3A33;
+  --wood:#80583A; --wood-2:#573922; --wood-3:#9A6E48; --postmark:#E58C70; --gold:#EBC56A;
+  --sky-1:#0E1834; --sky-2:#2F3A5E; --cloud:#3B4670; --hill-1:#2F4B45; --hill-2:#243F38; --hill-3:#1A302A; --star-op:1; --glow:#F6C863;
+  --wash-1:rgba(120,160,130,.10); --wash-2:rgba(110,130,200,.12); --wash-3:rgba(240,190,110,.07);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#1A2030; --sheet:#232A3C; --ink:#F2E7D3; --ink-2:#B6AA96; --line:#363E54; --dot:#2D3548;
+  --accent:#A9D09C; --accent-ink:#18211C; --accent-soft:#2A3A33;
+  --wood:#80583A; --wood-2:#573922; --wood-3:#9A6E48; --postmark:#E58C70; --gold:#EBC56A;
+  --sky-1:#0E1834; --sky-2:#2F3A5E; --cloud:#3B4670; --hill-1:#2F4B45; --hill-2:#243F38; --hill-3:#1A302A; --star-op:1; --glow:#F6C863;
+  --wash-1:rgba(120,160,130,.10); --wash-2:rgba(110,130,200,.12); --wash-3:rgba(240,190,110,.07);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:radial-gradient(ellipse 60% 40% at 8% 18%,var(--wash-1),transparent 70%),radial-gradient(ellipse 50% 35% at 95% 40%,var(--wash-2),transparent 70%),radial-gradient(ellipse 55% 40% at 30% 95%,var(--wash-3),transparent 70%),radial-gradient(var(--dot) 1px,transparent 1.3px) 0 0/18px 18px,var(--paper);background-attachment:fixed;color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+/* painted header scene */
+.top{position:relative;overflow:hidden;background:linear-gradient(to bottom,var(--sky-1),var(--sky-2) 85%)}
+.scene{position:absolute;inset:0;pointer-events:none}
+.scene svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+.scene .stars{opacity:var(--star-op)}
+.top .wrap{position:relative}
+.top-in{padding-block:22px 54px!important}
+.brand h1{font-family:var(--f-hand)!important;font-weight:700!important;font-size:2.4rem!important;line-height:.9!important}
+.brand svg{color:var(--ink)!important}
+.sub{color:var(--ink)!important;opacity:.75}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+/* header */
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px 10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand svg{width:34px;height:34px;color:var(--accent);flex:none}
+.brand h1{font-family:var(--f-display);font-weight:400;font-size:1.45rem;line-height:1.1}
+.sub{margin:2px 0 0;font-size:.78rem;color:var(--ink-2)}
+.top-actions{display:flex;align-items:center;gap:10px}
+.yearsel{display:flex;align-items:center;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:2px}
+.yearsel button{border:0;background:none;width:30px;height:30px;border-radius:50%;font-size:1.1rem;color:var(--ink-2)}
+.yearsel button:hover{background:var(--accent-soft);color:var(--ink)}
+.yearsel span{font-variant-numeric:tabular-nums;font-weight:600;min-width:3.2em;text-align:center}
+.btn{border:1px solid var(--line);background:var(--sheet);border-radius:10px;padding:8px 14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--postmark)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn svg{width:18px;height:18px}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.tabs-in{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tab{border:0;background:none;padding:10px 12px;display:flex;align-items:center;gap:7px;color:var(--ink-2);font-weight:600;border-bottom:2px solid transparent;white-space:nowrap}
+.tab svg{width:19px;height:19px}
+.tab[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--ink)}
+main{padding-block:22px 60px}
+
+/* section headings */
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.hand{font-family:var(--f-hand);font-weight:700;font-size:2.4rem;line-height:1;color:var(--ink)}
+.hand small{font-family:var(--f-body);font-size:.85rem;font-weight:500;color:var(--ink-2);margin-left:8px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center;gap:5px}
+.chip svg{width:15px;height:15px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.banner{background:var(--accent-soft);border:1px dashed var(--accent);border-radius:12px;padding:10px 14px;margin-bottom:18px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.9rem}
+.banner b{font-weight:700}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:26px;text-align:center;color:var(--ink-2);background:var(--sheet)}
+.muted{color:var(--ink-2)}
+.panel{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:18px}
+
+/* covers */
+.cover{position:relative;aspect-ratio:2/3;width:100%;max-width:100%;border-radius:3px 6px 6px 3px;overflow:hidden;box-shadow:var(--shadow);background:var(--line)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover.gen{background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 8%),var(--c);color:var(--cink,var(--on-pastel));box-shadow:var(--shadow),inset 0 0 0 1px rgba(60,40,25,.10);display:flex;flex-direction:column;justify-content:space-between;padding:12% 10% 10%;container-type:inline-size}
+.cover.gen::before{content:"";position:absolute;left:5%;top:0;bottom:0;width:2px;background:rgba(0,0,0,.08)}
+.cv-band{position:absolute;left:0;right:0;top:58%;height:7%;background:rgba(255,255,255,.45)}
+.cv-title{font-family:var(--f-display);font-size:clamp(10px,15cqi,22px);line-height:1.1;position:relative;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.cv-author{font-size:clamp(8px,9cqi,13px);font-weight:600;letter-spacing:.04em;text-transform:uppercase;position:relative;opacity:.8}
+.stars{--r:0;display:inline-block;letter-spacing:1px;font-size:.95rem;line-height:1;background:linear-gradient(90deg,var(--gold) calc(var(--r) / 5 * 100%),var(--line) 0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.month{margin-bottom:26px}
+.month-h{display:flex;align-items:baseline;gap:10px;border-bottom:1.5px solid var(--ink);padding-bottom:4px;margin-bottom:14px}
+.month-h h3{font-family:var(--f-display);font-weight:400;font-size:1.15rem;text-transform:uppercase;letter-spacing:.08em}
+.month-h span{font-family:var(--f-hand);font-size:1.25rem;color:var(--ink-2)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:18px 14px}
+.citem{border:0;background:none;padding:0;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;min-width:0}
+.citem .cover{transition:transform .15s}
+.citem:hover .cover{transform:translateY(-3px) rotate(-1deg)}
+.citem .t{font-size:.78rem;color:var(--ink-2);line-height:1.25;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fmt-dot{display:inline-flex;vertical-align:-3px;color:var(--ink-2)}
+.fmt-dot svg{width:15px;height:15px}
+.reading-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;margin-bottom:26px}
+.reading-row .citem{width:96px;flex:none}
+.ribbon{position:absolute;right:12%;top:-2px;width:12px;height:26px;background:var(--postmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%);z-index:2}
+
+/* shelf */
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:12px;height:18px;border-radius:2px;vertical-align:-4px;margin-right:5px}
+.shelf{position:relative;display:flex;flex-wrap:wrap;align-items:flex-end;padding:18px 16px 0;border:10px solid var(--wood-2);border-bottom-width:0;border-radius:14px 14px 4px 4px;
+  background:repeating-linear-gradient(to bottom,transparent 0 176px,var(--wood-3) 176px 178px,var(--wood) 178px 187px,var(--wood-2) 187px 190px) 0 18px,
+  linear-gradient(to bottom,color-mix(in srgb,var(--wood) 22%,var(--paper)),color-mix(in srgb,var(--wood) 12%,var(--paper)));
+  box-shadow:var(--shadow),inset 0 10px 18px -12px rgba(60,35,15,.35)}
+.ivy{position:absolute;top:-14px;width:130px;height:170px;pointer-events:none;z-index:3}
+.ivy-l{left:-14px}.ivy-r{right:-14px;transform:scaleX(-1)}
+.slot{height:190px;padding-bottom:14px;display:flex;align-items:flex-end;position:relative;z-index:1}
+.spine{border:0;padding:8px 0;margin-right:2px;border-radius:3px 3px 1px 1px;display:flex;align-items:center;justify-content:center;position:relative;transition:transform .15s;color:var(--cink,var(--on-pastel));
+  background:linear-gradient(to top,transparent 12px,rgba(70,45,25,.28) 12px 14px,transparent 14px),linear-gradient(90deg,rgba(60,35,20,.16),rgba(255,255,255,.18) 18%,transparent 42%,transparent 76%,rgba(60,35,20,.16)),var(--c);
+  box-shadow:0 1px 0 rgba(60,35,20,.2)}
+.spine:hover{transform:translateY(-6px)}
+.spine .st{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--f-hand);font-weight:700;font-size:16px;line-height:1;max-height:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.spine::after{content:"";position:absolute;left:3px;right:3px;top:9px;height:2px;background:rgba(0,0,0,.14);border-radius:1px}
+.spine.unread{background:var(--sheet);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--ink-2)}
+.spine.unread::after{background:var(--line)}
+.spine.reading::before{content:"";position:absolute;bottom:-8px;left:50%;width:6px;height:16px;margin-left:-3px;background:var(--postmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 70%,0 100%)}
+.bookend{display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:84px;height:100%;margin:0 8px;padding-top:6px}
+.slot:first-child .bookend{margin-left:0}
+.tag{position:relative;font-family:var(--f-hand);font-weight:700;font-size:1.08rem;line-height:1;text-align:center;color:var(--ink);background:var(--sheet);padding:6px 8px 5px;border-radius:3px 3px 10px 10px;box-shadow:var(--shadow);transform:rotate(-4deg);max-width:84px;overflow-wrap:anywhere;border:1px solid var(--line)}
+.tag::before{content:"";position:absolute;left:50%;top:-6px;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--wood-2);box-shadow:0 0 0 2px var(--sheet)}
+.bookend .dec{width:62px;height:82px;flex:none}
+.shelf-stats{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 4px;font-size:.88rem;color:var(--ink-2)}
+.shelf-stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* reviews */
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,430px),1fr));gap:16px}
+.rcard{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;grid-template-columns:96px 1fr;gap:16px;text-align:left;width:100%;min-width:0}
+.rcard:hover{border-color:var(--ink-2)}
+.rlabel{display:inline-block;background:var(--ink);color:var(--paper);font-size:.68rem;letter-spacing:.14em;font-weight:700;padding:3px 8px;border-radius:3px;margin-bottom:8px}
+.rcard h3{font-family:var(--f-display);font-weight:400;font-size:1.08rem;line-height:1.2}
+.rmeta{font-size:.82rem;color:var(--ink-2);margin:3px 0 6px;display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center}
+.rtext{font-family:var(--f-hand);font-size:1.3rem;line-height:1.2;margin:8px 0 0;overflow-wrap:anywhere;border-top:1px dashed var(--line);padding-top:8px}
+.rtext.none{color:var(--ink-2);font-size:1.1rem}
+
+/* TBR */
+.tbr-add{display:flex;gap:8px;margin-bottom:18px}
+.tbr-add input{flex:1;min-width:0}
+.tlist{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.trow{display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--c) 55%,var(--sheet));border-radius:4px;padding:6px 8px 6px 10px;min-width:0}
+.trow .chk{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink);background:var(--sheet);flex:none;padding:0}
+.trow .chk:hover{background:var(--gold)}
+.trow .tt{flex:1;min-width:0;border:0;background:none;text-align:left;padding:2px 0;font-family:var(--f-hand);font-size:1.35rem;line-height:1.1;color:var(--ink)}
+.trow .tt small{font-family:var(--f-body);font-size:.75rem;color:var(--ink-2);margin-left:6px}
+.trow .mini{border:1px solid color-mix(in srgb,var(--ink) 25%,transparent);background:var(--sheet);border-radius:999px;font-size:.75rem;font-weight:600;padding:3px 9px;white-space:nowrap}
+.tsec{margin-top:28px}
+.tsec h3{font-family:var(--f-display);font-weight:400;font-size:1.1rem;margin-bottom:10px}
+
+/* challenge + stamps */
+.ch{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;margin-bottom:26px}
+.goal-num{font-family:var(--f-display);font-size:2.8rem;line-height:1}
+.goal-num small{font-size:1.1rem;color:var(--ink-2)}
+.bar{height:14px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--line);overflow:hidden;margin:12px 0 8px}
+.bar i{display:block;height:100%;background:repeating-linear-gradient(-45deg,var(--accent) 0 8px,color-mix(in srgb,var(--accent) 80%,var(--sheet)) 8px 16px);border-radius:999px}
+.pace{font-weight:600}
+.pace.ok{color:#2E8B57}.pace.behind{color:var(--postmark)}
+.goal-edit{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:.88rem;color:var(--ink-2)}
+.goal-edit input{width:72px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat .k{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:700}
+.stat .v{font-family:var(--f-display);font-size:1.5rem;font-variant-numeric:tabular-nums;line-height:1.2}
+.fmts{display:flex;gap:12px;font-variant-numeric:tabular-nums}
+.fmts span{display:inline-flex;align-items:center;gap:4px;font-weight:600}
+.fmts svg{width:17px;height:17px;color:var(--ink-2)}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:14px}
+.stamp{--c:#E8A5B0;position:relative;padding:6px;background:var(--sheet);border:0;text-align:center;
+  -webkit-mask:radial-gradient(circle 3.2px,#0000 96%,#000) -4px -4px/8px 8px round,linear-gradient(#000 0 0) content-box;
+  mask:radial-gradient(circle 3.2px,#0000 96%,#000) -4px -4px/8px 8px round,linear-gradient(#000 0 0) content-box;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.12))}
+.stamp-in{background:var(--c);color:var(--on-pastel);height:100%;min-height:150px;padding:12px 8px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;outline:1.5px solid rgba(31,36,51,.35);outline-offset:-5px}
+.stamp-in svg{width:38px;height:38px;margin:4px 0 2px}
+.stamp .nm{font-family:var(--f-display);font-size:.92rem;line-height:1.1}
+.stamp .ds{font-size:.7rem;line-height:1.25;opacity:.85}
+.stamp .pr{font-size:.7rem;font-weight:700;margin-top:auto;font-variant-numeric:tabular-nums}
+.stamp.locked .stamp-in{background:var(--paper);color:var(--ink-2);outline-color:var(--line)}
+.stamp.locked svg{opacity:.45}
+.pm{position:absolute;right:2px;top:4px;width:54px;height:54px;border:2px solid var(--postmark);border-radius:50%;color:var(--postmark);font-size:.55rem;font-weight:700;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.1;transform:rotate(-16deg);opacity:.85;background:repeating-linear-gradient(0deg,transparent 0 7px,color-mix(in srgb,var(--postmark) 25%,transparent) 7px 8px)}
+.mstamp .stamp-in{min-height:118px}
+.mstamp .mn{font-family:var(--f-hand);font-weight:700;font-size:1.9rem;line-height:1;margin-top:8px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:8px 0 14px}
+.sec-h h3{font-family:var(--f-display);font-weight:400;font-size:1.2rem}
+.sec-h span{font-size:.85rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+/* bingo */
+.bingo-wrap{max-width:620px}
+.bgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:2px solid var(--ink);background:var(--sheet)}
+.bcell{aspect-ratio:1;border:0;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:none;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:var(--f-hand);font-size:clamp(.82rem,2.6vw,1.12rem);line-height:1.05;text-transform:uppercase;position:relative;overflow:hidden;min-width:0}
+.bcell:nth-child(5n){border-right:0}
+.bcell:nth-child(n+21){border-bottom:0}
+.bcell:hover{background:var(--accent-soft)}
+.bcell.done{background:color-mix(in srgb,var(--c) 38%,var(--sheet));color:var(--ink)}
+.bcell.free{background:var(--ink);color:var(--paper);font-size:clamp(1rem,3.4vw,1.5rem)}
+.bcell .bk{font-family:var(--f-body);text-transform:none;font-size:clamp(.55rem,1.6vw,.7rem);font-weight:600;opacity:.8;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bcell.line::after{content:"";position:absolute;inset:3px;border:2px solid var(--postmark);border-radius:50%;opacity:.55;transform:rotate(-8deg)}
+.bingo-title{font-family:var(--f-hand);font-weight:700;font-size:3rem;line-height:1;text-align:center;margin-bottom:10px}
+.bingo-title span{color:var(--postmark)}
+.bstat{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 0;font-size:.9rem;color:var(--ink-2)}
+
+/* sheet (editor) */
+.overlay{position:fixed;inset:0;background:rgba(15,18,28,.45);z-index:50;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sheet{background:var(--sheet);border-radius:18px;width:min(680px,100%);max-height:100%;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px;position:sticky;top:0;background:var(--sheet);z-index:2}
+.sheet-h h2{font-family:var(--f-hand);font-size:2rem;font-weight:700;line-height:1}
+.x{border:0;background:var(--accent-soft);width:34px;height:34px;border-radius:50%;font-size:1.2rem}
+.sheet-b{padding:8px 18px 18px;display:grid;gap:14px}
+.ed-top{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:start}
+.ed-cover{display:grid;gap:8px}
+.swatches{display:flex;flex-wrap:wrap;gap:5px}
+.sw{width:20px;height:20px;border-radius:50%;border:2px solid transparent;background:var(--c);padding:0}
+.sw[aria-pressed="true"]{border-color:var(--ink)}
+.field{display:grid;gap:4px;min-width:0}
+.field label,.lbl{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ink-2)}
+input[type=text],input[type=number],input[type=date],textarea,select{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:8px 10px;min-width:0}
+textarea{resize:vertical;min-height:80px}
+#f-review{font-family:var(--f-hand);font-size:1.3rem;line-height:1.2}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.title-row{display:flex;gap:8px}
+.title-row input{flex:1}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 12px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--ink-2)}
+.seg button svg{width:20px;height:20px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rate{display:flex;align-items:center;gap:8px}
+.rate .rb{position:relative;display:inline-flex}
+.rate .rb .stars{font-size:1.9rem;letter-spacing:3px}
+.rate .rb button{position:absolute;top:0;bottom:0;width:20%;border:0;background:none;padding:0}
+.rate output{font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.toggle{display:flex;align-items:center;gap:8px;font-weight:600}
+.toggle input{width:18px;height:18px;accent-color:var(--accent)}
+.note{font-size:.8rem;color:var(--ink-2)}
+.ed-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.busy{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--accent);font-weight:600}
+.spin{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pick{display:grid;gap:6px;max-height:260px;overflow:auto}
+.pick button{text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:8px 10px}
+.pick button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.about{font-size:.88rem;color:var(--ink-2);background:var(--paper);border-radius:9px;padding:8px 10px}
+
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font-weight:600;font-size:.9rem;z-index:60;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+.foot{font-size:.78rem;color:var(--ink-2);text-align:center;margin-top:40px}
+.foot a{color:inherit}
+.linkbtn{border:0;background:none;padding:0;color:var(--accent);font-weight:600;text-decoration:underline;font-size:inherit}
+/* real cover image over the painted one */
+.cv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.cover .ribbon{z-index:2}
+/* whose library */
+.who{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:6px 12px 6px 10px;font-weight:700;max-width:180px}
+.who span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.who svg{width:17px;height:17px;flex:none}
+.picker{max-width:640px;margin:10px auto 0;text-align:center}
+.picker h2{font-family:var(--f-hand);font-weight:700;font-size:3rem;line-height:1}
+.picker p{color:var(--ink-2);margin:8px 0 22px}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.pcard{border:1px solid var(--line);background:var(--sheet);border-radius:16px;padding:18px 12px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;box-shadow:var(--shadow);position:relative}
+.pcard:hover{transform:translateY(-2px)}
+.pcard .av{width:64px;height:64px;border-radius:50%;background:var(--c);display:flex;align-items:center;justify-content:center;font-family:var(--f-hand);font-weight:700;font-size:2rem;color:var(--on-pastel);box-shadow:inset 0 -6px 0 rgba(0,0,0,.08)}
+.pcard b{font-size:1rem}
+.pcard small{color:var(--ink-2);font-size:.75rem}
+.pcard.me::after{content:"ben";position:absolute;top:8px;right:10px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.pcard.add{border-style:dashed;background:transparent;box-shadow:none;justify-content:center;color:var(--ink-2)}
+.newp{display:flex;gap:8px;margin-top:16px}
+.newp input{flex:1;min-width:0}
+.setup-code{font-family:ui-monospace,Consolas,monospace;font-size:.78rem;word-break:break-all;background:var(--paper);border:1px dashed var(--line);border-radius:8px;padding:8px 10px}
+.steps{margin:0;padding-left:20px;display:grid;gap:4px;font-size:.88rem;color:var(--ink-2)}
+.results{display:grid;gap:6px;max-height:300px;overflow:auto}
+.res{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 8px}
+.res img,.res i{width:40px;height:58px;object-fit:cover;border-radius:2px;background:var(--line);display:block}
+.res b{display:block;font-size:.9rem;line-height:1.2}
+.res span{font-size:.78rem;color:var(--ink-2)}
+
+/* ---- journal trimmings shared by every page ---- */
+.ls{display:none}
+.hand::before{content:"";display:inline-block;width:30px;height:30px;margin-right:6px;vertical-align:-3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath d='M4 27C10 20 16 12 26 4' fill='none' stroke='%235F8A57' stroke-width='1.6' stroke-linecap='round'/%3E%3Cg fill='%238DB97A'%3E%3Cellipse cx='9' cy='19' rx='2.6' ry='5.2' transform='rotate(-50 9 19)'/%3E%3Cellipse cx='14.5' cy='13.5' rx='2.6' ry='5.2' transform='rotate(40 14.5 13.5)'/%3E%3Cellipse cx='19' cy='10' rx='2.3' ry='4.6' transform='rotate(-50 19 10)'/%3E%3Cellipse cx='23.5' cy='5.5' rx='2' ry='4' transform='rotate(40 23.5 5.5)'/%3E%3C/g%3E%3Ccircle cx='6.5' cy='23.5' r='1.8' fill='%23E3A79C'/%3E%3C/svg%3E") center/contain no-repeat}
+.taped{position:relative}
+.taped::before{content:"";position:absolute;top:-10px;left:50%;width:88px;height:21px;margin-left:-44px;z-index:3;pointer-events:none;transform:rotate(-3deg);
+  background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--tape,#A6C29A) 80%,transparent) 0 6px,color-mix(in srgb,var(--tape,#A6C29A) 58%,transparent) 6px 12px);
+  -webkit-mask:linear-gradient(90deg,transparent 0 2px,#000 2px calc(100% - 2px),transparent 0);mask:linear-gradient(90deg,transparent 0 2px,#000 2px calc(100% - 2px),transparent 0);opacity:.9}
+.empty .dec{display:block;width:50px;height:68px;margin:0 auto 4px}
+.panel{box-shadow:var(--shadow)}
+/* covers stand on a wooden ledge */
+.month-h{align-items:flex-end;border-bottom:1.5px dashed var(--line)}
+.month-h h3{font-family:var(--f-hand);font-weight:700;font-size:2rem;text-transform:none;letter-spacing:0;line-height:1}
+.month-h .dec{width:34px;height:46px;margin-left:auto;flex:none}
+.cgrid.ledge{column-gap:0;row-gap:24px}
+.ledge .citem{padding:0 8px 14px;background:linear-gradient(to top,var(--wood-2) 0 3px,var(--wood) 3px 10px,var(--wood-3) 10px 12px,transparent 12px)}
+.ledge .citem>span:last-child{background:var(--sheet);border-radius:999px;padding:1px 8px 2px;box-shadow:0 1px 2px rgba(60,40,25,.15)}
+/* review notes: ruled paper held by washi tape */
+.rcard{border-radius:4px;margin-top:10px;box-shadow:var(--shadow);background:repeating-linear-gradient(to bottom,transparent 0 27px,color-mix(in srgb,var(--accent) 13%,transparent) 27px 28px),var(--sheet)}
+.rgrid .rcard:nth-child(odd){transform:rotate(-.5deg)}.rgrid .rcard:nth-child(even){transform:rotate(.45deg)}
+.rgrid .rcard:hover{transform:rotate(0) translateY(-2px)}
+/* to-read lists as ring-bound notebook pages */
+.nb-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;align-items:start}
+.notebook{position:relative;background:var(--sheet);border:1px solid var(--line);border-radius:6px 16px 16px 6px;padding:18px 16px 20px 44px;box-shadow:var(--shadow);min-width:0}
+.notebook::before{content:"";position:absolute;left:12px;top:16px;bottom:16px;width:16px;background:radial-gradient(circle at 8px 8px,var(--paper) 4.5px,var(--line) 5px,transparent 6px) 0 0/16px 30px}
+.nb-top{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.nb-title{font-family:var(--f-hand);font-weight:700;font-size:1.9rem;line-height:1}
+.nb-title small{display:block;font-family:var(--f-body);font-weight:500;font-size:.78rem;color:var(--ink-2);margin-top:4px}
+.nb-illu{width:170px;max-width:55%;height:auto}
+/* goal, stamp album, bingo */
+.goal-panel .dec{position:absolute;right:14px;bottom:10px;width:44px;height:60px}
+.album{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:28px;box-shadow:var(--shadow);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px;background-position:-1px -1px}
+.album .sec-h{margin-top:0}
+.bingo-wrap{position:relative;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:26px 18px 18px;box-shadow:var(--shadow)}
+.bingo-wrap .dec{position:absolute;top:10px;width:40px;height:54px}
+.bingo-wrap .dec:nth-of-type(1){left:14px}.bingo-wrap .dec:nth-of-type(2){right:14px}
+/* yearly stats */
+.st-hero{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.st-title{font-family:var(--f-display);font-size:clamp(2rem,6.5vw,3.4rem);line-height:1.02;letter-spacing:.04em;color:transparent;-webkit-text-stroke:1.4px var(--ink);text-shadow:3px 3px 0 color-mix(in srgb,var(--wood-3) 40%,transparent)}
+.sticky{display:flex;gap:22px;padding:16px 20px 14px;background:color-mix(in srgb,#E3A79C 42%,var(--sheet));border-radius:4px;transform:rotate(-2deg);box-shadow:var(--shadow)}
+.sticky b{display:block;font-family:var(--f-display);font-size:2rem;line-height:1;font-weight:400;font-variant-numeric:tabular-nums}
+.sticky span{font-family:var(--f-hand);font-size:1.15rem;color:var(--ink-2)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px}
+.tile{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.tile .k{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-2)}
+.tile .v{font-family:var(--f-display);font-size:1.45rem;line-height:1.25;font-variant-numeric:tabular-nums}
+.tile .n{font-size:.75rem;color:var(--ink-2)}
+.st-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;margin-bottom:24px;align-items:start}
+.st-h{font-family:var(--f-hand);font-weight:700;font-size:1.7rem;line-height:1;margin-bottom:10px}
+.pie-wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pie{width:170px;height:170px;flex:none}
+.pie path{stroke:var(--sheet);stroke-width:2;stroke-linejoin:round}
+.pie text{fill:#FFFFFF;font-weight:700;font-size:13px;font-family:var(--f-body)}
+.lg{list-style:none;margin:0;padding:0;display:grid;gap:5px;min-width:0;flex:1}
+.lg li{display:flex;align-items:center;gap:8px;font-size:.9rem}
+.lg li span{flex:1;min-width:0}
+.lg i,.avg-row i{width:12px;height:12px;border-radius:3px;flex:none;display:inline-block}
+.lg b{font-variant-numeric:tabular-nums}
+.avgbox{border:1.5px solid var(--ink);border-radius:20px;padding:10px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 20px}
+.avg-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.avg-row span{font-family:var(--f-hand);font-size:1.2rem;display:flex;align-items:center;gap:6px;min-width:0}
+.avg-row b{font-family:var(--f-display);font-weight:400;font-size:1.5rem;font-variant-numeric:tabular-nums}
+.units{display:flex;align-items:flex-end;justify-content:space-around;gap:6px;padding:6px 4px 0}
+.ucol{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;min-width:0}
+.ustack{display:flex;flex-direction:column-reverse;gap:2px}
+.urow{display:flex;gap:2px}
+.sq{width:14px;height:14px;border-radius:3px;border:0;padding:0;display:block}
+.sq:hover,.sq:focus-visible{transform:scale(1.35);box-shadow:0 0 0 2px var(--sheet),0 0 0 3.5px var(--ink)}
+.ucount{font-size:.78rem;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums;min-height:1.1em}
+.ulab{align-self:stretch;text-align:center;border-top:1.5px solid var(--ink);padding-top:3px;font-family:var(--f-hand);font-weight:700;font-size:1.35rem;line-height:1}
+.ulab.sm{font-size:1rem}
+.units.months .sq{width:12px;height:12px}
+.favs ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 22px}
+.favs li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:4px 0;font-family:var(--f-hand);font-size:1.3rem}
+.favs li b{font-family:var(--f-body);font-size:.85rem;color:var(--ink-2);font-weight:600}
+
+/* visitors: hide everything that changes the journal */
+html[data-readonly] #btn-add,html[data-readonly] .tbr-add,html[data-readonly] .tbr-add+.note,html[data-readonly] .trow .mini,html[data-readonly] .goal-edit,html[data-readonly] [data-act="bingo-shuffle"],html[data-readonly] [data-act="bingo-reset"]{display:none!important}
+html[data-readonly] .trow .chk,html[data-readonly] .bcell{cursor:default}
+/* phone/desktop toggle in the header */
+.viewsel{display:flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:2px}
+.viewsel button{border:0;background:none;width:32px;height:30px;border-radius:999px;color:var(--ink-2);display:flex;align-items:center;justify-content:center}
+.viewsel button svg{width:17px;height:17px}
+.viewsel button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+/* phone view chosen on a wide screen: show a phone-width column */
+html[data-view="mobile"][data-narrow] body{max-width:440px;margin:0 auto;box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(60,40,25,.15);min-height:100%}
+html[data-view="mobile"][data-narrow] .tabs{left:50%;right:auto;width:440px;transform:translateX(-50%)}
+/* phone view on a phone whose page is laid out wider than the screen: keep content within the screen */
+html[data-view="mobile"][data-clamp] body{max-width:var(--phone-w);overflow-x:hidden}
+html[data-view="mobile"][data-clamp] .tabs{right:auto;width:var(--phone-w)}
+/* phone shelf: slimmer shelves, smaller trinkets, readable spines */
+html[data-view="mobile"] .shelf{padding:14px 8px 0;border-width:8px;background-position:0 14px,0 0}
+html[data-view="mobile"] .ivy{width:84px;height:110px;top:-10px}
+html[data-view="mobile"] .ivy-l{left:-10px}html[data-view="mobile"] .ivy-r{right:-10px}
+html[data-view="mobile"] .bookend{width:62px;margin:0 4px}
+html[data-view="mobile"] .tag{font-size:.92rem;max-width:62px;padding:5px 5px 4px}
+html[data-view="mobile"] .bookend .dec{width:46px;height:62px}
+html[data-view="mobile"] .spine .st{font-size:14px}
+html[data-view="mobile"] .legend{gap:4px 12px;font-size:.8rem}
+html[data-view="mobile"] .cgrid.ledge{column-gap:0;row-gap:20px}
+html[data-view="mobile"] .ledge .citem{padding:0 5px 13px}
+html[data-view="mobile"] .top-in{padding-block:16px 46px!important}
+html[data-view="mobile"] .brand h1{font-size:2rem!important}
+html[data-view="mobile"] .st-grid,html[data-view="mobile"] .nb-pages{grid-template-columns:1fr}
+html[data-view="mobile"] .rgrid{grid-template-columns:1fr}
+html[data-view="mobile"] .st-title{font-size:2.1rem}
+html[data-view="mobile"] .who{max-width:120px;padding:5px 9px}
+html[data-view="mobile"] .top-actions{flex-wrap:wrap}
+/* phone layout: applied when html[data-view=mobile] (auto-detected or chosen with the header toggle) */
+html[data-view="mobile"] .lf{display:none}html[data-view="mobile"] .ls{display:inline}html[data-view="mobile"] .notebook{padding-left:38px}html[data-view="mobile"] .st-hero{justify-content:center;text-align:center}html[data-view="mobile"] .tabs{position:fixed;top:auto;bottom:0;left:0;right:0;border-bottom:0;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--sheet)}html[data-view="mobile"] .tabs .wrap{padding-left:max(6px,env(safe-area-inset-left,0px));padding-right:max(6px,env(safe-area-inset-right,0px))}html[data-view="mobile"] .tabs-in{justify-content:space-between;gap:0}html[data-view="mobile"] .tab{flex-direction:column;gap:2px;font-size:.66rem;padding:8px 2px 7px;border-bottom:0;border-top:2px solid transparent;flex:1}html[data-view="mobile"] .tab[aria-current="page"]{border-top-color:var(--accent)}html[data-view="mobile"] main{padding-bottom:110px}html[data-view="mobile"] #toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}html[data-view="mobile"] .ch{grid-template-columns:1fr}html[data-view="mobile"] .hand{font-size:2rem}html[data-view="mobile"] .add-txt{display:none}html[data-view="mobile"] .overlay{align-items:flex-end;padding:0}html[data-view="mobile"] .sheet{border-radius:18px 18px 0 0;max-height:94%;padding-bottom:env(safe-area-inset-bottom,0px)}html[data-view="mobile"] .ed-top{grid-template-columns:92px minmax(0,1fr)}html[data-view="mobile"] .rcard{grid-template-columns:72px 1fr;gap:12px}html[data-view="mobile"] .cgrid{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:14px 10px}html[data-view="mobile"] .sgrid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top"><div class="scene" aria-hidden="true"><svg viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice">
+  <g class="stars" fill="#FFF6DA"><circle cx="80" cy="30" r="1.4"/><circle cx="210" cy="18" r="1"/><circle cx="330" cy="44" r="1.6"/><circle cx="470" cy="22" r="1.1"/><circle cx="610" cy="40" r="1.3"/><circle cx="760" cy="16" r="1"/><circle cx="880" cy="52" r="1.5"/><circle cx="1010" cy="26" r="1.2"/><circle cx="1130" cy="46" r="1"/><circle cx="540" cy="70" r="1"/><circle cx="1060" cy="80" r="1.3"/><circle cx="1040" cy="40" r="15" fill="#F6E3A8"/><circle cx="1047" cy="35" r="13" fill="var(--sky-1)"/></g>
+  <g fill="var(--cloud)" opacity=".9"><ellipse cx="160" cy="70" rx="70" ry="20"/><ellipse cx="200" cy="56" rx="42" ry="26"/><ellipse cx="140" cy="58" rx="30" ry="18"/><ellipse cx="720" cy="48" rx="60" ry="16"/><ellipse cx="752" cy="36" rx="34" ry="20"/><ellipse cx="960" cy="86" rx="80" ry="18"/><ellipse cx="1000" cy="72" rx="40" ry="22"/></g>
+  <path d="M0 128 C150 92 300 104 430 118 S700 88 860 108 1100 96 1200 110 V170 H0Z" fill="var(--hill-1)"/>
+  <path d="M0 146 C180 120 360 132 520 142 S820 118 980 134 1150 128 1200 132 V170 H0Z" fill="var(--hill-2)"/>
+  <g transform="translate(905 104)"><path d="M0 26 L0 10 L14 0 L28 10 L28 26Z" fill="#EADBC3"/><path d="M-4 11 L14 -3 L32 11 L28 13 L14 3 L0 13Z" fill="#B5533C"/><rect x="9" y="14" width="9" height="8" fill="var(--glow)"/><rect x="20" y="-2" width="4" height="8" fill="#8B5B35"/></g>
+  <g transform="translate(860 96)"><rect x="9" y="22" width="4" height="18" fill="#6B4A2F"/><circle cx="11" cy="16" r="15" fill="var(--hill-3)"/><circle cx="2" cy="22" r="9" fill="var(--hill-3)"/><circle cx="21" cy="21" r="10" fill="var(--hill-3)"/></g>
+  <path d="M0 158 C200 146 420 154 640 160 S1000 148 1200 156 V170 H0Z" fill="var(--hill-3)"/>
+</svg></div><div class="wrap top-in">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z"/><path d="M12 6v14"/></svg>
+    <div><h1>Okuma Defteri</h1><p class="sub" id="sync">Yükleniyor…</p></div>
+  </div>
+  <div class="top-actions">
+    <button class="who" id="who" data-act="people" aria-label="Kimin kitaplığı?"></button>
+    <div class="viewsel" id="viewsel" role="group" aria-label="Görünüm"></div>
+    <div class="yearsel" aria-label="Yıl seç"><button data-act="year" data-d="-1" aria-label="Önceki yıl">‹</button><span id="yr"></span><button data-act="year" data-d="1" aria-label="Sonraki yıl">›</button></div>
+    <button class="btn primary" data-act="add" id="btn-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="add-txt">Kitap ekle</span></button>
+  </div>
+</div></header>
+<nav class="tabs" aria-label="Bölümler"><div class="wrap tabs-in" id="tabs"></div></nav>
+<main class="wrap" id="view"></main>
+<div class="overlay" id="overlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div id="toast" hidden></div>
+
+<script>
+/* ---------- constants ---------- */
+const AYLAR=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const PALETTE={rose:'#E3A79C',peach:'#EBB88C',butter:'#E9CF8E',olive:'#BEBB80',sage:'#A6C29A',teal:'#8EBDB0',sky:'#A0C3DB',navy:'#93A0C6',lilac:'#BEAFD3',plum:'#C29DB4',mauve:'#DBB4BF',sand:'#DCC7A1',tan:'#C9A27A',terracotta:'#CB8264'};
+const PCOLS=Object.values(PALETTE);
+const FORMATS={print:'Basılı',ebook:'E-kitap',audio:'Sesli'};
+const STATUS={want:'Okunacak',reading:'Okuyorum',read:'Okudum'};
+const G={ /* 24px stroke glyphs */
+  print:'M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z M12 6v14',
+  ebook:'M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z M10.5 19h3',
+  audio:'M4 15v-3a8 8 0 0 1 16 0v3 M4 15h3v5H4z M17 15h3v5h-3z',
+  shelf:'M3 20h18 M5 20V7h3v13 M9 20V4h3v16 M14 20l2-13 3 .5-2 12.5',
+  covers:'M4 4h6v8H4z M14 4h6v8h-6z M4 15h6v5H4z M14 15h6v5h-6z',
+  pen:'M4 20l4-1 11-11-3-3L5 16z M14 7l3 3',
+  list:'M4 6h1.5 M9 6h11 M4 12h1.5 M9 12h11 M4 18h1.5 M9 18h11',
+  stamp:'M5 3h14v18H5z M8.5 3v1 M12 3v1 M15.5 3v1 M8.5 20v1 M12 20v1 M15.5 20v1 M12 8l1.5 3 3.3.4-2.4 2.3.6 3.3L12 15.4 9 17l.6-3.3-2.4-2.3 3.3-.4z',
+  grid:'M4 4h16v16H4z M4 9.3h16 M4 14.6h16 M9.3 4v16 M14.6 4v16',
+  seed:'M12 21v-8 M12 13c0-4-3-6-7-6 0 4 3 6 7 6z M12 11c0-3 3-6 7-6 0 4-3 6-7 6z',
+  bolt:'M13 2 4 14h7l-1 8 9-12h-7z',
+  brick:'M3 5h18v4.5H3z M5 9.5h14V14H5z M3 14h18v5H3z',
+  mountain:'M2 20 9 7l4 7 2.5-4L22 20z M7.5 10l1.5 1.5 1.5-1.5',
+  calendar:'M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5 M8 14h3v3H8z',
+  compass:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M15.5 8.5l-2 5-5 2 2-5z',
+  hourglass:'M7 3h10 M7 21h10 M8 3c0 5 8 5 8 9s-8 4-8 9 M16 3c0 5-8 5-8 9s8 4 8 9',
+  thin:'M8 3h8v18H8z M11 7h2',
+  moon:'M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z',
+  star:'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',
+  person:'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M4 21a8 8 0 0 1 16 0',
+  flame:'M12 3c1 4 5 6 5 11a5 5 0 0 1-10 0c0-3 2-4 2-7 1 1 2 2 3 3 .3-2.5 0-5 0-7z',
+  trophy:'M8 4h8v5a4 4 0 0 1-8 0z M8 6H5a3 3 0 0 0 3 4 M16 6h3a3 3 0 0 1-3 4 M12 13v4 M8 20h8 M10 17h4v3h-4z',
+  check:'M4 6h1.5 M9 6h11 M4 12h1.5 M9 12h11 M3.5 18l1.5 1.5 2.5-3 M11 18h9',
+  stack:'M4 20h16 M5 20v-4h14v4 M6 16v-4h12v4 M5 12V8h14v4',
+  globe:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M3 12h18 M12 3c3 3 3 15 0 18 M12 3c-3 3-3 15 0 18',
+  sparkle:'M12 3v4 M12 17v4 M3 12h4 M17 12h4 M6 6l2.5 2.5 M15.5 15.5 18 18 M18 6l-2.5 2.5 M8.5 15.5 6 18',
+  phone:'M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z M11 18.5h2',
+  desktop:'M3 4h18v12H3z M8 20h8 M12 16v4',
+  chart:'M4 20V11 M10 20V5 M16 20v-7 M3 20h18 M19 8l2-2',
+  camera:'M4 8h3l2-3h6l2 3h3v11H4z M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z',
+  plant:'M12 21v-7 M12 14c-4 0-6-3-6-7 4 0 6 3 6 7z M12 12c0-3 2-6 6-6 0 4-2 6-6 6z M8 21h8l-1-4H9z'
+};
+const ico=(k,sw=1.7)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${G[k]}"/></svg>`;
+const TABS=[['shelf','Kitaplık','shelf','Raf'],['covers','Kapaklar','covers','Kapak'],['notes','Notlar','pen','Notlar'],['stats','Yıl Özeti','chart','Özet'],['tbr','Okunacaklar','list','Liste'],['stamps','Hedef & Pullar','stamp','Pullar'],['bingo','Bingo','grid','Bingo']];
+const BINGO_POOL=['Bir klasik','Çeviri kitap','Türk yazar','Kadın yazar','Yazarın ilk kitabı','500+ sayfa','200 sayfadan kısa','Sesli kitap','E-kitap','Arkadaş önerisi','Filme uyarlanmış','Serinin devamı','Tek kelimelik başlık','Başlığında renk var','Mavi kapaklı','Bu yıl çıkan','100 yıldan eski','Distopya','Polisiye','Bilim kurgu','Fantastik','Tarihi roman','Anı / biyografi','Deneme','Şiir kitabı','Kurgu dışı','Yeniden okuma','Kütüphaneden','Hediye gelen','Başka ülkede geçen','Öykü kitabı','Çizgi roman','Ödüllü kitap','Hiç okumadığın tür','Hep ertelediğin','Bir günde biten','Rafta en uzun bekleyen','Aşk hikâyesi','Gerilim','Başlıkta şehir adı','Yeni bir yazar','Rus edebiyatı','Latin Amerika','Japon yazar','Kitap hakkında kitap','Doğa / bilim'];
+
+/* ---------- utils ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const newId=()=>'b'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const pad=n=>String(n).padStart(2,'0');
+const todayISO=()=>{const t=new Date();return `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`};
+const yOf=d=>d?+d.slice(0,4):null, mOf=d=>d?+d.slice(5,7)-1:null;
+const days=(a,b)=>Math.round((Date.parse(b)-Date.parse(a))/864e5);
+const fmtDate=d=>d?`${+d.slice(8,10)} ${AYLAR[mOf(d)].slice(0,3)} ${d.slice(0,4)}`:'';
+const hash=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
+const autoColor=t=>PCOLS[hash(t)%PCOLS.length];
+/* light text on dark covers, dark ink on light ones */
+function inkFor(hex){const m=/^#?([0-9a-f]{6})$/i.exec(String(hex||''));if(!m)return'#3A2C24';const n=parseInt(m[1],16),r=n>>16&255,g=n>>8&255,b=n&255;return(0.299*r+0.587*g+0.114*b)<140?'#FBF4E6':'#3A2C24'}
+const colorVars=b=>{const c=b.color||autoColor(b.title||'x');return`--c:${esc(c)};--cink:${inkFor(c)}`};
+const stars=r=>`<span class="stars" style="--r:${+r||0}" aria-label="${+r||0} / 5 yıldız">★★★★★</span>`;
+const fmtIco=f=>f?`<span class="fmt-dot" title="${FORMATS[f]}">${ico(f)}</span>`:'';
+const nf=n=>new Intl.NumberFormat('tr-TR').format(n);
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3200)}
+
+/* ---------- example books (shown only while the journal is empty) ---------- */
+const DY=new Date().getFullYear(), dd=(m,d)=>`${DY}-${pad(m)}-${pad(d)}`;
+const DEMO=[
+ {id:'d1',title:'Kürk Mantolu Madonna',author:'Sabahattin Ali',pages:160,year:1943,genre:'Roman',color:PALETTE.rose,status:'read',owned:true,format:'print',startDate:dd(1,4),endDate:dd(1,6),rating:5,review:'Raif Efendi’nin sessizliğinin altındaki fırtına. Son sayfalarda boğazım düğümlendi.'},
+ {id:'d2',title:'Dune',author:'Frank Herbert',pages:712,year:1965,genre:'Bilim kurgu',color:PALETTE.butter,status:'read',owned:true,format:'print',startDate:dd(1,10),endDate:dd(2,2),rating:4.5,review:'Dünya kurgusu inanılmaz. İlk yüz sayfa ağır ama sonra bırakamadım.'},
+ {id:'d3',title:'Körlük',author:'José Saramago',pages:336,year:1995,genre:'Distopya',color:PALETTE.sky,status:'read',owned:false,format:'audio',startDate:dd(2,8),endDate:dd(2,20),rating:4,review:'Sesli dinledim; noktalama azlığı dinlerken hiç sorun olmadı.'},
+ {id:'d4',title:'Bir İdam Mahkûmunun Son Günü',author:'Victor Hugo',pages:112,year:1829,genre:'Klasik',color:PALETTE.lilac,status:'read',owned:true,format:'print',startDate:dd(3,6),endDate:dd(3,7),rating:4,review:''},
+ {id:'d5',title:'Saatleri Ayarlama Enstitüsü',author:'Ahmet Hamdi Tanpınar',pages:400,year:1961,genre:'Roman',color:PALETTE.sage,status:'read',owned:true,format:'ebook',startDate:dd(3,10),endDate:dd(4,5),rating:5,review:'Hayri İrdal hem komik hem hüzünlü. Zekice bir kitap.'},
+ {id:'d6',title:'Martin Eden',author:'Jack London',pages:480,year:1909,genre:'Roman',color:PALETTE.peach,status:'read',owned:true,format:'print',startDate:dd(5,2),endDate:dd(5,19),rating:4,review:'Kendini yetiştirme hırsı çok tanıdık geldi.'},
+ {id:'d7',title:'Fareler ve İnsanlar',author:'John Steinbeck',pages:111,year:1937,genre:'Klasik',color:PALETTE.teal,status:'read',owned:false,format:'ebook',startDate:dd(7,12),endDate:dd(7,13),rating:4.5,review:'Kısacık ama çok sert. George ile Lennie aklımdan çıkmıyor.'},
+ {id:'d8',title:'Tutunamayanlar',author:'Oğuz Atay',pages:724,year:1972,genre:'Roman',color:PALETTE.navy,status:'reading',owned:true,format:'print',startDate:dd(9,20)},
+ {id:'d9',title:'Simyacı',author:'Paulo Coelho',pages:188,year:1988,genre:'Roman',color:PALETTE.sand,status:'want',owned:true},
+ {id:'d10',title:'Beyaz Diş',author:'Jack London',pages:280,year:1906,genre:'Macera',color:PALETTE.olive,status:'want',owned:true},
+ {id:'d11',title:'Yüzyıllık Yalnızlık',author:'Gabriel García Márquez',pages:464,year:1967,genre:'Roman',status:'want',owned:false},
+ {id:'d12',title:'Suç ve Ceza',author:'Fyodor Dostoyevski',pages:687,year:1866,genre:'Klasik',status:'want',owned:false},
+ {id:'d13',title:'Fahrenheit 451',author:'Ray Bradbury',pages:208,year:1953,genre:'Distopya',status:'want',owned:false}
+];
+
+/* ---------- state ---------- */
+/* mode: loading · pick (choose whose library) · ready · offline
+   canEdit: this device holds the repo key and is looking at its own person's library */
+const S={books:[],settings:{goals:{},bingo:{}},tab:'shelf',year:new Date().getFullYear(),coverMode:'month',shelfFilter:'all',noteFilter:'all',mode:'loading',canEdit:false,people:[],me:null,viewing:null,save:''};
+const T=TABS.map(t=>t[0]);if(T.includes(location.hash.slice(1)))S.tab=location.hash.slice(1);
+const demo=()=>false;
+const BOOKS=()=>S.books;
+const readIn=y=>BOOKS().filter(b=>b.status==='read'&&yOf(b.endDate)===y).sort((a,b)=>a.endDate<b.endDate?-1:1);
+const goalOf=y=>+S.settings.goals?.[y]||24;
+
+/* ---------- storage: JSON files in the GitHub repo ----------
+   data/kisiler.json            people list
+   data/kitapliklar/<id>.json   one person's books + settings
+   Everyone reads; a device that holds the repo key writes, and only into the library of the person chosen as "me" on it. */
+const REPO={owner:'Koloboros',repo:'ReadingJournal',branch:'main'};
+const API=`https://api.github.com/repos/${REPO.owner}/${REPO.repo}/contents/`;
+const K={token:'rj-token',me:'rj-me',viewing:'rj-viewing'};
+/* opened from this computer for testing: read the files next to the page and only log commits */
+const LOCAL=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const ls={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch{}}};
+const b64enc=s=>{const u=new TextEncoder().encode(s);let bin='';for(let i=0;i<u.length;i+=0x8000)bin+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(bin)};
+const b64dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));
+const GH={
+  token:()=>ls.get(K.token),
+  headers(){const h={Accept:'application/vnd.github+json'};const t=this.token();if(t)h.Authorization='Bearer '+t;return h},
+  /* {data, sha} · null when the file does not exist yet */
+  async get(path){
+    if(LOCAL){const r=await fetch(path+'?_='+Date.now(),{cache:'no-store'});return r.ok?{data:await r.json(),sha:'local'}:null}
+    try{
+      const r=await fetch(API+path+'?ref='+REPO.branch+'&_='+Date.now(),{headers:this.headers(),cache:'no-store'});
+      if(r.status===404)return null;
+      if(!r.ok)throw Object.assign(new Error('http '+r.status),{status:r.status});
+      const j=await r.json();
+      const txt=j.content?b64dec(j.content):await (await fetch(j.download_url+'?_='+Date.now(),{cache:'no-store'})).text();
+      return{data:JSON.parse(txt),sha:j.sha};
+    }catch(e){
+      /* API unreachable or over its hourly limit: read the copy GitHub Pages serves (may be a minute behind) */
+      try{const r=await fetch(path+'?_='+Date.now(),{cache:'no-store'});if(r.ok)return{data:await r.json(),sha:null};if(r.status===404)return null}catch{}
+      throw e;
+    }
+  },
+  async put(path,data,sha,message){
+    if(LOCAL){console.info('[yerel deneme] commit:',message,path,data);return 'local'}
+    const body=JSON.stringify({message,content:b64enc(JSON.stringify(data,null,1)),branch:REPO.branch,...(sha?{sha}:{})});
+    const r=await fetch(API+path,{method:'PUT',headers:{...this.headers(),'Content-Type':'application/json'},body,keepalive:body.length<60000});
+    if(!r.ok)throw Object.assign(new Error('http '+r.status),{status:r.status});
+    return (await r.json()).content.sha;
+  },
+  async check(token){
+    const r=await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}`,{headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+token}});
+    if(!r.ok)return false;const j=await r.json();return !!j.permissions?.push;
+  }
+};
+const personName=id=>(S.people.find(p=>p.id===id)||{}).name||'Biri';
+const slug=s=>s.toLocaleLowerCase('tr').replace(/ı/g,'i').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ö/g,'o').replace(/ç/g,'c').normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'kisi';
+const cleanBook=b=>{const o={};for(const[k,v]of Object.entries(b))if(!k.startsWith('_')&&v!==undefined&&v!==''&&k!=='kind')o[k]=v;return o};
+const Store={
+  sha:{},msgs:[],timer:null,flushing:false,again:false,
+  path:id=>`data/kitapliklar/${id}.json`,
+  async init(){
+    const m=/[#&]kurulum=([^&]+)/.exec(location.hash);
+    if(m){ls.set(K.token,decodeURIComponent(m[1]));history.replaceState(null,'',location.pathname+location.search);S.justSetup=true}
+    S.mode='loading';render();
+    try{const p=await GH.get('data/kisiler.json');S.people=p?.data?.kisiler||[];this.sha.people=p?.sha||null}
+    catch{S.mode='offline';setSync();render();return}
+    S.me=ls.get(K.me);if(S.me&&!S.people.some(p=>p.id===S.me))S.me=null;
+    const v=ls.get(K.viewing);
+    const start=(v&&S.people.some(p=>p.id===v))?v:S.me;
+    if(S.justSetup)toast(GH.token()?'Kurulum tamam. Kitap eklediğinde otomatik kaydedilecek.':'');
+    if(!start){S.mode='pick';setSync();render();return}
+    await this.open(start);
+  },
+  async open(id){
+    if(this.msgs.length)await this.flush();
+    S.viewing=id;ls.set(K.viewing,id);S.mode='loading';S.books=[];S.settings=normSettings();render();
+    try{const f=await GH.get(this.path(id));S.books=(f?.data?.books||[]).map(b=>({...b,kind:'book'}));S.settings=normSettings(f?.data?.settings);this.sha[id]=f?.sha||null;S.mode='ready'}
+    catch{S.mode='offline'}
+    S.canEdit=!!GH.token()&&S.viewing===S.me;setSync();render();
+  },
+  async saveBook(b){
+    if(!S.canEdit)return toast('Bu kitaplığı yalnızca sahibi düzenleyebilir.');
+    const data={...b,kind:'book',updatedAt:Date.now()};Object.keys(data).forEach(k=>{if(k.startsWith('_')||data[k]===undefined)delete data[k]});
+    const i=S.books.findIndex(x=>x.id===b.id);if(i>=0)S.books[i]=data;else S.books.push(data);
+    render();this.schedule(`"${b.title}" ${i>=0?'güncellendi':'eklendi'}`);
+  },
+  async deleteBook(id){
+    if(!S.canEdit)return;const b=S.books.find(x=>x.id===id);
+    S.books=S.books.filter(x=>x.id!==id);render();this.schedule(`"${b?.title||'kitap'}" silindi`);
+  },
+  saveSettings(){if(S.canEdit)this.schedule('hedef/bingo güncellendi')},
+  /* collect edits for a moment, then write one commit */
+  schedule(msg){if(!S.canEdit)return;this.msgs.push(msg);S.save='pending';setSync();clearTimeout(this.timer);this.timer=setTimeout(()=>this.flush(),2500)},
+  async flush(){
+    clearTimeout(this.timer);
+    if(this.flushing){this.again=true;return}
+    if(!this.msgs.length||!S.me)return;
+    const id=S.me,msgs=this.msgs.splice(0),path=this.path(id);this.flushing=true;S.save='saving';setSync();
+    const message=`${personName(id)}: ${msgs.length>3?msgs.length+' değişiklik':msgs.join(', ')}`;
+    const data={books:S.books.map(cleanBook),settings:S.settings};
+    try{
+      if(!this.sha[id]){const f=await GH.get(path).catch(()=>null);this.sha[id]=f?.sha||null}
+      try{this.sha[id]=await GH.put(path,data,this.sha[id],message)}
+      catch(e){if(e.status!==409&&e.status!==422)throw e;const f=await GH.get(path);this.sha[id]=await GH.put(path,data,f?.sha,message)}
+      S.save='saved';
+    }catch(e){
+      this.msgs.unshift(...msgs);S.save='error';
+      if(e.status===401||e.status===403)toast('Kaydedilemedi: anahtar geçersiz ya da süresi dolmuş. Kurulum ekranından yeni anahtar gir.');
+      else{toast('Kaydedilemedi; internet bağlantını kontrol et. Biraz sonra yeniden denenecek.');this.timer=setTimeout(()=>this.flush(),15000)}
+    }finally{this.flushing=false;setSync();if(this.again){this.again=false;this.flush()}}
+  },
+  async addPerson(name){
+    if(!GH.token())return openSetup();
+    name=name.trim();if(!name)return;
+    let id=slug(name),n=2;while(S.people.some(p=>p.id===id))id=slug(name)+'-'+n++;
+    const person={id,name,color:PCOLS[S.people.length%PCOLS.length]};
+    try{
+      const f=await GH.get('data/kisiler.json');const list=f?.data?.kisiler||[];list.push(person);
+      this.sha.people=await GH.put('data/kisiler.json',{kisiler:list},f?.sha,`Yeni kişi: ${name}`);
+      this.sha[id]=await GH.put(this.path(id),{books:[],settings:normSettings()},null,`${name} için boş kitaplık`);
+      S.people=list;return person;
+    }catch(e){toast(e.status===401||e.status===403?'Anahtar geçersiz; kurulumu kontrol et.':'Kişi eklenemedi; tekrar dene.')}
+  }
+};
+addEventListener('pagehide',()=>{if(Store.msgs.length)Store.flush()});
+addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&Store.msgs.length)Store.flush()});
+function normSettings(s){return{goals:{...(s?.goals||{})},bingo:{...(s?.bingo||{})}}}
+function fail(){toast('Kaydedilemedi. Tekrar dene.')}
+function setSync(){
+  const el=$('#sync');if(!el)return;
+  const who=S.viewing?personName(S.viewing):'';
+  el.textContent=S.mode==='loading'?'Yükleniyor…':S.mode==='offline'?'Bağlantı kurulamadı':S.mode==='pick'?'Kimin kitaplığı?'
+    :!S.canEdit?`${who} · ${S.viewing===S.me?'görüntüleme (anahtar yok)':'misafir görünümü'}`
+    :({pending:'Değişiklikler kaydedilecek…',saving:'GitHub’a kaydediliyor…',saved:'Kaydedildi ✓',error:'Kaydedilemedi, yeniden denenecek'}[S.save]||`${who} · senin kitaplığın`);
+  const w=$('#who');if(w)w.innerHTML=`${ico('person')}<span>${esc(S.viewing?personName(S.viewing):'Kimin kitaplığı?')}</span><span aria-hidden="true">▾</span>`;
+}
+
+/* ---------- covers ---------- */
+function coverSrc(b){return b._preview||b.coverData||b.coverUrl||''}
+/* painted cover underneath; a real cover image sits on top and simply disappears if it fails to load */
+function coverHTML(b,extra=''){
+  const src=coverSrc(b);
+  const rib=b.status==='reading'?'<span class="ribbon"></span>':'';
+  return `<div class="cover gen" style="${colorVars(b)}">${rib}<span class="cv-band"></span><span class="cv-title">${esc(b.title||'Kitap adı')}</span><span class="cv-author">${esc(b.author||'')}</span>${src?`<img class="cv-img" src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div>`;
+}
+const citem=(b,sub=true)=>`<button class="citem" data-act="open" data-id="${b.id}" title="${esc(b.title)}">${coverHTML(b)}${sub?`<span>${b.status==='read'?stars(b.rating):''} ${fmtIco(b.format)}</span>`:''}</button>`;
+
+/* ---------- phone / desktop view ----------
+   auto: phone layout on touch phones or narrow windows; a choice from the header toggle is remembered on this device. */
+const VIEW_KEY='okuma-defteri-view';
+const viewPref=()=>{try{return localStorage.getItem(VIEW_KEY)||'auto'}catch{return'auto'}};
+const isPhone=()=>matchMedia('(pointer:coarse)').matches&&Math.min(screen.width,screen.height)<=820;
+function setViewport(content){let m=document.querySelector('meta[name="viewport"]');if(!m){m=document.createElement('meta');m.name='viewport';document.head.appendChild(m)}if(m.content!==content)m.content=content}
+function applyView(){
+  const pref=viewPref(),phone=isPhone(),root=document.documentElement;
+  if(phone)setViewport(pref==='desktop'?'width=1100':'width=device-width,initial-scale=1,viewport-fit=cover');
+  const mode=pref!=='auto'?pref:(phone||innerWidth<=720?'mobile':'desktop');
+  root.dataset.view=mode;
+  root.toggleAttribute('data-narrow',mode==='mobile'&&!phone&&innerWidth>720);
+  const devW=Math.min(screen.width,screen.height,innerWidth);
+  const clamp=mode==='mobile'&&phone&&innerWidth>devW+40;
+  root.toggleAttribute('data-clamp',clamp);if(clamp)root.style.setProperty('--phone-w',devW+'px');
+  const vs=$('#viewsel');if(vs)vs.innerHTML=[['mobile','phone','Telefon görünümü'],['desktop','desktop','Masaüstü görünümü']].map(([v,i,l])=>`<button data-act="view" data-v="${v}" aria-pressed="${mode===v}" title="${l}" aria-label="${l}">${ico(i)}</button>`).join('');
+}
+addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.documentElement.dataset.view;applyView();if(was!==document.documentElement.dataset.view)render()}});
+
+/* ---------- render ---------- */
+function render(){
+  $('#yr').textContent=S.year;
+  $('#tabs').innerHTML=TABS.map(([k,l,i,s])=>`<button class="tab" data-act="tab" data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${ico(i)}<span class="lf">${l}</span><span class="ls">${s}</span></button>`).join('');
+  const v={shelf:vShelf,covers:vCovers,notes:vNotes,stats:vStats,tbr:vTbr,stamps:vStamps,bingo:vBingo}[S.tab]();
+  document.documentElement.toggleAttribute('data-readonly',!S.canEdit);
+  setSync();
+  if(S.mode==='pick'){$('#view').innerHTML=vPick();return}
+  const who=esc(personName(S.viewing));
+  const ban=S.mode==='loading'?`<div class="banner"><span class="busy"><span class="spin"></span>Kitaplar yükleniyor…</span></div>`
+    :S.mode==='offline'?`<div class="banner"><span>Kitaplar şu an yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.</span></div>`
+    :S.viewing!==S.me?`<div class="banner"><span><b>${who}’in kitaplığına bakıyorsun.</b> Kitaplara dokunarak notlarını okuyabilirsin.</span><button class="btn" data-act="people">Kitaplık değiştir</button></div>`
+    :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> Kitap ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
+    :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Kitaplığın boş.</b> İlk kitabını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Kitap ekle</button></div>`:'';
+  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p>`;
+}
+
+/* shelf order: topic cluster, (subject for non-fiction), author surname, series and its number, year, title */
+const TOPICS=[
+  [/fantast|bilim ?kurgu|distopya|macera|masal/,'Fantastik & bilim kurgu'],
+  [/çizgi|grafik|resimli|manga/,'Çizgi roman & resimli'],
+  [/polisiye|gerilim|suç|korku|thriller/,'Gerilim & polisiye'],
+  [/roman|öykü|hikâye|hikaye|klasik|edebiyat|şiir|novella/,'Edebiyat'],
+  [/ebeveyn|çocuk|beslenme|sağlık|yemek|psikoloji|terapi|kişisel|gelişim|felsefe|deneme|kurgu dışı|bilim|tarih|biyografi|anı|mitoloji|iş|ekonomi/,'Kurgu dışı']
+];
+function topicOf(b){const g=(b.genre||'').toLocaleLowerCase('tr');if(!g)return[9,'Diğer'];const i=TOPICS.findIndex(t=>t[0].test(g));return i<0?[8,'Diğer']:[i,TOPICS[i][1]]}
+const surname=a=>{const p=String(a||'').trim().split(/\s+/);return(p[p.length-1]||'').toLocaleLowerCase('tr')};
+const cmp=(x,y)=>String(x??'').localeCompare(String(y??''),'tr');
+function shelfOrder(a,b){
+  const ta=topicOf(a),tb=topicOf(b);if(ta[0]!==tb[0])return ta[0]-tb[0];
+  if(ta[0]===4){const g=cmp((a.genre||'').toLocaleLowerCase('tr'),(b.genre||'').toLocaleLowerCase('tr'));if(g)return g}
+  return cmp(surname(a.author),surname(b.author))||cmp(a.author,b.author)||cmp(a.series,b.series)
+    ||((+a.seriesNo||0)-(+b.seriesNo||0))||((+a.year||0)-(+b.year||0))||cmp(a.title,b.title);
+}
+/* painted shelf trinkets, one per topic: plant, mushroom dome, candles, crystals, books with tea */
+const DECOR=[
+ `<path d="M16 52h28l-4 26H20z" fill="#C97C5D"/><rect x="13" y="48" width="34" height="7" rx="2" fill="#A9604A"/><g fill="#5F8A57"><ellipse cx="30" cy="28" rx="5" ry="17"/><ellipse cx="20" cy="33" rx="5" ry="14" transform="rotate(-30 20 33)"/><ellipse cx="40" cy="33" rx="5" ry="14" transform="rotate(30 40 33)"/></g><g fill="#8DB97A"><ellipse cx="13" cy="42" rx="4" ry="10" transform="rotate(-58 13 42)"/><ellipse cx="47" cy="42" rx="4" ry="10" transform="rotate(58 47 42)"/><ellipse cx="26" cy="20" rx="3" ry="9" transform="rotate(-12 26 20)"/></g>`,
+ `<rect x="8" y="73" width="44" height="6" rx="2" fill="#8B5B35"/><ellipse cx="30" cy="72" rx="17" ry="3.5" fill="#7FA872"/><rect x="21" y="58" width="4" height="14" fill="#F1E3CC"/><path d="M14 60a9 7.5 0 0 1 18 0z" fill="#C6533F"/><rect x="35" y="63" width="3" height="9" fill="#F1E3CC"/><path d="M30 64a6.5 5 0 0 1 13 0z" fill="#D97A55"/><g fill="#FFF8EC"><circle cx="19" cy="56" r="1.1"/><circle cx="25" cy="54.5" r="1.2"/><circle cx="36.5" cy="61.5" r=".9"/></g><path d="M11 73V42a19 19 0 0 1 38 0v31" fill="rgba(190,225,240,.22)" stroke="#9FB8C2" stroke-width="1.5"/><path d="M17 44a13 13 0 0 1 8-12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/><circle cx="30" cy="20" r="2.6" fill="#9FB8C2"/>`,
+ `<circle cx="30" cy="40" r="22" fill="var(--glow)" opacity=".18"/><rect x="5" y="73" width="50" height="6" rx="3" fill="#C9A27A"/><rect x="11" y="46" width="11" height="27" rx="2" fill="#F3E6CF"/><rect x="25" y="34" width="11" height="39" rx="2" fill="#F8F0DF"/><rect x="39" y="54" width="11" height="19" rx="2" fill="#EBDBBE"/><g fill="var(--glow)"><path d="M16.5 44c-3.5-4 0-8.5 0-11 2.5 3.5 4.5 7 0 11z"/><path d="M30.5 32c-3.5-4 0-8.5 0-11 2.5 3.5 4.5 7 0 11z"/><path d="M44.5 52c-3.5-4 0-8.5 0-11 2.5 3.5 4.5 7 0 11z"/></g>`,
+ `<ellipse cx="30" cy="77" rx="24" ry="3" fill="rgba(60,40,25,.18)"/><g stroke="#8E7FA8" stroke-width="1.2" stroke-linejoin="round"><path d="M10 77V56l6-7 6 8-2 20z" fill="#EEE8F6"/><path d="M20 77l-3-37 8-12 7 12-2 37z" fill="#E1D8F0"/><path d="M30 77l2-43 8-13 7 13-5 43z" fill="#CFC2E6"/><path d="M42 77l4-21 6-5 3 9-4 17z" fill="#E7E0F3"/></g><path d="M36 30l4-7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>`,
+ `<rect x="6" y="67" width="48" height="11" rx="2" fill="#A7C29A"/><rect x="10" y="57" width="42" height="10" rx="2" fill="#E6A9A0"/><rect x="8" y="48" width="44" height="9" rx="2" fill="#EBD08C"/><g stroke="rgba(60,40,25,.35)"><path d="M12 72h36M15 62h32M13 52h34"/></g><path d="M20 36h17v5a8.5 8.5 0 0 1-17 0z" fill="#FFFAF1" stroke="#7B695C"/><path d="M37 38a3 3 0 0 1 0 6" fill="none" stroke="#7B695C"/><path d="M25 32c-2-3 2-4 0-8M31 32c-2-3 2-4 0-8" fill="none" stroke="#B6AA96" stroke-linecap="round"/>`
+];
+const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
+const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
+function vShelf(){
+  const all=BOOKS().filter(b=>b.owned||b.status!=='want');
+  const f=S.shelfFilter;
+  let list=all.filter(b=>f==='all'||(f==='read'&&b.status==='read')||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
+  const readN=all.filter(b=>b.status==='read').length, ownN=all.filter(b=>b.owned).length, waitN=all.filter(b=>b.owned&&b.status!=='read').length;
+  const chip=(k,l)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${l}</button>`;
+  let prevTopic=null;
+  let spines=list.map((b,i)=>{
+    const w=Math.max(24,Math.min(48,Math.round((+b.pages||250)/14)));const h=118+hash(b.title)%46;
+    const cls=b.status==='read'?'':b.status==='reading'?'reading':'unread';
+    const t=topicOf(b);const deco=t[0]!==prevTopic?`<div class="slot"><span class="bookend"><span class="tag">${esc(t[1])}</span>${decor(t[0])}</span></div>`:'';prevTopic=t[0];
+    return deco+`<div class="slot"><button class="spine ${cls}" style="${colorVars(b)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${STATUS[b.status]}${b.owned?', kitaplığımda':''}"><span class="st">${esc(b.title)}</span></button></div>`;
+  }).join('');
+  return `<div class="head"><h2 class="hand">Kitaplığım</h2><div class="chips">${chip('all','Tümü')}${chip('read','Okuduklarım')}${chip('unread','Okunmamış')}${chip('owned','Sahip olduklarım')}</div></div>
+  <div class="legend"><span><i style="background:${PALETTE.sage}"></i>Renkli: okudum</span><span><i style="border:1.5px solid var(--ink-2)"></i>Renksiz: henüz okumadım</span><span><i style="background:var(--postmark);width:6px"></i>Kurdele: okuyorum</span></div>
+  <div class="shelf-stats"><span><b>${readN}</b> okundu</span><span><b>${ownN}</b> kitaplığımda</span><span><b>${waitN}</b> rafta bekliyor</span></div>
+  ${list.length?`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}</div>`:`<div class="empty">Bu filtrede kitap yok.</div>`}`;
+}
+
+function vCovers(){
+  const R=readIn(S.year), reading=BOOKS().filter(b=>b.status==='reading');
+  const tog=(k,l)=>`<button class="chip" data-act="cover-m" data-m="${k}" aria-pressed="${S.coverMode===k}">${l}</button>`;
+  let body='';
+  if(!R.length)body=`<div class="empty">${S.year} yılında bitirilmiş kitap yok. Bir kitabı “Okudum” olarak kaydettiğinde kapağı burada, bittiği ayın altında görünür.</div>`;
+  else if(S.coverMode==='year')body=`<div class="month"><div class="month-h"><h3>${S.year}</h3><span>${R.length} kitap</span>${decor(S.year)}</div><div class="cgrid ledge">${R.map(b=>citem(b)).join('')}</div></div>`;
+  else for(let m=11;m>=0;m--){const L=R.filter(b=>mOf(b.endDate)===m);if(!L.length)continue;
+    const pg=L.reduce((s,b)=>s+(+b.pages||0),0);
+    body+=`<section class="month"><div class="month-h"><h3>${AYLAR[m]}</h3><span>${L.length} kitap${pg?' · '+nf(pg)+' sayfa':''}</span>${decor(m)}</div><div class="cgrid ledge">${L.map(b=>citem(b)).join('')}</div></section>`}
+  return `<div class="head"><h2 class="hand">Okuduklarım <small>${S.year}</small></h2><div class="chips">${tog('month','Aylık')}${tog('year','Yıllık')}</div></div>
+  ${reading.length?`<div class="sec-h"><h3>Şu an okuduklarım</h3></div><div class="reading-row">${reading.map(b=>citem(b,false)).join('')}</div>`:''}${body}`;
+}
+
+function vNotes(){
+  const f=S.noteFilter;
+  const R=readIn(S.year).reverse().filter(b=>f==='all'||b.format===f);
+  const chip=(k,l)=>`<button class="chip" data-act="note-f" data-f="${k}" aria-pressed="${f===k}">${k!=='all'?ico(k):''}${l}</button>`;
+  const cards=R.map((b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">KİTAP NOTU</span><h3>${esc(b.title)}</h3>
+    <div class="rmeta"><span>${esc(b.author||'Yazar yok')}</span>${b.pages?`<span>${b.pages} sayfa</span>`:''}${b.format?`<span>${fmtIco(b.format)} ${FORMATS[b.format]}</span>`:''}</div>
+    <div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>
+    <p class="rtext ${b.review?'':'none'}">${b.review?esc(b.review):'Henüz not yazılmadı. Eklemek için dokun.'}</p></div></button>`).join('');
+  return `<div class="head"><h2 class="hand">Kitap Notlarım <small>${S.year}</small></h2><div class="chips">${chip('all','Tümü')}${chip('print','Basılı')}${chip('ebook','E-kitap')}${chip('audio','Sesli')}</div></div>
+  ${R.length?`<div class="rgrid">${cards}</div>`:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir kitaba puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
+}
+
+/* small painted shelf with books and a plant/candles, for notebook page headers */
+function shelfIllu(v){
+  let x=6,books='';const hs=[52,60,46,58,64,50,56];
+  for(let i=0;i<7;i++){const w=[12,10,14,11,9,13,12][i],h=hs[(i+v*3)%7],c=PCOLS[(i*2+v*5)%PCOLS.length];
+    if(i===5){books+=`<rect x="${x+4}" y="${78-h}" width="${w}" height="${h}" rx="2" fill="${c}" transform="rotate(14 ${x+4} 78)"/>`;x+=w+10;continue}
+    books+=`<rect x="${x}" y="${78-h}" width="${w}" height="${h}" rx="2" fill="${c}"/><rect x="${x}" y="${84-h}" width="${w}" height="2" fill="rgba(60,40,25,.2)"/>`;x+=w+1.5}
+  return `<svg class="nb-illu" viewBox="0 0 190 86" aria-hidden="true">${books}<rect x="2" y="78" width="186" height="7" rx="2" fill="var(--wood)"/><g transform="translate(${x+2} 0) scale(.95)">${DECOR[v?2:0]}</g></svg>`;
+}
+function vTbr(){
+  const W=BOOKS().filter(b=>b.status==='want');
+  const row=(b,i)=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="tbr-done" data-id="${b.id}" aria-label="${esc(b.title)}: okudum olarak işaretle" title="Okudum"></button>
+    <button class="tt" data-act="open" data-id="${b.id}">${esc(b.title)}${b.author?`<small>${esc(b.author)}</small>`:''}</button>
+    <button class="mini" data-act="tbr-start" data-id="${b.id}">Başladım</button>${b.owned?'':`<button class="mini" data-act="tbr-own" data-id="${b.id}">Aldım</button>`}</li>`;
+  const notOwned=W.filter(b=>!b.owned), owned=W.filter(b=>b.owned);
+  return `<div class="head"><h2 class="hand">Okunacaklar</h2><span class="muted">${notOwned.length} istek · ${owned.length} rafta bekliyor</span></div>
+  <form class="tbr-add" id="tbr-form"><input type="text" id="tbr-in" placeholder="Okumak istediğin kitabın adı (ve yazarı)" autocomplete="off"><button class="btn primary" type="submit">Listeye ekle</button></form>
+  <p class="note" style="margin:-10px 0 16px">Eklediğinde kapak, yazar ve sayfa sayısı internetten otomatik bulunur.</p>
+  <div class="nb-pages">
+  <section class="notebook"><div class="nb-top"><h3 class="nb-title">İstek listem<small>elimde yok, okumak istiyorum</small></h3>${shelfIllu(0)}</div>
+  ${notOwned.length?`<ul class="tlist">${notOwned.map(row).join('')}</ul>`:'<div class="empty">İstek listen boş.</div>'}</section>
+  <section class="notebook"><div class="nb-top"><h3 class="nb-title">Rafta bekleyenler<small>sahibim, henüz okumadım</small></h3>${shelfIllu(1)}</div>
+  ${owned.length?`<ul class="tlist">${owned.map((b,i)=>row(b,i+5)).join('')}</ul>`:'<div class="empty">Rafta bekleyen kitap yok.</div>'}</section></div>`;
+}
+
+/* ---------- yearly stats ---------- */
+/* genre colours for charts: fixed order, validated for colour-blind separation; text stays in ink tokens */
+const GCOL=['#5E9A5A','#4C7FBE','#C8603F','#8D6BBF','#C9952B','#1E9E96'],GOTHER='#A8A39A';
+const gName=b=>{const g=(b.genre||'').split(',')[0].trim();return g?g.charAt(0).toLocaleUpperCase('tr')+g.slice(1):'Türsüz'};
+const chunk=(a,n)=>a.reduce((r,x,i)=>(i%n?r[r.length-1].push(x):r.push([x]),r),[]);
+function vStats(){
+  const y=S.year,R=readIn(y);
+  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${y}</small></h2></div>`;
+  if(!R.length)return head+`<div class="empty">${decor(3)}<p>${y} yılında bitirilmiş kitap yok. Kitap bitirdikçe tür, puan ve ay grafiklerin burada oluşur.</p></div>`;
+  const cnt={};R.forEach(b=>{const g=gName(b);cnt[g]=(cnt[g]||0)+1});
+  const sorted=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0]));
+  const top=sorted.slice(0,sorted.length>6?5:6).map(e=>e[0]);
+  const cat=b=>top.includes(gName(b))?gName(b):'Diğer';
+  const cats=[...top];if(sorted.length>top.length)cats.push('Diğer');
+  const col=c=>c==='Diğer'?GOTHER:GCOL[top.indexOf(c)];
+  const ofCat=c=>R.filter(b=>cat(b)===c);
+  const byCat=(a,b)=>cats.indexOf(cat(a))-cats.indexOf(cat(b))||cmp(a.endDate,b.endDate);
+  const sq=b=>`<button class="sq" style="background:${col(cat(b))}" data-act="open" data-id="${b.id}" title="${esc(b.title)} · ${esc(gName(b))}${b.rating?' · '+String(b.rating).replace('.',',')+'★':''}"></button>`;
+  /* pie of genres */
+  const cx=90,cy=90,r=82;let a0=-Math.PI/2,lbl='';
+  const pie=cats.map(c=>{const v=ofCat(c).length,a1=a0+v/R.length*2*Math.PI,mid=(a0+a1)/2;
+    const d=v===R.length?`M${cx} ${cy-r}A${r} ${r} 0 1 1 ${cx-.01} ${cy-r}Z`:`M${cx} ${cy}L${(cx+r*Math.cos(a0)).toFixed(2)} ${(cy+r*Math.sin(a0)).toFixed(2)}A${r} ${r} 0 ${a1-a0>Math.PI?1:0} 1 ${(cx+r*Math.cos(a1)).toFixed(2)} ${(cy+r*Math.sin(a1)).toFixed(2)}Z`;
+    if(v/R.length>=.07)lbl+=`<text x="${(cx+r*.64*Math.cos(mid)).toFixed(1)}" y="${(cy+r*.64*Math.sin(mid)).toFixed(1)}" text-anchor="middle" dominant-baseline="central">${v}</text>`;
+    a0=a1;return `<path d="${d}" fill="${col(c)}"><title>${esc(c)}: ${v} kitap</title></path>`}).join('');
+  const legend=cats.map(c=>{const v=ofCat(c).length;return `<li><i style="background:${col(c)}"></i><span>${esc(c)}</span><b>${v}</b></li>`}).join('');
+  /* average rating per genre */
+  const avgOf=a=>{const x=a.filter(b=>+b.rating>0);return x.length?(x.reduce((s,b)=>s+ +b.rating,0)/x.length):null};
+  const avgRows=cats.map(c=>{const v=avgOf(ofCat(c));return `<div class="avg-row"><span><i style="background:${col(c)}"></i>${esc(c)}</span><b>${v==null?'–':v.toFixed(1).replace('.',',')}</b></div>`}).join('');
+  /* unit columns: books by star rating */
+  const rated=R.filter(b=>+b.rating>0),unrated=R.length-rated.length;
+  const starCols=[1,2,3,4,5].map(s=>{const L=rated.filter(b=>Math.floor(+b.rating)===s).sort(byCat);
+    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,4).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab">${s}★</span></div>`}).join('');
+  const monCols=AYLAR.map((m,i)=>{const L=R.filter(b=>mOf(b.endDate)===i).sort(byCat);
+    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,2).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab sm">${m.slice(0,3)}</span></div>`}).join('');
+  /* tiles */
+  const withPages=R.filter(b=>+b.pages>0),pages=withPages.reduce((s,b)=>s+ +b.pages,0);
+  const avg=avgOf(R);
+  const au={};R.forEach(b=>{const k=(b.author||'').trim();if(k)au[k]=(au[k]||0)+1});
+  const earlier=new Set(BOOKS().filter(b=>b.status==='read'&&yOf(b.endDate)<y).map(b=>(b.author||'').trim()));
+  const newAu=Object.keys(au).filter(a=>!earlier.has(a)).length;
+  const favs=Object.entries(au).filter(e=>e[1]>1).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0])).slice(0,6);
+  const tile=(k,v,n='')=>`<div class="tile"><div class="k">${k}</div><div class="v">${v}</div>${n?`<div class="n">${n}</div>`:''}</div>`;
+  return head+`<div class="st-hero"><div class="st-title">${y}<br>İSTATİSTİKLERİ</div>
+    <div class="sticky taped" style="--tape:${PALETTE.sage}"><div><b>${avg==null?'–':avg.toFixed(1).replace('.',',')}</b><span>ortalama puan</span></div><div><b>${R.length}</b><span>toplam kitap</span></div></div></div>
+  <div class="tiles">${tile('Okunan sayfa',pages?nf(pages):'–',withPages.length<R.length?`${R.length-withPages.length} kitabın sayfa bilgisi yok`:'')}${tile('Yazar',Object.keys(au).length,`${newAu} tanesi yeni tanıştığın yazar`)}${tile('Biçim',`<span class="fmts">${['print','ebook','audio'].map(f=>`<span title="${FORMATS[f]}">${ico(f)}${R.filter(b=>b.format===f).length}</span>`).join('')}</span>`)}${tile('En verimli ay',(()=>{const m=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).length);const mx=Math.max(...m);return mx?AYLAR[m.indexOf(mx)]+' · '+mx:'–'})())}</div>
+  <div class="st-grid">
+    <section class="panel taped" style="--tape:${PALETTE.rose}"><h3 class="st-h">Türler</h3><div class="pie-wrap"><svg class="pie" viewBox="0 0 180 180" role="img" aria-label="Türlere göre kitap dağılımı">${pie}${lbl}</svg><ul class="lg">${legend}</ul></div>
+      <h3 class="st-h" style="margin-top:16px">Türlere göre ortalama puan</h3><div class="avgbox">${avgRows}</div></section>
+    <section class="panel taped" style="--tape:${PALETTE.sky}"><h3 class="st-h">Tür ve puan</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır. 4,5 yıldız 4★ sütununda.</p>
+      <div class="units">${starCols}</div>${unrated?`<p class="note">${unrated} kitap puansız.</p>`:''}
+      <h3 class="st-h" style="margin-top:18px">Aylara göre</h3><div class="units months">${monCols}</div></section>
+  </div>
+  ${favs.length?`<section class="panel taped favs" style="--tape:${PALETTE.butter}"><h3 class="st-h">En çok okuduğun yazarlar</h3><ol>${favs.map(([a,n])=>`<li><span>${esc(a)}</span><b>${n} kitap</b></li>`).join('')}</ol></section>`:''}`;
+}
+
+/* ---------- challenge & stamps ---------- */
+function bingoCard(y){
+  let c=S.settings.bingo?.[y];
+  if(!c||!Array.isArray(c.cells)||c.cells.length!==25){
+    const r=rng(y*7919),pool=[...BINGO_POOL];for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+    c={cells:Array.from({length:25},(_,i)=>i===12?{p:'SERBEST',b:null}:{p:pool[i>12?i-1:i],b:null})};
+  }
+  return c;
+}
+function bingoLines(cells){
+  const on=i=>i===12||!!(cells[i].b&&BOOKS().some(x=>x.id===cells[i].b));const L=[];
+  for(let r=0;r<5;r++)L.push([0,1,2,3,4].map(c=>r*5+c));
+  for(let c=0;c<5;c++)L.push([0,1,2,3,4].map(r=>r*5+c));
+  L.push([0,6,12,18,24],[4,8,12,16,20]);
+  const done=L.filter(l=>l.every(on));
+  return{done,cells:new Set(done.flat()),filled:cells.filter((_,i)=>on(i)).length};
+}
+function computeStamps(y){
+  const R=readIn(y),pages=R.reduce((s,b)=>s+(+b.pages||0),0);
+  const byM=Array.from({length:12},(_,m)=>R.filter(b=>mOf(b.endDate)===m));
+  const mPages=byM.map(a=>a.reduce((s,b)=>s+(+b.pages||0),0));
+  let run=0,best=0;byM.forEach(a=>{run=a.length?run+1:0;best=Math.max(best,run)});
+  const fmt=f=>R.filter(b=>b.format===f).length;
+  const genres=new Set(R.map(b=>(b.genre||'').trim().toLocaleLowerCase('tr')).filter(Boolean)).size;
+  const au={};R.forEach(b=>{const k=(b.author||'').trim().toLocaleLowerCase('tr');if(k)au[k]=(au[k]||0)+1});
+  const weekend=R.filter(b=>{if(!b.startDate)return false;const dw=new Date(b.startDate+'T12:00').getDay();if(![5,6,0].includes(dw))return false;const n=days(b.startDate,b.endDate);return n>=0&&n<=(7-dw)%7}).length;
+  const bl=bingoLines(bingoCard(y).cells);
+  const goal=goalOf(y);
+  const B=(id,nm,ds,g,val,target)=>({id,nm,ds,g,val:Math.min(val,target),target,ok:val>=target});
+  return{R,pages,byM,list:[
+    B('first','İlk Sayfa','Yılın ilk kitabını bitir','seed',R.length,1),
+    B('fast','Şimşek Okur','Bir kitabı 3 günde bitir','bolt',R.filter(b=>b.startDate&&days(b.startDate,b.endDate)<=3).length,1),
+    B('weekend','Hafta Sonu Kaçamağı','Cuma–pazar arasında başla ve bitir','moon',weekend,1),
+    B('brick','Tuğla','500+ sayfalık bir kitap bitir','brick',R.filter(b=>+b.pages>=500).length,1),
+    B('short','Kısa ve Öz','150 sayfadan kısa bir kitap','thin',R.filter(b=>b.pages&&+b.pages<150).length,1),
+    B('marathon','Ay Maratonu','Bir ayda 1.500 sayfa oku','calendar',Math.max(...mPages),1500),
+    B('mountain','Sayfa Dağı','Yıl içinde 10.000 sayfa','mountain',pages,10000),
+    B('streak','Seri Okur','Üst üste 3 ay kitap bitir','flame',best,3),
+    B('audio','Kulak Misafiri','3 sesli kitap dinle','audio',fmt('audio'),3),
+    B('ebook','Ekran Kurdu','3 e-kitap oku','ebook',fmt('ebook'),3),
+    B('triple','Üç Yol','Basılı, e-kitap ve sesli: hepsinden bir tane','globe',['print','ebook','audio'].filter(f=>fmt(f)).length,3),
+    B('classic','Zaman Yolcusu','1950’den önce yayımlanmış bir kitap','hourglass',R.filter(b=>b.year&&+b.year<1950).length,1),
+    B('genres','Tür Kâşifi','5 farklı türde kitap','compass',genres,5),
+    B('author','Yazar Sadakati','Aynı yazardan 3 kitap','person',Math.max(0,...Object.values(au)),3),
+    B('five','Beş Yıldız','Bir kitaba tam puan ver','star',R.filter(b=>+b.rating===5).length,1),
+    B('critic','Kalem Ustası','10 kitaba not yaz','pen',R.filter(b=>(b.review||'').trim().length>=15).length,10),
+    B('shelf','Raf Temizliği','Kitaplığındaki 5 kitabı bitir','shelf',R.filter(b=>b.owned).length,5),
+    B('tbr','Liste Avcısı','Okunacaklar listesinden 3 kitap bitir','check',R.filter(b=>b.fromTbr).length,3),
+    B('m10','Kitap Kurdu','10 kitap bitir','stack',R.length,10),
+    B('m25','Çeyrek Asır','25 kitap bitir','stack',R.length,25),
+    B('m50','Elli Kitap','50 kitap bitir','stack',R.length,50),
+    B('goal','Hedef Tamam','Yıllık hedefine ulaş','trophy',R.length,goal),
+    B('bingo','Bingo!','Bingo kartında bir sıra tamamla','grid',bl.done.length,1),
+    B('fullcard','Dolu Kart','Bingo kartının tamamını doldur','sparkle',bl.filled,25)
+  ]};
+}
+function vStamps(){
+  const y=S.year,{R,pages,byM,list}=computeStamps(y),goal=goalOf(y);
+  const now=new Date(),cur=now.getFullYear()===y;
+  const start=new Date(y,0,1),end=new Date(y+1,0,1),frac=cur?(now-start)/(end-start):(y<now.getFullYear()?1:0);
+  const exp=goal*frac,diff=Math.round((R.length-exp)*10)/10;
+  let pace='';
+  if(R.length>=goal)pace=`<span class="pace ok">Hedefe ulaştın! ${R.length-goal>0?`Hedefin ${R.length-goal} kitap üstündesin.`:''}</span>`;
+  else if(cur)pace=diff>=0?`<span class="pace ok">Yolundasın: plana göre ${diff>=1?Math.floor(diff)+' kitap öndesin.':'tam zamanında.'}</span>`:`<span class="pace behind">Plana göre ${Math.ceil(-diff)} kitap gerideyesin.</span>`;
+  else if(y<now.getFullYear())pace=`<span class="muted">${y} hedefinin ${Math.round(R.length/goal*100)}%’i tamamlandı.</span>`;
+  const left=cur?Math.ceil((end-now)/864e5):0;
+  const rated=R.filter(b=>+b.rating>0),avg=rated.length?(rated.reduce((s,b)=>s+ +b.rating,0)/rated.length).toFixed(1):'–';
+  const gc={};R.forEach(b=>{const g=(b.genre||'').trim();if(g)gc[g]=(gc[g]||0)+1});const topG=Object.entries(gc).sort((a,b)=>b[1]-a[1])[0];
+  const fc=f=>R.filter(b=>b.format===f).length;
+  const earned=list.filter(s=>s.ok).length+byM.filter(a=>a.length).length;
+  const stamp=(s,i)=>`<div class="stamp ${s.ok?'':'locked'}" style="--c:${PCOLS[(i*5)%PCOLS.length]}" title="${esc(s.ds)}"><div class="stamp-in">${ico(s.g,1.5)}<span class="nm">${esc(s.nm)}</span><span class="ds">${esc(s.ds)}</span><span class="pr">${s.ok?'Toplandı':`${nf(s.val)} / ${nf(s.target)}`}</span></div>${s.ok?`<span class="pm">${y}<br>PUL</span>`:''}</div>`;
+  const mstamp=(a,m)=>`<div class="stamp mstamp ${a.length?'':'locked'}" style="--c:${PCOLS[m]}"><div class="stamp-in"><span class="mn">${AYLAR[m]}</span><span class="ds">Ay okuru</span><span class="pr">${a.length?a.length+' kitap':'—'}</span></div>${a.length?`<span class="pm">${AYLAR[m].slice(0,3).toUpperCase()}<br>${y}</span>`:''}</div>`;
+  return `<div class="head"><h2 class="hand">Okuma Hedefi <small>${y}</small></h2><span class="muted">${earned} / ${list.length+12} pul toplandı</span></div>
+  <div class="ch"><div class="panel taped goal-panel" style="--tape:${PALETTE.sage}">${decor(0)}
+    <div class="goal-num">${R.length} <small>/ ${goal} kitap</small></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${R.length}"><i style="width:${Math.min(100,R.length/goal*100)}%"></i></div>
+    <div>${pace}${cur?` <span class="muted">· ${left} gün kaldı</span>`:''}</div>
+    <div class="goal-edit"><label for="goal-in">Yıllık hedef</label><input type="number" id="goal-in" min="1" max="999" value="${goal}"><span>kitap</span></div>
+  </div><div class="panel stats taped" style="--tape:${PALETTE.rose}">
+    <div class="stat"><div class="k">Okunan sayfa</div><div class="v">${nf(pages)}</div></div>
+    <div class="stat"><div class="k">Ortalama puan</div><div class="v">${avg}${avg!=='–'?' <span class="stars" style="--r:'+avg+';font-size:.8rem">★★★★★</span>':''}</div></div>
+    <div class="stat"><div class="k">Biçim</div><div class="fmts"><span title="Basılı">${ico('print')}${fc('print')}</span><span title="E-kitap">${ico('ebook')}${fc('ebook')}</span><span title="Sesli">${ico('audio')}${fc('audio')}</span></div></div>
+    <div class="stat"><div class="k">En çok okunan tür</div><div class="v" style="font-size:1.1rem">${topG?esc(topG[0]):'–'}</div></div>
+  </div></div>
+  <section class="album taped" style="--tape:${PALETTE.butter}"><div class="sec-h"><h3>Ay Pulları</h3><span>Her ay en az bir kitap bitir</span></div>
+  <div class="sgrid">${byM.map(mstamp).join('')}</div></section>
+  <section class="album taped" style="--tape:${PALETTE.lilac}"><div class="sec-h"><h3>Başarı Pulları</h3><span>${list.filter(s=>s.ok).length} / ${list.length}</span></div>
+  <div class="sgrid">${list.map(stamp).join('')}</div></section>`;
+}
+
+function vBingo(){
+  const y=S.year,card=bingoCard(y),bl=bingoLines(card.cells);
+  const cells=card.cells.map((c,i)=>{
+    if(i===12)return `<button class="bcell free ${bl.cells.has(i)?'line':''}" data-act="bingo-cell" data-i="12">Serbest</button>`;
+    const b=c.b&&BOOKS().find(x=>x.id===c.b);
+    return `<button class="bcell ${b?'done':''} ${bl.cells.has(i)?'line':''}" style="--c:${b?esc(b.color||autoColor(b.title)):'transparent'}" data-act="bingo-cell" data-i="${i}">${esc(c.p)}${b?`<span class="bk">${esc(b.title)}</span>`:''}</button>`}).join('');
+  return `<div class="head"><h2 class="hand">Kitap Bingo <small>${y}</small></h2><div class="chips"><button class="chip" data-act="bingo-shuffle">Boşları karıştır</button><button class="chip" data-act="bingo-reset">Kartı sıfırla</button></div></div>
+  <div class="bingo-wrap taped" style="--tape:${PALETTE.rose}">${decor(1)}${decor(2)}<div class="bingo-title">Kitap <span>bingo</span></div><div class="bgrid">${cells}</div>
+  <div class="bstat"><span>${bl.filled} / 25 kare · ${bl.done.length} bingo</span><span>Bir kareye dokun: okuduğun bir kitabı eşleştir ya da kareyi kendin yaz.</span></div></div>`;
+}
+
+/* ---------- editor sheet ---------- */
+let F=null,busy='';
+function openSheet(html){$('#sheet').innerHTML=html;$('#overlay').hidden=false;document.body.style.overflow='hidden'}
+function closeSheet(){$('#overlay').hidden=true;document.body.style.overflow='';F=null;S.sheetRefresh=null}
+function openEditor(b,preset={}){
+  const isDemo=b&&demo();
+  F=b?{...b,...preset}:{id:newId(),title:'',author:'',pages:'',year:'',genre:'',publisher:'',about:'',color:'',status:'want',owned:true,format:'print',startDate:'',endDate:'',rating:0,review:'',addedAt:Date.now(),...preset};
+  if(isDemo){F.id=newId();F._fromDemo=true}
+  F._orig=b?b.status:null;F._new=!b||isDemo;
+  renderEditor();
+  if(!b)setTimeout(()=>$('#f-title')?.focus(),50);
+}
+function renderEditor(){
+  const b=F,col=b.color||autoColor(b.title||'x');
+  const seg=(k,v,l,ic)=>`<button type="button" data-act="ed-set" data-k="${k}" data-v="${v}" aria-pressed="${b[k]===v}">${ic?ico(ic):''}${l}</button>`;
+  openSheet(`<div class="sheet-h"><h2>${b._fromDemo?'Örnekten kaydet':b._new?'Yeni kitap':'Kitabı düzenle'}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  <form class="sheet-b" id="ed-form">
+    <div class="ed-top">
+      <div class="ed-cover"><div id="ed-prev">${coverHTML({...b,color:col})}</div>
+        <div class="swatches" role="group" aria-label="Kapak rengi">${PCOLS.map(c=>`<button type="button" class="sw" style="--c:${c}" data-act="ed-color" data-c="${c}" aria-pressed="${col===c}" aria-label="Renk"></button>`).join('')}<input type="color" id="f-color" data-k="color" value="${esc(/^#[0-9a-f]{6}$/i.test(col)?col:'#c9a27a')}" title="Kendi rengini seç" aria-label="Kendi rengini seç" style="width:24px;height:22px;padding:0;border:0;background:none"></div>
+        <label class="btn ghost" style="justify-content:center;font-size:.8rem;padding:6px 8px">${ico('camera')}Fotoğraf<input type="file" id="f-photo" accept="image/*" hidden></label>
+        ${coverSrc(b)?'<button type="button" class="btn ghost" style="font-size:.78rem;padding:5px 8px;justify-content:center" data-act="ed-nophoto">Fotoğrafı kaldır</button>':''}
+      </div>
+      <div style="display:grid;gap:10px;min-width:0">
+        <div class="field"><label for="f-title">Kitap adı</label><div class="title-row"><input type="text" id="f-title" data-k="title" value="${esc(b.title)}" placeholder="ör. Kürk Mantolu Madonna" required>
+          <button type="button" class="btn" data-act="ed-fetch" title="Kapak, yazar ve sayfa sayısını internetten bul">${ico('sparkle')}<span class="add-txt">Bilgileri getir</span></button></div></div>
+        ${busy?`<div class="busy"><span class="spin"></span>${esc(busy)}</div>`:''}
+        ${b._results&&b._results.length?`<div class="field"><span class="lbl">Hangisi? Seçince kapak ve bilgiler dolar</span><div class="results">${b._results.map((r,i)=>`<button type="button" class="res" data-act="ed-pick" data-i="${i}">${r.cover?`<img src="${esc(r.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<i></i>'}<span><b>${esc(r.title)}</b>${esc([r.author,r.year,r.pages?r.pages+' sayfa':''].filter(Boolean).join(' · '))}</span></button>`).join('')}</div></div>`:''}
+        <div class="row"><div class="field"><label for="f-author">Yazar</label><input type="text" id="f-author" data-k="author" value="${esc(b.author)}"></div>
+          <div class="field"><label for="f-pages">Sayfa</label><input type="number" id="f-pages" data-k="pages" min="1" value="${esc(b.pages)}"></div></div>
+        <div class="row"><div class="field"><label for="f-genre">Tür</label><input type="text" id="f-genre" data-k="genre" value="${esc(b.genre)}"></div>
+          <div class="field"><label for="f-year">Yayın yılı</label><input type="number" id="f-year" data-k="year" value="${esc(b.year)}"></div></div>
+        <div class="row"><div class="field"><label for="f-series">Seri</label><input type="text" id="f-series" data-k="series" value="${esc(b.series)}" placeholder="ör. Farseer Üçlemesi"></div>
+          <div class="field"><label for="f-sno">Serideki sırası</label><input type="number" id="f-sno" data-k="seriesNo" step="0.5" value="${esc(b.seriesNo)}"></div></div>
+      </div>
+    </div>
+    ${b.about?`<div class="about">${esc(b.about)}</div>`:''}
+    ${b.series&&!b._new?`<p class="note" style="margin:0">Seri: ${esc(b.series)}${b.seriesNo?' #'+esc(b.seriesNo):''}</p>`:''}
+    <div class="field"><span class="lbl">Durum</span><div class="seg">${seg('status','want','Okunacak')}${seg('status','reading','Okuyorum')}${seg('status','read','Okudum')}</div></div>
+    <label class="toggle"><input type="checkbox" id="f-owned" ${b.owned?'checked':''}> Kitaplığımda var (sahibim)</label>
+    <div class="field"><span class="lbl">Nasıl okudum?</span><div class="seg">${seg('format','print','Basılı','print')}${seg('format','ebook','E-kitap','ebook')}${seg('format','audio','Sesli','audio')}</div></div>
+    ${b.status!=='want'?`<div class="row"><div class="field"><label for="f-start">Başladım</label><input type="date" id="f-start" data-k="startDate" value="${esc(b.startDate)}"></div>
+      ${b.status==='read'?`<div class="field"><label for="f-end">Bitirdim</label><input type="date" id="f-end" data-k="endDate" value="${esc(b.endDate)}"></div>`:''}</div>`:''}
+    ${b.status==='read'?`<div class="field"><span class="lbl">Puanım</span><div class="rate"><span class="rb">${stars(b.rating)}${[1,2,3,4,5].map(n=>`<button type="button" style="left:${(n-1)*20}%" data-act="ed-rate" data-v="${n}" aria-label="${n} yıldız"></button>`).join('')}</span><output>${b.rating?String(b.rating).replace('.',','):'—'}</output></div><span class="note">Aynı yıldıza tekrar dokunursan yarım yıldız olur.</span></div>
+    <div class="field"><label for="f-review">Kısa yorumum</label><textarea id="f-review" data-k="review" placeholder="Bu kitap bende ne bıraktı?">${esc(b.review)}</textarea></div>`:''}
+    <div class="ed-foot"><div>${!b._new?`<button type="button" class="btn danger ghost" data-act="ed-del" id="del-btn">Sil</button>`:''}</div>
+      <div style="display:flex;gap:8px"><button type="button" class="btn" data-act="close">Vazgeç</button><button type="submit" class="btn primary">Kaydet</button></div></div>
+  </form>`);
+}
+function syncInputs(){document.querySelectorAll('#ed-form input[data-k],#ed-form textarea[data-k]').forEach(el=>{F[el.dataset.k]=el.value});const o=$('#f-owned');if(o)F.owned=o.checked}
+function updatePrev(){const p=$('#ed-prev');if(p&&F)p.innerHTML=coverHTML({...F,color:F.color||autoColor(F.title||'x')})}
+
+async function resizeImg(file,max,q){
+  const url=URL.createObjectURL(file);
+  try{const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=url});
+    const s=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+    return{blob:await new Promise(r=>c.toBlob(r,'image/jpeg',q)),data:c.toDataURL('image/jpeg',q)}}
+  finally{URL.revokeObjectURL(url)}
+}
+
+/* book search: Google Books first (good Turkish coverage), Open Library as fallback */
+async function searchBooks(q){
+  const out=[];
+  try{const r=await fetch('https://www.googleapis.com/books/v1/volumes?maxResults=8&printType=books&q='+encodeURIComponent(q));const j=await r.json();
+    for(const it of j.items||[]){const v=it.volumeInfo||{};const img=v.imageLinks?.thumbnail||v.imageLinks?.smallThumbnail||'';
+      out.push({title:v.title||'',author:(v.authors||[]).join(', '),pages:v.pageCount||'',year:+(v.publishedDate||'').slice(0,4)||'',cover:img?img.replace('http://','https://').replace('&edge=curl',''):'',about:(v.description||'').replace(/<[^>]+>/g,'').slice(0,260)})}}catch{}
+  if(out.filter(x=>x.cover).length<2){try{const r=await fetch('https://openlibrary.org/search.json?limit=6&fields=title,author_name,number_of_pages_median,first_publish_year,cover_i&q='+encodeURIComponent(q));const j=await r.json();
+    for(const d of j.docs||[])out.push({title:d.title||'',author:(d.author_name||[]).join(', '),pages:d.number_of_pages_median||'',year:d.first_publish_year||'',cover:d.cover_i?`https://covers.openlibrary.org/b/id/${d.cover_i}-M.jpg`:'',about:''})}catch{}}
+  return out.filter(x=>x.title).sort((a,b)=>!!b.cover-!!a.cover);
+}
+const norm=t=>String(t||'').toLocaleLowerCase('tr').replace(/[^a-z0-9çğıöşüâî]+/g,' ').trim();
+const sameTitle=(a,b)=>{a=norm(a);b=norm(b);return!!a&&!!b&&(a===b||a.startsWith(b)||b.startsWith(a))};
+async function fetchInfo(){
+  syncInputs();const t=(F.title||'').trim();if(!t){toast('Önce kitabın adını yaz.');$('#f-title')?.focus();return}
+  busy='Kitap aranıyor…';F._results=null;renderEditor();
+  const res=await searchBooks(t+(F.author?' '+F.author:''));
+  busy='';if(!F)return;F._results=res;renderEditor();
+  if(!res.length)toast('Kitap bulunamadı; bilgileri elle doldurabilirsin.');
+}
+function applyResult(r,overwrite){
+  const set=(k,v)=>{if(v!==''&&v!=null&&(overwrite||!F[k]))F[k]=v};
+  set('author',r.author);set('pages',r.pages);set('year',r.year);set('about',r.about);
+  if(r.cover&&(overwrite||!F.coverUrl))F.coverUrl=r.cover;
+}
+async function saveEditor(){
+  syncInputs();const b=F;b.title=(b.title||'').trim();
+  if(!b.title){toast('Kitap adı gerekli.');$('#f-title')?.focus();return}
+  const t=todayISO();
+  if(b.status==='read'&&!b.endDate)b.endDate=t;
+  if(b.status==='reading'&&!b.startDate)b.startDate=t;
+  if(b.endDate&&b.startDate>b.endDate)b.startDate=b.endDate;
+  if(b._orig==='want'&&b.status!=='want')b.fromTbr=true;
+  b.pages=b.pages?+b.pages:'';b.year=b.year?+b.year:'';b.seriesNo=b.seriesNo?+b.seriesNo:'';b.series=(b.series||'').trim();b.rating=+b.rating||0;
+  if(!b.color)b.color=autoColor(b.title);
+  if(b._photoBlob){b.coverData=b._small;delete b.coverUrl}
+  const wasNew=b._new;closeSheet();await Store.saveBook(b);toast(wasNew?`“${b.title}” eklendi.`:'Kaydedildi.');
+}
+
+/* ---------- bulk fill: real covers and page counts from the book search ---------- */
+const needsInfo=()=>S.books.filter(b=>!b.infoTried&&(!b.pages||(!b.coverUrl&&!b.coverData)));
+function fillBanner(){
+  if(!S.canEdit)return '';
+  if(S.filling)return `<div class="banner"><span class="busy"><span class="spin"></span>Kapaklar ve sayfa sayıları aranıyor: ${S.filling.done} / ${S.filling.total} kitap</span></div>`;
+  const n=needsInfo().length;if(!n)return '';
+  return `<div class="banner"><span><b>${n} kitabın</b> kapağı ya da sayfa sayısı eksik. İnternetten bulup ekleyebilirim; yanlış eşleşen olursa kitabı açıp düzeltebilirsin.</span><button class="btn primary" data-act="fill-missing">${ico('sparkle')}Kapakları ve sayfaları getir</button></div>`;
+}
+async function fillMissing(){
+  const M=needsInfo();if(!M.length||S.filling||!S.canEdit)return;
+  S.filling={done:0,total:M.length};render();let found=0;
+  for(const c of M){
+    const b=S.books.find(x=>x.id===c.id);if(!b)continue;
+    const res=(await searchBooks(b.title+' '+(b.author||''))).filter(r=>sameTitle(r.title,b.title));
+    const u={...b,infoTried:true};
+    const r=res.find(x=>x.cover)||res[0];
+    if(r){if(!u.pages)u.pages=+(res.find(x=>x.pages)||{}).pages||'';if(!u.coverUrl&&!u.coverData&&r.cover)u.coverUrl=r.cover;if(!u.year&&r.year)u.year=+r.year;if(!u.about&&r.about)u.about=r.about;found++}
+    const i=S.books.findIndex(x=>x.id===b.id);if(i>=0)S.books[i]=u;
+    S.filling.done++;if(S.filling.done%5===0)render();
+    await new Promise(z=>setTimeout(z,250));
+  }
+  S.filling=null;Store.schedule(`${found} kitabın kapağı/sayfa bilgisi eklendi`);render();
+  toast(`${found} kitap için bilgi bulundu. Yanlış kapak varsa kitabı açıp “Fotoğrafı kaldır” ile silebilirsin.`);
+}
+
+/* ---------- whose library · setup ---------- */
+const initial=n=>(n||'?').trim().charAt(0).toLocaleUpperCase('tr');
+function peopleCards(act){
+  return S.people.map(p=>`<button class="pcard ${p.id===S.me?'me':''}" style="--c:${esc(p.color||autoColor(p.name))}" data-act="${act}" data-id="${esc(p.id)}"><span class="av">${esc(initial(p.name))}</span><b>${esc(p.name)}</b><small>${p.id===S.viewing&&S.mode!=='pick'?'şu an açık':'kitaplığını aç'}</small></button>`).join('');
+}
+function vPick(){
+  return `<div class="picker"><h2>Kimin kitaplığı?</h2><p>${S.people.length?'Kendini seç. Bu cihaz seni hatırlar; arkadaşlarının kitaplıklarına da üstteki menüden bakabilirsin.':'Henüz kimse yok. İlk kişiyi ekleyerek başla.'}</p>
+  <div class="people">${peopleCards('pick-me')}<button class="pcard add" data-act="person-new"><span class="av" style="--c:var(--line)">+</span><b>Yeni kişi</b><small>${GH.token()?'kitaplık oluştur':'önce kurulum gerekir'}</small></button></div></div>`;
+}
+function openPeople(){
+  openSheet(`<div class="sheet-h"><h2>Kimin kitaplığı?</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  <div class="sheet-b"><div class="people">${peopleCards('person')}</div>
+  <p class="note">Bu cihazda sen: <b>${esc(S.me?personName(S.me):'seçilmedi')}</b>. Yalnızca kendi kitaplığını düzenleyebilirsin. <button class="linkbtn" data-act="me-change">Değiştir</button></p>
+  ${GH.token()?`<form class="newp" id="newp-form"><input type="text" id="newp-in" placeholder="Yeni kişinin adı" maxlength="30"><button class="btn" type="submit">Kişi ekle</button></form>`:''}
+  <div class="ed-foot"><button class="btn ghost" data-act="setup">Kurulum</button></div></div>`);
+}
+function openSetup(){
+  const t=GH.token();
+  const link=t?location.origin+location.pathname+'#kurulum='+encodeURIComponent(t):'';
+  openSheet(`<div class="sheet-h"><h2>Kurulum</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  <div class="sheet-b">
+  ${t?`<p><b>Bu cihaz kayda hazır.</b> Kitap eklediğinde GitHub’a otomatik kaydedilir.</p>
+    <div class="field"><span class="lbl">Arkadaşların için kurulum bağlantısı</span>
+    <p class="note" style="margin:0">Bu bağlantıyı yalnızca kitaplığı kullanacak kişilere gönder; bağlantıyı bilen herkes kitaplıklara yazabilir. Arkadaşın her cihazda bir kez açması yeterli.</p>
+    <div class="setup-code" id="setup-link">${esc(link)}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-act="setup-copy">Bağlantıyı kopyala</button><button class="btn danger ghost" data-act="setup-clear">Anahtarı bu cihazdan sil</button></div></div>`
+  :`<p>Kitap ekleyebilmek için bu cihaza bir kez kayıt anahtarı girmen gerekiyor. Arkadaşın sana kurulum bağlantısı gönderdiyse onu açman yeterli.</p>
+    <ol class="steps"><li>GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate new token</li>
+    <li>Repository access: <b>Only select repositories</b> → ${REPO.repo}</li><li>Permissions → Contents: <b>Read and write</b></li><li>Oluşan <b>github_pat_…</b> anahtarını aşağıya yapıştır.</li></ol>
+    <form class="newp" id="token-form"><input type="password" id="token-in" placeholder="github_pat_…" autocomplete="off"><button class="btn primary" type="submit">Kaydet</button></form>`}
+  </div>`);
+}
+async function pickMe(id){S.me=id;ls.set(K.me,id);await Store.open(id)}
+
+/* ---------- read-only book card for visitors ---------- */
+const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','bingo-cell','bingo-shuffle','bingo-reset','fill-missing']);
+function openDetail(b){
+  const meta=[b.author,b.pages?b.pages+' sayfa':'',b.year,b.genre,b.series?`${b.series}${b.seriesNo?' #'+b.seriesNo:''}`:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
+  openSheet(`<div class="sheet-h"><h2>${esc(STATUS[b.status]||'Kitap')}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  <div class="sheet-b"><div class="ed-top"><div>${coverHTML(b)}</div><div style="min-width:0;display:grid;gap:6px;align-content:start">
+    <h3 style="font-family:var(--f-display);font-weight:400;font-size:1.35rem;line-height:1.2">${esc(b.title)}</h3><div class="rmeta">${meta}</div>
+    ${b.status==='read'?`<div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>`:b.startDate?`<div class="rmeta"><span>Başladı: ${fmtDate(b.startDate)}</span></div>`:''}
+    ${b.format?`<div class="rmeta">${fmtIco(b.format)}<span>${FORMATS[b.format]}</span></div>`:''}</div></div>
+    ${b.about?`<div class="about">${esc(b.about)}</div>`:''}
+    ${b.review?`<p class="rtext">${esc(b.review)}</p>`:''}
+  </div>`);
+}
+
+/* ---------- bingo cell sheet ---------- */
+let BC=null;
+function openBingo(i){
+  const card=structuredClone(bingoCard(S.year));BC={i,card,pick:card.cells[i].b};
+  renderBingoSheet();
+}
+function renderBingoSheet(){
+  const c=BC.card.cells[BC.i],R=readIn(S.year).slice().reverse();
+  openSheet(`<div class="sheet-h"><h2>Bingo karesi</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  <div class="sheet-b">${BC.i===12?'<p class="muted">Orta kare her zaman serbest.</p>':`
+    <div class="field"><label for="bp">Kare</label><input type="text" id="bp" value="${esc(c.p)}" maxlength="40"></div>
+    <div class="field"><span class="lbl">${S.year} yılında okuduğun bir kitapla eşleştir</span>
+      ${R.length?`<div class="pick">${R.map(b=>`<button type="button" data-act="bingo-pick" data-id="${b.id}" aria-pressed="${BC.pick===b.id}">${esc(b.title)} <span class="muted">· ${esc(b.author||'')}</span></button>`).join('')}</div>`:'<p class="muted">Bu yıl henüz bitirilmiş kitap yok.</p>'}</div>
+    <div class="ed-foot"><button type="button" class="btn ghost" data-act="bingo-pick" data-id="">Eşleşmeyi kaldır</button><div style="display:flex;gap:8px"><button class="btn" data-act="close">Vazgeç</button><button class="btn primary" data-act="bingo-save">Kaydet</button></div></div>`}
+  </div>`);
+}
+function saveBingo(card){S.settings.bingo={...S.settings.bingo,[S.year]:card};Store.saveSettings();render()}
+
+/* ---------- events ---------- */
+const ACT={
+  view:a=>{const v=a.dataset.v;try{localStorage.setItem(VIEW_KEY,v)}catch{}applyView();render();toast(v==='mobile'?'Telefon görünümü':'Masaüstü görünümü')},
+  tab:a=>{S.tab=a.dataset.tab;try{history.replaceState(null,'','#'+S.tab)}catch{}render();scrollTo({top:0})},
+  year:a=>{S.year+=+a.dataset.d;render()},
+  add:()=>GH.token()?openEditor(null,S.tab==='tbr'?{owned:false}:{}):openSetup(),
+  open:a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(b)(S.canEdit?openEditor:openDetail)(b)},
+  close:closeSheet,
+  'shelf-f':a=>{S.shelfFilter=a.dataset.f;render()},
+  'cover-m':a=>{S.coverMode=a.dataset.m;render()},
+  'note-f':a=>{S.noteFilter=a.dataset.f;render()},
+  'ed-set':a=>{syncInputs();F[a.dataset.k]=a.dataset.v;renderEditor()},
+  'ed-color':a=>{syncInputs();F.color=a.dataset.c;renderEditor()},
+  'ed-rate':a=>{syncInputs();const n=+a.dataset.v,r=+F.rating||0;F.rating=r===n?n-.5:r===n-.5?0:n;renderEditor()},
+  'ed-fetch':fetchInfo,
+  'fill-missing':fillMissing,
+  'ed-pick':a=>{syncInputs();const r=F._results?.[+a.dataset.i];if(r){applyResult(r,true);delete F._preview;delete F._photoBlob;delete F._small;delete F.coverData;F._results=null;renderEditor();toast('Bilgiler dolduruldu; kontrol edip kaydet.')}},
+  people:()=>openPeople(),
+  person:a=>{closeSheet();Store.open(a.dataset.id)},
+  'pick-me':a=>pickMe(a.dataset.id),
+  'me-change':()=>{closeSheet();S.mode='pick';render()},
+  'person-new':()=>{if(!GH.token())return openSetup();openPeople();setTimeout(()=>$('#newp-in')?.focus(),50)},
+  setup:()=>openSetup(),
+  'setup-copy':()=>{const t=$('#setup-link')?.textContent||'';Promise.resolve(navigator.clipboard?.writeText(t)).then(()=>toast('Bağlantı kopyalandı.'),()=>{getSelection().selectAllChildren($('#setup-link'));toast('Bağlantıyı seçtim; kopyala ile al.')})},
+  'setup-clear':a=>{if(a.dataset.sure){ls.set(K.token,null);S.canEdit=false;closeSheet();render();toast('Anahtar bu cihazdan silindi.')}else{a.dataset.sure='1';a.textContent='Emin misin? Evet, sil'}},
+  'ed-nophoto':()=>{syncInputs();delete F._preview;delete F._photoBlob;delete F._small;delete F.coverData;delete F.coverUrl;renderEditor()},
+  'ed-del':a=>{if(a.dataset.sure){const id=F.id,t=F.title;closeSheet();Store.deleteBook(id);toast(`“${t}” silindi.`)}else{a.dataset.sure='1';a.textContent='Emin misin? Evet, sil'}},
+  'tbr-done':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(b)openEditor(b,{status:'read',endDate:todayISO()})},
+  'tbr-start':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(!b)return;if(demo())return openEditor(b,{status:'reading',startDate:todayISO()});Store.saveBook({...b,status:'reading',startDate:todayISO(),fromTbr:true});toast('İyi okumalar! Kitap “Okuyorum” rafına geçti.')},
+  'tbr-own':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(!b)return;if(demo())return openEditor(b,{owned:true});Store.saveBook({...b,owned:true});toast('Kitaplığına eklendi.')},
+  'bingo-cell':a=>{if(+a.dataset.i!==12)openBingo(+a.dataset.i)},
+  'bingo-pick':a=>{BC.pick=a.dataset.id||null;const p=$('#bp')?.value;if(p!=null)BC.card.cells[BC.i].p=p;renderBingoSheet()},
+  'bingo-save':()=>{const c=BC.card.cells[BC.i];c.p=($('#bp')?.value||c.p).trim()||c.p;c.b=BC.pick||null;saveBingo(BC.card);closeSheet()},
+  'bingo-shuffle':()=>{const card=structuredClone(bingoCard(S.year)),used=new Set(card.cells.map(c=>c.p));const pool=BINGO_POOL.filter(p=>!used.has(p)).sort(()=>Math.random()-.5);
+    card.cells.forEach((c,i)=>{if(i!==12&&!c.b&&pool.length){c.p=pool.pop()}});saveBingo(card);toast('Boş kareler yenilendi.')},
+  'bingo-reset':a=>{if(a.dataset.sure){const s={...S.settings.bingo};delete s[S.year];S.settings.bingo=s;Store.saveSettings();render();toast('Kart sıfırlandı.')}else{a.dataset.sure='1';a.textContent='Emin misin? Sıfırla'}}
+};
+document.addEventListener('click',e=>{
+  if(e.target.id==='overlay')return closeSheet();
+  const a=e.target.closest('[data-act]');if(!a)return;
+  if(!S.canEdit&&READONLY_BLOCKED.has(a.dataset.act))return;
+  const f=ACT[a.dataset.act];if(f){e.preventDefault();f(a,e)}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#overlay').hidden)closeSheet()});
+document.addEventListener('input',e=>{
+  if(!F)return;const k=e.target.dataset?.k;if(k){F[k]=e.target.value;if(k==='title'||k==='author'||k==='color')updatePrev()}
+});
+document.addEventListener('change',async e=>{
+  if(e.target.id==='goal-in'){const v=Math.max(1,Math.min(999,+e.target.value||24));S.settings.goals={...S.settings.goals,[S.year]:v};Store.saveSettings();render();return}
+  if(e.target.id==='f-owned'&&F){F.owned=e.target.checked;return}
+  if(e.target.id==='f-photo'&&F){const file=e.target.files?.[0];if(!file)return;syncInputs();
+    try{const big=await resizeImg(file,700,.84),small=await resizeImg(file,360,.72);F._photoBlob=big.blob;F._preview=big.data;F._small=small.data;renderEditor();}
+    catch{toast('Bu fotoğraf açılamadı; başka bir dosya dene.')}}
+});
+document.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(e.target.id==='ed-form')return saveEditor();
+  if(e.target.id==='newp-form'){const n=$('#newp-in').value.trim();if(!n)return;const p=await Store.addPerson(n);if(p){toast(p.name+' eklendi.');closeSheet();if(!S.me)return pickMe(p.id);openPeople()}return}
+  if(e.target.id==='token-form'){const t=$('#token-in').value.trim();if(!t)return;toast('Anahtar deneniyor…');
+    if(await GH.check(t)){ls.set(K.token,t);S.canEdit=!!S.me&&S.viewing===S.me;closeSheet();render();toast('Anahtar çalışıyor. Artık kitapların otomatik kaydedilecek.');openSetup()}
+    else toast('Bu anahtar repoya yazamıyor. Contents: Read and write izni ve doğru repo seçili mi?');return}
+  if(e.target.id==='tbr-form'){
+    const inp=$('#tbr-in'),raw=inp.value.trim();if(!raw)return;
+    const [title,author]=raw.split(/\s+[-–—]\s+/);
+    const b={id:newId(),title:title.trim(),author:(author||'').trim(),status:'want',owned:false,format:'print',color:autoColor(title),addedAt:Date.now(),rating:0};
+    inp.value='';await Store.saveBook(b);toast(`“${b.title}” okunacaklara eklendi.`);
+    try{const res=(await searchBooks(b.title+' '+b.author)).filter(r=>sameTitle(r.title,b.title));const cur=S.books.find(x=>x.id===b.id);
+      if(cur&&res.length){const r=res.find(x=>x.cover)||res[0];await Store.saveBook({...cur,author:cur.author||r.author,pages:cur.pages||+(res.find(x=>x.pages)||{}).pages||'',year:cur.year||r.year,coverUrl:r.cover||cur.coverUrl,about:cur.about||r.about})}}catch{}
+  }
+});
+
+applyView();
+Store.init();
+</script>

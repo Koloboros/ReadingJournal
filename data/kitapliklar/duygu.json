@@ -1,0 +1,1464 @@
+{
+ "books": [
+  {
+   "author": "Duygu Asena",
+   "endDate": "2026-10-15",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Kadının Adı Yok",
+   "id": "g01"
+  },
+  {
+   "author": "Ahmet Şerif İzgören",
+   "endDate": "2026-10-08",
+   "genre": "Kişisel gelişim",
+   "owned": false,
+   "rating": 4.5,
+   "status": "read",
+   "title": "Şu Hortumlu Dünyada Fil Yalnız Bir Hayvandır",
+   "id": "g02"
+  },
+  {
+   "author": "Turgut Can Koloğlugil",
+   "color": "#c29db4",
+   "endDate": "2026-10-07",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Nebrukaddesar",
+   "id": "g03"
+  },
+  {
+   "author": "Éric-Emmanuel Schmitt",
+   "endDate": "2026-09-29",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Bayan Ming'in Hiç Olmayan On Çocuğu",
+   "id": "g04"
+  },
+  {
+   "author": "Maggie O'Farrell",
+   "endDate": "2026-10-24",
+   "genre": "Tarihi roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Hamnet",
+   "id": "g05"
+  },
+  {
+   "author": "Florence Knapp",
+   "endDate": "2026-09-18",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "İsimler",
+   "id": "g06"
+  },
+  {
+   "author": "Şermin Yaşar",
+   "endDate": "2026-10-26",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Söyleme Bilmesinler",
+   "id": "g07"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-10-03",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Misafir",
+   "id": "g08"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-09-23",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Saklı Bahçeler Haritası",
+   "id": "g09"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-10-10",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 3.5,
+   "status": "read",
+   "title": "Bavula Sığmayan",
+   "id": "g10"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-09-17",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Rüyalar Anlatılmaz",
+   "id": "g11"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-10-07",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Ev",
+   "id": "g12"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-09-26",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Unutma Dersleri",
+   "id": "g13"
+  },
+  {
+   "author": "Donald J. Robertson",
+   "endDate": "2026-09-11",
+   "genre": "Felsefe",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Roma İmparatoru Gibi Düşünmek",
+   "id": "g14"
+  },
+  {
+   "author": "Asako Yuzuki",
+   "endDate": "2026-09-14",
+   "genre": "Polisiye",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Tereyağı",
+   "id": "g15"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-09-13",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Unutma Beni Apartmanı",
+   "id": "g16"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-08-28",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "A Court of Thorns and Roses",
+   "seriesNo": 5,
+   "status": "read",
+   "title": "A Court of Silver Flames",
+   "id": "g17"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-08-23",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 4,
+   "series": "A Court of Thorns and Roses",
+   "seriesNo": 4,
+   "status": "read",
+   "title": "A Court of Frost and Starlight",
+   "id": "g18"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-08-22",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "A Court of Thorns and Roses",
+   "seriesNo": 3,
+   "status": "read",
+   "title": "A Court of Wings and Ruin",
+   "id": "g19"
+  },
+  {
+   "author": "Nermin Yıldırım",
+   "endDate": "2026-08-12",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Dokunmadan",
+   "id": "g20"
+  },
+  {
+   "author": "Aylin Balboa",
+   "endDate": "2026-08-09",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Belki Bir Gün Uçarız",
+   "id": "g21"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-08-19",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "A Court of Thorns and Roses",
+   "seriesNo": 2,
+   "status": "read",
+   "title": "A Court of Mist and Fury",
+   "id": "g22"
+  },
+  {
+   "author": "Malcolm Gladwell",
+   "endDate": "2026-08-06",
+   "genre": "Kişisel gelişim",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Outliers: The Story of Success",
+   "id": "g23"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-08-06",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "A Court of Thorns and Roses",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "A Court of Thorns and Roses",
+   "id": "g24"
+  },
+  {
+   "author": "Aylin Balboa",
+   "endDate": "2026-08-02",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Bu Hikâye Senden Uzun Osman",
+   "id": "g25"
+  },
+  {
+   "author": "Aylin Balboa",
+   "endDate": "2026-07-30",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Ateş Sönene Kadar",
+   "id": "g26"
+  },
+  {
+   "author": "Melisa Kesmez",
+   "endDate": "2026-07-29",
+   "genre": "Öykü",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Çiçeklenmeler",
+   "id": "g27"
+  },
+  {
+   "author": "Melisa Kesmez",
+   "endDate": "2026-07-23",
+   "genre": "Öykü",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Bazen Bahar",
+   "id": "g28"
+  },
+  {
+   "author": "Melisa Kesmez",
+   "endDate": "2026-07-19",
+   "genre": "Öykü",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Nohut Oda",
+   "id": "g29"
+  },
+  {
+   "author": "Melisa Kesmez",
+   "endDate": "2026-07-16",
+   "genre": "Öykü",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Atları Bağlayın Geceyi Burada Geçireceğiz",
+   "id": "g30"
+  },
+  {
+   "author": "Melisa Kesmez",
+   "endDate": "2026-07-15",
+   "genre": "Öykü",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Küçük Yuvarlak Taşlar",
+   "id": "g31"
+  },
+  {
+   "author": "Hwang Bo-Reum",
+   "endDate": "2026-07-15",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Welcome to the Hyunam-Dong Bookshop",
+   "id": "g32"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-07-06",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 7,
+   "status": "read",
+   "title": "Kingdom of Ash",
+   "id": "g33"
+  },
+  {
+   "author": "Gene Luen Yang",
+   "endDate": "2026-05-25",
+   "genre": "Çizgi roman",
+   "owned": false,
+   "rating": 5,
+   "series": "Avatar: The Last Airbender",
+   "seriesNo": 2,
+   "status": "read",
+   "title": "Avatar: The Search",
+   "id": "g34"
+  },
+  {
+   "author": "Suzanne Collins",
+   "endDate": "2026-05-09",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 4,
+   "series": "Açlık Oyunları",
+   "seriesNo": 0,
+   "status": "read",
+   "title": "Kuşların ve Yılanların Şarkısı",
+   "id": "g35"
+  },
+  {
+   "author": "Suzanne Collins",
+   "endDate": "2026-04-29",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 5,
+   "series": "Açlık Oyunları",
+   "seriesNo": 3,
+   "status": "read",
+   "title": "Alaycı Kuş",
+   "id": "g36"
+  },
+  {
+   "author": "Charlie Mackesy",
+   "endDate": "2026-05-01",
+   "genre": "Resimli kitap",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Çocuk, Köstebek, Tilki ve At",
+   "id": "g37"
+  },
+  {
+   "author": "Gene Luen Yang",
+   "endDate": "2026-04-19",
+   "genre": "Çizgi roman",
+   "owned": false,
+   "rating": 5,
+   "series": "Avatar: The Last Airbender",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "Avatar: The Promise",
+   "id": "g38"
+  },
+  {
+   "author": "Suzanne Collins",
+   "endDate": "2026-04-18",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 5,
+   "series": "Açlık Oyunları",
+   "seriesNo": 2,
+   "status": "read",
+   "title": "Ateşi Yakalamak",
+   "id": "g39"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-06-28",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 6,
+   "status": "read",
+   "title": "Şafak Kulesi",
+   "id": "g40"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-06-28",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 5,
+   "status": "read",
+   "title": "Fırtınalar İmparatorluğu",
+   "id": "g41"
+  },
+  {
+   "author": "Suzanne Collins",
+   "endDate": "2026-04-11",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 5,
+   "series": "Açlık Oyunları",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "Açlık Oyunları",
+   "id": "g42"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-04-13",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 4,
+   "status": "read",
+   "title": "Queen of Shadows",
+   "id": "g43"
+  },
+  {
+   "author": "R.F. Kuang",
+   "endDate": "2026-03-09",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Sarı Yüz",
+   "id": "g44"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-02-01",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 0.5,
+   "status": "read",
+   "title": "Suikastçının Hançeri",
+   "id": "g45"
+  },
+  {
+   "author": "Georgi Gospodinov",
+   "endDate": "2026-06-13",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Bahçıvan ve Ölüm",
+   "id": "g46"
+  },
+  {
+   "author": "Suzanne Collins",
+   "endDate": "2026-05-20",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 5,
+   "series": "Açlık Oyunları",
+   "seriesNo": 0.5,
+   "status": "read",
+   "title": "Hasatta Gündoğumu",
+   "id": "g47"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2026-01-15",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 3,
+   "status": "read",
+   "title": "Ateşin Varisi",
+   "id": "g48"
+  },
+  {
+   "author": "Gabriel García Márquez",
+   "endDate": "2026-02-10",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Kırmızı Pazartesi",
+   "id": "g49"
+  },
+  {
+   "author": "Baek Se-hee",
+   "endDate": "2026-08-02",
+   "genre": "Psikoloji",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Ölmek İstiyorum Ama Tteokbokki de Yemek İstiyorum",
+   "id": "g50"
+  },
+  {
+   "author": "Matt Haig",
+   "endDate": "2026-10-20",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 4.5,
+   "status": "read",
+   "title": "Gece Yarısı Kütüphanesi",
+   "id": "g51"
+  },
+  {
+   "about": "Yazar, çocuk yetiştirirken bağırma alışkanlığından vazgeçmenin yollarını anlatır. Sakin kalarak sevgi dolu ve net sınırlar koyan bir ebeveynlik yaklaşımı önerir.",
+   "author": "Hal Edward Runkel",
+   "endDate": "2026-10-16",
+   "genre": "Ebeveynlik, Kişisel gelişim",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Bağırmayan Anne Baba Olmak",
+   "year": 2008,
+   "id": "g52"
+  },
+  {
+   "author": "Aletha J. Solter",
+   "endDate": "2026-08-25",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Oyun Oynama Sanatı",
+   "id": "g53"
+  },
+  {
+   "author": "Aletha J. Solter",
+   "endDate": "2026-01-02",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Bilinçli Bebek",
+   "id": "g54"
+  },
+  {
+   "author": "Beyhan Budak",
+   "endDate": "2026-10-16",
+   "genre": "Psikoloji",
+   "owned": false,
+   "rating": 4.5,
+   "status": "read",
+   "title": "Hayat Acemileri İçin Yaşam Rehberi",
+   "id": "g55"
+  },
+  {
+   "author": "R.F. Kuang",
+   "endDate": "2026-01-09",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Babil: Oxford Çevirmenler Devriminin Gizemli Hikayesi",
+   "id": "g56"
+  },
+  {
+   "author": "Clarissa Pinkola Estés",
+   "genre": "Psikoloji",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Kurtlarla Koşan Kadınlar",
+   "id": "n01"
+  },
+  {
+   "author": "Robin Hobb",
+   "genre": "Fantastik",
+   "owned": true,
+   "rating": 0,
+   "series": "Farseer Üçlemesi",
+   "seriesNo": 3,
+   "status": "want",
+   "title": "Suikastçının Arayışı",
+   "id": "n02"
+  },
+  {
+   "author": "Robin Hobb",
+   "genre": "Fantastik",
+   "owned": true,
+   "rating": 0,
+   "series": "Farseer Üçlemesi",
+   "seriesNo": 2,
+   "status": "want",
+   "title": "Kraliyet Suikastçısı",
+   "id": "n03"
+  },
+  {
+   "author": "Robin Hobb",
+   "genre": "Fantastik",
+   "owned": true,
+   "rating": 0,
+   "series": "Farseer Üçlemesi",
+   "seriesNo": 1,
+   "status": "want",
+   "title": "Suikastçının Çırağı",
+   "id": "n04"
+  },
+  {
+   "author": "Maggie O'Farrell",
+   "genre": "Roman",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Esme Lennox Nasıl Yok Oldu",
+   "id": "n05"
+  },
+  {
+   "author": "Kazuaki Takano",
+   "genre": "Gerilim",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Bir Aklın Savaşı",
+   "id": "n06"
+  },
+  {
+   "author": "Serdar Çankaya",
+   "genre": "Psikoloji",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Bir Aile Meselesi",
+   "id": "n07"
+  },
+  {
+   "author": "Aletha J. Solter",
+   "genre": "Ebeveynlik",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Çocuğunuza Kulak Verin",
+   "id": "n08"
+  },
+  {
+   "author": "Daniel J. Siegel",
+   "genre": "Ebeveynlik",
+   "owned": true,
+   "rating": 0,
+   "series": "Bütün Beyinli Çocuk",
+   "seriesNo": 2,
+   "status": "want",
+   "title": "Bütün Beyinli Çocuk Uygulama Rehberi",
+   "id": "n09"
+  },
+  {
+   "author": "Daniel J. Siegel",
+   "genre": "Ebeveynlik",
+   "owned": true,
+   "rating": 0,
+   "series": "Bütün Beyinli Çocuk",
+   "seriesNo": 1,
+   "status": "want",
+   "title": "Bütün Beyinli Çocuk",
+   "id": "n10"
+  },
+  {
+   "author": "John Caunt",
+   "genre": "Kişisel gelişim",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Düzenli Olmanın Yolları",
+   "id": "n11"
+  },
+  {
+   "author": "Bessel van der Kolk",
+   "genre": "Psikoloji",
+   "owned": true,
+   "rating": 0,
+   "status": "want",
+   "title": "Beden Kayıt Tutar",
+   "id": "n12"
+  },
+  {
+   "author": "Ariane Koch",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "startDate": "2026-09-17",
+   "status": "reading",
+   "title": "Misafir",
+   "id": "r01"
+  },
+  {
+   "author": "Marcus Aurelius",
+   "genre": "Felsefe",
+   "owned": false,
+   "rating": 0,
+   "startDate": "2026-07-23",
+   "status": "reading",
+   "title": "Kendime Düşünceler",
+   "id": "r02"
+  },
+  {
+   "author": "Matt Kracht",
+   "genre": "Popüler bilim",
+   "owned": false,
+   "rating": 0,
+   "startDate": "2026-01-20",
+   "status": "reading",
+   "title": "The Field Guide to Dumb Birds of the Whole Stupid World",
+   "id": "r03"
+  },
+  {
+   "author": "Lea Ypi",
+   "genre": "Anı",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Haysiyetsizlik: Yeniden Biçimlendirilen Bir Hayat",
+   "id": "t01"
+  },
+  {
+   "author": "Rosalind Miles",
+   "genre": "Tarih",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Son Akşam Yemeğini Kim Pişirdi? Dünya Kadın Tarihi",
+   "id": "t02"
+  },
+  {
+   "author": "Barış Bıçakçı",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Bizim Büyük Çaresizliğimiz",
+   "id": "t03"
+  },
+  {
+   "author": "Zoe Venditozzi",
+   "genre": "Tarih",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "How to Kill a Witch: The Patriarchy's Guide to Silencing Women",
+   "id": "t04"
+  },
+  {
+   "author": "Ayfer Tunç",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Bir Deliler Evinin Yalan Yanlış Anlatılan Kısa Tarihi",
+   "id": "t05"
+  },
+  {
+   "author": "Seolyeon Park",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Sihirli Kız Emekli Oluyor",
+   "id": "t06"
+  },
+  {
+   "author": "Aria Aber",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "İyi Kız",
+   "id": "t07"
+  },
+  {
+   "author": "Song Yu-jeong",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Hatıra Kitabevi",
+   "id": "t08"
+  },
+  {
+   "author": "Suyeon Lee",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Omzumdaki İki Arkadaş",
+   "id": "t09"
+  },
+  {
+   "author": "Yeşim Türköz",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Büyü Dükkanı",
+   "id": "t10"
+  },
+  {
+   "author": "Murat Çelik",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Bazı Günlerin Sonu",
+   "id": "t11"
+  },
+  {
+   "author": "Laurent Mauvignier",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Onlardan Uzakta",
+   "id": "t12"
+  },
+  {
+   "author": "Richard Brautigan",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Yani Rüzgar Her Şeyi Alıp Götürmeyecek",
+   "id": "t13"
+  },
+  {
+   "author": "Burhan Sönmez",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kırmızı Ayna",
+   "id": "t14"
+  },
+  {
+   "author": "Burhan Sönmez",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Taş ve Gölge",
+   "id": "t15"
+  },
+  {
+   "author": "Burhan Sönmez",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "İstanbul İstanbul",
+   "id": "t16"
+  },
+  {
+   "author": "Alison Espach",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Evlilik İnsanları",
+   "id": "t17"
+  },
+  {
+   "author": "Bernardo Zannoni",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Benim Aptal Niyetlerim",
+   "id": "t18"
+  },
+  {
+   "author": "Kelly Bishop",
+   "genre": "Anı",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "The Third Gilmore Girl: A Memoir",
+   "id": "t19"
+  },
+  {
+   "author": "SenLinYu",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Alchemised",
+   "id": "t20"
+  },
+  {
+   "author": "Madeline Miller",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Circe",
+   "id": "t21"
+  },
+  {
+   "author": "Maggie O'Farrell",
+   "genre": "Tarihi roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "The Marriage Portrait",
+   "id": "t22"
+  },
+  {
+   "author": "Adalet Ağaoğlu",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Ölmeye Yatmak",
+   "id": "t23"
+  },
+  {
+   "author": "Alex Schulman",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "17 Haziran",
+   "id": "t24"
+  },
+  {
+   "author": "Alex Schulman",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Malma İstasyonu",
+   "id": "t25"
+  },
+  {
+   "author": "Hüseyin Rahmi Gürpınar",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kesik Baş",
+   "id": "t26"
+  },
+  {
+   "author": "Charlotte Perkins Gilman",
+   "genre": "Klasik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kadınlar Ülkesi",
+   "id": "t27"
+  },
+  {
+   "author": "Virginia Woolf",
+   "genre": "Deneme",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kendine Ait Bir Oda",
+   "id": "t28"
+  },
+  {
+   "author": "Iria G. Parente",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Alma ve Yedi Canavar",
+   "id": "t29"
+  },
+  {
+   "author": "Paul Auster",
+   "genre": "Distopya",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Son Şeyler Ülkesinde",
+   "id": "t30"
+  },
+  {
+   "author": "Elena Ferrante",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "series": "Napoli Romanları",
+   "seriesNo": 1,
+   "status": "want",
+   "title": "Benim Olağanüstü Akıllı Arkadaşım",
+   "id": "t31"
+  },
+  {
+   "author": "Nikos Kazantzakis",
+   "genre": "Klasik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Zorba the Greek",
+   "id": "t32"
+  },
+  {
+   "author": "Uketsu",
+   "genre": "Gerilim",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Tuhaf Resimler",
+   "id": "t33"
+  },
+  {
+   "author": "Yu Hua",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Yaşamak",
+   "id": "t34"
+  },
+  {
+   "author": "Michiko Aoyama",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Aradığın Şey Kütüphanede Saklı",
+   "id": "t35"
+  },
+  {
+   "author": "Ayşegül Kocabıçak",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Run Gülüzar Run",
+   "id": "t36"
+  },
+  {
+   "author": "Laetitia Colombani",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Saç Örgüsü",
+   "id": "t37"
+  },
+  {
+   "author": "Sangu Mandanna",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Aşırı Gizli Cadılar Cemiyeti",
+   "id": "t38"
+  },
+  {
+   "author": "Pınar Kür",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Asılacak Kadın",
+   "id": "t39"
+  },
+  {
+   "author": "Engin Geçtan",
+   "genre": "Psikoloji",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Hayat",
+   "id": "t40"
+  },
+  {
+   "author": "Virginia Evans",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Muhabbet",
+   "id": "t41"
+  },
+  {
+   "author": "Sharon M. Draper",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "İçimdeki Müzik",
+   "id": "t42"
+  },
+  {
+   "author": "Ayfer Tunç",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Annemin Uyurgezer Geceleri",
+   "id": "t43"
+  },
+  {
+   "author": "Şermin Yaşar",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kınalı Serçe",
+   "id": "t44"
+  },
+  {
+   "author": "Şermin Yaşar",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Kalk Yerine Yat",
+   "id": "t45"
+  },
+  {
+   "author": "Şermin Yaşar",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Altı Harfli Bir Tatlı",
+   "id": "t46"
+  },
+  {
+   "author": "Nawal El Saadawi",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Sıfır Noktasındaki Kadın",
+   "id": "t47"
+  },
+  {
+   "author": "Donatella Di Pietrantonio",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Geri Verilen Kız",
+   "id": "t48"
+  },
+  {
+   "author": "Patrick Ness",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 0,
+   "status": "want",
+   "title": "Gökyüzümüzdü Okyanus",
+   "id": "t49"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2025-12-05",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 5,
+   "series": "Cam Şato",
+   "seriesNo": 2,
+   "status": "read",
+   "title": "Karanlık Taç",
+   "id": "y01"
+  },
+  {
+   "author": "Sarah J. Maas",
+   "endDate": "2025-10-30",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 4,
+   "series": "Cam Şato",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "Cam Şato",
+   "id": "y02"
+  },
+  {
+   "author": "Elizabeth Pantley",
+   "endDate": "2025-12-03",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Uyku Rutini: Bebeğinizin Uyumasına Yardımcı Olmanın Yolları",
+   "id": "y03"
+  },
+  {
+   "author": "Tuğba Parıltı",
+   "endDate": "2025-09-15",
+   "genre": "Beslenme",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Gıda Mühendisi Anlatıyor: Sağlıklı Beslenmek İçin Neyi, Nasıl Pişirelim?",
+   "id": "y04"
+  },
+  {
+   "author": "Bahar Eriş",
+   "endDate": "2025-07-31",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Hayatın İlk Üç Yılı",
+   "id": "y05"
+  },
+  {
+   "author": "John Steinbeck",
+   "endDate": "2025-09-01",
+   "genre": "Klasik",
+   "owned": false,
+   "rating": 3,
+   "status": "read",
+   "title": "Gazap Üzümleri",
+   "id": "y06"
+  },
+  {
+   "author": "Laurie R. King",
+   "endDate": "2025-05-31",
+   "genre": "Polisiye",
+   "owned": false,
+   "rating": 4,
+   "series": "Mary Russell ve Sherlock Holmes",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "Arıcının Çırağı",
+   "id": "y07"
+  },
+  {
+   "author": "Dana Suskind",
+   "endDate": "2025-05-30",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Otuz Milyon Kelime: Çocuğunuzun Beynini Geliştirin",
+   "id": "y08"
+  },
+  {
+   "author": "Nilüfer Devecigil",
+   "endDate": "2025-04-30",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Işığın Yolu",
+   "id": "y09"
+  },
+  {
+   "author": "Harvey Karp",
+   "endDate": "2025-03-30",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Mahallenin En Mutlu Bebeği",
+   "id": "y10"
+  },
+  {
+   "author": "Geraldine Miskin",
+   "endDate": "2025-03-05",
+   "genre": "Ebeveynlik",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Kolay Emzirme Teknikleri",
+   "id": "y11"
+  },
+  {
+   "author": "Can Bonomo",
+   "endDate": "2025-02-20",
+   "genre": "Roman",
+   "owned": false,
+   "rating": 5,
+   "status": "read",
+   "title": "Ateşli Silahlar ve Bilardo",
+   "id": "y12"
+  },
+  {
+   "author": "Amir Levine",
+   "endDate": "2025-02-25",
+   "genre": "Psikoloji",
+   "owned": false,
+   "rating": 4,
+   "status": "read",
+   "title": "Bağlanma: Aşkı Bulmanın ve Korumanın Bilimsel Yolları",
+   "id": "y13"
+  },
+  {
+   "author": "Dan Brown",
+   "endDate": "2025-11-20",
+   "genre": "Gerilim",
+   "owned": false,
+   "rating": 2,
+   "status": "read",
+   "title": "Dijital Kale",
+   "id": "y14"
+  },
+  {
+   "author": "L. Frank Baum",
+   "endDate": "2025-12-04",
+   "genre": "Fantastik",
+   "owned": false,
+   "rating": 4,
+   "series": "Oz",
+   "seriesNo": 1,
+   "status": "read",
+   "title": "Oz Büyücüsü",
+   "id": "y15"
+  }
+ ],
+ "settings": {
+  "bingo": {
+   "2026": {
+    "cells": [
+     {
+      "b": null,
+      "p": "Kütüphaneden"
+     },
+     {
+      "b": null,
+      "p": "Türk yazar"
+     },
+     {
+      "b": null,
+      "p": "E-kitap"
+     },
+     {
+      "b": null,
+      "p": "Bu yıl çıkan"
+     },
+     {
+      "b": null,
+      "p": "Tek kelimelik başlık"
+     },
+     {
+      "b": null,
+      "p": "Öykü kitabı"
+     },
+     {
+      "b": null,
+      "p": "Hiç okumadığın tür"
+     },
+     {
+      "b": "g17",
+      "p": "Fantastik"
+     },
+     {
+      "b": "g06",
+      "p": "Arkadaş önerisi"
+     },
+     {
+      "b": null,
+      "p": "Filme uyarlanmış"
+     },
+     {
+      "b": null,
+      "p": "500+ sayfa"
+     },
+     {
+      "b": null,
+      "p": "Bilim kurgu"
+     },
+     {
+      "b": null,
+      "p": "SERBEST"
+     },
+     {
+      "b": null,
+      "p": "Hediye gelen"
+     },
+     {
+      "b": null,
+      "p": "Şiir kitabı"
+     },
+     {
+      "b": null,
+      "p": "Kadın yazar"
+     },
+     {
+      "b": null,
+      "p": "Bir klasik"
+     },
+     {
+      "b": null,
+      "p": "Kurgu dışı"
+     },
+     {
+      "b": null,
+      "p": "Polisiye"
+     },
+     {
+      "b": null,
+      "p": "Anı / biyografi"
+     },
+     {
+      "b": null,
+      "p": "Mavi kapaklı"
+     },
+     {
+      "b": null,
+      "p": "Başlığında renk var"
+     },
+     {
+      "b": null,
+      "p": "Rafta en uzun bekleyen"
+     },
+     {
+      "b": null,
+      "p": "Başka ülkede geçen"
+     },
+     {
+      "b": null,
+      "p": "Kitap hakkında kitap"
+     }
+    ]
+   }
+  },
+  "goals": {
+   "2025": 12,
+   "2026": 60
+  }
+ }
+}
