@@ -376,7 +376,10 @@
    "id": "g25",
    "infoTried": true,
    "pages": 129,
-   "year": 2022
+   "year": 2022,
+   "color": "#e3a79c",
+   "format": "audio",
+   "updatedAt": 1793176867907
   },
   {
    "author": "Aylin Balboa",
