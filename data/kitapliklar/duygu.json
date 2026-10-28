@@ -261,7 +261,10 @@
    "infoTried": true,
    "pages": 768,
    "coverUrl": "https://covers.openlibrary.org/b/id/10643508-M.jpg",
-   "year": 2021
+   "year": 2021,
+   "color": "#beafd3",
+   "format": "ebook",
+   "updatedAt": 1793176929931
   },
   {
    "author": "Sarah J. Maas",
