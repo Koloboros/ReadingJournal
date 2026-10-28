@@ -1806,6 +1806,21 @@
    "title": "Oz Büyücüsü",
    "id": "y15",
    "infoTried": true
+  },
+  {
+   "id": "bmvrvknx0c7ood",
+   "title": "Bağırmayan karı koca olmak",
+   "author": "Hal Edward Runkel, Jenny Runkel",
+   "pages": 279,
+   "year": 2018,
+   "color": "#beafd3",
+   "status": "want",
+   "owned": true,
+   "format": "print",
+   "rating": 0,
+   "addedAt": 1793177481492,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12119213-M.jpg",
+   "updatedAt": 1793177514981
   }
  ],
  "settings": {
