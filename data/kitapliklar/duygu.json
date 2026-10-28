@@ -37,7 +37,9 @@
    "status": "read",
    "title": "Nebrukaddesar",
    "id": "g03",
-   "infoTried": true
+   "infoTried": true,
+   "format": "print",
+   "updatedAt": 1793176497836
   },
   {
    "author": "Éric-Emmanuel Schmitt",
