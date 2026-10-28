@@ -224,7 +224,10 @@
    "infoTried": true,
    "pages": 420,
    "coverUrl": "https://covers.openlibrary.org/b/id/7319102-M.jpg",
-   "year": 2011
+   "year": 2011,
+   "color": "#bebb80",
+   "format": "audio",
+   "updatedAt": 1793176826884
   },
   {
    "author": "Sarah J. Maas",
