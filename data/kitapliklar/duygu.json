@@ -56,7 +56,10 @@
    "status": "read",
    "title": "Bayan Ming'in Hiç Olmayan On Çocuğu",
    "id": "g04",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#a6c29a",
+   "format": "audio",
+   "updatedAt": 1793176859222
   },
   {
    "author": "Maggie O'Farrell",
@@ -194,7 +197,10 @@
    "infoTried": true,
    "pages": 312,
    "coverUrl": "https://covers.openlibrary.org/b/id/10848511-M.jpg",
-   "year": 2015
+   "year": 2015,
+   "color": "#e3a79c",
+   "format": "audio",
+   "updatedAt": 1793176856886
   },
   {
    "author": "Donald J. Robertson",
