@@ -2105,10 +2105,54 @@
       "b": "g27"
      }
     ]
+   },
+   {
+    "id": "bmvskcswi",
+    "year": 2026,
+    "name": "Kart 3",
+    "size": 3,
+    "cells": [
+     {
+      "p": "Yeni bir yazar",
+      "b": null
+     },
+     {
+      "p": "Yemek ya da mutfak geçen",
+      "b": null
+     },
+     {
+      "p": "Aşk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Arkadaşınla birlikte okuduğun",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Ödüllü kitap",
+      "b": null
+     },
+     {
+      "p": "Kadın yazar",
+      "b": null
+     },
+     {
+      "p": "Masal / efsane",
+      "b": null
+     },
+     {
+      "p": "Kadın kahraman",
+      "b": null
+     }
+    ]
    }
   ],
   "bingoActive": {
-   "2026": "y2026"
+   "2026": "bmvskcswi"
   }
  }
 }
