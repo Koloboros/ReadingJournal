@@ -2110,7 +2110,7 @@
     "id": "bmvskcswi",
     "year": 2026,
     "name": "Kart 3",
-    "size": 3,
+    "size": 5,
     "cells": [
      {
       "p": "Yeni bir yazar",
@@ -2129,10 +2129,6 @@
       "b": null
      },
      {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
       "p": "Ödüllü kitap",
       "b": null
      },
@@ -2146,6 +2142,74 @@
      },
      {
       "p": "Kadın kahraman",
+      "b": null
+     },
+     {
+      "p": "Kütüphaneden",
+      "b": null
+     },
+     {
+      "p": "Gülümseten kitap",
+      "b": null
+     },
+     {
+      "p": "Müzik temalı",
+      "b": null
+     },
+     {
+      "p": "Başlığında hayvan var",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Kitap hakkında kitap",
+      "b": null
+     },
+     {
+      "p": "200 sayfadan kısa",
+      "b": null
+     },
+     {
+      "p": "500+ sayfa",
+      "b": null
+     },
+     {
+      "p": "Başlığında renk var",
+      "b": null
+     },
+     {
+      "p": "Serinin ilk kitabı",
+      "b": null
+     },
+     {
+      "p": "Felsefe",
+      "b": null
+     },
+     {
+      "p": "Korku",
+      "b": null
+     },
+     {
+      "p": "Hiç okumadığın tür",
+      "b": null
+     },
+     {
+      "p": "Polisiye",
+      "b": null
+     },
+     {
+      "p": "İkinci el kitap",
+      "b": null
+     },
+     {
+      "p": "Doğduğun yıl çıkan",
+      "b": null
+     },
+     {
+      "p": "Kitap kulübü seçimi",
       "b": null
      }
     ]
