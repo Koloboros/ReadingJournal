@@ -67,7 +67,10 @@
    "status": "read",
    "title": "Hamnet",
    "id": "g05",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#93a0c6",
+   "format": "audio",
+   "updatedAt": 1793176811712
   },
   {
    "author": "Florence Knapp",
