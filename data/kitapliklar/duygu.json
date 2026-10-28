@@ -1054,13 +1054,15 @@
   },
   {
    "author": "Bessel van der Kolk",
-   "genre": "Psikoloji",
+   "genre": "Kişisel gelişim",
    "owned": true,
    "rating": 0,
    "status": "want",
    "title": "Beden Kayıt Tutar",
    "id": "n12",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e3a79c",
+   "updatedAt": 1793212586214
   },
   {
    "author": "Ariane Koch",
