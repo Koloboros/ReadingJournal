@@ -11,7 +11,10 @@
    "id": "g01",
    "infoTried": true,
    "pages": 232,
-   "year": 1987
+   "year": 1987,
+   "color": "#ebb88c",
+   "format": "audio",
+   "updatedAt": 1793176795477
   },
   {
    "author": "Ahmet Şerif İzgören",
