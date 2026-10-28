@@ -585,7 +585,10 @@
    "status": "read",
    "title": "Çocuk, Köstebek, Tilki ve At",
    "id": "g37",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#dcc7a1",
+   "format": "print",
+   "updatedAt": 1793176974948
   },
   {
    "author": "Gene Luen Yang",
