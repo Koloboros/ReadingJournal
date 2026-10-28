@@ -347,7 +347,10 @@
    "infoTried": true,
    "pages": 320,
    "coverUrl": "https://covers.openlibrary.org/b/id/10021591-M.jpg",
-   "year": 2008
+   "year": 2008,
+   "color": "#93a0c6",
+   "format": "audio",
+   "updatedAt": 1793176874008
   },
   {
    "author": "Sarah J. Maas",
@@ -707,7 +710,10 @@
    "status": "read",
    "title": "Ölmek İstiyorum Ama Tteokbokki de Yemek İstiyorum",
    "id": "g50",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#ebb88c",
+   "format": "audio",
+   "updatedAt": 1793176871494
   },
   {
    "author": "Matt Haig",
