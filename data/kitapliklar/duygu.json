@@ -508,7 +508,10 @@
    "infoTried": true,
    "pages": 987,
    "coverUrl": "https://covers.openlibrary.org/b/id/8465438-M.jpg",
-   "year": 2018
+   "year": 2018,
+   "color": "#e3a79c",
+   "format": "ebook",
+   "updatedAt": 1793176937301
   },
   {
    "author": "Gene Luen Yang",
