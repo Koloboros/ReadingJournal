@@ -685,7 +685,10 @@
    "status": "read",
    "title": "Gece Yarısı Kütüphanesi",
    "id": "g51",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e3a79c",
+   "format": "audio",
+   "updatedAt": 1793176800616
   },
   {
    "about": "Yazar, çocuk yetiştirirken bağırma alışkanlığından vazgeçmenin yollarını anlatır. Sakin kalarak sevgi dolu ve net sınırlar koyan bir ebeveynlik yaklaşımı önerir.",
