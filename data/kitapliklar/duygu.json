@@ -736,7 +736,10 @@
    "status": "read",
    "title": "Hayat Acemileri İçin Yaşam Rehberi",
    "id": "g55",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c9a27a",
+   "format": "audio",
+   "updatedAt": 1793176767011
   },
   {
    "author": "R.F. Kuang",
