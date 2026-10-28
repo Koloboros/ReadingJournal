@@ -371,6 +371,82 @@ textarea{resize:vertical;min-height:80px}
 .favs li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:4px 0;font-family:var(--f-hand);font-size:1.3rem}
 .favs li b{font-family:var(--f-body);font-size:.85rem;color:var(--ink-2);font-weight:600}
 
+/* ---- update: genres, to-read flow, stats, stamps, bingo, theme ---- */
+.vs-sep{width:1px;background:var(--line);margin:4px 2px}
+.undo{border:0;background:none;color:var(--gold);font-weight:700;text-decoration:underline;margin-left:8px;padding:0}
+.gchips{display:flex;flex-wrap:wrap;gap:5px;max-height:132px;overflow:auto;padding:2px}
+.gchip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:4px 10px;font-size:.8rem;font-weight:600;color:var(--ink-2)}
+.gchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.bopts{max-height:180px}
+.bookend.slim{width:56px}
+.bk-end{width:12px;height:70px;background:linear-gradient(90deg,var(--wood-2),var(--wood));border-radius:3px 6px 0 0;box-shadow:inset -2px 0 0 rgba(0,0,0,.12)}
+/* to-read: tick to move along */
+.nb-hint{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-2);margin:0 0 8px}
+.nb-hint svg{width:14px;height:14px;color:var(--accent)}
+.trow .chk{display:flex;align-items:center;justify-content:center;color:transparent;transition:background .2s,color .2s}
+.trow .chk svg{width:14px;height:14px}
+.trow .chk:hover{background:var(--accent-soft);color:var(--accent)}
+.trow.ticked .chk{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.trow.ticked{transition:opacity .3s,transform .3s;opacity:.4;transform:translateX(12px)}
+/* stats: pages per month */
+.pchart{position:relative;padding:18px 0 0 34px}
+.pgrid{position:absolute;left:34px;right:0;border-top:1px dashed var(--line);margin-bottom:22px}
+.pgrid em{position:absolute;left:-34px;top:-.7em;width:30px;text-align:right;font-style:normal;font-size:.62rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pbars{position:relative;display:flex;align-items:flex-end;gap:4px;height:calc(var(--h) + 22px)}
+.pcol{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.pcol i{display:block;width:72%;max-width:26px;border-radius:5px 5px 1px 1px;background:linear-gradient(to top,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--sheet)));min-height:0}
+.pval{font-size:.6rem;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap;min-height:1em;margin-bottom:2px}
+.plab{font-family:var(--f-hand);font-weight:700;font-size:.95rem;line-height:1;height:22px;padding-top:4px;border-top:1.5px solid var(--ink);align-self:stretch;text-align:center}
+/* stamps: smaller album, tiers, seasonal months */
+.sgrid{grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:12px}
+.stamp-in{min-height:124px;padding:10px 6px 8px;gap:3px;position:relative}
+.stamp-in>svg{width:28px;height:28px;margin:2px 0 0}
+.stamp .nm{font-size:.8rem}
+.stamp .ds{font-size:.62rem}
+.stamp .pr{font-size:.64rem}
+.stamp .prog{display:block;width:70%;height:4px;border-radius:2px;background:var(--line);overflow:hidden;margin-top:2px}
+.stamp .prog i{display:block;height:100%;background:var(--accent)}
+.stamp.t1 .stamp-in{outline-color:#B9825A}.stamp.t2 .stamp-in{outline-color:#8E99A6}.stamp.t3 .stamp-in{outline-color:#C9952B;outline-width:2px}
+.stamp .tier{position:absolute;top:6px;left:6px;width:8px;height:8px;border-radius:50%}
+.t1 .tier,.tdot.t1{background:#B9825A}.t2 .tier,.tdot.t2{background:#8E99A6}.t3 .tier,.tdot.t3{background:#C9952B}
+.tdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 3px 0 8px;vertical-align:0}
+.pm{width:44px;height:44px;font-size:.5rem;right:0;top:2px}
+.mstamp .stamp-in{min-height:104px;justify-content:center}
+.mstamp .mart{width:36px;height:36px}
+.mstamp .mn{font-size:1.35rem;margin-top:2px}
+.stamp.locked .mart{filter:grayscale(1);opacity:.35}
+.stamp.new{animation:stampin .7s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes stampin{0%{transform:scale(1.6) rotate(-10deg);opacity:0}100%{transform:none;opacity:1}}
+/* goal plant */
+.goal-panel{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:end}
+.plant{width:110px;height:146px;display:block}
+.plant .stem{stroke-dasharray:100;stroke-dashoffset:var(--off);animation:grow 1.4s ease-out both}
+.plant .leaf{transform-box:fill-box;transform-origin:center bottom;animation:pop .45s ease-out both;animation-delay:var(--d)}
+.plant .flower{transform-box:fill-box;transform-origin:center;animation:bloom .9s 1.4s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes grow{from{stroke-dashoffset:100}to{stroke-dashoffset:var(--off)}}
+@keyframes pop{from{opacity:0;scale:.2}to{opacity:1;scale:1}}
+@keyframes bloom{from{opacity:0;transform:scale(.2) rotate(-40deg)}to{opacity:1;transform:none}}
+/* bingo */
+.bgrid{grid-template-columns:repeat(var(--n,5),minmax(0,1fr));border-radius:4px;overflow:hidden;background:radial-gradient(var(--dot) .8px,transparent 1px) 0 0/10px 10px,var(--sheet)}
+.bcell{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere;text-wrap:balance;gap:4px}
+.bcell:nth-child(5n){border-right:1px solid var(--ink)}
+.bcell:nth-child(n+21){border-bottom:1px solid var(--ink)}
+.bgrid[data-n="3"] .bcell:nth-child(3n),.bgrid[data-n="4"] .bcell:nth-child(4n),.bgrid[data-n="5"] .bcell:nth-child(5n){border-right:0}
+.bgrid[data-n="3"] .bcell:nth-child(n+7),.bgrid[data-n="4"] .bcell:nth-child(n+13),.bgrid[data-n="5"] .bcell:nth-child(n+21){border-bottom:0}
+.bgrid[data-n="3"] .bcell{font-size:clamp(1.05rem,4.4vw,1.6rem)}
+.bgrid[data-n="4"] .bcell{font-size:clamp(.9rem,3.4vw,1.3rem)}
+.bgrid[data-n="5"] .bcell{font-size:clamp(.72rem,2.6vw,1.1rem)}
+.bcell .bp{display:block;max-width:100%}
+.bcell .bk{display:flex;align-items:center;gap:3px;justify-content:center}
+.bcell .bk i{display:inline-block;width:5px;height:12px;border-radius:1px;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);flex:none}
+.bcell.done{background:color-mix(in srgb,var(--c) 32%,var(--sheet))}
+.bchk{position:absolute;top:4px;right:4px;width:16px;height:16px;fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.bchk path:first-child{display:none}
+.bcell.free{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper)}
+.bcell.line{background-image:linear-gradient(transparent 40%,color-mix(in srgb,var(--gold) 35%,transparent) 40% 70%,transparent 70%)}
+.bcell.line::after{display:none}
+.bactions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.bstat b{color:var(--ink);font-variant-numeric:tabular-nums}
 /* visitors: hide everything that changes the journal */
 html[data-readonly] #btn-add,html[data-readonly] .tbr-add,html[data-readonly] .tbr-add+.note,html[data-readonly] .trow .mini,html[data-readonly] .goal-edit,html[data-readonly] [data-act="bingo-shuffle"],html[data-readonly] [data-act="bingo-reset"]{display:none!important}
 html[data-readonly] .trow .chk,html[data-readonly] .bcell{cursor:default}
@@ -401,6 +477,29 @@ html[data-view="mobile"] .brand h1{font-size:2rem!important}
 html[data-view="mobile"] .st-grid,html[data-view="mobile"] .nb-pages{grid-template-columns:1fr}
 html[data-view="mobile"] .rgrid{grid-template-columns:1fr}
 html[data-view="mobile"] .st-title{font-size:2.1rem}
+html[data-view="mobile"] .goal-panel{grid-template-columns:84px 1fr;gap:10px}
+html[data-view="mobile"] .plant{width:84px;height:112px}
+html[data-view="mobile"] .album .sgrid{grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
+html[data-view="mobile"] .album{padding:14px 10px}
+html[data-view="mobile"] .bgrid[data-n="5"] .bcell{text-transform:none;font-size:.78rem;line-height:1}
+html[data-view="mobile"] .bgrid[data-n="4"] .bcell{text-transform:none}
+html[data-view="mobile"] .bgrid[data-n="5"] .bcell .bk{font-size:0;gap:0}
+html[data-view="mobile"] .bgrid[data-n="5"] .bcell .bk i{width:6px;height:14px}
+html[data-view="mobile"] .bgrid .bcell{padding:3px}
+html[data-view="mobile"] .bgrid[data-n="4"] .bcell{font-size:.9rem}
+html[data-view="mobile"] .bchk{width:12px;height:12px;top:2px;right:2px}
+html[data-view="mobile"] .sticky{gap:14px;padding:12px 14px 10px}
+html[data-view="mobile"] .sticky b{font-size:1.6rem}
+html[data-view="mobile"] .tiles{grid-template-columns:1fr 1fr}
+html[data-view="mobile"] .tile .v{font-size:1.2rem}
+html[data-view="mobile"] .pie-wrap{justify-content:center}
+html[data-view="mobile"] .lg{flex-basis:100%}
+html[data-view="mobile"] .pchart{padding-left:26px}
+html[data-view="mobile"] .pgrid{left:26px}
+html[data-view="mobile"] .pgrid em{left:-28px;width:24px}
+html[data-view="mobile"] .plab{font-size:.78rem}
+html[data-view="mobile"] .units{gap:3px}
+html[data-view="mobile"] .sq{width:12px;height:12px}
 html[data-view="mobile"] .who{max-width:120px;padding:5px 9px}
 html[data-view="mobile"] .top-actions{flex-wrap:wrap}
 /* phone layout: applied when html[data-view=mobile] (auto-detected or chosen with the header toggle) */
@@ -470,13 +569,14 @@ const G={ /* 24px stroke glyphs */
   sparkle:'M12 3v4 M12 17v4 M3 12h4 M17 12h4 M6 6l2.5 2.5 M15.5 15.5 18 18 M18 6l-2.5 2.5 M8.5 15.5 6 18',
   phone:'M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z M11 18.5h2',
   desktop:'M3 4h18v12H3z M8 20h8 M12 16v4',
+  sun:'M12 3v2 M12 19v2 M3 12h2 M19 12h2 M5.6 5.6l1.4 1.4 M17 17l1.4 1.4 M5.6 18.4 7 17 M17 7l1.4-1.4 M12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z',
   chart:'M4 20V11 M10 20V5 M16 20v-7 M3 20h18 M19 8l2-2',
   camera:'M4 8h3l2-3h6l2 3h3v11H4z M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z',
   plant:'M12 21v-7 M12 14c-4 0-6-3-6-7 4 0 6 3 6 7z M12 12c0-3 2-6 6-6 0 4-2 6-6 6z M8 21h8l-1-4H9z'
 };
 const ico=(k,sw=1.7)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${G[k]}"/></svg>`;
 const TABS=[['shelf','Kitaplık','shelf','Raf'],['covers','Kapaklar','covers','Kapak'],['notes','Notlar','pen','Notlar'],['stats','Yıl Özeti','chart','Özet'],['tbr','Okunacaklar','list','Liste'],['stamps','Hedef & Pullar','stamp','Pullar'],['bingo','Bingo','grid','Bingo']];
-const BINGO_POOL=['Bir klasik','Çeviri kitap','Türk yazar','Kadın yazar','Yazarın ilk kitabı','500+ sayfa','200 sayfadan kısa','Sesli kitap','E-kitap','Arkadaş önerisi','Filme uyarlanmış','Serinin devamı','Tek kelimelik başlık','Başlığında renk var','Mavi kapaklı','Bu yıl çıkan','100 yıldan eski','Distopya','Polisiye','Bilim kurgu','Fantastik','Tarihi roman','Anı / biyografi','Deneme','Şiir kitabı','Kurgu dışı','Yeniden okuma','Kütüphaneden','Hediye gelen','Başka ülkede geçen','Öykü kitabı','Çizgi roman','Ödüllü kitap','Hiç okumadığın tür','Hep ertelediğin','Bir günde biten','Rafta en uzun bekleyen','Aşk hikâyesi','Gerilim','Başlıkta şehir adı','Yeni bir yazar','Rus edebiyatı','Latin Amerika','Japon yazar','Kitap hakkında kitap','Doğa / bilim'];
+const BINGO_POOL=['Bir klasik','Çeviri kitap','Türk yazar','Kadın yazar','Yazarın ilk kitabı','500+ sayfa','200 sayfadan kısa','Sesli kitap','E-kitap','Arkadaş önerisi','Filme uyarlanmış','Diziye uyarlanmış','Serinin devamı','Serinin ilk kitabı','Tek kelimelik başlık','Başlığında renk var','Başlığında hayvan var','Başlıkta şehir adı','Başlıkta bir isim','Mavi kapaklı','Yeşil kapaklı','Kapağında çiçek var','Bu yıl çıkan','100 yıldan eski','Doğduğun yıl çıkan','Distopya','Polisiye','Bilim kurgu','Fantastik','Tarihi roman','Anı / biyografi','Deneme','Şiir kitabı','Kurgu dışı','Yeniden okuma','Kütüphaneden','Hediye gelen','İkinci el kitap','Başka ülkede geçen','Senin şehrinde geçen','Adada geçen','Kışın geçen','Yazın geçen','Öykü kitabı','Çizgi roman','Ödüllü kitap','Hiç okumadığın tür','Hep ertelediğin','Bir günde biten','Rafta en uzun bekleyen','Aşk hikâyesi','Gerilim','Korku','Yeni bir yazar','Rus edebiyatı','Latin Amerika','Japon yazar','Koreli yazar','Afrikalı yazar','İskandinav yazar','Kitap hakkında kitap','Kitapçıda geçen','Doğa / bilim','Psikoloji','Kişisel gelişim','Felsefe','Mitoloji','Masal / efsane','Yazarı 30 yaşından genç','Yazarı 70 yaşından büyük','Kadın kahraman','Çocuk anlatıcı','Hayvan anlatıcı','Mektup ya da günlük biçiminde','Birden çok anlatıcı','Kapak tasarımına âşık olduğun','Arkadaşınla birlikte okuduğun','Kitap kulübü seçimi','Annenin/babanın sevdiği kitap','Çocukken okuduğun bir kitap','Gülümseten kitap','Ağlatan kitap','Gece yarısına kadar okuduğun','Tren/uçak yolculuğunda okuduğun','Yemek ya da mutfak geçen','Müzik temalı','Yolculuk hikâyesi','300 sayfa civarı','Yazarın son kitabı','Aynı yazardan ikinci kitap'];
 
 /* ---------- utils ---------- */
 const $=s=>document.querySelector(s);
@@ -496,7 +596,8 @@ const stars=r=>`<span class="stars" style="--r:${+r||0}" aria-label="${+r||0} / 
 const fmtIco=f=>f?`<span class="fmt-dot" title="${FORMATS[f]}">${ico(f)}</span>`:'';
 const nf=n=>new Intl.NumberFormat('tr-TR').format(n);
 function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3200)}
+let toastT,undoFn=null;
+function toast(m,undo){const t=$('#toast');if(!m){t.hidden=true;return}undoFn=undo||null;t.innerHTML=esc(m)+(undo?' <button class="undo" data-act="undo">Geri al</button>':'');t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true;undoFn=null},undo?6000:3200)}
 
 /* ---------- example books (shown only while the journal is empty) ---------- */
 const DY=new Date().getFullYear(), dd=(m,d)=>`${DY}-${pad(m)}-${pad(d)}`;
@@ -677,8 +778,15 @@ function applyView(){
   const devW=Math.min(screen.width,screen.height,innerWidth);
   const clamp=mode==='mobile'&&phone&&innerWidth>devW+40;
   root.toggleAttribute('data-clamp',clamp);if(clamp)root.style.setProperty('--phone-w',devW+'px');
-  const vs=$('#viewsel');if(vs)vs.innerHTML=[['mobile','phone','Telefon görünümü'],['desktop','desktop','Masaüstü görünümü']].map(([v,i,l])=>`<button data-act="view" data-v="${v}" aria-pressed="${mode===v}" title="${l}" aria-label="${l}">${ico(i)}</button>`).join('');
+  const vs=$('#viewsel');if(vs)vs.innerHTML=[['mobile','phone','Telefon görünümü'],['desktop','desktop','Masaüstü görünümü']].map(([v,i,l])=>`<button data-act="view" data-v="${v}" aria-pressed="${mode===v}" title="${l}" aria-label="${l}">${ico(i)}</button>`).join('')
+    +`<span class="vs-sep"></span><button data-act="theme" title="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}" aria-label="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}">${ico(isDark()?'sun':'moon')}</button>`;
 }
+/* light / dark: follows the device until chosen here; the choice is remembered on this device */
+const THEME_KEY='rj-theme';
+const isDark=()=>{const t=document.documentElement.dataset.theme;return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches};
+function applyTheme(){let t=null;try{t=localStorage.getItem(THEME_KEY)}catch{}if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;else delete document.documentElement.dataset.theme}
+applyTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>applyView());
 addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.documentElement.dataset.view;applyView();if(was!==document.documentElement.dataset.view)render()}});
 
 /* ---------- render ---------- */
@@ -698,20 +806,16 @@ function render(){
   $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p>`;
 }
 
-/* shelf order: topic cluster, (subject for non-fiction), author surname, series and its number, year, title */
-const TOPICS=[
-  [/fantast|bilim ?kurgu|distopya|macera|masal/,'Fantastik & bilim kurgu'],
-  [/çizgi|grafik|resimli|manga/,'Çizgi roman & resimli'],
-  [/polisiye|gerilim|suç|korku|thriller/,'Gerilim & polisiye'],
-  [/roman|öykü|hikâye|hikaye|klasik|edebiyat|şiir|novella/,'Edebiyat'],
-  [/ebeveyn|çocuk|beslenme|sağlık|yemek|psikoloji|terapi|kişisel|gelişim|felsefe|deneme|kurgu dışı|bilim|tarih|biyografi|anı|mitoloji|iş|ekonomi/,'Kurgu dışı']
-];
-function topicOf(b){const g=(b.genre||'').toLocaleLowerCase('tr');if(!g)return[9,'Diğer'];const i=TOPICS.findIndex(t=>t[0].test(g));return i<0?[8,'Diğer']:[i,TOPICS[i][1]]}
+/* one genre list for the shelf, the stats and the genre picker; related genres sit next to each other */
+const GENRES=['Fantastik','Bilim kurgu','Distopya','Çizgi roman','Resimli kitap','Polisiye','Gerilim','Korku','Roman','Tarihi roman','Klasik','Öykü','Şiir','Anı','Biyografi','Deneme','Tarih','Felsefe','Psikoloji','Kişisel gelişim','Ebeveynlik','Popüler bilim','Beslenme','Kurgu dışı'];
+const GKEY=new Map(GENRES.map((g,i)=>[g.toLocaleLowerCase('tr'),i]));
+function genreOf(b){const g=String(b?.genre||'').split(',')[0].trim().replace(/\s+/g,' ');if(!g)return'Türsüz';const i=GKEY.get(g.toLocaleLowerCase('tr'));return i!=null?GENRES[i]:g.charAt(0).toLocaleUpperCase('tr')+g.slice(1)}
+const genreRank=g=>{const i=GKEY.get(g.toLocaleLowerCase('tr'));return i!=null?i:g==='Türsüz'?999:500};
+function allGenres(){const s=new Set(GENRES);S.books.forEach(b=>{const g=genreOf(b);if(g!=='Türsüz')s.add(g)});return[...s]}
 const surname=a=>{const p=String(a||'').trim().split(/\s+/);return(p[p.length-1]||'').toLocaleLowerCase('tr')};
 const cmp=(x,y)=>String(x??'').localeCompare(String(y??''),'tr');
 function shelfOrder(a,b){
-  const ta=topicOf(a),tb=topicOf(b);if(ta[0]!==tb[0])return ta[0]-tb[0];
-  if(ta[0]===4){const g=cmp((a.genre||'').toLocaleLowerCase('tr'),(b.genre||'').toLocaleLowerCase('tr'));if(g)return g}
+  const ga=genreOf(a),gb=genreOf(b);const g=genreRank(ga)-genreRank(gb)||cmp(ga,gb);if(g)return g;
   return cmp(surname(a.author),surname(b.author))||cmp(a.author,b.author)||cmp(a.series,b.series)
     ||((+a.seriesNo||0)-(+b.seriesNo||0))||((+a.year||0)-(+b.year||0))||cmp(a.title,b.title);
 }
@@ -729,18 +833,18 @@ function vShelf(){
   const all=BOOKS().filter(b=>b.owned||b.status!=='want');
   const f=S.shelfFilter;
   let list=all.filter(b=>f==='all'||(f==='read'&&b.status==='read')||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
-  const readN=all.filter(b=>b.status==='read').length, ownN=all.filter(b=>b.owned).length, waitN=all.filter(b=>b.owned&&b.status!=='read').length;
+  const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
   const chip=(k,l)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${l}</button>`;
-  let prevTopic=null;
+  let prevG=null,gi=0;
   let spines=list.map((b,i)=>{
     const w=Math.max(24,Math.min(48,Math.round((+b.pages||250)/14)));const h=118+hash(b.title)%46;
     const cls=b.status==='read'?'':b.status==='reading'?'reading':'unread';
-    const t=topicOf(b);const deco=t[0]!==prevTopic?`<div class="slot"><span class="bookend"><span class="tag">${esc(t[1])}</span>${decor(t[0])}</span></div>`:'';prevTopic=t[0];
+    const g=genreOf(b);const deco=g!==prevG?`<div class="slot"><span class="bookend ${gi%2?'slim':''}"><span class="tag">${esc(g)}</span>${gi++%2?'<span class="bk-end"></span>':decor(gi>>1)}</span></div>`:'';prevG=g;
     return deco+`<div class="slot"><button class="spine ${cls}" style="${colorVars(b)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${STATUS[b.status]}${b.owned?', kitaplığımda':''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
   return `<div class="head"><h2 class="hand">Kitaplığım</h2><div class="chips">${chip('all','Tümü')}${chip('read','Okuduklarım')}${chip('unread','Okunmamış')}${chip('owned','Sahip olduklarım')}</div></div>
   <div class="legend"><span><i style="background:${PALETTE.sage}"></i>Renkli: okudum</span><span><i style="border:1.5px solid var(--ink-2)"></i>Renksiz: henüz okumadım</span><span><i style="background:var(--postmark);width:6px"></i>Kurdele: okuyorum</span></div>
-  <div class="shelf-stats"><span><b>${readN}</b> okundu</span><span><b>${ownN}</b> kitaplığımda</span><span><b>${waitN}</b> rafta bekliyor</span></div>
+  <div class="shelf-stats"><span><b>${all.length}</b> toplam kitap</span><span><b>${readN}</b> okuduklarım</span>${readingN?`<span><b>${readingN}</b> okuyorum</span>`:''}<span><b>${waitN}</b> rafta bekleyen</span></div>
   ${list.length?`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}</div>`:`<div class="empty">Bu filtrede kitap yok.</div>`}`;
 }
 
@@ -777,26 +881,27 @@ function shelfIllu(v){
     books+=`<rect x="${x}" y="${78-h}" width="${w}" height="${h}" rx="2" fill="${c}"/><rect x="${x}" y="${84-h}" width="${w}" height="2" fill="rgba(60,40,25,.2)"/>`;x+=w+1.5}
   return `<svg class="nb-illu" viewBox="0 0 190 86" aria-hidden="true">${books}<rect x="2" y="78" width="186" height="7" rx="2" fill="var(--wood)"/><g transform="translate(${x+2} 0) scale(.95)">${DECOR[v?2:0]}</g></svg>`;
 }
+/* to-read lists: a tick moves a book one step along  wish list → on my shelf → reading → finished */
 function vTbr(){
-  const W=BOOKS().filter(b=>b.status==='want');
-  const row=(b,i)=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="tbr-done" data-id="${b.id}" aria-label="${esc(b.title)}: okudum olarak işaretle" title="Okudum"></button>
-    <button class="tt" data-act="open" data-id="${b.id}">${esc(b.title)}${b.author?`<small>${esc(b.author)}</small>`:''}</button>
-    <button class="mini" data-act="tbr-start" data-id="${b.id}">Başladım</button>${b.owned?'':`<button class="mini" data-act="tbr-own" data-id="${b.id}">Aldım</button>`}</li>`;
-  const notOwned=W.filter(b=>!b.owned), owned=W.filter(b=>b.owned);
-  return `<div class="head"><h2 class="hand">Okunacaklar</h2><span class="muted">${notOwned.length} istek · ${owned.length} rafta bekliyor</span></div>
+  const W=BOOKS(),wish=W.filter(b=>b.status==='want'&&!b.owned),wait=W.filter(b=>b.status==='want'&&b.owned),now=W.filter(b=>b.status==='reading');
+  const row=(b,i,act,label,extra='')=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="${act}" data-id="${b.id}" aria-label="${esc(b.title)}: ${label}" title="${label}">${ico('check',2.4)}</button>
+    <button class="tt" data-act="open" data-id="${b.id}">${esc(b.title)}${b.author?`<small>${esc(b.author)}</small>`:''}</button>${extra}</li>`;
+  const sec=(title,sub,hint,list,illu,rows,empty)=>`<section class="notebook"><div class="nb-top"><h3 class="nb-title">${title}<small>${sub}</small></h3>${illu}</div>
+    ${list.length?`<p class="nb-hint">${ico('check',2.4)} ${hint}</p><ul class="tlist">${rows}</ul>`:`<div class="empty">${empty}</div>`}</section>`;
+  return `<div class="head"><h2 class="hand">Okunacaklar</h2><span class="muted">${wish.length} istek · ${wait.length} rafta · ${now.length} okunuyor</span></div>
   <form class="tbr-add" id="tbr-form"><input type="text" id="tbr-in" placeholder="Okumak istediğin kitabın adı (ve yazarı)" autocomplete="off"><button class="btn primary" type="submit">Listeye ekle</button></form>
   <p class="note" style="margin:-10px 0 16px">Eklediğinde kapak, yazar ve sayfa sayısı internetten otomatik bulunur.</p>
   <div class="nb-pages">
-  <section class="notebook"><div class="nb-top"><h3 class="nb-title">İstek listem<small>elimde yok, okumak istiyorum</small></h3>${shelfIllu(0)}</div>
-  ${notOwned.length?`<ul class="tlist">${notOwned.map(row).join('')}</ul>`:'<div class="empty">İstek listen boş.</div>'}</section>
-  <section class="notebook"><div class="nb-top"><h3 class="nb-title">Rafta bekleyenler<small>sahibim, henüz okumadım</small></h3>${shelfIllu(1)}</div>
-  ${owned.length?`<ul class="tlist">${owned.map((b,i)=>row(b,i+5)).join('')}</ul>`:'<div class="empty">Rafta bekleyen kitap yok.</div>'}</section></div>`;
+  ${sec('İstek listem','elimde yok, okumak istiyorum','İşaretle: kitabı aldım, rafa geçsin',wish,shelfIllu(0),wish.map((b,i)=>row(b,i,'tbr-own','Aldım, rafa koy',`<button class="mini" data-act="tbr-start" data-id="${b.id}" title="Almadan başladım (kütüphane, e-kitap…)">Başladım</button>`)).join(''),'İstek listen boş.')}
+  ${sec('Rafta bekleyenler','sahibim, henüz okumadım','İşaretle: okumaya başladım',wait,shelfIllu(1),wait.map((b,i)=>row(b,i+5,'tbr-start','Okumaya başladım')).join(''),'Rafta bekleyen kitap yok.')}
+  ${sec('Okuyorum','şu an elimdekiler','İşaretle: bitirdim, puanını ver',now,shelfIllu(2),now.map((b,i)=>row(b,i+9,'tbr-done','Bitirdim')).join(''),'Şu an okuduğun kitap yok.')}
+  </div>`;
 }
 
 /* ---------- yearly stats ---------- */
 /* genre colours for charts: fixed order, validated for colour-blind separation; text stays in ink tokens */
 const GCOL=['#5E9A5A','#4C7FBE','#C8603F','#8D6BBF','#C9952B','#1E9E96'],GOTHER='#A8A39A';
-const gName=b=>{const g=(b.genre||'').split(',')[0].trim();return g?g.charAt(0).toLocaleUpperCase('tr')+g.slice(1):'Türsüz'};
+const gName=genreOf;
 const chunk=(a,n)=>a.reduce((r,x,i)=>(i%n?r[r.length-1].push(x):r.push([x]),r),[]);
 function vStats(){
   const y=S.year,R=readIn(y);
@@ -818,17 +923,20 @@ function vStats(){
     if(v/R.length>=.07)lbl+=`<text x="${(cx+r*.64*Math.cos(mid)).toFixed(1)}" y="${(cy+r*.64*Math.sin(mid)).toFixed(1)}" text-anchor="middle" dominant-baseline="central">${v}</text>`;
     a0=a1;return `<path d="${d}" fill="${col(c)}"><title>${esc(c)}: ${v} kitap</title></path>`}).join('');
   const legend=cats.map(c=>{const v=ofCat(c).length;return `<li><i style="background:${col(c)}"></i><span>${esc(c)}</span><b>${v}</b></li>`}).join('');
-  /* average rating per genre */
   const avgOf=a=>{const x=a.filter(b=>+b.rating>0);return x.length?(x.reduce((s,b)=>s+ +b.rating,0)/x.length):null};
-  const avgRows=cats.map(c=>{const v=avgOf(ofCat(c));return `<div class="avg-row"><span><i style="background:${col(c)}"></i>${esc(c)}</span><b>${v==null?'–':v.toFixed(1).replace('.',',')}</b></div>`}).join('');
+  const withPages=R.filter(b=>+b.pages>0),pages=withPages.reduce((s,b)=>s+ +b.pages,0);
+  const phone=document.documentElement.dataset.view==='mobile';
+  /* pages read per month */
+  const mp=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).reduce((s,b)=>s+(+b.pages||0),0)),mpMax=Math.max(...mp,1);
+  const nice=Math.pow(10,Math.floor(Math.log10(mpMax))),top2=Math.ceil(mpMax/nice)*nice,grid=[top2/2,top2];
+  const pageBars=`<div class="pchart" style="--h:150px">${grid.map(v=>`<span class="pgrid" style="bottom:calc(${v/top2} * var(--h))"><em>${nf(v)}</em></span>`).join('')}<div class="pbars">${mp.map((v,i)=>`<div class="pcol" title="${AYLAR[i]}: ${nf(v)} sayfa"><span class="pval">${v&&(!phone||v===mpMax)?nf(v):''}</span><i style="height:calc(${v/top2} * var(--h))"></i><span class="plab">${AYLAR[i].slice(0,3)}</span></div>`).join('')}</div></div>`;
   /* unit columns: books by star rating */
   const rated=R.filter(b=>+b.rating>0),unrated=R.length-rated.length;
   const starCols=[1,2,3,4,5].map(s=>{const L=rated.filter(b=>Math.floor(+b.rating)===s).sort(byCat);
-    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,4).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab">${s}★</span></div>`}).join('');
+    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,phone?3:4).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab">${s}★</span></div>`}).join('');
   const monCols=AYLAR.map((m,i)=>{const L=R.filter(b=>mOf(b.endDate)===i).sort(byCat);
-    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,2).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab sm">${m.slice(0,3)}</span></div>`}).join('');
+    return `<div class="ucol"><span class="ucount">${L.length||''}</span><div class="ustack">${chunk(L,phone?1:2).map(row=>`<div class="urow">${row.map(sq).join('')}</div>`).join('')}</div><span class="ulab sm">${m.slice(0,3)}</span></div>`}).join('');
   /* tiles */
-  const withPages=R.filter(b=>+b.pages>0),pages=withPages.reduce((s,b)=>s+ +b.pages,0);
   const avg=avgOf(R);
   const au={};R.forEach(b=>{const k=(b.author||'').trim();if(k)au[k]=(au[k]||0)+1});
   const earlier=new Set(BOOKS().filter(b=>b.status==='read'&&yOf(b.endDate)<y).map(b=>(b.author||'').trim()));
@@ -840,7 +948,7 @@ function vStats(){
   <div class="tiles">${tile('Okunan sayfa',pages?nf(pages):'–',withPages.length<R.length?`${R.length-withPages.length} kitabın sayfa bilgisi yok`:'')}${tile('Yazar',Object.keys(au).length,`${newAu} tanesi yeni tanıştığın yazar`)}${tile('Biçim',`<span class="fmts">${['print','ebook','audio'].map(f=>`<span title="${FORMATS[f]}">${ico(f)}${R.filter(b=>b.format===f).length}</span>`).join('')}</span>`)}${tile('En verimli ay',(()=>{const m=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).length);const mx=Math.max(...m);return mx?AYLAR[m.indexOf(mx)]+' · '+mx:'–'})())}</div>
   <div class="st-grid">
     <section class="panel taped" style="--tape:${PALETTE.rose}"><h3 class="st-h">Türler</h3><div class="pie-wrap"><svg class="pie" viewBox="0 0 180 180" role="img" aria-label="Türlere göre kitap dağılımı">${pie}${lbl}</svg><ul class="lg">${legend}</ul></div>
-      <h3 class="st-h" style="margin-top:16px">Türlere göre ortalama puan</h3><div class="avgbox">${avgRows}</div></section>
+      <h3 class="st-h" style="margin-top:18px">Aylara göre okunan sayfa</h3>${pageBars}${withPages.length<R.length?`<p class="note">${R.length-withPages.length} kitabın sayfa bilgisi olmadığı için sayılmadı.</p>`:''}</section>
     <section class="panel taped" style="--tape:${PALETTE.sky}"><h3 class="st-h">Tür ve puan</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır. 4,5 yıldız 4★ sütununda.</p>
       <div class="units">${starCols}</div>${unrated?`<p class="note">${unrated} kitap puansız.</p>`:''}
       <h3 class="st-h" style="margin-top:18px">Aylara göre</h3><div class="units months">${monCols}</div></section>
@@ -849,21 +957,57 @@ function vStats(){
 }
 
 /* ---------- challenge & stamps ---------- */
-function bingoCard(y){
-  let c=S.settings.bingo?.[y];
-  if(!c||!Array.isArray(c.cells)||c.cells.length!==25){
-    const r=rng(y*7919),pool=[...BINGO_POOL];for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
-    c={cells:Array.from({length:25},(_,i)=>i===12?{p:'SERBEST',b:null}:{p:pool[i>12?i-1:i],b:null})};
-  }
-  return c;
+/* bingo cards: 3×3, 4×4 or 5×5; odd sizes get a free centre square */
+const freeIdx=n=>n%2?(n*n-1)/2:-1;
+function shuffled(seed){const r=rng(seed),pool=[...BINGO_POOL];for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}return pool}
+function genCard(n,seed,keep=[]){
+  const used=new Set(keep.map(c=>c.p)),pool=shuffled(seed).filter(p=>!used.has(p)),fi=freeIdx(n),cells=[];let k=0;
+  for(let i=0;i<n*n;i++){if(i===fi){cells.push({p:'SERBEST',b:null});continue}cells.push(k<keep.length?keep[k++]:{p:pool.pop()||'Serbest seçim',b:null})}
+  return{size:n,cells};
 }
-function bingoLines(cells){
-  const on=i=>i===12||!!(cells[i].b&&BOOKS().some(x=>x.id===cells[i].b));const L=[];
-  for(let r=0;r<5;r++)L.push([0,1,2,3,4].map(c=>r*5+c));
-  for(let c=0;c<5;c++)L.push([0,1,2,3,4].map(r=>r*5+c));
-  L.push([0,6,12,18,24],[4,8,12,16,20]);
+function bingoCard(y){
+  const c=S.settings.bingo?.[y];
+  if(c&&Array.isArray(c.cells)){const n=c.size||Math.round(Math.sqrt(c.cells.length));if(n*n===c.cells.length)return{size:n,cells:c.cells}}
+  return genCard(5,y*7919);
+}
+function bingoLines(card){
+  const n=card.size,cells=card.cells,fi=freeIdx(n);
+  const on=i=>i===fi||!!(cells[i].b&&BOOKS().some(x=>x.id===cells[i].b));const L=[],idx=[...Array(n).keys()];
+  for(let r=0;r<n;r++)L.push(idx.map(c=>r*n+c));
+  for(let c=0;c<n;c++)L.push(idx.map(r=>r*n+c));
+  L.push(idx.map(i=>i*n+i),idx.map(i=>i*n+(n-1-i)));
   const done=L.filter(l=>l.every(on));
-  return{done,cells:new Set(done.flat()),filled:cells.filter((_,i)=>on(i)).length};
+  return{done,cells:new Set(done.flat()),filled:cells.filter((_,i)=>on(i)).length,total:n*n};
+}
+/* stamp tiers: 1 easy (bronze) · 2 medium (silver) · 3 hard (gold) */
+const TIER={first:1,short:1,five:1,fast:2,weekend:2,brick:2,classic:1,audio:2,ebook:2,triple:2,genres:2,author:2,critic:2,shelf:2,tbr:2,m10:1,m25:2,m50:3,goal:3,bingo:2,fullcard:3,marathon:3,mountain:3,streak:2};
+const TIERS=['','Bronz','Gümüş','Altın'];
+/* painted month icons, one for each season's mood */
+const MONTH_ART=[
+ ['#CFE0EE','<g stroke="#5E8BB8" stroke-width="2.4" stroke-linecap="round"><path d="M20 6v28M8 13l24 14M8 27l24-14"/><path d="M16 8l4 3 4-3M16 32l4-3 4 3M7 18l4-1-1-4M33 22l-4 1 1 4M7 22l4 1-1 4M33 18l-4-1 1-4"/></g>'],
+ ['#EBD5DD','<path d="M20 33S7 25 7 16a6.5 6.5 0 0 1 13-2 6.5 6.5 0 0 1 13 2c0 9-13 17-13 17z" fill="#D98C9A"/><circle cx="12" cy="9" r="1.6" fill="#fff"/><circle cx="29" cy="7" r="1.3" fill="#fff"/><circle cx="33" cy="13" r="1.1" fill="#fff"/>'],
+ ['#D9E8C9','<path d="M8 33h24" stroke="#8B5B35" stroke-width="3" stroke-linecap="round"/><path d="M20 32V17" stroke="#5F8A57" stroke-width="2.4"/><path d="M20 20c-8 0-11-5-11-10 6 0 11 3 11 10z" fill="#8DB97A"/><path d="M20 17c0-6 4-10 11-10 0 6-4 10-11 10z" fill="#5F8A57"/>'],
+ ['#D2E4EC','<path d="M6 19a14 14 0 0 1 28 0z" fill="#E3A79C"/><path d="M6 19c2.3-2 4.7-2 7 0 2.3-2 4.7-2 7 0 2.3-2 4.7-2 7 0 2.3-2 4.7-2 7 0" fill="none" stroke="#C97C5D" stroke-width="1.4"/><path d="M20 19v11a3 3 0 0 1-6 0" fill="none" stroke="#7B695C" stroke-width="2" stroke-linecap="round"/><g fill="#7FAACB"><path d="M8 26l-1 3"/><circle cx="9" cy="27" r="1.3"/><circle cx="30" cy="29" r="1.3"/><circle cx="26" cy="34" r="1.1"/></g>'],
+ ['#F3D6DA','<path d="M20 34V19" stroke="#5F8A57" stroke-width="2.4"/><path d="M20 28c-6-1-9-5-9-9 4 0 8 3 9 9z" fill="#8DB97A"/><path d="M13 8l3 5 4-6 4 6 3-5c1 7-2 12-7 12s-8-5-7-12z" fill="#E2728A"/>'],
+ ['#F6E6A6','<circle cx="20" cy="20" r="7.5" fill="#F2B53A"/><g stroke="#F2B53A" stroke-width="2.4" stroke-linecap="round"><path d="M20 5v4M20 31v4M5 20h4M31 20h4M9.4 9.4l2.8 2.8M27.8 27.8l2.8 2.8M9.4 30.6l2.8-2.8M27.8 12.2l2.8-2.8"/></g>'],
+ ['#F7D3C2','<path d="M5 15a15 15 0 0 0 30 0z" fill="#7FB069"/><path d="M8 15a12 12 0 0 0 24 0z" fill="#F4F1DE"/><path d="M10 15a10 10 0 0 0 20 0z" fill="#E5636B"/><g fill="#3D2F28"><ellipse cx="15" cy="19" rx=".9" ry="1.4"/><ellipse cx="20" cy="21" rx=".9" ry="1.4"/><ellipse cx="25" cy="19" rx=".9" ry="1.4"/></g>'],
+ ['#F5DE95','<path d="M20 34V24" stroke="#5F8A57" stroke-width="2.4"/><g fill="#F2B53A">'+[0,45,90,135,180,225,270,315].map(a=>`<ellipse cx="20" cy="9" rx="3" ry="6" transform="rotate(${a} 20 16)"/>`).join('')+'</g><circle cx="20" cy="16" r="5" fill="#8B5B35"/>'],
+ ['#F1DDB8','<path d="M20 12c-3-3-11-3-11 6 0 8 6 15 11 13 5 2 11-5 11-13 0-9-8-9-11-6z" fill="#D9534F"/><path d="M20 12c0-3 1-5 3-6" stroke="#6B4A2F" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M22 9c3-3 7-2 8 0-3 2-6 2-8 0z" fill="#7FB069"/><ellipse cx="14" cy="17" rx="2" ry="3" fill="#fff" opacity=".35"/>'],
+ ['#F0CFA8','<path d="M20 4l3 7 5-3-1 7 7-1-4 6 5 3-8 2 1 6-8-4-8 4 1-6-8-2 5-3-4-6 7 1-1-7 5 3z" fill="#D9733A"/><path d="M20 35V14" stroke="#8B4A23" stroke-width="1.6"/>'],
+ ['#E2D3C1','<rect x="16.5" y="20" width="7" height="12" rx="3" fill="#F1E3CC"/><path d="M6 21a14 11 0 0 1 28 0z" fill="#B5533C"/><g fill="#FFF8EC"><circle cx="13" cy="16" r="2"/><circle cx="21" cy="12" r="2.4"/><circle cx="27" cy="17" r="1.6"/></g><path d="M8 33h24" stroke="#7FA872" stroke-width="3" stroke-linecap="round"/>'],
+ ['#D2E3D8','<path d="M20 6l9 12h-5l7 9h-6l5 7H10l5-7H9l7-9h-5z" fill="#4E7A58"/><rect x="18" y="33" width="4" height="4" fill="#8B5B35"/><path d="M20 2l1.2 2.6 2.8.3-2.1 1.9.6 2.8L20 8.2l-2.5 1.4.6-2.8L16 4.9l2.8-.3z" fill="#F2B53A"/><g fill="#E5636B"><circle cx="17" cy="17" r="1.3"/><circle cx="24" cy="24" r="1.3"/><circle cx="15" cy="29" r="1.3"/></g>']
+];
+/* goal plant: the stem grows with progress, leaves unfold on the way, a flower opens at 100% */
+function goalPlant(p){
+  p=Math.max(0,Math.min(1,p));const off=(100-100*p).toFixed(1);
+  const leaves=[[.12,54,104,-35],[.26,67,92,35],[.4,53,79,-40],[.54,67,66,40],[.68,54,53,-35],[.82,66,42,35]].filter(l=>p>=l[0]);
+  return `<svg class="plant ${p>=1?'bloom':''}" viewBox="0 0 120 160" aria-hidden="true">
+    <path d="M36 128h48l-6 28H42z" fill="#C97C5D"/><rect x="32" y="122" width="56" height="9" rx="3" fill="#A9604A"/><ellipse cx="60" cy="124" rx="24" ry="3" fill="#6B4A2F"/>
+    <path class="stem" d="M60 123C56 106 66 92 60 78S54 50 60 30" pathLength="100" style="--off:${off}" fill="none" stroke="#5F8A57" stroke-width="3.2" stroke-linecap="round"/>
+    ${leaves.map((l,i)=>`<path class="leaf" style="--d:${.25+i*.18}s" d="M0 0c-4-6-2-13 6-15 2 8-1 13-6 15z" transform="translate(${l[1]} ${l[2]}) rotate(${l[3]})" fill="${i%2?'#8DB97A':'#6E9A5E'}"/>`).join('')}
+    ${p>=.92&&p<1?'<ellipse class="leaf" style="--d:1.2s" cx="60" cy="27" rx="5" ry="7" fill="#E3A79C"/>':''}
+    ${p>=1?`<g class="flower">${[0,60,120,180,240,300].map(a=>`<ellipse cx="60" cy="16" rx="6" ry="10" transform="rotate(${a} 60 26)" fill="#E3A79C"/>`).join('')}<circle cx="60" cy="26" r="6" fill="#F2B53A"/></g>`:''}
+  </svg>`;
 }
 function computeStamps(y){
   const R=readIn(y),pages=R.reduce((s,b)=>s+(+b.pages||0),0);
@@ -871,12 +1015,12 @@ function computeStamps(y){
   const mPages=byM.map(a=>a.reduce((s,b)=>s+(+b.pages||0),0));
   let run=0,best=0;byM.forEach(a=>{run=a.length?run+1:0;best=Math.max(best,run)});
   const fmt=f=>R.filter(b=>b.format===f).length;
-  const genres=new Set(R.map(b=>(b.genre||'').trim().toLocaleLowerCase('tr')).filter(Boolean)).size;
+  const genres=new Set(R.map(genreOf).filter(g=>g!=='Türsüz')).size;
   const au={};R.forEach(b=>{const k=(b.author||'').trim().toLocaleLowerCase('tr');if(k)au[k]=(au[k]||0)+1});
   const weekend=R.filter(b=>{if(!b.startDate)return false;const dw=new Date(b.startDate+'T12:00').getDay();if(![5,6,0].includes(dw))return false;const n=days(b.startDate,b.endDate);return n>=0&&n<=(7-dw)%7}).length;
-  const bl=bingoLines(bingoCard(y).cells);
+  const bl=bingoLines(bingoCard(y));
   const goal=goalOf(y);
-  const B=(id,nm,ds,g,val,target)=>({id,nm,ds,g,val:Math.min(val,target),target,ok:val>=target});
+  const B=(id,nm,ds,g,val,target,tier=TIER[id]||1)=>({id,nm,ds,g,val:Math.min(val,target),target,ok:val>=target,tier});
   return{R,pages,byM,list:[
     B('first','İlk Sayfa','Yılın ilk kitabını bitir','seed',R.length,1),
     B('fast','Şimşek Okur','Bir kitabı 3 günde bitir','bolt',R.filter(b=>b.startDate&&days(b.startDate,b.endDate)<=3).length,1),
@@ -901,7 +1045,7 @@ function computeStamps(y){
     B('m50','Elli Kitap','50 kitap bitir','stack',R.length,50),
     B('goal','Hedef Tamam','Yıllık hedefine ulaş','trophy',R.length,goal),
     B('bingo','Bingo!','Bingo kartında bir sıra tamamla','grid',bl.done.length,1),
-    B('fullcard','Dolu Kart','Bingo kartının tamamını doldur','sparkle',bl.filled,25)
+    B('fullcard','Dolu Kart','Bingo kartının tamamını doldur','sparkle',bl.filled,bl.total,3)
   ]};
 }
 function vStamps(){
@@ -918,14 +1062,19 @@ function vStamps(){
   const gc={};R.forEach(b=>{const g=(b.genre||'').trim();if(g)gc[g]=(gc[g]||0)+1});const topG=Object.entries(gc).sort((a,b)=>b[1]-a[1])[0];
   const fc=f=>R.filter(b=>b.format===f).length;
   const earned=list.filter(s=>s.ok).length+byM.filter(a=>a.length).length;
-  const stamp=(s,i)=>`<div class="stamp ${s.ok?'':'locked'}" style="--c:${PCOLS[(i*5)%PCOLS.length]}" title="${esc(s.ds)}"><div class="stamp-in">${ico(s.g,1.5)}<span class="nm">${esc(s.nm)}</span><span class="ds">${esc(s.ds)}</span><span class="pr">${s.ok?'Toplandı':`${nf(s.val)} / ${nf(s.target)}`}</span></div>${s.ok?`<span class="pm">${y}<br>PUL</span>`:''}</div>`;
-  const mstamp=(a,m)=>`<div class="stamp mstamp ${a.length?'':'locked'}" style="--c:${PCOLS[m]}"><div class="stamp-in"><span class="mn">${AYLAR[m]}</span><span class="ds">Ay okuru</span><span class="pr">${a.length?a.length+' kitap':'—'}</span></div>${a.length?`<span class="pm">${AYLAR[m].slice(0,3).toUpperCase()}<br>${y}</span>`:''}</div>`;
+  const seenKey=`rj-stamps-${S.viewing}-${y}`;let seen=[];try{seen=JSON.parse(localStorage.getItem(seenKey)||'[]')}catch{}
+  const isNew=id=>S.viewing===S.me&&seen.length>0&&!seen.includes(id);
+  const stamp=(s,i)=>`<div class="stamp t${s.tier} ${s.ok?'':'locked'} ${s.ok&&isNew(s.id)?'new':''}" style="--c:${PCOLS[(i*5)%PCOLS.length]}" title="${esc(s.ds)} · ${TIERS[s.tier]}"><div class="stamp-in"><span class="tier" aria-label="${TIERS[s.tier]}"></span>${ico(s.g,1.5)}<span class="nm">${esc(s.nm)}</span><span class="ds">${esc(s.ds)}</span><span class="pr">${s.ok?'Toplandı':`${nf(s.val)} / ${nf(s.target)}`}</span>${s.ok?'':`<span class="prog"><i style="width:${Math.round(s.val/s.target*100)}%"></i></span>`}</div>${s.ok?`<span class="pm">${y}</span>`:''}</div>`;
+  const mstamp=(a,m)=>`<div class="stamp mstamp ${a.length?'':'locked'} ${a.length&&isNew('m'+m)?'new':''}" style="--c:${MONTH_ART[m][0]}"><div class="stamp-in"><svg class="mart" viewBox="0 0 40 40" aria-hidden="true">${MONTH_ART[m][1]}</svg><span class="mn">${AYLAR[m]}</span><span class="pr">${a.length?a.length+' kitap':'—'}</span></div>${a.length?`<span class="pm">${AYLAR[m].slice(0,3).toUpperCase()}</span>`:''}</div>`;
+  const earnedIds=[...list.filter(s=>s.ok).map(s=>s.id),...byM.map((a,m)=>a.length?'m'+m:null).filter(Boolean)];
+  if(S.viewing===S.me)setTimeout(()=>{try{localStorage.setItem(seenKey,JSON.stringify(earnedIds))}catch{}},1500);
   return `<div class="head"><h2 class="hand">Okuma Hedefi <small>${y}</small></h2><span class="muted">${earned} / ${list.length+12} pul toplandı</span></div>
-  <div class="ch"><div class="panel taped goal-panel" style="--tape:${PALETTE.sage}">${decor(0)}
+  <div class="ch"><div class="panel taped goal-panel" style="--tape:${PALETTE.sage}">${goalPlant(R.length/goal)}<div class="goal-txt">
     <div class="goal-num">${R.length} <small>/ ${goal} kitap</small></div>
     <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${R.length}"><i style="width:${Math.min(100,R.length/goal*100)}%"></i></div>
     <div>${pace}${cur?` <span class="muted">· ${left} gün kaldı</span>`:''}</div>
     <div class="goal-edit"><label for="goal-in">Yıllık hedef</label><input type="number" id="goal-in" min="1" max="999" value="${goal}"><span>kitap</span></div>
+    <p class="note" style="margin:6px 0 0">${R.length>=goal?'Çiçeğin açtı!':'Fidan, hedefe yaklaştıkça büyüyor; hedefe ulaşınca çiçek açar.'}</p></div>
   </div><div class="panel stats taped" style="--tape:${PALETTE.rose}">
     <div class="stat"><div class="k">Okunan sayfa</div><div class="v">${nf(pages)}</div></div>
     <div class="stat"><div class="k">Ortalama puan</div><div class="v">${avg}${avg!=='–'?' <span class="stars" style="--r:'+avg+';font-size:.8rem">★★★★★</span>':''}</div></div>
@@ -934,19 +1083,23 @@ function vStamps(){
   </div></div>
   <section class="album taped" style="--tape:${PALETTE.butter}"><div class="sec-h"><h3>Ay Pulları</h3><span>Her ay en az bir kitap bitir</span></div>
   <div class="sgrid">${byM.map(mstamp).join('')}</div></section>
-  <section class="album taped" style="--tape:${PALETTE.lilac}"><div class="sec-h"><h3>Başarı Pulları</h3><span>${list.filter(s=>s.ok).length} / ${list.length}</span></div>
+  <section class="album taped" style="--tape:${PALETTE.lilac}"><div class="sec-h"><h3>Başarı Pulları</h3><span>${list.filter(s=>s.ok).length} / ${list.length} · <i class="tdot t1"></i>Bronz <i class="tdot t2"></i>Gümüş <i class="tdot t3"></i>Altın</span></div>
   <div class="sgrid">${list.map(stamp).join('')}</div></section>`;
 }
 
 function vBingo(){
-  const y=S.year,card=bingoCard(y),bl=bingoLines(card.cells);
+  const y=S.year,card=bingoCard(y),n=card.size,bl=bingoLines(card),fi=freeIdx(n);
   const cells=card.cells.map((c,i)=>{
-    if(i===12)return `<button class="bcell free ${bl.cells.has(i)?'line':''}" data-act="bingo-cell" data-i="12">Serbest</button>`;
+    if(i===fi)return `<div class="bcell free ${bl.cells.has(i)?'line':''}"><span>Serbest</span></div>`;
     const b=c.b&&BOOKS().find(x=>x.id===c.b);
-    return `<button class="bcell ${b?'done':''} ${bl.cells.has(i)?'line':''}" style="--c:${b?esc(b.color||autoColor(b.title)):'transparent'}" data-act="bingo-cell" data-i="${i}">${esc(c.p)}${b?`<span class="bk">${esc(b.title)}</span>`:''}</button>`}).join('');
-  return `<div class="head"><h2 class="hand">Kitap Bingo <small>${y}</small></h2><div class="chips"><button class="chip" data-act="bingo-shuffle">Boşları karıştır</button><button class="chip" data-act="bingo-reset">Kartı sıfırla</button></div></div>
-  <div class="bingo-wrap taped" style="--tape:${PALETTE.rose}">${decor(1)}${decor(2)}<div class="bingo-title">Kitap <span>bingo</span></div><div class="bgrid">${cells}</div>
-  <div class="bstat"><span>${bl.filled} / 25 kare · ${bl.done.length} bingo</span><span>Bir kareye dokun: okuduğun bir kitabı eşleştir ya da kareyi kendin yaz.</span></div></div>`;
+    return `<button class="bcell ${b?'done':''} ${bl.cells.has(i)?'line':''}" style="--c:${b?esc(b.color||autoColor(b.title)):'transparent'}" data-act="bingo-cell" data-i="${i}"><span class="bp">${esc(c.p)}</span>${b?`<span class="bk"><i></i>${esc(b.title)}</span><svg class="bchk" viewBox="0 0 24 24" aria-hidden="true"><path d="${G.check.split(' M')[0]}"/><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`:''}</button>`}).join('');
+  const sz=k=>`<button class="chip" data-act="bingo-size" data-n="${k}" aria-pressed="${n===k}">${k}×${k}</button>`;
+  return `<div class="head"><h2 class="hand">Kitap Bingo <small>${y}</small></h2><div class="chips">${sz(3)}${sz(4)}${sz(5)}</div></div>
+  <div class="bingo-wrap taped" style="--tape:${PALETTE.rose}">${decor(1)}${decor(2)}<div class="bingo-title">Kitap <span>bingo</span></div>
+  <div class="bgrid" data-n="${n}" style="--n:${n}">${cells}</div>
+  <div class="bstat"><span><b>${bl.filled} / ${bl.total}</b> kare · <b>${bl.done.length}</b> bingo</span><span>Bir kareye dokun: görevi listeden seç ya da kendin yaz, okuduğun kitabı eşleştir.</span></div>
+  <div class="bactions"><button class="btn" data-act="bingo-shuffle">${ico('sparkle')}Boşları karıştır</button><button class="btn ghost" data-act="bingo-reset">Yeni kart oluştur</button></div>
+  <p class="note" style="text-align:center;margin:8px 0 0">Her yılın kendi kartı var. Üstteki yıl seçiciyle yeni yıla geçince hazır bir kart seni bekler.</p></div>`;
 }
 
 /* ---------- editor sheet ---------- */
@@ -979,12 +1132,14 @@ function renderEditor(){
         ${b._results&&b._results.length?`<div class="field"><span class="lbl">Hangisi? Seçince kapak ve bilgiler dolar</span><div class="results">${b._results.map((r,i)=>`<button type="button" class="res" data-act="ed-pick" data-i="${i}">${r.cover?`<img src="${esc(r.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<i></i>'}<span><b>${esc(r.title)}</b>${esc([r.author,r.year,r.pages?r.pages+' sayfa':''].filter(Boolean).join(' · '))}</span></button>`).join('')}</div></div>`:''}
         <div class="row"><div class="field"><label for="f-author">Yazar</label><input type="text" id="f-author" data-k="author" value="${esc(b.author)}"></div>
           <div class="field"><label for="f-pages">Sayfa</label><input type="number" id="f-pages" data-k="pages" min="1" value="${esc(b.pages)}"></div></div>
-        <div class="row"><div class="field"><label for="f-genre">Tür</label><input type="text" id="f-genre" data-k="genre" value="${esc(b.genre)}"></div>
+        <div class="row">
           <div class="field"><label for="f-year">Yayın yılı</label><input type="number" id="f-year" data-k="year" value="${esc(b.year)}"></div></div>
         <div class="row"><div class="field"><label for="f-series">Seri</label><input type="text" id="f-series" data-k="series" value="${esc(b.series)}" placeholder="ör. Farseer Üçlemesi"></div>
           <div class="field"><label for="f-sno">Serideki sırası</label><input type="number" id="f-sno" data-k="seriesNo" step="0.5" value="${esc(b.seriesNo)}"></div></div>
       </div>
     </div>
+    <div class="field"><span class="lbl">Tür</span><div class="gchips" role="group" aria-label="Tür">${allGenres().map(g=>`<button type="button" class="gchip" data-act="ed-genre" data-v="${esc(g)}" aria-pressed="${b.genre?genreOf(b)===g:false}">${esc(g)}</button>`).join('')}</div>
+      <input type="text" id="f-genre" data-k="genre" value="${esc(b.genre)}" placeholder="Listede yoksa yeni türü buraya yaz" aria-label="Tür"></div>
     ${b.about?`<div class="about">${esc(b.about)}</div>`:''}
     ${b.series&&!b._new?`<p class="note" style="margin:0">Seri: ${esc(b.series)}${b.seriesNo?' #'+esc(b.seriesNo):''}</p>`:''}
     <div class="field"><span class="lbl">Durum</span><div class="seg">${seg('status','want','Okunacak')}${seg('status','reading','Okuyorum')}${seg('status','read','Okudum')}</div></div>
@@ -1108,7 +1263,7 @@ function openSetup(){
 async function pickMe(id){S.me=id;ls.set(K.me,id);await Store.open(id)}
 
 /* ---------- read-only book card for visitors ---------- */
-const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','bingo-cell','bingo-shuffle','bingo-reset','fill-missing']);
+const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','bingo-cell','bingo-shuffle','bingo-reset','bingo-size','fill-missing']);
 function openDetail(b){
   const meta=[b.author,b.pages?b.pages+' sayfa':'',b.year,b.genre,b.series?`${b.series}${b.seriesNo?' #'+b.seriesNo:''}`:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
   openSheet(`<div class="sheet-h"><h2>${esc(STATUS[b.status]||'Kitap')}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
@@ -1124,22 +1279,26 @@ function openDetail(b){
 /* ---------- bingo cell sheet ---------- */
 let BC=null;
 function openBingo(i){
-  const card=structuredClone(bingoCard(S.year));BC={i,card,pick:card.cells[i].b};
+  const card=structuredClone(bingoCard(S.year));BC={i,card,pick:card.cells[i].b,p:card.cells[i].p};
   renderBingoSheet();
 }
 function renderBingoSheet(){
-  const c=BC.card.cells[BC.i],R=readIn(S.year).slice().reverse();
+  const R=readIn(S.year).slice().reverse(),used=new Set(BC.card.cells.map((c,j)=>j===BC.i?null:c.p));
+  const opts=[BC.p,...BINGO_POOL.filter(p=>p!==BC.p&&!used.has(p))];
   openSheet(`<div class="sheet-h"><h2>Bingo karesi</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
-  <div class="sheet-b">${BC.i===12?'<p class="muted">Orta kare her zaman serbest.</p>':`
-    <div class="field"><label for="bp">Kare</label><input type="text" id="bp" value="${esc(c.p)}" maxlength="40"></div>
+  <div class="sheet-b">
+    <div class="field"><span class="lbl">Görev (birini seç)</span><div class="gchips bopts">${opts.map(p=>`<button type="button" class="gchip" data-act="bingo-opt" data-v="${esc(p)}" aria-pressed="${p===BC.p}">${esc(p)}</button>`).join('')}</div>
+      <input type="text" id="bp" value="${esc(BC.p)}" maxlength="40" placeholder="ya da kendi görevini yaz" aria-label="Kendi görevin"></div>
     <div class="field"><span class="lbl">${S.year} yılında okuduğun bir kitapla eşleştir</span>
       ${R.length?`<div class="pick">${R.map(b=>`<button type="button" data-act="bingo-pick" data-id="${b.id}" aria-pressed="${BC.pick===b.id}">${esc(b.title)} <span class="muted">· ${esc(b.author||'')}</span></button>`).join('')}</div>`:'<p class="muted">Bu yıl henüz bitirilmiş kitap yok.</p>'}</div>
-    <div class="ed-foot"><button type="button" class="btn ghost" data-act="bingo-pick" data-id="">Eşleşmeyi kaldır</button><div style="display:flex;gap:8px"><button class="btn" data-act="close">Vazgeç</button><button class="btn primary" data-act="bingo-save">Kaydet</button></div></div>`}
+    <div class="ed-foot"><button type="button" class="btn ghost" data-act="bingo-pick" data-id="">Eşleşmeyi kaldır</button><div style="display:flex;gap:8px"><button class="btn" data-act="close">Vazgeç</button><button class="btn primary" data-act="bingo-save">Kaydet</button></div></div>
   </div>`);
 }
-function saveBingo(card){S.settings.bingo={...S.settings.bingo,[S.year]:card};Store.saveSettings();render()}
+function saveBingo(card){S.settings.bingo={...S.settings.bingo,[S.year]:{size:card.size,cells:card.cells}};Store.saveSettings();render()}
 
 /* ---------- events ---------- */
+/* a short tick animation before the row moves to its next list */
+function tick(a,fn){const b=BOOKS().find(x=>x.id===a.dataset.id);if(!b)return;a.closest('.trow')?.classList.add('ticked');setTimeout(()=>fn(b),320)}
 const ACT={
   view:a=>{const v=a.dataset.v;try{localStorage.setItem(VIEW_KEY,v)}catch{}applyView();render();toast(v==='mobile'?'Telefon görünümü':'Masaüstü görünümü')},
   tab:a=>{S.tab=a.dataset.tab;try{history.replaceState(null,'','#'+S.tab)}catch{}render();scrollTo({top:0})},
@@ -1166,15 +1325,22 @@ const ACT={
   'setup-clear':a=>{if(a.dataset.sure){ls.set(K.token,null);S.canEdit=false;closeSheet();render();toast('Anahtar bu cihazdan silindi.')}else{a.dataset.sure='1';a.textContent='Emin misin? Evet, sil'}},
   'ed-nophoto':()=>{syncInputs();delete F._preview;delete F._photoBlob;delete F._small;delete F.coverData;delete F.coverUrl;renderEditor()},
   'ed-del':a=>{if(a.dataset.sure){const id=F.id,t=F.title;closeSheet();Store.deleteBook(id);toast(`“${t}” silindi.`)}else{a.dataset.sure='1';a.textContent='Emin misin? Evet, sil'}},
-  'tbr-done':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(b)openEditor(b,{status:'read',endDate:todayISO()})},
-  'tbr-start':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(!b)return;if(demo())return openEditor(b,{status:'reading',startDate:todayISO()});Store.saveBook({...b,status:'reading',startDate:todayISO(),fromTbr:true});toast('İyi okumalar! Kitap “Okuyorum” rafına geçti.')},
-  'tbr-own':a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(!b)return;if(demo())return openEditor(b,{owned:true});Store.saveBook({...b,owned:true});toast('Kitaplığına eklendi.')},
-  'bingo-cell':a=>{if(+a.dataset.i!==12)openBingo(+a.dataset.i)},
-  'bingo-pick':a=>{BC.pick=a.dataset.id||null;const p=$('#bp')?.value;if(p!=null)BC.card.cells[BC.i].p=p;renderBingoSheet()},
-  'bingo-save':()=>{const c=BC.card.cells[BC.i];c.p=($('#bp')?.value||c.p).trim()||c.p;c.b=BC.pick||null;saveBingo(BC.card);closeSheet()},
-  'bingo-shuffle':()=>{const card=structuredClone(bingoCard(S.year)),used=new Set(card.cells.map(c=>c.p));const pool=BINGO_POOL.filter(p=>!used.has(p)).sort(()=>Math.random()-.5);
-    card.cells.forEach((c,i)=>{if(i!==12&&!c.b&&pool.length){c.p=pool.pop()}});saveBingo(card);toast('Boş kareler yenilendi.')},
-  'bingo-reset':a=>{if(a.dataset.sure){const s={...S.settings.bingo};delete s[S.year];S.settings.bingo=s;Store.saveSettings();render();toast('Kart sıfırlandı.')}else{a.dataset.sure='1';a.textContent='Emin misin? Sıfırla'}}
+  'tbr-done':a=>tick(a,b=>openEditor(b,{status:'read',endDate:todayISO()})),
+  'tbr-start':a=>tick(a,b=>{Store.saveBook({...b,status:'reading',startDate:todayISO(),fromTbr:true});toast(`“${b.title}” okunuyor. İyi okumalar!`,()=>Store.saveBook(b))}),
+  'tbr-own':a=>tick(a,b=>{Store.saveBook({...b,owned:true});toast(`“${b.title}” rafa geçti.`,()=>Store.saveBook(b))}),
+  'bingo-cell':a=>openBingo(+a.dataset.i),
+  'bingo-opt':a=>{BC.p=a.dataset.v;const i=$('#bp');if(i)i.value=BC.p;document.querySelectorAll('.bopts .gchip').forEach(x=>x.setAttribute('aria-pressed',x===a))},
+  'bingo-size':a=>{const n=+a.dataset.n,cur=bingoCard(S.year);if(n===cur.size)return;const fi=freeIdx(cur.size);
+    const keep=cur.cells.filter((c,i)=>i!==fi).sort((x,y)=>!!y.b-!!x.b).slice(0,n*n-(n%2));
+    const prev=structuredClone(cur);saveBingo(genCard(n,Date.now(),keep));toast(`Kart ${n}×${n} oldu.`,()=>saveBingo(prev))},
+  undo:()=>{const f=undoFn;undoFn=null;toast('');if(f){f();toast('Geri alındı.')}},
+  theme:()=>{const next=isDark()?'light':'dark';try{localStorage.setItem(THEME_KEY,next)}catch{}applyTheme();applyView()},
+  'ed-genre':a=>{syncInputs();F.genre=F.genre&&genreOf(F)===a.dataset.v?'':a.dataset.v;renderEditor()},
+  'bingo-pick':a=>{BC.pick=a.dataset.id||null;const p=$('#bp')?.value;if(p!=null)BC.p=p;renderBingoSheet()},
+  'bingo-save':()=>{const c=BC.card.cells[BC.i];c.p=($('#bp')?.value||BC.p).trim()||BC.p;c.b=BC.pick||null;saveBingo({size:BC.card.size,cells:BC.card.cells});closeSheet()},
+  'bingo-shuffle':()=>{const card=structuredClone(bingoCard(S.year)),prev=structuredClone(card),fi=freeIdx(card.size),used=new Set(card.cells.map(c=>c.p));const pool=BINGO_POOL.filter(p=>!used.has(p)).sort(()=>Math.random()-.5);
+    card.cells.forEach((c,i)=>{if(i!==fi&&!c.b&&pool.length){c.p=pool.pop()}});saveBingo(card);toast('Boş kareler yenilendi.',()=>saveBingo(prev))},
+  'bingo-reset':a=>{if(a.dataset.sure){const prev=structuredClone(bingoCard(S.year));saveBingo(genCard(prev.size,Date.now()));toast('Yeni kart hazır.',()=>saveBingo(prev))}else{a.dataset.sure='1';a.textContent='Eşleşmeler silinecek. Emin misin?'}}
 };
 document.addEventListener('click',e=>{
   if(e.target.id==='overlay')return closeSheet();
