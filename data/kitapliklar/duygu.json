@@ -124,11 +124,14 @@
    "endDate": "2026-10-10",
    "genre": "Roman",
    "owned": false,
-   "rating": 3.5,
+   "rating": 4,
    "status": "read",
    "title": "Bavula Sığmayan",
    "id": "g10",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e3a79c",
+   "format": "audio",
+   "updatedAt": 1793176750359
   },
   {
    "author": "Nermin Yıldırım",
