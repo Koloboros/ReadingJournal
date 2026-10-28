@@ -293,7 +293,10 @@
    "infoTried": true,
    "pages": 720,
    "coverUrl": "https://covers.openlibrary.org/b/id/8506724-M.jpg",
-   "year": 2017
+   "year": 2017,
+   "color": "#c9a27a",
+   "format": "ebook",
+   "updatedAt": 1793176905933
   },
   {
    "author": "Nermin Yıldırım",
