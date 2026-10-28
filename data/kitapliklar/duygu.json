@@ -863,7 +863,10 @@
    "status": "read",
    "title": "Bilinçli Bebek",
    "id": "g54",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#cb8264",
+   "format": "print",
+   "updatedAt": 1793177021406
   },
   {
    "author": "Beyhan Budak",
