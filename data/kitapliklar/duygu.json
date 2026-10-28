@@ -694,7 +694,10 @@
    "infoTried": true,
    "color": "#c29db4",
    "format": "ebook",
-   "updatedAt": 1793176971426
+   "updatedAt": 1793216224428,
+   "startDate": "2026-04-13",
+   "pages": 700,
+   "year": 2018
   },
   {
    "author": "Suzanne Collins",
