@@ -1400,12 +1400,15 @@
    "genre": "Roman",
    "owned": false,
    "rating": 0,
-   "status": "want",
+   "status": "reading",
    "title": "Ölmeye Yatmak",
    "id": "t23",
    "infoTried": true,
    "pages": 357,
-   "year": 1976
+   "year": 1976,
+   "startDate": "2026-10-28",
+   "fromTbr": true,
+   "updatedAt": 1793218374881
   },
   {
    "author": "Alex Schulman",
