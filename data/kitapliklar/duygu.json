@@ -154,7 +154,10 @@
    "infoTried": true,
    "pages": 348,
    "coverUrl": "https://covers.openlibrary.org/b/id/7319104-M.jpg",
-   "year": 2012
+   "year": 2012,
+   "color": "#dbb4bf",
+   "format": "audio",
+   "updatedAt": 1793176840051
   },
   {
    "author": "Nermin Yıldırım",
