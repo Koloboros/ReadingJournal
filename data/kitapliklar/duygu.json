@@ -580,7 +580,10 @@
    "status": "read",
    "title": "Alaycı Kuş",
    "id": "g36",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e9cf8e",
+   "format": "ebook",
+   "updatedAt": 1793177002191
   },
   {
    "author": "Charlie Mackesy",
