@@ -196,7 +196,10 @@
    "status": "read",
    "title": "Roma İmparatoru Gibi Düşünmek",
    "id": "g14",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#ebb88c",
+   "format": "print",
+   "updatedAt": 1793176818485
   },
   {
    "author": "Asako Yuzuki",
