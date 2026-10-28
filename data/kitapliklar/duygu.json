@@ -906,7 +906,10 @@
    "status": "reading",
    "title": "The Field Guide to Dumb Birds of the Whole Stupid World",
    "id": "r03",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e3a79c",
+   "format": "print",
+   "updatedAt": 1793176483366
   },
   {
    "author": "Lea Ypi",
