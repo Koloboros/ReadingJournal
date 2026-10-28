@@ -2045,7 +2045,7 @@
     "id": "bmvsjarvl",
     "year": 2026,
     "name": "Kart 2",
-    "size": 5,
+    "size": 4,
     "cells": [
      {
       "p": "Yeşil kapaklı",
@@ -2096,10 +2096,6 @@
       "b": null
      },
      {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
       "p": "Yolculuk hikâyesi",
       "b": null
      },
@@ -2113,38 +2109,6 @@
      },
      {
       "p": "Koreli yazar",
-      "b": null
-     },
-     {
-      "p": "Ağlatan kitap",
-      "b": null
-     },
-     {
-      "p": "Arkadaş önerisi",
-      "b": null
-     },
-     {
-      "p": "Tarihi roman",
-      "b": null
-     },
-     {
-      "p": "Annenin/babanın sevdiği kitap",
-      "b": null
-     },
-     {
-      "p": "E-kitap",
-      "b": null
-     },
-     {
-      "p": "Yazarı 30 yaşından genç",
-      "b": null
-     },
-     {
-      "p": "Kadın kahraman",
-      "b": null
-     },
-     {
-      "p": "Masal / efsane",
       "b": null
      }
     ]
