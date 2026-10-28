@@ -92,7 +92,10 @@
    "status": "read",
    "title": "Söyleme Bilmesinler",
    "id": "g07",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#93a0c6",
+   "format": "audio",
+   "updatedAt": 1793176814271
   },
   {
    "author": "Nermin Yıldırım",
