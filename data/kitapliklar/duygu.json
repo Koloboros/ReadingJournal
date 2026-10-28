@@ -317,7 +317,10 @@
    "status": "read",
    "title": "Belki Bir Gün Uçarız",
    "id": "g21",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c29db4",
+   "format": "audio",
+   "updatedAt": 1793176884057
   },
   {
    "author": "Sarah J. Maas",
