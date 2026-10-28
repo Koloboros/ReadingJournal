@@ -1826,11 +1826,11 @@
      },
      {
       "b": null,
-      "p": "Hep ertelediğin"
+      "p": "Kitap hakkında kitap"
      },
      {
       "b": null,
-      "p": "Şiir kitabı"
+      "p": "Kütüphaneden"
      },
      {
       "b": "g12",
@@ -1842,7 +1842,7 @@
      },
      {
       "b": null,
-      "p": "Japon yazar"
+      "p": "Anı / biyografi"
      },
      {
       "b": "g03",
@@ -1874,7 +1874,7 @@
      },
      {
       "b": null,
-      "p": "Latin Amerika"
+      "p": "Bilim kurgu"
      },
      {
       "b": "g07",
@@ -1882,7 +1882,7 @@
      },
      {
       "b": null,
-      "p": "Polisiye"
+      "p": "Hiç okumadığın tür"
      },
      {
       "b": "g55",
@@ -1894,7 +1894,7 @@
      },
      {
       "b": null,
-      "p": "Deneme"
+      "p": "Mavi kapaklı"
      },
      {
       "b": "g52",
@@ -1906,7 +1906,7 @@
      },
      {
       "b": null,
-      "p": "Başlıkta şehir adı"
+      "p": "Çeviri kitap"
      },
      {
       "b": "g32",
@@ -1914,7 +1914,7 @@
      },
      {
       "b": null,
-      "p": "Bu yıl çıkan"
+      "p": "Sesli kitap"
      }
     ]
    }
