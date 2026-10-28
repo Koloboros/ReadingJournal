@@ -495,7 +495,10 @@
    "status": "read",
    "title": "Welcome to the Hyunam-Dong Bookshop",
    "id": "g32",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#a0c3db",
+   "format": "ebook",
+   "updatedAt": 1793176945469
   },
   {
    "author": "Sarah J. Maas",
