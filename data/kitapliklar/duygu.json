@@ -777,7 +777,10 @@
    "infoTried": true,
    "pages": 218,
    "coverUrl": "https://covers.openlibrary.org/b/id/12202349-M.jpg",
-   "year": 2017
+   "year": 2017,
+   "color": "#beafd3",
+   "format": "audio",
+   "updatedAt": 1793176922481
   },
   {
    "author": "Aletha J. Solter",
