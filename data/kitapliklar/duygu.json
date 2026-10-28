@@ -786,7 +786,10 @@
    "infoTried": true,
    "pages": 108,
    "coverUrl": "https://covers.openlibrary.org/b/id/12273271-M.jpg",
-   "year": 2016
+   "year": 2016,
+   "color": "#dbb4bf",
+   "format": "ebook",
+   "updatedAt": 1793177017079
   },
   {
    "author": "Baek Se-hee",
