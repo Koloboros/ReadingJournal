@@ -668,7 +668,10 @@
    "status": "read",
    "title": "Açlık Oyunları",
    "id": "g42",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#bebb80",
+   "format": "ebook",
+   "updatedAt": 1793176989242
   },
   {
    "author": "Sarah J. Maas",
