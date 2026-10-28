@@ -8,7 +8,10 @@
    "rating": 4,
    "status": "read",
    "title": "Kadının Adı Yok",
-   "id": "g01"
+   "id": "g01",
+   "infoTried": true,
+   "pages": 232,
+   "year": 1987
   },
   {
    "author": "Ahmet Şerif İzgören",
@@ -18,7 +21,11 @@
    "rating": 4.5,
    "status": "read",
    "title": "Şu Hortumlu Dünyada Fil Yalnız Bir Hayvandır",
-   "id": "g02"
+   "id": "g02",
+   "infoTried": true,
+   "pages": 226,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12349163-M.jpg",
+   "year": 2014
   },
   {
    "author": "Turgut Can Koloğlugil",
@@ -29,7 +36,8 @@
    "rating": 5,
    "status": "read",
    "title": "Nebrukaddesar",
-   "id": "g03"
+   "id": "g03",
+   "infoTried": true
   },
   {
    "author": "Éric-Emmanuel Schmitt",
@@ -39,7 +47,8 @@
    "rating": 4,
    "status": "read",
    "title": "Bayan Ming'in Hiç Olmayan On Çocuğu",
-   "id": "g04"
+   "id": "g04",
+   "infoTried": true
   },
   {
    "author": "Maggie O'Farrell",
@@ -49,7 +58,8 @@
    "rating": 4,
    "status": "read",
    "title": "Hamnet",
-   "id": "g05"
+   "id": "g05",
+   "infoTried": true
   },
   {
    "author": "Florence Knapp",
@@ -59,7 +69,8 @@
    "rating": 5,
    "status": "read",
    "title": "İsimler",
-   "id": "g06"
+   "id": "g06",
+   "infoTried": true
   },
   {
    "author": "Şermin Yaşar",
@@ -69,7 +80,8 @@
    "rating": 5,
    "status": "read",
    "title": "Söyleme Bilmesinler",
-   "id": "g07"
+   "id": "g07",
+   "infoTried": true
   },
   {
    "author": "Nermin Yıldırım",
@@ -79,7 +91,11 @@
    "rating": 4,
    "status": "read",
    "title": "Misafir",
-   "id": "g08"
+   "id": "g08",
+   "infoTried": true,
+   "pages": 332,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10849230-M.jpg",
+   "year": 2018
   },
   {
    "author": "Nermin Yıldırım",
@@ -89,7 +105,11 @@
    "rating": 5,
    "status": "read",
    "title": "Saklı Bahçeler Haritası",
-   "id": "g09"
+   "id": "g09",
+   "infoTried": true,
+   "pages": 368,
+   "coverUrl": "https://covers.openlibrary.org/b/id/7319105-M.jpg",
+   "year": 2013
   },
   {
    "author": "Nermin Yıldırım",
@@ -99,7 +119,8 @@
    "rating": 3.5,
    "status": "read",
    "title": "Bavula Sığmayan",
-   "id": "g10"
+   "id": "g10",
+   "infoTried": true
   },
   {
    "author": "Nermin Yıldırım",
@@ -109,7 +130,11 @@
    "rating": 5,
    "status": "read",
    "title": "Rüyalar Anlatılmaz",
-   "id": "g11"
+   "id": "g11",
+   "infoTried": true,
+   "pages": 348,
+   "coverUrl": "https://covers.openlibrary.org/b/id/7319104-M.jpg",
+   "year": 2012
   },
   {
    "author": "Nermin Yıldırım",
@@ -119,7 +144,11 @@
    "rating": 4,
    "status": "read",
    "title": "Ev",
-   "id": "g12"
+   "id": "g12",
+   "infoTried": true,
+   "pages": 456,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10849858-M.jpg",
+   "year": 2020
   },
   {
    "author": "Nermin Yıldırım",
@@ -129,7 +158,11 @@
    "rating": 4,
    "status": "read",
    "title": "Unutma Dersleri",
-   "id": "g13"
+   "id": "g13",
+   "infoTried": true,
+   "pages": 312,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10848511-M.jpg",
+   "year": 2015
   },
   {
    "author": "Donald J. Robertson",
@@ -139,7 +172,8 @@
    "rating": 4,
    "status": "read",
    "title": "Roma İmparatoru Gibi Düşünmek",
-   "id": "g14"
+   "id": "g14",
+   "infoTried": true
   },
   {
    "author": "Asako Yuzuki",
@@ -149,7 +183,8 @@
    "rating": 3,
    "status": "read",
    "title": "Tereyağı",
-   "id": "g15"
+   "id": "g15",
+   "infoTried": true
   },
   {
    "author": "Nermin Yıldırım",
@@ -159,7 +194,11 @@
    "rating": 4,
    "status": "read",
    "title": "Unutma Beni Apartmanı",
-   "id": "g16"
+   "id": "g16",
+   "infoTried": true,
+   "pages": 420,
+   "coverUrl": "https://covers.openlibrary.org/b/id/7319102-M.jpg",
+   "year": 2011
   },
   {
    "author": "Sarah J. Maas",
@@ -171,7 +210,11 @@
    "seriesNo": 5,
    "status": "read",
    "title": "A Court of Silver Flames",
-   "id": "g17"
+   "id": "g17",
+   "infoTried": true,
+   "pages": 768,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10643508-M.jpg",
+   "year": 2021
   },
   {
    "author": "Sarah J. Maas",
@@ -183,7 +226,11 @@
    "seriesNo": 4,
    "status": "read",
    "title": "A Court of Frost and Starlight",
-   "id": "g18"
+   "id": "g18",
+   "infoTried": true,
+   "pages": 259,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8569939-M.jpg",
+   "year": 2018
   },
   {
    "author": "Sarah J. Maas",
@@ -195,7 +242,11 @@
    "seriesNo": 3,
    "status": "read",
    "title": "A Court of Wings and Ruin",
-   "id": "g19"
+   "id": "g19",
+   "infoTried": true,
+   "pages": 720,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8506724-M.jpg",
+   "year": 2017
   },
   {
    "author": "Nermin Yıldırım",
@@ -205,7 +256,10 @@
    "rating": 5,
    "status": "read",
    "title": "Dokunmadan",
-   "id": "g20"
+   "id": "g20",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10868945-M.jpg",
+   "year": 2017
   },
   {
    "author": "Aylin Balboa",
@@ -215,7 +269,8 @@
    "rating": 4,
    "status": "read",
    "title": "Belki Bir Gün Uçarız",
-   "id": "g21"
+   "id": "g21",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -227,7 +282,11 @@
    "seriesNo": 2,
    "status": "read",
    "title": "A Court of Mist and Fury",
-   "id": "g22"
+   "id": "g22",
+   "infoTried": true,
+   "pages": 626,
+   "coverUrl": "https://covers.openlibrary.org/b/id/14315081-M.jpg",
+   "year": 2014
   },
   {
    "author": "Malcolm Gladwell",
@@ -237,7 +296,11 @@
    "rating": 4,
    "status": "read",
    "title": "Outliers: The Story of Success",
-   "id": "g23"
+   "id": "g23",
+   "infoTried": true,
+   "pages": 320,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10021591-M.jpg",
+   "year": 2008
   },
   {
    "author": "Sarah J. Maas",
@@ -249,7 +312,11 @@
    "seriesNo": 1,
    "status": "read",
    "title": "A Court of Thorns and Roses",
-   "id": "g24"
+   "id": "g24",
+   "infoTried": true,
+   "pages": 454,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15254465-M.jpg",
+   "year": 2013
   },
   {
    "author": "Aylin Balboa",
@@ -259,7 +326,10 @@
    "rating": 5,
    "status": "read",
    "title": "Bu Hikâye Senden Uzun Osman",
-   "id": "g25"
+   "id": "g25",
+   "infoTried": true,
+   "pages": 129,
+   "year": 2022
   },
   {
    "author": "Aylin Balboa",
@@ -269,7 +339,8 @@
    "rating": 3,
    "status": "read",
    "title": "Ateş Sönene Kadar",
-   "id": "g26"
+   "id": "g26",
+   "infoTried": true
   },
   {
    "author": "Melisa Kesmez",
@@ -279,7 +350,8 @@
    "rating": 4,
    "status": "read",
    "title": "Çiçeklenmeler",
-   "id": "g27"
+   "id": "g27",
+   "infoTried": true
   },
   {
    "author": "Melisa Kesmez",
@@ -289,7 +361,11 @@
    "rating": 5,
    "status": "read",
    "title": "Bazen Bahar",
-   "id": "g28"
+   "id": "g28",
+   "infoTried": true,
+   "pages": 110,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10843729-M.jpg",
+   "year": 2015
   },
   {
    "author": "Melisa Kesmez",
@@ -299,7 +375,11 @@
    "rating": 5,
    "status": "read",
    "title": "Nohut Oda",
-   "id": "g29"
+   "id": "g29",
+   "infoTried": true,
+   "pages": 117,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10859735-M.jpg",
+   "year": 2018
   },
   {
    "author": "Melisa Kesmez",
@@ -309,7 +389,11 @@
    "rating": 4,
    "status": "read",
    "title": "Atları Bağlayın Geceyi Burada Geçireceğiz",
-   "id": "g30"
+   "id": "g30",
+   "infoTried": true,
+   "pages": 154,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12295084-M.jpg",
+   "year": 2019
   },
   {
    "author": "Melisa Kesmez",
@@ -319,7 +403,11 @@
    "rating": 5,
    "status": "read",
    "title": "Küçük Yuvarlak Taşlar",
-   "id": "g31"
+   "id": "g31",
+   "infoTried": true,
+   "pages": 84,
+   "coverUrl": "https://covers.openlibrary.org/b/id/13875754-M.jpg",
+   "year": 2022
   },
   {
    "author": "Hwang Bo-Reum",
@@ -329,7 +417,8 @@
    "rating": 4,
    "status": "read",
    "title": "Welcome to the Hyunam-Dong Bookshop",
-   "id": "g32"
+   "id": "g32",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -341,7 +430,11 @@
    "seriesNo": 7,
    "status": "read",
    "title": "Kingdom of Ash",
-   "id": "g33"
+   "id": "g33",
+   "infoTried": true,
+   "pages": 987,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8465438-M.jpg",
+   "year": 2018
   },
   {
    "author": "Gene Luen Yang",
@@ -353,7 +446,11 @@
    "seriesNo": 2,
    "status": "read",
    "title": "Avatar: The Search",
-   "id": "g34"
+   "id": "g34",
+   "infoTried": true,
+   "pages": 76,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8992519-M.jpg",
+   "year": 2013
   },
   {
    "author": "Suzanne Collins",
@@ -365,7 +462,8 @@
    "seriesNo": 0,
    "status": "read",
    "title": "Kuşların ve Yılanların Şarkısı",
-   "id": "g35"
+   "id": "g35",
+   "infoTried": true
   },
   {
    "author": "Suzanne Collins",
@@ -377,7 +475,8 @@
    "seriesNo": 3,
    "status": "read",
    "title": "Alaycı Kuş",
-   "id": "g36"
+   "id": "g36",
+   "infoTried": true
   },
   {
    "author": "Charlie Mackesy",
@@ -387,7 +486,8 @@
    "rating": 5,
    "status": "read",
    "title": "Çocuk, Köstebek, Tilki ve At",
-   "id": "g37"
+   "id": "g37",
+   "infoTried": true
   },
   {
    "author": "Gene Luen Yang",
@@ -399,7 +499,11 @@
    "seriesNo": 1,
    "status": "read",
    "title": "Avatar: The Promise",
-   "id": "g38"
+   "id": "g38",
+   "infoTried": true,
+   "pages": 78,
+   "coverUrl": "https://covers.openlibrary.org/b/id/7779881-M.jpg",
+   "year": 2001
   },
   {
    "author": "Suzanne Collins",
@@ -411,7 +515,8 @@
    "seriesNo": 2,
    "status": "read",
    "title": "Ateşi Yakalamak",
-   "id": "g39"
+   "id": "g39",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -423,7 +528,8 @@
    "seriesNo": 6,
    "status": "read",
    "title": "Şafak Kulesi",
-   "id": "g40"
+   "id": "g40",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -435,7 +541,8 @@
    "seriesNo": 5,
    "status": "read",
    "title": "Fırtınalar İmparatorluğu",
-   "id": "g41"
+   "id": "g41",
+   "infoTried": true
   },
   {
    "author": "Suzanne Collins",
@@ -447,7 +554,8 @@
    "seriesNo": 1,
    "status": "read",
    "title": "Açlık Oyunları",
-   "id": "g42"
+   "id": "g42",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -459,7 +567,11 @@
    "seriesNo": 4,
    "status": "read",
    "title": "Queen of Shadows",
-   "id": "g43"
+   "id": "g43",
+   "infoTried": true,
+   "pages": 672,
+   "coverUrl": "https://covers.openlibrary.org/b/id/7994583-M.jpg",
+   "year": 2015
   },
   {
    "author": "R.F. Kuang",
@@ -469,7 +581,8 @@
    "rating": 4,
    "status": "read",
    "title": "Sarı Yüz",
-   "id": "g44"
+   "id": "g44",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -481,7 +594,8 @@
    "seriesNo": 0.5,
    "status": "read",
    "title": "Suikastçının Hançeri",
-   "id": "g45"
+   "id": "g45",
+   "infoTried": true
   },
   {
    "author": "Georgi Gospodinov",
@@ -491,7 +605,8 @@
    "rating": 4,
    "status": "read",
    "title": "Bahçıvan ve Ölüm",
-   "id": "g46"
+   "id": "g46",
+   "infoTried": true
   },
   {
    "author": "Suzanne Collins",
@@ -503,7 +618,8 @@
    "seriesNo": 0.5,
    "status": "read",
    "title": "Hasatta Gündoğumu",
-   "id": "g47"
+   "id": "g47",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -515,7 +631,8 @@
    "seriesNo": 3,
    "status": "read",
    "title": "Ateşin Varisi",
-   "id": "g48"
+   "id": "g48",
+   "infoTried": true
   },
   {
    "author": "Gabriel García Márquez",
@@ -525,7 +642,11 @@
    "rating": 3,
    "status": "read",
    "title": "Kırmızı Pazartesi",
-   "id": "g49"
+   "id": "g49",
+   "infoTried": true,
+   "pages": 108,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12273271-M.jpg",
+   "year": 2016
   },
   {
    "author": "Baek Se-hee",
@@ -535,7 +656,8 @@
    "rating": 3,
    "status": "read",
    "title": "Ölmek İstiyorum Ama Tteokbokki de Yemek İstiyorum",
-   "id": "g50"
+   "id": "g50",
+   "infoTried": true
   },
   {
    "author": "Matt Haig",
@@ -545,7 +667,8 @@
    "rating": 4.5,
    "status": "read",
    "title": "Gece Yarısı Kütüphanesi",
-   "id": "g51"
+   "id": "g51",
+   "infoTried": true
   },
   {
    "about": "Yazar, çocuk yetiştirirken bağırma alışkanlığından vazgeçmenin yollarını anlatır. Sakin kalarak sevgi dolu ve net sınırlar koyan bir ebeveynlik yaklaşımı önerir.",
@@ -557,7 +680,10 @@
    "status": "read",
    "title": "Bağırmayan Anne Baba Olmak",
    "year": 2008,
-   "id": "g52"
+   "id": "g52",
+   "infoTried": true,
+   "pages": 184,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12268435-M.jpg"
   },
   {
    "author": "Aletha J. Solter",
@@ -567,7 +693,11 @@
    "rating": 4,
    "status": "read",
    "title": "Oyun Oynama Sanatı",
-   "id": "g53"
+   "id": "g53",
+   "infoTried": true,
+   "pages": 218,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12202349-M.jpg",
+   "year": 2017
   },
   {
    "author": "Aletha J. Solter",
@@ -577,7 +707,8 @@
    "rating": 3,
    "status": "read",
    "title": "Bilinçli Bebek",
-   "id": "g54"
+   "id": "g54",
+   "infoTried": true
   },
   {
    "author": "Beyhan Budak",
@@ -587,7 +718,8 @@
    "rating": 4.5,
    "status": "read",
    "title": "Hayat Acemileri İçin Yaşam Rehberi",
-   "id": "g55"
+   "id": "g55",
+   "infoTried": true
   },
   {
    "author": "R.F. Kuang",
@@ -597,7 +729,8 @@
    "rating": 5,
    "status": "read",
    "title": "Babil: Oxford Çevirmenler Devriminin Gizemli Hikayesi",
-   "id": "g56"
+   "id": "g56",
+   "infoTried": true
   },
   {
    "author": "Clarissa Pinkola Estés",
@@ -606,7 +739,11 @@
    "rating": 0,
    "status": "want",
    "title": "Kurtlarla Koşan Kadınlar",
-   "id": "n01"
+   "id": "n01",
+   "infoTried": true,
+   "pages": 544,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12321409-M.jpg",
+   "year": 2003
   },
   {
    "author": "Robin Hobb",
@@ -617,7 +754,8 @@
    "seriesNo": 3,
    "status": "want",
    "title": "Suikastçının Arayışı",
-   "id": "n02"
+   "id": "n02",
+   "infoTried": true
   },
   {
    "author": "Robin Hobb",
@@ -628,7 +766,8 @@
    "seriesNo": 2,
    "status": "want",
    "title": "Kraliyet Suikastçısı",
-   "id": "n03"
+   "id": "n03",
+   "infoTried": true
   },
   {
    "author": "Robin Hobb",
@@ -639,7 +778,8 @@
    "seriesNo": 1,
    "status": "want",
    "title": "Suikastçının Çırağı",
-   "id": "n04"
+   "id": "n04",
+   "infoTried": true
   },
   {
    "author": "Maggie O'Farrell",
@@ -648,7 +788,8 @@
    "rating": 0,
    "status": "want",
    "title": "Esme Lennox Nasıl Yok Oldu",
-   "id": "n05"
+   "id": "n05",
+   "infoTried": true
   },
   {
    "author": "Kazuaki Takano",
@@ -657,7 +798,8 @@
    "rating": 0,
    "status": "want",
    "title": "Bir Aklın Savaşı",
-   "id": "n06"
+   "id": "n06",
+   "infoTried": true
   },
   {
    "author": "Serdar Çankaya",
@@ -666,7 +808,8 @@
    "rating": 0,
    "status": "want",
    "title": "Bir Aile Meselesi",
-   "id": "n07"
+   "id": "n07",
+   "infoTried": true
   },
   {
    "author": "Aletha J. Solter",
@@ -675,7 +818,8 @@
    "rating": 0,
    "status": "want",
    "title": "Çocuğunuza Kulak Verin",
-   "id": "n08"
+   "id": "n08",
+   "infoTried": true
   },
   {
    "author": "Daniel J. Siegel",
@@ -686,7 +830,8 @@
    "seriesNo": 2,
    "status": "want",
    "title": "Bütün Beyinli Çocuk Uygulama Rehberi",
-   "id": "n09"
+   "id": "n09",
+   "infoTried": true
   },
   {
    "author": "Daniel J. Siegel",
@@ -697,7 +842,11 @@
    "seriesNo": 1,
    "status": "want",
    "title": "Bütün Beyinli Çocuk",
-   "id": "n10"
+   "id": "n10",
+   "infoTried": true,
+   "pages": 250,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12240140-M.jpg",
+   "year": 2019
   },
   {
    "author": "John Caunt",
@@ -706,7 +855,9 @@
    "rating": 0,
    "status": "want",
    "title": "Düzenli Olmanın Yolları",
-   "id": "n11"
+   "id": "n11",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12262750-M.jpg"
   },
   {
    "author": "Bessel van der Kolk",
@@ -715,7 +866,8 @@
    "rating": 0,
    "status": "want",
    "title": "Beden Kayıt Tutar",
-   "id": "n12"
+   "id": "n12",
+   "infoTried": true
   },
   {
    "author": "Ariane Koch",
@@ -725,7 +877,8 @@
    "startDate": "2026-09-17",
    "status": "reading",
    "title": "Misafir",
-   "id": "r01"
+   "id": "r01",
+   "infoTried": true
   },
   {
    "author": "Marcus Aurelius",
@@ -735,7 +888,8 @@
    "startDate": "2026-07-23",
    "status": "reading",
    "title": "Kendime Düşünceler",
-   "id": "r02"
+   "id": "r02",
+   "infoTried": true
   },
   {
    "author": "Matt Kracht",
@@ -745,7 +899,8 @@
    "startDate": "2026-01-20",
    "status": "reading",
    "title": "The Field Guide to Dumb Birds of the Whole Stupid World",
-   "id": "r03"
+   "id": "r03",
+   "infoTried": true
   },
   {
    "author": "Lea Ypi",
@@ -754,7 +909,8 @@
    "rating": 0,
    "status": "want",
    "title": "Haysiyetsizlik: Yeniden Biçimlendirilen Bir Hayat",
-   "id": "t01"
+   "id": "t01",
+   "infoTried": true
   },
   {
    "author": "Rosalind Miles",
@@ -763,7 +919,8 @@
    "rating": 0,
    "status": "want",
    "title": "Son Akşam Yemeğini Kim Pişirdi? Dünya Kadın Tarihi",
-   "id": "t02"
+   "id": "t02",
+   "infoTried": true
   },
   {
    "author": "Barış Bıçakçı",
@@ -772,7 +929,8 @@
    "rating": 0,
    "status": "want",
    "title": "Bizim Büyük Çaresizliğimiz",
-   "id": "t03"
+   "id": "t03",
+   "infoTried": true
   },
   {
    "author": "Zoe Venditozzi",
@@ -781,7 +939,11 @@
    "rating": 0,
    "status": "want",
    "title": "How to Kill a Witch: The Patriarchy's Guide to Silencing Women",
-   "id": "t04"
+   "id": "t04",
+   "infoTried": true,
+   "pages": 320,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15208850-M.jpg",
+   "year": 2025
   },
   {
    "author": "Ayfer Tunç",
@@ -790,7 +952,10 @@
    "rating": 0,
    "status": "want",
    "title": "Bir Deliler Evinin Yalan Yanlış Anlatılan Kısa Tarihi",
-   "id": "t05"
+   "id": "t05",
+   "infoTried": true,
+   "pages": 482,
+   "year": 2009
   },
   {
    "author": "Seolyeon Park",
@@ -799,7 +964,8 @@
    "rating": 0,
    "status": "want",
    "title": "Sihirli Kız Emekli Oluyor",
-   "id": "t06"
+   "id": "t06",
+   "infoTried": true
   },
   {
    "author": "Aria Aber",
@@ -808,7 +974,8 @@
    "rating": 0,
    "status": "want",
    "title": "İyi Kız",
-   "id": "t07"
+   "id": "t07",
+   "infoTried": true
   },
   {
    "author": "Song Yu-jeong",
@@ -817,7 +984,8 @@
    "rating": 0,
    "status": "want",
    "title": "Hatıra Kitabevi",
-   "id": "t08"
+   "id": "t08",
+   "infoTried": true
   },
   {
    "author": "Suyeon Lee",
@@ -826,7 +994,8 @@
    "rating": 0,
    "status": "want",
    "title": "Omzumdaki İki Arkadaş",
-   "id": "t09"
+   "id": "t09",
+   "infoTried": true
   },
   {
    "author": "Yeşim Türköz",
@@ -835,7 +1004,8 @@
    "rating": 0,
    "status": "want",
    "title": "Büyü Dükkanı",
-   "id": "t10"
+   "id": "t10",
+   "infoTried": true
   },
   {
    "author": "Murat Çelik",
@@ -844,7 +1014,8 @@
    "rating": 0,
    "status": "want",
    "title": "Bazı Günlerin Sonu",
-   "id": "t11"
+   "id": "t11",
+   "infoTried": true
   },
   {
    "author": "Laurent Mauvignier",
@@ -853,7 +1024,8 @@
    "rating": 0,
    "status": "want",
    "title": "Onlardan Uzakta",
-   "id": "t12"
+   "id": "t12",
+   "infoTried": true
   },
   {
    "author": "Richard Brautigan",
@@ -862,7 +1034,8 @@
    "rating": 0,
    "status": "want",
    "title": "Yani Rüzgar Her Şeyi Alıp Götürmeyecek",
-   "id": "t13"
+   "id": "t13",
+   "infoTried": true
   },
   {
    "author": "Burhan Sönmez",
@@ -871,7 +1044,8 @@
    "rating": 0,
    "status": "want",
    "title": "Kırmızı Ayna",
-   "id": "t14"
+   "id": "t14",
+   "infoTried": true
   },
   {
    "author": "Burhan Sönmez",
@@ -880,7 +1054,8 @@
    "rating": 0,
    "status": "want",
    "title": "Taş ve Gölge",
-   "id": "t15"
+   "id": "t15",
+   "infoTried": true
   },
   {
    "author": "Burhan Sönmez",
@@ -889,7 +1064,8 @@
    "rating": 0,
    "status": "want",
    "title": "İstanbul İstanbul",
-   "id": "t16"
+   "id": "t16",
+   "infoTried": true
   },
   {
    "author": "Alison Espach",
@@ -898,7 +1074,8 @@
    "rating": 0,
    "status": "want",
    "title": "Evlilik İnsanları",
-   "id": "t17"
+   "id": "t17",
+   "infoTried": true
   },
   {
    "author": "Bernardo Zannoni",
@@ -907,7 +1084,8 @@
    "rating": 0,
    "status": "want",
    "title": "Benim Aptal Niyetlerim",
-   "id": "t18"
+   "id": "t18",
+   "infoTried": true
   },
   {
    "author": "Kelly Bishop",
@@ -916,7 +1094,8 @@
    "rating": 0,
    "status": "want",
    "title": "The Third Gilmore Girl: A Memoir",
-   "id": "t19"
+   "id": "t19",
+   "infoTried": true
   },
   {
    "author": "SenLinYu",
@@ -925,7 +1104,11 @@
    "rating": 0,
    "status": "want",
    "title": "Alchemised",
-   "id": "t20"
+   "id": "t20",
+   "infoTried": true,
+   "pages": 976,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15137810-M.jpg",
+   "year": 2025
   },
   {
    "author": "Madeline Miller",
@@ -934,7 +1117,11 @@
    "rating": 0,
    "status": "want",
    "title": "Circe",
-   "id": "t21"
+   "id": "t21",
+   "infoTried": true,
+   "pages": 404,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8739376-M.jpg",
+   "year": 2018
   },
   {
    "author": "Maggie O'Farrell",
@@ -943,7 +1130,8 @@
    "rating": 0,
    "status": "want",
    "title": "The Marriage Portrait",
-   "id": "t22"
+   "id": "t22",
+   "infoTried": true
   },
   {
    "author": "Adalet Ağaoğlu",
@@ -952,7 +1140,10 @@
    "rating": 0,
    "status": "want",
    "title": "Ölmeye Yatmak",
-   "id": "t23"
+   "id": "t23",
+   "infoTried": true,
+   "pages": 357,
+   "year": 1976
   },
   {
    "author": "Alex Schulman",
@@ -961,7 +1152,8 @@
    "rating": 0,
    "status": "want",
    "title": "17 Haziran",
-   "id": "t24"
+   "id": "t24",
+   "infoTried": true
   },
   {
    "author": "Alex Schulman",
@@ -970,7 +1162,10 @@
    "rating": 0,
    "status": "want",
    "title": "Malma İstasyonu",
-   "id": "t25"
+   "id": "t25",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15169994-M.jpg",
+   "year": 2024
   },
   {
    "author": "Hüseyin Rahmi Gürpınar",
@@ -979,7 +1174,10 @@
    "rating": 0,
    "status": "want",
    "title": "Kesik Baş",
-   "id": "t26"
+   "id": "t26",
+   "infoTried": true,
+   "pages": 232,
+   "year": 1942
   },
   {
    "author": "Charlotte Perkins Gilman",
@@ -988,7 +1186,11 @@
    "rating": 0,
    "status": "want",
    "title": "Kadınlar Ülkesi",
-   "id": "t27"
+   "id": "t27",
+   "infoTried": true,
+   "pages": 236,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12282491-M.jpg",
+   "year": 2021
   },
   {
    "author": "Virginia Woolf",
@@ -997,7 +1199,11 @@
    "rating": 0,
    "status": "want",
    "title": "Kendine Ait Bir Oda",
-   "id": "t28"
+   "id": "t28",
+   "infoTried": true,
+   "pages": 128,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12241238-M.jpg",
+   "year": 2002
   },
   {
    "author": "Iria G. Parente",
@@ -1006,7 +1212,8 @@
    "rating": 0,
    "status": "want",
    "title": "Alma ve Yedi Canavar",
-   "id": "t29"
+   "id": "t29",
+   "infoTried": true
   },
   {
    "author": "Paul Auster",
@@ -1015,7 +1222,10 @@
    "rating": 0,
    "status": "want",
    "title": "Son Şeyler Ülkesinde",
-   "id": "t30"
+   "id": "t30",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12273488-M.jpg",
+   "year": 2000
   },
   {
    "author": "Elena Ferrante",
@@ -1026,7 +1236,8 @@
    "seriesNo": 1,
    "status": "want",
    "title": "Benim Olağanüstü Akıllı Arkadaşım",
-   "id": "t31"
+   "id": "t31",
+   "infoTried": true
   },
   {
    "author": "Nikos Kazantzakis",
@@ -1035,7 +1246,11 @@
    "rating": 0,
    "status": "want",
    "title": "Zorba the Greek",
-   "id": "t32"
+   "id": "t32",
+   "infoTried": true,
+   "pages": 1,
+   "coverUrl": "https://covers.openlibrary.org/b/id/14567040-M.jpg",
+   "year": 1965
   },
   {
    "author": "Uketsu",
@@ -1044,7 +1259,8 @@
    "rating": 0,
    "status": "want",
    "title": "Tuhaf Resimler",
-   "id": "t33"
+   "id": "t33",
+   "infoTried": true
   },
   {
    "author": "Yu Hua",
@@ -1053,7 +1269,11 @@
    "rating": 0,
    "status": "want",
    "title": "Yaşamak",
-   "id": "t34"
+   "id": "t34",
+   "infoTried": true,
+   "pages": 210,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10848784-M.jpg",
+   "year": 2016
   },
   {
    "author": "Michiko Aoyama",
@@ -1062,7 +1282,8 @@
    "rating": 0,
    "status": "want",
    "title": "Aradığın Şey Kütüphanede Saklı",
-   "id": "t35"
+   "id": "t35",
+   "infoTried": true
   },
   {
    "author": "Ayşegül Kocabıçak",
@@ -1071,7 +1292,11 @@
    "rating": 0,
    "status": "want",
    "title": "Run Gülüzar Run",
-   "id": "t36"
+   "id": "t36",
+   "infoTried": true,
+   "pages": 144,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12118097-M.jpg",
+   "year": 2017
   },
   {
    "author": "Laetitia Colombani",
@@ -1080,7 +1305,11 @@
    "rating": 0,
    "status": "want",
    "title": "Saç Örgüsü",
-   "id": "t37"
+   "id": "t37",
+   "infoTried": true,
+   "pages": 188,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10849152-M.jpg",
+   "year": 2020
   },
   {
    "author": "Sangu Mandanna",
@@ -1089,7 +1318,8 @@
    "rating": 0,
    "status": "want",
    "title": "Aşırı Gizli Cadılar Cemiyeti",
-   "id": "t38"
+   "id": "t38",
+   "infoTried": true
   },
   {
    "author": "Pınar Kür",
@@ -1098,7 +1328,10 @@
    "rating": 0,
    "status": "want",
    "title": "Asılacak Kadın",
-   "id": "t39"
+   "id": "t39",
+   "infoTried": true,
+   "pages": 191,
+   "year": 1979
   },
   {
    "author": "Engin Geçtan",
@@ -1107,7 +1340,11 @@
    "rating": 0,
    "status": "want",
    "title": "Hayat",
-   "id": "t40"
+   "id": "t40",
+   "infoTried": true,
+   "pages": 176,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10933412-M.jpg",
+   "year": 2002
   },
   {
    "author": "Virginia Evans",
@@ -1116,7 +1353,8 @@
    "rating": 0,
    "status": "want",
    "title": "Muhabbet",
-   "id": "t41"
+   "id": "t41",
+   "infoTried": true
   },
   {
    "author": "Sharon M. Draper",
@@ -1125,7 +1363,11 @@
    "rating": 0,
    "status": "want",
    "title": "İçimdeki Müzik",
-   "id": "t42"
+   "id": "t42",
+   "infoTried": true,
+   "pages": 264,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12110405-M.jpg",
+   "year": 2016
   },
   {
    "author": "Ayfer Tunç",
@@ -1134,7 +1376,10 @@
    "rating": 0,
    "status": "want",
    "title": "Annemin Uyurgezer Geceleri",
-   "id": "t43"
+   "id": "t43",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15222417-M.jpg",
+   "year": 2025
   },
   {
    "author": "Şermin Yaşar",
@@ -1143,7 +1388,8 @@
    "rating": 0,
    "status": "want",
    "title": "Kınalı Serçe",
-   "id": "t44"
+   "id": "t44",
+   "infoTried": true
   },
   {
    "author": "Şermin Yaşar",
@@ -1152,7 +1398,8 @@
    "rating": 0,
    "status": "want",
    "title": "Kalk Yerine Yat",
-   "id": "t45"
+   "id": "t45",
+   "infoTried": true
   },
   {
    "author": "Şermin Yaşar",
@@ -1161,7 +1408,8 @@
    "rating": 0,
    "status": "want",
    "title": "Altı Harfli Bir Tatlı",
-   "id": "t46"
+   "id": "t46",
+   "infoTried": true
   },
   {
    "author": "Nawal El Saadawi",
@@ -1170,7 +1418,8 @@
    "rating": 0,
    "status": "want",
    "title": "Sıfır Noktasındaki Kadın",
-   "id": "t47"
+   "id": "t47",
+   "infoTried": true
   },
   {
    "author": "Donatella Di Pietrantonio",
@@ -1179,7 +1428,8 @@
    "rating": 0,
    "status": "want",
    "title": "Geri Verilen Kız",
-   "id": "t48"
+   "id": "t48",
+   "infoTried": true
   },
   {
    "author": "Patrick Ness",
@@ -1188,7 +1438,11 @@
    "rating": 0,
    "status": "want",
    "title": "Gökyüzümüzdü Okyanus",
-   "id": "t49"
+   "id": "t49",
+   "infoTried": true,
+   "pages": 164,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10853201-M.jpg",
+   "year": 2019
   },
   {
    "author": "Sarah J. Maas",
@@ -1200,7 +1454,8 @@
    "seriesNo": 2,
    "status": "read",
    "title": "Karanlık Taç",
-   "id": "y01"
+   "id": "y01",
+   "infoTried": true
   },
   {
    "author": "Sarah J. Maas",
@@ -1212,7 +1467,8 @@
    "seriesNo": 1,
    "status": "read",
    "title": "Cam Şato",
-   "id": "y02"
+   "id": "y02",
+   "infoTried": true
   },
   {
    "author": "Elizabeth Pantley",
@@ -1222,7 +1478,8 @@
    "rating": 5,
    "status": "read",
    "title": "Uyku Rutini: Bebeğinizin Uyumasına Yardımcı Olmanın Yolları",
-   "id": "y03"
+   "id": "y03",
+   "infoTried": true
   },
   {
    "author": "Tuğba Parıltı",
@@ -1232,7 +1489,8 @@
    "rating": 5,
    "status": "read",
    "title": "Gıda Mühendisi Anlatıyor: Sağlıklı Beslenmek İçin Neyi, Nasıl Pişirelim?",
-   "id": "y04"
+   "id": "y04",
+   "infoTried": true
   },
   {
    "author": "Bahar Eriş",
@@ -1242,7 +1500,10 @@
    "rating": 4,
    "status": "read",
    "title": "Hayatın İlk Üç Yılı",
-   "id": "y05"
+   "id": "y05",
+   "infoTried": true,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12294519-M.jpg",
+   "year": 2021
   },
   {
    "author": "John Steinbeck",
@@ -1252,7 +1513,8 @@
    "rating": 3,
    "status": "read",
    "title": "Gazap Üzümleri",
-   "id": "y06"
+   "id": "y06",
+   "infoTried": true
   },
   {
    "author": "Laurie R. King",
@@ -1264,7 +1526,8 @@
    "seriesNo": 1,
    "status": "read",
    "title": "Arıcının Çırağı",
-   "id": "y07"
+   "id": "y07",
+   "infoTried": true
   },
   {
    "author": "Dana Suskind",
@@ -1274,7 +1537,11 @@
    "rating": 4,
    "status": "read",
    "title": "Otuz Milyon Kelime: Çocuğunuzun Beynini Geliştirin",
-   "id": "y08"
+   "id": "y08",
+   "infoTried": true,
+   "pages": 304,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12265117-M.jpg",
+   "year": 2018
   },
   {
    "author": "Nilüfer Devecigil",
@@ -1284,7 +1551,11 @@
    "rating": 4,
    "status": "read",
    "title": "Işığın Yolu",
-   "id": "y09"
+   "id": "y09",
+   "infoTried": true,
+   "pages": 236,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12202290-M.jpg",
+   "year": 2017
   },
   {
    "author": "Harvey Karp",
@@ -1294,7 +1565,8 @@
    "rating": 4,
    "status": "read",
    "title": "Mahallenin En Mutlu Bebeği",
-   "id": "y10"
+   "id": "y10",
+   "infoTried": true
   },
   {
    "author": "Geraldine Miskin",
@@ -1304,7 +1576,11 @@
    "rating": 5,
    "status": "read",
    "title": "Kolay Emzirme Teknikleri",
-   "id": "y11"
+   "id": "y11",
+   "infoTried": true,
+   "pages": 180,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12216872-M.jpg",
+   "year": 2019
   },
   {
    "author": "Can Bonomo",
@@ -1314,7 +1590,8 @@
    "rating": 5,
    "status": "read",
    "title": "Ateşli Silahlar ve Bilardo",
-   "id": "y12"
+   "id": "y12",
+   "infoTried": true
   },
   {
    "author": "Amir Levine",
@@ -1324,7 +1601,11 @@
    "rating": 4,
    "status": "read",
    "title": "Bağlanma: Aşkı Bulmanın ve Korumanın Bilimsel Yolları",
-   "id": "y13"
+   "id": "y13",
+   "infoTried": true,
+   "pages": 240,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12216072-M.jpg",
+   "year": 2018
   },
   {
    "author": "Dan Brown",
@@ -1334,7 +1615,8 @@
    "rating": 2,
    "status": "read",
    "title": "Dijital Kale",
-   "id": "y14"
+   "id": "y14",
+   "infoTried": true
   },
   {
    "author": "L. Frank Baum",
@@ -1346,10 +1628,15 @@
    "seriesNo": 1,
    "status": "read",
    "title": "Oz Büyücüsü",
-   "id": "y15"
+   "id": "y15",
+   "infoTried": true
   }
  ],
  "settings": {
+  "goals": {
+   "2025": 12,
+   "2026": 60
+  },
   "bingo": {
    "2026": {
     "cells": [
@@ -1455,10 +1742,6 @@
      }
     ]
    }
-  },
-  "goals": {
-   "2025": 12,
-   "2026": 60
   }
  }
 }
