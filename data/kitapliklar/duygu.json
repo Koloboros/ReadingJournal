@@ -1723,13 +1723,15 @@
   {
    "author": "John Steinbeck",
    "endDate": "2025-09-01",
-   "genre": "Klasik",
+   "genre": "Roman",
    "owned": false,
    "rating": 3,
    "status": "read",
    "title": "Gazap Üzümleri",
    "id": "y06",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e9cf8e",
+   "updatedAt": 1793215616136
   },
   {
    "author": "Laurie R. King",
