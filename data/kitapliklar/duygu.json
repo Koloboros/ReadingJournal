@@ -704,7 +704,10 @@
    "status": "read",
    "title": "Bahçıvan ve Ölüm",
    "id": "g46",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#e3a79c",
+   "format": "print",
+   "updatedAt": 1793176964978
   },
   {
    "author": "Suzanne Collins",
