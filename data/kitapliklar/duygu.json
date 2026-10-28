@@ -996,13 +996,15 @@
   },
   {
    "author": "Serdar Çankaya",
-   "genre": "Psikoloji",
+   "genre": "Kişisel gelişim",
    "owned": true,
    "rating": 0,
    "status": "want",
    "title": "Bir Aile Meselesi",
    "id": "n07",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#ebb88c",
+   "updatedAt": 1793212590385
   },
   {
    "author": "Aletha J. Solter",
