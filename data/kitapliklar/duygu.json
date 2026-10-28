@@ -1826,11 +1826,11 @@
      },
      {
       "b": null,
-      "p": "Rafta en uzun bekleyen"
+      "p": "Hep ertelediğin"
      },
      {
       "b": null,
-      "p": "Kitap hakkında kitap"
+      "p": "Şiir kitabı"
      },
      {
       "b": "g12",
@@ -1842,7 +1842,7 @@
      },
      {
       "b": null,
-      "p": "Hiç okumadığın tür"
+      "p": "Japon yazar"
      },
      {
       "b": "g03",
@@ -1874,7 +1874,7 @@
      },
      {
       "b": null,
-      "p": "100 yıldan eski"
+      "p": "Latin Amerika"
      },
      {
       "b": "g07",
@@ -1882,7 +1882,7 @@
      },
      {
       "b": null,
-      "p": "Distopya"
+      "p": "Polisiye"
      },
      {
       "b": "g55",
@@ -1894,7 +1894,7 @@
      },
      {
       "b": null,
-      "p": "Sesli kitap"
+      "p": "Deneme"
      },
      {
       "b": "g52",
@@ -1906,7 +1906,7 @@
      },
      {
       "b": null,
-      "p": "Anı / biyografi"
+      "p": "Başlıkta şehir adı"
      },
      {
       "b": "g32",
@@ -1914,7 +1914,7 @@
      },
      {
       "b": null,
-      "p": "Tarihi roman"
+      "p": "Bu yıl çıkan"
      }
     ]
    }
