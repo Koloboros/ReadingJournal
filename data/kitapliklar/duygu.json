@@ -1818,7 +1818,7 @@
     "cells": [
      {
       "b": null,
-      "p": "Kütüphaneden"
+      "p": "Yeniden okuma"
      },
      {
       "b": "g01",
@@ -1826,11 +1826,11 @@
      },
      {
       "b": null,
-      "p": "E-kitap"
+      "p": "Rus edebiyatı"
      },
      {
       "b": null,
-      "p": "Bu yıl çıkan"
+      "p": "Latin Amerika"
      },
      {
       "b": "g12",
@@ -1842,7 +1842,7 @@
      },
      {
       "b": null,
-      "p": "Hiç okumadığın tür"
+      "p": "Deneme"
      },
      {
       "b": "g03",
@@ -1862,7 +1862,7 @@
      },
      {
       "b": null,
-      "p": "Bilim kurgu"
+      "p": "200 sayfadan kısa"
      },
      {
       "b": null,
@@ -1874,7 +1874,7 @@
      },
      {
       "b": null,
-      "p": "Şiir kitabı"
+      "p": "Başlıkta şehir adı"
      },
      {
       "b": "g07",
@@ -1882,7 +1882,7 @@
      },
      {
       "b": null,
-      "p": "Bir klasik"
+      "p": "Bir günde biten"
      },
      {
       "b": "g55",
@@ -1890,15 +1890,15 @@
      },
      {
       "b": null,
-      "p": "Polisiye"
+      "p": "Çizgi roman"
      },
      {
       "b": null,
-      "p": "Anı / biyografi"
+      "p": "Doğa / bilim"
      },
      {
       "b": null,
-      "p": "Mavi kapaklı"
+      "p": "Yeni bir yazar"
      },
      {
       "b": "g17",
@@ -1906,7 +1906,7 @@
      },
      {
       "b": null,
-      "p": "Rafta en uzun bekleyen"
+      "p": "Serinin devamı"
      },
      {
       "b": "g32",
@@ -1914,7 +1914,7 @@
      },
      {
       "b": null,
-      "p": "Kitap hakkında kitap"
+      "p": "Hep ertelediğin"
      }
     ]
    }
