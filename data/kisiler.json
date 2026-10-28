@@ -4,6 +4,11 @@
    "id": "duygu",
    "name": "Duygu",
    "color": "#E3A79C"
+  },
+  {
+   "id": "can",
+   "name": "Can",
+   "color": "#EBB88C"
   }
  ]
 }
