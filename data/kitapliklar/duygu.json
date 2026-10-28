@@ -1821,6 +1821,22 @@
    "addedAt": 1793177481492,
    "coverUrl": "https://covers.openlibrary.org/b/id/12119213-M.jpg",
    "updatedAt": 1793177514981
+  },
+  {
+   "id": "bmvrvv5g8x8bnf",
+   "title": "Avatar: the rift",
+   "author": "Gene Luen Yang",
+   "pages": 238,
+   "year": 2015,
+   "color": "#beafd3",
+   "status": "reading",
+   "owned": true,
+   "format": "print",
+   "startDate": "2026-10-28",
+   "rating": 0,
+   "addedAt": 1793177970776,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15266326-M.jpg",
+   "updatedAt": 1793183671397
   }
  ],
  "settings": {
