@@ -697,7 +697,10 @@
    "id": "g52",
    "infoTried": true,
    "pages": 184,
-   "coverUrl": "https://covers.openlibrary.org/b/id/12268435-M.jpg"
+   "coverUrl": "https://covers.openlibrary.org/b/id/12268435-M.jpg",
+   "color": "#c29db4",
+   "format": "print",
+   "updatedAt": 1793176760563
   },
   {
    "author": "Aletha J. Solter",
