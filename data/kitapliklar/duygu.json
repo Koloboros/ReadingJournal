@@ -610,7 +610,10 @@
    "infoTried": true,
    "pages": 78,
    "coverUrl": "https://covers.openlibrary.org/b/id/7779881-M.jpg",
-   "year": 2001
+   "year": 2001,
+   "color": "#8ebdb0",
+   "format": "print",
+   "updatedAt": 1793176999657
   },
   {
    "author": "Suzanne Collins",
