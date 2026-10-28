@@ -414,7 +414,10 @@
    "status": "read",
    "title": "Ateş Sönene Kadar",
    "id": "g26",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c29db4",
+   "format": "audio",
+   "updatedAt": 1793176960735
   },
   {
    "author": "Melisa Kesmez",
@@ -425,7 +428,10 @@
    "status": "read",
    "title": "Çiçeklenmeler",
    "id": "g27",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#93a0c6",
+   "format": "audio",
+   "updatedAt": 1793176958804
   },
   {
    "author": "Melisa Kesmez",
