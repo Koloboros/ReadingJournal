@@ -1822,13 +1822,15 @@
   {
    "author": "Dan Brown",
    "endDate": "2025-11-20",
-   "genre": "Gerilim",
+   "genre": "Roman",
    "owned": false,
    "rating": 2,
    "status": "read",
    "title": "Dijital Kale",
    "id": "y14",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#a6c29a",
+   "updatedAt": 1793212705856
   },
   {
    "author": "L. Frank Baum",
