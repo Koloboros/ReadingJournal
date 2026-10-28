@@ -643,7 +643,10 @@
    "status": "read",
    "title": "Fırtınalar İmparatorluğu",
    "id": "g41",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c29db4",
+   "format": "ebook",
+   "updatedAt": 1793176971426
   },
   {
    "author": "Suzanne Collins",
