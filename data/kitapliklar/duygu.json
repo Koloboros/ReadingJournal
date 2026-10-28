@@ -1083,13 +1083,14 @@
    "genre": "Anı",
    "owned": false,
    "rating": 0,
-   "status": "reading",
+   "status": "want",
    "title": "Haysiyetsizlik: Yeniden Biçimlendirilen Bir Hayat",
    "id": "t01",
    "infoTried": true,
    "startDate": "2026-10-28",
    "fromTbr": true,
-   "updatedAt": 1793194941514
+   "updatedAt": 1793194964082,
+   "color": "#c9a27a"
   },
   {
    "author": "Rosalind Miles",
