@@ -726,7 +726,10 @@
    "status": "read",
    "title": "Suikastçının Hançeri",
    "id": "g45",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#c29db4",
+   "format": "print",
+   "updatedAt": 1793177013778
   },
   {
    "author": "Georgi Gospodinov",
