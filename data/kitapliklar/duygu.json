@@ -339,7 +339,10 @@
    "infoTried": true,
    "pages": 626,
    "coverUrl": "https://covers.openlibrary.org/b/id/14315081-M.jpg",
-   "year": 2014
+   "year": 2014,
+   "color": "#c29db4",
+   "format": "ebook",
+   "updatedAt": 1793176900559
   },
   {
    "author": "Malcolm Gladwell",
