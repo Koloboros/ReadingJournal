@@ -306,7 +306,10 @@
    "id": "g20",
    "infoTried": true,
    "coverUrl": "https://covers.openlibrary.org/b/id/10868945-M.jpg",
-   "year": 2017
+   "year": 2017,
+   "color": "#beafd3",
+   "format": "audio",
+   "updatedAt": 1793176886860
   },
   {
    "author": "Aylin Balboa",
