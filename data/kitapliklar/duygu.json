@@ -2040,10 +2040,118 @@
       "p": "Bir klasik"
      }
     ]
+   },
+   {
+    "id": "bmvsjarvl",
+    "year": 2026,
+    "name": "Kart 2",
+    "size": 5,
+    "cells": [
+     {
+      "p": "Yeşil kapaklı",
+      "b": null
+     },
+     {
+      "p": "Çocuk anlatıcı",
+      "b": null
+     },
+     {
+      "p": "İskandinav yazar",
+      "b": null
+     },
+     {
+      "p": "Başlığında hayvan var",
+      "b": null
+     },
+     {
+      "p": "Bu yıl çıkan",
+      "b": null
+     },
+     {
+      "p": "Serinin ilk kitabı",
+      "b": null
+     },
+     {
+      "p": "Hayvan anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Kütüphaneden",
+      "b": null
+     },
+     {
+      "p": "Korku",
+      "b": null
+     },
+     {
+      "p": "Diziye uyarlanmış",
+      "b": null
+     },
+     {
+      "p": "100 yıldan eski",
+      "b": null
+     },
+     {
+      "p": "Gülümseten kitap",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Yolculuk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Bir klasik",
+      "b": null
+     },
+     {
+      "p": "Aşk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Koreli yazar",
+      "b": null
+     },
+     {
+      "p": "Ağlatan kitap",
+      "b": null
+     },
+     {
+      "p": "Arkadaş önerisi",
+      "b": null
+     },
+     {
+      "p": "Tarihi roman",
+      "b": null
+     },
+     {
+      "p": "Annenin/babanın sevdiği kitap",
+      "b": null
+     },
+     {
+      "p": "E-kitap",
+      "b": null
+     },
+     {
+      "p": "Yazarı 30 yaşından genç",
+      "b": null
+     },
+     {
+      "p": "Kadın kahraman",
+      "b": null
+     },
+     {
+      "p": "Masal / efsane",
+      "b": null
+     }
+    ]
    }
   ],
   "bingoActive": {
-   "2026": "y2026"
+   "2026": "bmvsjarvl"
   }
  }
 }
