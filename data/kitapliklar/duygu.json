@@ -892,7 +892,10 @@
    "status": "reading",
    "title": "Kendime Düşünceler",
    "id": "r02",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#8ebdb0",
+   "format": "print",
+   "updatedAt": 1793176478999
   },
   {
    "author": "Matt Kracht",
