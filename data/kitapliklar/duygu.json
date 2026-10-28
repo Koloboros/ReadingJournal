@@ -986,13 +986,15 @@
   },
   {
    "author": "Kazuaki Takano",
-   "genre": "Gerilim",
+   "genre": "Roman",
    "owned": true,
    "rating": 0,
    "status": "want",
    "title": "Bir Aklın Savaşı",
    "id": "n06",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#93a0c6",
+   "updatedAt": 1793212712410
   },
   {
    "author": "Serdar Çankaya",
