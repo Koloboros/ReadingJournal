@@ -467,7 +467,10 @@
    "infoTried": true,
    "pages": 154,
    "coverUrl": "https://covers.openlibrary.org/b/id/12295084-M.jpg",
-   "year": 2019
+   "year": 2019,
+   "color": "#dbb4bf",
+   "format": "audio",
+   "updatedAt": 1793176949554
   },
   {
    "author": "Melisa Kesmez",
