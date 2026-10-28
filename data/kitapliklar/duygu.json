@@ -439,7 +439,10 @@
    "infoTried": true,
    "pages": 110,
    "coverUrl": "https://covers.openlibrary.org/b/id/10843729-M.jpg",
-   "year": 2015
+   "year": 2015,
+   "color": "#a6c29a",
+   "format": "audio",
+   "updatedAt": 1793176955205
   },
   {
    "author": "Melisa Kesmez",
@@ -453,7 +456,10 @@
    "infoTried": true,
    "pages": 117,
    "coverUrl": "https://covers.openlibrary.org/b/id/10859735-M.jpg",
-   "year": 2018
+   "year": 2018,
+   "color": "#e3a79c",
+   "format": "audio",
+   "updatedAt": 1793176953153
   },
   {
    "author": "Melisa Kesmez",
