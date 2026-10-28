@@ -1404,11 +1404,12 @@
    "title": "Ölmeye Yatmak",
    "id": "t23",
    "infoTried": true,
-   "pages": 357,
-   "year": 1976,
+   "pages": 392,
+   "year": 1973,
    "startDate": "2026-10-28",
    "fromTbr": true,
-   "updatedAt": 1793218374881
+   "updatedAt": 1793218572020,
+   "color": "#f2c4c0"
   },
   {
    "author": "Alex Schulman",
