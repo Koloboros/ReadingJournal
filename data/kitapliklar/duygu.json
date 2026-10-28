@@ -623,7 +623,10 @@
    "status": "read",
    "title": "Ateşi Yakalamak",
    "id": "g39",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#dbb4bf",
+   "format": "ebook",
+   "updatedAt": 1793176996541
   },
   {
    "author": "Sarah J. Maas",
