@@ -277,7 +277,10 @@
    "infoTried": true,
    "pages": 259,
    "coverUrl": "https://covers.openlibrary.org/b/id/8569939-M.jpg",
-   "year": 2018
+   "year": 2018,
+   "color": "#dbb4bf",
+   "format": "ebook",
+   "updatedAt": 1793176915399
   },
   {
    "author": "Sarah J. Maas",
