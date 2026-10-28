@@ -210,7 +210,10 @@
    "status": "read",
    "title": "Tereyağı",
    "id": "g15",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#dbb4bf",
+   "format": "audio",
+   "updatedAt": 1793176831876
   },
   {
    "author": "Nermin Yıldırım",
