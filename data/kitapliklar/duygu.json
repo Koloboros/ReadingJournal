@@ -95,7 +95,10 @@
    "infoTried": true,
    "pages": 332,
    "coverUrl": "https://covers.openlibrary.org/b/id/10849230-M.jpg",
-   "year": 2018
+   "year": 2018,
+   "color": "#bebb80",
+   "format": "audio",
+   "updatedAt": 1793176490968
   },
   {
    "author": "Nermin Yıldırım",
