@@ -1690,13 +1690,15 @@
   {
    "author": "Tuğba Parıltı",
    "endDate": "2025-09-15",
-   "genre": "Beslenme",
+   "genre": "Kurgu dışı",
    "owned": false,
    "rating": 5,
    "status": "read",
    "title": "Gıda Mühendisi Anlatıyor: Sağlıklı Beslenmek İçin Neyi, Nasıl Pişirelim?",
    "id": "y04",
-   "infoTried": true
+   "infoTried": true,
+   "color": "#beafd3",
+   "updatedAt": 1793212570994
   },
   {
    "author": "Bahar Eriş",
