@@ -25,7 +25,10 @@
    "infoTried": true,
    "pages": 226,
    "coverUrl": "https://covers.openlibrary.org/b/id/12349163-M.jpg",
-   "year": 2014
+   "year": 2014,
+   "color": "#bebb80",
+   "format": "audio",
+   "updatedAt": 1793176723194
   },
   {
    "author": "Turgut Can Koloğlugil",
