@@ -481,7 +481,10 @@
    "infoTried": true,
    "pages": 84,
    "coverUrl": "https://covers.openlibrary.org/b/id/13875754-M.jpg",
-   "year": 2022
+   "year": 2022,
+   "color": "#8ebdb0",
+   "format": "audio",
+   "updatedAt": 1793176940718
   },
   {
    "author": "Hwang Bo-Reum",
