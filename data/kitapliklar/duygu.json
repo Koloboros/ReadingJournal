@@ -1534,7 +1534,7 @@
   {
    "author": "Yu Hua",
    "genre": "Roman",
-   "owned": false,
+   "owned": true,
    "rating": 0,
    "status": "want",
    "title": "Yaşamak",
@@ -1542,7 +1542,8 @@
    "infoTried": true,
    "pages": 210,
    "coverUrl": "https://covers.openlibrary.org/b/id/10848784-M.jpg",
-   "year": 2016
+   "year": 2016,
+   "updatedAt": 1793267906080
   },
   {
    "author": "Michiko Aoyama",
