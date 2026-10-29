@@ -2165,10 +2165,118 @@
       "b": "g27"
      }
     ]
+   },
+   {
+    "id": "bmvte7kld",
+    "year": 2026,
+    "name": "Kart 3",
+    "size": 5,
+    "cells": [
+     {
+      "p": "Çocuk anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Başlıkta şehir adı",
+      "b": null
+     },
+     {
+      "p": "Yeşil kapaklı",
+      "b": null
+     },
+     {
+      "p": "Serinin ilk kitabı",
+      "b": null
+     },
+     {
+      "p": "Başka ülkede geçen",
+      "b": null
+     },
+     {
+      "p": "Yazarın son kitabı",
+      "b": null
+     },
+     {
+      "p": "Mavi kapaklı",
+      "b": null
+     },
+     {
+      "p": "Yolculuk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Mektup ya da günlük biçiminde",
+      "b": null
+     },
+     {
+      "p": "Hiç okumadığın tür",
+      "b": null
+     },
+     {
+      "p": "Ödüllü kitap",
+      "b": null
+     },
+     {
+      "p": "Kapak tasarımına âşık olduğun",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Latin Amerika",
+      "b": null
+     },
+     {
+      "p": "Öykü kitabı",
+      "b": null
+     },
+     {
+      "p": "Başlığında hayvan var",
+      "b": null
+     },
+     {
+      "p": "Aynı yazardan ikinci kitap",
+      "b": null
+     },
+     {
+      "p": "Bir klasik",
+      "b": null
+     },
+     {
+      "p": "Diziye uyarlanmış",
+      "b": null
+     },
+     {
+      "p": "Kadın kahraman",
+      "b": null
+     },
+     {
+      "p": "Tek kelimelik başlık",
+      "b": null
+     },
+     {
+      "p": "Doğduğun yıl çıkan",
+      "b": null
+     },
+     {
+      "p": "Kapağında çiçek var",
+      "b": null
+     },
+     {
+      "p": "İskandinav yazar",
+      "b": null
+     },
+     {
+      "p": "Deneme",
+      "b": null
+     }
+    ]
    }
   ],
   "bingoActive": {
-   "2026": "y2026"
+   "2026": "bmvte7kld"
   }
  }
 }
