@@ -1969,7 +1969,8 @@
    "format": "print",
    "rating": 0,
    "addedAt": 1793267729316,
-   "updatedAt": 1793267778824
+   "updatedAt": 1793267778824,
+   "infoTried": true
   },
   {
    "id": "bmvtdhq22cw110",
@@ -1984,7 +1985,8 @@
    "format": "print",
    "rating": 0,
    "addedAt": 1793268043562,
-   "updatedAt": 1793268351700
+   "updatedAt": 1793268351700,
+   "infoTried": true
   }
  ],
  "settings": {
