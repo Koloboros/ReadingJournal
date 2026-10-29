@@ -1929,15 +1929,16 @@
    "pages": 238,
    "year": 2015,
    "color": "#beafd3",
-   "status": "reading",
+   "status": "read",
    "owned": true,
    "format": "print",
    "startDate": "2026-10-28",
-   "rating": 0,
+   "rating": 4.5,
    "addedAt": 1793177970776,
-   "updatedAt": 1793194194112,
+   "updatedAt": 1793265735647,
    "genre": "Çizgi roman ",
-   "coverUrl": "https://covers.openlibrary.org/b/id/15266326-M.jpg"
+   "coverUrl": "https://covers.openlibrary.org/b/id/15266326-M.jpg",
+   "endDate": "2026-10-29"
   },
   {
    "id": "bmvskh62lvidu6",
