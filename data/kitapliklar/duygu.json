@@ -2143,50 +2143,6 @@
       "p": "Bir klasik"
      }
     ]
-   },
-   {
-    "id": "bmvter63b",
-    "year": 2026,
-    "name": "Kart 2",
-    "size": 3,
-    "cells": [
-     {
-      "p": "Kitapçıda geçen",
-      "b": null
-     },
-     {
-      "p": "Şiir kitabı",
-      "b": null
-     },
-     {
-      "p": "Felsefe",
-      "b": null
-     },
-     {
-      "p": "Rus edebiyatı",
-      "b": null
-     },
-     {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
-      "p": "Rafta en uzun bekleyen",
-      "b": null
-     },
-     {
-      "p": "Kitap hakkında kitap",
-      "b": null
-     },
-     {
-      "p": "E-kitap",
-      "b": null
-     },
-     {
-      "p": "Bilim kurgu",
-      "b": null
-     }
-    ]
    }
   ],
   "bingoActive": {
