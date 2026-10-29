@@ -2148,7 +2148,7 @@
     "id": "bmvter63b",
     "year": 2026,
     "name": "Kart 2",
-    "size": 5,
+    "size": 3,
     "cells": [
      {
       "p": "Kitapçıda geçen",
@@ -2167,6 +2167,10 @@
       "b": null
      },
      {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
       "p": "Rafta en uzun bekleyen",
       "b": null
      },
@@ -2180,74 +2184,6 @@
      },
      {
       "p": "Bilim kurgu",
-      "b": null
-     },
-     {
-      "p": "Tarihi roman",
-      "b": null
-     },
-     {
-      "p": "Fantastik",
-      "b": null
-     },
-     {
-      "p": "Yazarı 70 yaşından büyük",
-      "b": null
-     },
-     {
-      "p": "Hediye gelen",
-      "b": null
-     },
-     {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
-      "p": "Yeniden okuma",
-      "b": null
-     },
-     {
-      "p": "Çocukken okuduğun bir kitap",
-      "b": null
-     },
-     {
-      "p": "100 yıldan eski",
-      "b": null
-     },
-     {
-      "p": "Gülümseten kitap",
-      "b": null
-     },
-     {
-      "p": "Masal / efsane",
-      "b": null
-     },
-     {
-      "p": "Başlıkta bir isim",
-      "b": null
-     },
-     {
-      "p": "İskandinav yazar",
-      "b": null
-     },
-     {
-      "p": "Öykü kitabı",
-      "b": null
-     },
-     {
-      "p": "Mitoloji",
-      "b": null
-     },
-     {
-      "p": "Polisiye",
-      "b": null
-     },
-     {
-      "p": "Hiç okumadığın tür",
-      "b": null
-     },
-     {
-      "p": "Başlıkta şehir adı",
       "b": null
      }
     ]
