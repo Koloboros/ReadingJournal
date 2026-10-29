@@ -9,6 +9,11 @@
    "id": "can",
    "name": "Can",
    "color": "#EBB88C"
+  },
+  {
+   "id": "ozan",
+   "name": "Ozan",
+   "color": "#E9CF8E"
   }
  ]
 }
