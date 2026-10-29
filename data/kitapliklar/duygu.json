@@ -965,7 +965,7 @@
    "author": "R.F. Kuang",
    "endDate": "2026-01-09",
    "genre": "Fantastik",
-   "owned": false,
+   "owned": true,
    "rating": 5,
    "status": "read",
    "title": "Babil: Oxford Çevirmenler Devriminin Gizemli Hikayesi",
@@ -973,7 +973,7 @@
    "infoTried": true,
    "color": "#ebb88c",
    "format": "print",
-   "updatedAt": 1793216918842,
+   "updatedAt": 1793267798867,
    "pages": 662
   },
   {
