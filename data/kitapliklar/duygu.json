@@ -2173,43 +2173,11 @@
     "size": 5,
     "cells": [
      {
-      "p": "Çocuk anlatıcı",
+      "p": "Tarihi roman",
       "b": null
      },
      {
-      "p": "Başlıkta şehir adı",
-      "b": null
-     },
-     {
-      "p": "Yeşil kapaklı",
-      "b": null
-     },
-     {
-      "p": "Serinin ilk kitabı",
-      "b": null
-     },
-     {
-      "p": "Başka ülkede geçen",
-      "b": null
-     },
-     {
-      "p": "Yazarın son kitabı",
-      "b": null
-     },
-     {
-      "p": "Mavi kapaklı",
-      "b": null
-     },
-     {
-      "p": "Yolculuk hikâyesi",
-      "b": null
-     },
-     {
-      "p": "Mektup ya da günlük biçiminde",
-      "b": null
-     },
-     {
-      "p": "Hiç okumadığın tür",
+      "p": "Çizgi roman",
       "b": null
      },
      {
@@ -2217,39 +2185,7 @@
       "b": null
      },
      {
-      "p": "Kapak tasarımına âşık olduğun",
-      "b": null
-     },
-     {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
-      "p": "Latin Amerika",
-      "b": null
-     },
-     {
-      "p": "Öykü kitabı",
-      "b": null
-     },
-     {
-      "p": "Başlığında hayvan var",
-      "b": null
-     },
-     {
-      "p": "Aynı yazardan ikinci kitap",
-      "b": null
-     },
-     {
-      "p": "Bir klasik",
-      "b": null
-     },
-     {
-      "p": "Diziye uyarlanmış",
-      "b": null
-     },
-     {
-      "p": "Kadın kahraman",
+      "p": "Şiir kitabı",
       "b": null
      },
      {
@@ -2257,19 +2193,83 @@
       "b": null
      },
      {
-      "p": "Doğduğun yıl çıkan",
+      "p": "İkinci el kitap",
       "b": null
      },
      {
-      "p": "Kapağında çiçek var",
+      "p": "Bilim kurgu",
       "b": null
      },
      {
-      "p": "İskandinav yazar",
+      "p": "Yazın geçen",
+      "b": null
+     },
+     {
+      "p": "Bir günde biten",
+      "b": null
+     },
+     {
+      "p": "Kurgu dışı",
+      "b": null
+     },
+     {
+      "p": "Öykü kitabı",
+      "b": null
+     },
+     {
+      "p": "E-kitap",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Yeşil kapaklı",
+      "b": null
+     },
+     {
+      "p": "200 sayfadan kısa",
+      "b": null
+     },
+     {
+      "p": "Hediye gelen",
       "b": null
      },
      {
       "p": "Deneme",
+      "b": null
+     },
+     {
+      "p": "Felsefe",
+      "b": null
+     },
+     {
+      "p": "Hayvan anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Kitap kulübü seçimi",
+      "b": null
+     },
+     {
+      "p": "Hiç okumadığın tür",
+      "b": null
+     },
+     {
+      "p": "500+ sayfa",
+      "b": null
+     },
+     {
+      "p": "Birden çok anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Kışın geçen",
+      "b": null
+     },
+     {
+      "p": "Yeni bir yazar",
       "b": null
      }
     ]
