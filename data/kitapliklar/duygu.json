@@ -2008,6 +2008,23 @@
    "seriesNo": 5,
    "coverUrl": "https://covers.openlibrary.org/b/id/14409886-M.jpg",
    "updatedAt": 1793269219145
+  },
+  {
+   "id": "bmvteb4bxzfasm",
+   "title": "Avatar: Smoke and Shadow",
+   "author": "Gene Luen Yang",
+   "pages": 240,
+   "year": 2016,
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": true,
+   "format": "print",
+   "rating": 0,
+   "addedAt": 1793269415085,
+   "series": "Avatar",
+   "seriesNo": 4,
+   "coverUrl": "https://covers.openlibrary.org/b/id/8907772-M.jpg",
+   "updatedAt": 1793269467311
   }
  ],
  "settings": {
