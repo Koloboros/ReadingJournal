@@ -648,7 +648,7 @@
    "owned": false,
    "rating": 5,
    "series": "Avatar",
-   "seriesNo": 2,
+   "seriesNo": 1,
    "status": "read",
    "title": "Avatar: The Promise",
    "id": "g38",
@@ -658,7 +658,7 @@
    "year": 2013,
    "color": "#8ebdb0",
    "format": "print",
-   "updatedAt": 1793269370233
+   "updatedAt": 1793269406928
   },
   {
    "author": "Suzanne Collins",
