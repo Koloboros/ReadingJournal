@@ -647,8 +647,8 @@
    "genre": "Çizgi roman",
    "owned": false,
    "rating": 5,
-   "series": "Avatar: The Last Airbender",
-   "seriesNo": 1,
+   "series": "Avatar",
+   "seriesNo": 2,
    "status": "read",
    "title": "Avatar: The Promise",
    "id": "g38",
@@ -658,7 +658,7 @@
    "year": 2013,
    "color": "#8ebdb0",
    "format": "print",
-   "updatedAt": 1793216598610
+   "updatedAt": 1793269370233
   },
   {
    "author": "Suzanne Collins",
