@@ -1936,10 +1936,12 @@
    "startDate": "2026-10-26",
    "rating": 4.5,
    "addedAt": 1793177970776,
-   "updatedAt": 1793265821207,
+   "updatedAt": 1793269346927,
    "genre": "Çizgi roman ",
    "coverUrl": "https://covers.openlibrary.org/b/id/15266326-M.jpg",
-   "endDate": "2026-10-29"
+   "endDate": "2026-10-29",
+   "series": "Avatar",
+   "seriesNo": 3
   },
   {
    "id": "bmvskh62lvidu6",
