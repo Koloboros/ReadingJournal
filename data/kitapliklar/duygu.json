@@ -2121,50 +2121,6 @@
       "p": "Bir klasik"
      }
     ]
-   },
-   {
-    "id": "bmvsjarvl",
-    "year": 2026,
-    "name": "Kart 2",
-    "size": 3,
-    "cells": [
-     {
-      "p": "Korku",
-      "b": null
-     },
-     {
-      "p": "Çizgi roman",
-      "b": "g38"
-     },
-     {
-      "p": "Arkadaş önerisi",
-      "b": null
-     },
-     {
-      "p": "Kışın geçen",
-      "b": null
-     },
-     {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
-      "p": "Rus edebiyatı",
-      "b": null
-     },
-     {
-      "p": "Kurgu dışı",
-      "b": null
-     },
-     {
-      "p": "Bir klasik",
-      "b": null
-     },
-     {
-      "p": "Tek kelimelik başlık",
-      "b": "g27"
-     }
-    ]
    }
   ],
   "bingoActive": {
