@@ -1970,6 +1970,21 @@
    "rating": 0,
    "addedAt": 1793267729316,
    "updatedAt": 1793267778824
+  },
+  {
+   "id": "bmvtdhq22cw110",
+   "title": "Evlilik Portresi",
+   "author": "maggie o'farrell",
+   "pages": 400,
+   "year": 2023,
+   "genre": "Roman",
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": true,
+   "format": "print",
+   "rating": 0,
+   "addedAt": 1793268043562,
+   "updatedAt": 1793268351700
   }
  ],
  "settings": {
