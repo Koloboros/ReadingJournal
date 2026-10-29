@@ -1987,6 +1987,23 @@
    "addedAt": 1793268043562,
    "updatedAt": 1793268351700,
    "infoTried": true
+  },
+  {
+   "id": "bmvte3myr8qhxa",
+   "title": "Avatar: North and South",
+   "author": "Gene Luen Yang, Gurihiru",
+   "pages": 276,
+   "year": 2017,
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": true,
+   "format": "print",
+   "rating": 0,
+   "addedAt": 1793269065987,
+   "series": "Avatar",
+   "seriesNo": 5,
+   "coverUrl": "https://covers.openlibrary.org/b/id/14409886-M.jpg",
+   "updatedAt": 1793269207676
   }
  ],
  "settings": {
