@@ -14,10 +14,28 @@
    "addedAt": 1793175812841,
    "coverUrl": "https://covers.openlibrary.org/b/id/10746047-M.jpg",
    "updatedAt": 1793175889079
+  },
+  {
+   "id": "bmvtn39yp7bbf2",
+   "title": "Newton Principia’sının Toplumsal İktisadi Kökleri",
+   "author": "Boris Hessen",
+   "pages": 128,
+   "year": 2019,
+   "genre": "Felsefe",
+   "color": "#f1e2a0",
+   "status": "reading",
+   "owned": true,
+   "format": "print",
+   "startDate": "2026-10-29",
+   "rating": 0,
+   "addedAt": 1793284165681,
+   "coverUrl": "https://covers.openlibrary.org/b/id/12208461-M.jpg",
+   "updatedAt": 1793284239148
   }
  ],
  "settings": {
   "goals": {},
-  "bingo": {}
+  "bingoCards": [],
+  "bingoActive": {}
  }
 }
