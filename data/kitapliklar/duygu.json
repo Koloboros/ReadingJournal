@@ -368,7 +368,7 @@
    "author": "Sarah J. Maas",
    "endDate": "2026-08-19",
    "genre": "Fantastik",
-   "owned": true,
+   "owned": false,
    "rating": 5,
    "series": "A Court of Thorns and Roses",
    "seriesNo": 2,
@@ -381,7 +381,7 @@
    "year": 2014,
    "color": "#c29db4",
    "format": "ebook",
-   "updatedAt": 1793390612479
+   "updatedAt": 1793390642608
   },
   {
    "author": "Malcolm Gladwell",
