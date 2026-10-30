@@ -2087,7 +2087,8 @@
    "imdbId": "tt0068646",
    "tags": [
     "Mafya"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f3",
@@ -2122,7 +2123,8 @@
    "imdbId": "tt0108052",
    "tags": [
     "Yahudi Soykırımı"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f5",
@@ -2138,7 +2140,8 @@
    "imdbId": "tt0071562",
    "tags": [
     "Mafya"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f6",
@@ -2188,7 +2191,8 @@
    "imdbId": "tt0137523",
    "tags": [
     "Beyin Yakan"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f10",
@@ -2204,7 +2208,8 @@
    "imdbId": "tt1375666",
    "tags": [
     "Beyin Yakan"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f11",
@@ -2254,7 +2259,8 @@
    "imdbId": "tt0099685",
    "tags": [
     "Mafya"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f16",
@@ -2378,7 +2384,8 @@
     "Kanlı",
     "Western",
     "Değişik"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f29",
@@ -2448,7 +2455,8 @@
    "tags": [
     "Savaş Dönemi",
     "Müzik"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f36",
@@ -2481,7 +2489,8 @@
    "imdbId": "tt15239678",
    "tags": [
     "Duneeeeeeeeağ"
-   ]
+   ],
+   "genre": "Bilim kurgu"
   },
   {
    "id": "f38",
@@ -2601,7 +2610,8 @@
    "rating": 6,
    "endDate": "2026-02-10",
    "imdb": 8.3,
-   "imdbId": "tt0364569"
+   "imdbId": "tt0364569",
+   "genre": "Gerilim"
   },
   {
    "id": "f50",
@@ -2617,7 +2627,8 @@
    "imdbId": "tt0112573",
    "tags": [
     "Özgürlüüüüüüük"
-   ]
+   ],
+   "genre": "Tarih"
   },
   {
    "id": "f61",
@@ -2651,7 +2662,8 @@
    "imdbId": "tt0993846",
    "tags": [
     "Borsa"
-   ]
+   ],
+   "genre": "Suç"
   },
   {
    "id": "f64",
@@ -2684,7 +2696,8 @@
    "tags": [
     "Kanlı",
     "İntikam"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f66",
@@ -2847,7 +2860,8 @@
    "tags": [
     "Western",
     "Hayatta kalma"
-   ]
+   ],
+   "genre": "Tarih"
   },
   {
    "id": "f104",
@@ -2936,7 +2950,8 @@
    "tags": [
     "Üst Sınıf Eleştirisi",
     "Değişik"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f109",
@@ -2953,7 +2968,8 @@
    "tags": [
     "İntikam",
     "Kanlı"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f123",
@@ -3025,7 +3041,8 @@
    "tags": [
     "Nazi",
     "Komik"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f144",
@@ -3055,7 +3072,8 @@
    "rating": 8.5,
    "endDate": "2026-02-10",
    "imdb": 7.8,
-   "imdbId": "tt0099487"
+   "imdbId": "tt0099487",
+   "genre": "Fantastik"
   },
   {
    "id": "f149",
@@ -3089,7 +3107,8 @@
    "tags": [
     "Brad Pitt",
     "Terse yaşam"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f151",
@@ -3123,7 +3142,8 @@
    "tags": [
     "DC'den Beklenmedik Güzel İş",
     "Riddler var"
-   ]
+   ],
+   "genre": "Suç"
   },
   {
    "id": "f169",
@@ -3140,7 +3160,8 @@
    "tags": [
     "Multiverse",
     "Uf Anasını"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f174",
@@ -3171,7 +3192,8 @@
    "rating": 10,
    "endDate": "2026-02-10",
    "imdb": 7.7,
-   "imdbId": "tt0914798"
+   "imdbId": "tt0914798",
+   "genre": "Drama"
   },
   {
    "id": "f177",
@@ -3184,7 +3206,8 @@
    "rating": 9.5,
    "endDate": "2026-02-10",
    "imdb": 7.7,
-   "imdbId": "tt0485947"
+   "imdbId": "tt0485947",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "f188",
@@ -3435,7 +3458,8 @@
    "imdbId": "tt1312221",
    "tags": [
     "Uyarlama"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f236",
@@ -3469,7 +3493,8 @@
    "imdbId": "tt1570728",
    "tags": [
     "Komik"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f238",
@@ -3485,7 +3510,8 @@
    "imdbId": "tt16968450",
    "tags": [
     "Komedi Dram"
-   ]
+   ],
+   "genre": "Fantastik"
   },
   {
    "id": "f240",
@@ -3501,7 +3527,8 @@
    "imdbId": "tt1219289",
    "tags": [
     "Düşündürücü"
-   ]
+   ],
+   "genre": "Gerilim"
   },
   {
    "id": "f241",
@@ -3607,7 +3634,8 @@
    "tags": [
     "Japonya",
     "Geyşa"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f276",
@@ -3677,7 +3705,8 @@
    "imdbId": "tt11286314",
    "tags": [
     "Ne kadar türkiye yağğ"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f289",
@@ -3695,7 +3724,8 @@
     "Holywood kuruluyor",
     "Brad Pitt",
     "Margot Robbie"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f299",
@@ -3711,7 +3741,8 @@
    "imdbId": "tt8772262",
    "tags": [
     "Kır düğünü"
-   ]
+   ],
+   "genre": "Korku"
   },
   {
    "id": "f300",
@@ -3743,7 +3774,8 @@
    "rating": 6,
    "endDate": "2026-02-10",
    "imdb": 7.1,
-   "imdbId": "tt3464902"
+   "imdbId": "tt3464902",
+   "genre": "Komedi"
   },
   {
    "id": "f302",
@@ -3760,7 +3792,8 @@
    "tags": [
     "Marilyn Monroe",
     "Komedimsi"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f308",
@@ -3829,7 +3862,8 @@
    "tags": [
     "Yemek",
     "Blogger"
-   ]
+   ],
+   "genre": "Romantik"
   },
   {
    "id": "f328",
@@ -3970,7 +4004,8 @@
    "tags": [
     "İyi Hissettiren",
     "Duygusal"
-   ]
+   ],
+   "genre": "Macera"
   },
   {
    "id": "f366",
@@ -3988,7 +4023,8 @@
     "Demet Evgar",
     "Türk Aile",
     "Ne bileyim ya"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f389",
@@ -4042,7 +4078,8 @@
    "tags": [
     "Jim Carrey",
     "Christmas"
-   ]
+   ],
+   "genre": "Aile"
   },
   {
    "id": "f407",
@@ -4074,7 +4111,8 @@
    "imdbId": "tt0087182",
    "tags": [
     "Dune İlk Filmi"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f417",
@@ -4106,7 +4144,8 @@
    "imdbId": "tt2330322",
    "tags": [
     "Bubama kumplo kurdular"
-   ]
+   ],
+   "genre": "Gerilim"
   },
   {
    "id": "f426",
@@ -4174,7 +4213,8 @@
    "tags": [
     "İtalya",
     "Restoran"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f449",
@@ -4191,7 +4231,8 @@
    "tags": [
     "Püh",
     "Sihirli Taşlı"
-   ]
+   ],
+   "genre": "Aksiyon"
   },
   {
    "id": "f454",
@@ -4223,7 +4264,8 @@
    "imdbId": "tt26258488",
    "tags": [
     "Püh"
-   ]
+   ],
+   "genre": "Drama"
   },
   {
    "id": "f456",
@@ -4239,7 +4281,8 @@
    "tags": [
     "Koyunlar cinayet çözüyor",
     "2000'ler vibe"
-   ]
+   ],
+   "genre": "Komedi"
   },
   {
    "id": "f457",
@@ -4269,7 +4312,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 9.5,
-   "imdbId": "tt0903747"
+   "imdbId": "tt0903747",
+   "genre": "Drama"
   },
   {
    "id": "d462",
@@ -4282,7 +4326,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 9.2,
-   "imdbId": "tt0944947"
+   "imdbId": "tt0944947",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d465",
@@ -4295,7 +4340,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 9,
-   "imdbId": "tt1475582"
+   "imdbId": "tt1475582",
+   "genre": "Suç"
   },
   {
    "id": "d466",
@@ -4306,7 +4352,8 @@
    "author": "Jason Hehir",
    "status": "skip",
    "imdb": 9,
-   "imdbId": "tt8420184"
+   "imdbId": "tt8420184",
+   "genre": "Belgesel"
   },
   {
    "id": "d467",
@@ -4319,7 +4366,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 9,
-   "imdbId": "tt3032476"
+   "imdbId": "tt3032476",
+   "genre": "Suç"
   },
   {
    "id": "d468",
@@ -4332,7 +4380,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 9,
-   "imdbId": "tt0386676"
+   "imdbId": "tt0386676",
+   "genre": "Komedi"
   },
   {
    "id": "d469",
@@ -4345,7 +4394,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 9,
-   "imdbId": "tt7920978"
+   "imdbId": "tt7920978",
+   "genre": "Suç"
   },
   {
    "id": "d470",
@@ -4358,7 +4408,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 9,
-   "imdbId": "tt13675832"
+   "imdbId": "tt13675832",
+   "genre": "Komedi"
   },
   {
    "id": "d472",
@@ -4371,7 +4422,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.9,
-   "imdbId": "tt0108778"
+   "imdbId": "tt0108778",
+   "genre": "Komedi"
   },
   {
    "id": "d477",
@@ -4384,7 +4436,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 8.7,
-   "imdbId": "tt2085059"
+   "imdbId": "tt2085059",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d478",
@@ -4397,7 +4450,8 @@
    "rating": 9.5,
    "endDate": "2025-11-27",
    "imdb": 8.7,
-   "imdbId": "tt5687612"
+   "imdbId": "tt5687612",
+   "genre": "Komedi"
   },
   {
    "id": "d479",
@@ -4410,7 +4464,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.7,
-   "imdbId": "tt2707408"
+   "imdbId": "tt2707408",
+   "genre": "Suç"
   },
   {
    "id": "d480",
@@ -4423,7 +4478,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.7,
-   "imdbId": "tt0412142"
+   "imdbId": "tt0412142",
+   "genre": "Drama"
   },
   {
    "id": "d481",
@@ -4434,7 +4490,8 @@
    "author": "Baran bo Odar, Jantje Friese",
    "status": "skip",
    "imdb": 8.7,
-   "imdbId": "tt5753856"
+   "imdbId": "tt5753856",
+   "genre": "Suç"
   },
   {
    "id": "d482",
@@ -4447,7 +4504,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt1190634"
+   "imdbId": "tt1190634",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d483",
@@ -4458,7 +4516,8 @@
    "author": "The Duffer Brothers",
    "status": "skip",
    "imdb": 8.6,
-   "imdbId": "tt4574334"
+   "imdbId": "tt4574334",
+   "genre": "Aksiyon"
   },
   {
    "id": "d487",
@@ -4471,7 +4530,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt1856010"
+   "imdbId": "tt1856010",
+   "genre": "Drama"
   },
   {
    "id": "d488",
@@ -4484,7 +4544,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt2788316"
+   "imdbId": "tt2788316",
+   "genre": "Drama"
   },
   {
    "id": "d489",
@@ -4497,7 +4558,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt5290382"
+   "imdbId": "tt5290382",
+   "genre": "Drama"
   },
   {
    "id": "d490",
@@ -4510,7 +4572,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt8111088"
+   "imdbId": "tt8111088",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d491",
@@ -4523,7 +4586,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.6,
-   "imdbId": "tt15435876"
+   "imdbId": "tt15435876",
+   "genre": "Drama"
   },
   {
    "id": "d493",
@@ -4536,7 +4600,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt3581920"
+   "imdbId": "tt3581920",
+   "genre": "Drama"
   },
   {
    "id": "d494",
@@ -4549,7 +4614,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt1124373"
+   "imdbId": "tt1124373",
+   "genre": "Suç"
   },
   {
    "id": "d495",
@@ -4562,7 +4628,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt14452776"
+   "imdbId": "tt14452776",
+   "genre": "Drama"
   },
   {
    "id": "d500",
@@ -4575,7 +4642,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt2306299"
+   "imdbId": "tt2306299",
+   "genre": "Aksiyon"
   },
   {
    "id": "d501",
@@ -4588,7 +4656,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt1442437"
+   "imdbId": "tt1442437",
+   "genre": "Komedi"
   },
   {
    "id": "d502",
@@ -4601,7 +4670,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt10048342"
+   "imdbId": "tt10048342",
+   "genre": "Drama"
   },
   {
    "id": "d503",
@@ -4614,7 +4684,8 @@
    "rating": 10,
    "endDate": "2025-11-27",
    "imdb": 8.5,
-   "imdbId": "tt14533970"
+   "imdbId": "tt14533970",
+   "genre": "Komedi"
   },
   {
    "id": "d505",
@@ -4627,7 +4698,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.4,
-   "imdbId": "tt11301642"
+   "imdbId": "tt11301642",
+   "genre": "Drama"
   },
   {
    "id": "d506",
@@ -4640,7 +4712,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.4,
-   "imdbId": "tt0475784"
+   "imdbId": "tt0475784",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d511",
@@ -4653,7 +4726,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.4,
-   "imdbId": "tt2467372"
+   "imdbId": "tt2467372",
+   "genre": "Komedi"
   },
   {
    "id": "d512",
@@ -4666,7 +4740,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.3,
-   "imdbId": "tt12637874"
+   "imdbId": "tt12637874",
+   "genre": "Aksiyon"
   },
   {
    "id": "d513",
@@ -4679,7 +4754,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 8.3,
-   "imdbId": "tt11198330"
+   "imdbId": "tt11198330",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d515",
@@ -4692,7 +4768,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8.3,
-   "imdbId": "tt6478318"
+   "imdbId": "tt6478318",
+   "genre": "Suç"
   },
   {
    "id": "d516",
@@ -4705,7 +4782,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.3,
-   "imdbId": "tt11337908"
+   "imdbId": "tt11337908",
+   "genre": "Drama"
   },
   {
    "id": "d517",
@@ -4718,7 +4796,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8.3,
-   "imdbId": "tt0460649"
+   "imdbId": "tt0460649",
+   "genre": "Komedi"
   },
   {
    "id": "d518",
@@ -4729,7 +4808,8 @@
    "author": "Paul Scheuring",
    "status": "skip",
    "imdb": 8.3,
-   "imdbId": "tt0455275"
+   "imdbId": "tt0455275",
+   "genre": "Aksiyon"
   },
   {
    "id": "d522",
@@ -4742,7 +4822,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.2,
-   "imdbId": "tt7767422"
+   "imdbId": "tt7767422",
+   "genre": "Komedi"
   },
   {
    "id": "d523",
@@ -4755,7 +4836,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.2,
-   "imdbId": "tt0238784"
+   "imdbId": "tt0238784",
+   "genre": "Komedi"
   },
   {
    "id": "d524",
@@ -4768,7 +4850,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 8.2,
-   "imdbId": "tt6468322"
+   "imdbId": "tt6468322",
+   "genre": "Suç"
   },
   {
    "id": "d528",
@@ -4781,7 +4864,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 8.1,
-   "imdbId": "tt0898266"
+   "imdbId": "tt0898266",
+   "genre": "Komedi"
   },
   {
    "id": "d529",
@@ -4794,7 +4878,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt13443470"
+   "imdbId": "tt13443470",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d532",
@@ -4807,7 +4892,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt1869454"
+   "imdbId": "tt1869454",
+   "genre": "Komedi"
   },
   {
    "id": "d533",
@@ -4820,7 +4906,8 @@
    "rating": 9,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt9815454"
+   "imdbId": "tt9815454",
+   "genre": "Drama"
   },
   {
    "id": "d534",
@@ -4833,7 +4920,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt1235099"
+   "imdbId": "tt1235099",
+   "genre": "Suç"
   },
   {
    "id": "d535",
@@ -4846,7 +4934,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt6257970"
+   "imdbId": "tt6257970",
+   "genre": "Komedi"
   },
   {
    "id": "d536",
@@ -4859,7 +4948,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 8,
-   "imdbId": "tt10919420"
+   "imdbId": "tt10919420",
+   "genre": "Aksiyon"
   },
   {
    "id": "d537",
@@ -4872,7 +4962,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.9,
-   "imdbId": "tt2189461"
+   "imdbId": "tt2189461",
+   "genre": "Aksiyon"
   },
   {
    "id": "d538",
@@ -4885,7 +4976,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 7.9,
-   "imdbId": "tt7817340"
+   "imdbId": "tt7817340",
+   "genre": "Drama"
   },
   {
    "id": "d539",
@@ -4898,7 +4990,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.9,
-   "imdbId": "tt5180504"
+   "imdbId": "tt5180504",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d542",
@@ -4911,7 +5004,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 7.9,
-   "imdbId": "tt2741602"
+   "imdbId": "tt2741602",
+   "genre": "Drama"
   },
   {
    "id": "d543",
@@ -4924,7 +5018,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.9,
-   "imdbId": "tt2261227"
+   "imdbId": "tt2261227",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d545",
@@ -4937,7 +5032,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.8,
-   "imdbId": "tt3749900"
+   "imdbId": "tt3749900",
+   "genre": "Drama"
   },
   {
    "id": "d546",
@@ -4950,7 +5046,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.8,
-   "imdbId": "tt1826940"
+   "imdbId": "tt1826940",
+   "genre": "Komedi"
   },
   {
    "id": "d547",
@@ -4963,7 +5060,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.8,
-   "imdbId": "tt6724368"
+   "imdbId": "tt6724368",
+   "genre": "Drama"
   },
   {
    "id": "d548",
@@ -4976,7 +5074,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.7,
-   "imdbId": "tt12809988"
+   "imdbId": "tt12809988",
+   "genre": "Drama"
   },
   {
    "id": "d549",
@@ -4989,7 +5088,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.7,
-   "imdbId": "tt13649112"
+   "imdbId": "tt13649112",
+   "genre": "Drama"
   },
   {
    "id": "d550",
@@ -5002,7 +5102,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 7.7,
-   "imdbId": "tt16420408"
+   "imdbId": "tt16420408",
+   "genre": "Suç"
   },
   {
    "id": "d551",
@@ -5015,7 +5116,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 7.7,
-   "imdbId": "tt9348692"
+   "imdbId": "tt9348692",
+   "genre": "Suç"
   },
   {
    "id": "d552",
@@ -5028,7 +5130,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.7,
-   "imdbId": "tt6226232"
+   "imdbId": "tt6226232",
+   "genre": "Komedi"
   },
   {
    "id": "d554",
@@ -5041,7 +5144,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.6,
-   "imdbId": "tt7335184"
+   "imdbId": "tt7335184",
+   "genre": "Gizem"
   },
   {
    "id": "d556",
@@ -5054,7 +5158,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.6,
-   "imdbId": "tt9117054"
+   "imdbId": "tt9117054",
+   "genre": "Drama"
   },
   {
    "id": "d557",
@@ -5067,7 +5172,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.6,
-   "imdbId": "tt14661396"
+   "imdbId": "tt14661396",
+   "genre": "Drama"
   },
   {
    "id": "d561",
@@ -5080,7 +5186,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7.5,
-   "imdbId": "tt9446688"
+   "imdbId": "tt9446688",
+   "genre": "Drama"
   },
   {
    "id": "d562",
@@ -5093,7 +5200,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.5,
-   "imdbId": "tt2403776"
+   "imdbId": "tt2403776",
+   "genre": "Drama"
   },
   {
    "id": "d563",
@@ -5106,7 +5214,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 7.5,
-   "imdbId": "tt0397442"
+   "imdbId": "tt0397442",
+   "genre": "Drama"
   },
   {
    "id": "d564",
@@ -5119,7 +5228,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.4,
-   "imdbId": "tt1837492"
+   "imdbId": "tt1837492",
+   "genre": "Drama"
   },
   {
    "id": "d566",
@@ -5132,7 +5242,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.4,
-   "imdbId": "tt11961378"
+   "imdbId": "tt11961378",
+   "genre": "Suç"
   },
   {
    "id": "d567",
@@ -5145,7 +5256,8 @@
    "rating": 8,
    "endDate": "2025-11-27",
    "imdb": 7.4,
-   "imdbId": "tt8740790"
+   "imdbId": "tt8740790",
+   "genre": "Drama"
   },
   {
    "id": "d569",
@@ -5158,7 +5270,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.4,
-   "imdbId": "tt0159206"
+   "imdbId": "tt0159206",
+   "genre": "Drama"
   },
   {
    "id": "d570",
@@ -5171,7 +5284,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.3,
-   "imdbId": "tt10466872"
+   "imdbId": "tt10466872",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d571",
@@ -5184,7 +5298,8 @@
    "rating": 8.5,
    "endDate": "2025-11-27",
    "imdb": 7.3,
-   "imdbId": "tt10234724"
+   "imdbId": "tt10234724",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d572",
@@ -5197,7 +5312,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.3,
-   "imdbId": "tt9251798"
+   "imdbId": "tt9251798",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d573",
@@ -5210,7 +5326,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 7.3,
-   "imdbId": "tt31049778"
+   "imdbId": "tt31049778",
+   "genre": "Drama"
   },
   {
    "id": "d575",
@@ -5223,7 +5340,8 @@
    "rating": 1.5,
    "endDate": "2025-11-27",
    "imdb": 7.2,
-   "imdbId": "tt14899624"
+   "imdbId": "tt14899624",
+   "genre": "Drama"
   },
   {
    "id": "d577",
@@ -5236,7 +5354,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7.1,
-   "imdbId": "tt12312250"
+   "imdbId": "tt12312250",
+   "genre": "Suç"
   },
   {
    "id": "d580",
@@ -5249,7 +5368,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 7,
-   "imdbId": "tt15466144"
+   "imdbId": "tt15466144",
+   "genre": "Komedi"
   },
   {
    "id": "d581",
@@ -5262,7 +5382,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7,
-   "imdbId": "tt13317508"
+   "imdbId": "tt13317508",
+   "genre": "Drama"
   },
   {
    "id": "d582",
@@ -5275,7 +5396,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 7,
-   "imdbId": "tt5171438"
+   "imdbId": "tt5171438",
+   "genre": "Bilim kurgu"
   },
   {
    "id": "d583",
@@ -5288,7 +5410,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 7,
-   "imdbId": "tt5706996"
+   "imdbId": "tt5706996",
+   "genre": "Komedi"
   },
   {
    "id": "d584",
@@ -5301,7 +5424,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 6.9,
-   "imdbId": "tt7631058"
+   "imdbId": "tt7631058",
+   "genre": "Aksiyon"
   },
   {
    "id": "d586",
@@ -5314,7 +5438,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 6.8,
-   "imdbId": "tt28118211"
+   "imdbId": "tt28118211",
+   "genre": "Drama"
   },
   {
    "id": "d587",
@@ -5327,7 +5452,8 @@
    "rating": 7.5,
    "endDate": "2025-11-27",
    "imdb": 6.8,
-   "imdbId": "tt17553374"
+   "imdbId": "tt17553374",
+   "genre": "Drama"
   },
   {
    "id": "d588",
@@ -5340,7 +5466,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 6.8,
-   "imdbId": "tt8962124"
+   "imdbId": "tt8962124",
+   "genre": "Drama"
   },
   {
    "id": "d589",
@@ -5353,7 +5480,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 6.7,
-   "imdbId": "tt1845307"
+   "imdbId": "tt1845307",
+   "genre": "Komedi"
   },
   {
    "id": "d590",
@@ -5366,7 +5494,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 6.6,
-   "imdbId": "tt27712032"
+   "imdbId": "tt27712032",
+   "genre": "Belgesel"
   },
   {
    "id": "d591",
@@ -5379,7 +5508,8 @@
    "rating": 6.5,
    "endDate": "2025-11-27",
    "imdb": 6.6,
-   "imdbId": "tt14014078"
+   "imdbId": "tt14014078",
+   "genre": "Drama"
   },
   {
    "id": "d592",
@@ -5392,7 +5522,8 @@
    "rating": 6,
    "endDate": "2025-11-27",
    "imdb": 6.6,
-   "imdbId": "tt13238304"
+   "imdbId": "tt13238304",
+   "genre": "Komedi"
   },
   {
    "id": "d593",
@@ -5405,7 +5536,8 @@
    "rating": 7,
    "endDate": "2025-11-27",
    "imdb": 6.4,
-   "imdbId": "tt13323566"
+   "imdbId": "tt13323566",
+   "genre": "Drama"
   },
   {
    "id": "d597",
@@ -5418,7 +5550,8 @@
    "rating": 1,
    "endDate": "2025-11-27",
    "imdb": 5.4,
-   "imdbId": "tt16913068"
+   "imdbId": "tt16913068",
+   "genre": "Drama"
   },
   {
    "id": "a598",
@@ -6246,7 +6379,8 @@
    "coverUrl": "https://image.tmdb.org/t/p/w342/v3JuB15WybKmxDeT1hWdK3j6eSJ.jpg",
    "imdb": 8.5,
    "updatedAt": 1793360990138,
-   "fromTbr": true
+   "fromTbr": true,
+   "genre": "Aksiyon"
   }
  ],
  "games": [

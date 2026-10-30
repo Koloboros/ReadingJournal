@@ -7,7 +7,7 @@
    "year": 2013,
    "yearLabel": "2013",
    "author": "Denis Villeneuve",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.2,
    "imdbId": "tt1392214"
   },
@@ -18,7 +18,7 @@
    "year": 1990,
    "yearLabel": "1990",
    "author": "Abbas Kiarostami",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 8.2,
    "imdbId": "tt0100234"
   },
@@ -45,7 +45,7 @@
    "year": 2013,
    "yearLabel": "2013",
    "author": "Zaza Urushadze",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.1,
    "imdbId": "tt2991224"
   },
@@ -56,7 +56,7 @@
    "year": 2003,
    "yearLabel": "2003",
    "author": "Bong Joon Ho",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 8.1,
    "imdbId": "tt0353969"
   },
@@ -67,7 +67,7 @@
    "year": 1999,
    "yearLabel": "1999",
    "author": "Majid Majidi",
-   "genre": "",
+   "genre": "Aile",
    "imdb": 8.1,
    "imdbId": "tt0191043"
   },
@@ -78,7 +78,7 @@
    "year": 1975,
    "yearLabel": "1975",
    "author": "Stanley Kubrick",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.1,
    "imdbId": "tt0072684"
   },
@@ -89,7 +89,7 @@
    "year": 1986,
    "yearLabel": "1986",
    "author": "Rob Reiner",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.1,
    "imdbId": "tt0092005"
   },
@@ -133,7 +133,7 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Céline Sciamma",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8,
    "imdbId": "tt8613070"
   },
@@ -159,7 +159,7 @@
    "year": 1966,
    "yearLabel": "1966",
    "author": "Ingmar Bergman",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8,
    "imdbId": "tt0060827"
   },
@@ -185,7 +185,7 @@
    "year": 2018,
    "yearLabel": "2018",
    "author": "Hirokazu Koreeda",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt8075192"
   },
@@ -211,7 +211,7 @@
    "year": 2006,
    "yearLabel": "2006",
    "author": "Alfonso Cuarón",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 7.9,
    "imdbId": "tt0206634"
   },
@@ -222,7 +222,7 @@
    "year": 1998,
    "yearLabel": "1998",
    "author": "Theodoros Angelopoulos",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0156794"
   },
@@ -233,7 +233,7 @@
    "year": 1986,
    "yearLabel": "1986",
    "author": "Andrei Tarkovsky",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0091670"
   },
@@ -244,7 +244,7 @@
    "year": 1983,
    "yearLabel": "1983",
    "author": "Andrei Tarkovsky",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0086022"
   },
@@ -255,7 +255,7 @@
    "year": 1975,
    "yearLabel": "1975",
    "author": "Andrei Tarkovsky",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0072443"
   },
@@ -266,7 +266,7 @@
    "year": 1972,
    "yearLabel": "1972",
    "author": "Andrei Tarkovsky",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0069293"
   },
@@ -277,7 +277,7 @@
    "year": 1965,
    "yearLabel": "1965",
    "author": "Metin Erksan",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.9,
    "imdbId": "tt0167400"
   },
@@ -316,7 +316,7 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "F. Gary Gray",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.8,
    "imdbId": "tt1398426"
   },
@@ -343,7 +343,7 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "Majid Majidi",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.8,
    "imdbId": "tt0997246"
   },
@@ -369,7 +369,7 @@
    "year": 2004,
    "yearLabel": "2004",
    "author": "Christophe Barratier",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.8,
    "imdbId": "tt0372824"
   },
@@ -397,7 +397,7 @@
    "year": 1985,
    "yearLabel": "1985",
    "author": "Terry Gilliam",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7.8,
    "imdbId": "tt0088846"
   },
@@ -408,7 +408,7 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Thomas Vinterberg",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.7,
    "imdbId": "tt10288566"
   },
@@ -419,7 +419,7 @@
    "year": 2003,
    "yearLabel": "2003",
    "author": "Sofia Coppola",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.7,
    "imdbId": "tt0335266"
   },
@@ -460,7 +460,7 @@
    "year": 1999,
    "yearLabel": "1999",
    "author": "Spike Jonze",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7.7,
    "imdbId": "tt0120601",
    "tags": [
@@ -474,7 +474,7 @@
    "year": 1993,
    "yearLabel": "1993",
    "author": "Jonathan Demme",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.7,
    "imdbId": "tt0107818",
    "tags": [
@@ -505,7 +505,7 @@
    "year": 2002,
    "yearLabel": "2002",
    "author": "Sam Mendes",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 7.6,
    "imdbId": "tt0257044"
   },
@@ -516,7 +516,7 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "Dennis Gansel",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.6,
    "imdbId": "tt1063669"
   },
@@ -527,7 +527,7 @@
    "year": 2012,
    "yearLabel": "2012",
    "author": "David Ayer",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 7.6,
    "imdbId": "tt1855199"
   },
@@ -538,7 +538,7 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Simon Curtis",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.6,
    "imdbId": "tt1478839",
    "tags": [
@@ -552,7 +552,7 @@
    "year": 2006,
    "yearLabel": "2006",
    "author": "Randa Haines",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.6,
    "imdbId": "tt0473389",
    "tags": [
@@ -596,7 +596,7 @@
    "year": 2007,
    "yearLabel": "2007",
    "author": "David Cronenberg",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 7.6,
    "imdbId": "tt0765443"
   },
@@ -623,7 +623,7 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Nanfu Wang, Jialing Zhang",
-   "genre": "",
+   "genre": "Belgesel",
    "imdb": 7.5,
    "imdbId": "tt8923482"
   },
@@ -651,7 +651,7 @@
    "year": 2003,
    "yearLabel": "2003",
    "author": "Richard Curtis",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7.5,
    "imdbId": "tt0314331",
    "tags": [
@@ -709,7 +709,7 @@
    "year": 1997,
    "yearLabel": "1997",
    "author": "Robert Zemeckis",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.5,
    "imdbId": "tt0118884"
   },
@@ -720,7 +720,7 @@
    "year": 2023,
    "yearLabel": "2023",
    "author": "Ilker Çatak",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.4,
    "imdbId": "tt26612950",
    "tags": [
@@ -734,7 +734,7 @@
    "year": 2021,
    "yearLabel": "2021",
    "author": "Ilya Naishuller",
-   "genre": "",
+   "genre": "Aksiyon",
    "imdb": 7.4,
    "imdbId": "tt7888964"
   },
@@ -776,7 +776,7 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "F. Gary Gray",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.4,
    "imdbId": "tt1197624"
   },
@@ -801,7 +801,7 @@
    "year": 1961,
    "yearLabel": "1961",
    "author": "Andrei Tarkovsky",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.4,
    "imdbId": "tt0053987"
   },
@@ -826,7 +826,7 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "Thomas Carter",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.4,
    "imdbId": "tt1295085",
    "tags": [
@@ -899,7 +899,7 @@
    "year": 2004,
    "yearLabel": "2004",
    "author": "Mel Gibson",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.3,
    "imdbId": "tt0335345"
   },
@@ -910,7 +910,7 @@
    "year": 2002,
    "yearLabel": "2002",
    "author": "Gaspar Noé",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.3,
    "imdbId": "tt0290673",
    "tags": [
@@ -924,7 +924,7 @@
    "year": 1998,
    "yearLabel": "1998",
    "author": "Gaspar Noé",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.3,
    "imdbId": "tt0157016"
   },
@@ -935,7 +935,7 @@
    "year": 1993,
    "yearLabel": "1993",
    "author": "Michael Caton-Jones",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.3,
    "imdbId": "tt0108330"
   },
@@ -946,7 +946,7 @@
    "year": 1998,
    "yearLabel": "1998",
    "author": "Darren Aronofsky",
-   "genre": "",
+   "genre": "Gizem",
    "imdb": 7.3,
    "imdbId": "tt0138704"
   },
@@ -957,7 +957,7 @@
    "year": 2023,
    "yearLabel": "2023",
    "author": "Zeki Demirkubuz",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.2,
    "imdbId": "tt20258974",
    "tags": [
@@ -971,7 +971,7 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Graham Moore",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 7.2,
    "imdbId": "tt14114802",
    "tags": [
@@ -1000,7 +1000,7 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "Duke Johnson, Charlie Kaufman",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.2,
    "imdbId": "tt2401878"
   },
@@ -1011,7 +1011,7 @@
    "year": 2012,
    "yearLabel": "2012",
    "author": "Jonathan Dayton, Valerie Faris",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7.2,
    "imdbId": "tt1839492"
   },
@@ -1022,7 +1022,7 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "Gaspar Noé",
-   "genre": "",
+   "genre": "Fantastik",
    "imdb": 7.2,
    "imdbId": "tt1191111"
   },
@@ -1033,7 +1033,7 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "John Hillcoat",
-   "genre": "",
+   "genre": "Macera",
    "imdb": 7.2,
    "imdbId": "tt0898367"
   },
@@ -1044,7 +1044,7 @@
    "year": 2004,
    "yearLabel": "2004",
    "author": "Mick Davis",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.2,
    "imdbId": "tt0367188"
   },
@@ -1100,7 +1100,7 @@
    "year": 2011,
    "yearLabel": "2011",
    "author": "Lars von Trier",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.1,
    "imdbId": "tt1527186"
   },
@@ -1111,7 +1111,7 @@
    "year": 2011,
    "yearLabel": "2011",
    "author": "J.C. Chandor",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 7.1,
    "imdbId": "tt1615147",
    "tags": [
@@ -1143,7 +1143,7 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "Yorgos Lanthimos",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 7.1,
    "imdbId": "tt1379182"
   },
@@ -1216,7 +1216,7 @@
    "year": 2013,
    "yearLabel": "2013",
    "author": "Jean-Pierre Jeunet",
-   "genre": "",
+   "genre": "Macera",
    "imdb": 7,
    "imdbId": "tt1981107"
   },
@@ -1241,7 +1241,7 @@
    "year": 2010,
    "yearLabel": "2010",
    "author": "Rodrigo Cortés",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 7,
    "imdbId": "tt1462758"
   },
@@ -1283,7 +1283,7 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Toby Haynes",
-   "genre": "",
+   "genre": "Tarih",
    "imdb": 7,
    "imdbId": "tt8425058",
    "tags": [
@@ -1342,7 +1342,7 @@
    "year": 2013,
    "yearLabel": "2013",
    "author": "Denis Villeneuve",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 6.9,
    "imdbId": "tt2316411",
    "tags": [
@@ -1356,7 +1356,7 @@
    "year": 2018,
    "yearLabel": "2018",
    "author": "Gaspar Noé",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 6.9,
    "imdbId": "tt8359848",
    "tags": [
@@ -1417,7 +1417,7 @@
    "year": 1988,
    "yearLabel": "1988",
    "author": "Francis Ford Coppola",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 6.9,
    "imdbId": "tt0096316",
    "tags": [
@@ -1626,7 +1626,7 @@
    "year": 1994,
    "yearLabel": "1994",
    "author": "Les Mayfield",
-   "genre": "",
+   "genre": "Fantastik",
    "imdb": 6.6,
    "imdbId": "tt0110527",
    "tags": [
@@ -1702,7 +1702,7 @@
    "year": 2014,
    "yearLabel": "2014",
    "author": "Chris Dowling",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 6.6,
    "imdbId": "tt3200980",
    "tags": [
@@ -1761,7 +1761,7 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "Kevin Smith",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 6.5,
    "imdbId": "tt1007028",
    "tags": [
@@ -1791,7 +1791,7 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Yorgos Lanthimos",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 6.5,
    "imdbId": "tt22408160",
    "tags": [
@@ -1838,7 +1838,7 @@
    "year": 2006,
    "yearLabel": "2006",
    "author": "Mike Judge",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 6.5,
    "imdbId": "tt0387808",
    "tags": [
@@ -1852,7 +1852,7 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Ridley Scott",
-   "genre": "",
+   "genre": "Aksiyon",
    "imdb": 6.5,
    "imdbId": "tt9218128",
    "tags": [
@@ -1899,7 +1899,7 @@
    "year": 2005,
    "yearLabel": "2005",
    "author": "Wes Craven",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 6.4,
    "imdbId": "tt0421239",
    "tags": [
@@ -1913,7 +1913,7 @@
    "year": 2014,
    "yearLabel": "2014",
    "author": "Phillip Noyce",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 6.4,
    "imdbId": "tt0435651",
    "tags": [
@@ -1975,7 +1975,7 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "Christopher Landon",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 6.3,
    "imdbId": "tt1727776",
    "tags": [
@@ -2018,7 +2018,7 @@
    "year": 2016,
    "yearLabel": "2016",
    "author": "James Bobin",
-   "genre": "",
+   "genre": "Macera",
    "imdb": 6.2,
    "imdbId": "tt2567026",
    "tags": [
@@ -2093,7 +2093,7 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Serpil Altin",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 6.1,
    "imdbId": "tt17222924",
    "tags": [
@@ -2123,7 +2123,7 @@
    "year": 2018,
    "yearLabel": "2018",
    "author": "Danishka Esterhazy",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 6.1,
    "imdbId": "tt4006302",
    "tags": [
@@ -2167,7 +2167,7 @@
    "year": 2014,
    "yearLabel": "2014",
    "author": "Rupert Wyatt",
-   "genre": "",
+   "genre": "Gerilim",
    "imdb": 6,
    "imdbId": "tt2039393",
    "tags": [
@@ -2277,7 +2277,7 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "Chris Columbus",
-   "genre": "",
+   "genre": "Aksiyon",
    "imdb": 5.6,
    "imdbId": "tt2120120",
    "tags": [
@@ -2291,7 +2291,7 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Bobby Moresco",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 5.5,
    "imdbId": "tt5533370",
    "tags": [
@@ -2320,7 +2320,7 @@
    "year": 2007,
    "yearLabel": "2007",
    "author": "Robert Ben Garant",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 5.4,
    "imdbId": "tt0424823",
    "tags": [
@@ -2350,7 +2350,7 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Todd Phillips",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 5.2,
    "imdbId": "tt11315808",
    "tags": [
@@ -2381,7 +2381,7 @@
    "year": 1999,
    "yearLabel": "1999–2007",
    "author": "David Chase",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 9.2,
    "imdbId": "tt0141842"
   },
@@ -2392,7 +2392,7 @@
    "year": 2025,
    "yearLabel": "2025",
    "author": "",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.6,
    "imdbId": "tt22202452"
   },
@@ -2403,7 +2403,7 @@
    "year": 2005,
    "yearLabel": "2005–",
    "author": "Russell T Davies",
-   "genre": "",
+   "genre": "Aksiyon",
    "imdb": 8.5,
    "imdbId": "tt0436992"
   },
@@ -2414,7 +2414,7 @@
    "year": 2009,
    "yearLabel": "2009–2015",
    "author": "Dan Harmon",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 8.5,
    "imdbId": "tt1439629"
   },
@@ -2425,7 +2425,7 @@
    "year": 2021,
    "yearLabel": "2021–2023",
    "author": "Sterlin Harjo, Taika Waititi",
-   "genre": "",
+   "genre": "Drama",
    "imdb": 8.3,
    "imdbId": "tt13623580"
   },
@@ -2436,7 +2436,7 @@
    "year": 2018,
    "yearLabel": "2018–2021",
    "author": "Chuck Lorre, Allyn Rachel",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 8.2,
    "imdbId": "tt7255502"
   },
@@ -2447,7 +2447,7 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "Bruno Heller",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 8.2,
    "imdbId": "tt1196946"
   },
@@ -2458,7 +2458,7 @@
    "year": 2016,
    "yearLabel": "2016–2020",
    "author": "Michael Schur",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 8.2,
    "imdbId": "tt4955642"
   },
@@ -2469,7 +2469,7 @@
    "year": 2014,
    "yearLabel": "2014–2020",
    "author": "Peter Nowalk",
-   "genre": "",
+   "genre": "Suç",
    "imdb": 8.1,
    "imdbId": "tt3205802"
   },
@@ -2480,7 +2480,7 @@
    "year": 2017,
    "yearLabel": "2017–2019",
    "author": "Justin Doble, Barry Levinson",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 8,
    "imdbId": "tt4643084"
   },
@@ -2491,7 +2491,7 @@
    "year": 2018,
    "yearLabel": "2018–2022",
    "author": "Emma Frost, Mike McHugh",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 7.8,
    "imdbId": "tt2177461"
   },
@@ -2502,7 +2502,7 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Blake Crouch",
-   "genre": "",
+   "genre": "Bilim kurgu",
    "imdb": 7.6,
    "imdbId": "tt19231492"
   },
@@ -2513,7 +2513,7 @@
    "year": 2016,
    "yearLabel": "2016–2019",
    "author": "Ben Edlund",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7.4,
    "imdbId": "tt5540054"
   },
@@ -2524,7 +2524,7 @@
    "year": 2022,
    "yearLabel": "2022–2024",
    "author": "Jeb Stuart",
-   "genre": "",
+   "genre": "Aksiyon",
    "imdb": 7.4,
    "imdbId": "tt11311302"
   },
@@ -2535,7 +2535,7 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Sheriff Eric Higgins",
-   "genre": "",
+   "genre": "Belgesel",
    "imdb": 7.1,
    "imdbId": "tt31722999"
   },
@@ -2546,7 +2546,7 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Olgu Baran Kubilay, Ali Atay",
-   "genre": "",
+   "genre": "Komedi",
    "imdb": 7,
    "imdbId": "tt34819808"
   },
