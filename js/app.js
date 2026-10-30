@@ -92,6 +92,12 @@ const S={books:[],settings:{goals:{},bingo:{}},tab:'shelf',year:new Date().getFu
 const T=TABS.map(t=>t[0]);if(T.includes(location.hash.slice(1)))S.tab=location.hash.slice(1);
 const demo=()=>false;
 const BOOKS=()=>S.books;
+/* Seyir Defteri can look at every year and one type at a time; its dates are approximate, so all years is the default */
+const filmAll=()=>curArea()==='film'&&S.filmAll;
+const fmtOk=b=>S.statFmt==='all'||(b.format||'film')===S.statFmt;
+const viewBase=y=>filmAll()?BOOKS().filter(b=>b.status==='read').sort((a,b)=>(a.endDate||'')<(b.endDate||'')?-1:1):readIn(y);
+const viewRead=y=>curArea()==='film'?viewBase(y).filter(fmtOk):readIn(y);
+const yearLabel=()=>filmAll()?'Tüm yıllar':S.year;
 const readIn=y=>BOOKS().filter(b=>b.status==='read'&&yOf(b.endDate)===y).sort((a,b)=>a.endDate<b.endDate?-1:1);
 const goalOf=y=>+S.settings.goals?.[y]||24;
 
@@ -298,6 +304,7 @@ addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.docume
 
 /* ---------- render ---------- */
 function render(){
+  $('#view').classList.toggle('all-years',filmAll());
   if(S.mode==='ready'&&!Peers.ready&&!Peers.loading)Peers.ensure().then(render);
   $('#yr').textContent=S.year;
   const addT=document.querySelector('#btn-add .add-txt');if(addT)addT.textContent=curArea()==='film'&&S.tab==='shelf'?A().formats[S.fmt]+' ekle':A().add;
@@ -372,29 +379,29 @@ function vShelf(){
 }
 
 function vCovers(){
-  const R=readIn(S.year), reading=BOOKS().filter(b=>b.status==='reading');
+  const film=curArea()==='film',R=viewRead(S.year), reading=BOOKS().filter(b=>b.status==='reading'&&(!film||fmtOk(b)));
   const tog=(k,l)=>`<button class="chip" data-act="cover-m" data-m="${k}" aria-pressed="${S.coverMode===k}">${l}</button>`;
   let body='';
-  if(!R.length)body=`<div class="empty">${S.year} yılında bitirilmiş ${A().item} yok. “${A().status.read}” olarak kaydettiğinde burada, bittiği ayın altında görünür.</div>`;
-  else if(S.coverMode==='year')body=`<div class="month"><div class="month-h"><h3>${S.year}</h3><span>${R.length} ${A().item}</span>${decor(S.year)}</div><div class="cgrid ledge">${R.map(b=>citem(b)).join('')}</div></div>`;
+  if(!R.length)body=`<div class="empty">${filmAll()?'Bu seçimde':S.year+' yılında'} bitirilmiş ${A().item} yok. “${A().status.read}” olarak kaydettiğinde burada, bittiği ayın altında görünür.</div>`;
+  else if(S.coverMode==='year'||filmAll())body=`<div class="month"><div class="month-h"><h3>${yearLabel()}</h3><span>${R.length} ${A().item}</span>${decor(S.year)}</div><div class="cgrid ledge">${R.map(b=>citem(b)).join('')}</div></div>`;
   else for(let m=11;m>=0;m--){const L=R.filter(b=>mOf(b.endDate)===m);if(!L.length)continue;
     const pg=L.reduce((s,b)=>s+(+b.pages||0),0);
     body+=`<section class="month"><div class="month-h"><h3>${AYLAR[m]}</h3><span>${L.length} ${A().item}${pg?' · '+nf(pg)+' '+A().unit:''}</span>${decor(m)}</div><div class="cgrid ledge">${L.map(b=>citem(b)).join('')}</div></section>`}
-  return `${curArea()==='game'?`<div class="buhar"><b>BUHAR</b><span>Kütüphane</span><span>${BOOKS().filter(b=>b.status!=='skip').length} oyun</span><span>${nf(BOOKS().reduce((s,b)=>s+(+b.pages||0),0))} saat ömür</span></div>`:''}<div class="head"><h2 class="hand">${A().doneTitle} <small>${S.year}</small></h2><div class="chips">${tog('month','Aylık')}${tog('year','Yıllık')}</div></div>
+  return `${curArea()==='game'?`<div class="buhar"><b>BUHAR</b><span>Kütüphane</span><span>${BOOKS().filter(b=>b.status!=='skip').length} oyun</span><span>${nf(BOOKS().reduce((s,b)=>s+(+b.pages||0),0))} saat ömür</span></div>`:''}${film?seyirBar(viewBase(S.year)):''}<div class="head"><h2 class="hand">${A().doneTitle} <small>${yearLabel()}</small></h2>${filmAll()?'':`<div class="chips">${tog('month','Aylık')}${tog('year','Yıllık')}</div>`}</div>
   ${reading.length?`<div class="sec-h"><h3>${A().nowLabel}</h3></div><div class="reading-row">${reading.map(b=>citem(b,false)).join('')}</div>`:''}${body}`;
 }
 
 function vNotes(){
-  const f=S.noteFilter;
-  const R=readIn(S.year).reverse().filter(b=>f==='all'||b.format===f);
+  const film=curArea()==='film',f=A().formats[S.noteFilter]&&!film?S.noteFilter:'all';
+  const R=viewRead(S.year).slice().reverse().filter(b=>f==='all'||b.format===f);
   const chip=(k,l)=>`<button class="chip" data-act="note-f" data-f="${k}" aria-pressed="${f===k}">${k!=='all'?ico(A().fmtIcon[k]):''}${l}</button>`;
   const card=(b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">${A().noteLabel}</span><h3>${esc(b.title)}</h3>
     <div class="rmeta"><span>${esc(b.author||'')}</span>${b.pages?`<span>${b.pages} ${A().unit}</span>`:''}${b.format&&A().formats[b.format]?`<span>${fmtIco(b.format)} ${A().formats[b.format]}</span>`:''}</div>
     <div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>
     <p class="rtext ${b.review?'':'none'}">${b.review?esc(b.review):'Henüz not yazılmadı. Eklemek için dokun.'}</p></div></button>`;
-  const grouped=curArea()==='film'&&f==='all'?Object.keys(A().formats).map(k=>{const L=R.filter(b=>(b.format||'film')===k);return L.length?`<h3 class="fmt-h">${A().formatsPl[k]} <small>${L.length}</small></h3><div class="rgrid">${L.map(card).join('')}</div>`:''}).join(''):`<div class="rgrid">${R.map(card).join('')}</div>`;
-  return `<div class="head"><h2 class="hand">${A().notes} <small>${S.year}</small></h2><div class="chips">${chip('all','Tümü')}${Object.entries(A().formats).map(([k,l])=>chip(k,l)).join('')}</div></div>
-  ${R.length?grouped:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir ${A().item} için puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
+  const grouped=film&&S.statFmt==='all'?Object.keys(A().formats).map(k=>{const L=R.filter(b=>(b.format||'film')===k);return L.length?`<h3 class="fmt-h">${A().formatsPl[k]} <small>${L.length}</small></h3><div class="rgrid">${L.map(card).join('')}</div>`:''}).join(''):`<div class="rgrid">${R.map(card).join('')}</div>`;
+  return `${film?seyirBar(viewBase(S.year)):''}<div class="head"><h2 class="hand">${A().notes} <small>${yearLabel()}</small></h2>${film?'':`<div class="chips">${chip('all','Tümü')}${Object.entries(A().formats).map(([k,l])=>chip(k,l)).join('')}</div>`}</div>
+  ${R.length?grouped:`<div class="empty">Bu seçim için not yok. Bitirdiğin bir ${A().item} için puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
 }
 
 /* small painted shelf with books and a plant/candles, for notebook page headers */
@@ -429,9 +436,9 @@ const GCOL=['#9CC59A','#9FC1E3','#EBA798','#C3AEDD','#EFCB7C','#8FCBC2'],GOTHER=
 const gName=genreOf;
 const chunk=(a,n)=>a.reduce((r,x,i)=>(i%n?r[r.length-1].push(x):r.push([x]),r),[]);
 function vStats(){
-  const y=S.year,film=curArea()==='film',allR=readIn(y),R=film&&S.statFmt!=='all'?allR.filter(b=>(b.format||'film')===S.statFmt):allR;
-  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${y}</small></h2></div>${film?statCards(allR):''}`;
-  if(!R.length)return head+`<div class="empty">${decor(3)}<p>${y} yılında bitirilmiş kitap yok. Kitap bitirdikçe tür, puan ve ay grafiklerin burada oluşur.</p></div>`;
+  const y=S.year,film=curArea()==='film',allR=film?viewBase(y):readIn(y),R=film?allR.filter(fmtOk):allR;
+  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${yearLabel()}</small></h2>${film?yearChips():''}</div>${film?statCards(allR):''}`;
+  if(!R.length)return head+`<div class="empty">${decor(3)}<p>${filmAll()?'Bu seçimde':y+' yılında'} bitirilmiş kitap yok. Kitap bitirdikçe tür, puan ve ay grafiklerin burada oluşur.</p></div>`;
   const cnt={};R.forEach(b=>{const g=gName(b);cnt[g]=(cnt[g]||0)+1});
   const sorted=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0]));
   const top=sorted.slice(0,sorted.length>6?5:6).map(e=>e[0]);
@@ -469,13 +476,13 @@ function vStats(){
   const newAu=Object.keys(au).filter(a=>!earlier.has(a)).length;
   const favs=Object.entries(au).filter(e=>e[1]>1).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0])).slice(0,6);
   const tile=(k,v,n='')=>`<div class="tile"><div class="k">${k}</div><div class="v">${v}</div>${n?`<div class="n">${n}</div>`:''}</div>`;
-  return head+`<div class="st-hero"><div class="st-title">${y}<br>İSTATİSTİKLERİ</div>
+  return head+`<div class="st-hero"><div class="st-title">${filmAll()?'TÜM YILLAR':y}<br>İSTATİSTİKLERİ</div>
     <div class="sticky taped" style="--tape:${PALETTE.sage}"><div><b>${avg==null?'–':avg.toFixed(1).replace('.',',')}</b><span>ortalama puan</span></div><div><b>${R.length}</b><span>toplam kitap</span></div></div></div>
   <div class="tiles">${tile(useCount?'Toplam':'Okunan sayfa',useCount?R.length:pages?nf(pages):'–',!useCount&&withPages.length<R.length?`${R.length-withPages.length} kaydın bilgisi yok`:'')}${tile(A().who,Object.keys(au).length,`${newAu} tanesi yeni tanışma`)}${tile(A().howLabel.replace(/\?$/,''),`<span class="fmts">${Object.keys(A().formats).map(f=>`<span title="${A().formats[f]}">${ico(A().fmtIcon[f])}${R.filter(b=>b.format===f).length}</span>`).join('')}</span>`)}${tile('En verimli ay',(()=>{const m=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).length);const mx=Math.max(...m);return mx?AYLAR[m.indexOf(mx)]+' · '+mx:'–'})())}</div>
   <div class="st-grid">
     <section class="panel taped" style="--tape:${PALETTE.rose}"><h3 class="st-h">Türler</h3><div class="pie-wrap"><svg class="pie" viewBox="0 0 180 180" role="img" aria-label="Türlere göre kitap dağılımı">${pie}${lbl}</svg><ul class="lg">${legend}</ul></div>
-      <h3 class="st-h" style="margin-top:18px">${useCount?'Aylara göre izlenen':'Aylara göre '+A().unit}</h3>${pageBars}${!useCount&&withPages.length<R.length?`<p class="note">${R.length-withPages.length} kaydın ${A().unit} bilgisi olmadığı için sayılmadı.</p>`:''}</section>
-    <section class="panel taped" style="--tape:${PALETTE.sky}"><h3 class="st-h">Aylara göre ${A().item}</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır.</p>
+      <div class="by-month"><h3 class="st-h" style="margin-top:18px">${useCount?'Aylara göre izlenen':'Aylara göre '+A().unit}</h3>${pageBars}</div>${!useCount&&withPages.length<R.length?`<p class="note">${R.length-withPages.length} kaydın ${A().unit} bilgisi olmadığı için sayılmadı.</p>`:''}</section>
+    <section class="panel taped by-month" style="--tape:${PALETTE.sky}"><h3 class="st-h">Aylara göre ${A().item}</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır.</p>
       <div class="units months">${monCols}</div><ul class="lg lg-inline">${legend}</ul></section>
   </div>
   ${favs.length?`<section class="panel taped favs" style="--tape:${PALETTE.butter}"><h3 class="st-h">En çok ${A().who.toLocaleLowerCase('tr')}</h3><ol>${favs.map(([a,n])=>`<li><span>${esc(a)}</span><b>${n} kitap</b></li>`).join('')}</ol></section>`:''}`;

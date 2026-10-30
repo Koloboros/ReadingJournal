@@ -173,7 +173,7 @@ function openPetSetup(){
 }
 function keepPetName(){const i=$('#pet-name');if(i&&PS)PS.name=i.value}
 Object.assign(ACT,{
-  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()});setTimeout(()=>{if(S.area!=='home')Pet.say(`Bana dokun, sana bir ${A().item} önereyim.`)},900)},
+  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';S.noteFilter='all';S.shelfFilter='all';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()});setTimeout(()=>{if(S.area!=='home')Pet.say(`Bana dokun, sana bir ${A().item} önereyim.`)},900)},
   'go-home':()=>{Store.sync();S.area='home';Store.useArea();if(S.me&&S.viewing!==S.me)Store.open(S.me);else render();scrollTo({top:0})},
   'pet-setup':()=>{PS=null;openPetSetup()},
   'pet-type':a=>{keepPetName();PS.type=a.dataset.v;PS.coat=0;openPetSetup()},

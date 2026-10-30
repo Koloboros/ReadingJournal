@@ -97,21 +97,23 @@ const pileColor=(b,recent)=>{let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c
 const byGenre=(list,size)=>{const m=new Map();list.forEach(b=>{const g=genreOf(b);if(!m.has(g))m.set(g,[]);m.get(g).push(b)});return[...m].sort((x,y)=>(x[0]==='Türsüz')-(y[0]==='Türsüz')||y[1].length-x[1].length||cmp(x[0],y[0])).flatMap(([g,a])=>{const o=[];for(let i=0;i<a.length;i+=size)o.push({g,n:a.length,first:!i,items:a.slice(i,i+size)});return o})};
 const TVSET=`<svg class="tvset" viewBox="0 0 150 120" aria-hidden="true"><rect x="6" y="6" width="138" height="92" rx="9" fill="var(--wood-2)"/><rect x="14" y="14" width="122" height="76" rx="5" fill="#3B4A5C"/><path d="M14 90 136 14v76z" fill="#fff" opacity=".06"/><path d="M28 30q20-10 42-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".28"/><rect x="62" y="98" width="26" height="12" fill="var(--wood-2)"/><rect x="42" y="109" width="66" height="7" rx="3" fill="var(--wood-2)"/></svg>`;
 /* film, series and animation never share a stand; stats can be cut the same way */
-S.fmt='film';S.statFmt='all';
+S.fmt='film';S.statFmt='all';S.filmAll=true;
+const yearChips=()=>`<div class="chips"><button class="chip" data-act="film-all" data-v="1" aria-pressed="${S.filmAll}">Tüm yıllar</button><button class="chip" data-act="film-all" data-v="" aria-pressed="${!S.filmAll}">${S.year}</button></div>`;
+function seyirBar(L){return `<div class="seyirbar"><div class="fmtbar" role="group" aria-label="Tip">${[['all','Tümü'],...Object.entries(A().formatsPl)].map(([k,l])=>`<button data-act="stat-fmt" data-v="${k}" aria-pressed="${S.statFmt===k}">${l}<small>${k==='all'?L.length:L.filter(b=>(b.format||'film')===k).length}</small></button>`).join('')}</div>${yearChips()}</div>`}
 function fmtBar(L){return `<div class="fmtbar" role="group" aria-label="Tip">${Object.entries(A().formatsPl).map(([k,l])=>`<button data-act="fmt" data-v="${k}" aria-pressed="${S.fmt===k}">${l}<small>${L.filter(b=>(b.format||'film')===k).length}</small></button>`).join('')}</div>`}
 function statCards(R){
   const avg=L=>{const n=L.map(b=>+b.rating).filter(Boolean);return n.length?(n.reduce((x,y)=>x+y,0)/n.length).toFixed(1).replace('.',','):'–'};
   const card=(k,l,L)=>`<button class="fmtcard" data-act="stat-fmt" data-v="${k}" aria-pressed="${S.statFmt===k}"><b>${L.length}</b><span>${l}</span><small>ortalama ${avg(L)}</small></button>`;
   return `<div class="fmtcards">${card('all','Tümü',R)}${Object.entries(A().formatsPl).map(([k,l])=>card(k,l,R.filter(b=>(b.format||'film')===k))).join('')}</div>`;
 }
-Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()}});
+Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()},'film-all':a=>{S.filmAll=!!a.dataset.v;render()}});
 const FILM_PROPS=['popcorn','glasses','stanley','remote','clapper'];
 function filmStand(list){
   const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
   const piles=byGenre(list,10).map(({g,n,items,first})=>`<div class="pile">${first?`<span class="ptag">${esc(g)} · ${n}</span>`:''}${items.map(b=>{const c=pileColor(b,recent);return `<button class="dvd ${b.status==='reading'?'reading':''}" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%11-5}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span>${esc(b.title)}</span>${b.rating?`<b>${String(b.rating).replace('.',',')}</b>`:''}</button>`}).join('')}</div>`);
   piles.splice(Math.min(per-1,piles.length),0,`<div class="pile tvpile">${TVSET}</div>`);
   let out='';for(let i=0,r=0;i<piles.length;i+=per,r++){const row=piles.slice(i,i+per);row.splice(r%2?0:row.length,0,prop(FILM_PROPS[r%FILM_PROPS.length]));if(row.length>3)row.splice(r%2?row.length:0,0,prop(FILM_PROPS[(r+2)%FILM_PROPS.length]));out+=`<div class="stand"><div class="piles">${row.join('')}</div>${r?'':petRail()}<div class="stand-top"></div><div class="stand-body"><i></i><i></i></div></div>`}
-  return `<div class="stands">${out}</div>`;
+  return `<div class="stands f-${S.fmt}">${out}</div>`;
 }
 /* the game library is a tiny pixel desktop on a desk, so a long list stays easy to scan */
 S.gGenre='all';
@@ -170,6 +172,6 @@ Object.assign(ACT,{
 });
 document.addEventListener('change',e=>{if(e.target.id==='k-sort'){S.ksort=e.target.value;paintK()}});
 function areaWords(h){
-  if(curArea()==='book')return h;const film=curArea()==='film',a=film&&S.tab==='stats'&&S.statFmt!=='all'?{...A(),item:A().formats[S.statFmt].toLocaleLowerCase('tr'),Item:A().formats[S.statFmt]}:A();
-  return h.replaceAll('Kitap <span>bingo',a.Item+' <span>bingo').replaceAll('Kitap Bingo',a.Item+' Bingo').replaceAll('Kitap bitirdikçe',a.Item+' bitirdikçe').replaceAll(' kitap',' '+a.item).replaceAll('Okunan sayfa','Toplam '+a.unit).replaceAll('okuduğun',film?'izlediğin':'oynadığın').replaceAll('okunan tür',film?'izlenen tür':'oynanan tür').replaceAll('kitabı eşleştir',a.item+' eşleştir');
+  if(curArea()==='book')return h;const film=curArea()==='film',a=film&&S.statFmt!=='all'?{...A(),item:A().formats[S.statFmt].toLocaleLowerCase('tr'),Item:A().formats[S.statFmt]}:A();
+  return h.replaceAll('Kitap <span>bingo',a.Item+' <span>bingo').replaceAll('>kitap<','>'+a.item+'<').replaceAll('Kitap Bingo',a.Item+' Bingo').replaceAll('Kitap bitirdikçe',a.Item+' bitirdikçe').replaceAll(' kitap',' '+a.item).replaceAll('Okunan sayfa','Toplam '+a.unit).replaceAll('okuduğun',film?'izlediğin':'oynadığın').replaceAll('okunan tür',film?'izlenen tür':'oynanan tür').replaceAll('kitabı eşleştir',a.item+' eşleştir');
 }

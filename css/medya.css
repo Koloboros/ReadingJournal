@@ -126,3 +126,8 @@ html[data-view="mobile"] .fmtcards{grid-template-columns:repeat(2,minmax(0,1fr))
 .pcscreen{background:#1E2238;color:#8FCBC2;font-family:"Pixelify Sans",var(--f-body);padding:12px 14px;border-radius:6px;overflow-wrap:anywhere}.pcscreen b{font-weight:600;color:#FBE3A6}
 .pcbox{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}.pcbox h3{font-family:var(--f-hand);font-weight:700;font-size:1.5rem;line-height:1}.pcbox p{margin:0}
 .pcrow{display:flex;gap:8px;flex-wrap:wrap}.pclist{margin:0;padding-left:18px;font-size:.9rem}
+/* each type has its own stand colour */
+.stands.f-dizi{--wood:#8FB0CE;--wood-2:#6587A8}
+.stands.f-animasyon{--wood:#E5A8BC;--wood-2:#C47E98}
+.seyirbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;margin-bottom:12px}.seyirbar .fmtbar{margin:0}
+.all-years .by-month{display:none}
