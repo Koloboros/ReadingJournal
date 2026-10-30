@@ -124,6 +124,9 @@ function vHome(){
   </section>`;
 }
 
+/* on the shelves the pet wanders too; asking it for a recommendation opens the usual picker */
+function petRail(){const p=petOf();return p?`<div class="petrail"><button class="petwrap" id="petwrap" data-act="rec" aria-label="${esc(p.name)}: öneri al" title="${esc(p.name)}: öneri al"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(p.type,p.coat)}</span></button></div>`:''}
+
 /* the stranger at the window */
 let peekT=null;
 function peekLoop(){clearInterval(peekT);const el=$('#peeksay');if(!el)return;let i=0;peekT=setInterval(()=>{const e=$('#peeksay');if(!e)return clearInterval(peekT);i=(i+1)%PEEK_LINES.length;e.textContent=PEEK_LINES[i]},6500)}
@@ -162,13 +165,13 @@ function openPetSetup(){
 }
 function keepPetName(){const i=$('#pet-name');if(i&&PS)PS.name=i.value}
 Object.assign(ACT,{
-  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()})},
+  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()});setTimeout(()=>{if(S.area!=='home')Pet.say(`Bana dokun, sana bir ${A().item} önereyim.`)},900)},
   'go-home':()=>{Store.sync();S.area='home';Store.useArea();if(S.me&&S.viewing!==S.me)Store.open(S.me);else render();scrollTo({top:0})},
   'pet-setup':()=>{PS=null;openPetSetup()},
   'pet-type':a=>{keepPetName();PS.type=a.dataset.v;PS.coat=0;openPetSetup()},
   'pet-coat':a=>{keepPetName();PS.coat=+a.dataset.v;openPetSetup()}
 });
-document.addEventListener('click',e=>{if(e.target.closest('#petwrap'))Pet.say(petLine())});
+document.addEventListener('click',e=>{if(S.area==='home'&&e.target.closest('#petwrap'))Pet.say(petLine())});
 document.addEventListener('keydown',e=>{const g=e.target.closest?.('.spot');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();g.dispatchEvent(new MouseEvent('click',{bubbles:true}))}});
 document.addEventListener('submit',e=>{
   if(e.target.id!=='pet-form')return;keepPetName();const name=PS.name.trim();if(!name)return;

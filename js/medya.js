@@ -91,22 +91,31 @@ Object.assign(ACT,{'u-more':()=>{S.ulimit+=60;render()},
   'u-want':a=>{const b=unratedPick(a);if(b){Store.saveBook(myCopy(b,{status:'want'}));toast(`“${b.title}” izlemek istediklerine eklendi.`)}}});
 /* film boxes pile up by genre on low TV stands; friendly colours, never the same twice in a row */
 const pileColor=(b,recent)=>{let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent.splice(0,2,c,recent[0]);return c};
-const byGenre=(list,size)=>{const out=[];let cur=null;list.forEach(b=>{const g=genreOf(b);if(!cur||cur.g!==g||cur.items.length>=size){cur={g,items:[],first:!cur||cur.g!==g};out.push(cur)}cur.items.push(b)});return out};
+/* biggest genre first; a genre longer than size spills into the next pile */
+const byGenre=(list,size)=>{const m=new Map();list.forEach(b=>{const g=genreOf(b);if(!m.has(g))m.set(g,[]);m.get(g).push(b)});return[...m].sort((x,y)=>(x[0]==='Türsüz')-(y[0]==='Türsüz')||y[1].length-x[1].length||cmp(x[0],y[0])).flatMap(([g,a])=>{const o=[];for(let i=0;i<a.length;i+=size)o.push({g,n:a.length,first:!i,items:a.slice(i,i+size)});return o})};
 const TVSET=`<svg class="tvset" viewBox="0 0 150 120" aria-hidden="true"><rect x="6" y="6" width="138" height="92" rx="9" fill="var(--wood-2)"/><rect x="14" y="14" width="122" height="76" rx="5" fill="#3B4A5C"/><path d="M14 90 136 14v76z" fill="#fff" opacity=".06"/><path d="M28 30q20-10 42-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".28"/><rect x="62" y="98" width="26" height="12" fill="var(--wood-2)"/><rect x="42" y="109" width="66" height="7" rx="3" fill="var(--wood-2)"/></svg>`;
+const FILM_PROPS=['popcorn','glasses','stanley','remote','clapper'];
 function filmStand(list){
-  const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/168)),recent=[];
-  const piles=byGenre(list,12).map(({g,items,first})=>`<div class="pile">${first?`<span class="ptag">${esc(g)}</span>`:''}${items.map(b=>{const c=pileColor(b,recent);return `<button class="dvd ${b.status==='reading'?'reading':''}" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%11-5}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span>${esc(b.title)}</span>${b.rating?`<b>${String(b.rating).replace('.',',')}</b>`:''}</button>`}).join('')}</div>`);
+  const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
+  const piles=byGenre(list,10).map(({g,n,items,first})=>`<div class="pile">${first?`<span class="ptag">${esc(g)} · ${n}</span>`:''}${items.map(b=>{const c=pileColor(b,recent);return `<button class="dvd ${b.status==='reading'?'reading':''}" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%11-5}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span>${esc(b.title)}</span>${b.rating?`<b>${String(b.rating).replace('.',',')}</b>`:''}</button>`}).join('')}</div>`);
   piles.splice(Math.min(per-1,piles.length),0,`<div class="pile tvpile">${TVSET}</div>`);
-  let out='';for(let i=0;i<piles.length;i+=per)out+=`<div class="stand"><div class="piles">${piles.slice(i,i+per).join('')}</div><div class="stand-top"></div><div class="stand-body"><i></i><i></i></div></div>`;
+  let out='';for(let i=0,r=0;i<piles.length;i+=per,r++){const row=piles.slice(i,i+per);row.splice(r%2?0:row.length,0,prop(FILM_PROPS[r%FILM_PROPS.length]));if(row.length>3)row.splice(r%2?row.length:0,0,prop(FILM_PROPS[(r+2)%FILM_PROPS.length]));out+=`<div class="stand"><div class="piles">${row.join('')}</div>${r?'':petRail()}<div class="stand-top"></div><div class="stand-body"><i></i><i></i></div></div>`}
   return `<div class="stands">${out}</div>`;
 }
-/* the game corner: an armchair and one lopsided tower per genre */
-const CHAIR=`<svg class="gchair" viewBox="0 0 170 170" aria-hidden="true"><rect x="22" y="44" width="112" height="92" rx="26" fill="#C3AEDD"/><rect x="34" y="96" width="92" height="36" rx="14" fill="#D5CCEB"/><rect x="8" y="84" width="34" height="58" rx="15" fill="#B39BD2"/><rect x="118" y="84" width="34" height="58" rx="15" fill="#B39BD2"/><rect x="28" y="142" width="10" height="18" rx="3" fill="var(--wood-2)"/><rect x="122" y="142" width="10" height="18" rx="3" fill="var(--wood-2)"/><g transform="translate(58 76) rotate(-8)"><rect width="46" height="24" rx="11" fill="#3B4A5C"/><path d="M12 8v8M8 12h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="9" r="2.4" fill="#EBA3AF"/><circle cx="37" cy="14" r="2.4" fill="#8FCBC2"/></g></svg>`;
-function gameTower(list){
-  const recent=[];
-  const towers=byGenre(list,10).map(({g,items})=>`<div class="gt"><span class="ptag">${esc(g)}</span><div class="gt-stack">${items.map(b=>{const c=pileColor(b,recent),src=coverSrc(b),cls=b.status==='read'?'':b.status==='reading'?'reading':'unread';return `<button class="gbox ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)}" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}">${src?`<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}<span>${esc(b.title)}</span></button>`}).join('')}</div><span class="gt-base"></span></div>`).join('');
-  return `<div class="gcorner">${CHAIR}${towers}</div>`;
+/* the game library is a tiny pixel desktop on a desk, so a long list stays easy to scan */
+S.gGenre='all';
+const upTR=t=>String(t).toLocaleUpperCase('tr');
+function gameScreen(list){
+  const gs=byGenre(list,1e6),g=gs.some(x=>x.g===S.gGenre)?S.gGenre:'all',rows=g==='all'?gs.flatMap(x=>x.items):gs.find(x=>x.g===g).items;
+  const hours=list.reduce((s,b)=>s+(+b.pages||0),0),steam=Store.extra?.steam?.profile;
+  const side=[['all','TÜMÜ',list.length],...gs.map(x=>[x.g,upTR(x.g),x.n])].map(([k,l,n])=>`<button class="px-g" data-act="g-genre" data-v="${esc(k)}" aria-pressed="${g===k}"><span>${esc(l)}</span><b>${n}</b></button>`).join('');
+  const row=b=>{const c=b.color||autoColor(b.title),src=coverSrc(b);return `<button class="px-row" data-act="open" data-id="${b.id}"><span class="px-th" style="--c:${esc(c)}">${src?`<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}<i>${esc(initial(b.title))}</i></span><span class="px-t"><b>${esc(b.title)}</b><small>${esc([A().formats[b.format],b.pages?b.pages+' saat':''].filter(Boolean).join(' · '))}</small></span><span class="px-s s-${esc(b.status)}">${esc(upTR(A().status[b.status]||''))}</span><span class="px-r">${b.rating?'★'+String(b.rating).replace('.',','):''}</span></button>`};
+  return `<div class="pxdesk"><div class="pxmon"><div class="pxscreen">
+    <div class="px-bar"><b>▶ BUHAR</b><span>${list.length} OYUN</span><span>${nf(hours)} SAAT</span>${steam?`<a href="${esc(steam)}" target="_blank" rel="noopener">STEAM PROFİLİ</a>`:''}</div>
+    <div class="px-body"><nav class="px-side" aria-label="Türler">${side}</nav><div class="px-list">${rows.map(row).join('')||'<p class="px-empty">&gt; BURASI BOŞ. BİR OYUN EKLE_</p>'}</div></div>
+  </div></div><div class="pxsurface">${prop('pad')}${prop('stanley')}<span class="pxneck"></span>${prop('headset')}${prop('can')}${prop('mug')}${petRail()}</div><div class="pxtop"></div></div>`;
 }
+ACT['g-genre']=a=>{S.gGenre=a.dataset.v;render()};
 S.kq='';S.kfmt='all';S.kmine='all';S.ksort='score';S.klimit=60;
 function kList(){
   const a=curArea(),me=S.me,q=norm(S.kq||'');

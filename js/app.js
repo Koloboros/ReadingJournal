@@ -320,6 +320,7 @@ function render(){
     :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> ${A().Item} ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Rafın boş.</b> İlk ${A().item} kaydını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Ekle</button></div>`:'';
   $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Raflar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button><br>${A().credit||''}</p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
+  if($('#petwrap'))Pet.mount();else clearTimeout(Pet.t);
 }
 
 /* one genre list for the shelf, the stats and the genre picker; related genres sit next to each other */
@@ -344,11 +345,12 @@ const DECOR=[
  `<ellipse cx="30" cy="77" rx="24" ry="3" fill="rgba(60,40,25,.18)"/><g stroke="#8E7FA8" stroke-width="1.2" stroke-linejoin="round"><path d="M10 77V56l6-7 6 8-2 20z" fill="#EEE8F6"/><path d="M20 77l-3-37 8-12 7 12-2 37z" fill="#E1D8F0"/><path d="M30 77l2-43 8-13 7 13-5 43z" fill="#CFC2E6"/><path d="M42 77l4-21 6-5 3 9-4 17z" fill="#E7E0F3"/></g><path d="M36 30l4-7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>`,
  `<rect x="6" y="67" width="48" height="11" rx="2" fill="#A7C29A"/><rect x="10" y="57" width="42" height="10" rx="2" fill="#E6A9A0"/><rect x="8" y="48" width="44" height="9" rx="2" fill="#EBD08C"/><g stroke="rgba(60,40,25,.35)"><path d="M12 72h36M15 62h32M13 52h34"/></g><path d="M20 36h17v5a8.5 8.5 0 0 1-17 0z" fill="#FFFAF1" stroke="#7B695C"/><path d="M37 38a3 3 0 0 1 0 6" fill="none" stroke="#7B695C"/><path d="M25 32c-2-3 2-4 0-8M31 32c-2-3 2-4 0-8" fill="none" stroke="#B6AA96" stroke-linecap="round"/>`
 ];
+DECOR.push(PROPS.glasses,PROPS.stanley);
 const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
 function vShelf(){
   const area=curArea(),film=area==='film';
-  const all=BOOKS().filter(b=>film?b.status==='read'||b.status==='reading':(b.owned||b.status!=='want')&&b.status!=='skip');
+  const all=BOOKS().filter(b=>area==='game'||(film?b.status==='read'||b.status==='reading':(b.owned||b.status!=='want')&&b.status!=='skip'));
   const f=film&&!['all','read','reading'].includes(S.shelfFilter)?'all':S.shelfFilter;
   let list=all.filter(b=>f==='all'||(f===b.status)||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
   const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
@@ -363,9 +365,9 @@ function vShelf(){
     return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
   return `<div class="head"><h2 class="hand">${A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
-  <div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>
+  ${area==='game'?'':`<div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>`}
   <div class="shelf-stats"><span><b>${all.length}</b> toplam ${A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
-  ${!list.length?`<div class="empty">Bu filtrede ${A().item} yok.</div>`:film?filmStand(list):area==='game'?gameTower(list):`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}</div>`}`;
+  ${area==='game'?gameScreen(list):!list.length?`<div class="empty">Bu filtrede ${A().item} yok.</div>`:film?filmStand(list):`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}${petRail()}</div>`}`;
 }
 
 function vCovers(){
