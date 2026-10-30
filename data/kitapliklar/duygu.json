@@ -835,7 +835,7 @@
    "author": "Sarah J. Maas",
    "endDate": "2026-01-15",
    "genre": "Fantastik",
-   "owned": false,
+   "owned": true,
    "rating": 5,
    "series": "Cam Şato",
    "seriesNo": 3,
@@ -845,7 +845,7 @@
    "infoTried": true,
    "color": "#dbb4bf",
    "format": "print",
-   "updatedAt": 1793216902308,
+   "updatedAt": 1793390607612,
    "pages": 629
   },
   {
