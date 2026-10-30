@@ -6581,7 +6581,7 @@
      },
      {
       "p": "Polisiye",
-      "b": null
+      "b": "g15"
      },
      {
       "p": "Arkadaşınla birlikte okuduğun",
@@ -6593,7 +6593,7 @@
      },
      {
       "p": "Bir günde biten",
-      "b": null
+      "b": "g42"
      },
      {
       "p": "Doğduğun yıl çıkan",
@@ -6633,15 +6633,15 @@
      },
      {
       "p": "Felsefe",
-      "b": null
+      "b": "g14"
      },
      {
       "p": "500+ sayfa",
-      "b": null
+      "b": "g56"
      },
      {
       "p": "Sesli kitap",
-      "b": null
+      "b": "g31"
      },
      {
       "p": "Annenin/babanın sevdiği kitap",
