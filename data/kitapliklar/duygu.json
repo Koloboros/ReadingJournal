@@ -2036,6 +2036,23 @@
    "seriesNo": 4,
    "coverUrl": "https://covers.openlibrary.org/b/id/8907772-M.jpg",
    "updatedAt": 1793269476373
+  },
+  {
+   "id": "bmvux654mz1ncj",
+   "title": "Newton’ın Principia’sının Toplumsal ve İktisadi Kökleri",
+   "author": "Boris Hessen",
+   "pages": 128,
+   "year": 2019,
+   "genre": "Felsefe",
+   "about": "Marksizmin dar bir konuda ayrıntılı incelemeleri çok azdır. Bunların en ünlü ve bugüne dek aşılamayan örneği, Marx’ın, Louis Bonaparte’ın Aralık 1851’de gerçekleştirdiği hükümet darbesini inceleyen Louis Bonaparte’ın 18 Brumaire’i adlı çalışmasıdır. Elinizdeki",
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": true,
+   "format": "print",
+   "rating": 0,
+   "addedAt": 1793361561718,
+   "coverUrl": "https://books.google.com/books/content?id=PpXiDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+   "updatedAt": 1793361585713
   }
  ],
  "films": [
