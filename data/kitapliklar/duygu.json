@@ -6564,10 +6564,118 @@
       "p": "Serinin ilk kitabı"
      }
     ]
+   },
+   {
+    "id": "bmvvexts3",
+    "year": 2026,
+    "name": "Kart 2",
+    "size": 5,
+    "cells": [
+     {
+      "p": "Şiir kitabı",
+      "b": null
+     },
+     {
+      "p": "Korku",
+      "b": null
+     },
+     {
+      "p": "Polisiye",
+      "b": null
+     },
+     {
+      "p": "Arkadaşınla birlikte okuduğun",
+      "b": null
+     },
+     {
+      "p": "Masal / efsane",
+      "b": null
+     },
+     {
+      "p": "Bir günde biten",
+      "b": null
+     },
+     {
+      "p": "Doğduğun yıl çıkan",
+      "b": null
+     },
+     {
+      "p": "Müzik temalı",
+      "b": null
+     },
+     {
+      "p": "Çocuk anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Rafta en uzun bekleyen",
+      "b": null
+     },
+     {
+      "p": "Kapağında çiçek var",
+      "b": null
+     },
+     {
+      "p": "Bir klasik",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Tarihi roman",
+      "b": null
+     },
+     {
+      "p": "Mitoloji",
+      "b": null
+     },
+     {
+      "p": "Felsefe",
+      "b": null
+     },
+     {
+      "p": "500+ sayfa",
+      "b": null
+     },
+     {
+      "p": "Sesli kitap",
+      "b": null
+     },
+     {
+      "p": "Annenin/babanın sevdiği kitap",
+      "b": null
+     },
+     {
+      "p": "Başlıkta bir isim",
+      "b": null
+     },
+     {
+      "p": "Gece yarısına kadar okuduğun",
+      "b": null
+     },
+     {
+      "p": "Aşk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Çocukken okuduğun bir kitap",
+      "b": null
+     },
+     {
+      "p": "Yeşil kapaklı",
+      "b": null
+     },
+     {
+      "p": "Başka ülkede geçen",
+      "b": null
+     }
+    ]
    }
   ],
   "bingoActive": {
-   "2026": "y2026"
+   "2026": "bmvvexts3"
   }
  },
  "filmSettings": {
