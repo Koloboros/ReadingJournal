@@ -6602,7 +6602,9 @@
   }
  },
  "gameSettings": {
-  "goals": {},
+  "goals": {
+   "2026": 2
+  },
   "bingoCards": [],
   "bingoActive": {}
  }
