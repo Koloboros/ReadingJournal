@@ -6569,7 +6569,7 @@
     "id": "bmvvexts3",
     "year": 2026,
     "name": "Kart 2",
-    "size": 4,
+    "size": 3,
     "cells": [
      {
       "p": "Polisiye",
@@ -6588,6 +6588,10 @@
       "b": "g56"
      },
      {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
       "p": "Sesli kitap",
       "b": "g31"
      },
@@ -6601,38 +6605,6 @@
      },
      {
       "p": "Arkadaşınla birlikte okuduğun",
-      "b": null
-     },
-     {
-      "p": "Masal / efsane",
-      "b": null
-     },
-     {
-      "p": "Doğduğun yıl çıkan",
-      "b": null
-     },
-     {
-      "p": "Müzik temalı",
-      "b": null
-     },
-     {
-      "p": "Çocuk anlatıcı",
-      "b": null
-     },
-     {
-      "p": "Rafta en uzun bekleyen",
-      "b": null
-     },
-     {
-      "p": "Kapağında çiçek var",
-      "b": null
-     },
-     {
-      "p": "Bir klasik",
-      "b": null
-     },
-     {
-      "p": "Tarihi roman",
       "b": null
      }
     ]
