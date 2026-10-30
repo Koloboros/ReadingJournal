@@ -6541,7 +6541,9 @@
   }
  },
  "filmSettings": {
-  "goals": {},
+  "goals": {
+   "2026": 125
+  },
   "bingoCards": [
    {
     "id": "bmvuzu2be",
