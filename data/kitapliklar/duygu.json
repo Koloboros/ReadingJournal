@@ -2053,6 +2053,20 @@
    "addedAt": 1793361561718,
    "coverUrl": "https://books.google.com/books/content?id=PpXiDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
    "updatedAt": 1793361585713
+  },
+  {
+   "id": "bmvveqiowdexl5",
+   "title": "Hayatın İlk 3 Yılı",
+   "format": "print",
+   "genre": "Ebeveynlik",
+   "author": "Bahar Eriş",
+   "publisher": "Alfa Yayınları",
+   "owned": true,
+   "rating": 0,
+   "status": "read",
+   "endDate": "2025-11-30",
+   "color": "#bfc3e8",
+   "updatedAt": 1793391079946
   }
  ],
  "films": [
