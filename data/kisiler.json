@@ -4,14 +4,15 @@
    "id": "duygu",
    "name": "Duygu",
    "color": "#E3A79C",
-   "avatar": "tilki"
+   "avatar": "tilki",
+   "partner": "can"
   },
   {
    "id": "can",
    "name": "Can",
    "color": "#EBB88C",
    "avatar": "kopek",
-   "partnerInvite": "duygu"
+   "partner": "duygu"
   },
   {
    "id": "ozan",
