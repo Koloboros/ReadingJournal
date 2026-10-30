@@ -6413,7 +6413,8 @@
    "startDate": "2026-10-30",
    "rating": 0,
    "addedAt": 1793366143907,
-   "updatedAt": 1793366172239
+   "updatedAt": 1793366172239,
+   "infoTried": true
   }
  ],
  "settings": {
