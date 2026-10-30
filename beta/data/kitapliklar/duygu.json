@@ -6226,7 +6226,8 @@
    "format": "pc",
    "rating": 0,
    "addedAt": 1793359640127,
-   "updatedAt": 1793359651254
+   "updatedAt": 1793359651254,
+   "infoTried": true
   }
  ],
  "settings": {
