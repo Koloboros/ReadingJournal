@@ -4,9 +4,11 @@ const wikiOf=async(q,re)=>{
   try{const r=await fetch('https://en.wikipedia.org/w/api.php?action=query&generator=prefixsearch&gpslimit=12&prop=pageimages|description&piprop=thumbnail&pithumbsize=300&format=json&origin=*&gpssearch='+encodeURIComponent(q));
     const j=await r.json();return Object.values(j.query?.pages||{}).sort((a,b)=>(a.index||0)-(b.index||0)).filter(p=>re.test(p.description||'')).map(p=>({title:p.title.replace(/\s*\([^)]*\)\s*$/,''),year:+((p.description||'').match(/\b(19|20)\d\d\b/)||[])[0]||'',cover:p.thumbnail?.source||'',about:p.description||'',author:''}))}catch{return[]}
 };
+const TMDB_GENRE={28:'Aksiyon',12:'Macera',16:'Animasyon',35:'Komedi',80:'Suç',99:'Belgesel',18:'Drama',10751:'Aile',14:'Fantastik',36:'Tarih',27:'Korku',10402:'Müzikal',9648:'Gizem',10749:'Romantik',878:'Bilim kurgu',53:'Gerilim',10752:'Savaş',37:'Tarih',10759:'Aksiyon',10762:'Aile',10764:'Belgesel',10765:'Bilim kurgu',10766:'Drama',10768:'Savaş'};
+const tmdbGenre=ids=>{const g=(ids||[]).map(i=>TMDB_GENRE[i]).filter(Boolean);return g.find(x=>x!=='Animasyon')||g[0]||''};
 async function searchFilm(q){
   if(KEYS.tmdb){try{const r=await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${KEYS.tmdb}&language=tr-TR&query=${encodeURIComponent(q)}`);const j=await r.json();
-    const list=(j.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').slice(0,8).map(x=>({title:x.title||x.name,year:+(x.release_date||x.first_air_date||'').slice(0,4)||'',cover:x.poster_path?`https://image.tmdb.org/t/p/w342${x.poster_path}`:'',about:(x.overview||'').slice(0,260),format:x.media_type==='tv'?'dizi':'film',imdb:x.vote_average?+x.vote_average.toFixed(1):''}));if(list.length)return list}catch{}}
+    const list=(j.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').slice(0,8).map(x=>({title:x.title||x.name,year:+(x.release_date||x.first_air_date||'').slice(0,4)||'',cover:x.poster_path?`https://image.tmdb.org/t/p/w342${x.poster_path}`:'',about:(x.overview||'').slice(0,260),format:(x.genre_ids||[]).includes(16)?'animasyon':x.media_type==='tv'?'dizi':'film',genre:tmdbGenre(x.genre_ids),imdb:x.vote_average?+x.vote_average.toFixed(1):''}));if(list.length)return list}catch{}}
   const[tv,wk]=await Promise.all([fetch('https://api.tvmaze.com/search/shows?q='+encodeURIComponent(q)).then(r=>r.json()).catch(()=>[]),wikiOf(q,/film|series|show|miniseries/i)]);
   const shows=(tv||[]).slice(0,5).map(({show:s})=>({title:s.name,year:+(s.premiered||'').slice(0,4)||'',cover:(s.image?.medium||'').replace('http://','https://'),about:(s.summary||'').replace(/<[^>]+>/g,'').slice(0,260),format:'dizi',imdbId:s.externals?.imdb||''}));
   return[...wk.map(w=>({...w,format:/series|show/i.test(w.about)?'dizi':'film'})),...shows];
@@ -94,6 +96,15 @@ const pileColor=(b,recent)=>{let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c
 /* biggest genre first; a genre longer than size spills into the next pile */
 const byGenre=(list,size)=>{const m=new Map();list.forEach(b=>{const g=genreOf(b);if(!m.has(g))m.set(g,[]);m.get(g).push(b)});return[...m].sort((x,y)=>(x[0]==='Türsüz')-(y[0]==='Türsüz')||y[1].length-x[1].length||cmp(x[0],y[0])).flatMap(([g,a])=>{const o=[];for(let i=0;i<a.length;i+=size)o.push({g,n:a.length,first:!i,items:a.slice(i,i+size)});return o})};
 const TVSET=`<svg class="tvset" viewBox="0 0 150 120" aria-hidden="true"><rect x="6" y="6" width="138" height="92" rx="9" fill="var(--wood-2)"/><rect x="14" y="14" width="122" height="76" rx="5" fill="#3B4A5C"/><path d="M14 90 136 14v76z" fill="#fff" opacity=".06"/><path d="M28 30q20-10 42-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".28"/><rect x="62" y="98" width="26" height="12" fill="var(--wood-2)"/><rect x="42" y="109" width="66" height="7" rx="3" fill="var(--wood-2)"/></svg>`;
+/* film, series and animation never share a stand; stats can be cut the same way */
+S.fmt='film';S.statFmt='all';
+function fmtBar(L){return `<div class="fmtbar" role="group" aria-label="Tip">${Object.entries(A().formatsPl).map(([k,l])=>`<button data-act="fmt" data-v="${k}" aria-pressed="${S.fmt===k}">${l}<small>${L.filter(b=>(b.format||'film')===k).length}</small></button>`).join('')}</div>`}
+function statCards(R){
+  const avg=L=>{const n=L.map(b=>+b.rating).filter(Boolean);return n.length?(n.reduce((x,y)=>x+y,0)/n.length).toFixed(1).replace('.',','):'–'};
+  const card=(k,l,L)=>`<button class="fmtcard" data-act="stat-fmt" data-v="${k}" aria-pressed="${S.statFmt===k}"><b>${L.length}</b><span>${l}</span><small>ortalama ${avg(L)}</small></button>`;
+  return `<div class="fmtcards">${card('all','Tümü',R)}${Object.entries(A().formatsPl).map(([k,l])=>card(k,l,R.filter(b=>(b.format||'film')===k))).join('')}</div>`;
+}
+Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()}});
 const FILM_PROPS=['popcorn','glasses','stanley','remote','clapper'];
 function filmStand(list){
   const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
@@ -159,6 +170,6 @@ Object.assign(ACT,{
 });
 document.addEventListener('change',e=>{if(e.target.id==='k-sort'){S.ksort=e.target.value;paintK()}});
 function areaWords(h){
-  if(curArea()==='book')return h;const a=A(),film=curArea()==='film';
+  if(curArea()==='book')return h;const film=curArea()==='film',a=film&&S.tab==='stats'&&S.statFmt!=='all'?{...A(),item:A().formats[S.statFmt].toLocaleLowerCase('tr'),Item:A().formats[S.statFmt]}:A();
   return h.replaceAll('Kitap <span>bingo',a.Item+' <span>bingo').replaceAll('Kitap Bingo',a.Item+' Bingo').replaceAll('Kitap bitirdikçe',a.Item+' bitirdikçe').replaceAll(' kitap',' '+a.item).replaceAll('Okunan sayfa','Toplam '+a.unit).replaceAll('okuduğun',film?'izlediğin':'oynadığın').replaceAll('okunan tür',film?'izlenen tür':'oynanan tür').replaceAll('kitabı eşleştir',a.item+' eşleştir');
 }

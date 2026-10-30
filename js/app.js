@@ -300,7 +300,7 @@ addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.docume
 function render(){
   if(S.mode==='ready'&&!Peers.ready&&!Peers.loading)Peers.ensure().then(render);
   $('#yr').textContent=S.year;
-  const addT=document.querySelector('#btn-add .add-txt');if(addT)addT.textContent=A().add;
+  const addT=document.querySelector('#btn-add .add-txt');if(addT)addT.textContent=curArea()==='film'&&S.tab==='shelf'?A().formats[S.fmt]+' ekle':A().add;
   $('#brandname').textContent=S.area==='home'||S.mode==='pick'?'Bizim Ev':A().brand;
   $('#tabs').innerHTML=A().tabs.map(([k,l,i,s])=>`<button class="tab" data-act="tab" data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${ico(i)}<span class="lf">${l}</span><span class="ls">${s}</span></button>`).join('');
   if(!A().tabs.some(t=>t[0]===S.tab))S.tab='shelf';
@@ -350,7 +350,8 @@ const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
 function vShelf(){
   const area=curArea(),film=area==='film';
-  const all=BOOKS().filter(b=>area==='game'||(film?b.status==='read'||b.status==='reading':(b.owned||b.status!=='want')&&b.status!=='skip'));
+  const seen=film?BOOKS().filter(b=>b.status==='read'||b.status==='reading'):[];
+  const all=BOOKS().filter(b=>area==='game'||(film?(b.status==='read'||b.status==='reading')&&(b.format||'film')===S.fmt:(b.owned||b.status!=='want')&&b.status!=='skip'));
   const f=film&&!['all','read','reading'].includes(S.shelfFilter)?'all':S.shelfFilter;
   let list=all.filter(b=>f==='all'||(f===b.status)||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
   const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
@@ -364,9 +365,9 @@ function vShelf(){
     let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent=[c,recent[0]];
     return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
-  return `<div class="head"><h2 class="hand">${A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
+  return `${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
   ${area==='game'?'':`<div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>`}
-  <div class="shelf-stats"><span><b>${all.length}</b> toplam ${A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
+  <div class="shelf-stats"><span><b>${all.length}</b> toplam ${film?A().formats[S.fmt].toLocaleLowerCase('tr'):A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
   ${area==='game'?gameScreen(list):!list.length?`<div class="empty">Bu filtrede ${A().item} yok.</div>`:film?filmStand(list):`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}${petRail()}</div>`}`;
 }
 
@@ -387,12 +388,13 @@ function vNotes(){
   const f=S.noteFilter;
   const R=readIn(S.year).reverse().filter(b=>f==='all'||b.format===f);
   const chip=(k,l)=>`<button class="chip" data-act="note-f" data-f="${k}" aria-pressed="${f===k}">${k!=='all'?ico(A().fmtIcon[k]):''}${l}</button>`;
-  const cards=R.map((b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">${A().noteLabel}</span><h3>${esc(b.title)}</h3>
+  const card=(b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">${A().noteLabel}</span><h3>${esc(b.title)}</h3>
     <div class="rmeta"><span>${esc(b.author||'')}</span>${b.pages?`<span>${b.pages} ${A().unit}</span>`:''}${b.format&&A().formats[b.format]?`<span>${fmtIco(b.format)} ${A().formats[b.format]}</span>`:''}</div>
     <div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>
-    <p class="rtext ${b.review?'':'none'}">${b.review?esc(b.review):'Henüz not yazılmadı. Eklemek için dokun.'}</p></div></button>`).join('');
+    <p class="rtext ${b.review?'':'none'}">${b.review?esc(b.review):'Henüz not yazılmadı. Eklemek için dokun.'}</p></div></button>`;
+  const grouped=curArea()==='film'&&f==='all'?Object.keys(A().formats).map(k=>{const L=R.filter(b=>(b.format||'film')===k);return L.length?`<h3 class="fmt-h">${A().formatsPl[k]} <small>${L.length}</small></h3><div class="rgrid">${L.map(card).join('')}</div>`:''}).join(''):`<div class="rgrid">${R.map(card).join('')}</div>`;
   return `<div class="head"><h2 class="hand">${A().notes} <small>${S.year}</small></h2><div class="chips">${chip('all','Tümü')}${Object.entries(A().formats).map(([k,l])=>chip(k,l)).join('')}</div></div>
-  ${R.length?`<div class="rgrid">${cards}</div>`:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir ${A().item} için puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
+  ${R.length?grouped:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir ${A().item} için puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
 }
 
 /* small painted shelf with books and a plant/candles, for notebook page headers */
@@ -427,8 +429,8 @@ const GCOL=['#9CC59A','#9FC1E3','#EBA798','#C3AEDD','#EFCB7C','#8FCBC2'],GOTHER=
 const gName=genreOf;
 const chunk=(a,n)=>a.reduce((r,x,i)=>(i%n?r[r.length-1].push(x):r.push([x]),r),[]);
 function vStats(){
-  const y=S.year,R=readIn(y);
-  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${y}</small></h2></div>`;
+  const y=S.year,film=curArea()==='film',allR=readIn(y),R=film&&S.statFmt!=='all'?allR.filter(b=>(b.format||'film')===S.statFmt):allR;
+  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${y}</small></h2></div>${film?statCards(allR):''}`;
   if(!R.length)return head+`<div class="empty">${decor(3)}<p>${y} yılında bitirilmiş kitap yok. Kitap bitirdikçe tür, puan ve ay grafiklerin burada oluşur.</p></div>`;
   const cnt={};R.forEach(b=>{const g=gName(b);cnt[g]=(cnt[g]||0)+1});
   const sorted=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0]));
@@ -880,7 +882,7 @@ const ACT={
   view:a=>{const v=a.dataset.v;try{localStorage.setItem(VIEW_KEY,v)}catch{}applyView();render();toast(v==='mobile'?'Telefon görünümü':'Masaüstü görünümü')},
   tab:a=>{S.tab=a.dataset.tab;try{history.replaceState(null,'','#'+S.tab)}catch{}render();scrollTo({top:0})},
   year:a=>{S.year+=+a.dataset.d;render()},
-  add:()=>GH.token()?openEditor(null,S.tab==='tbr'?{owned:false}:curArea()==='film'?{status:'read'}:{}):openSetup(),
+  add:()=>GH.token()?openEditor(null,S.tab==='tbr'?{owned:false}:curArea()==='film'?{status:'read',format:S.fmt}:{}):openSetup(),
   open:a=>{const b=BOOKS().find(x=>x.id===a.dataset.id);if(b)(S.canEdit?openEditor:openDetail)(b)},
   close:closeSheet,
   'shelf-f':a=>{S.shelfFilter=a.dataset.f;render()},

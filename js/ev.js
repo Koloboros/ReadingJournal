@@ -104,6 +104,14 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
     <g transform="translate(902 366)"><rect x="0" y="10" width="56" height="30" rx="14" fill="#A9D3C7"/><path d="M12 18v14M5 25h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="40" cy="22" r="3.4" fill="#EBA3AF"/><circle cx="47" cy="28" r="3.4" fill="#FBE3A6"/></g>
     <g><rect x="946" y="350" width="0" height="0"/><rect x="706" y="372" width="30" height="24" rx="2" fill="#EBB88C"/><rect x="702" y="350" width="34" height="22" rx="2" fill="#9FC1E3"/></g>
   </g>
+  <!-- computer on a wall shelf -->
+  <g class="spot" data-act="pc" role="button" tabindex="0" aria-label="Bilgisayar">
+    <rect class="halo" x="734" y="104" width="196" height="172" rx="14"/>
+    <rect x="744" y="256" width="176" height="10" rx="3" fill="var(--wood)"/><path d="M764 266l10 14M900 266l-10 14" stroke="var(--wood-2)" stroke-width="5" stroke-linecap="round"/>
+    <rect x="772" y="120" width="120" height="96" rx="9" fill="#E9DFCF"/><rect x="782" y="130" width="100" height="72" rx="3" fill="#1E2238"/>
+    <path d="M790 142h46M790 154h66M790 166h34" stroke="#8FCBC2" stroke-width="5"/><rect x="790" y="178" width="12" height="7" fill="#FBE3A6" class="tvplay"/>
+    <rect x="818" y="216" width="28" height="14" fill="#BDAE97"/><rect x="782" y="230" width="100" height="26" rx="4" fill="#D6C9B4"/><path d="M792 240h56M792 247h56" stroke="#BDAE97" stroke-width="3" stroke-dasharray="6 3"/><circle cx="868" cy="243" r="5" fill="#EBA3AF"/>
+  </g>
   <!-- lamp and plant -->
   <circle cx="330" cy="244" r="80" fill="url(#lamp)" class="lampglow"/><path d="M330 450V250" stroke="var(--wood-2)" stroke-width="5"/><path d="M304 252l12-40h28l12 40z" fill="#FBE3A6"/><ellipse cx="330" cy="452" rx="24" ry="6" fill="var(--wood-2)"/>
   <!-- rug -->
@@ -118,7 +126,7 @@ function vHome(){
   return `<section class="home">
   <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(gen(who))} evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
   <div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
-  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}</div>
+  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}<div class="hcard c4"><button class="hgo" data-act="pc"><b>Bilgisayar</b><span>Excel’e al ya da yükle</span></button></div></div>
   ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div><div class="petbtns"><button class="btn" data-act="taste">Zevkimi yorumla</button>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div></div>`
    :mine?`<p class="note" style="text-align:center;margin:0">Pencereden biri bakıyor. Gözlerine tıkla, içeri al.</p>`:''}
   </section>`;

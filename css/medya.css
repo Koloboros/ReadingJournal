@@ -111,3 +111,18 @@ html[data-view="mobile"] .prop{flex-basis:44px;width:44px}html[data-view="mobile
 .buhar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(90deg,#BFD3EE,#D5CCEB);color:#2C3350;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:.84rem;font-weight:600}
 .buhar b{font-size:1.05rem;letter-spacing:.14em}
 html[data-view="mobile"] .px-body{grid-template-rows:auto 1fr}html[data-view="mobile"] .px-side{align-items:flex-start}
+/* film, series, animation */
+.fmtbar{display:flex;gap:4px;padding:4px;margin-bottom:14px;background:var(--sheet);border:1px solid var(--line);border-radius:14px;width:max-content;max-width:100%}
+.fmtbar button{border:0;background:none;color:var(--ink-2);border-radius:10px;padding:7px 14px;font-weight:700;font-size:.9rem;display:flex;gap:6px;align-items:baseline}
+.fmtbar small{font-weight:600;opacity:.75;font-variant-numeric:tabular-nums}
+.fmtbar button[aria-pressed="true"]{background:var(--accent-soft);color:var(--ink)}
+.fmt-h{font-family:var(--f-hand);font-weight:700;font-size:1.7rem;line-height:1;margin:22px 0 10px}.fmt-h small{font-family:var(--f-body);font-size:.85rem;color:var(--ink-2);font-weight:600}
+.fmtcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.fmtcard{border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:12px;padding:10px 12px;display:grid;gap:1px;text-align:left}
+.fmtcard b{font-size:1.5rem;line-height:1.1;font-variant-numeric:tabular-nums}.fmtcard span{font-weight:700;font-size:.86rem}.fmtcard small{color:var(--ink-2);font-size:.74rem}
+.fmtcard[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+html[data-view="mobile"] .fmtcards{grid-template-columns:repeat(2,minmax(0,1fr))}html[data-view="mobile"] .fmtbar button{padding:6px 10px;font-size:.84rem}
+/* home computer */
+.pcscreen{background:#1E2238;color:#8FCBC2;font-family:"Pixelify Sans",var(--f-body);padding:12px 14px;border-radius:6px;overflow-wrap:anywhere}.pcscreen b{font-weight:600;color:#FBE3A6}
+.pcbox{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}.pcbox h3{font-family:var(--f-hand);font-weight:700;font-size:1.5rem;line-height:1}.pcbox p{margin:0}
+.pcrow{display:flex;gap:8px;flex-wrap:wrap}.pclist{margin:0;padding-left:18px;font-size:.9rem}

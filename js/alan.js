@@ -20,7 +20,7 @@ const AREAS={
     tabs:[['shelf','Ekran','shelf','Ekran'],['kesfet','Keşfet','compass','Keşfet'],['covers','Buhar','covers','Buhar'],['notes','Günlük','pen','Günlük'],['stats','Yıl Özeti','chart','Özet'],['tbr','Oyun Arşivi','list','Arşiv'],['stamps','Hedef','stamp','Hedef'],['bingo','Bingo','grid','Bingo']]}
 };
 Object.assign(AREAS.book,{add:'Kitap ekle',withItem:'kitapla',doneVerb:'okuduğun',yearL:'Yayın yılı',noneYet:'Henüz kimse okumadı. İlk sen ol.',noneShort:'Henüz kimse okumadı',startMsg:'okunuyor. İyi okumalar!',waitLabel:'rafta bekleyen',ownMsg:'rafa geçti'});
-Object.assign(AREAS.film,{add:'Film ekle',withItem:'filmle',doneVerb:'izlediğin',yearL:'Çıkış yılı',noneYet:'Henüz kimse izlemedi. İlk sen ol.',noneShort:'Henüz kimse izlemedi',startMsg:'izleniyor. İyi seyirler!',noOwn:true});
+Object.assign(AREAS.film,{formatsPl:{film:'Filmler',dizi:'Diziler',animasyon:'Animasyonlar'},add:'Film ekle',withItem:'filmle',doneVerb:'izlediğin',yearL:'Çıkış yılı',noneYet:'Henüz kimse izlemedi. İlk sen ol.',noneShort:'Henüz kimse izlemedi',startMsg:'izleniyor. İyi seyirler!',noOwn:true});
 Object.assign(AREAS.game,{add:'Oyun ekle',withItem:'oyunla',doneVerb:'oynadığın',yearL:'Çıkış yılı',noneYet:'Henüz kimse oynamadı. İlk sen ol.',noneShort:'Henüz kimse oynamadı',startMsg:'oynanıyor. İyi oyunlar!',waitLabel:'arşivde',ownMsg:'arşive geçti'});
 /* little things that live next to the shelves; all share one 60x82 canvas */
 const PROPS={
