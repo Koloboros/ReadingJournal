@@ -35,6 +35,9 @@ const G={ /* 24px stroke glyphs */
   desktop:'M3 4h18v12H3z M8 20h8 M12 16v4',
   sun:'M12 3v2 M12 19v2 M3 12h2 M19 12h2 M5.6 5.6l1.4 1.4 M17 17l1.4 1.4 M5.6 18.4 7 17 M17 7l1.4-1.4 M12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z',
   tick:'M5 12.5l4.5 4.5L19 7.5',
+  filmi:'M4 5h16v14H4z M8 5v14 M16 5v14 M4 9.5h4 M4 14.5h4 M16 9.5h4 M16 14.5h4',
+  tvi:'M4 8h16v11H4z M9 3l3 5 3-5',
+  pad:'M7 8h10a5 5 0 0 1 4.8 6.4l-.7 2.2a2.4 2.4 0 0 1-4.2.6L15.5 15h-7l-1.4 2.2a2.4 2.4 0 0 1-4.2-.6l-.7-2.2A5 5 0 0 1 7 8z M8 10.5v3 M6.5 12h3 M15.5 11.5h.01 M17.5 13h.01',
   chart:'M4 20V11 M10 20V5 M16 20v-7 M3 20h18 M19 8l2-2',
   camera:'M4 8h3l2-3h6l2 3h3v11H4z M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z',
   plant:'M12 21v-7 M12 14c-4 0-6-3-6-7 4 0 6 3 6 7z M12 12c0-3 2-6 6-6 0 4-2 6-6 6z M8 21h8l-1-4H9z'
@@ -57,8 +60,8 @@ const autoColor=t=>PCOLS[hash(t)%PCOLS.length];
 /* light text on dark covers, dark ink on light ones */
 function inkFor(hex){const m=/^#?([0-9a-f]{6})$/i.exec(String(hex||''));if(!m)return'#3A2C24';const n=parseInt(m[1],16),r=n>>16&255,g=n>>8&255,b=n&255;return(0.299*r+0.587*g+0.114*b)<140?'#FBF4E6':'#3A2C24'}
 const colorVars=b=>{const c=b.color||autoColor(b.title||'x');return`--c:${esc(c)};--cink:${inkFor(c)}`};
-const stars=r=>`<span class="stars" style="--r:${+r||0}" aria-label="${+r||0} / 5 yıldız">★★★★★</span>`;
-const fmtIco=f=>f?`<span class="fmt-dot" title="${FORMATS[f]}">${ico(f)}</span>`:'';
+const stars=r=>A().scale===10?`<span class="score10">${r?String(+r).replace('.',','):'–'}<small>/10</small></span>`:`<span class="stars" style="--r:${+r||0}" aria-label="${+r||0} / 5 yıldız">★★★★★</span>`;
+const fmtIco=f=>f&&A().formats[f]?`<span class="fmt-dot" title="${A().formats[f]}">${ico(A().fmtIcon[f])}</span>`:'';
 const nf=n=>new Intl.NumberFormat('tr-TR').format(n);
 function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 let toastT,undoFn=null;
@@ -165,10 +168,14 @@ const Store={
   async open(id){
     if(this.msgs.length)await this.flush();
     S.viewing=id;ls.set(K.viewing,id);S.mode='loading';S.books=[];S.settings=normSettings();render();
-    try{const f=await GH.get(this.path(id));const{books:_b,settings:_s,...extra}=f?.data||{};this.extra=extra;S.books=(f?.data?.books||[]).map(b=>({...b,kind:'book'}));S.settings=normSettings(f?.data?.settings);this.sha[id]=f?.sha||null;S.mode='ready'}
+    try{const f=await GH.get(this.path(id));const{lists,sets,extra}=splitFile(f?.data||{});this.lists=lists;this.sets=sets;this.extra=extra;this.useArea();this.sha[id]=f?.sha||null;S.mode='ready'}
     catch{S.mode='offline'}
     S.canEdit=!!GH.token()&&S.viewing===S.me;setSync();render();
   },
+  /* one screen set, three lists: S.books and S.settings always point at the open area */
+  sync(){if(this.lists){const a=curArea();this.lists[a]=S.books;this.sets[a]=S.settings}},
+  useArea(){const a=curArea();S.books=this.lists?.[a]||[];S.settings=this.sets?.[a]||normSettings()},
+  fileData(){this.sync();const L=this.lists,Z=this.sets;return{...(this.extra||{}),schema:2,books:L.book.map(cleanBook),films:L.film.map(cleanBook),games:L.game.map(cleanBook),settings:Z.book,filmSettings:Z.film,gameSettings:Z.game}},
   async saveBook(b){
     if(!S.canEdit)return toast('Bu kitaplığı yalnızca sahibi düzenleyebilir.');
     const data={...b,kind:'book',updatedAt:Date.now()};Object.keys(data).forEach(k=>{if(k.startsWith('_')||data[k]===undefined)delete data[k]});
@@ -188,13 +195,13 @@ const Store={
     if(!this.msgs.length||!S.me)return;
     const id=S.me,msgs=this.msgs.splice(0),path=this.path(id);this.flushing=true;S.save='saving';setSync();
     const message=`${personName(id)}: ${msgs.length>3?msgs.length+' değişiklik':msgs.join(', ')}`;
-    const data={...(this.extra||{}),books:S.books.map(cleanBook),settings:S.settings};
+    const data=this.fileData();
     try{
       if(!this.sha[id]||this.sha[id]==='local')this.sha[id]=await GH.sha(path);
       try{this.sha[id]=await GH.put(path,data,this.sha[id],message,leaving)}
       catch(e){if(e.status!==409&&e.status!==422)throw e;
         /* another device saved first: keep whatever else it wrote to the file, our books and settings win */
-        const f=await GH.get(path),{books:_b,settings:_s,...extra}=f?.data||{};this.extra={...extra};
+        const f=await GH.get(path),{extra}=splitFile(f?.data||{});this.extra={...extra};
         this.sha[id]=await GH.put(path,{...data,...extra},f?.sha||await GH.sha(path),message,leaving)}
       S.save='saved';S.saveErr=null;S.keyProblem=null;
     }catch(e){
@@ -230,6 +237,12 @@ function saveReason(e){
   return'GitHub’a ulaşılamadı (bağlantı). Birazdan yeniden denenecek.';
 }
 /* bingo cards live in a list (several per year, none overwritten); the old one-card-per-year format is moved into it */
+const FILE_KEYS=['schema','books','films','games','settings','filmSettings','gameSettings'];
+function splitFile(d){
+  const extra={};for(const k of Object.keys(d))if(!FILE_KEYS.includes(k))extra[k]=d[k];
+  const mark=a=>(a||[]).map(b=>({...b,kind:'book'}));
+  return{extra,lists:{book:mark(d.books),film:mark(d.films),game:mark(d.games)},sets:{book:normSettings(d.settings),film:normSettings(d.filmSettings),game:normSettings(d.gameSettings)}};
+}
 function normSettings(s){
   const{bingo:_old,...rest}=s||{};const o={...rest,goals:{...(s?.goals||{})},bingoCards:[...(s?.bingoCards||[])],bingoActive:{...(s?.bingoActive||{})}};
   for(const[y,c]of Object.entries(s?.bingo||{}))if(c&&Array.isArray(c.cells)&&!o.bingoCards.some(k=>k.id==='y'+y))
@@ -285,8 +298,11 @@ addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.docume
 /* ---------- render ---------- */
 function render(){
   $('#yr').textContent=S.year;
-  $('#tabs').innerHTML=TABS.map(([k,l,i,s])=>`<button class="tab" data-act="tab" data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${ico(i)}<span class="lf">${l}</span><span class="ls">${s}</span></button>`).join('');
-  const v={shelf:vShelf,covers:vCovers,notes:vNotes,stats:vStats,tbr:vTbr,stamps:vStamps,bingo:vBingo}[S.tab]();
+  $('#brandname').textContent=S.area==='home'||S.mode==='pick'?'Bizim Ev':A().brand;
+  $('#tabs').innerHTML=A().tabs.map(([k,l,i,s])=>`<button class="tab" data-act="tab" data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${ico(i)}<span class="lf">${l}</span><span class="ls">${s}</span></button>`).join('');
+  if(!A().tabs.some(t=>t[0]===S.tab))S.tab='shelf';
+  const vf={shelf:vShelf,covers:vCovers,notes:vNotes,stats:vStats,tbr:vTbr,stamps:vStamps,bingo:vBingo,kesfet:vKesfet}[S.tab];
+  const v=['stats','stamps','bingo'].includes(S.tab)?areaWords(S.area==='home'||S.mode==='pick'?'':vf()):S.area==='home'||S.mode==='pick'?'':vf();
   document.documentElement.toggleAttribute('data-readonly',!S.canEdit);
   document.documentElement.dataset.area=S.mode==='pick'?'home':S.area;
   setSync();
@@ -295,20 +311,21 @@ function render(){
   const who=esc(personName(S.viewing));
   const ban=S.mode==='loading'?`<div class="banner"><span class="busy"><span class="spin"></span>Kitaplar yükleniyor…</span></div>`
     :S.mode==='offline'?`<div class="banner"><span>Kitaplar şu an yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.</span></div>`
-    :S.viewing!==S.me?`<div class="banner"><span><b>${who}’in kitaplığına bakıyorsun.</b> Kitaplara dokunarak notlarını okuyabilirsin.</span><button class="btn" data-act="people">Kitaplık değiştir</button></div>`
+    :S.viewing!==S.me?`<div class="banner"><span><b>${esc(gen(personName(S.viewing)))} rafına bakıyorsun.</b> Dokunarak notlarını okuyabilirsin.</span><button class="btn" data-act="people">Kitaplık değiştir</button></div>`
     :S.save==='error'&&S.viewing===S.me?`<div class="banner warn"><span><b>Son değişiklik kaydedilemedi:</b> ${esc(S.saveErr||'')}</span><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-act="retry-save">Tekrar dene</button><button class="btn" data-act="setup">Kurulum</button></div></div>`
     :S.keyProblem&&S.viewing===S.me?`<div class="banner warn"><span><b>Kayıt anahtarı çalışmıyor (${S.keyProblem}).</b> Süresi dolmuş ya da iptal edilmiş olabilir. Kurulum ekranından yeni anahtar gir.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> Kitap ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
-    :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Kitaplığın boş.</b> İlk kitabını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Kitap ekle</button></div>`:'';
-  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p>`;
+    :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Rafın boş.</b> İlk ${A().item} kaydını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Ekle</button></div>`:'';
+  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
 }
 
 /* one genre list for the shelf, the stats and the genre picker; related genres sit next to each other */
-const GENRES=['Fantastik','Bilim kurgu','Distopya','Çizgi roman','Resimli kitap','Polisiye','Gerilim','Korku','Roman','Tarihi roman','Klasik','Öykü','Şiir','Anı','Biyografi','Deneme','Tarih','Felsefe','Psikoloji','Kişisel gelişim','Ebeveynlik','Popüler bilim','Beslenme','Kurgu dışı'];
+const GENRES=GENRE_SETS.book;
+const gkeyOf=()=>new Map(GENRE_SETS[curArea()].map((g,i)=>[g.toLocaleLowerCase('tr'),i]));
 const GKEY=new Map(GENRES.map((g,i)=>[g.toLocaleLowerCase('tr'),i]));
-function genreOf(b){const g=String(b?.genre||'').split(',')[0].trim().replace(/\s+/g,' ');if(!g)return'Türsüz';const i=GKEY.get(g.toLocaleLowerCase('tr'));return i!=null?GENRES[i]:g.charAt(0).toLocaleUpperCase('tr')+g.slice(1)}
-const genreRank=g=>{const i=GKEY.get(g.toLocaleLowerCase('tr'));return i!=null?i:g==='Türsüz'?999:500};
-function allGenres(){const s=new Set(GENRES);S.books.forEach(b=>{const g=genreOf(b);if(g!=='Türsüz')s.add(g)});return[...s]}
+function genreOf(b){const g=String(b?.genre||'').split(',')[0].trim().replace(/\s+/g,' ');if(!g)return'Türsüz';const i=gkeyOf().get(g.toLocaleLowerCase('tr'));return i!=null?GENRE_SETS[curArea()][i]:g.charAt(0).toLocaleUpperCase('tr')+g.slice(1)}
+const genreRank=g=>{const i=gkeyOf().get(g.toLocaleLowerCase('tr'));return i!=null?i:g==='Türsüz'?999:500};
+function allGenres(){const s=new Set(GENRE_SETS[curArea()]);S.books.forEach(b=>{const g=genreOf(b);if(g!=='Türsüz')s.add(g)});return[...s]}
 const surname=a=>{const p=String(a||'').trim().split(/\s+/);return(p[p.length-1]||'').toLocaleLowerCase('tr')};
 const cmp=(x,y)=>String(x??'').localeCompare(String(y??''),'tr');
 function shelfOrder(a,b){
@@ -327,49 +344,49 @@ const DECOR=[
 const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
 function vShelf(){
-  const all=BOOKS().filter(b=>b.owned||b.status!=='want');
+  const all=BOOKS().filter(b=>(b.owned||b.status!=='want')&&b.status!=='skip');
   const f=S.shelfFilter;
   let list=all.filter(b=>f==='all'||(f==='read'&&b.status==='read')||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
   const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
   const chip=(k,l)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${l}</button>`;
   let prevG=null,gi=0,recent=[];
   let spines=list.map((b,i)=>{
-    const w=Math.max(24,Math.min(48,Math.round((+b.pages||250)/14)));const h=118+hash(b.title)%46;
+    const w=curArea()==='film'?30:curArea()==='game'?36:Math.max(24,Math.min(48,Math.round((+b.pages||250)/14)));const h=curArea()==='film'?150:curArea()==='game'?126+hash(b.title)%10:118+hash(b.title)%46;
     const cls=b.status==='read'?'':b.status==='reading'?'reading':'unread';
     const g=genreOf(b);const deco=g!==prevG?`<div class="slot"><span class="bookend ${gi%2?'slim':''}"><span class="tag">${esc(g)}</span>${gi++%2?'<span class="bk-end"></span>':decor(gi>>1)}</span></div>`:'';prevG=g;
     /* neighbours never share a colour: step through the palette until it differs from the last two spines */
     let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent=[c,recent[0]];
-    return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${STATUS[b.status]}${b.owned?', kitaplığımda':''}"><span class="st">${esc(b.title)}</span></button></div>`;
+    return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
-  return `<div class="head"><h2 class="hand">Kitaplığım</h2><div class="chips">${chip('all','Tümü')}${chip('read','Okuduklarım')}${chip('unread','Okunmamış')}${chip('owned','Sahip olduklarım')}</div></div>
-  <div class="legend"><span><i style="background:${PALETTE.sage}"></i>Renkli: okudum</span><span><i style="border:1.5px solid var(--ink-2)"></i>Renksiz: henüz okumadım</span><span><i style="background:var(--postmark);width:6px"></i>Kurdele: okuyorum</span></div>
-  <div class="shelf-stats"><span><b>${all.length}</b> toplam kitap</span><span><b>${readN}</b> okuduklarım</span>${readingN?`<span><b>${readingN}</b> okuyorum</span>`:''}<span><b>${waitN}</b> rafta bekleyen</span></div>
-  ${list.length?`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}</div>`:`<div class="empty">Bu filtrede kitap yok.</div>`}`;
+  return `<div class="head"><h2 class="hand">${A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${chip('unread','Bekleyenler')}${chip('owned','Sahip olduklarım')}</div></div>
+  <div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span><span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span><span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>
+  <div class="shelf-stats"><span><b>${all.length}</b> toplam ${A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}<span><b>${waitN}</b> rafta bekleyen</span></div>
+  ${list.length?`<div class="shelf a-${curArea()}">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}</div>`:`<div class="empty">Bu filtrede kitap yok.</div>`}`;
 }
 
 function vCovers(){
   const R=readIn(S.year), reading=BOOKS().filter(b=>b.status==='reading');
   const tog=(k,l)=>`<button class="chip" data-act="cover-m" data-m="${k}" aria-pressed="${S.coverMode===k}">${l}</button>`;
   let body='';
-  if(!R.length)body=`<div class="empty">${S.year} yılında bitirilmiş kitap yok. Bir kitabı “Okudum” olarak kaydettiğinde kapağı burada, bittiği ayın altında görünür.</div>`;
-  else if(S.coverMode==='year')body=`<div class="month"><div class="month-h"><h3>${S.year}</h3><span>${R.length} kitap</span>${decor(S.year)}</div><div class="cgrid ledge">${R.map(b=>citem(b)).join('')}</div></div>`;
+  if(!R.length)body=`<div class="empty">${S.year} yılında bitirilmiş ${A().item} yok. “${A().status.read}” olarak kaydettiğinde burada, bittiği ayın altında görünür.</div>`;
+  else if(S.coverMode==='year')body=`<div class="month"><div class="month-h"><h3>${S.year}</h3><span>${R.length} ${A().item}</span>${decor(S.year)}</div><div class="cgrid ledge">${R.map(b=>citem(b)).join('')}</div></div>`;
   else for(let m=11;m>=0;m--){const L=R.filter(b=>mOf(b.endDate)===m);if(!L.length)continue;
     const pg=L.reduce((s,b)=>s+(+b.pages||0),0);
-    body+=`<section class="month"><div class="month-h"><h3>${AYLAR[m]}</h3><span>${L.length} kitap${pg?' · '+nf(pg)+' sayfa':''}</span>${decor(m)}</div><div class="cgrid ledge">${L.map(b=>citem(b)).join('')}</div></section>`}
-  return `<div class="head"><h2 class="hand">Okuduklarım <small>${S.year}</small></h2><div class="chips">${tog('month','Aylık')}${tog('year','Yıllık')}</div></div>
-  ${reading.length?`<div class="sec-h"><h3>Şu an okuduklarım</h3></div><div class="reading-row">${reading.map(b=>citem(b,false)).join('')}</div>`:''}${body}`;
+    body+=`<section class="month"><div class="month-h"><h3>${AYLAR[m]}</h3><span>${L.length} ${A().item}${pg?' · '+nf(pg)+' '+A().unit:''}</span>${decor(m)}</div><div class="cgrid ledge">${L.map(b=>citem(b)).join('')}</div></section>`}
+  return `${curArea()==='game'?`<div class="buhar"><b>BUHAR</b><span>Kütüphane</span><span>${BOOKS().filter(b=>b.status!=='skip').length} oyun</span><span>${nf(BOOKS().reduce((s,b)=>s+(+b.pages||0),0))} saat ömür</span></div>`:''}<div class="head"><h2 class="hand">${A().doneTitle} <small>${S.year}</small></h2><div class="chips">${tog('month','Aylık')}${tog('year','Yıllık')}</div></div>
+  ${reading.length?`<div class="sec-h"><h3>${A().nowLabel}</h3></div><div class="reading-row">${reading.map(b=>citem(b,false)).join('')}</div>`:''}${body}`;
 }
 
 function vNotes(){
   const f=S.noteFilter;
   const R=readIn(S.year).reverse().filter(b=>f==='all'||b.format===f);
-  const chip=(k,l)=>`<button class="chip" data-act="note-f" data-f="${k}" aria-pressed="${f===k}">${k!=='all'?ico(k):''}${l}</button>`;
-  const cards=R.map((b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">KİTAP NOTU</span><h3>${esc(b.title)}</h3>
-    <div class="rmeta"><span>${esc(b.author||'Yazar yok')}</span>${b.pages?`<span>${b.pages} sayfa</span>`:''}${b.format?`<span>${fmtIco(b.format)} ${FORMATS[b.format]}</span>`:''}</div>
+  const chip=(k,l)=>`<button class="chip" data-act="note-f" data-f="${k}" aria-pressed="${f===k}">${k!=='all'?ico(A().fmtIcon[k]):''}${l}</button>`;
+  const cards=R.map((b,i)=>`<button class="rcard taped" style="--tape:${PCOLS[(i*3)%PCOLS.length]}" data-act="open" data-id="${b.id}">${coverHTML(b)}<div style="min-width:0"><span class="rlabel">${A().noteLabel}</span><h3>${esc(b.title)}</h3>
+    <div class="rmeta"><span>${esc(b.author||'')}</span>${b.pages?`<span>${b.pages} ${A().unit}</span>`:''}${b.format&&A().formats[b.format]?`<span>${fmtIco(b.format)} ${A().formats[b.format]}</span>`:''}</div>
     <div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>
     <p class="rtext ${b.review?'':'none'}">${b.review?esc(b.review):'Henüz not yazılmadı. Eklemek için dokun.'}</p></div></button>`).join('');
-  return `<div class="head"><h2 class="hand">Kitap Notlarım <small>${S.year}</small></h2><div class="chips">${chip('all','Tümü')}${chip('print','Basılı')}${chip('ebook','E-kitap')}${chip('audio','Sesli')}</div></div>
-  ${R.length?`<div class="rgrid">${cards}</div>`:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir kitaba puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
+  return `<div class="head"><h2 class="hand">${A().notes} <small>${S.year}</small></h2><div class="chips">${chip('all','Tümü')}${Object.entries(A().formats).map(([k,l])=>chip(k,l)).join('')}</div></div>
+  ${R.length?`<div class="rgrid">${cards}</div>`:`<div class="empty">Bu yıl için not yok. Bitirdiğin bir ${A().item} için puan ve kısa yorum eklediğinde burada toplanır.</div>`}`;
 }
 
 /* small painted shelf with books and a plant/candles, for notebook page headers */
@@ -382,18 +399,18 @@ function shelfIllu(v){
 }
 /* to-read lists: a tick moves a book one step along  wish list → on my shelf → reading → finished */
 function vTbr(){
-  const W=BOOKS(),wish=W.filter(b=>b.status==='want'&&!b.owned),wait=W.filter(b=>b.status==='want'&&b.owned),now=W.filter(b=>b.status==='reading');
+  const W=BOOKS(),T=A().list,wish=W.filter(b=>b.status==='want'&&!b.owned),wait=W.filter(b=>b.status==='want'&&b.owned),now=W.filter(b=>b.status==='reading');
   const row=(b,i,act,label,extra='')=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="${act}" data-id="${b.id}" aria-label="${esc(b.title)}: ${label}" title="${label}">${ico('tick',3)}</button>
     <button class="tt" data-act="open" data-id="${b.id}">${esc(b.title)}${b.author?`<small>${esc(b.author)}</small>`:''}</button>${extra}</li>`;
-  const sec=(title,sub,hint,list,illu,rows,empty)=>`<section class="notebook"><div class="nb-top"><h3 class="nb-title">${title}<small>${sub}</small></h3>${illu}</div>
-    ${list.length?`<p class="nb-hint">${ico('tick',3)} ${hint}</p><ul class="tlist">${rows}</ul>`:`<div class="empty">${empty}</div>`}</section>`;
-  return `<div class="head"><h2 class="hand">Okunacaklar</h2><span class="muted">${wish.length} istek · ${wait.length} rafta · ${now.length} okunuyor</span></div>
-  <form class="tbr-add" id="tbr-form"><input type="text" id="tbr-in" placeholder="Okumak istediğin kitabın adı (ve yazarı)" autocomplete="off"><button class="btn primary" type="submit">Listeye ekle</button></form>
-  <p class="note" style="margin:-10px 0 16px">Eklediğinde kapak, yazar ve sayfa sayısı internetten otomatik bulunur.</p>
+  const sec=(t,list,illu,rows)=>`<section class="notebook"><div class="nb-top"><h3 class="nb-title">${t[0]}<small>${t[1]}</small></h3>${illu}</div>
+    ${list.length?`<p class="nb-hint">${ico('tick',3)} ${t[2]}</p><ul class="tlist">${rows}</ul>`:`<div class="empty">${t[4]}</div>`}</section>`;
+  const film=curArea()==='film';
+  return `<div class="head"><h2 class="hand">${T.title}</h2><span class="muted">${wish.length} istek · ${wait.length} bekleyen · ${now.length} devam eden</span></div>
+  <form class="tbr-add" id="tbr-form"><input type="text" id="tbr-in" placeholder="${T.ph}" autocomplete="off"><button class="btn primary" type="submit">${T.add}</button></form>
   <div class="nb-pages">
-  ${sec('İstek listem','elimde yok, okumak istiyorum','İşaretle: kitabı aldım, rafa geçsin',wish,shelfIllu(0),wish.map((b,i)=>row(b,i,'tbr-own','Aldım, rafa koy',`<button class="mini" data-act="tbr-start" data-id="${b.id}" title="Almadan başladım (kütüphane, e-kitap…)">Başladım</button>`)).join(''),'İstek listen boş.')}
-  ${sec('Rafta bekleyenler','sahibim, henüz okumadım','İşaretle: okumaya başladım',wait,shelfIllu(1),wait.map((b,i)=>row(b,i+5,'tbr-start','Okumaya başladım')).join(''),'Rafta bekleyen kitap yok.')}
-  ${sec('Okuyorum','şu an elimdekiler','İşaretle: bitirdim, puanını ver',now,shelfIllu(2),now.map((b,i)=>row(b,i+9,'tbr-done','Bitirdim')).join(''),'Şu an okuduğun kitap yok.')}
+  ${sec(T.wish,wish,shelfIllu(0),wish.map((b,i)=>row(b,i,film?'tbr-start':'tbr-own',T.wish[3],film?'':`<button class="mini" data-act="tbr-start" data-id="${b.id}" title="Almadan başladım">Başladım</button>`)).join(''))}
+  ${sec(T.wait,wait,shelfIllu(1),wait.map((b,i)=>row(b,i+5,'tbr-start',T.wait[3])).join(''))}
+  ${sec(T.now,now,shelfIllu(2),now.map((b,i)=>row(b,i+9,'tbr-done',T.now[3])).join(''))}
   </div>`;
 }
 
@@ -422,13 +439,14 @@ function vStats(){
     if(v/R.length>=.07)lbl+=`<text x="${(cx+r*.64*Math.cos(mid)).toFixed(1)}" y="${(cy+r*.64*Math.sin(mid)).toFixed(1)}" text-anchor="middle" dominant-baseline="central">${v}</text>`;
     a0=a1;return `<path d="${d}" fill="${col(c)}"><title>${esc(c)}: ${v} kitap</title></path>`}).join('');
   const legend=cats.map(c=>{const v=ofCat(c).length;return `<li><i style="background:${col(c)}"></i><span>${esc(c)}</span><b>${v}</b></li>`}).join('');
+  const useCount=curArea()==='film';
   const avgOf=a=>{const x=a.filter(b=>+b.rating>0);return x.length?(x.reduce((s,b)=>s+ +b.rating,0)/x.length):null};
   const withPages=R.filter(b=>+b.pages>0),pages=withPages.reduce((s,b)=>s+ +b.pages,0);
   const phone=document.documentElement.dataset.view==='mobile';
   /* pages read per month */
-  const mp=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).reduce((s,b)=>s+(+b.pages||0),0)),mpMax=Math.max(...mp,1);
+  const mp=AYLAR.map((_,i)=>{const L=R.filter(b=>mOf(b.endDate)===i);return useCount?L.length:L.reduce((s,b)=>s+(+b.pages||0),0)}),mpMax=Math.max(...mp,1);
   const nice=Math.pow(10,Math.floor(Math.log10(mpMax))),top2=Math.ceil(mpMax/nice)*nice,grid=[top2/2,top2];
-  const pageBars=`<div class="pchart" style="--h:150px">${grid.map(v=>`<span class="pgrid" style="bottom:calc(${v/top2} * var(--h))"><em>${nf(v)}</em></span>`).join('')}<div class="pbars">${mp.map((v,i)=>`<div class="pcol" title="${AYLAR[i]}: ${nf(v)} sayfa"><span class="pval">${v&&(!phone||v===mpMax)?nf(v):''}</span><i style="height:calc(${v/top2} * var(--h))"></i><span class="plab">${AYLAR[i].slice(0,3)}</span></div>`).join('')}</div></div>`;
+  const pageBars=`<div class="pchart" style="--h:150px">${grid.map(v=>`<span class="pgrid" style="bottom:calc(${v/top2} * var(--h))"><em>${nf(v)}</em></span>`).join('')}<div class="pbars">${mp.map((v,i)=>`<div class="pcol" title="${AYLAR[i]}: ${nf(v)} ${useCount?A().item:A().unit}"><span class="pval">${v&&(!phone||v===mpMax)?nf(v):''}</span><i style="height:calc(${v/top2} * var(--h))"></i><span class="plab">${AYLAR[i].slice(0,3)}</span></div>`).join('')}</div></div>`;
   /* unit columns: books by star rating */
   const rated=R.filter(b=>+b.rating>0),unrated=R.length-rated.length;
   const starCols=[1,2,3,4,5].map(s=>{const L=rated.filter(b=>Math.floor(+b.rating)===s).sort(byCat);
@@ -444,20 +462,20 @@ function vStats(){
   const tile=(k,v,n='')=>`<div class="tile"><div class="k">${k}</div><div class="v">${v}</div>${n?`<div class="n">${n}</div>`:''}</div>`;
   return head+`<div class="st-hero"><div class="st-title">${y}<br>İSTATİSTİKLERİ</div>
     <div class="sticky taped" style="--tape:${PALETTE.sage}"><div><b>${avg==null?'–':avg.toFixed(1).replace('.',',')}</b><span>ortalama puan</span></div><div><b>${R.length}</b><span>toplam kitap</span></div></div></div>
-  <div class="tiles">${tile('Okunan sayfa',pages?nf(pages):'–',withPages.length<R.length?`${R.length-withPages.length} kitabın sayfa bilgisi yok`:'')}${tile('Yazar',Object.keys(au).length,`${newAu} tanesi yeni tanıştığın yazar`)}${tile('Biçim',`<span class="fmts">${['print','ebook','audio'].map(f=>`<span title="${FORMATS[f]}">${ico(f)}${R.filter(b=>b.format===f).length}</span>`).join('')}</span>`)}${tile('En verimli ay',(()=>{const m=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).length);const mx=Math.max(...m);return mx?AYLAR[m.indexOf(mx)]+' · '+mx:'–'})())}</div>
+  <div class="tiles">${tile(useCount?'Toplam':'Okunan sayfa',useCount?R.length:pages?nf(pages):'–',!useCount&&withPages.length<R.length?`${R.length-withPages.length} kaydın bilgisi yok`:'')}${tile(A().who,Object.keys(au).length,`${newAu} tanesi yeni tanışma`)}${tile(A().howLabel.replace(/\?$/,''),`<span class="fmts">${Object.keys(A().formats).map(f=>`<span title="${A().formats[f]}">${ico(A().fmtIcon[f])}${R.filter(b=>b.format===f).length}</span>`).join('')}</span>`)}${tile('En verimli ay',(()=>{const m=AYLAR.map((_,i)=>R.filter(b=>mOf(b.endDate)===i).length);const mx=Math.max(...m);return mx?AYLAR[m.indexOf(mx)]+' · '+mx:'–'})())}</div>
   <div class="st-grid">
     <section class="panel taped" style="--tape:${PALETTE.rose}"><h3 class="st-h">Türler</h3><div class="pie-wrap"><svg class="pie" viewBox="0 0 180 180" role="img" aria-label="Türlere göre kitap dağılımı">${pie}${lbl}</svg><ul class="lg">${legend}</ul></div>
-      <h3 class="st-h" style="margin-top:18px">Aylara göre okunan sayfa</h3>${pageBars}${withPages.length<R.length?`<p class="note">${R.length-withPages.length} kitabın sayfa bilgisi olmadığı için sayılmadı.</p>`:''}</section>
-    <section class="panel taped" style="--tape:${PALETTE.sky}"><h3 class="st-h">Aylara göre kitaplar</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır.</p>
+      <h3 class="st-h" style="margin-top:18px">${useCount?'Aylara göre izlenen':'Aylara göre '+A().unit}</h3>${pageBars}${!useCount&&withPages.length<R.length?`<p class="note">${R.length-withPages.length} kaydın ${A().unit} bilgisi olmadığı için sayılmadı.</p>`:''}</section>
+    <section class="panel taped" style="--tape:${PALETTE.sky}"><h3 class="st-h">Aylara göre ${A().item}</h3><p class="note">Her kare bir kitap; rengi türünü gösterir. Kareye dokununca kitap açılır.</p>
       <div class="units months">${monCols}</div><ul class="lg lg-inline">${legend}</ul></section>
   </div>
-  ${favs.length?`<section class="panel taped favs" style="--tape:${PALETTE.butter}"><h3 class="st-h">En çok okuduğun yazarlar</h3><ol>${favs.map(([a,n])=>`<li><span>${esc(a)}</span><b>${n} kitap</b></li>`).join('')}</ol></section>`:''}`;
+  ${favs.length?`<section class="panel taped favs" style="--tape:${PALETTE.butter}"><h3 class="st-h">En çok ${A().who.toLocaleLowerCase('tr')}</h3><ol>${favs.map(([a,n])=>`<li><span>${esc(a)}</span><b>${n} kitap</b></li>`).join('')}</ol></section>`:''}`;
 }
 
 /* ---------- challenge & stamps ---------- */
 /* bingo cards: 3×3, 4×4 or 5×5; odd sizes get a free centre square */
 const freeIdx=n=>n%2?(n*n-1)/2:-1;
-function shuffled(seed){const r=rng(seed),pool=[...BINGO_POOL];for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}return pool}
+function shuffled(seed){const r=rng(seed),pool=[...poolOf()];for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}return pool}
 function genCard(n,seed,keep=[]){
   const used=new Set(keep.map(c=>c.p)),pool=shuffled(seed).filter(p=>!used.has(p)),fi=freeIdx(n),cells=[];let k=0;
   for(let i=0;i<n*n;i++){if(i===fi){cells.push({p:'SERBEST',b:null});continue}cells.push(k<keep.length?keep[k++]:{p:pool.pop()||'Serbest seçim',b:null})}
@@ -475,6 +493,7 @@ const COLORS_RE=/kırmızı|mavi|yeşil|sarı|beyaz|siyah|mor|pembe|turuncu|gri|
 const ANIMALS_RE=/kuş|kedi|köpek|kurt|tilki|köstebek|\bfil\b|yılan|serçe|kartal|aslan|balık|\bat\b|ayı|baykuş|karga|kelebek|tavşan|bird|\bcat\b|\bdog\b|wolf|fox|horse|snake|lion/i;
 function bingoMatch(p,b,y){
   const t=String(p||'').toLocaleLowerCase('tr').trim(),g=genreOf(b),pg=+b.pages||0,yr=+b.year||0;
+  if(curArea()!=='book')return mediaMatch(p,b,y);
   const gi=GKEY.get(t);if(gi!=null)return g===GENRES[gi];
   const rules=[
     [/kapaklı|kapağında|kapak tasarımı/,()=>false],
@@ -542,6 +561,7 @@ function goalPlant(p){
   </svg>`;
 }
 function computeStamps(y){
+  if(curArea()!=='book')return mediaStamps(y);
   const R=readIn(y),pages=R.reduce((s,b)=>s+(+b.pages||0),0);
   const byM=Array.from({length:12},(_,m)=>R.filter(b=>mOf(b.endDate)===m));
   const mPages=byM.map(a=>a.reduce((s,b)=>s+(+b.pages||0),0));
@@ -597,20 +617,20 @@ function vStamps(){
   const seenKey=`rj-stamps-${S.viewing}-${y}`;let seen=[];try{seen=JSON.parse(localStorage.getItem(seenKey)||'[]')}catch{}
   const isNew=id=>S.viewing===S.me&&seen.length>0&&!seen.includes(id);
   const stamp=(s,i)=>`<div class="stamp t${s.tier} ${s.ok?'':'locked'} ${s.ok&&isNew(s.id)?'new':''}" style="--c:${PCOLS[(i*5)%PCOLS.length]}" title="${esc(s.ds)} · ${TIERS[s.tier]}"><div class="stamp-in"><span class="tier" aria-label="${TIERS[s.tier]}"></span>${ico(s.g,1.5)}<span class="nm">${esc(s.nm)}</span><span class="ds">${esc(s.ds)}</span><span class="pr">${s.ok?'Toplandı':`${nf(s.val)} / ${nf(s.target)}`}</span>${s.ok?'':`<span class="prog"><i style="width:${Math.round(s.val/s.target*100)}%"></i></span>`}</div>${s.ok?`<span class="pm">${y}</span>`:''}</div>`;
-  const mstamp=(a,m)=>`<div class="stamp mstamp ${a.length?'':'locked'} ${a.length&&isNew('m'+m)?'new':''}" style="--c:${MONTH_ART[m][0]}"><div class="stamp-in"><svg class="mart" viewBox="0 0 40 40" aria-hidden="true">${MONTH_ART[m][1]}</svg><span class="mn">${AYLAR[m]}</span><span class="pr">${a.length?a.length+' kitap':'—'}</span></div>${a.length?`<span class="pm pm-m"><b>${y}</b>okundu</span>`:''}</div>`;
+  const mstamp=(a,m)=>`<div class="stamp mstamp ${a.length?'':'locked'} ${a.length&&isNew('m'+m)?'new':''}" style="--c:${MONTH_ART[m][0]}"><div class="stamp-in"><svg class="mart" viewBox="0 0 40 40" aria-hidden="true">${MONTH_ART[m][1]}</svg><span class="mn">${AYLAR[m]}</span><span class="pr">${a.length?a.length+' kitap':'—'}</span></div>${a.length?`<span class="pm pm-m"><b>${y}</b>${curArea()==='book'?'okundu':curArea()==='film'?'izlendi':'bitti'}</span>`:''}</div>`;
   const earnedIds=[...list.filter(s=>s.ok).map(s=>s.id),...byM.map((a,m)=>a.length?'m'+m:null).filter(Boolean)];
   if(S.viewing===S.me)setTimeout(()=>{try{localStorage.setItem(seenKey,JSON.stringify(earnedIds))}catch{}},1500);
   return `<div class="head"><h2 class="hand">Hedef <small>${y}</small></h2><span class="muted">${earned} / ${list.length+12} pul toplandı</span></div>
-  <div class="ch"><div class="panel taped goal-panel" style="--tape:${PALETTE.sage}">${goalPlant(R.length/goal)}<div class="goal-txt">
+  <div class="ch"><div class="panel taped goal-panel" style="--tape:${PALETTE.sage}">${goalArt(R.length/goal)}<div class="goal-txt">
     <div class="goal-num">${R.length} <small>/ ${goal} kitap</small></div>
     <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${goal}" aria-valuenow="${R.length}"><i style="width:${Math.min(100,R.length/goal*100)}%"></i></div>
     <div>${pace}${cur?` <span class="muted">· ${left} gün kaldı</span>`:''}</div>
     <div class="goal-edit"><label for="goal-in">Yıllık hedef</label><input type="number" id="goal-in" min="1" max="999" value="${goal}"><span>kitap</span></div>
-    <p class="note" style="margin:6px 0 0">${R.length>=goal?'Çiçeğin açtı!':'Fidan, hedefe yaklaştıkça büyüyor; hedefe ulaşınca çiçek açar.'}</p></div>
+    <p class="note" style="margin:6px 0 0">${curArea()==='film'?(R.length>=goal?'Kova taştı, afiyet olsun!':'Kova, hedefe yaklaştıkça dolar.'):curArea()==='game'?(R.length>=goal?'Maksimum seviye!':'Hedefe yaklaştıkça seviye atlarsın.'):(R.length>=goal?'Çiçeğin açtı!':'Fidan, hedefe yaklaştıkça büyüyor; hedefe ulaşınca çiçek açar.')}</p></div>
   </div><div class="panel stats taped" style="--tape:${PALETTE.rose}">
     <div class="stat"><div class="k">Okunan sayfa</div><div class="v">${nf(pages)}</div></div>
     <div class="stat"><div class="k">Ortalama puan</div><div class="v">${avg}${avg!=='–'?' <span class="stars" style="--r:'+avg+';font-size:.8rem">★★★★★</span>':''}</div></div>
-    <div class="stat"><div class="k">Biçim</div><div class="fmts"><span title="Basılı">${ico('print')}${fc('print')}</span><span title="E-kitap">${ico('ebook')}${fc('ebook')}</span><span title="Sesli">${ico('audio')}${fc('audio')}</span></div></div>
+    <div class="stat"><div class="k">Biçim</div><div class="fmts">${Object.keys(A().formats).map(f=>`<span title="${A().formats[f]}">${ico(A().fmtIcon[f])}${fc(f)}</span>`).join('')}</div></div>
     <div class="stat"><div class="k">En çok okunan tür</div><div class="v" style="font-size:1.1rem">${topG?esc(topG[0]):'–'}</div></div>
   </div></div>
   <section class="album taped" style="--tape:${PALETTE.butter}"><div class="sec-h"><h3>Ay Pulları</h3><span>Her ay en az bir kitap bitir</span></div>
@@ -647,7 +667,7 @@ function openSheet(html){$('#sheet').innerHTML=html;$('#overlay').hidden=false;d
 function closeSheet(){$('#overlay').hidden=true;document.body.style.overflow='';F=null;S.sheetRefresh=null}
 function openEditor(b,preset={}){
   const isDemo=b&&demo();
-  F=b?{...b,...preset}:{id:newId(),title:'',author:'',pages:'',year:'',genre:'',publisher:'',about:'',color:'',status:'want',owned:true,format:'print',startDate:'',endDate:'',rating:0,review:'',addedAt:Date.now(),...preset};
+  F=b?{...b,...preset}:{id:newId(),title:'',author:'',pages:'',year:'',genre:'',publisher:'',about:'',color:'',status:'want',owned:curArea()==='book',format:Object.keys(A().formats)[0],startDate:'',endDate:'',rating:0,review:'',addedAt:Date.now(),...preset};
   if(isDemo){F.id=newId();F._fromDemo=true}
   F._orig=b?b.status:null;F._new=!b||isDemo;
   renderEditor();
@@ -656,7 +676,7 @@ function openEditor(b,preset={}){
 function renderEditor(){
   const b=F,col=b.color||autoColor(b.title||'x');
   const seg=(k,v,l,ic)=>`<button type="button" data-act="ed-set" data-k="${k}" data-v="${v}" aria-pressed="${b[k]===v}">${ic?ico(ic):''}${l}</button>`;
-  openSheet(`<div class="sheet-h"><h2>${b._fromDemo?'Örnekten kaydet':b._new?'Yeni kitap':'Kitabı düzenle'}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  openSheet(`<div class="sheet-h"><h2>${b._new?'Yeni '+A().item:A().Item+' kaydı'}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <form class="sheet-b" id="ed-form">
     <div class="ed-top">
       <div class="ed-cover"><div id="ed-prev">${coverHTML({...b,color:col})}</div>
@@ -665,12 +685,10 @@ function renderEditor(){
         ${coverSrc(b)?'<button type="button" class="btn ghost" style="font-size:.78rem;padding:5px 8px;justify-content:center" data-act="ed-nophoto">Fotoğrafı kaldır</button>':''}
       </div>
       <div style="display:grid;gap:10px;min-width:0">
-        <div class="field"><label for="f-title">Kitap adı</label><div class="title-row"><input type="text" id="f-title" data-k="title" value="${esc(b.title)}" placeholder="ör. Kürk Mantolu Madonna" required>
-          <button type="button" class="btn" data-act="ed-fetch" title="Kapak, yazar ve sayfa sayısını internetten bul">${ico('sparkle')}<span class="add-txt">Bilgileri getir</span></button></div></div>
+        <div class="field"><label for="f-title">${A().Item} adı</label><div class="title-row"><input type="text" id="f-title" data-k="title" value="${esc(b.title)}" placeholder="Yazmaya başla, sonuçlar kendiliğinden gelir" required autocomplete="off"></div></div>
         ${busy?`<div class="busy"><span class="spin"></span>${esc(busy)}</div>`:''}
-        ${b._results&&b._results.length?`<div class="field"><span class="lbl">Hangisi? Seçince kapak ve bilgiler dolar</span><div class="results">${b._results.map((r,i)=>`<button type="button" class="res" data-act="ed-pick" data-i="${i}">${r.cover?`<img src="${esc(r.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<i></i>'}<span><b>${esc(r.title)}</b>${esc([r.author,r.year,r.pages?r.pages+' sayfa':''].filter(Boolean).join(' · '))}</span></button>`).join('')}</div></div>`:''}
-        <div class="row"><div class="field"><label for="f-author">Yazar</label><input type="text" id="f-author" data-k="author" value="${esc(b.author)}"></div>
-          <div class="field"><label for="f-pages">Sayfa</label><input type="number" id="f-pages" data-k="pages" min="1" value="${esc(b.pages)}"></div></div>
+                <div class="row"><div class="field"><label for="f-author">${A().who}</label><input type="text" id="f-author" data-k="author" value="${esc(b.author)}"></div>
+          <div class="field"><label for="f-pages">${A().unitLong}</label><input type="number" id="f-pages" data-k="pages" min="1" value="${esc(b.pages)}"></div></div>
         <div class="row">
           <div class="field"><label for="f-year">Yayın yılı</label><input type="number" id="f-year" data-k="year" value="${esc(b.year)}"></div></div>
         <div class="row"><div class="field"><label for="f-series">Seri</label><input type="text" id="f-series" data-k="series" value="${esc(b.series)}" placeholder="ör. Farseer Üçlemesi"></div>
@@ -680,14 +698,17 @@ function renderEditor(){
     <div class="field"><span class="lbl">Tür</span><div class="gchips" role="group" aria-label="Tür">${allGenres().map(g=>`<button type="button" class="gchip" data-act="ed-genre" data-v="${esc(g)}" aria-pressed="${b.genre?genreOf(b)===g:false}">${esc(g)}</button>`).join('')}</div>
       <input type="text" id="f-genre" data-k="genre" value="${esc(b.genre)}" placeholder="Listede yoksa yeni türü buraya yaz" aria-label="Tür"></div>
     ${b.about?`<div class="about">${esc(b.about)}</div>`:''}
+    ${peerScores(b)}
     ${b.series&&!b._new?`<p class="note" style="margin:0">Seri: ${esc(b.series)}${b.seriesNo?' #'+esc(b.seriesNo):''}</p>`:''}
-    <div class="field"><span class="lbl">Durum</span><div class="seg">${seg('status','want','Okunacak')}${seg('status','reading','Okuyorum')}${seg('status','read','Okudum')}</div></div>
-    <label class="toggle"><input type="checkbox" id="f-owned" ${b.owned?'checked':''}> Kitaplığımda var (sahibim)</label>
-    <div class="field"><span class="lbl">Nasıl okudum?</span><div class="seg">${seg('format','print','Basılı','print')}${seg('format','ebook','E-kitap','ebook')}${seg('format','audio','Sesli','audio')}</div></div>
-    ${b.status!=='want'?`<div class="row"><div class="field"><label for="f-start">Başladım</label><input type="date" id="f-start" data-k="startDate" value="${esc(b.startDate)}"></div>
-      ${b.status==='read'?`<div class="field"><label for="f-end">Bitirdim</label><input type="date" id="f-end" data-k="endDate" value="${esc(b.endDate)}"></div>`:''}</div>`:''}
-    ${b.status==='read'?`<div class="field"><span class="lbl">Puanım</span><div class="rate"><span class="rb">${stars(b.rating)}${[1,2,3,4,5].map(n=>`<button type="button" style="left:${(n-1)*20}%" data-act="ed-rate" data-v="${n}" aria-label="${n} yıldız"></button>`).join('')}</span><output>${b.rating?String(b.rating).replace('.',','):'—'}</output></div><span class="note">Aynı yıldıza tekrar dokunursan yarım yıldız olur.</span></div>
-    <div class="field"><label for="f-review">Kısa yorumum</label><textarea id="f-review" data-k="review" placeholder="Bu kitap bende ne bıraktı?">${esc(b.review)}</textarea></div>`:''}
+    <div class="field"><span class="lbl">Durum</span><div class="seg">${Object.entries(A().status).map(([k,l])=>seg('status',k,l)).join('')}</div></div>
+    <label class="toggle"><input type="checkbox" id="f-owned" ${b.owned?'checked':''}> ${A().ownLabel}</label>
+    <div class="field"><span class="lbl">${A().howLabel}</span><div class="seg">${Object.entries(A().formats).map(([k,l])=>seg('format',k,l,A().fmtIcon[k])).join('')}</div></div>
+    ${b.status!=='want'?`<div class="row"><div class="field"><label for="f-start">${A().start}</label><input type="date" id="f-start" data-k="startDate" value="${esc(b.startDate)}"></div>
+      ${b.status==='read'?`<div class="field"><label for="f-end">${A().end}</label><input type="date" id="f-end" data-k="endDate" value="${esc(b.endDate)}"></div>`:''}</div>`:''}
+    ${b.status==='read'&&A().scale===10?`<div class="field"><label for="f-rate10">Puanım: <output id="o-rate">${b.rating?String(b.rating).replace('.',','):'–'}</output> / 10</label><input type="range" id="f-rate10" data-k="rating" min="0" max="10" step="0.5" value="${+b.rating||0}"></div>`:''}
+    ${b.status==='read'&&A().scale===5?`<div class="field"><span class="lbl">Puanım</span><div class="rate"><span class="rb">${stars(b.rating)}${[1,2,3,4,5].map(n=>`<button type="button" style="left:${(n-1)*20}%" data-act="ed-rate" data-v="${n}" aria-label="${n} yıldız"></button>`).join('')}</span><output>${b.rating?String(b.rating).replace('.',','):'—'}</output></div><span class="note">Aynı yıldıza tekrar dokunursan yarım yıldız olur.</span></div>`:''}
+    ${b.status==='read'?`<div class="field"><label for="f-review">Kısa yorumum</label><textarea id="f-review" data-k="review" placeholder="${A().reviewPh}">${esc(b.review)}</textarea></div>`:''}
+    <div id="ed-results"></div>
     <div class="ed-foot"><div>${!b._new?`<button type="button" class="btn danger ghost" data-act="ed-del" id="del-btn">Sil</button>`:''}</div>
       <div style="display:flex;gap:8px"><button type="button" class="btn" data-act="close">Vazgeç</button><button type="submit" class="btn primary">Kaydet</button></div></div>
   </form>`);
@@ -717,16 +738,16 @@ async function searchBooks(q){
 const norm=t=>String(t||'').toLocaleLowerCase('tr').replace(/[^a-z0-9çğıöşüâî]+/g,' ').trim();
 const sameTitle=(a,b)=>{a=norm(a);b=norm(b);return!!a&&!!b&&(a===b||a.startsWith(b)||b.startsWith(a))};
 async function fetchInfo(){
-  syncInputs();const t=(F.title||'').trim();if(!t){toast('Önce kitabın adını yaz.');$('#f-title')?.focus();return}
-  busy='Kitap aranıyor…';F._results=null;renderEditor();
-  const res=await searchBooks(t+(F.author?' '+F.author:''));
-  busy='';if(!F)return;F._results=res;renderEditor();
-  if(!res.length)toast('Kitap bulunamadı; bilgileri elle doldurabilirsin.');
+  const t=($('#f-title')?.value||'').trim();if(t.length<3)return;const my=++searchSeq;
+  paintResults(null,true);
+  const res=await searchMedia(t);
+  if(!F||my!==searchSeq)return;F._results=res;paintResults(res,false);
 }
 function applyResult(r,overwrite){
   const set=(k,v)=>{if(v!==''&&v!=null&&(overwrite||!F[k]))F[k]=v};
   set('author',r.author);set('pages',r.pages);set('year',r.year);set('about',r.about);
   if(r.cover&&(overwrite||!F.coverUrl))F.coverUrl=r.cover;
+  set('genre',r.genre);set('imdb',r.imdb);set('imdbId',r.imdbId);if(r.format&&A().formats[r.format])F.format=r.format;if(r.title&&overwrite)F.title=r.title;
 }
 async function saveEditor(){
   syncInputs();const b=F;b.title=(b.title||'').trim();
@@ -745,17 +766,17 @@ async function saveEditor(){
 /* ---------- bulk fill: real covers and page counts from the book search ---------- */
 const needsInfo=()=>S.books.filter(b=>!b.infoTried&&(!b.pages||(!b.coverUrl&&!b.coverData)));
 function fillBanner(){
-  if(!S.canEdit)return '';
+  if(!S.canEdit||curArea()==='film')return '';
   if(S.filling)return `<div class="banner"><span class="busy"><span class="spin"></span>Kapaklar ve sayfa sayıları aranıyor: ${S.filling.done} / ${S.filling.total} kitap</span></div>`;
   const n=needsInfo().length;if(!n)return '';
-  return `<div class="banner"><span><b>${n} kitabın</b> kapağı ya da sayfa sayısı eksik. İnternetten bulup ekleyebilirim; yanlış eşleşen olursa kitabı açıp düzeltebilirsin.</span><button class="btn primary" data-act="fill-missing">${ico('sparkle')}Kapakları ve sayfaları getir</button></div>`;
+  return `<div class="banner"><span><b>${n} kaydın</b> kapağı ya da bilgisi eksik. İnternetten bulup ekleyebilirim; yanlış eşleşen olursa kitabı açıp düzeltebilirsin.</span><button class="btn primary" data-act="fill-missing">${ico('sparkle')}Kapakları ve sayfaları getir</button></div>`;
 }
 async function fillMissing(){
   const M=needsInfo();if(!M.length||S.filling||!S.canEdit)return;
   S.filling={done:0,total:M.length};render();let found=0;
   for(const c of M){
     const b=S.books.find(x=>x.id===c.id);if(!b)continue;
-    const res=(await searchBooks(b.title+' '+(b.author||''))).filter(r=>sameTitle(r.title,b.title));
+    const res=(await searchMedia(b.title+' '+(curArea()==='book'?(b.author||''):''))).filter(r=>sameTitle(r.title,b.title));
     const u={...b,infoTried:true};
     const r=res.find(x=>x.cover)||res[0];
     if(r){if(!u.pages)u.pages=+(res.find(x=>x.pages)||{}).pages||'';if(!u.coverUrl&&!u.coverData&&r.cover)u.coverUrl=r.cover;if(!u.year&&r.year)u.year=+r.year;if(!u.about&&r.about)u.about=r.about;found++}
@@ -804,12 +825,13 @@ async function pickMe(id){S.me=id;ls.set(K.me,id);await Store.open(id)}
 /* ---------- read-only book card for visitors ---------- */
 const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','bingo-cell','bingo-shuffle','bingo-reset','bingo-size','bingo-new','bingo-del','bingo-accept','bingo-accept-all','fill-missing']);
 function openDetail(b){
-  const meta=[b.author,b.pages?b.pages+' sayfa':'',b.year,b.genre,b.series?`${b.series}${b.seriesNo?' #'+b.seriesNo:''}`:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
-  openSheet(`<div class="sheet-h"><h2>${esc(STATUS[b.status]||'Kitap')}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
+  const meta=[b.author,b.pages?b.pages+' '+A().unit:'',b.imdb?'IMDb '+b.imdb:'',b.year,b.genre,b.series?`${b.series}${b.seriesNo?' #'+b.seriesNo:''}`:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
+  openSheet(`<div class="sheet-h"><h2>${esc(A().status[b.status]||A().Item)}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b"><div class="ed-top"><div>${coverHTML(b)}</div><div style="min-width:0;display:grid;gap:6px;align-content:start">
     <h3 style="font-family:var(--f-display);font-weight:400;font-size:1.35rem;line-height:1.2">${esc(b.title)}</h3><div class="rmeta">${meta}</div>
     ${b.status==='read'?`<div class="rmeta">${stars(b.rating)}<span>${b.startDate?fmtDate(b.startDate)+' → ':''}${fmtDate(b.endDate)}</span></div>`:b.startDate?`<div class="rmeta"><span>Başladı: ${fmtDate(b.startDate)}</span></div>`:''}
-    ${b.format?`<div class="rmeta">${fmtIco(b.format)}<span>${FORMATS[b.format]}</span></div>`:''}</div></div>
+    ${b.format?`<div class="rmeta">${fmtIco(b.format)}<span>${A().formats[b.format]||''}</span></div>`:''}</div></div>
+    ${peerScores(b)}
     ${b.about?`<div class="about">${esc(b.about)}</div>`:''}
     ${b.review?`<p class="rtext">${esc(b.review)}</p>`:''}
   </div>`);
@@ -823,7 +845,7 @@ function openBingo(i){
 }
 function renderBingoSheet(){
   const R=readIn(S.year).slice().reverse().sort((a,b)=>bingoMatch(BC.p,b,S.year)-bingoMatch(BC.p,a,S.year)),used=new Set(BC.card.cells.map((c,j)=>j===BC.i?null:c.p));
-  const opts=[BC.p,...BINGO_POOL.filter(p=>p!==BC.p&&!used.has(p))];
+  const opts=[BC.p,...poolOf().filter(p=>p!==BC.p&&!used.has(p))];
   openSheet(`<div class="sheet-h"><h2>Bingo karesi</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b">
     <div class="field"><span class="lbl">Görev (birini seç)</span><div class="gchips bopts">${opts.map(p=>`<button type="button" class="gchip" data-act="bingo-opt" data-v="${esc(p)}" aria-pressed="${p===BC.p}">${esc(p)}</button>`).join('')}</div>
@@ -892,7 +914,7 @@ const ACT={
     toast(`${cur.name} silindi.`,()=>{S.settings={...S.settings,bingoCards:prevAll};Store.saveSettings();render()})},
   'bingo-accept':a=>{const card=structuredClone(bingoCard(S.year)),i=+a.dataset.i,prev=structuredClone(card);card.cells[i].b=a.dataset.id;saveBingo(card);toast('Kareye eklendi.',()=>saveBingo(prev))},
   'bingo-accept-all':()=>{const card=structuredClone(bingoCard(S.year)),prev=structuredClone(card),sug=bingoSuggest(card,S.year);for(const[i,b]of Object.entries(sug))card.cells[i].b=b.id;saveBingo(card);toast(`${Object.keys(sug).length} kare dolduruldu.`,()=>saveBingo(prev))},
-  'bingo-shuffle':()=>{const card=structuredClone(bingoCard(S.year)),prev=structuredClone(card),fi=freeIdx(card.size),used=new Set(card.cells.map(c=>c.p));const pool=BINGO_POOL.filter(p=>!used.has(p)).sort(()=>Math.random()-.5);
+  'bingo-shuffle':()=>{const card=structuredClone(bingoCard(S.year)),prev=structuredClone(card),fi=freeIdx(card.size),used=new Set(card.cells.map(c=>c.p));const pool=poolOf().filter(p=>!used.has(p)).sort(()=>Math.random()-.5);
     card.cells.forEach((c,i)=>{if(i!==fi&&!c.b&&pool.length){c.p=pool.pop()}});saveBingo(card);toast('Boş kareler yenilendi.',()=>saveBingo(prev))},
   'bingo-reset':()=>ACT['bingo-new'](),
 };
@@ -923,9 +945,9 @@ document.addEventListener('submit',async e=>{
   if(e.target.id==='tbr-form'){
     const inp=$('#tbr-in'),raw=inp.value.trim();if(!raw)return;
     const [title,author]=raw.split(/\s+[-–—]\s+/);
-    const b={id:newId(),title:title.trim(),author:(author||'').trim(),status:'want',owned:false,format:'print',color:autoColor(title),addedAt:Date.now(),rating:0};
-    inp.value='';await Store.saveBook(b);toast(`“${b.title}” okunacaklara eklendi.`);
-    try{const res=(await searchBooks(b.title+' '+b.author)).filter(r=>sameTitle(r.title,b.title));const cur=S.books.find(x=>x.id===b.id);
+    const b={id:newId(),title:title.trim(),author:(author||'').trim(),status:'want',owned:false,format:Object.keys(A().formats)[0],color:autoColor(title),addedAt:Date.now(),rating:0};
+    inp.value='';await Store.saveBook(b);toast(`“${b.title}” listeye eklendi.`);
+    try{const res=(await searchMedia(b.title+' '+b.author)).filter(r=>sameTitle(r.title,b.title));const cur=S.books.find(x=>x.id===b.id);
       if(cur&&res.length){const r=res.find(x=>x.cover)||res[0];await Store.saveBook({...cur,author:cur.author||r.author,pages:cur.pages||+(res.find(x=>x.pages)||{}).pages||'',year:cur.year||r.year,coverUrl:r.cover||cur.coverUrl,about:cur.about||r.about})}}catch{}
   }
 });

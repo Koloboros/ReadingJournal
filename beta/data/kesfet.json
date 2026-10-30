@@ -1,0 +1,2830 @@
+{
+ "films": [
+  {
+   "id": "f69",
+   "format": "film",
+   "title": "Prisoners",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Denis Villeneuve",
+   "genre": "",
+   "imdb": 8.2,
+   "imdbId": "tt1392214"
+  },
+  {
+   "id": "f77",
+   "format": "film",
+   "title": "Close Up",
+   "year": 1990,
+   "yearLabel": "1990",
+   "author": "Abbas Kiarostami",
+   "genre": "",
+   "imdb": 8.2,
+   "imdbId": "tt0100234"
+  },
+  {
+   "id": "f84",
+   "format": "film",
+   "title": "Three Billboards Outside Ebbing, Missouri",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Martin McDonagh",
+   "genre": "Suç",
+   "imdb": 8.1,
+   "imdbId": "tt5027774",
+   "tags": [
+    "Suç",
+    "Drama",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f86",
+   "format": "film",
+   "title": "Mandariinid",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Zaza Urushadze",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt2991224"
+  },
+  {
+   "id": "f89",
+   "format": "film",
+   "title": "Memories of Murder",
+   "year": 2003,
+   "yearLabel": "2003",
+   "author": "Bong Joon Ho",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt0353969"
+  },
+  {
+   "id": "f90",
+   "format": "film",
+   "title": "The Color of Paradise",
+   "year": 1999,
+   "yearLabel": "1999",
+   "author": "Majid Majidi",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt0191043"
+  },
+  {
+   "id": "f94",
+   "format": "film",
+   "title": "Barry Lyndon",
+   "year": 1975,
+   "yearLabel": "1975",
+   "author": "Stanley Kubrick",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt0072684"
+  },
+  {
+   "id": "f95",
+   "format": "film",
+   "title": "Stand by Me",
+   "year": 1986,
+   "yearLabel": "1986",
+   "author": "Rob Reiner",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt0092005"
+  },
+  {
+   "id": "f98",
+   "format": "film",
+   "title": "Barfi!",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Anurag Basu",
+   "genre": "Komedi",
+   "imdb": 8.1,
+   "imdbId": "tt2082197",
+   "tags": [
+    "Komedi",
+    "Drama",
+    "Romantik",
+    "Hint"
+   ]
+  },
+  {
+   "id": "f99",
+   "format": "film",
+   "title": "It Happened One Night",
+   "year": 1934,
+   "yearLabel": "1934",
+   "author": "Frank Capra",
+   "genre": "Romantik",
+   "imdb": 8.1,
+   "imdbId": "tt0025316",
+   "tags": [
+    "Romantik",
+    "Komedi",
+    "Eski"
+   ]
+  },
+  {
+   "id": "f103",
+   "format": "film",
+   "title": "Portrait Of A Lady On Fire",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Céline Sciamma",
+   "genre": "",
+   "imdb": 8,
+   "imdbId": "tt8613070"
+  },
+  {
+   "id": "f112",
+   "format": "film",
+   "title": "Something the Lord Made",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Joseph Sargent",
+   "genre": "Drama",
+   "imdb": 8,
+   "imdbId": "tt0386792",
+   "tags": [
+    "Drama",
+    "Biyografi"
+   ]
+  },
+  {
+   "id": "f113",
+   "format": "film",
+   "title": "Persona",
+   "year": 1966,
+   "yearLabel": "1966",
+   "author": "Ingmar Bergman",
+   "genre": "",
+   "imdb": 8,
+   "imdbId": "tt0060827"
+  },
+  {
+   "id": "f114",
+   "format": "film",
+   "title": "Groundhog Day",
+   "year": 1993,
+   "yearLabel": "1993",
+   "author": "Harold Ramis",
+   "genre": "Komedi",
+   "imdb": 8,
+   "imdbId": "tt0107048",
+   "tags": [
+    "Komedi",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f128",
+   "format": "film",
+   "title": "Shoplifters",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Hirokazu Koreeda",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt8075192"
+  },
+  {
+   "id": "f132",
+   "format": "film",
+   "title": "In Bruges",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Martin McDonagh",
+   "genre": "Komedi",
+   "imdb": 7.9,
+   "imdbId": "tt0780536",
+   "tags": [
+    "Komedi",
+    "Suç"
+   ]
+  },
+  {
+   "id": "f133",
+   "format": "film",
+   "title": "Children of Men",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "Alfonso Cuarón",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0206634"
+  },
+  {
+   "id": "f136",
+   "format": "film",
+   "title": "Eternity and A Day",
+   "year": 1998,
+   "yearLabel": "1998",
+   "author": "Theodoros Angelopoulos",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0156794"
+  },
+  {
+   "id": "f137",
+   "format": "film",
+   "title": "The Sacrifice",
+   "year": 1986,
+   "yearLabel": "1986",
+   "author": "Andrei Tarkovsky",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0091670"
+  },
+  {
+   "id": "f138",
+   "format": "film",
+   "title": "Nostalghia",
+   "year": 1983,
+   "yearLabel": "1983",
+   "author": "Andrei Tarkovsky",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0086022"
+  },
+  {
+   "id": "f139",
+   "format": "film",
+   "title": "Mirror",
+   "year": 1975,
+   "yearLabel": "1975",
+   "author": "Andrei Tarkovsky",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0072443"
+  },
+  {
+   "id": "f140",
+   "format": "film",
+   "title": "Solaris",
+   "year": 1972,
+   "yearLabel": "1972",
+   "author": "Andrei Tarkovsky",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0069293"
+  },
+  {
+   "id": "f141",
+   "format": "film",
+   "title": "Sevmek Zamanı",
+   "year": 1965,
+   "yearLabel": "1965",
+   "author": "Metin Erksan",
+   "genre": "",
+   "imdb": 7.9,
+   "imdbId": "tt0167400"
+  },
+  {
+   "id": "f147",
+   "format": "film",
+   "title": "Joji",
+   "year": 2021,
+   "yearLabel": "2021",
+   "author": "Dileesh Pothan",
+   "genre": "Drama",
+   "imdb": 7.8,
+   "imdbId": "tt13206926",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f154",
+   "format": "film",
+   "title": "Manchester By The Sea",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "Kenneth Lonergan",
+   "genre": "Drama",
+   "imdb": 7.8,
+   "imdbId": "tt4034228",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f156",
+   "format": "film",
+   "title": "Straight Outta Compton",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "F. Gary Gray",
+   "genre": "",
+   "imdb": 7.8,
+   "imdbId": "tt1398426"
+  },
+  {
+   "id": "f158",
+   "format": "film",
+   "title": "About Time",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Richard Curtis",
+   "genre": "Komedi",
+   "imdb": 7.8,
+   "imdbId": "tt2194499",
+   "tags": [
+    "Komedi",
+    "Drama",
+    "Fantastik"
+   ]
+  },
+  {
+   "id": "f160",
+   "format": "film",
+   "title": "Serçelerin Şarkısı (Avaze gonjeshk-ha)",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Majid Majidi",
+   "genre": "",
+   "imdb": 7.8,
+   "imdbId": "tt0997246"
+  },
+  {
+   "id": "f161",
+   "format": "film",
+   "title": "American Gangster",
+   "year": 2007,
+   "yearLabel": "2007",
+   "author": "Ridley Scott",
+   "genre": "Suç",
+   "imdb": 7.8,
+   "imdbId": "tt0765429",
+   "tags": [
+    "Suç",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f164",
+   "format": "film",
+   "title": "The Chorus",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Christophe Barratier",
+   "genre": "",
+   "imdb": 7.8,
+   "imdbId": "tt0372824"
+  },
+  {
+   "id": "f166",
+   "format": "film",
+   "title": "You Can't Take It with You",
+   "year": 1938,
+   "yearLabel": "1938",
+   "author": "Frank Capra",
+   "genre": "Drama",
+   "imdb": 7.8,
+   "imdbId": "tt0030993",
+   "tags": [
+    "Drama",
+    "Romantik",
+    "Eski",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f168",
+   "format": "film",
+   "title": "Brazil",
+   "year": 1985,
+   "yearLabel": "1985",
+   "author": "Terry Gilliam",
+   "genre": "",
+   "imdb": 7.8,
+   "imdbId": "tt0088846"
+  },
+  {
+   "id": "f173",
+   "format": "film",
+   "title": "Druk (Another Round)",
+   "year": 2020,
+   "yearLabel": "2020",
+   "author": "Thomas Vinterberg",
+   "genre": "",
+   "imdb": 7.7,
+   "imdbId": "tt10288566"
+  },
+  {
+   "id": "f183",
+   "format": "film",
+   "title": "Lost in Translation",
+   "year": 2003,
+   "yearLabel": "2003",
+   "author": "Sofia Coppola",
+   "genre": "",
+   "imdb": 7.7,
+   "imdbId": "tt0335266"
+  },
+  {
+   "id": "f184",
+   "format": "film",
+   "title": "My Dinner with Andre",
+   "year": 1981,
+   "yearLabel": "1981",
+   "author": "Louis Malle",
+   "genre": "Drama",
+   "imdb": 7.7,
+   "imdbId": "tt0082783",
+   "tags": [
+    "Drama",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f185",
+   "format": "film",
+   "title": "Primal Fear",
+   "year": 1996,
+   "yearLabel": "1996",
+   "author": "Gregory Hoblit",
+   "genre": "Suç",
+   "imdb": 7.7,
+   "imdbId": "tt0117381",
+   "tags": [
+    "Suç",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f186",
+   "format": "film",
+   "title": "Being John Malkovich",
+   "year": 1999,
+   "yearLabel": "1999",
+   "author": "Spike Jonze",
+   "genre": "",
+   "imdb": 7.7,
+   "imdbId": "tt0120601",
+   "tags": [
+    "garip bişi"
+   ]
+  },
+  {
+   "id": "f187",
+   "format": "film",
+   "title": "Philadelphia",
+   "year": 1993,
+   "yearLabel": "1993",
+   "author": "Jonathan Demme",
+   "genre": "",
+   "imdb": 7.7,
+   "imdbId": "tt0107818",
+   "tags": [
+    "Hukuk falan",
+    "Hom Hanks",
+    "Denzel Washington"
+   ]
+  },
+  {
+   "id": "f190",
+   "format": "film",
+   "title": "The Banshees of Inisherin",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Martin McDonagh",
+   "genre": "Drama",
+   "imdb": 7.6,
+   "imdbId": "tt11813216",
+   "tags": [
+    "Drama",
+    "Trajedi"
+   ]
+  },
+  {
+   "id": "f191",
+   "format": "film",
+   "title": "Road to Perdition",
+   "year": 2002,
+   "yearLabel": "2002",
+   "author": "Sam Mendes",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt0257044"
+  },
+  {
+   "id": "f192",
+   "format": "film",
+   "title": "The Wave",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Dennis Gansel",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt1063669"
+  },
+  {
+   "id": "f199",
+   "format": "film",
+   "title": "End of Watch",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "David Ayer",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt1855199"
+  },
+  {
+   "id": "f202",
+   "format": "film",
+   "title": "The Art of Racing in the Rain",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Simon Curtis",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt1478839",
+   "tags": [
+    "Yarış"
+   ]
+  },
+  {
+   "id": "f203",
+   "format": "film",
+   "title": "The Ron Clark Story",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "Randa Haines",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt0473389",
+   "tags": [
+    "Öğretmen filmi"
+   ]
+  },
+  {
+   "id": "f205",
+   "format": "film",
+   "title": "I am Sam",
+   "year": 2001,
+   "yearLabel": "2001",
+   "author": "Jessie Nelson",
+   "genre": "Drama",
+   "imdb": 7.6,
+   "imdbId": "tt0277027",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f206",
+   "format": "film",
+   "title": "Ağır Roman",
+   "year": 1997,
+   "yearLabel": "1997",
+   "author": "Mustafa Altioklar",
+   "genre": "Drama",
+   "imdb": 7.6,
+   "imdbId": "tt0149601",
+   "tags": [
+    "Drama",
+    "Romantik",
+    "Suç"
+   ]
+  },
+  {
+   "id": "f208",
+   "format": "film",
+   "title": "Eastern Promises",
+   "year": 2007,
+   "yearLabel": "2007",
+   "author": "David Cronenberg",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt0765443"
+  },
+  {
+   "id": "f212",
+   "format": "film",
+   "title": "Riders Of Justice",
+   "year": 2020,
+   "yearLabel": "2020",
+   "author": "Anders Thomas Jensen",
+   "genre": "Aksiyon",
+   "imdb": 7.5,
+   "imdbId": "tt11655202",
+   "tags": [
+    "Aksiyon",
+    "Drama",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f213",
+   "format": "film",
+   "title": "One Child Nation",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Nanfu Wang, Jialing Zhang",
+   "genre": "",
+   "imdb": 7.5,
+   "imdbId": "tt8923482"
+  },
+  {
+   "id": "f214",
+   "format": "film",
+   "title": "Deadpool & Wolverine",
+   "year": 2024,
+   "yearLabel": "2024",
+   "author": "Shawn Levy",
+   "genre": "Aksiyon",
+   "imdb": 7.5,
+   "imdbId": "tt6263850",
+   "tags": [
+    "Aksiyon",
+    "4. Duvar yıkılışı",
+    "fan service",
+    "çiççek"
+   ]
+  },
+  {
+   "id": "f224",
+   "format": "film",
+   "title": "Love Actually",
+   "year": 2003,
+   "yearLabel": "2003",
+   "author": "Richard Curtis",
+   "genre": "",
+   "imdb": 7.5,
+   "imdbId": "tt0314331",
+   "tags": [
+    "Romantik komedi"
+   ]
+  },
+  {
+   "id": "f225",
+   "format": "film",
+   "title": "The Life Of David Gale",
+   "year": 2003,
+   "yearLabel": "2003",
+   "author": "Alan Parker",
+   "genre": "Suç",
+   "imdb": 7.5,
+   "imdbId": "tt0289992",
+   "tags": [
+    "Suç",
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f226",
+   "format": "film",
+   "title": "Uzak",
+   "year": 2002,
+   "yearLabel": "2002",
+   "author": "Nuri Bilge Ceylan",
+   "genre": "Drama",
+   "imdb": 7.5,
+   "imdbId": "tt0346094",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f227",
+   "format": "film",
+   "title": "Yazgı",
+   "year": 2001,
+   "yearLabel": "2001",
+   "author": "Zeki Demirkubuz",
+   "genre": "Drama",
+   "imdb": 7.5,
+   "imdbId": "tt0287803",
+   "tags": [
+    "Drama",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f228",
+   "format": "film",
+   "title": "Contact",
+   "year": 1997,
+   "yearLabel": "1997",
+   "author": "Robert Zemeckis",
+   "genre": "",
+   "imdb": 7.5,
+   "imdbId": "tt0118884"
+  },
+  {
+   "id": "f231",
+   "format": "film",
+   "title": "The Teachers' Lounge",
+   "year": 2023,
+   "yearLabel": "2023",
+   "author": "Ilker Çatak",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt26612950",
+   "tags": [
+    "Psikolojik Drama"
+   ]
+  },
+  {
+   "id": "f232",
+   "format": "film",
+   "title": "Nobody",
+   "year": 2021,
+   "yearLabel": "2021",
+   "author": "Ilya Naishuller",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt7888964"
+  },
+  {
+   "id": "f235",
+   "format": "film",
+   "title": "The Judge",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "David Dobkin",
+   "genre": "Drama",
+   "imdb": 7.4,
+   "imdbId": "tt1872194",
+   "tags": [
+    "Drama",
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f239",
+   "format": "film",
+   "title": "Looper",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Rian Johnson",
+   "genre": "Aksiyon",
+   "imdb": 7.4,
+   "imdbId": "tt1276104",
+   "tags": [
+    "Aksiyon",
+    "Drama",
+    "Bilim Kurgu"
+   ]
+  },
+  {
+   "id": "f243",
+   "format": "film",
+   "title": "Law Abiding Citizen",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "F. Gary Gray",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt1197624"
+  },
+  {
+   "id": "f246",
+   "format": "film",
+   "title": "The Talented Mr. Ripley",
+   "year": 1999,
+   "yearLabel": "1999",
+   "author": "Anthony Minghella",
+   "genre": "Suç",
+   "imdb": 7.4,
+   "imdbId": "tt0134119",
+   "tags": [
+    "Suç"
+   ]
+  },
+  {
+   "id": "f247",
+   "format": "film",
+   "title": "The Steamroller and The Violin",
+   "year": 1961,
+   "yearLabel": "1961",
+   "author": "Andrei Tarkovsky",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt0053987"
+  },
+  {
+   "id": "f248",
+   "format": "film",
+   "title": "Tar",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Todd Field",
+   "genre": "Müzikal",
+   "imdb": 7.4,
+   "imdbId": "tt14444726",
+   "tags": [
+    "Müzikal"
+   ]
+  },
+  {
+   "id": "f250",
+   "format": "film",
+   "title": "Gifted Hands: Ben Carson Story",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Thomas Carter",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt1295085",
+   "tags": [
+    "Yoklukta fena işler yapan zenci"
+   ]
+  },
+  {
+   "id": "f251",
+   "format": "film",
+   "title": "Bullet Train",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "David Leitch",
+   "genre": "Aksiyon",
+   "imdb": 7.3,
+   "imdbId": "tt12593682",
+   "tags": [
+    "Aksiyon",
+    "Komedi",
+    "Gerilim"
+   ]
+  },
+  {
+   "id": "f257",
+   "format": "film",
+   "title": "The Hedgehog",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Mona Achache",
+   "genre": "Drama",
+   "imdb": 7.3,
+   "imdbId": "tt1442519",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f258",
+   "format": "film",
+   "title": "My Sister's Keeper",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Nick Cassavetes",
+   "genre": "Drama",
+   "imdb": 7.3,
+   "imdbId": "tt1078588",
+   "tags": [
+    "Drama",
+    "Aile"
+   ]
+  },
+  {
+   "id": "f259",
+   "format": "film",
+   "title": "Üç Maymun",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Nuri Bilge Ceylan",
+   "genre": "Drama",
+   "imdb": 7.3,
+   "imdbId": "tt1233381",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f262",
+   "format": "film",
+   "title": "The Passion of the Christ",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Mel Gibson",
+   "genre": "",
+   "imdb": 7.3,
+   "imdbId": "tt0335345"
+  },
+  {
+   "id": "f263",
+   "format": "film",
+   "title": "Irreversible",
+   "year": 2002,
+   "yearLabel": "2002",
+   "author": "Gaspar Noé",
+   "genre": "",
+   "imdb": 7.3,
+   "imdbId": "tt0290673",
+   "tags": [
+    "hayatımda böyle iğrenç bir film izlemedim"
+   ]
+  },
+  {
+   "id": "f266",
+   "format": "film",
+   "title": "I Stand Alone",
+   "year": 1998,
+   "yearLabel": "1998",
+   "author": "Gaspar Noé",
+   "genre": "",
+   "imdb": 7.3,
+   "imdbId": "tt0157016"
+  },
+  {
+   "id": "f267",
+   "format": "film",
+   "title": "This Boy's Life",
+   "year": 1993,
+   "yearLabel": "1993",
+   "author": "Michael Caton-Jones",
+   "genre": "",
+   "imdb": 7.3,
+   "imdbId": "tt0108330"
+  },
+  {
+   "id": "f268",
+   "format": "film",
+   "title": "Pi",
+   "year": 1998,
+   "yearLabel": "1998",
+   "author": "Darren Aronofsky",
+   "genre": "",
+   "imdb": 7.3,
+   "imdbId": "tt0138704"
+  },
+  {
+   "id": "f269",
+   "format": "film",
+   "title": "Hayat",
+   "year": 2023,
+   "yearLabel": "2023",
+   "author": "Zeki Demirkubuz",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt20258974",
+   "tags": [
+    "Sanat Sepet"
+   ]
+  },
+  {
+   "id": "f270",
+   "format": "film",
+   "title": "The Outfit",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Graham Moore",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt14114802",
+   "tags": [
+    "Gangster"
+   ]
+  },
+  {
+   "id": "f271",
+   "format": "film",
+   "title": "The Menu",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Mark Mylod",
+   "genre": "Gerilim",
+   "imdb": 7.2,
+   "imdbId": "tt9764362",
+   "tags": [
+    "Psikolojik Korku",
+    "Gerilim"
+   ]
+  },
+  {
+   "id": "f272",
+   "format": "film",
+   "title": "Anomalisa",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Duke Johnson, Charlie Kaufman",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt2401878"
+  },
+  {
+   "id": "f273",
+   "format": "film",
+   "title": "Ruby Sparks",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Jonathan Dayton, Valerie Faris",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt1839492"
+  },
+  {
+   "id": "f274",
+   "format": "film",
+   "title": "Enter the Void",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Gaspar Noé",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt1191111"
+  },
+  {
+   "id": "f275",
+   "format": "film",
+   "title": "The Road",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "John Hillcoat",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt0898367"
+  },
+  {
+   "id": "f283",
+   "format": "film",
+   "title": "Modigliani",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Mick Davis",
+   "genre": "",
+   "imdb": 7.2,
+   "imdbId": "tt0367188"
+  },
+  {
+   "id": "f284",
+   "format": "film",
+   "title": "Wristcutters: A Love Story",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "Goran Dukic",
+   "genre": "Fantastik",
+   "imdb": 7.2,
+   "imdbId": "tt0477139",
+   "tags": [
+    "Fantastik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f286",
+   "format": "film",
+   "title": "Cici",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Berkun Oya",
+   "genre": "Drama",
+   "imdb": 7.1,
+   "imdbId": "tt22227936",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f292",
+   "format": "film",
+   "title": "The Brand New Testament",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Jaco Van Dormael",
+   "genre": "Komedi",
+   "imdb": 7.1,
+   "imdbId": "tt3792960",
+   "tags": [
+    "Tanrılı",
+    "Komedi",
+    "Fantastik"
+   ]
+  },
+  {
+   "id": "f294",
+   "format": "film",
+   "title": "Melancholia",
+   "year": 2011,
+   "yearLabel": "2011",
+   "author": "Lars von Trier",
+   "genre": "",
+   "imdb": 7.1,
+   "imdbId": "tt1527186"
+  },
+  {
+   "id": "f295",
+   "format": "film",
+   "title": "Margin Call",
+   "year": 2011,
+   "yearLabel": "2011",
+   "author": "J.C. Chandor",
+   "genre": "",
+   "imdb": 7.1,
+   "imdbId": "tt1615147",
+   "tags": [
+    "Banka",
+    "İstatistik",
+    "Düşündürücü"
+   ]
+  },
+  {
+   "id": "f297",
+   "format": "film",
+   "title": "The Time Traveler's Wife",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Robert Schwentke",
+   "genre": "Fantastik",
+   "imdb": 7.1,
+   "imdbId": "tt0452694",
+   "tags": [
+    "Fantastik",
+    "Komedi",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f298",
+   "format": "film",
+   "title": "Dogtooth",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Yorgos Lanthimos",
+   "genre": "",
+   "imdb": 7.1,
+   "imdbId": "tt1379182"
+  },
+  {
+   "id": "f303",
+   "format": "film",
+   "title": "The Fountain",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "Darren Aronofsky",
+   "genre": "Drama",
+   "imdb": 7.1,
+   "imdbId": "tt0414993",
+   "tags": [
+    "Drama",
+    "Gizem",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f305",
+   "format": "film",
+   "title": "Closer",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Mike Nichols",
+   "genre": "Drama",
+   "imdb": 7.1,
+   "imdbId": "tt0376541",
+   "tags": [
+    "Drama",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f307",
+   "format": "film",
+   "title": "The Driver",
+   "year": 1978,
+   "yearLabel": "1978",
+   "author": "Walter Hill",
+   "genre": "Aksiyon",
+   "imdb": 7.1,
+   "imdbId": "tt0077474",
+   "tags": [
+    "Aksiyon"
+   ]
+  },
+  {
+   "id": "f309",
+   "format": "film",
+   "title": "Deepwater Horizon",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "Peter Berg",
+   "genre": "Aksiyon",
+   "imdb": 7.1,
+   "imdbId": "tt1860357",
+   "tags": [
+    "Aksiyon",
+    "Zeki adam",
+    "Tarih",
+    "Kurt Russell"
+   ]
+  },
+  {
+   "id": "f311",
+   "format": "film",
+   "title": "The Young and Prodigious T.S. Spivet",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Jean-Pierre Jeunet",
+   "genre": "",
+   "imdb": 7,
+   "imdbId": "tt1981107"
+  },
+  {
+   "id": "f312",
+   "format": "film",
+   "title": "Filler ve Çimen",
+   "year": 2000,
+   "yearLabel": "2000",
+   "author": "Dervis Zaim",
+   "genre": "Drama",
+   "imdb": 7,
+   "imdbId": "tt0252437",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f313",
+   "format": "film",
+   "title": "Buried",
+   "year": 2010,
+   "yearLabel": "2010",
+   "author": "Rodrigo Cortés",
+   "genre": "",
+   "imdb": 7,
+   "imdbId": "tt1462758"
+  },
+  {
+   "id": "f314",
+   "format": "film",
+   "title": "The Thirteenth Floor",
+   "year": 1999,
+   "yearLabel": "1999",
+   "author": "Josef Rusnak",
+   "genre": "Gizem",
+   "imdb": 7,
+   "imdbId": "tt0139809",
+   "tags": [
+    "Gizem",
+    "Bilim Kurgu",
+    "Gerilim"
+   ]
+  },
+  {
+   "id": "f317",
+   "format": "film",
+   "title": "Angel-A",
+   "year": 2005,
+   "yearLabel": "2005",
+   "author": "Luc Besson",
+   "genre": "Komedi",
+   "imdb": 7,
+   "imdbId": "tt0473753",
+   "tags": [
+    "Komedi",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f324",
+   "format": "film",
+   "title": "Brexit",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Toby Haynes",
+   "genre": "",
+   "imdb": 7,
+   "imdbId": "tt8425058",
+   "tags": [
+    "Düşündürücü",
+    "Siyasi"
+   ]
+  },
+  {
+   "id": "f325",
+   "format": "film",
+   "title": "Demolition",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Jean-Marc Vallée",
+   "genre": "Drama",
+   "imdb": 7,
+   "imdbId": "tt1172049",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f326",
+   "format": "film",
+   "title": "İtiraf",
+   "year": 2001,
+   "yearLabel": "2001",
+   "author": "Zeki Demirkubuz",
+   "genre": "Drama",
+   "imdb": 7,
+   "imdbId": "tt0317743",
+   "tags": [
+    "Drama",
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f327",
+   "format": "film",
+   "title": "Late Night with the Devil",
+   "year": 2023,
+   "yearLabel": "2023",
+   "author": "Cameron Cairnes, Colin Cairnes",
+   "genre": "Korku",
+   "imdb": 7,
+   "imdbId": "tt14966898",
+   "tags": [
+    "Beyaz Showa Şeytan Katılıyo",
+    "Korku"
+   ]
+  },
+  {
+   "id": "f329",
+   "format": "film",
+   "title": "Enemy",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Denis Villeneuve",
+   "genre": "",
+   "imdb": 6.9,
+   "imdbId": "tt2316411",
+   "tags": [
+    "Jake Gyllenhaal"
+   ]
+  },
+  {
+   "id": "f330",
+   "format": "film",
+   "title": "Climax",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Gaspar Noé",
+   "genre": "",
+   "imdb": 6.9,
+   "imdbId": "tt8359848",
+   "tags": [
+    "Uyuşturucu kafası"
+   ]
+  },
+  {
+   "id": "f331",
+   "format": "film",
+   "title": "Life Itself",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Dan Fogelman",
+   "genre": "Drama",
+   "imdb": 6.9,
+   "imdbId": "tt5989218",
+   "tags": [
+    "Drama",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f332",
+   "format": "film",
+   "title": "The Hitman's Bodyguard",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Patrick Hughes",
+   "genre": "Aksiyon",
+   "imdb": 6.9,
+   "imdbId": "tt1959563",
+   "tags": [
+    "Aksiyon",
+    "Komedi",
+    "Suç"
+   ]
+  },
+  {
+   "id": "f333",
+   "format": "film",
+   "title": "Legend",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Brian Helgeland",
+   "genre": "Biyografi",
+   "imdb": 6.9,
+   "imdbId": "tt3569230",
+   "tags": [
+    "Biyografi",
+    "Drama",
+    "Gangster"
+   ]
+  },
+  {
+   "id": "f337",
+   "format": "film",
+   "title": "Tucker: The Man and His Dream",
+   "year": 1988,
+   "yearLabel": "1988",
+   "author": "Francis Ford Coppola",
+   "genre": "",
+   "imdb": 6.9,
+   "imdbId": "tt0096316",
+   "tags": [
+    "Komedi drama"
+   ]
+  },
+  {
+   "id": "f338",
+   "format": "film",
+   "title": "Nymphomaniac: Vol. I",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Lars von Trier",
+   "genre": "Drama",
+   "imdb": 6.9,
+   "imdbId": "tt1937390",
+   "tags": [
+    "Erotik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f341",
+   "format": "film",
+   "title": "The Electrical Life of Louis Wain",
+   "year": 2021,
+   "yearLabel": "2021",
+   "author": "Will Sharpe",
+   "genre": "Tarih",
+   "imdb": 6.8,
+   "imdbId": "tt10687506",
+   "tags": [
+    "Trajedi",
+    "Tarih",
+    "Benedict Cumberbatch"
+   ]
+  },
+  {
+   "id": "f343",
+   "format": "film",
+   "title": "White God",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Kornél Mundruczó",
+   "genre": "Drama",
+   "imdb": 6.8,
+   "imdbId": "tt2844798",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f349",
+   "format": "film",
+   "title": "Clara",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Akash Sherman",
+   "genre": "Bilim kurgu",
+   "imdb": 6.7,
+   "imdbId": "tt6613878",
+   "tags": [
+    "Bilim Kurgu",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f352",
+   "format": "film",
+   "title": "You've Got Mail",
+   "year": 1998,
+   "yearLabel": "1998",
+   "author": "Nora Ephron",
+   "genre": "Romantik",
+   "imdb": 6.7,
+   "imdbId": "tt0128853",
+   "tags": [
+    "Tom Hanks",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f353",
+   "format": "film",
+   "title": "Three Thousand Years of Longing",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "George Miller",
+   "genre": "Fantastik",
+   "imdb": 6.7,
+   "imdbId": "tt9198364",
+   "tags": [
+    "Fantastik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f355",
+   "format": "film",
+   "title": "I Am Mother",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Grant Sputore",
+   "genre": "Bilim kurgu",
+   "imdb": 6.7,
+   "imdbId": "tt6292852",
+   "tags": [
+    "Bilim Kurgu",
+    "Post-Apokaliptik"
+   ]
+  },
+  {
+   "id": "f357",
+   "format": "film",
+   "title": "The Best of Me",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Michael Hoffman",
+   "genre": "Romantik",
+   "imdb": 6.7,
+   "imdbId": "tt1972779",
+   "tags": [
+    "Romantik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f358",
+   "format": "film",
+   "title": "Papa Joan",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Sönke Wortmann",
+   "genre": "Romantik",
+   "imdb": 6.7,
+   "imdbId": "tt0458455",
+   "tags": [
+    "Romantik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f360",
+   "format": "film",
+   "title": "Exam",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Stuart Hazeldine",
+   "genre": "Gizem",
+   "imdb": 6.7,
+   "imdbId": "tt1258197",
+   "tags": [
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f361",
+   "format": "film",
+   "title": "Emily The Criminal",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "John Patton Ford",
+   "genre": "Suç",
+   "imdb": 6.7,
+   "imdbId": "tt15255876",
+   "tags": [
+    "Suç",
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f367",
+   "format": "film",
+   "title": "Liberal Arts",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Josh Radnor",
+   "genre": "Komedi",
+   "imdb": 6.7,
+   "imdbId": "tt1872818",
+   "tags": [
+    "Komedi",
+    "Drama",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f368",
+   "format": "film",
+   "title": "Stay",
+   "year": 2005,
+   "yearLabel": "2005",
+   "author": "Marc Forster",
+   "genre": "Drama",
+   "imdb": 6.7,
+   "imdbId": "tt0371257",
+   "tags": [
+    "Drama",
+    "Psikolojik gerilim"
+   ]
+  },
+  {
+   "id": "f369",
+   "format": "film",
+   "title": "Miracle on 34th Street",
+   "year": 1994,
+   "yearLabel": "1994",
+   "author": "Les Mayfield",
+   "genre": "",
+   "imdb": 6.6,
+   "imdbId": "tt0110527",
+   "tags": [
+    "Tatlış"
+   ]
+  },
+  {
+   "id": "f370",
+   "format": "film",
+   "title": "Kill Boksoon",
+   "year": 2023,
+   "yearLabel": "2023",
+   "author": "Byun Sung-hyun",
+   "genre": "Aksiyon",
+   "imdb": 6.6,
+   "imdbId": "tt16900880",
+   "tags": [
+    "Aksiyon",
+    "Gerilim",
+    "Kore"
+   ]
+  },
+  {
+   "id": "f371",
+   "format": "film",
+   "title": "Whiskey Tango Foxtrot",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "Glenn Ficarra, John Requa",
+   "genre": "Komedi",
+   "imdb": 6.6,
+   "imdbId": "tt3553442",
+   "tags": [
+    "Komedi",
+    "Irak",
+    "Basınlı Bir Şeyler"
+   ]
+  },
+  {
+   "id": "f373",
+   "format": "film",
+   "title": "The Aeronauts",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Tom Harper",
+   "genre": "Gerilim",
+   "imdb": 6.6,
+   "imdbId": "tt6141246",
+   "tags": [
+    "Gerilim"
+   ]
+  },
+  {
+   "id": "f375",
+   "format": "film",
+   "title": "Life",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Daniel Espinosa",
+   "genre": "Gerilim",
+   "imdb": 6.6,
+   "imdbId": "tt5442430",
+   "tags": [
+    "Gerilim",
+    "Uzay",
+    "Bilim Kurgu"
+   ]
+  },
+  {
+   "id": "f376",
+   "format": "film",
+   "title": "Where Hope Grows",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Chris Dowling",
+   "genre": "",
+   "imdb": 6.6,
+   "imdbId": "tt3200980",
+   "tags": [
+    "Otistik var filmde güzel şeyler oluyo"
+   ]
+  },
+  {
+   "id": "f377",
+   "format": "film",
+   "title": "Mona Lisa Smile",
+   "year": 2003,
+   "yearLabel": "2003",
+   "author": "Mike Newell",
+   "genre": "Drama",
+   "imdb": 6.6,
+   "imdbId": "tt0304415",
+   "tags": [
+    "Drama",
+    "Ölü ozanlar derneği gibi"
+   ]
+  },
+  {
+   "id": "f378",
+   "format": "film",
+   "title": "Nymphomaniac: Vol. II",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Lars von Trier",
+   "genre": "Drama",
+   "imdb": 6.6,
+   "imdbId": "tt2382009",
+   "tags": [
+    "Erotik",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f379",
+   "format": "film",
+   "title": "Fakat Müzeyyen Derin Bir Tutku",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Çigdem Vitrinel",
+   "genre": "Drama",
+   "imdb": 6.5,
+   "imdbId": "tt4178986",
+   "tags": [
+    "Drama",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f380",
+   "format": "film",
+   "title": "Zack and Miri Make a Porno",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Kevin Smith",
+   "genre": "",
+   "imdb": 6.5,
+   "imdbId": "tt1007028",
+   "tags": [
+    "Komik"
+   ]
+  },
+  {
+   "id": "f381",
+   "format": "film",
+   "title": "Gladiator",
+   "year": 1992,
+   "yearLabel": "1992",
+   "author": "Rowdy Herrington",
+   "genre": "Drama",
+   "imdb": 6.5,
+   "imdbId": "tt0104346",
+   "tags": [
+    "Spor",
+    "Box",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f382",
+   "format": "film",
+   "title": "Kinds of Kindness",
+   "year": 2024,
+   "yearLabel": "2024",
+   "author": "Yorgos Lanthimos",
+   "genre": "",
+   "imdb": 6.5,
+   "imdbId": "tt22408160",
+   "tags": [
+    "Sanat Sepet"
+   ]
+  },
+  {
+   "id": "f383",
+   "format": "film",
+   "title": "Fractured",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Brad Anderson",
+   "genre": "Drama",
+   "imdb": 6.5,
+   "imdbId": "tt4332232",
+   "tags": [
+    "Drama",
+    "Gizem",
+    "Gerilim"
+   ]
+  },
+  {
+   "id": "f385",
+   "format": "film",
+   "title": "Caravaggio",
+   "year": 1986,
+   "yearLabel": "1986",
+   "author": "Derek Jarman",
+   "genre": "Biyografi",
+   "imdb": 6.5,
+   "imdbId": "tt0090798",
+   "tags": [
+    "Biyografi",
+    "Drama",
+    "Tarih",
+    "Gerçek"
+   ]
+  },
+  {
+   "id": "f386",
+   "format": "film",
+   "title": "Idiocracy",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "Mike Judge",
+   "genre": "",
+   "imdb": 6.5,
+   "imdbId": "tt0387808",
+   "tags": [
+    "Distopik komedi"
+   ]
+  },
+  {
+   "id": "f388",
+   "format": "film",
+   "title": "Gladiator II",
+   "year": 2024,
+   "yearLabel": "2024",
+   "author": "Ridley Scott",
+   "genre": "",
+   "imdb": 6.5,
+   "imdbId": "tt9218128",
+   "tags": [
+    "Roma Arenaları",
+    "Dövüş"
+   ]
+  },
+  {
+   "id": "f391",
+   "format": "film",
+   "title": "Solace",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Afonso Poyart",
+   "genre": "Suç",
+   "imdb": 6.4,
+   "imdbId": "tt1291570",
+   "tags": [
+    "Suç",
+    "Gizem",
+    "Drama"
+   ]
+  },
+  {
+   "id": "f394",
+   "format": "film",
+   "title": "The Space Between Us",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Peter Chelsom",
+   "genre": "Drama",
+   "imdb": 6.4,
+   "imdbId": "tt3922818",
+   "tags": [
+    "Drama",
+    "Bilim Kurgu",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f396",
+   "format": "film",
+   "title": "Red Eye",
+   "year": 2005,
+   "yearLabel": "2005",
+   "author": "Wes Craven",
+   "genre": "",
+   "imdb": 6.4,
+   "imdbId": "tt0421239",
+   "tags": [
+    "Cillian Murphy"
+   ]
+  },
+  {
+   "id": "f399",
+   "format": "film",
+   "title": "The Giver",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Phillip Noyce",
+   "genre": "",
+   "imdb": 6.4,
+   "imdbId": "tt0435651",
+   "tags": [
+    "Distopik Sci-Fi"
+   ]
+  },
+  {
+   "id": "f400",
+   "format": "film",
+   "title": "The Voices",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Marjane Satrapi",
+   "genre": "Komedi",
+   "imdb": 6.3,
+   "imdbId": "tt1567437",
+   "tags": [
+    "Komedi",
+    "Ryan Reynolds",
+    "Suç",
+    "Dertli"
+   ]
+  },
+  {
+   "id": "f401",
+   "format": "film",
+   "title": "Criminal",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "Ariel Vromen",
+   "genre": "Aksiyon",
+   "imdb": 6.3,
+   "imdbId": "tt3014866",
+   "tags": [
+    "Aksiyon",
+    "Bilim Kurgu"
+   ]
+  },
+  {
+   "id": "f403",
+   "format": "film",
+   "title": "Uncharted",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Ruben Fleischer",
+   "genre": "Aksiyon",
+   "imdb": 6.3,
+   "imdbId": "tt1464335",
+   "tags": [
+    "Oyun Hikayesi",
+    "Aksiyon",
+    "Hazina Avı"
+   ]
+  },
+  {
+   "id": "f406",
+   "format": "film",
+   "title": "Scouts Guide to the Zombie Apocalypse",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Christopher Landon",
+   "genre": "",
+   "imdb": 6.3,
+   "imdbId": "tt1727776",
+   "tags": [
+    "Zombi komik"
+   ]
+  },
+  {
+   "id": "f411",
+   "format": "film",
+   "title": "Attenberg",
+   "year": 2010,
+   "yearLabel": "2010",
+   "author": "Athina Rachel Tsangari",
+   "genre": "Drama",
+   "imdb": 6.2,
+   "imdbId": "tt1691323",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f413",
+   "format": "film",
+   "title": "Dark Shadows",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Tim Burton",
+   "genre": "Fantastik",
+   "imdb": 6.2,
+   "imdbId": "tt1077368",
+   "tags": [
+    "Vampirli",
+    "Fantastik"
+   ]
+  },
+  {
+   "id": "f414",
+   "format": "film",
+   "title": "Alice Through The Looking Glass",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "James Bobin",
+   "genre": "",
+   "imdb": 6.2,
+   "imdbId": "tt2567026",
+   "tags": [
+    "Sevimli",
+    "Tatlış"
+   ]
+  },
+  {
+   "id": "f415",
+   "format": "film",
+   "title": "Sinkhole",
+   "year": 2021,
+   "yearLabel": "2021",
+   "author": "Kim Ji-hoon",
+   "genre": "Komedi",
+   "imdb": 6.2,
+   "imdbId": "tt12664618",
+   "tags": [
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f416",
+   "format": "film",
+   "title": "Lux Æterna",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Gaspar Noé",
+   "genre": "Drama",
+   "imdb": 6.2,
+   "imdbId": "tt10272534",
+   "tags": [
+    "Drama",
+    "Muhtemelen Erotik"
+   ]
+  },
+  {
+   "id": "f421",
+   "format": "film",
+   "title": "Zoe",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Drake Doremus",
+   "genre": "Drama",
+   "imdb": 6.1,
+   "imdbId": "tt6010628",
+   "tags": [
+    "Drama",
+    "Bilim Kurgu",
+    "Romantik"
+   ]
+  },
+  {
+   "id": "f422",
+   "format": "film",
+   "title": "6 Underground",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Michael Bay",
+   "genre": "Aksiyon",
+   "imdb": 6.1,
+   "imdbId": "tt8106534",
+   "tags": [
+    "Aksiyon",
+    "Suç"
+   ]
+  },
+  {
+   "id": "f423",
+   "format": "film",
+   "title": "Bir Zamanlar Gelecek: 2121",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Serpil Altin",
+   "genre": "",
+   "imdb": 6.1,
+   "imdbId": "tt17222924",
+   "tags": [
+    "Distopik"
+   ]
+  },
+  {
+   "id": "f424",
+   "format": "film",
+   "title": "The Hitman's Wife's Bodyguard",
+   "year": 2021,
+   "yearLabel": "2021",
+   "author": "Patrick Hughes",
+   "genre": "Aksiyon",
+   "imdb": 6.1,
+   "imdbId": "tt8385148",
+   "tags": [
+    "Aksiyon",
+    "Komedi",
+    "Suç"
+   ]
+  },
+  {
+   "id": "f425",
+   "format": "film",
+   "title": "Level 16",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Danishka Esterhazy",
+   "genre": "",
+   "imdb": 6.1,
+   "imdbId": "tt4006302",
+   "tags": [
+    "Vay orospu çocuklarııı"
+   ]
+  },
+  {
+   "id": "f427",
+   "format": "film",
+   "title": "The Child in Time",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Julian Farino",
+   "genre": "Drama",
+   "imdb": 6.1,
+   "imdbId": "tt6540078",
+   "tags": [
+    "Drama"
+   ]
+  },
+  {
+   "id": "f428",
+   "format": "film",
+   "title": "Unhinged",
+   "year": 2020,
+   "yearLabel": "2020",
+   "author": "Derrick Borte",
+   "genre": "Aksiyon",
+   "imdb": 6,
+   "imdbId": "tt10059518",
+   "tags": [
+    "Psikolojik gerilim",
+    "Aksiyon",
+    "Russell Crowe"
+   ]
+  },
+  {
+   "id": "f429",
+   "format": "film",
+   "title": "The Gambler",
+   "year": 2014,
+   "yearLabel": "2014",
+   "author": "Rupert Wyatt",
+   "genre": "",
+   "imdb": 6,
+   "imdbId": "tt2039393",
+   "tags": [
+    "Kumar"
+   ]
+  },
+  {
+   "id": "f432",
+   "format": "film",
+   "title": "After.Life",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Agnieszka Wojtowicz-Vosloo",
+   "genre": "Drama",
+   "imdb": 5.9,
+   "imdbId": "tt0838247",
+   "tags": [
+    "Drama",
+    "ilginç",
+    "Gizem"
+   ]
+  },
+  {
+   "id": "f433",
+   "format": "film",
+   "title": "TAU",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Federico D'Alessandro",
+   "genre": "Bilim kurgu",
+   "imdb": 5.8,
+   "imdbId": "tt4357394",
+   "tags": [
+    "Bilim Kurgu",
+    "Gerilim",
+    "Korku",
+    "AI"
+   ]
+  },
+  {
+   "id": "f434",
+   "format": "film",
+   "title": "Downsizing",
+   "year": 2017,
+   "yearLabel": "2017",
+   "author": "Alexander Payne",
+   "genre": "Bilim kurgu",
+   "imdb": 5.8,
+   "imdbId": "tt1389072",
+   "tags": [
+    "Küçülüyo insanlar",
+    "Bilim Kurgu"
+   ]
+  },
+  {
+   "id": "f437",
+   "format": "film",
+   "title": "High Life",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Claire Denis",
+   "genre": "Korku",
+   "imdb": 5.7,
+   "imdbId": "tt4827558",
+   "tags": [
+    "Gelecek",
+    "Korku",
+    "Bilim Kurgu"
+   ]
+  },
+  {
+   "id": "f440",
+   "format": "film",
+   "title": "R.I.P.D.",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Robert Schwentke",
+   "genre": "Aksiyon",
+   "imdb": 5.6,
+   "imdbId": "tt0790736",
+   "tags": [
+    "Aksiyon",
+    "Bilim Kurgu",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f441",
+   "format": "film",
+   "title": "The Pod Generation",
+   "year": 2023,
+   "yearLabel": "2023",
+   "author": "Sophie Barthes",
+   "genre": "Bilim kurgu",
+   "imdb": 5.6,
+   "imdbId": "tt15768848",
+   "tags": [
+    "Bilim Kurgu",
+    "Romantik",
+    "Komedi"
+   ]
+  },
+  {
+   "id": "f444",
+   "format": "film",
+   "title": "Pixels",
+   "year": 2015,
+   "yearLabel": "2015",
+   "author": "Chris Columbus",
+   "genre": "",
+   "imdb": 5.6,
+   "imdbId": "tt2120120",
+   "tags": [
+    "Adam Sandler"
+   ]
+  },
+  {
+   "id": "f445",
+   "format": "film",
+   "title": "Lamborghini: The Man Behind the Legend",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Bobby Moresco",
+   "genre": "",
+   "imdb": 5.5,
+   "imdbId": "tt5533370",
+   "tags": [
+    "Araba falan"
+   ]
+  },
+  {
+   "id": "f446",
+   "format": "film",
+   "title": "What Men Want",
+   "year": 2019,
+   "yearLabel": "2019",
+   "author": "Adam Shankman",
+   "genre": "Komedi",
+   "imdb": 5.4,
+   "imdbId": "tt7634968",
+   "tags": [
+    "Komedi",
+    "Taraji P."
+   ]
+  },
+  {
+   "id": "f447",
+   "format": "film",
+   "title": "Balls of Fury",
+   "year": 2007,
+   "yearLabel": "2007",
+   "author": "Robert Ben Garant",
+   "genre": "",
+   "imdb": 5.4,
+   "imdbId": "tt0424823",
+   "tags": [
+    "Komik",
+    "Masatenisi"
+   ]
+  },
+  {
+   "id": "f448",
+   "format": "film",
+   "title": "Fear And Desire",
+   "year": 1952,
+   "yearLabel": "1952",
+   "author": "Stanley Kubrick",
+   "genre": "Drama",
+   "imdb": 5.3,
+   "imdbId": "tt0045758",
+   "tags": [
+    "Drama",
+    "Savaş"
+   ]
+  },
+  {
+   "id": "f450",
+   "format": "film",
+   "title": "Joker: Folie à Deux",
+   "year": 2024,
+   "yearLabel": "2024",
+   "author": "Todd Phillips",
+   "genre": "",
+   "imdb": 5.2,
+   "imdbId": "tt11315808",
+   "tags": [
+    "Joker",
+    "Lady Gaga"
+   ]
+  },
+  {
+   "id": "f451",
+   "format": "film",
+   "title": "Deck the Halls",
+   "year": 2006,
+   "yearLabel": "2006",
+   "author": "John Whitesell",
+   "genre": "Komedi",
+   "imdb": 5.1,
+   "imdbId": "tt0790604",
+   "tags": [
+    "Komedi",
+    "Drama",
+    "Aile"
+   ]
+  },
+  {
+   "id": "d461",
+   "format": "dizi",
+   "title": "The Sopranos",
+   "year": 1999,
+   "yearLabel": "1999–2007",
+   "author": "David Chase",
+   "genre": "",
+   "imdb": 9.2,
+   "imdbId": "tt0141842"
+  },
+  {
+   "id": "d492",
+   "format": "dizi",
+   "title": "Pluribus",
+   "year": 2025,
+   "yearLabel": "2025",
+   "author": "",
+   "genre": "",
+   "imdb": 8.6,
+   "imdbId": "tt22202452"
+  },
+  {
+   "id": "d496",
+   "format": "dizi",
+   "title": "Doctor Who",
+   "year": 2005,
+   "yearLabel": "2005–",
+   "author": "Russell T Davies",
+   "genre": "",
+   "imdb": 8.5,
+   "imdbId": "tt0436992"
+  },
+  {
+   "id": "d498",
+   "format": "dizi",
+   "title": "Community",
+   "year": 2009,
+   "yearLabel": "2009–2015",
+   "author": "Dan Harmon",
+   "genre": "",
+   "imdb": 8.5,
+   "imdbId": "tt1439629"
+  },
+  {
+   "id": "d514",
+   "format": "dizi",
+   "title": "Reservation Dogs",
+   "year": 2021,
+   "yearLabel": "2021–2023",
+   "author": "Sterlin Harjo, Taika Waititi",
+   "genre": "",
+   "imdb": 8.3,
+   "imdbId": "tt13623580"
+  },
+  {
+   "id": "d519",
+   "format": "dizi",
+   "title": "The Kominsky Method",
+   "year": 2018,
+   "yearLabel": "2018–2021",
+   "author": "Chuck Lorre, Allyn Rachel",
+   "genre": "",
+   "imdb": 8.2,
+   "imdbId": "tt7255502"
+  },
+  {
+   "id": "d520",
+   "format": "dizi",
+   "title": "The Mentalist",
+   "year": 2008,
+   "yearLabel": "2008",
+   "author": "Bruno Heller",
+   "genre": "",
+   "imdb": 8.2,
+   "imdbId": "tt1196946"
+  },
+  {
+   "id": "d521",
+   "format": "dizi",
+   "title": "The Good Place",
+   "year": 2016,
+   "yearLabel": "2016–2020",
+   "author": "Michael Schur",
+   "genre": "",
+   "imdb": 8.2,
+   "imdbId": "tt4955642"
+  },
+  {
+   "id": "d527",
+   "format": "dizi",
+   "title": "How to Get Away with Murder",
+   "year": 2014,
+   "yearLabel": "2014–2020",
+   "author": "Peter Nowalk",
+   "genre": "",
+   "imdb": 8.1,
+   "imdbId": "tt3205802"
+  },
+  {
+   "id": "d531",
+   "format": "dizi",
+   "title": "Counterpart",
+   "year": 2017,
+   "yearLabel": "2017–2019",
+   "author": "Justin Doble, Barry Levinson",
+   "genre": "",
+   "imdb": 8,
+   "imdbId": "tt4643084"
+  },
+  {
+   "id": "d544",
+   "format": "dizi",
+   "title": "A Discovery of Witches",
+   "year": 2018,
+   "yearLabel": "2018–2022",
+   "author": "Emma Frost, Mike McHugh",
+   "genre": "",
+   "imdb": 7.8,
+   "imdbId": "tt2177461"
+  },
+  {
+   "id": "d553",
+   "format": "dizi",
+   "title": "Dark Matter",
+   "year": 2024,
+   "yearLabel": "2024–",
+   "author": "Blake Crouch",
+   "genre": "",
+   "imdb": 7.6,
+   "imdbId": "tt19231492"
+  },
+  {
+   "id": "d565",
+   "format": "dizi",
+   "title": "The Tick",
+   "year": 2016,
+   "yearLabel": "2016–2019",
+   "author": "Ben Edlund",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt5540054"
+  },
+  {
+   "id": "d568",
+   "format": "dizi",
+   "title": "Vikings: Valhalla",
+   "year": 2022,
+   "yearLabel": "2022–2024",
+   "author": "Jeb Stuart",
+   "genre": "",
+   "imdb": 7.4,
+   "imdbId": "tt11311302"
+  },
+  {
+   "id": "d578",
+   "format": "dizi",
+   "title": "Unlocked: A Jail Experiment",
+   "year": 2024,
+   "yearLabel": "2024–",
+   "author": "Sheriff Eric Higgins",
+   "genre": "",
+   "imdb": 7.1,
+   "imdbId": "tt31722999"
+  },
+  {
+   "id": "d579",
+   "format": "dizi",
+   "title": "Anonim",
+   "year": 2024,
+   "yearLabel": "2024–",
+   "author": "Olgu Baran Kubilay, Ali Atay",
+   "genre": "",
+   "imdb": 7,
+   "imdbId": "tt34819808"
+  },
+  {
+   "id": "a610",
+   "format": "animasyon",
+   "title": "Ateş Böceklerinin Mezarı",
+   "year": 1988,
+   "yearLabel": "1988",
+   "author": "Isao Takahata",
+   "genre": "Animasyon",
+   "imdb": 8.5,
+   "imdbId": "tt0095327",
+   "designer": "Yoshifumi Kondō"
+  },
+  {
+   "id": "a622",
+   "format": "animasyon",
+   "title": "Mary and Max",
+   "year": 2009,
+   "yearLabel": "2009",
+   "author": "Adam Elliot",
+   "genre": "Animasyon",
+   "imdb": 8.1,
+   "imdbId": "tt0978762",
+   "designer": "Adam Elliot"
+  },
+  {
+   "id": "a629",
+   "format": "animasyon",
+   "title": "Rüzgarlı Vadi",
+   "year": 1984,
+   "yearLabel": "1984",
+   "author": "Hayao Miyazaki",
+   "genre": "Animasyon",
+   "imdb": 8,
+   "imdbId": "tt0087544",
+   "designer": "Hayao Miyazaki"
+  },
+  {
+   "id": "a630",
+   "format": "animasyon",
+   "title": "Perfect Blue",
+   "year": 1997,
+   "yearLabel": "1997",
+   "author": "Satoshi Kon",
+   "genre": "Animasyon",
+   "imdb": 8,
+   "imdbId": "tt0156887",
+   "designer": "Hisashi Eguchi"
+  },
+  {
+   "id": "a631",
+   "format": "animasyon",
+   "title": "Soul",
+   "year": 2020,
+   "yearLabel": "2020",
+   "author": "Pete Docter, Kemp Powers",
+   "genre": "Animasyon",
+   "imdb": 8,
+   "imdbId": "tt2948372",
+   "designer": "Pete Docter, Michael Yates"
+  },
+  {
+   "id": "a634",
+   "format": "animasyon",
+   "title": "Ghost in the Shell",
+   "year": 1995,
+   "yearLabel": "1995",
+   "author": "Mamoru Oshii",
+   "genre": "Animasyon",
+   "imdb": 7.9,
+   "imdbId": "tt0113568",
+   "designer": "Hiroyuki Okiura"
+  },
+  {
+   "id": "a635",
+   "format": "animasyon",
+   "title": "The Nightmare Before Christmas",
+   "year": 1993,
+   "yearLabel": "1993",
+   "author": "Henry Selick",
+   "genre": "Animasyon",
+   "imdb": 7.9,
+   "imdbId": "tt0107688",
+   "designer": "Tim Burton"
+  },
+  {
+   "id": "a639",
+   "format": "animasyon",
+   "title": "Whisper of The Heart",
+   "year": 1995,
+   "yearLabel": "1995",
+   "author": "Yoshifumi Kondô",
+   "genre": "Animasyon",
+   "imdb": 7.8,
+   "imdbId": "tt0113824",
+   "designer": "Yoshifumi Kondō"
+  },
+  {
+   "id": "a640",
+   "format": "animasyon",
+   "title": "Millennium Actress",
+   "year": 2001,
+   "yearLabel": "2001",
+   "author": "Satoshi Kon",
+   "genre": "Animasyon",
+   "imdb": 7.8,
+   "imdbId": "tt0291350",
+   "designer": "Satoshi Kon"
+  },
+  {
+   "id": "a641",
+   "format": "animasyon",
+   "title": "Rüzgar Yükseliyor",
+   "year": 2013,
+   "yearLabel": "2013",
+   "author": "Hayao Miyazaki",
+   "genre": "Animasyon",
+   "imdb": 7.8,
+   "imdbId": "tt2013293",
+   "designer": "Hayao Miyazaki"
+  },
+  {
+   "id": "a646",
+   "format": "animasyon",
+   "title": "Wreck-It Ralph",
+   "year": 2012,
+   "yearLabel": "2012",
+   "author": "Rich Moore",
+   "genre": "Animasyon",
+   "imdb": 7.7,
+   "imdbId": "tt1772341",
+   "designer": "Cory Loftis"
+  },
+  {
+   "id": "a657",
+   "format": "animasyon",
+   "title": "5 Centimeters Per Second",
+   "year": 2007,
+   "yearLabel": "2007",
+   "author": "Makoto Shinkai",
+   "genre": "Animasyon",
+   "imdb": 7.4,
+   "imdbId": "tt0983213",
+   "designer": "Takayo Nishimura"
+  },
+  {
+   "id": "a658",
+   "format": "animasyon",
+   "title": "The Emperor's New Groove",
+   "year": 2000,
+   "yearLabel": "2000",
+   "author": "Mark Dindal",
+   "genre": "Animasyon",
+   "imdb": 7.4,
+   "imdbId": "tt0120917",
+   "designer": "Joe Moshier"
+  },
+  {
+   "id": "a659",
+   "format": "animasyon",
+   "title": "Corpse Bride",
+   "year": 2005,
+   "yearLabel": "2005",
+   "author": "Tim Burton, Mike Johnson",
+   "genre": "Animasyon",
+   "imdb": 7.4,
+   "imdbId": "tt0121164",
+   "designer": "Carlos Grangel"
+  },
+  {
+   "id": "a663",
+   "format": "animasyon",
+   "title": "What If...?",
+   "year": 2021,
+   "yearLabel": "2021–",
+   "author": "Bryan Andrews",
+   "genre": "Animasyon",
+   "imdb": 7.3,
+   "imdbId": "tt10168312",
+   "designer": "Paul Lasaine"
+  },
+  {
+   "id": "a664",
+   "format": "animasyon",
+   "title": "Hercules",
+   "year": 1997,
+   "yearLabel": "1997",
+   "author": "Ron Clements, John Musker",
+   "genre": "Animasyon",
+   "imdb": 7.3,
+   "imdbId": "tt0119282",
+   "designer": "Gerald Scarfe, Andreas Deja"
+  },
+  {
+   "id": "a666",
+   "format": "animasyon",
+   "title": "Rango",
+   "year": 2011,
+   "yearLabel": "2011",
+   "author": "Gore Verbinski",
+   "genre": "Animasyon",
+   "imdb": 7.3,
+   "imdbId": "tt1192628",
+   "designer": "Mark McCreery"
+  },
+  {
+   "id": "a674",
+   "format": "animasyon",
+   "title": "Ralph Breaks The Internet",
+   "year": 2018,
+   "yearLabel": "2018",
+   "author": "Phil Johnston, Rich Moore",
+   "genre": "Animasyon",
+   "imdb": 7,
+   "imdbId": "tt5848272",
+   "designer": "Cory Loftis"
+  },
+  {
+   "id": "a679",
+   "format": "animasyon",
+   "title": "The Road to El Dorado",
+   "year": 2000,
+   "yearLabel": "2000",
+   "author": "Bibo Bergeron, Don Paul, Jeffrey Katzenberg",
+   "genre": "Animasyon",
+   "imdb": 6.9,
+   "imdbId": "tt0138749",
+   "designer": "Kathy Zielinski"
+  },
+  {
+   "id": "a681",
+   "format": "animasyon",
+   "title": "The Boys Presents: Diabolical",
+   "year": 2022,
+   "yearLabel": "2022",
+   "author": "Various",
+   "genre": "Animasyon",
+   "imdb": 6.8,
+   "imdbId": "tt16350094",
+   "designer": "Varies"
+  },
+  {
+   "id": "a691",
+   "format": "animasyon",
+   "title": "The Lion King 3/2",
+   "year": 2004,
+   "yearLabel": "2004",
+   "author": "Bradley Raymond",
+   "genre": "Animasyon",
+   "imdb": 6.5,
+   "imdbId": "tt0318403",
+   "designer": "Joseph Gilland"
+  },
+  {
+   "id": "a694",
+   "format": "animasyon",
+   "title": "The Lord of the Rings: The War of the Rohirrim",
+   "year": 2024,
+   "yearLabel": "2024",
+   "author": "Kenji Kamiyama",
+   "genre": "Animasyon",
+   "imdb": 6.3,
+   "imdbId": "tt14824600"
+  },
+  {
+   "id": "a700",
+   "format": "animasyon",
+   "title": "Ice Age: Collision Course",
+   "year": 2016,
+   "yearLabel": "2016",
+   "author": "Michael Thurmeier, Galen T. Chu",
+   "genre": "Animasyon",
+   "imdb": 5.7,
+   "imdbId": "tt3416828",
+   "designer": "Peter de Sève"
+  }
+ ],
+ "games": []
+}

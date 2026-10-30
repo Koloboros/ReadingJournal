@@ -50,6 +50,7 @@ function roomBooks(){
   });
   return out;
 }
+const PEEK_LINES=['Hey. Evet, sen. İçerisi sıcak mı?','Camı açsan fena olmaz. Yağmur yağmıyor ama ilke olarak.','Seni izliyorum. Kötü bir şey değil, sadece fazla.','Bu rafta bana yer var. Bakmadım ama var.','Tıkla da içeri gireyim. Mamayı sonra konuşuruz.','Burada dakikalardır bekliyorum. Saat tuttum.'];
 const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" role="group" aria-label="Oda">
   <defs><pattern id="wp" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="2.4" fill="var(--wall-dot)"/><path d="M34 30l2.4 5 5.4.6-4 3.7 1 5.3-4.8-2.6-4.8 2.6 1-5.3-4-3.7 5.4-.6z" fill="var(--wall-dot)"/></pattern>
   <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--win-1)"/><stop offset="1" stop-color="var(--win-2)"/></linearGradient>
@@ -64,6 +65,7 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
     <g class="win-day"><circle cx="560" cy="86" r="18" fill="#FFE29A"/><ellipse cx="450" cy="92" rx="30" ry="9" fill="#fff" opacity=".9"/><ellipse cx="468" cy="84" rx="16" ry="10" fill="#fff" opacity=".9"/></g>
     <g class="win-night" fill="#FFF6DA"><circle cx="430" cy="74" r="1.6"/><circle cx="470" cy="100" r="1.3"/><circle cx="520" cy="66" r="1.5"/><circle cx="590" cy="108" r="1.2"/><circle cx="560" cy="84" r="16" fill="#F6E3A8"/><circle cx="567" cy="79" r="14" fill="var(--win-1)"/></g>
     <path d="M394 190v-36q50-26 104-8t108-6v50z" fill="var(--hill-2)"/><path d="M394 190v-16q70-18 212 0v16z" fill="var(--hill-3)"/>
+    ${!petOf()&&S.viewing===S.me?`<g class="peek" data-act="pet-setup" role="button" tabindex="0" aria-label="Pencereden bakan ev arkadaşını seç"><rect x="430" y="128" width="140" height="62" fill="transparent"/><g class="peek-eyes"><ellipse cx="478" cy="160" rx="12" ry="14" fill="#FFF6EA" stroke="#3A2C24" stroke-width="2.5"/><ellipse cx="522" cy="160" rx="12" ry="14" fill="#FFF6EA" stroke="#3A2C24" stroke-width="2.5"/><circle class="pupil" cx="480" cy="163" r="6.5" fill="#2E2A3A"/><circle class="pupil" cx="524" cy="163" r="6.5" fill="#2E2A3A"/><circle cx="482" cy="160" r="2" fill="#fff"/><circle cx="526" cy="160" r="2" fill="#fff"/></g></g>`:''}
     <path d="M500 46v144M394 118h212" stroke="var(--trim)" stroke-width="7"/><rect x="376" y="198" width="248" height="11" rx="4" fill="var(--wood-3)"/>
     <path d="M372 28h256" stroke="var(--wood-2)" stroke-width="6" stroke-linecap="round"/><path d="M380 30c6 60 4 120 22 164-22 4-34 2-40-2 10-50 8-110 4-162z" fill="#F6C9D0"/><path d="M620 30c-6 60-4 120-22 164 22 4 34 2 40-2-10-50-8-110-4-162z" fill="#F6C9D0"/></g>
   <!-- string lights -->
@@ -108,23 +110,27 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
   <ellipse cx="500" cy="530" rx="330" ry="54" fill="var(--rug)"/><ellipse cx="500" cy="530" rx="292" ry="44" fill="none" stroke="var(--rug-2)" stroke-width="7" stroke-dasharray="4 13" stroke-linecap="round"/>
 </svg>`;
 
-const SPOT_NOTE={film:'Televizyon henüz kablosuz. Film ve dizileri ikinci aşamada bağlıyoruz.',game:'Konsol henüz kutusunda. Oyunlar dördüncü aşamada geliyor.'};
+
 function vHome(){
   const mine=S.viewing===S.me,who=personName(S.viewing),pet=petOf(),rd=S.books.filter(b=>b.status==='read').length;
-  const card=(a,t,n,cls)=>`<button class="hcard ${cls}" data-act="area" data-a="${a}"><b>${t}</b><span>${n}</span></button>`;
+  const L=Store.lists||{book:[],film:[],game:[]},cnt=(a)=>`${L[a].filter(b=>b.status==='read').length} ${a==='book'?'okundu':a==='film'?'izlendi':'bitti'}`;
+  const card=(a,t,n,cls)=>`<div class="hcard ${cls}"><button class="hgo" data-act="area" data-a="${a}"><b>${t}</b><span>${n}</span></button><button class="hrec" data-act="rec" data-a="${a}">Öneri al</button></div>`;
   return `<section class="home">
-  <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(who)}’in evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
-  <div class="room">${ROOM()}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
-  <div class="hcards">${card('book','Kitap Rafı',`${S.books.length} kitap · ${rd} okundu`,'c1')}${card('film','Televizyon','Filmler ve diziler yolda','c2')}${card('game','Oyun Konsolu','Oyunlar yolda','c3')}</div>
-  ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div>`
-   :mine?`<div class="banner"><span><b>Ev biraz sessiz.</b> Bir ev arkadaşı seç; odada dolaşsın, sana laf atsın.</span><button class="btn primary" data-act="pet-setup">Ev arkadaşı seç</button></div>`:''}
+  <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(gen(who))} evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
+  <div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
+  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Televizyon',`${L.film.length} yapım · ${cnt('film')}`,'c2')}${card('game','Oyun Konsolu',`${L.game.length} oyun · ${cnt('game')}`,'c3')}</div>
+  ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div><div class="petbtns"><button class="btn" data-act="taste">Zevkimi yorumla</button>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div></div>`
+   :mine?`<p class="note" style="text-align:center;margin:0">Pencereden biri bakıyor. Gözlerine tıkla, içeri al.</p>`:''}
   </section>`;
 }
 
+/* the stranger at the window */
+let peekT=null;
+function peekLoop(){clearInterval(peekT);const el=$('#peeksay');if(!el)return;let i=0;peekT=setInterval(()=>{const e=$('#peeksay');if(!e)return clearInterval(peekT);i=(i+1)%PEEK_LINES.length;e.textContent=PEEK_LINES[i]},6500)}
 /* wandering */
 const Pet={x:46,dir:1,t:null,sayT:null,
   mount(){
-    clearTimeout(this.t);this.el=$('#petwrap');if(!this.el)return;
+    clearTimeout(this.t);peekLoop();this.el=$('#petwrap');if(!this.el)return;
     this.el.style.left=this.x+'%';this.flip();
     if(!matchMedia('(prefers-reduced-motion: reduce)').matches)this.t=setTimeout(()=>this.next(),1400);
   },
@@ -156,9 +162,8 @@ function openPetSetup(){
 }
 function keepPetName(){const i=$('#pet-name');if(i&&PS)PS.name=i.value}
 Object.assign(ACT,{
-  area:a=>{const k=a.dataset.a;if(k==='book'){S.area='book';scrollTo({top:0});render();return}
-    if(petOf())Pet.say(SPOT_NOTE[k]);else toast(SPOT_NOTE[k])},
-  'go-home':()=>{S.area='home';if(S.me&&S.viewing!==S.me)Store.open(S.me);else render();scrollTo({top:0})},
+  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()})},
+  'go-home':()=>{Store.sync();S.area='home';Store.useArea();if(S.me&&S.viewing!==S.me)Store.open(S.me);else render();scrollTo({top:0})},
   'pet-setup':()=>{PS=null;openPetSetup()},
   'pet-type':a=>{keepPetName();PS.type=a.dataset.v;PS.coat=0;openPetSetup()},
   'pet-coat':a=>{keepPetName();PS.coat=+a.dataset.v;openPetSetup()}

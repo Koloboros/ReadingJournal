@@ -2,13 +2,14 @@
 <html lang="tr">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Okuma Defteri</title>
+<title>Bizim Ev</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap">
 <link rel="stylesheet" href="css/app.css">
 <link rel="stylesheet" href="css/ev.css">
+<link rel="stylesheet" href="css/medya.css">
 <header class="top"><div class="scene" aria-hidden="true"><svg viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice">
   <g class="sun"><circle cx="1080" cy="46" r="34" fill="#FFF3C4" opacity=".55"/><circle cx="1080" cy="46" r="22" fill="#FFE29A"/></g>
   <g class="stars" fill="#FFF6DA"><circle cx="80" cy="30" r="1.4"/><circle cx="210" cy="18" r="1"/><circle cx="330" cy="44" r="1.6"/><circle cx="470" cy="22" r="1.1"/><circle cx="610" cy="40" r="1.3"/><circle cx="760" cy="16" r="1"/><circle cx="880" cy="52" r="1.5"/><circle cx="1010" cy="26" r="1.2"/><circle cx="1130" cy="46" r="1"/><circle cx="540" cy="70" r="1"/><circle cx="1060" cy="80" r="1.3"/><circle cx="1040" cy="40" r="15" fill="#F6E3A8"/><circle cx="1047" cy="35" r="13" fill="var(--sky-1)"/></g>
@@ -24,7 +25,7 @@
 </svg></div><div class="wrap top-in">
   <div class="brand">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z"/><path d="M12 6v14"/></svg>
-    <div><h1>Okuma Defteri</h1><p class="sub" id="sync">Yükleniyor…</p></div>
+    <div><h1 id="brandname">Bizim Ev</h1><p class="sub" id="sync">Yükleniyor…</p></div>
   </div>
   <div class="top-actions">
     <button class="homebtn" id="homebtn" data-act="go-home" aria-label="Eve dön"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span>Ev</span></button>
@@ -38,6 +39,10 @@
 <main class="wrap" id="view"></main>
 <div class="overlay" id="overlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
 <div id="toast" hidden></div>
+<script src="js/config.js"></script>
+<script src="js/alan.js"></script>
 <script src="js/app.js"></script>
 <script src="js/ev.js"></script>
+<script src="js/medya.js"></script>
+<script src="js/oneri.js"></script>
 <script src="js/main.js"></script>
