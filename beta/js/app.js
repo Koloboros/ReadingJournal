@@ -154,6 +154,7 @@ const Store={
   path:id=>`data/kitapliklar/${id}.json`,
   async init(){
     const m=/[#&]kurulum=([^&]+)/.exec(location.hash);
+    const mk=/[#&]ara=([^&]+)/.exec(location.hash);if(mk){try{saveKeys(JSON.parse(atob(decodeURIComponent(mk[1]))))}catch{}}
     if(m){ls.set(K.token,decodeURIComponent(m[1]));history.replaceState(null,'',location.pathname+location.search);S.justSetup=true}
     S.mode='loading';render();
     try{const p=await GH.get('data/kisiler.json');S.people=p?.data?.kisiler||[];this.sha.people=p?.sha||null}
@@ -316,7 +317,7 @@ function render(){
     :S.keyProblem&&S.viewing===S.me?`<div class="banner warn"><span><b>Kayıt anahtarı çalışmıyor (${S.keyProblem}).</b> Süresi dolmuş ya da iptal edilmiş olabilir. Kurulum ekranından yeni anahtar gir.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> Kitap ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Rafın boş.</b> İlk ${A().item} kaydını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Ekle</button></div>`:'';
-  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
+  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button><br>${A().credit||''}</p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
 }
 
 /* one genre list for the shelf, the stats and the genre picker; related genres sit next to each other */
@@ -728,7 +729,7 @@ async function resizeImg(file,max,q){
 /* book search: Google Books first (good Turkish coverage), Open Library as fallback */
 async function searchBooks(q){
   const out=[];
-  try{const r=await fetch('https://www.googleapis.com/books/v1/volumes?maxResults=8&printType=books&q='+encodeURIComponent(q));const j=await r.json();
+  try{const r=await fetch('https://www.googleapis.com/books/v1/volumes?maxResults=8&printType=books'+(KEYS.googleBooks?'&key='+KEYS.googleBooks:'')+'&q='+encodeURIComponent(q));const j=await r.json();
     for(const it of j.items||[]){const v=it.volumeInfo||{};const img=v.imageLinks?.thumbnail||v.imageLinks?.smallThumbnail||'';
       out.push({title:v.title||'',author:(v.authors||[]).join(', '),pages:v.pageCount||'',year:+(v.publishedDate||'').slice(0,4)||'',cover:img?img.replace('http://','https://').replace('&edge=curl',''):'',about:(v.description||'').replace(/<[^>]+>/g,'').slice(0,260)})}}catch{}
   if(out.filter(x=>x.cover).length<2){try{const r=await fetch('https://openlibrary.org/search.json?limit=6&fields=title,author_name,number_of_pages_median,first_publish_year,cover_i&q='+encodeURIComponent(q));const j=await r.json();
@@ -806,14 +807,14 @@ function openPeople(){
 }
 function openSetup(){
   const t=GH.token();
-  const link=t?location.origin+location.pathname+'#kurulum='+encodeURIComponent(t):'';
+  const link=t?location.origin+location.pathname+'#kurulum='+encodeURIComponent(t)+'&ara='+encodeURIComponent(btoa(JSON.stringify(KEYS))):'';
   openSheet(`<div class="sheet-h"><h2>Kurulum</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b">
   ${t?`<p>${S.keyProblem?'<b>Bu cihazdaki anahtar çalışmıyor.</b> Aşağıdan silip yenisini girebilirsin.':'<b>Bu cihaz kayda hazır.</b> Kitap eklediğinde GitHub’a otomatik kaydedilir.'}</p>${S.keyProblem?`<form class="newp" id="token-form"><input type="password" id="token-in" placeholder="yeni github_pat_…" autocomplete="off"><button class="btn primary" type="submit">Yeni anahtarı kaydet</button></form>`:''}
     <div class="field"><span class="lbl">Arkadaşların için kurulum bağlantısı</span>
     <p class="note" style="margin:0">Bu bağlantıyı yalnızca kitaplığı kullanacak kişilere gönder; bağlantıyı bilen herkes kitaplıklara yazabilir. Arkadaşın her cihazda bir kez açması yeterli.</p>
     <div class="setup-code" id="setup-link">${esc(link)}</div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-act="setup-copy">Bağlantıyı kopyala</button><button class="btn danger ghost" data-act="setup-clear">Anahtarı bu cihazdan sil</button></div></div>`
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-act="setup-copy">Bağlantıyı kopyala</button><button class="btn danger ghost" data-act="setup-clear">Anahtarı bu cihazdan sil</button></div></div>${keysForm()}`
   :`<p>Kitap ekleyebilmek için bu cihaza bir kez kayıt anahtarı girmen gerekiyor. Arkadaşın sana kurulum bağlantısı gönderdiyse onu açman yeterli.</p>
     <ol class="steps"><li>GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate new token</li>
     <li>Repository access: <b>Only select repositories</b> → ${REPO.repo}</li><li>Permissions → Contents: <b>Read and write</b></li><li>Oluşan <b>github_pat_…</b> anahtarını aşağıya yapıştır.</li></ol>

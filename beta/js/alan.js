@@ -19,6 +19,9 @@ const AREAS={
     list:{title:'Backlog',wish:['İstek listem','henüz almadım, gözüm üstünde','İşaretle: aldım, kütüphaneye geçsin','Aldım','İstek listen boş.'],wait:['Kütüphanede bekleyenler','satın aldım, hiç açmadım (herkes yapıyor)','İşaretle: oynamaya başladım','Oynamaya başladım','Bekleyen oyun yok. Bu bir mucize.'],now:['Oynuyorum','şu anki kayıtlar','İşaretle: bitirdim, puanını ver','Bitirdim','Şu an oynadığın bir oyun yok.'],ph:'Oynamak istediğin oyun',add:'Listeye ekle'},
     tabs:[['shelf','Raf','shelf','Raf'],['kesfet','Keşfet','compass','Keşfet'],['covers','Buhar','covers','Buhar'],['notes','Günlük','pen','Günlük'],['stats','Yıl Özeti','chart','Özet'],['tbr','Backlog','list','Liste'],['stamps','Hedef','stamp','Hedef'],['bingo','Bingo','grid','Bingo']]}
 };
+AREAS.book.credit='Kitap verileri: Google Books ve Open Library.';
+AREAS.film.credit='Bu ürün TMDB API’sini kullanır ancak TMDB tarafından onaylanmamış veya sertifikalandırılmamıştır. Veriler: TMDB, TVmaze, Wikipedia.';
+AREAS.game.credit='Oyun verileri: <a href="https://rawg.io" target="_blank" rel="noopener">RAWG</a>.';
 const curArea=()=>S.area==='film'||S.area==='game'?S.area:'book';
 const A=()=>AREAS[curArea()];
 const GENRE_SETS={

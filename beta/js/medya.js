@@ -11,11 +11,15 @@ async function searchFilm(q){
   const shows=(tv||[]).slice(0,5).map(({show:s})=>({title:s.name,year:+(s.premiered||'').slice(0,4)||'',cover:(s.image?.medium||'').replace('http://','https://'),about:(s.summary||'').replace(/<[^>]+>/g,'').slice(0,260),format:'dizi',imdbId:s.externals?.imdb||''}));
   return[...wk.map(w=>({...w,format:/series|show/i.test(w.about)?'dizi':'film'})),...shows];
 }
+const RAWG_GENRE={Action:'Aksiyon',Adventure:'Macera',RPG:'RPG',Strategy:'Strateji',Simulation:'Simülasyon',Puzzle:'Bulmaca',Platformer:'Platform',Racing:'Yarış',Sports:'Spor',Fighting:'Dövüş',Shooter:'Nişancı',Indie:'Indie',Casual:'Cozy'};
 async function searchGame(q){
   if(KEYS.rawg){try{const r=await fetch(`https://api.rawg.io/api/games?key=${KEYS.rawg}&page_size=8&search=${encodeURIComponent(q)}`);const j=await r.json();
-    const list=(j.results||[]).map(g=>({title:g.name,year:+(g.released||'').slice(0,4)||'',cover:g.background_image||'',pages:g.playtime||'',genre:g.genres?.[0]?.name||'',about:''}));if(list.length)return list}catch{}}
+    const list=(j.results||[]).map(g=>({title:g.name,year:+(g.released||'').slice(0,4)||'',cover:g.background_image||'',pages:g.playtime||'',genre:RAWG_GENRE[g.genres?.[0]?.name]||g.genres?.[0]?.name||'',about:''}));if(list.length)return list}catch{}}
   return wikiOf(q,/video game|game/i);
 }
+function keysForm(){return `<form class="field" id="keys-form"><span class="lbl">Arama anahtarları</span><p class="note" style="margin:0">Daha iyi arama sonuçları ve kapaklar için. Bu cihazda saklanır, repoya yazılmaz, kurulum bağlantısıyla arkadaşlarına geçer.</p>
+  <input type="password" id="key-tmdb" autocomplete="off" placeholder="TMDB anahtarı" value="${esc(KEYS.tmdb)}" aria-label="TMDB anahtarı"><input type="password" id="key-rawg" autocomplete="off" placeholder="RAWG anahtarı" value="${esc(KEYS.rawg)}" aria-label="RAWG anahtarı"><input type="password" id="key-gb" autocomplete="off" placeholder="Google Books anahtarı" value="${esc(KEYS.googleBooks)}" aria-label="Google Books anahtarı"><button class="btn" type="submit">Arama anahtarlarını kaydet</button></form>`}
+document.addEventListener('submit',e=>{if(e.target.id!=='keys-form')return;saveKeys({tmdb:$('#key-tmdb').value.trim(),rawg:$('#key-rawg').value.trim(),googleBooks:$('#key-gb').value.trim()});toast('Arama anahtarları bu cihaza kaydedildi.');openSetup()});
 const searchMedia=q=>curArea()==='film'?searchFilm(q):curArea()==='game'?searchGame(q):searchBooks(q);
 function paintResults(res,loading){
   const el=$('#ed-results');if(!el)return;
