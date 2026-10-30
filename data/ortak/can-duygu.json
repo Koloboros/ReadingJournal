@@ -286,6 +286,21 @@
    "id": "hbmvvd93kbgb200",
    "addedBy": "duygu",
    "addedAt": 1793388573515
+  },
+  {
+   "author": "Gene Luen Yang",
+   "genre": "Çizgi roman",
+   "series": "Avatar",
+   "seriesNo": 1,
+   "title": "Avatar: The Promise",
+   "pages": 235,
+   "coverUrl": "https://covers.openlibrary.org/b/id/10109563-M.jpg",
+   "year": 2013,
+   "color": "#8ebdb0",
+   "format": "print",
+   "id": "hbmvvd9efclhavc",
+   "addedBy": "duygu",
+   "addedAt": 1793388587592
   }
  ],
  "films": [],
