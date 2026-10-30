@@ -178,6 +178,7 @@ const Store={
     try{const f=await GH.get(this.path(id));const{lists,sets,extra}=splitFile(f?.data||{});this.lists=lists;this.sets=sets;this.extra=extra;this.useArea();this.sha[id]=f?.sha||null;S.mode='ready'}
     catch{S.mode='offline'}
     S.canEdit=!!GH.token()&&S.viewing===S.me;setSync();render();
+    if(S.mode==='ready')Onboard.maybe();
   },
   /* one screen set, three lists: S.books and S.settings always point at the open area */
   sync(){if(this.lists){const a=curArea();this.lists[a]=S.books;this.sets[a]=S.settings}},
@@ -263,7 +264,7 @@ function setSync(){
   el.textContent=S.mode==='loading'?'Yükleniyor…':S.mode==='offline'?'Bağlantı kurulamadı':S.mode==='pick'?'Sen kimsin?'
     :!S.canEdit?`${who} · ${S.viewing===S.me?'görüntüleme (anahtar yok)':'misafir görünümü'}`
     :({pending:'Değişiklikler kaydedilecek…',saving:'GitHub’a kaydediliyor…',saved:'Kaydedildi ✓',error:'Kaydedilemedi'}[S.save]||`${who} · senin evin`);
-  const w=$('#who');if(w)w.innerHTML=`${ico('person')}<span>${esc(S.viewing?personName(S.viewing):'Kimin evi?')}</span><span aria-hidden="true">▾</span>`;
+  const w=$('#who');if(w)w.innerHTML=`${avatarOf(S.people.find(p=>p.id===S.viewing))?`<span class="whoav">${personAv(S.people.find(p=>p.id===S.viewing))}</span>`:ico('person')}<span>${esc(S.viewing?personName(S.viewing):'Kimin evi?')}</span><span aria-hidden="true">▾</span>`;
 }
 
 /* ---------- covers ---------- */
@@ -680,7 +681,7 @@ function vBingo(){
 /* ---------- editor sheet ---------- */
 let F=null,busy='';
 function openSheet(html){$('#sheet').classList.remove('show-fr');$('#sheet').innerHTML=html;$('#overlay').hidden=false;document.body.style.overflow='hidden'}
-function closeSheet(){$('#overlay').hidden=true;document.body.style.overflow='';F=null;S.sheetRefresh=null}
+function closeSheet(){$('#overlay').hidden=true;document.body.style.overflow='';F=null;S.sheetRefresh=null;const n=S.onbNext;if(n){S.onbNext=null;setTimeout(n,300)}}
 function openEditor(b,preset={}){
   const isDemo=b&&demo();
   F=b?{...b,...preset}:{id:newId(),title:'',author:'',pages:'',year:'',genre:'',publisher:'',about:'',color:'',status:'want',owned:curArea()!=='film',format:Object.keys(A().formats)[0],startDate:'',endDate:'',rating:0,review:'',addedAt:Date.now(),...preset};
@@ -809,7 +810,7 @@ async function fillMissing(){
 /* ---------- whose library · setup ---------- */
 const initial=n=>(n||'?').trim().charAt(0).toLocaleUpperCase('tr');
 function peopleCards(act){
-  return S.people.map(p=>`<button class="pcard ${p.id===S.me?'me':''}" style="--c:${esc(p.color||autoColor(p.name))}" data-act="${act}" data-id="${esc(p.id)}"><span class="av">${esc(initial(p.name))}</span><b>${esc(p.name)}</b><small>${S.mode==='pick'?'bu benim':p.id===S.viewing?'şu an açık':'evine git'}</small></button>`).join('');
+  return S.people.map(p=>`<button class="pcard ${p.id===S.me?'me':''}" style="--c:${esc(p.color||autoColor(p.name))}" data-act="${act}" data-id="${esc(p.id)}"><span class="av">${personAv(p)}</span><b>${esc(p.name)}</b><small>${S.mode==='pick'?'bu benim':p.id===S.viewing?'şu an açık':'evine git'}</small></button>`).join('');
 }
 function vPick(){
   return `<div class="picker"><h2>Sen kimsin?</h2><p>${S.people.length?'Kendini seç. Bu tarayıcı seni hatırlar, bir daha sormaz.':'Henüz kimse yok. İlk kişiyi ekleyerek başla.'}</p>
@@ -818,7 +819,7 @@ function vPick(){
 function openPeople(){
   openSheet(`<div class="sheet-h"><h2>Kimin evi?</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b"><div class="people">${peopleCards('person')}</div>
-  <p class="note">Bu cihazda sen: <b>${esc(S.me?personName(S.me):'seçilmedi')}</b>. Yalnızca kendi evini düzenleyebilirsin. <button class="linkbtn" data-act="me-change">Değiştir</button></p>
+  <p class="note">Bu cihazda sen: <b>${esc(S.me?personName(S.me):'seçilmedi')}</b>. Yalnızca kendi evini düzenleyebilirsin. <button class="linkbtn" data-act="me-change">Değiştir</button> · <button class="linkbtn" data-act="avatar-change">Profil resmi</button> · <button class="linkbtn" data-act="tour">Tanıtımı izle</button></p>
   ${GH.token()?`<form class="newp" id="newp-form"><input type="text" id="newp-in" placeholder="Yeni kişinin adı" maxlength="30"><button class="btn" type="submit">Kişi ekle</button></form>`:''}
   <div class="ed-foot"><button class="btn ghost" data-act="setup">Kurulum</button></div></div>`);
 }

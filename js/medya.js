@@ -65,7 +65,7 @@ function sameItem(a,b){
 }
 const peerRows=b=>!Peers.ready||!b?.title?[]:S.people.filter(p=>p.id!==S.viewing).map(p=>{const x=Peers.list(p.id,curArea()).find(i=>sameItem(i,b));return x&&{p,x}}).filter(Boolean);
 const peerScore=x=>x.status==='skip'?A().status.skip:x.rating?String(x.rating).replace('.',',')+'/'+A().scale:A().status[x.status]||'–';
-const peerDot=p=>`<i style="background:${esc(p.color||'#ddd')}">${esc(initial(p.name))}</i>`;
+const peerDot=p=>`<i style="background:${esc(p.color||'#ddd')}">${personAv(p)}</i>`;
 function peerScores(b){
   const row=peerRows(b).map(({p,x})=>`<span class="pscore">${peerDot(p)}${esc(p.name)} <b>${esc(peerScore(x))}</b></span>`).join('');
   return row?`<div class="pscores">${row}</div>`:'';
@@ -138,7 +138,7 @@ function kList(){
   return L.sort(by);
 }
 function kcard(e){
-  const b=e.item,sc=S.people.filter(p=>e.who[p.id]).map(p=>{const w=e.who[p.id];return `<span class="pscore mini"><i style="background:${esc(p.color||'#ddd')}">${esc(initial(p.name))}</i><b>${w.status==='skip'?'✕':w.rating?String(w.rating).replace('.',','):'•'}</b></span>`}).join('');
+  const b=e.item,sc=S.people.filter(p=>e.who[p.id]).map(p=>{const w=e.who[p.id];return `<span class="pscore mini"><i style="background:${esc(p.color||'#ddd')}">${personAv(p)}</i><b>${w.status==='skip'?'✕':w.rating?String(w.rating).replace('.',','):'•'}</b></span>`}).join('');
   return `<button class="kcard" data-act="k-open" data-k="${esc(e.k)}">${coverHTML({...b,status:''})}<div class="kbody"><b>${esc(b.title)}</b><span class="muted">${esc([b.yearLabel||b.year,b.author].filter(Boolean).join(' · '))}</span>${b.imdb?`<span class="imdb">IMDb ${String(b.imdb).replace('.',',')}</span>`:''}<div class="kscores">${sc||`<span class="muted">${A().noneShort}</span>`}</div></div></button>`;
 }
 function paintK(){const g=$('#kgrid');if(!g)return;const L=kList(),a=L.slice(0,S.klimit);g.innerHTML=a.map(kcard).join('')||`<div class="empty">Sonuç yok.</div>`;const m=$('#kmore');if(m)m.hidden=L.length<=S.klimit;const c=$('#kcount');if(c)c.textContent=`${L.length} ${A().item}`}
@@ -155,7 +155,7 @@ function vKesfet(){
 function myCopy(b,extra){const{id,kind,rating,review,status,startDate,endDate,updatedAt,owned,fromTbr,...rest}=b;return{id:id&&!Store.lists[curArea()].some(x=>x.id===id)?id:newId(),...rest,owned:false,rating:0,...extra}}
 function openCatalog(k){
   const e=catalog(curArea()).find(x=>x.k===k);if(!e)return;const b=e.item,mine=S.canEdit?S.books.find(x=>itemKey(x)===k):null;
-  const others=S.people.filter(p=>e.who[p.id]).map(p=>{const w=e.who[p.id];return `<div class="kwho"><i style="background:${esc(p.color||'#ddd')}">${esc(initial(p.name))}</i><span>${esc(p.name)}</span><b>${w.status==='skip'?A().status.skip:w.rating?String(w.rating).replace('.',','):A().status[w.status]||''}</b></div>`}).join('');
+  const others=S.people.filter(p=>e.who[p.id]).map(p=>{const w=e.who[p.id];return `<div class="kwho"><i style="background:${esc(p.color||'#ddd')}">${personAv(p)}</i><span>${esc(p.name)}</span><b>${w.status==='skip'?A().status.skip:w.rating?String(w.rating).replace('.',','):A().status[w.status]||''}</b></div>`}).join('');
   S.kOpen=e;
   openSheet(`<div class="sheet-h"><h2>${esc(A().Item)}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b">${itemTabs(b)}<div class="ed-top"><div>${coverHTML({...b,status:''})}</div><div style="min-width:0;display:grid;gap:6px;align-content:start">
