@@ -6569,7 +6569,7 @@
     "id": "bmvvexts3",
     "year": 2026,
     "name": "Kart 2",
-    "size": 3,
+    "size": 4,
     "cells": [
      {
       "p": "Polisiye",
@@ -6588,10 +6588,6 @@
       "b": "g56"
      },
      {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
       "p": "Sesli kitap",
       "b": "g31"
      },
@@ -6605,6 +6601,38 @@
      },
      {
       "p": "Arkadaşınla birlikte okuduğun",
+      "b": null
+     },
+     {
+      "p": "Gece yarısına kadar okuduğun",
+      "b": null
+     },
+     {
+      "p": "Serinin ilk kitabı",
+      "b": null
+     },
+     {
+      "p": "Kapağında çiçek var",
+      "b": null
+     },
+     {
+      "p": "İskandinav yazar",
+      "b": null
+     },
+     {
+      "p": "Hiç okumadığın tür",
+      "b": null
+     },
+     {
+      "p": "Rus edebiyatı",
+      "b": null
+     },
+     {
+      "p": "Distopya",
+      "b": null
+     },
+     {
+      "p": "Kapak tasarımına âşık olduğun",
       "b": null
      }
     ]
