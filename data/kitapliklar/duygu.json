@@ -6523,8 +6523,83 @@
  },
  "filmSettings": {
   "goals": {},
-  "bingoCards": [],
-  "bingoActive": {}
+  "bingoCards": [
+   {
+    "id": "bmvuzu2be",
+    "year": 2026,
+    "name": "Kart 1",
+    "size": 4,
+    "cells": [
+     {
+      "p": "Üçlemenin bir parçası",
+      "b": null
+     },
+     {
+      "p": "Romantik",
+      "b": null
+     },
+     {
+      "p": "Sinemada izlediğin",
+      "b": null
+     },
+     {
+      "p": "Tek oturuşta bitirdiğin dizi",
+      "b": null
+     },
+     {
+      "p": "Gizem",
+      "b": null
+     },
+     {
+      "p": "Japon yapımı",
+      "b": null
+     },
+     {
+      "p": "Fantastik",
+      "b": null
+     },
+     {
+      "p": "Güldüren",
+      "b": null
+     },
+     {
+      "p": "IMDb 7 altı",
+      "b": null
+     },
+     {
+      "p": "Animasyon",
+      "b": null
+     },
+     {
+      "p": "Uykun kaçtı",
+      "b": null
+     },
+     {
+      "p": "Yarım bıraktığın dizi",
+      "b": null
+     },
+     {
+      "p": "Korku",
+      "b": null
+     },
+     {
+      "p": "1980 öncesi",
+      "b": null
+     },
+     {
+      "p": "Çocukluk filmi",
+      "b": null
+     },
+     {
+      "p": "Ağlatan",
+      "b": null
+     }
+    ]
+   }
+  ],
+  "bingoActive": {
+   "2026": "bmvuzu2be"
+  }
  },
  "gameSettings": {
   "goals": {},
