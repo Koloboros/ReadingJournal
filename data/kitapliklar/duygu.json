@@ -2066,7 +2066,8 @@
    "status": "read",
    "endDate": "2025-11-30",
    "color": "#bfc3e8",
-   "updatedAt": 1793391079946
+   "updatedAt": 1793391079946,
+   "infoTried": true
   }
  ],
  "films": [
