@@ -482,6 +482,7 @@ textarea{resize:vertical;min-height:80px}
 .bcell.line::after{display:block;content:"";position:absolute;inset:4px;border:2px solid var(--postmark);border-radius:50%;opacity:.6;transform:rotate(-8deg);pointer-events:none}
 .pick .fit{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:1px 7px;margin-right:4px}
 html[data-readonly] .bacc,html[data-readonly] .bcards .add{display:none}
+.banner.warn{background:color-mix(in srgb,var(--postmark) 12%,var(--sheet));border-color:var(--postmark)}
 /* visitors: hide everything that changes the journal */
 html[data-readonly] #btn-add,html[data-readonly] .tbr-add,html[data-readonly] .tbr-add+.note,html[data-readonly] .trow .mini,html[data-readonly] .goal-edit,html[data-readonly] [data-act="bingo-shuffle"],html[data-readonly] [data-act="bingo-reset"]{display:none!important}
 html[data-readonly] .trow .chk,html[data-readonly] .bcell{cursor:default}
@@ -694,6 +695,7 @@ const GH={
     try{
       const r=await fetch(API+path+'?ref='+REPO.branch+'&_='+Date.now(),{headers:this.headers(),cache:'no-store'});
       if(r.status===404)return null;
+      if((r.status===401||r.status===403)&&this.token()&&r.headers.get('x-ratelimit-remaining')!=='0')S.keyProblem=r.status;
       if(!r.ok)throw Object.assign(new Error('http '+r.status),{status:r.status});
       const j=await r.json();
       const txt=j.content?b64dec(j.content):await (await fetch(j.download_url+'?_='+Date.now(),{cache:'no-store'})).text();
@@ -704,10 +706,16 @@ const GH={
       throw e;
     }
   },
-  async put(path,data,sha,message){
+  async sha(path){
+    if(LOCAL)return 'local';
+    const r=await fetch(API+path+'?ref='+REPO.branch+'&_='+Date.now(),{headers:this.headers(),cache:'no-store'});
+    if(r.status===404)return null;if(!r.ok)throw Object.assign(new Error('http '+r.status),{status:r.status});
+    return (await r.json()).sha;
+  },
+  async put(path,data,sha,message,keepalive=false){
     if(LOCAL){console.info('[yerel deneme] commit:',message,path,data);return 'local'}
     const body=JSON.stringify({message,content:b64enc(JSON.stringify(data,null,1)),branch:REPO.branch,...(sha?{sha}:{})});
-    const r=await fetch(API+path,{method:'PUT',headers:{...this.headers(),'Content-Type':'application/json'},body,keepalive:body.length<60000});
+    const r=await fetch(API+path,{method:'PUT',headers:{...this.headers(),'Content-Type':'application/json'},body,keepalive:keepalive&&body.length<60000});
     if(!r.ok)throw Object.assign(new Error('http '+r.status),{status:r.status});
     return (await r.json()).content.sha;
   },
@@ -738,7 +746,7 @@ const Store={
   async open(id){
     if(this.msgs.length)await this.flush();
     S.viewing=id;ls.set(K.viewing,id);S.mode='loading';S.books=[];S.settings=normSettings();render();
-    try{const f=await GH.get(this.path(id));S.books=(f?.data?.books||[]).map(b=>({...b,kind:'book'}));S.settings=normSettings(f?.data?.settings);this.sha[id]=f?.sha||null;S.mode='ready'}
+    try{const f=await GH.get(this.path(id));const{books:_b,settings:_s,...extra}=f?.data||{};this.extra=extra;S.books=(f?.data?.books||[]).map(b=>({...b,kind:'book'}));S.settings=normSettings(f?.data?.settings);this.sha[id]=f?.sha||null;S.mode='ready'}
     catch{S.mode='offline'}
     S.canEdit=!!GH.token()&&S.viewing===S.me;setSync();render();
   },
@@ -755,22 +763,26 @@ const Store={
   saveSettings(){if(S.canEdit)this.schedule('hedef/bingo güncellendi')},
   /* collect edits for a moment, then write one commit */
   schedule(msg){if(!S.canEdit)return;this.msgs.push(msg);S.save='pending';setSync();clearTimeout(this.timer);this.timer=setTimeout(()=>this.flush(),2500)},
-  async flush(){
+  async flush(leaving=false){
     clearTimeout(this.timer);
     if(this.flushing){this.again=true;return}
     if(!this.msgs.length||!S.me)return;
     const id=S.me,msgs=this.msgs.splice(0),path=this.path(id);this.flushing=true;S.save='saving';setSync();
     const message=`${personName(id)}: ${msgs.length>3?msgs.length+' değişiklik':msgs.join(', ')}`;
-    const data={books:S.books.map(cleanBook),settings:S.settings};
+    const data={...(this.extra||{}),books:S.books.map(cleanBook),settings:S.settings};
     try{
-      if(!this.sha[id]){const f=await GH.get(path).catch(()=>null);this.sha[id]=f?.sha||null}
-      try{this.sha[id]=await GH.put(path,data,this.sha[id],message)}
-      catch(e){if(e.status!==409&&e.status!==422)throw e;const f=await GH.get(path);this.sha[id]=await GH.put(path,data,f?.sha,message)}
-      S.save='saved';
+      if(!this.sha[id]||this.sha[id]==='local')this.sha[id]=await GH.sha(path);
+      try{this.sha[id]=await GH.put(path,data,this.sha[id],message,leaving)}
+      catch(e){if(e.status!==409&&e.status!==422)throw e;
+        /* another device saved first: keep whatever else it wrote to the file, our books and settings win */
+        const f=await GH.get(path),{books:_b,settings:_s,...extra}=f?.data||{};this.extra={...extra};
+        this.sha[id]=await GH.put(path,{...data,...extra},f?.sha||await GH.sha(path),message,leaving)}
+      S.save='saved';S.saveErr=null;S.keyProblem=null;
     }catch(e){
-      this.msgs.unshift(...msgs);S.save='error';
-      if(e.status===401||e.status===403)toast('Kaydedilemedi: anahtar geçersiz ya da süresi dolmuş. Kurulum ekranından yeni anahtar gir.');
-      else{toast('Kaydedilemedi; internet bağlantını kontrol et. Biraz sonra yeniden denenecek.');this.timer=setTimeout(()=>this.flush(),15000)}
+      this.msgs.unshift(...msgs);S.save='error';S.saveErr=saveReason(e);
+      toast('Kaydedilemedi: '+S.saveErr);
+      if(!(e.status===401||e.status===403||e.status===404))this.timer=setTimeout(()=>this.flush(),15000);
+      render();
     }finally{this.flushing=false;setSync();if(this.again){this.again=false;this.flush()}}
   },
   async addPerson(name){
@@ -786,11 +798,21 @@ const Store={
     }catch(e){toast(e.status===401||e.status===403?'Anahtar geçersiz; kurulumu kontrol et.':'Kişi eklenemedi; tekrar dene.')}
   }
 };
-addEventListener('pagehide',()=>{if(Store.msgs.length)Store.flush()});
-addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&Store.msgs.length)Store.flush()});
+addEventListener('pagehide',()=>{if(Store.msgs.length)Store.flush(true)});
+addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&Store.msgs.length)Store.flush(true)});
+/* a short, specific reason for a failed save */
+function saveReason(e){
+  const st=e?.status;
+  if(st===401)return'anahtar geçersiz ya da süresi dolmuş (401). Kurulum ekranından yeni anahtar gir.';
+  if(st===403)return'anahtarın bu repoya yazma izni yok (403). Contents: Read and write izni seçili olmalı.';
+  if(st===404)return'repo ya da dosya bulunamadı (404). Anahtar doğru repoya mı bağlı?';
+  if(st===409||st===422)return'aynı anda başka bir yerden kayıt yapıldı ('+st+'). Birazdan yeniden denenecek.';
+  if(st)return'GitHub hata verdi ('+st+'). Birazdan yeniden denenecek.';
+  return'GitHub’a ulaşılamadı (bağlantı). Birazdan yeniden denenecek.';
+}
 /* bingo cards live in a list (several per year, none overwritten); the old one-card-per-year format is moved into it */
 function normSettings(s){
-  const o={goals:{...(s?.goals||{})},bingoCards:[...(s?.bingoCards||[])],bingoActive:{...(s?.bingoActive||{})}};
+  const{bingo:_old,...rest}=s||{};const o={...rest,goals:{...(s?.goals||{})},bingoCards:[...(s?.bingoCards||[])],bingoActive:{...(s?.bingoActive||{})}};
   for(const[y,c]of Object.entries(s?.bingo||{}))if(c&&Array.isArray(c.cells)&&!o.bingoCards.some(k=>k.id==='y'+y))
     o.bingoCards.push({id:'y'+y,year:+y,name:'Kart 1',size:c.size||Math.round(Math.sqrt(c.cells.length)),cells:c.cells});
   return o;
@@ -801,7 +823,7 @@ function setSync(){
   const who=S.viewing?personName(S.viewing):'';
   el.textContent=S.mode==='loading'?'Yükleniyor…':S.mode==='offline'?'Bağlantı kurulamadı':S.mode==='pick'?'Kimin kitaplığı?'
     :!S.canEdit?`${who} · ${S.viewing===S.me?'görüntüleme (anahtar yok)':'misafir görünümü'}`
-    :({pending:'Değişiklikler kaydedilecek…',saving:'GitHub’a kaydediliyor…',saved:'Kaydedildi ✓',error:'Kaydedilemedi, yeniden denenecek'}[S.save]||`${who} · senin kitaplığın`);
+    :({pending:'Değişiklikler kaydedilecek…',saving:'GitHub’a kaydediliyor…',saved:'Kaydedildi ✓',error:'Kaydedilemedi'}[S.save]||`${who} · senin kitaplığın`);
   const w=$('#who');if(w)w.innerHTML=`${ico('person')}<span>${esc(S.viewing?personName(S.viewing):'Kimin kitaplığı?')}</span><span aria-hidden="true">▾</span>`;
 }
 
@@ -853,6 +875,8 @@ function render(){
   const ban=S.mode==='loading'?`<div class="banner"><span class="busy"><span class="spin"></span>Kitaplar yükleniyor…</span></div>`
     :S.mode==='offline'?`<div class="banner"><span>Kitaplar şu an yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.</span></div>`
     :S.viewing!==S.me?`<div class="banner"><span><b>${who}’in kitaplığına bakıyorsun.</b> Kitaplara dokunarak notlarını okuyabilirsin.</span><button class="btn" data-act="people">Kitaplık değiştir</button></div>`
+    :S.save==='error'&&S.viewing===S.me?`<div class="banner warn"><span><b>Son değişiklik kaydedilemedi:</b> ${esc(S.saveErr||'')}</span><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-act="retry-save">Tekrar dene</button><button class="btn" data-act="setup">Kurulum</button></div></div>`
+    :S.keyProblem&&S.viewing===S.me?`<div class="banner warn"><span><b>Kayıt anahtarı çalışmıyor (${S.keyProblem}).</b> Süresi dolmuş ya da iptal edilmiş olabilir. Kurulum ekranından yeni anahtar gir.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> Kitap ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Kitaplığın boş.</b> İlk kitabını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Kitap ekle</button></div>`:'';
   $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Kitaplıklar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button></p>`;
@@ -1343,7 +1367,7 @@ function openSetup(){
   const link=t?location.origin+location.pathname+'#kurulum='+encodeURIComponent(t):'';
   openSheet(`<div class="sheet-h"><h2>Kurulum</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b">
-  ${t?`<p><b>Bu cihaz kayda hazır.</b> Kitap eklediğinde GitHub’a otomatik kaydedilir.</p>
+  ${t?`<p>${S.keyProblem?'<b>Bu cihazdaki anahtar çalışmıyor.</b> Aşağıdan silip yenisini girebilirsin.':'<b>Bu cihaz kayda hazır.</b> Kitap eklediğinde GitHub’a otomatik kaydedilir.'}</p>${S.keyProblem?`<form class="newp" id="token-form"><input type="password" id="token-in" placeholder="yeni github_pat_…" autocomplete="off"><button class="btn primary" type="submit">Yeni anahtarı kaydet</button></form>`:''}
     <div class="field"><span class="lbl">Arkadaşların için kurulum bağlantısı</span>
     <p class="note" style="margin:0">Bu bağlantıyı yalnızca kitaplığı kullanacak kişilere gönder; bağlantıyı bilen herkes kitaplıklara yazabilir. Arkadaşın her cihazda bir kez açması yeterli.</p>
     <div class="setup-code" id="setup-link">${esc(link)}</div>
@@ -1416,6 +1440,7 @@ const ACT={
   'fill-missing':fillMissing,
   'ed-pick':a=>{syncInputs();const r=F._results?.[+a.dataset.i];if(r){applyResult(r,true);delete F._preview;delete F._photoBlob;delete F._small;delete F.coverData;F._results=null;renderEditor();toast('Bilgiler dolduruldu; kontrol edip kaydet.')}},
   people:()=>openPeople(),
+  'retry-save':()=>{toast('Yeniden deneniyor…');Store.flush()},
   person:a=>{closeSheet();Store.open(a.dataset.id)},
   'pick-me':a=>pickMe(a.dataset.id),
   'me-change':()=>{closeSheet();S.mode='pick';render()},
@@ -1472,7 +1497,7 @@ document.addEventListener('submit',async e=>{
   if(e.target.id==='ed-form')return saveEditor();
   if(e.target.id==='newp-form'){const n=$('#newp-in').value.trim();if(!n)return;const p=await Store.addPerson(n);if(p){toast(p.name+' eklendi.');closeSheet();if(!S.me)return pickMe(p.id);openPeople()}return}
   if(e.target.id==='token-form'){const t=$('#token-in').value.trim();if(!t)return;toast('Anahtar deneniyor…');
-    if(await GH.check(t)){ls.set(K.token,t);S.canEdit=!!S.me&&S.viewing===S.me;closeSheet();render();toast('Anahtar çalışıyor. Artık kitapların otomatik kaydedilecek.');openSetup()}
+    if(await GH.check(t)){ls.set(K.token,t);S.keyProblem=null;S.save='';if(Store.msgs.length)Store.flush();S.canEdit=!!S.me&&S.viewing===S.me;closeSheet();render();toast('Anahtar çalışıyor. Artık kitapların otomatik kaydedilecek.');openSetup()}
     else toast('Bu anahtar repoya yazamıyor. Contents: Read and write izni ve doğru repo seçili mi?');return}
   if(e.target.id==='tbr-form'){
     const inp=$('#tbr-in'),raw=inp.value.trim();if(!raw)return;
