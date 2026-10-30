@@ -6569,8 +6569,28 @@
     "id": "bmvvexts3",
     "year": 2026,
     "name": "Kart 2",
-    "size": 5,
+    "size": 4,
     "cells": [
+     {
+      "p": "Polisiye",
+      "b": "g15"
+     },
+     {
+      "p": "Bir günde biten",
+      "b": "g42"
+     },
+     {
+      "p": "Felsefe",
+      "b": "g14"
+     },
+     {
+      "p": "500+ sayfa",
+      "b": "g56"
+     },
+     {
+      "p": "Sesli kitap",
+      "b": "g31"
+     },
      {
       "p": "Şiir kitabı",
       "b": null
@@ -6580,20 +6600,12 @@
       "b": null
      },
      {
-      "p": "Polisiye",
-      "b": "g15"
-     },
-     {
       "p": "Arkadaşınla birlikte okuduğun",
       "b": null
      },
      {
       "p": "Masal / efsane",
       "b": null
-     },
-     {
-      "p": "Bir günde biten",
-      "b": "g42"
      },
      {
       "p": "Doğduğun yıl çıkan",
@@ -6620,55 +6632,7 @@
       "b": null
      },
      {
-      "p": "SERBEST",
-      "b": null
-     },
-     {
       "p": "Tarihi roman",
-      "b": null
-     },
-     {
-      "p": "Mitoloji",
-      "b": null
-     },
-     {
-      "p": "Felsefe",
-      "b": "g14"
-     },
-     {
-      "p": "500+ sayfa",
-      "b": "g56"
-     },
-     {
-      "p": "Sesli kitap",
-      "b": "g31"
-     },
-     {
-      "p": "Annenin/babanın sevdiği kitap",
-      "b": null
-     },
-     {
-      "p": "Başlıkta bir isim",
-      "b": null
-     },
-     {
-      "p": "Gece yarısına kadar okuduğun",
-      "b": null
-     },
-     {
-      "p": "Aşk hikâyesi",
-      "b": null
-     },
-     {
-      "p": "Çocukken okuduğun bir kitap",
-      "b": null
-     },
-     {
-      "p": "Yeşil kapaklı",
-      "b": null
-     },
-     {
-      "p": "Başka ülkede geçen",
       "b": null
      }
     ]
