@@ -4,7 +4,7 @@ const lastV=s=>(String(s).toLocaleLowerCase('tr').match(/[aıoueiöü]/g)||['e']
 const endsV=s=>/[aıoueiöü]$/i.test(String(s).toLocaleLowerCase('tr'));
 const gen=s=>{const v=lastV(s),h={a:'ı',ı:'ı',o:'u',u:'u',e:'i',i:'i',ö:'ü',ü:'ü'}[v];return `${s}’${endsV(s)?'n':''}${h}n`};
 const abl=s=>`${s}’${/[aıou]/.test(lastV(s))?'dan':'den'}`;
-const VERB={book:['okudu','okudu','okumuş','kitap'],film:['izledi','izledi','izlemiş','yapım'],game:['oynadı','oynadı','oynamış','oyun']};
+const VERB={book:['okudu','okudu','okumuş','kitap'],film:['izledi','izledi','izlemiş','film'],game:['oynadı','oynadı','oynamış','oyun']};
 const pick1=a=>a[Math.floor(Math.random()*a.length)];
 /* o = owner's name, t = title, s = score, n = pet's name, v = verb, g = genre */
 const REC_LINES={

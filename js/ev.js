@@ -81,7 +81,7 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
     <g transform="translate(232 -4) scale(.82)"><path d="M16 52h28l-4 18H20z" fill="#C97C5D"/><rect x="13" y="48" width="34" height="7" rx="2" fill="#A9604A"/><g fill="#7FA872"><ellipse cx="30" cy="30" rx="5" ry="17"/><ellipse cx="20" cy="35" rx="5" ry="14" transform="rotate(-30 20 35)"/><ellipse cx="40" cy="35" rx="5" ry="14" transform="rotate(30 40 35)"/></g></g>
   </g>
   <!-- TV -->
-  <g class="spot" data-act="area" data-a="film" role="button" tabindex="0" aria-label="Televizyon">
+  <g class="spot" data-act="area" data-a="film" role="button" tabindex="0" aria-label="Seyir Defteri">
     <rect class="halo" x="352" y="222" width="300" height="250" rx="14"/>
     <path d="M470 246l-34-34M530 246l34-34" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round"/><circle cx="436" cy="212" r="4" fill="#EBA3AF"/><circle cx="564" cy="212" r="4" fill="#EBA3AF"/>
     <rect x="384" y="244" width="232" height="146" rx="20" fill="#A9D3C7"/><rect x="384" y="376" width="232" height="14" rx="7" fill="#8FBFB3"/>
@@ -93,7 +93,7 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
     <rect x="384" y="452" width="14" height="14" fill="var(--wood-2)"/><rect x="602" y="452" width="14" height="14" fill="var(--wood-2)"/>
   </g>
   <!-- console -->
-  <g class="spot" data-act="area" data-a="game" role="button" tabindex="0" aria-label="Oyun Konsolu">
+  <g class="spot" data-act="area" data-a="game" role="button" tabindex="0" aria-label="Oyunlar">
     <rect class="halo" x="694" y="288" width="280" height="196" rx="14"/>
     <ellipse cx="836" cy="474" rx="128" ry="12" fill="rgba(60,40,25,.1)"/>
     <rect x="714" y="396" width="244" height="14" rx="7" fill="var(--wood-3)"/><rect x="730" y="408" width="14" height="62" fill="var(--wood)"/><rect x="928" y="408" width="14" height="62" fill="var(--wood)"/>
@@ -118,7 +118,7 @@ function vHome(){
   return `<section class="home">
   <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(gen(who))} evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
   <div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
-  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Televizyon',`${L.film.length} yapım · ${cnt('film')}`,'c2')}${card('game','Oyun Konsolu',`${L.game.length} oyun · ${cnt('game')}`,'c3')}</div>
+  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}</div>
   ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div><div class="petbtns"><button class="btn" data-act="taste">Zevkimi yorumla</button>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div></div>`
    :mine?`<p class="note" style="text-align:center;margin:0">Pencereden biri bakıyor. Gözlerine tıkla, içeri al.</p>`:''}
   </section>`;

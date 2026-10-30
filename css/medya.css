@@ -44,13 +44,47 @@ html[data-view="mobile"] .fab{bottom:calc(78px + env(safe-area-inset-bottom,0px)
 .pscores{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.84rem}
 .kwhos{display:grid;gap:6px}.kwho{display:flex;align-items:center;gap:8px}.kwho b{margin-left:auto;font-variant-numeric:tabular-nums}
 #ed-results:empty{display:none}
-/* media shelves: DVD cases and cartridges */
-.shelf.a-film .spine{border-radius:2px;background:linear-gradient(90deg,rgba(255,255,255,.35) 0 3px,transparent 3px 26px,rgba(40,40,60,.18) 26px),var(--c)}
-.shelf.a-film .spine::after{left:7px;right:7px;top:8px;height:15px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75) 0 2px,rgba(255,255,255,.35) 3px 7px,rgba(60,40,60,.18) 8px)}
-.shelf.a-film .spine.unread::after{background:radial-gradient(circle,var(--line) 0 2px,transparent 3px 6px,var(--line) 7px)}
-.shelf.a-film .spine .st{font-family:var(--f-body);font-weight:700;font-size:11px;padding-top:18px}
-.shelf.a-game .spine{border-radius:6px 6px 2px 2px;background:linear-gradient(to bottom,rgba(60,40,60,.22) 0 12px,transparent 12px),var(--c);box-shadow:inset 0 -5px 0 rgba(60,40,60,.18)}
-.shelf.a-game .spine::after{left:9px;right:9px;top:3px;height:6px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.65) 0 3px,transparent 3px 5px)}
-.shelf.a-game .spine .st{font-family:var(--f-body);font-weight:700;font-size:11px}
+/* film stands: boxes pile up by genre */
+.stands{display:grid;gap:26px;margin-top:14px}
+.piles{display:flex;align-items:flex-end;justify-content:center;gap:16px;padding:0 14px;min-height:150px}
+.pile{flex:0 1 150px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.tvpile{flex-basis:150px}.tvset{width:100%;max-width:150px;display:block}
+.ptag{align-self:center;max-width:100%;background:var(--sheet);border:1px solid var(--line);color:var(--ink-2);border-radius:6px;padding:1px 8px;font-size:.72rem;font-weight:700;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dvd{width:100%;height:25px;border:0;border-radius:2px;margin-top:1px;padding:0 8px 0 13px;display:flex;align-items:center;gap:6px;position:relative;color:var(--cink,var(--on-pastel));background:linear-gradient(90deg,rgba(60,40,60,.2) 0 5px,rgba(255,255,255,.3) 5px 6px,transparent 6px),var(--c);box-shadow:0 1px 0 rgba(60,40,60,.28);transform:translateX(var(--off,0));transition:transform .15s;text-align:left}
+.dvd:hover,.dvd:focus-visible{transform:translateX(calc(var(--off,0px) + 8px))}
+.dvd span{flex:1;min-width:0;font-size:.72rem;font-weight:700;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dvd b{font-size:.68rem;font-variant-numeric:tabular-nums;opacity:.8}
+.dvd.reading::after{content:"";position:absolute;right:30px;top:-1px;width:7px;height:22px;background:var(--postmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+.stand-top{height:12px;border-radius:5px;background:var(--wood);box-shadow:inset 0 -3px 0 rgba(60,40,25,.2)}
+.stand-body{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:calc(100% - 28px);height:40px;margin:0 auto;padding:6px;background:var(--wood-2);border-radius:0 0 5px 5px;position:relative}
+.stand-body i{border-radius:3px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(60,40,25,.25)}
+.stand-body::before,.stand-body::after{content:"";position:absolute;bottom:-9px;width:12px;height:9px;background:var(--wood-2);border-radius:0 0 3px 3px}
+.stand-body::before{left:20px}.stand-body::after{right:20px}
+/* game corner: one lopsided tower per genre, boxes alternate left and right of the pole */
+.gcorner{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:26px 34px;margin-top:14px;padding:18px 12px 0}
+.gchair{width:170px;flex:none;display:block}
+.gt{display:flex;flex-direction:column;align-items:center;min-width:0}
+.gt-stack{display:grid;grid-template-columns:repeat(2,86px);gap:10px 20px;padding-bottom:50px;background:linear-gradient(var(--wood-2),var(--wood-2)) center/8px 100% no-repeat}
+.gbox{width:86px;height:112px;border:0;border-radius:7px;padding:0;position:relative;overflow:visible;display:flex;align-items:flex-end;background:var(--c);color:var(--cink,var(--on-pastel));box-shadow:0 2px 0 rgba(60,40,60,.24);transition:transform .15s}
+.gbox:nth-child(even){margin-top:50px}.gbox:nth-child(3n){transform:translateX(5px)}.gbox:nth-child(4n+1){height:100px}
+.gbox:hover,.gbox:focus-visible{transform:translateY(-5px)}
+.gbox::after{content:"";position:absolute;top:24px;right:-10px;width:10px;height:6px;background:var(--wood-2)}
+.gbox:nth-child(even)::after{right:auto;left:-10px}
+.gbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:7px}
+.gbox span{position:relative;width:100%;padding:4px 5px;font-size:.68rem;font-weight:700;line-height:1.1;text-align:left;overflow-wrap:anywhere;border-radius:0 0 7px 7px}
+.gbox img+span{background:rgba(255,250,241,.9);color:var(--on-pastel)}
+.gbox.unread{background:var(--sheet);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--ink-2)}.gbox.unread img{filter:saturate(.3) brightness(1.05)}
+.gbox.reading::before{content:"";position:absolute;z-index:1;top:-2px;right:8px;width:8px;height:24px;background:var(--postmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}
+.gt-base{width:120px;height:9px;border-radius:5px 5px 0 0;background:var(--wood-2)}
+html[data-view="mobile"] .piles{gap:10px;padding:0 8px}html[data-view="mobile"] .gcorner{gap:22px 12px;padding:14px 4px 0}html[data-view="mobile"] .gchair{width:120px}
+/* friends' comments: a tab inside the item sheet */
+.itabs{margin-bottom:2px}
+.frpanel{display:none;gap:10px}
+#sheet.show-fr .frpanel{display:grid}
+#sheet.show-fr .sheet-b>*:not(.itabs):not(.frpanel){display:none}
+.fritem{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.fritem>i{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.76rem;font-weight:700;color:var(--on-pastel)}
+.frhead{display:flex;justify-content:space-between;gap:8px;font-size:.9rem}.frhead span{font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.fritem p{margin:3px 0 0;font-size:.9rem;line-height:1.4;overflow-wrap:anywhere}
 .buhar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(90deg,#BFD3EE,#D5CCEB);color:#2C3350;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:.84rem;font-weight:600}
 .buhar b{font-size:1.05rem;letter-spacing:.14em}
