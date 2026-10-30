@@ -1,4 +1,9 @@
 {
+ "pet": {
+  "type": "kopek",
+  "coat": 0,
+  "name": "Fufu"
+ },
  "books": [
   {
    "author": "Duygu Asena",
