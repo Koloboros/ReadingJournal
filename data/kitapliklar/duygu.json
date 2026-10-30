@@ -6385,20 +6385,6 @@
  ],
  "games": [
   {
-   "id": "bmvuw0yf3oo5om",
-   "title": "Cyberpunk 2077",
-   "year": 2020,
-   "about": "2020 video game",
-   "color": "#f1e2a0",
-   "status": "want",
-   "owned": false,
-   "format": "pc",
-   "rating": 0,
-   "addedAt": 1793359640127,
-   "updatedAt": 1793359651254,
-   "infoTried": true
-  },
-  {
    "id": "bmvuwu89iy5f1e",
    "title": "Vampire Survivors",
    "pages": 11,
