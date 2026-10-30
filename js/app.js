@@ -358,12 +358,13 @@ DECOR.push(PROPS.glasses,PROPS.stanley);
 const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
 function vShelf(){
-  if(S.shared&&homeOpen())return vShared();
   const area=curArea(),film=area==='film';
   const seen=film?BOOKS().filter(b=>b.status==='read'||b.status==='reading'):[];
   const all=BOOKS().filter(b=>area==='game'||(film?(b.status==='read'||b.status==='reading')&&(b.format||'film')===S.fmt:(b.owned||b.status!=='want')&&b.status!=='skip'));
-  const f=film&&!['all','read','reading'].includes(S.shelfFilter)?'all':S.shelfFilter;
-  let list=all.filter(b=>f==='all'||(f===b.status)||(f==='unread'&&b.status!=='read')||(f==='owned'&&b.owned)).sort(shelfOrder);
+  const f=film&&S.shelfFilter==='owned'&&!homeOpen()?'all':S.shelfFilter,pool=film?BOOKS().filter(b=>(b.format||'film')===S.fmt):all;
+  /* Benim rafım, what is finished, what waits, and everything the household owns */
+  const shared=()=>homePool().filter(b=>(!film||(b.format||'film')===S.fmt)&&!BOOKS().some(x=>sameItem(x,b)));
+  let list=(f==='owned'?[...pool.filter(b=>!film&&b.owned&&b.status!=='skip'),...shared()]:f==='unread'?pool.filter(b=>b.status==='want'):all.filter(b=>f==='all'||f===b.status)).sort(shelfOrder);
   const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
   const chip=(k,l)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${l}</button>`;
   let prevG=null,gi=0,recent=[];
@@ -373,11 +374,11 @@ function vShelf(){
     const g=genreOf(b);const deco=g!==prevG?`<div class="slot"><span class="bookend ${gi%2?'slim':''}"><span class="tag">${esc(g)}</span>${gi++%2?'<span class="bk-end"></span>':decor(gi>>1)}</span></div>`:'';prevG=g;
     /* neighbours never share a colour: step through the palette until it differs from the last two spines */
     let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent=[c,recent[0]];
-    return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
+    return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="${b._home?'home-open':'open'}" data-id="${b.id}" title="${esc(b.title)} — ${b._home?'ortak':A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
-  return `${homeBar()}${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
+  return `${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Benim rafım')}${chip('read',A().doneTitle)}${chip('unread','Bekleyenler')}${!film?chip('owned','Sahip olduklarım'):homeOpen()?chip('owned',A().share.title):''}</div></div>
   ${area==='game'?'':`<div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>`}
-  <div class="shelf-stats"><span><b>${all.length}</b> toplam ${film?A().formats[S.fmt].toLocaleLowerCase('tr'):A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
+  <div class="shelf-stats"><span><b>${f==='owned'||f==='unread'?list.length:all.length}</b> toplam ${film?A().formats[S.fmt].toLocaleLowerCase('tr'):A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
   ${area==='game'?gameScreen(list):!list.length?`<div class="empty">Bu filtrede ${A().item} yok.</div>`:film?filmStand(list):`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}${petRail()}</div>`}`;
 }
 
