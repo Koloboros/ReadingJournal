@@ -6405,13 +6405,15 @@
    "year": 2022,
    "genre": "Cozy",
    "color": "#f1e2a0",
-   "status": "want",
+   "status": "reading",
    "owned": true,
-   "format": "pc",
+   "format": "switch",
    "rating": 0,
    "addedAt": 1793361005910,
    "coverUrl": "https://media.rawg.io/media/games/501/501e7019925a3c692bf1c8062f07abe6.jpg",
-   "updatedAt": 1793361076859
+   "updatedAt": 1793363710278,
+   "startDate": "2026-10-30",
+   "fromTbr": true
   }
  ],
  "settings": {
