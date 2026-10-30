@@ -303,7 +303,18 @@
    "addedAt": 1793388587592
   }
  ],
- "films": [],
+ "films": [
+  {
+   "title": "Cyberpunk: Edgerunners",
+   "year": 2022,
+   "about": "2022 anime series",
+   "color": "#f1e2a0",
+   "format": "dizi",
+   "addedAt": 1793388795163,
+   "id": "hbmvvddul7vdg50",
+   "addedBy": "duygu"
+  }
+ ],
  "games": [
   {
    "title": "Vampire Survivors",
