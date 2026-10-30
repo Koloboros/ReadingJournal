@@ -404,7 +404,7 @@
    "author": "Sarah J. Maas",
    "endDate": "2026-08-06",
    "genre": "Fantastik",
-   "owned": true,
+   "owned": false,
    "rating": 5,
    "series": "A Court of Thorns and Roses",
    "seriesNo": 1,
@@ -417,7 +417,7 @@
    "year": 2013,
    "color": "#c9a27a",
    "format": "print",
-   "updatedAt": 1793390602442
+   "updatedAt": 1793390729582
   },
   {
    "author": "Aylin Balboa",
