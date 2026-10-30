@@ -152,3 +152,31 @@ html[data-tour] .petrail,html[data-tour] .fab,html[data-tour] #petlayer{visibili
 @keyframes tourhot{50%{outline-offset:8px}}
 html[data-view="mobile"] .tour{bottom:calc(74px + env(safe-area-inset-bottom,0px))}html[data-view="mobile"] .tour-pet{flex-basis:72px}html[data-view="mobile"] .avgrid{gap:6px}
 @media (prefers-reduced-motion:reduce){.tour-hot,.tour-pet.enter{animation:none}}
+/* phone: a tighter header and home screen */
+html[data-view="mobile"] .top-in{flex-wrap:nowrap;gap:8px;padding-block:10px 34px!important}
+html[data-view="mobile"] .brand{flex:1;gap:6px}html[data-view="mobile"] .brand>div{min-width:0}
+html[data-view="mobile"] .brand svg{width:24px;height:24px}
+html[data-view="mobile"] .brand h1{font-size:1.5rem!important;white-space:nowrap}
+html[data-view="mobile"] .sub{font-size:.64rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[data-view="mobile"] .top-actions{gap:4px;flex:none}
+html[data-view="mobile"] .who{padding:3px 8px 3px 4px;font-size:.76rem;gap:4px;max-width:96px}
+html[data-view="mobile"] .whoav{width:20px;height:20px}html[data-view="mobile"] .who svg{width:14px;height:14px}
+html[data-view="mobile"] .homebtn{padding:5px 7px}html[data-view="mobile"] .homebtn svg{width:15px;height:15px}
+html[data-view="mobile"] .viewsel{padding:1px}html[data-view="mobile"] .viewsel button{width:25px;height:25px}html[data-view="mobile"] .viewsel button svg{width:14px;height:14px}
+html[data-view="mobile"] .home{gap:10px}
+html[data-view="mobile"] .home-hi h2{font-size:1.45rem;line-height:1.1}html[data-view="mobile"] .home-hi p{font-size:.76rem;margin-top:2px}
+html[data-view="mobile"] .room{border-radius:14px;border-width:3px}
+html[data-view="mobile"] .petwrap{width:13%;min-width:44px}
+html[data-view="mobile"] .bubble{font-size:.66rem;line-height:1.2;max-width:170px;padding:5px 8px;border-radius:10px}
+html[data-view="mobile"] .peeksay{font-size:.66rem;padding:4px 8px;line-height:1.2;max-width:76%}
+html[data-view="mobile"] .hcards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+html[data-view="mobile"] .hcard{display:flex;flex-direction:column;border-radius:12px}
+html[data-view="mobile"] .hgo{padding:8px 10px;gap:0}
+html[data-view="mobile"] .hgo b{font-size:1.2rem}html[data-view="mobile"] .hgo span{font-size:.68rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[data-view="mobile"] .hrec{border-left:0;border-top:1px dashed rgba(58,44,36,.25);padding:4px 0;font-size:.68rem}
+html[data-view="mobile"] .petbar{flex-wrap:wrap;gap:6px 8px;padding:8px 10px;border-radius:12px}
+html[data-view="mobile"] .petmini{width:42px}html[data-view="mobile"] .petbar>div:not(.petbtns){flex:1 1 60%}
+html[data-view="mobile"] .petbar b{font-size:.84rem}html[data-view="mobile"] .petbar .muted{font-size:.72rem}html[data-view="mobile"] .petbar p{font-size:.72rem;line-height:1.25}
+html[data-view="mobile"] .petbtns{flex:1 1 100%;gap:6px}html[data-view="mobile"] .petbtns .btn{flex:1;justify-content:center;padding:5px 8px;font-size:.76rem}
+html[data-view="mobile"] .hcard{align-items:stretch}html[data-view="mobile"] .hgo{text-align:left;align-content:start;width:100%}
+@media (max-width:360px){html[data-view="mobile"] .viewsel button:nth-of-type(-n+2){display:none}html[data-view="mobile"] .brand h1{font-size:1.3rem!important}}
