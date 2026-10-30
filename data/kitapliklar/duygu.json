@@ -6406,6 +6406,7 @@
    "title": "Tiny Bookshop",
    "author": "Skytone games",
    "year": 2025,
+   "genre": "Cozy",
    "about": "2025 video game",
    "color": "#f1e2a0",
    "status": "reading",
@@ -6414,7 +6415,7 @@
    "startDate": "2026-10-30",
    "rating": 0,
    "addedAt": 1793366143907,
-   "updatedAt": 1793366365633,
+   "updatedAt": 1793366372466,
    "infoTried": true
   }
  ],
