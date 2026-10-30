@@ -274,5 +274,30 @@
   }
  ],
  "films": [],
- "games": []
+ "games": [
+  {
+   "title": "Vampire Survivors",
+   "pages": 11,
+   "year": 2022,
+   "genre": "Cozy",
+   "color": "#f1e2a0",
+   "format": "switch",
+   "addedAt": 1793386717939,
+   "coverUrl": "https://media.rawg.io/media/games/501/501e7019925a3c692bf1c8062f07abe6.jpg",
+   "id": "hbmvvc5bsj32w2x",
+   "addedBy": "duygu"
+  },
+  {
+   "title": "Tiny Bookshop",
+   "author": "Skytone games",
+   "year": 2025,
+   "genre": "Cozy",
+   "about": "2025 video game",
+   "color": "#f1e2a0",
+   "format": "mobil",
+   "addedAt": 1793386717939,
+   "id": "hbmvvc5bsjh72t3",
+   "addedBy": "duygu"
+  }
+ ]
 }
