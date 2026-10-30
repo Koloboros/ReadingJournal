@@ -1145,7 +1145,7 @@
   {
    "author": "Marcus Aurelius",
    "genre": "Felsefe",
-   "owned": false,
+   "owned": true,
    "rating": 0,
    "startDate": "2026-07-23",
    "status": "reading",
@@ -1154,7 +1154,7 @@
    "infoTried": true,
    "color": "#8ebdb0",
    "format": "print",
-   "updatedAt": 1793219667459,
+   "updatedAt": 1793390980386,
    "pages": 156,
    "year": 2018,
    "coverUrl": "https://covers.openlibrary.org/b/id/12217959-M.jpg"
