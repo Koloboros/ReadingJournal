@@ -1,11 +1,11 @@
 {
- "books": [],
- "settings": {
-  "goals": {},
-  "bingoCards": [],
-  "bingoActive": {}
+ "pet": {
+  "type": "kedi",
+  "coat": 0,
+  "name": "Saldıray"
  },
  "schema": 2,
+ "books": [],
  "films": [
   {
    "id": "f1",
@@ -2818,7 +2818,6 @@
    "title": "Nuh Tepesi",
    "year": 2019,
    "yearLabel": "2019",
-   "author": "",
    "genre": "Drama",
    "status": "read",
    "rating": 7.7,
@@ -4532,7 +4531,6 @@
    "title": "Sekizinci Aile",
    "year": 2025,
    "yearLabel": "2025",
-   "author": "",
    "genre": "Komedi",
    "status": "read",
    "rating": 7,
@@ -5482,5 +5480,21 @@
    "imdbId": "tt6563576",
    "designer": "Olivier Coul"
   }
- ]
+ ],
+ "games": [],
+ "settings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "filmSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "gameSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ }
 }
