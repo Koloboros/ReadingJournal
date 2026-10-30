@@ -6592,19 +6592,19 @@
       "b": "g31"
      },
      {
-      "p": "Çocukken okuduğun bir kitap",
+      "p": "Gece yarısına kadar okuduğun",
       "b": null
      },
      {
-      "p": "Masal / efsane",
+      "p": "Ağlatan kitap",
       "b": null
      },
      {
-      "p": "Anı / biyografi",
+      "p": "Gülümseten kitap",
       "b": null
      },
      {
-      "p": "Filme uyarlanmış",
+      "p": "Mavi kapaklı",
       "b": null
      },
      {
@@ -6612,27 +6612,27 @@
       "b": "g45"
      },
      {
-      "p": "Hep ertelediğin",
+      "p": "Hediye gelen",
       "b": null
      },
      {
-      "p": "Bilim kurgu",
-      "b": null
+      "p": "Başlığında renk var",
+      "b": "g44"
      },
      {
-      "p": "Birden çok anlatıcı",
+      "p": "Mitoloji",
       "b": null
      },
      {
       "p": "E-kitap",
-      "b": null
+      "b": "g49"
      },
      {
       "p": "Distopya",
       "b": "g39"
      },
      {
-      "p": "Çocuk anlatıcı",
+      "p": "Kapağında çiçek var",
       "b": null
      }
     ]
