@@ -271,6 +271,21 @@
    "coverUrl": "https://covers.openlibrary.org/b/id/12208461-M.jpg",
    "id": "hbmvvc3j5lcil0z",
    "addedBy": "can"
+  },
+  {
+   "author": "Gene Luen Yang",
+   "genre": "Çizgi roman",
+   "series": "Avatar",
+   "seriesNo": 2,
+   "title": "Avatar: The Search",
+   "pages": 238,
+   "coverUrl": "https://covers.openlibrary.org/b/id/15266330-M.jpg",
+   "year": 2014,
+   "color": "#dbb4bf",
+   "format": "print",
+   "id": "hbmvvd93kbgb200",
+   "addedBy": "duygu",
+   "addedAt": 1793388573515
   }
  ],
  "films": [],
