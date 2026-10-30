@@ -4,6 +4,7 @@
   "coat": 0,
   "name": "Fufu"
  },
+ "schema": 2,
  "books": [
   {
    "author": "Duygu Asena",
@@ -2037,126 +2038,6 @@
    "updatedAt": 1793269476373
   }
  ],
- "settings": {
-  "goals": {
-   "2025": 12,
-   "2026": 60
-  },
-  "bingoCards": [
-   {
-    "id": "y2026",
-    "year": 2026,
-    "name": "Kart 1",
-    "size": 5,
-    "cells": [
-     {
-      "b": "g36",
-      "p": "Yeniden okuma"
-     },
-     {
-      "b": "g01",
-      "p": "Türk yazar"
-     },
-     {
-      "b": "g42",
-      "p": "Bir günde biten"
-     },
-     {
-      "b": "g15",
-      "p": "Polisiye"
-     },
-     {
-      "b": "g12",
-      "p": "Tek kelimelik başlık"
-     },
-     {
-      "b": "g21",
-      "p": "Öykü kitabı"
-     },
-     {
-      "b": "g03",
-      "p": "Yazarın ilk kitabı"
-     },
-     {
-      "b": "g56",
-      "p": "Fantastik"
-     },
-     {
-      "b": "g06",
-      "p": "Arkadaş önerisi"
-     },
-     {
-      "b": "g42",
-      "p": "Filme uyarlanmış"
-     },
-     {
-      "b": "g33",
-      "p": "500+ sayfa"
-     },
-     {
-      "b": "g31",
-      "p": "200 sayfadan kısa"
-     },
-     {
-      "b": null,
-      "p": "SERBEST"
-     },
-     {
-      "b": "g24",
-      "p": "Hediye gelen"
-     },
-     {
-      "b": "g30",
-      "p": "Sesli kitap"
-     },
-     {
-      "b": "g10",
-      "p": "Kadın yazar"
-     },
-     {
-      "b": "g07",
-      "p": "Birden çok anlatıcı"
-     },
-     {
-      "b": "g55",
-      "p": "Kurgu dışı"
-     },
-     {
-      "b": "g34",
-      "p": "Çizgi roman"
-     },
-     {
-      "b": null,
-      "p": "Hiç okumadığın tür"
-     },
-     {
-      "b": "g52",
-      "p": "Yeni bir yazar"
-     },
-     {
-      "b": "g17",
-      "p": "Başlığında renk var"
-     },
-     {
-      "b": "g55",
-      "p": "Psikoloji"
-     },
-     {
-      "b": "g32",
-      "p": "Başka ülkede geçen"
-     },
-     {
-      "b": null,
-      "p": "Bir klasik"
-     }
-    ]
-   }
-  ],
-  "bingoActive": {
-   "2026": "bmvter63b"
-  }
- },
- "schema": 2,
  "films": [
   {
    "id": "f1",
@@ -2182,7 +2063,6 @@
    "year": 1972,
    "yearLabel": "1972",
    "author": "Francis Ford Coppola",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2026-02-10",
@@ -2218,7 +2098,6 @@
    "year": 1993,
    "yearLabel": "1993",
    "author": "Steven Spielberg",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2026-02-10",
@@ -2235,7 +2114,6 @@
    "year": 1974,
    "yearLabel": "1974",
    "author": "Francis Ford Coppola",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2026-02-10",
@@ -2286,7 +2164,6 @@
    "year": 1999,
    "yearLabel": "1999",
    "author": "David Fincher",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -2303,7 +2180,6 @@
    "year": 2010,
    "yearLabel": "2010",
    "author": "Christopher Nolan",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2026-02-10",
@@ -2354,7 +2230,6 @@
    "year": 1990,
    "yearLabel": "1990",
    "author": "Martin Scorsese",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -2477,7 +2352,6 @@
    "year": 2012,
    "yearLabel": "2012",
    "author": "Quentin Tarantino",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2026-02-10",
@@ -2549,7 +2423,6 @@
    "year": 2002,
    "yearLabel": "2002",
    "author": "Roman Polanski",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2026-02-10",
@@ -2584,7 +2457,6 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Denis Villeneuve",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2026-02-10",
@@ -2708,7 +2580,6 @@
    "year": 2003,
    "yearLabel": "2003",
    "author": "Park Chan-wook",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -2722,7 +2593,6 @@
    "year": 1995,
    "yearLabel": "1995",
    "author": "Mel Gibson",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -2757,7 +2627,6 @@
    "year": 2013,
    "yearLabel": "2013",
    "author": "Martin Scorsese",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2026-02-10",
@@ -2790,7 +2659,6 @@
    "year": 2003,
    "yearLabel": "2003",
    "author": "Quentin Tarantino",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -2954,7 +2822,6 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "Alejandro G. Iñárritu",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3044,7 +2911,6 @@
    "year": 1962,
    "yearLabel": "1962",
    "author": "Luis Buñuel",
-   "genre": "",
    "status": "read",
    "rating": 5,
    "endDate": "2026-02-10",
@@ -3062,7 +2928,6 @@
    "year": 2004,
    "yearLabel": "2004",
    "author": "Quentin Tarantino",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -3135,7 +3000,6 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Taika Waititi",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2026-02-10",
@@ -3170,7 +3034,6 @@
    "year": 1990,
    "yearLabel": "1990",
    "author": "Tim Burton",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -3201,7 +3064,6 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "David Fincher",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -3236,7 +3098,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Matt Reeves",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3254,7 +3115,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Daniel Kwan, Daniel Scheinert",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2026-02-10",
@@ -3290,7 +3150,6 @@
    "year": 2008,
    "yearLabel": "2008",
    "author": "Mark Herman",
-   "genre": "",
    "status": "read",
    "rating": 10,
    "endDate": "2026-02-10",
@@ -3304,7 +3163,6 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "Jaco Van Dormael",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2026-02-10",
@@ -3553,7 +3411,6 @@
    "year": 2025,
    "yearLabel": "2025",
    "author": "Guillermo del Toro",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2026-02-10",
@@ -3588,7 +3445,6 @@
    "year": 2011,
    "yearLabel": "2011",
    "author": "Glenn Ficarra, John Requa",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3605,7 +3461,6 @@
    "year": 2023,
    "yearLabel": "2023",
    "author": "Wes Anderson",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3622,7 +3477,6 @@
    "year": 2011,
    "yearLabel": "2011",
    "author": "Neil Burger",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3728,7 +3582,6 @@
    "year": 2005,
    "yearLabel": "2005",
    "author": "Rob Marshall",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2026-02-10",
@@ -3800,7 +3653,6 @@
    "year": 2021,
    "yearLabel": "2021",
    "author": "Adam McKay",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2026-02-10",
@@ -3817,7 +3669,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Damien Chazelle",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2026-02-10",
@@ -3836,7 +3687,6 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Ari Aster",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -3872,7 +3722,6 @@
    "year": 2015,
    "yearLabel": "2015",
    "author": "Yorgos Lanthimos",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -3886,7 +3735,6 @@
    "year": 1953,
    "yearLabel": "1953",
    "author": "Howard Hawks",
-   "genre": "",
    "status": "read",
    "rating": 5.5,
    "endDate": "2026-02-10",
@@ -3956,7 +3804,6 @@
    "year": 2009,
    "yearLabel": "2009",
    "author": "Nora Ephron",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2026-02-10",
@@ -3973,7 +3820,6 @@
    "title": "Nuh Tepesi",
    "year": 2019,
    "yearLabel": "2019",
-   "author": "",
    "genre": "Drama",
    "status": "read",
    "rating": 7.5,
@@ -4099,7 +3945,6 @@
    "year": 2005,
    "yearLabel": "2005",
    "author": "Tim Burton",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2026-02-10",
@@ -4117,7 +3962,6 @@
    "year": 2017,
    "yearLabel": "2017",
    "author": "Ümit Ünal",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2026-02-10",
@@ -4173,7 +4017,6 @@
    "year": 2000,
    "yearLabel": "2000",
    "author": "Ron Howard",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2026-02-10",
@@ -4209,7 +4052,6 @@
    "year": 1984,
    "yearLabel": "1984",
    "author": "David Lynch",
-   "genre": "",
    "status": "skip",
    "imdb": 6.3,
    "imdbId": "tt0087182",
@@ -4242,7 +4084,6 @@
    "year": 2012,
    "yearLabel": "2012",
    "author": "Christopher MacBride",
-   "genre": "",
    "status": "skip",
    "imdb": 6.2,
    "imdbId": "tt2330322",
@@ -4308,7 +4149,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Mehdi Avaz",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -4326,7 +4166,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Patty Jenkins",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2026-02-10",
@@ -4360,7 +4199,6 @@
    "year": 2023,
    "yearLabel": "2023",
    "author": "Caner Alper, Mehmet Binay",
-   "genre": "",
    "status": "read",
    "rating": 2,
    "endDate": "2026-02-10",
@@ -4377,10 +4215,8 @@
    "year": 2026,
    "yearLabel": "2026",
    "author": "Kyle Balda",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
-   "endDate": "",
    "imdb": 7.4,
    "imdbId": "tt32565993",
    "tags": [
@@ -4398,7 +4234,6 @@
    "genre": "Romantik",
    "status": "read",
    "rating": 7,
-   "endDate": "",
    "imdb": 7,
    "imdbId": "tt22526100",
    "tags": [
@@ -4413,7 +4248,6 @@
    "year": 2008,
    "yearLabel": "2008–2013",
    "author": "Vince Gilligan",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -4427,7 +4261,6 @@
    "year": 2011,
    "yearLabel": "2011–2019",
    "author": "David Benioff, D.B. Weiss",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4441,7 +4274,6 @@
    "year": 2010,
    "yearLabel": "2010–2017",
    "author": "Mark Gatiss, Steven Moffat",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4455,7 +4287,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Jason Hehir",
-   "genre": "",
    "status": "skip",
    "imdb": 9,
    "imdbId": "tt8420184"
@@ -4467,7 +4298,6 @@
    "year": 2015,
    "yearLabel": "2015–2022",
    "author": "Vince Gilligan",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4481,7 +4311,6 @@
    "year": 2005,
    "yearLabel": "2005–2013",
    "author": "Greg Daniels",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4495,7 +4324,6 @@
    "year": 2018,
    "yearLabel": "2018–",
    "author": "Onur Saylak",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4509,7 +4337,6 @@
    "year": 2021,
    "yearLabel": "2021–",
    "author": ".",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4523,7 +4350,6 @@
    "year": 1994,
    "yearLabel": "1994–2004",
    "author": "David Crane, Marta Kauffman",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4537,7 +4363,6 @@
    "year": 2011,
    "yearLabel": "2011–",
    "author": "Charlie Brooker",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4551,7 +4376,6 @@
    "year": 2016,
    "yearLabel": "2016–2019",
    "author": "Phoebe Waller-Bridge",
-   "genre": "",
    "status": "read",
    "rating": 9.5,
    "endDate": "2025-11-27",
@@ -4565,7 +4389,6 @@
    "year": 2015,
    "yearLabel": "2015–2017",
    "author": "Chris Brancato, Eric Newman",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4579,7 +4402,6 @@
    "year": 2004,
    "yearLabel": "2004–2012",
    "author": "David Shore",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4593,7 +4415,6 @@
    "year": 2017,
    "yearLabel": "2017–2020",
    "author": "Baran bo Odar, Jantje Friese",
-   "genre": "",
    "status": "skip",
    "imdb": 8.7,
    "imdbId": "tt5753856"
@@ -4605,7 +4426,6 @@
    "year": 2019,
    "yearLabel": "2019–",
    "author": "Eric Kripke",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4619,7 +4439,6 @@
    "year": 2016,
    "yearLabel": "2016–2025",
    "author": "The Duffer Brothers",
-   "genre": "",
    "status": "skip",
    "imdb": 8.6,
    "imdbId": "tt4574334"
@@ -4631,7 +4450,6 @@
    "year": 2013,
    "yearLabel": "2013–2018",
    "author": "Beau Willimon",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4645,7 +4463,6 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Edward Zwick",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4659,7 +4476,6 @@
    "year": 2017,
    "yearLabel": "2017–2019",
    "author": "David Fincher",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4673,7 +4489,6 @@
    "year": 2019,
    "yearLabel": "2019–",
    "author": "Jon Favreau",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -4687,7 +4502,6 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Craig Zobel",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4701,7 +4515,6 @@
    "year": 2023,
    "yearLabel": "2023–",
    "author": "Craig Mazin, Neil Druckmann",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4715,7 +4528,6 @@
    "year": 2008,
    "yearLabel": "2008–2014",
    "author": "Kurt Sutter",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -4729,7 +4541,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Christopher Storer",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4743,7 +4554,6 @@
    "year": 2013,
    "yearLabel": "2013–2020",
    "author": "Michael Hirst",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4757,7 +4567,6 @@
    "year": 2009,
    "yearLabel": "2009–2020",
    "author": "Christopher Lloyd, Jason Winer",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4771,7 +4580,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Scott Frank, Allan Scott, William Horberg",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4785,7 +4593,6 @@
    "year": 2023,
    "yearLabel": "2023–",
    "author": "Bülent İşbilen ve Gökdeniz Uslu",
-   "genre": "",
    "status": "read",
    "rating": 10,
    "endDate": "2025-11-27",
@@ -4799,7 +4606,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Berkun Oya",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4813,7 +4619,6 @@
    "year": 2016,
    "yearLabel": "2016–2022",
    "author": "Jonathan Nolan, Lisa Joy",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4827,7 +4632,6 @@
    "year": 2013,
    "yearLabel": "2013–2021",
    "author": "Dan Goor, Mike Schur",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4841,7 +4645,6 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Jonathan Nolan",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4855,7 +4658,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Miguel Sapochnik, Ryan Condal",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -4869,7 +4671,6 @@
    "year": 2017,
    "yearLabel": "2017",
    "author": "Seren Yüce",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -4883,7 +4684,6 @@
    "year": 2021,
    "yearLabel": "2021",
    "author": "Molly Smith Metzler",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4897,7 +4697,6 @@
    "year": 2005,
    "yearLabel": "2005–2014",
    "author": "Carter Bays, Craig Thomas",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -4911,7 +4710,6 @@
    "year": 2005,
    "yearLabel": "2005–2017",
    "author": "Paul Scheuring",
-   "genre": "",
    "status": "skip",
    "imdb": 8.3,
    "imdbId": "tt0455275"
@@ -4923,7 +4721,6 @@
    "year": 2019,
    "yearLabel": "2019–2023",
    "author": "Laurie Nunn",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4937,7 +4734,6 @@
    "year": 2000,
    "yearLabel": "2000–2007",
    "author": "Amy Sherman-Palladino",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4951,7 +4747,6 @@
    "year": 2017,
    "yearLabel": "2017–2021",
    "author": "Álex Pina",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -4965,7 +4760,6 @@
    "year": 2007,
    "yearLabel": "2007–2019",
    "author": "Chuck Lorre, Bill Prady",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -4979,7 +4773,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Tim Burton",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -4993,7 +4786,6 @@
    "year": 2019,
    "yearLabel": "2019–",
    "author": "Douglas Mackinnon, Jamila Wignot",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -5007,7 +4799,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Maria Schrader",
-   "genre": "",
    "status": "read",
    "rating": 9,
    "endDate": "2025-11-27",
@@ -5021,7 +4812,6 @@
    "year": 2009,
    "yearLabel": "2009–2011",
    "author": "Samuel Baum, David Shore",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5035,7 +4825,6 @@
    "year": 2017,
    "yearLabel": "2017–2019",
    "author": "Jonathan Entwistle",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5049,7 +4838,6 @@
    "year": 2021,
    "yearLabel": "2021–",
    "author": "Hwang Dong-hyuk",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5063,7 +4851,6 @@
    "year": 2014,
    "yearLabel": "2014–2016",
    "author": "John Fusco, Dan Minahan",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5077,7 +4864,6 @@
    "year": 2018,
    "yearLabel": "2018–2022",
    "author": "David Schulner",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5091,7 +4877,6 @@
    "year": 2019,
    "yearLabel": "2019–",
    "author": "Tomek Baginski",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5105,7 +4890,6 @@
    "year": 2013,
    "yearLabel": "2013–2023",
    "author": "Jon Bokenkamp",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5119,7 +4903,6 @@
    "year": 2018,
    "yearLabel": "2018–2020",
    "author": "Laeta Kalogridis",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5133,7 +4916,6 @@
    "year": 2014,
    "yearLabel": "2014–2019",
    "author": "Bruno Heller, Danny Cannon",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5147,7 +4929,6 @@
    "year": 2011,
    "yearLabel": "2011–2018",
    "author": "Elizabeth Meriwether",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5161,7 +4942,6 @@
    "year": 2017,
    "yearLabel": "2017–2018",
    "author": "Mert Baykal",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5175,7 +4955,6 @@
    "year": 2021,
    "yearLabel": "2021–2024",
    "author": "Jim Mickle",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5189,7 +4968,6 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Baby Reindeer",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5203,7 +4981,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Abdullah Oğuz",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5217,7 +4994,6 @@
    "year": 2019,
    "yearLabel": "2019",
    "author": "Jim Field Smith",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5231,7 +5007,6 @@
    "year": 2017,
    "yearLabel": "2017–2024",
    "author": "Chuck Lorre, Steven Molaro",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5245,7 +5020,6 @@
    "year": 2018,
    "yearLabel": "2018–2024",
    "author": "Greg Berlanti, Sera Gamble",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5259,7 +5033,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Sotirios Dounoukos, Alethea Jones",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5273,7 +5046,6 @@
    "year": 2023,
    "yearLabel": "2023–",
    "author": "Shonda Rhimes",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5287,7 +5059,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Jonathan Entwistle",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5301,7 +5072,6 @@
    "year": 2021,
    "yearLabel": "2021–",
    "author": "Lee Toland Krieger",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5315,7 +5085,6 @@
    "year": 2007,
    "yearLabel": "2007–2012",
    "author": "Josh Schwartz, Stephanie Savage",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5329,7 +5098,6 @@
    "year": 2017,
    "yearLabel": "2017–2020",
    "author": "Brian Yorkey, Tom McCarthy",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5343,7 +5111,6 @@
    "year": 2021,
    "yearLabel": "2021",
    "author": "Özer Feyzioğlu, Özgür Önurme",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5357,7 +5124,6 @@
    "year": 2020,
    "yearLabel": "2020–",
    "author": "Chris Van Dusen",
-   "genre": "",
    "status": "read",
    "rating": 8,
    "endDate": "2025-11-27",
@@ -5371,7 +5137,6 @@
    "year": 1998,
    "yearLabel": "1998–2004",
    "author": "Darren Star",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5385,7 +5150,6 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Diane Ademu-JohnAlison Schapker",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5399,7 +5163,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Mohamed Diab, Justin Benson",
-   "genre": "",
    "status": "read",
    "rating": 8.5,
    "endDate": "2025-11-27",
@@ -5413,7 +5176,6 @@
    "year": 2020,
    "yearLabel": "2020–2023",
    "author": "Adam Price",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5427,7 +5189,6 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Berkun Oya",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5441,7 +5202,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Burcu Alptekin & Erdem Tepegöz",
-   "genre": "",
    "status": "read",
    "rating": 1.5,
    "endDate": "2025-11-27",
@@ -5455,7 +5215,6 @@
    "year": 2020,
    "yearLabel": "2020",
    "author": "Derek Simon, Joe Berlinger",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5469,7 +5228,6 @@
    "year": 2022,
    "yearLabel": "2022",
    "author": "Darren Star, Jeffrey Richman",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5483,7 +5241,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Emre Şahin",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5497,7 +5254,6 @@
    "year": 2017,
    "yearLabel": "2017–2024",
    "author": "Alex Kurtzman, Michelle Paradise",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5511,7 +5267,6 @@
    "year": 2017,
    "yearLabel": "2017",
    "author": "Kay Cannon",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5525,7 +5280,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "J.D. Payne, Patrick McKay",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5539,7 +5293,6 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Poppy Cogan",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5553,7 +5306,6 @@
    "year": 2023,
    "yearLabel": "2023",
    "author": "Çağan Irmak",
-   "genre": "",
    "status": "read",
    "rating": 7.5,
    "endDate": "2025-11-27",
@@ -5567,7 +5319,6 @@
    "year": 2020,
    "yearLabel": "2020–",
    "author": "Darren Star",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5581,7 +5332,6 @@
    "year": 2011,
    "yearLabel": "2011–2017",
    "author": "Michael Patrick King",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5595,7 +5345,6 @@
    "year": 2024,
    "yearLabel": "2024",
    "author": "Josh Allott",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5609,7 +5358,6 @@
    "year": 2024,
    "yearLabel": "2024–",
    "author": "Can Ulkay",
-   "genre": "",
    "status": "read",
    "rating": 6.5,
    "endDate": "2025-11-27",
@@ -5623,7 +5371,6 @@
    "year": 2022,
    "yearLabel": "2022–",
    "author": "Cem Yılmaz",
-   "genre": "",
    "status": "read",
    "rating": 6,
    "endDate": "2025-11-27",
@@ -5637,7 +5384,6 @@
    "year": 2022,
    "yearLabel": "2022–2024",
    "author": "Deniz Yorulmazer",
-   "genre": "",
    "status": "read",
    "rating": 7,
    "endDate": "2025-11-27",
@@ -5651,7 +5397,6 @@
    "year": 2023,
    "yearLabel": "2023–",
    "author": "Umur Turagay",
-   "genre": "",
    "status": "read",
    "rating": 1,
    "endDate": "2025-11-27",
@@ -6468,5 +6213,149 @@
    "imdbId": "tt3896100",
    "designer": "Juan Solís"
   }
- ]
+ ],
+ "games": [
+  {
+   "id": "bmvuw0yf3oo5om",
+   "title": "Cyberpunk 2077",
+   "year": 2020,
+   "about": "2020 video game",
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": false,
+   "format": "pc",
+   "rating": 0,
+   "addedAt": 1793359640127,
+   "updatedAt": 1793359651254
+  }
+ ],
+ "settings": {
+  "goals": {
+   "2025": 12,
+   "2026": 60
+  },
+  "bingoCards": [
+   {
+    "id": "y2026",
+    "year": 2026,
+    "name": "Kart 1",
+    "size": 5,
+    "cells": [
+     {
+      "b": "g36",
+      "p": "Yeniden okuma"
+     },
+     {
+      "b": "g01",
+      "p": "Türk yazar"
+     },
+     {
+      "b": "g42",
+      "p": "Bir günde biten"
+     },
+     {
+      "b": "g15",
+      "p": "Polisiye"
+     },
+     {
+      "b": "g12",
+      "p": "Tek kelimelik başlık"
+     },
+     {
+      "b": "g21",
+      "p": "Öykü kitabı"
+     },
+     {
+      "b": "g03",
+      "p": "Yazarın ilk kitabı"
+     },
+     {
+      "b": "g56",
+      "p": "Fantastik"
+     },
+     {
+      "b": "g06",
+      "p": "Arkadaş önerisi"
+     },
+     {
+      "b": "g42",
+      "p": "Filme uyarlanmış"
+     },
+     {
+      "b": "g33",
+      "p": "500+ sayfa"
+     },
+     {
+      "b": "g31",
+      "p": "200 sayfadan kısa"
+     },
+     {
+      "b": null,
+      "p": "SERBEST"
+     },
+     {
+      "b": "g24",
+      "p": "Hediye gelen"
+     },
+     {
+      "b": "g30",
+      "p": "Sesli kitap"
+     },
+     {
+      "b": "g10",
+      "p": "Kadın yazar"
+     },
+     {
+      "b": "g07",
+      "p": "Birden çok anlatıcı"
+     },
+     {
+      "b": "g55",
+      "p": "Kurgu dışı"
+     },
+     {
+      "b": "g34",
+      "p": "Çizgi roman"
+     },
+     {
+      "b": null,
+      "p": "Hiç okumadığın tür"
+     },
+     {
+      "b": "g52",
+      "p": "Yeni bir yazar"
+     },
+     {
+      "b": "g17",
+      "p": "Başlığında renk var"
+     },
+     {
+      "b": "g55",
+      "p": "Psikoloji"
+     },
+     {
+      "b": "g32",
+      "p": "Başka ülkede geçen"
+     },
+     {
+      "b": null,
+      "p": "Bir klasik"
+     }
+    ]
+   }
+  ],
+  "bingoActive": {
+   "2026": "bmvter63b"
+  }
+ },
+ "filmSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "gameSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ }
 }
