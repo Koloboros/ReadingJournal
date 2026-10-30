@@ -1,0 +1,2 @@
+applyView();
+Store.init();
