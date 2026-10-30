@@ -162,7 +162,7 @@ function openCatalog(k){
     <h3 style="font-family:var(--f-display);font-weight:400;font-size:1.3rem;line-height:1.2">${esc(b.title)}</h3><div class="rmeta">${[b.yearLabel||b.year,b.author,b.genre,b.imdb?'IMDb '+String(b.imdb).replace('.',','):''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
     ${b.imdbId?`<a class="note" href="https://www.imdb.com/title/${esc(b.imdbId)}/" target="_blank" rel="noopener">IMDb sayfası</a>`:''}</div></div>
   ${others?`<div class="kwhos">${others}</div>`:`<p class="muted">${A().noneYet}</p>`}
-  ${S.canEdit?(mine?`<button class="btn primary" data-act="open" data-id="${mine.id}">Kaydımı düzenle</button>`:`<div class="seg">${Object.entries({read:A().status.read,want:A().status.want,skip:A().status.skip}).map(([k2,l])=>`<button type="button" data-act="k-add" data-s="${k2}">${l}</button>`).join('')}</div>`):''}${friendPanel(b)}</div>`);
+  ${S.canEdit?(mine?`<button class="btn primary" data-act="open" data-id="${mine.id}">Kaydımı düzenle</button>`:`<div class="seg">${Object.entries({read:A().status.read,want:A().status.want,skip:A().status.skip}).map(([k2,l])=>`<button type="button" data-act="k-add" data-s="${k2}">${l}</button>`).join('')}</div>`):''}${homeBtn(b)}${friendPanel(b)}</div>`);
 }
 Object.assign(ACT,{
   'k-open':a=>openCatalog(a.dataset.k),'k-more':()=>{S.klimit+=60;paintK()},

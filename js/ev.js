@@ -125,7 +125,7 @@ function vHome(){
   const card=(a,t,n,cls)=>`<div class="hcard ${cls}"><button class="hgo" data-act="area" data-a="${a}"><b>${t}</b><span>${n}</span></button><button class="hrec" data-act="rec" data-a="${a}">Öneri al</button></div>`;
   return `<section class="home">
   <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(gen(who))} evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
-  <div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
+  ${mine?homeInvite():''}<div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
   <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}<div class="hcard c4"><button class="hgo" data-act="pc"><b>Bilgisayar</b><span>Excel’e al ya da yükle</span></button></div></div>
   ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div><div class="petbtns"><button class="btn" data-act="taste">Zevkimi yorumla</button>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div></div>`
    :mine?`<p class="note" style="text-align:center;margin:0">Pencereden biri bakıyor. Gözlerine tıkla, içeri al.</p>`:''}
@@ -173,7 +173,7 @@ function openPetSetup(){
 }
 function keepPetName(){const i=$('#pet-name');if(i&&PS)PS.name=i.value}
 Object.assign(ACT,{
-  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';S.noteFilter='all';S.shelfFilter='all';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()});setTimeout(()=>{if(S.area!=='home')Pet.say(`Bana dokun, sana bir ${A().item} önereyim.`)},900)},
+  area:a=>{Store.sync();S.area=a.dataset.a;S.tab='shelf';S.shared=false;S.noteFilter='all';S.shelfFilter='all';Store.useArea();scrollTo({top:0});render();if(curArea()!=='book')Peers.ensure().then(()=>{if(S.area!=='home')render()});setTimeout(()=>{if(S.area!=='home')Pet.say(`Bana dokun, sana bir ${A().item} önereyim.`)},900)},
   'go-home':()=>{Store.sync();S.area='home';Store.useArea();if(S.me&&S.viewing!==S.me)Store.open(S.me);else render();scrollTo({top:0})},
   'pet-setup':()=>{PS=null;openPetSetup()},
   'pet-type':a=>{keepPetName();PS.type=a.dataset.v;PS.coat=0;openPetSetup()},

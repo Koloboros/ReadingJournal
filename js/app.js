@@ -307,6 +307,7 @@ addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.docume
 function render(){
   $('#view').classList.toggle('all-years',filmAll());
   if(S.mode==='ready'&&!Peers.ready&&!Peers.loading)Peers.ensure().then(render);
+  if(S.mode==='ready'&&partnerOf()&&!Home.data&&!Home.loading)Home.load();
   $('#yr').textContent=S.year;
   const addT=document.querySelector('#btn-add .add-txt');if(addT)addT.textContent=curArea()==='film'&&S.tab==='shelf'?A().formats[S.fmt]+' ekle':A().add;
   $('#brandname').textContent=S.area==='home'||S.mode==='pick'?'Bizim Ev':A().brand;
@@ -357,6 +358,7 @@ DECOR.push(PROPS.glasses,PROPS.stanley);
 const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
 function vShelf(){
+  if(S.shared&&homeOpen())return vShared();
   const area=curArea(),film=area==='film';
   const seen=film?BOOKS().filter(b=>b.status==='read'||b.status==='reading'):[];
   const all=BOOKS().filter(b=>area==='game'||(film?(b.status==='read'||b.status==='reading')&&(b.format||'film')===S.fmt:(b.owned||b.status!=='want')&&b.status!=='skip'));
@@ -373,7 +375,7 @@ function vShelf(){
     let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent=[c,recent[0]];
     return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="open" data-id="${b.id}" title="${esc(b.title)} — ${A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
-  return `${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
+  return `${homeBar()}${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Tümü')}${chip('read',A().doneTitle)}${film?chip('reading',A().status.reading):chip('unread','Bekleyenler')+chip('owned','Sahip olduklarım')}</div></div>
   ${area==='game'?'':`<div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>`}
   <div class="shelf-stats"><span><b>${all.length}</b> toplam ${film?A().formats[S.fmt].toLocaleLowerCase('tr'):A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
   ${area==='game'?gameScreen(list):!list.length?`<div class="empty">Bu filtrede ${A().item} yok.</div>`:film?filmStand(list):`<div class="shelf">${IVY.replace('class="ivy"','class="ivy ivy-l"')}${IVY.replace('class="ivy"','class="ivy ivy-r"')}${spines}${petRail()}</div>`}`;
@@ -719,6 +721,7 @@ function renderEditor(){
     ${peerScores(b)}
     ${b.series&&!b._new?`<p class="note" style="margin:0">Seri: ${esc(b.series)}${b.seriesNo?' #'+esc(b.seriesNo):''}</p>`:''}
     <div class="field"><span class="lbl">Durum</span><div class="seg">${Object.entries(A().status).map(([k,l])=>seg('status',k,l)).join('')}</div></div>
+    ${homeToggle(b)}
     ${A().noOwn?'':`<label class="toggle"><input type="checkbox" id="f-owned" ${b.owned?'checked':''}> ${A().ownLabel}</label>`}
     <div class="field"><span class="lbl">${A().howLabel}</span><div class="seg">${Object.entries(A().formats).map(([k,l])=>seg('format',k,l,A().fmtIcon[k])).join('')}</div></div>
     ${b.status!=='want'?`<div class="row"><div class="field"><label for="f-start">${A().start}</label><input type="date" id="f-start" data-k="startDate" value="${esc(b.startDate)}"></div>
@@ -769,7 +772,7 @@ function applyResult(r,overwrite){
   set('genre',r.genre);set('imdb',r.imdb);set('imdbId',r.imdbId);if(r.format&&A().formats[r.format])F.format=r.format;if(r.title&&overwrite)F.title=r.title;
 }
 async function saveEditor(){
-  syncInputs();const b=F;b.title=(b.title||'').trim();
+  syncInputs();const b=F,toHome=$('#f-shared')?.checked&&!$('#f-shared').disabled;b.title=(b.title||'').trim();
   if(!b.title){toast(A().Item+' adı gerekli.');$('#f-title')?.focus();return}
   const t=todayISO();
   if(b.status==='read'&&!b.endDate)b.endDate=t;
@@ -779,7 +782,7 @@ async function saveEditor(){
   b.pages=b.pages?+b.pages:'';b.year=b.year?+b.year:'';b.seriesNo=b.seriesNo?+b.seriesNo:'';b.series=(b.series||'').trim();b.rating=+b.rating||0;
   if(!b.color)b.color=autoColor(b.title);
   if(b._photoBlob){b.coverData=b._small;delete b.coverUrl}
-  const wasNew=b._new;closeSheet();await Store.saveBook(b);toast(wasNew?`“${b.title}” eklendi.`:'Kaydedildi.');
+  const wasNew=b._new;closeSheet();await Store.saveBook(b);if(toHome)Home.add([b]);toast(wasNew?`“${b.title}” eklendi.`:'Kaydedildi.');
 }
 
 /* ---------- bulk fill: real covers and page counts from the book search ---------- */
@@ -819,6 +822,7 @@ function vPick(){
 function openPeople(){
   openSheet(`<div class="sheet-h"><h2>Kimin evi?</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <div class="sheet-b"><div class="people">${peopleCards('person')}</div>
+  ${homePanel()}
   <p class="note">Bu cihazda sen: <b>${esc(S.me?personName(S.me):'seçilmedi')}</b>. Yalnızca kendi evini düzenleyebilirsin. <button class="linkbtn" data-act="me-change">Değiştir</button> · <button class="linkbtn" data-act="avatar-change">Profil resmi</button> · <button class="linkbtn" data-act="tour">Tanıtımı izle</button></p>
   ${GH.token()?`<form class="newp" id="newp-form"><input type="text" id="newp-in" placeholder="Yeni kişinin adı" maxlength="30"><button class="btn" type="submit">Kişi ekle</button></form>`:''}
   <div class="ed-foot"><button class="btn ghost" data-act="setup">Kurulum</button></div></div>`);

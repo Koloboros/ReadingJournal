@@ -190,3 +190,6 @@ html[data-view="mobile"] .piles .prop{flex:0 0 34px;width:34px}
 html[data-view="mobile"] .stand-top{height:10px}html[data-view="mobile"] .stand-body{height:30px;padding:4px;width:calc(100% - 20px)}
 html[data-view="mobile"] .stand .petrail{bottom:40px;right:64px}
 html[data-view="mobile"] .dvd{transform:translateX(calc(var(--off,0px)*.4))}html[data-view="mobile"] .piles{gap:8px}
+/* Ortak Ev */
+.homebar{display:flex;justify-content:flex-end;margin-bottom:10px}
+html[data-view="mobile"] .homebar .btn{font-size:.78rem;padding:5px 10px}
