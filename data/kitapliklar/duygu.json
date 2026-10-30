@@ -577,7 +577,7 @@
    "author": "Gene Luen Yang",
    "endDate": "2026-05-25",
    "genre": "Çizgi roman",
-   "owned": false,
+   "owned": true,
    "rating": 5,
    "series": "Avatar",
    "seriesNo": 2,
@@ -590,7 +590,7 @@
    "year": 2014,
    "color": "#dbb4bf",
    "format": "print",
-   "updatedAt": 1793269395915
+   "updatedAt": 1793388573424
   },
   {
    "author": "Suzanne Collins",
