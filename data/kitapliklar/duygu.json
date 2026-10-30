@@ -229,7 +229,7 @@
    "author": "Donald J. Robertson",
    "endDate": "2026-09-11",
    "genre": "Felsefe",
-   "owned": false,
+   "owned": true,
    "rating": 4,
    "status": "read",
    "title": "Roma İmparatoru Gibi Düşünmek",
@@ -237,7 +237,7 @@
    "infoTried": true,
    "color": "#ebb88c",
    "format": "print",
-   "updatedAt": 1793209643913,
+   "updatedAt": 1793390991569,
    "year": 2021,
    "pages": 280
   },
