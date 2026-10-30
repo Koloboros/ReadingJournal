@@ -1,6 +1,6 @@
-# Okuma Defteri
+# Bizim Ev
 
-Arkadaşlarla paylaşılan okuma günlüğü: kitaplık rafı, aylık kapaklar, kitap notları, yıl özeti, okunacaklar, okuma hedefi ve pullar, kitap bingosu.
+Arkadaşlarla paylaşılan kitap, film ve oyun günlüğü: raflar, yıl özeti, hedef ve pullar, bingo, Keşfet listesi, ev hayvanı ve arkadaşların ev hayvanlarından öneriler.
 
 Site: https://koloboros.github.io/ReadingJournal/
 
@@ -10,7 +10,9 @@ Site: https://koloboros.github.io/ReadingJournal/
 - Kitap ekleyip düzenlediğinde değişiklikler bu repoya otomatik commit edilir.
 - Kitaplıklar `data/` klasöründe durur:
   - `data/kisiler.json`: kişi listesi
-  - `data/kitapliklar/<kisi>.json`: her kişinin kitapları, hedefleri ve bingo kartı
+  - `data/kitapliklar/<kisi>.json`: her kişinin kitapları, filmleri, oyunları, hedefleri, bingo kartları ve ev hayvanı
+  - `data/kesfet.json`: henüz kimsenin puanlamadığı ortak Keşfet listesi
+- Arama anahtarları (TMDB, RAWG, Google Books) repoda durmaz; Kurulum ekranına girilir ve kurulum bağlantısıyla taşınır.
 
 ## Kurulum (her cihazda bir kez)
 
