@@ -6409,13 +6409,14 @@
    "genre": "Cozy",
    "about": "2025 video game",
    "color": "#f1e2a0",
-   "status": "reading",
+   "status": "read",
    "owned": true,
    "format": "mobil",
    "startDate": "2026-10-30",
-   "rating": 0,
+   "endDate": "2026-10-30",
+   "rating": 9.5,
    "addedAt": 1793366143907,
-   "updatedAt": 1793366372466,
+   "updatedAt": 1793366426822,
    "infoTried": true
   }
  ],
