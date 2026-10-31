@@ -252,3 +252,18 @@ html[data-area="kid"][data-view="mobile"] .viewsel{display:none}html[data-area="
 .kspine:hover{transform:translateX(calc(var(--off,0px) + 6px))}.kspine span{flex:1;min-width:0;font:700 .72rem/1 "Baloo 2",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kspine b{font-size:.68rem}
 .kwitem .kcov:not(:has(img)){height:64px;margin-top:auto;border-radius:3px}
 html[data-view="mobile"] .kpile{padding:8px 5px 20px}html[data-view="mobile"] .kids-grid .kpile::after{height:20px}html[data-view="mobile"] .kspine{height:21px;padding:0 4px 0 9px}html[data-view="mobile"] .kspine span{font-size:.6rem}html[data-view="mobile"] .kspine{transform:translateX(calc(var(--off,0px)*.4))}html[data-view="mobile"] .kwitem .kcov:not(:has(img)){height:46px}
+/* every book the same size, like spines of one series; wide photos sit on a mat instead of being cut */
+.kids-grid .kcov,.kwitem .kcov:has(img){width:100%;height:auto!important;aspect-ratio:3/4}
+.kcov,.kcov:has(img){background:var(--c,#ddd);overflow:hidden;padding:0;border-radius:3px 6px 6px 3px;box-shadow:0 3px 7px rgba(60,40,30,.25)}
+.kcov:not(:has(img)){padding:6px}
+.kcov img{object-fit:cover;object-position:center;filter:none}.kcov img.wide{object-fit:contain}
+.kcov::after{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:linear-gradient(90deg,rgba(255,255,255,.3),rgba(60,40,30,.13));pointer-events:none}
+.kprow .kcov,.kprow .kcov:has(img){width:44px;height:58px;aspect-ratio:auto}
+/* a colourful wall: soft bands behind the rows, bunting on top, nooks of toys, a rug below */
+.krack{position:relative;overflow:visible;background:repeating-linear-gradient(180deg,#FFE9EC 0 420px,#FFF4D6 420px 840px,#DFF3E7 840px 1260px,#E1ECFA 1260px 1680px,#EDE4F7 1680px 2100px)}
+.krack-top{display:flex;justify-content:space-around;height:24px;background:var(--wood);overflow:hidden}.krack-top i{width:22px;height:22px;background:var(--c);clip-path:polygon(0 0,100% 0,50% 100%)}
+.knook{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:2px;padding:12px 4px 24px;min-width:0}
+.knook::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24px;background:linear-gradient(var(--wood),#CDA574);box-shadow:inset 0 2px 0 rgba(255,255,255,.4)}
+.knook .ktoy{width:min(56px,48%);height:auto;aspect-ratio:1}.knook .ktoy:only-child{width:min(84px,70%)}
+.kfloor{position:relative;justify-content:center;flex-wrap:wrap;margin-top:14px;padding:12px 10px;border-radius:50%/34px;background:repeating-radial-gradient(ellipse at center,#FBD5DC 0 16px,#FCEBB0 16px 32px,#C9EBD4 32px 48px,#CFE4F6 48px 64px)}
+html[data-view="mobile"] .knook{padding:8px 2px 20px}html[data-view="mobile"] .knook::after{height:20px}html[data-view="mobile"] .krack-top{height:16px}html[data-view="mobile"] .krack-top i{width:15px;height:15px}html[data-view="mobile"] .kfloor .ktoy{width:44px;height:44px}

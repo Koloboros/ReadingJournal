@@ -23,7 +23,7 @@ const kidCards=pid=>Kid.of(pid).map(k=>`<div class="hcard c5"><button class="hgo
 const KID_CHEST=()=>{const k=Kid.of(S.viewing)[0];return k?`<g class="spot" data-act="kid-open" data-id="${esc(k.id)}" role="button" tabindex="0" aria-label="${esc(k.name)}: Çocuk Rafı"><rect class="halo" x="836" y="486" width="130" height="94" rx="12"/><rect x="850" y="522" width="102" height="48" rx="6" fill="#F6C9D0"/><path d="M846 524q55-34 110 0z" fill="#EBA3AF"/><rect x="890" y="516" width="22" height="14" rx="3" fill="#FBE3A6"/><circle cx="901" cy="546" r="9" fill="#FFF6EA"/><path d="M901 553c-8-5-8-11-4-12 2 0 3 1 4 3 1-2 2-3 4-3 4 1 4 7-4 12z" fill="#E8798A"/></g>`:''};
 const kidDate=d=>{const x=new Date(d+'T12:00:00');return`${x.getDate()} ${AYLAR[x.getMonth()].toLocaleLowerCase('tr')}`};
 const addDays=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`};
-const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
+const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onload="if(this.naturalWidth>this.naturalHeight*1.15)this.classList.add('wide')" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
 function kidBook(b,inWeek,now){return`<button class="kbook" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${kidCover(b,false,now)}<span class="kmeta">${b.fav?'<b class="kfav">♥</b>':''}${b.reads?`<span>${b.reads} kez</span>`:''}${inWeek?'<span class="kwk">bu hafta</span>':''}</span></button>`}
 /* little painted toys for the nursery shelves, all on one 80x80 canvas */
 const TOYS={
@@ -33,17 +33,28 @@ const TOYS={
  blocks:'<rect x="6" y="46" width="30" height="30" rx="4" fill="#F4CF5E"/><rect x="42" y="46" width="30" height="30" rx="4" fill="#7FC29B"/><rect x="24" y="16" width="30" height="30" rx="4" fill="#EBA3AF"/><g font-family="Baloo 2,sans-serif" font-weight="800" font-size="20" fill="#fff" text-anchor="middle"><text x="21" y="68">B</text><text x="57" y="68">C</text><text x="39" y="38">A</text></g>',
  ball:'<circle cx="40" cy="48" r="29" fill="#FFF3D6"/><path d="M40 19a29 29 0 0 1 0 58c12-14 12-44 0-58z" fill="#7FB4E0"/><path d="M40 19a29 29 0 0 0 0 58c-12-14-12-44 0-58z" fill="#EBA3AF"/>',
  duck:'<ellipse cx="38" cy="58" rx="27" ry="17" fill="#F4CF5E"/><circle cx="52" cy="32" r="15" fill="#F4CF5E"/><path d="M65 30l11 4-11 5z" fill="#F4A05A"/><circle cx="56" cy="29" r="2.200" fill="#3A2C24"/><path d="M12 54l-10-8 4 16z" fill="#F4CF5E"/><path d="M26 54q12 10 24 0" fill="none" stroke="#E0B23F" stroke-width="3"/>',
+ rocket:'<path d="M40 4c14 14 17 34 12 52H28C23 38 26 18 40 4z" fill="#F2E9DE"/><path d="M40 4c6 6 10 13 12 20H28c2-7 6-14 12-20z" fill="#E8798A"/><circle cx="40" cy="36" r="8" fill="#7FB4E0" stroke="#C9A06C" stroke-width="3"/><path d="M28 44L14 62l16-4zM52 44l14 18-16-4z" fill="#F4A05A"/><path d="M32 58h16l-8 18z" fill="#F4CF5E"/>',
+ train:'<rect x="8" y="34" width="44" height="28" rx="4" fill="#7FC29B"/><rect x="42" y="18" width="28" height="44" rx="4" fill="#E8798A"/><rect x="48" y="24" width="16" height="14" rx="2" fill="#E6F3FA"/><rect x="16" y="22" width="10" height="14" fill="#F4CF5E"/><circle cx="20" cy="68" r="8" fill="#4E5468"/><circle cx="56" cy="68" r="8" fill="#4E5468"/><circle cx="20" cy="68" r="3" fill="#F4CF5E"/><circle cx="56" cy="68" r="3" fill="#F4CF5E"/>',
+ plant:'<path d="M26 54h28l-4 24H30z" fill="#F4A05A"/><path d="M40 54c0-22-2-30-12-40 12 2 16 12 14 24 2-14 10-22 18-22-4 12-10 24-16 38z" fill="#7FC29B"/><path d="M40 54C34 44 26 40 16 40c6 8 14 14 24 14z" fill="#5FAE80"/>',
+ giraffe:'<path d="M26 74V40h24v34h-6V52H32v22z" fill="#F4CF5E"/><path d="M44 42V14h10v28z" fill="#F4CF5E"/><ellipse cx="54" cy="14" rx="12" ry="8" fill="#F4CF5E"/><circle cx="56" cy="12" r="1.8" fill="#3A2C24"/><path d="M50 7V2M56 7V2" stroke="#C9A06C" stroke-width="2.500"/><g fill="#D9963F"><circle cx="34" cy="48" r="3.500"/><circle cx="44" cy="54" r="3"/><circle cx="49" cy="26" r="2.500"/><circle cx="48" cy="38" r="2.500"/></g>',
+ star:'<path d="M40 10l9 19 21 3-15 15 4 21-19-10-19 10 4-21L10 32l21-3z" fill="#F4CF5E" stroke="#E0B23F" stroke-width="2"/>',
  basket:'<ellipse cx="28" cy="34" rx="15" ry="14" fill="#F6C9D0"/><circle cx="52" cy="32" r="13" fill="#BFE0D8"/><path d="M8 42h64l-7 34H15z" fill="#D9B48B"/><path d="M10 50h60M12 60h56M14 70h52" stroke="#B98A5E" stroke-width="3"/><path d="M6 42h68" stroke="#B98A5E" stroke-width="6" stroke-linecap="round"/>'
 };
 const toy=k=>`<svg class="ktoy" viewBox="0 0 80 80" aria-hidden="true">${TOYS[k]}</svg>`;
 const KID_BLOCKS=['#EBA3AF','#F4CF5E','#7FC29B','#7FB4E0','#C3AEDD','#F4A05A'];
 const nameBlocks=n=>[...n].map((c,i)=>c===' '?'<span class="kgap"></span>':`<span class="kblock" style="--c:${KID_BLOCKS[i%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][i%5]}deg">${esc(c)}</span>`).join('');
-/* books without a photo lie flat in colourful piles between the face-out ones */
+/* a series stays together; everything else falls in by title */
+const kidColl=new Intl.Collator('tr',{numeric:true,sensitivity:'base'});
+const kidKeyOf=b=>b.series?.[0]||b.title;
+const kidOrder=(a,b)=>kidColl.compare(kidKeyOf(a),kidKeyOf(b))||kidColl.compare(a.title,b.title);
+/* books without a photo lie flat in piles; every so often a nook of toys breaks up the wall */
+const KID_NOOKS=[['stack','plant'],['train'],['teddy','ball'],['rocket'],['giraffe','blocks'],['bunny','duck'],['basket','star']];
 function kidShelf(L,inWk){
-  const has=L.filter(b=>b.cover||b._preview),flat=L.filter(b=>!b.cover&&!b._preview),recent=[];let out='',k=0;
-  const pile=()=>{const p=flat.slice(k,k+5);k+=5;return p.length?`<div class="kpile">${p.map(b=>{const c=pileColor(b,recent);return`<button class="kspine" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%9-4}px" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${b.fav?'<b>♥</b>':''}<span>${esc(b.title.includes(': ')?b.title.split(': ').pop():b.title)}</span></button>`}).join('')}</div>`:''};
-  has.forEach((b,i)=>{out+=kidBook(b,inWk.has(b.id));if((i+1)%6===0)out+=pile()});
-  while(k<flat.length)out+=pile();return out;
+  const recent=[];let out='',buf=[],cells=0,nook=0;
+  const add=h=>{out+=h;if(++cells%8===0)out+=`<div class="knook">${KID_NOOKS[nook++%KID_NOOKS.length].map(toy).join('')}</div>`};
+  const flush=()=>{if(!buf.length)return;add(`<div class="kpile">${buf.map(b=>{const c=pileColor(b,recent);return`<button class="kspine" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%9-4}px" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${b.fav?'<b>♥</b>':''}<span>${esc(b.title.includes(': ')?b.title.split(': ').pop():b.title)}</span></button>`}).join('')}</div>`);buf=[]};
+  L.forEach(b=>{if(b.cover||b._preview){if(buf.length&&kidKeyOf(buf[0])!==kidKeyOf(b))flush();add(kidBook(b,inWk.has(b.id)))}else{if(buf.length&&(buf.length>=5||kidKeyOf(buf[0])!==kidKeyOf(b))&&b.series)flush();buf.push(b);if(buf.length>=5)flush()}});
+  flush();return out;
 }
 /* the low shelf she can reach: books face out, toys in between, a slatted cabinet below */
 function kidWeek(){
@@ -58,7 +69,7 @@ S.kq='';S.ktag='';S.kage='';S.kseries='';S.klist='';
 function vKid(){
   const k=Kid.cur();if(!Kid.data||!k)return`<div class="banner"><span class="busy"><span class="spin"></span>Çocuk rafı açılıyor…</span></div>`;
   const d=Kid.data,sibs=(Kid.idx||[]).filter(x=>x.parents?.some(p=>k.parents.includes(p))),inWk=new Set(d.week?.items||[]);
-  const q=norm(S.kqk||''),L=d.books.filter(b=>(!S.ktag||b.tags?.includes(S.ktag))&&(!S.kage||b.age===S.kage)&&(!S.kseries||b.series?.includes(S.kseries))&&(!S.klist||d.lists.find(l=>l.id===S.klist)?.items.includes(b.id))&&(!q||norm([b.title,b.author,b.publisher,(b.series||[]).join(' '),b.about].join(' ')).includes(q))).sort((a,b)=>cmp(a.title,b.title));
+  const q=norm(S.kqk||''),L=d.books.filter(b=>(!S.ktag||b.tags?.includes(S.ktag))&&(!S.kage||b.age===S.kage)&&(!S.kseries||b.series?.includes(S.kseries))&&(!S.klist||d.lists.find(l=>l.id===S.klist)?.items.includes(b.id))&&(!q||norm([b.title,b.author,b.publisher,(b.series||[]).join(' '),b.about].join(' ')).includes(q))).sort(kidOrder);
   const series=[...new Set(d.books.flatMap(b=>b.series||[]))].sort(cmp);
   const chip=(act,v,l,cur)=>`<button class="chip" data-act="${act}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`;
   const month=todayISO().slice(0,7),ml=(d.log||[]).filter(x=>x.d.startsWith(month)),cnt={};ml.forEach(x=>cnt[x.b]=(cnt[x.b]||0)+1);const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0];
@@ -68,7 +79,7 @@ function vKid(){
   <div class="ktools"><input type="text" id="kid-q" value="${esc(S.kqk||'')}" placeholder="Kitap, yazar ya da konu ara" autocomplete="off">${series.length?`<select id="kid-series" aria-label="Seri"><option value="">Tüm seriler</option>${series.map(s=>`<option ${S.kseries===s?'selected':''}>${esc(s)}</option>`).join('')}</select>`:''}${d.lists.length?`<select id="kid-list" aria-label="Okuma listesi"><option value="">Tüm kitaplar</option>${d.lists.map(l=>`<option value="${esc(l.id)}" ${S.klist===l.id?'selected':''}>${esc(l.name)}</option>`).join('')}</select>`:''}</div>
   <h3 class="kroom-h">Bütün kitaplar</h3><div class="chips kchips ktoychips">${chip('kid-tag','','Hepsi',S.ktag)}${Object.entries(KID_TAGS).map(([t,l])=>chip('kid-tag',t,l,S.ktag)).join('')}</div>
   <div class="chips kchips"><span class="muted" style="white-space:nowrap;align-self:center">Yaş:</span>${chip('kid-age','','Tümü',S.kage)}${KID_AGES.map(a=>chip('kid-age',a,a,S.kage)).join('')}</div>
-  <div class="krack"><div class="kids-grid" id="kid-grid">${kidShelf(L,inWk)||'<div class="empty">Bu seçimde kitap yok.</div>'}</div></div><div class="kfloor">${toy('ball')}${toy('duck')}${toy('basket')}</div>`;
+  <div class="krack"><div class="krack-top" aria-hidden="true">${['#EBA3AF','#F4CF5E','#7FC29B','#7FB4E0','#C3AEDD','#F4A05A','#EBA3AF','#F4CF5E','#7FC29B','#7FB4E0'].map(c=>`<i style="--c:${c}"></i>`).join('')}</div><div class="kids-grid" id="kid-grid">${kidShelf(L,inWk)||'<div class="empty">Bu seçimde kitap yok.</div>'}</div></div><div class="kfloor">${toy('giraffe')}${toy('train')}${toy('ball')}${toy('duck')}${toy('basket')}${toy('plant')}</div>`;
 }
 function openKidBook(id){
   const b=Kid.book(id);if(!b)return;const d=Kid.data,edit=Kid.canEdit(),wk=d.week?.items.includes(id);
