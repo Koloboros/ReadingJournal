@@ -88,7 +88,8 @@ function openKidBook(id){
   ${b.about?`<div class="about">${esc(b.about)}</div>`:''}${b.note?`<p class="rtext">${esc(b.note)}</p>`:''}
   ${edit?`<div class="pcrow"><button class="btn primary" data-act="kid-read" data-id="${esc(id)}">Okuduk</button><button class="btn" data-act="kid-fav" data-id="${esc(id)}">${b.fav?'♥ En sevdikleri':'♡ En sevdiklerine ekle'}</button><button class="btn" data-act="kid-toweek" data-id="${esc(id)}">${wk?'Bu haftadan çıkar':'Bu haftaya ekle'}</button></div>
   <div class="field"><span class="lbl">Okuma listeleri</span><div class="gchips">${d.lists.map(l=>`<button type="button" class="gchip" data-act="kid-inlist" data-id="${esc(id)}" data-l="${esc(l.id)}" aria-pressed="${l.items.includes(id)}">${esc(l.name)}</button>`).join('')}<button type="button" class="gchip" data-act="kid-newlist" data-id="${esc(id)}">+ Yeni liste</button></div></div>
-  <div class="ed-foot"><button class="btn danger ghost" data-act="kid-del" data-id="${esc(id)}">Sil</button><div style="display:flex;gap:8px">${b.cover?`<button class="btn" data-act="kid-crop" data-id="${esc(id)}">Kapağı düzelt</button>`:''}<button class="btn" data-act="kid-edit" data-id="${esc(id)}">Düzenle</button></div></div>`:''}</div>`);
+  <div class="ed-foot"><button class="btn danger ghost" data-act="kid-del" data-id="${esc(id)}">Sil</button><div style="display:flex;gap:8px"><button class="btn" data-act="kid-edit" data-id="${esc(id)}">Düzenle</button></div></div>
+  <div class="field"><span class="lbl">Kapak fotoğrafı</span><div class="pcrow"><label class="btn">Yeni fotoğraf yükle<input type="file" id="kb-photo" data-id="${esc(id)}" accept="image/*" hidden></label>${b.cover?`<button class="btn" data-act="kid-crop" data-id="${esc(id)}">Fotoğrafı düzenle</button>`:''}<button class="btn ghost" data-act="kid-url" data-id="${esc(id)}">İnternet adresiyle ekle</button>${b.cover?`<button class="btn danger ghost" data-act="kid-nocover" data-id="${esc(id)}">Kaldır</button>`:''}</div><form id="ku-form" data-id="${esc(id)}" class="pcrow" hidden><input id="ku-in" type="url" placeholder="https://… resim adresi" style="flex:1;min-width:0"><button class="btn" type="submit">Ekle</button></form></div>`:''}</div>`);
 }
 /* plan: one book per chosen kind; books that sat on the shelf lately and much-read ones wait their turn */
 let KP=null;
@@ -117,7 +118,7 @@ function openKidForm(b){
   <div class="field"><span class="lbl">Konular</span><div class="gchips">${Object.entries(KID_TAGS).map(([t,l])=>`<button type="button" class="gchip" data-act="kf-tag" data-v="${t}" aria-pressed="${KF.tags.includes(t)}">${esc(l)}</button>`).join('')}</div></div>
   <div class="field"><span class="lbl">Yaş aralığı</span><div class="seg">${KID_AGES.map(a=>`<button type="button" data-act="kf-age" data-v="${a}" aria-pressed="${age===a}">${a}</button>`).join('')}</div></div>
   <div class="field"><label for="kf-k">Özet</label><textarea id="kf-k">${esc(KF.about||'')}</textarea></div><div class="field"><label for="kf-n">Notumuz</label><textarea id="kf-n" placeholder="Sayfayı kendi çeviriyor...">${esc(KF.note||'')}</textarea></div>
-  <label class="btn ghost" style="justify-content:center">${ico('camera')}Kapak fotoğrafı<input type="file" id="kf-photo" accept="image/*" capture="environment" hidden></label><span class="note" id="kf-ph">${KF._blob?'Fotoğraf hazır.':''}</span>
+  <label class="btn ghost" style="justify-content:center">${ico('camera')}Kapak fotoğrafı<input type="file" id="kf-photo" accept="image/*" hidden></label><span class="note" id="kf-ph">${KF._blob?'Fotoğraf hazır.':''}</span>
   <div class="ed-foot"><span></span><div style="display:flex;gap:8px"><button type="button" class="btn" data-act="close">Vazgeç</button><button type="submit" class="btn primary">Kaydet</button></div></div></form>`);
 }
 const kfSync=()=>{if(!KF||!$('#kf-t'))return;KF.title=$('#kf-t').value;KF.author=$('#kf-a').value;KF.publisher=$('#kf-p').value;KF.series=$('#kf-s').value.split(',').map(s=>s.trim()).filter(Boolean);KF.about=$('#kf-k').value;KF.note=$('#kf-n').value};
@@ -133,23 +134,30 @@ function homography(from,to){const A=[];for(let i=0;i<4;i++){const[x,y]=from[i],
   return A.map((r,i)=>r[8]/r[i])}
 function drawCrop(){const{ctx,img,w,h,pts}=KC;ctx.drawImage(img,0,0,w,h);ctx.fillStyle='rgba(30,20,40,.35)';ctx.beginPath();ctx.rect(0,0,w,h);pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fill('evenodd');ctx.strokeStyle='#F4CF5E';ctx.lineWidth=2;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.stroke();pts.forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],9,0,7);ctx.fillStyle='#E8798A';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#fff';ctx.stroke()})}
 function openKidCrop(id){
-  const b=Kid.book(id),img=new Image();img.onload=()=>{
+  const b=Kid.book(id),img=new Image();img.crossOrigin='anonymous';img.onload=()=>{
     const W=Math.min(560,innerWidth-48),s=W/img.naturalWidth,w=W,h=Math.round(img.naturalHeight*s),m=Math.min(w,h)*.08;
     openSheet(`<div class="sheet-h"><h2>Kapağı düzelt</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div><div class="sheet-b"><p class="muted" style="margin:0">Dört noktayı kapağın köşelerine sürükle.</p><canvas id="kc" width="${w}" height="${h}" style="touch-action:none;max-width:100%;border-radius:8px"></canvas><div class="ed-foot"><button class="btn" data-act="kid-book" data-id="${esc(id)}">Vazgeç</button><button class="btn primary" data-act="kc-save">Kaydet</button></div></div>`);
     const c=$('#kc');KC={id,img,s,w,h,ctx:c.getContext('2d',{willReadFrequently:true}),pts:[[m,m],[w-m,m],[w-m,h-m],[m,h-m]],drag:-1};drawCrop();
     const pos=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*w/r.width,(e.clientY-r.top)*h/r.height]};
     c.onpointerdown=e=>{const p=pos(e);let best=-1,bd=1e9;KC.pts.forEach((q,i)=>{const d=Math.hypot(q[0]-p[0],q[1]-p[1]);if(d<bd){bd=d;best=i}});if(bd<44){KC.drag=best;c.setPointerCapture(e.pointerId)}};
     c.onpointermove=e=>{if(KC?.drag<0)return;const[x,y]=pos(e);KC.pts[KC.drag]=[Math.max(0,Math.min(w,x)),Math.max(0,Math.min(h,y))];drawCrop()};c.onpointerup=()=>{if(KC)KC.drag=-1};
-  };img.onerror=()=>toast('Fotoğraf açılamadı.');img.src=b.cover;
+  };img.onerror=()=>toast('Bu fotoğraf düzenlenemiyor. Bilgisayarına indirip Yeni fotoğraf yükle ile ekle.');img.src=b._preview||b.cover;
 }
 async function saveCrop(){
-  const{id,img,s,pts}=KC,P=pts.map(p=>[p[0]/s,p[1]/s]),dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]),W=Math.round(Math.min(800,Math.max(dist(P[0],P[1]),dist(P[3],P[2])))),H=Math.round(W*Math.max(dist(P[0],P[3]),dist(P[1],P[2]))/Math.max(dist(P[0],P[1]),dist(P[3],P[2])));
+  if(!KC)return;const{id,img,s,pts}=KC,P=pts.map(p=>[p[0]/s,p[1]/s]),dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]),W=Math.round(Math.min(800,Math.max(dist(P[0],P[1]),dist(P[3],P[2])))),H=Math.round(W*Math.max(dist(P[0],P[3]),dist(P[1],P[2]))/Math.max(dist(P[0],P[1]),dist(P[3],P[2])));
   const sc=document.createElement('canvas');sc.width=img.naturalWidth;sc.height=img.naturalHeight;const sx=sc.getContext('2d');sx.drawImage(img,0,0);const src=sx.getImageData(0,0,sc.width,sc.height).data,dc=document.createElement('canvas');dc.width=W;dc.height=H;const dx=dc.getContext('2d'),out=dx.createImageData(W,H),h=homography([[0,0],[W,0],[W,H],[0,H]],P);
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){const z=h[6]*x+h[7]*y+1,u=Math.round((h[0]*x+h[1]*y+h[2])/z),v=Math.round((h[3]*x+h[4]*y+h[5])/z);if(u<0||v<0||u>=sc.width||v>=sc.height)continue;const a=(v*sc.width+u)*4,o=(y*W+x)*4;out.data[o]=src[a];out.data[o+1]=src[a+1];out.data[o+2]=src[a+2];out.data[o+3]=255}
-  dx.putImageData(out,0,0);const data=dc.toDataURL('image/jpeg',.85);closeSheet();
-  try{const p=await kidUpload(id,data.split(',')[1]),book=Kid.book(id);if(LOCAL)book._preview=data;await Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=p+'?v='+Date.now()},'kapak düzeltildi');const b=Kid.book(id);if(b)b._preview=data;render();toast('Kapak düzeltildi.')}catch{toast('Kaydedilemedi. Tekrar dene.')}
+  dx.putImageData(out,0,0);const data=dc.toDataURL('image/jpeg',.85);closeSheet();setKidCover(id,data,'kapak düzeltildi');
 }
 ACT['kid-crop']=a=>openKidCrop(a.dataset.id);ACT['kc-save']=()=>saveCrop();
+/* a new cover: the photo is seen at once; the published copy takes a minute to appear */
+async function setKidCover(id,data,msg){
+  try{const p=await kidUpload(id,data.split(',')[1]);await Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=p+'?v='+Date.now()},msg);const b=Kid.book(id);if(b)b._preview=data;render();toast('Kapak güncellendi.')}catch{toast('Fotoğraf yüklenemedi. Tekrar dene.')}
+}
+ACT['kid-url']=()=>{const f=$('#ku-form');f.hidden=false;$('#ku-in').focus()};
+ACT['kid-nocover']=a=>{if(!a.dataset.sure){a.dataset.sure='1';a.textContent='Emin misin? Evet';return}const id=a.dataset.id;closeSheet();Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)delete b.cover},'kapak kaldırıldı').then(()=>{const b=Kid.book(id);if(b)delete b._preview;render()})};
+document.addEventListener('change',async e=>{if(e.target.id!=='kb-photo')return;const f=e.target.files[0],id=e.target.dataset.id;if(!f)return;closeSheet();toast('Fotoğraf yükleniyor…');const r=await resizeImg(f,900,.82);setKidCover(id,r.data,'yeni kapak')});
+document.addEventListener('submit',e=>{if(e.target.id!=='ku-form')return;e.preventDefault();const u=$('#ku-in').value.trim(),id=e.target.dataset.id;if(!/^https:\/\//.test(u))return toast('https ile başlayan bir resim adresi yapıştır.');closeSheet();Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=u},'internetten kapak').then(ok=>{if(ok)toast('Kapak eklendi.')})});
 function openKidAdd(){
   S.kadd=S.kadd||{};openSheet(`<div class="sheet-h"><h2>Çocuk ekle</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <form class="sheet-b" id="kadd-form"><div class="field"><label for="kadd-n">Adı</label><input id="kadd-n" required maxlength="30"></div><div class="avgrid">${Object.entries(AVATARS).map(([k,v])=>`<button type="button" class="avopt" data-act="kadd-av" data-v="${k}" aria-pressed="${S.kadd.av===k}">${avatarSVG(k)}<span>${v.n}</span></button>`).join('')}</div><div class="ed-foot"><span></span><button class="btn primary" type="submit">Rafı oluştur</button></div></form>`);

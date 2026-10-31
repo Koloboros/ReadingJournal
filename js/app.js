@@ -284,6 +284,7 @@ const viewPref=()=>{try{return localStorage.getItem(VIEW_KEY)||'auto'}catch{retu
 const isPhone=()=>matchMedia('(pointer:coarse)').matches&&Math.min(screen.width,screen.height)<=820;
 function setViewport(content){let m=document.querySelector('meta[name="viewport"]');if(!m){m=document.createElement('meta');m.name='viewport';document.head.appendChild(m)}if(m.content!==content)m.content=content}
 function applyView(){
+  document.documentElement.toggleAttribute('data-night',isDark());
   const pref=viewPref(),phone=isPhone(),root=document.documentElement;
   if(phone)setViewport(pref==='desktop'?'width=1100':'width=device-width,initial-scale=1,viewport-fit=cover');
   const mode=pref!=='auto'?pref:(phone||innerWidth<=720?'mobile':'desktop');
