@@ -328,3 +328,4 @@ html[data-area="kid"][data-night] .kfloor{background-color:#4A4670;border-color:
 html[data-area="kid"][data-night] .kfloor::before,html[data-area="kid"][data-night] .kfloor::after{background:repeating-linear-gradient(180deg,#A67FA2 0 4px,transparent 4px 8px)}
 html[data-view="mobile"] .kfloor{margin:14px 14px;border-width:7px}html[data-view="mobile"] .kfloor::before{left:-19px;width:12px}html[data-view="mobile"] .kfloor::after{right:-19px;width:12px}
 .kwitem .kbook{padding:0}.kwitem .kbook::after{display:none}
+html[data-view="mobile"] .kwitem .kbook{padding:0}
