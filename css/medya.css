@@ -298,3 +298,10 @@ html[data-area="kid"][data-night] .kshelf::before,html[data-area="kid"][data-nig
 @keyframes kfairy{0%,100%{opacity:1}50%{opacity:.45}}
 @media (prefers-reduced-motion:reduce){html[data-area="kid"][data-night] .kshelf::before,html[data-area="kid"][data-night] .kshelf::after,html[data-area="kid"][data-night] .krack::before,html[data-area="kid"][data-night] .krack::after{animation:none}}
 html[data-view="mobile"][data-area="kid"][data-night] .kshelf::before,html[data-view="mobile"][data-area="kid"][data-night] .krack::before{left:-10px}html[data-view="mobile"][data-area="kid"][data-night] .kshelf::after,html[data-view="mobile"][data-area="kid"][data-night] .krack::after{right:-10px}
+/* the night band only at night */
+html[data-area="kid"]:not([data-night]) .scene .knightband{display:none}
+/* cover options open from the cover */
+.kcovbtn{position:relative;display:block;width:100%;border:0;background:none;padding:0;cursor:pointer}
+.kcovtag{position:absolute;right:6px;bottom:6px;width:30px;height:30px;border-radius:50%;background:var(--sheet);color:var(--ink);display:grid;place-items:center;box-shadow:0 2px 5px rgba(60,40,30,.3)}.kcovtag svg{width:16px;height:16px}
+.kcmenu{display:grid;gap:8px;padding:10px;border:1px dashed var(--line);border-radius:12px;background:var(--paper)}.kcmenu[hidden]{display:none}
+.kcov.big,.kcov.big:has(img){min-width:0;width:100%;height:auto;aspect-ratio:3/4}
