@@ -221,15 +221,18 @@ const Store={
   },
   async addPerson(name){
     if(!GH.token())return openSetup();
-    name=name.trim();if(!name)return;
-    let id=slug(name),n=2;while(S.people.some(p=>p.id===id))id=slug(name)+'-'+n++;
-    const person={id,name,color:PCOLS[S.people.length%PCOLS.length]};
+    name=name.trim();if(!name||this.adding)return;this.adding=true;
     try{
-      const f=await GH.get('data/kisiler.json');const list=f?.data?.kisiler||[];list.push(person);
+      /* a second tap or a second device must not add the same person again */
+      const f=await GH.get('data/kisiler.json');const list=f?.data?.kisiler||[];
+      if(list.some(p=>norm(p.name)===norm(name))){S.people=list;toast('Bu adla bir kişi zaten var.');return}
+      let id=slug(name),n=2;while(list.some(p=>p.id===id))id=slug(name)+'-'+n++;
+      const person={id,name,color:PCOLS[list.length%PCOLS.length]};list.push(person);
       this.sha.people=await GH.put('data/kisiler.json',{kisiler:list},f?.sha,`Yeni kişi: ${name}`);
       this.sha[id]=await GH.put(this.path(id),{books:[],settings:normSettings()},null,`${name} için boş kitaplık`);
       S.people=list;return person;
     }catch(e){toast(e.status===401||e.status===403?'Anahtar geçersiz; kurulumu kontrol et.':'Kişi eklenemedi; tekrar dene.')}
+    finally{this.adding=false}
   }
 };
 addEventListener('pagehide',()=>{if(Store.msgs.length)Store.flush(true)});
