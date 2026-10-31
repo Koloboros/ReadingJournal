@@ -38,6 +38,13 @@ const TOYS={
 const toy=k=>`<svg class="ktoy" viewBox="0 0 80 80" aria-hidden="true">${TOYS[k]}</svg>`;
 const KID_BLOCKS=['#EBA3AF','#F4CF5E','#7FC29B','#7FB4E0','#C3AEDD','#F4A05A'];
 const nameBlocks=n=>[...n].map((c,i)=>c===' '?'<span class="kgap"></span>':`<span class="kblock" style="--c:${KID_BLOCKS[i%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][i%5]}deg">${esc(c)}</span>`).join('');
+/* books without a photo lie flat in colourful piles between the face-out ones */
+function kidShelf(L,inWk){
+  const has=L.filter(b=>b.cover||b._preview),flat=L.filter(b=>!b.cover&&!b._preview),recent=[];let out='',k=0;
+  const pile=()=>{const p=flat.slice(k,k+5);k+=5;return p.length?`<div class="kpile">${p.map(b=>{const c=pileColor(b,recent);return`<button class="kspine" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%9-4}px" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${b.fav?'<b>♥</b>':''}<span>${esc(b.title.includes(': ')?b.title.split(': ').pop():b.title)}</span></button>`}).join('')}</div>`:''};
+  has.forEach((b,i)=>{out+=kidBook(b,inWk.has(b.id));if((i+1)%6===0)out+=pile()});
+  while(k<flat.length)out+=pile();return out;
+}
 /* the low shelf she can reach: books face out, toys in between, a slatted cabinet below */
 function kidWeek(){
   const d=Kid.data,w=d.week,edit=Kid.canEdit(),top=`<div class="ks-top">${toy('basket')}${toy('teddy')}${toy('blocks')}<span class="ks-sign"><b>Haftanın Kitapları</b><small>${w?`${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'bu rafı birlikte hazırlayalım'}</small></span>${toy('stack')}${toy('bunny')}</div>`;
@@ -61,7 +68,7 @@ function vKid(){
   <div class="ktools"><input type="text" id="kid-q" value="${esc(S.kqk||'')}" placeholder="Kitap, yazar ya da konu ara" autocomplete="off">${series.length?`<select id="kid-series" aria-label="Seri"><option value="">Tüm seriler</option>${series.map(s=>`<option ${S.kseries===s?'selected':''}>${esc(s)}</option>`).join('')}</select>`:''}${d.lists.length?`<select id="kid-list" aria-label="Okuma listesi"><option value="">Tüm kitaplar</option>${d.lists.map(l=>`<option value="${esc(l.id)}" ${S.klist===l.id?'selected':''}>${esc(l.name)}</option>`).join('')}</select>`:''}</div>
   <h3 class="kroom-h">Bütün kitaplar</h3><div class="chips kchips ktoychips">${chip('kid-tag','','Hepsi',S.ktag)}${Object.entries(KID_TAGS).map(([t,l])=>chip('kid-tag',t,l,S.ktag)).join('')}</div>
   <div class="chips kchips"><span class="muted" style="white-space:nowrap;align-self:center">Yaş:</span>${chip('kid-age','','Tümü',S.kage)}${KID_AGES.map(a=>chip('kid-age',a,a,S.kage)).join('')}</div>
-  <div class="krack"><div class="kids-grid" id="kid-grid">${L.map(b=>kidBook(b,inWk.has(b.id))).join('')||'<div class="empty">Bu seçimde kitap yok.</div>'}</div></div><div class="kfloor">${toy('ball')}${toy('duck')}${toy('basket')}</div>`;
+  <div class="krack"><div class="kids-grid" id="kid-grid">${kidShelf(L,inWk)||'<div class="empty">Bu seçimde kitap yok.</div>'}</div></div><div class="kfloor">${toy('ball')}${toy('duck')}${toy('basket')}</div>`;
 }
 function openKidBook(id){
   const b=Kid.book(id);if(!b)return;const d=Kid.data,edit=Kid.canEdit(),wk=d.week?.items.includes(id);
