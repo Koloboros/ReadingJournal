@@ -324,3 +324,11 @@ html[data-area="kid"][data-night] .krack::after{background:radial-gradient(circl
 @media (prefers-reduced-motion:reduce){html[data-area="kid"][data-night] .krack::before,html[data-area="kid"][data-night] .krack::after{animation:none}}
 html[data-view="mobile"] .krack{padding:0 20px}html[data-view="mobile"] .krack::before{width:18px;left:-1px;background-size:18px 80px}html[data-view="mobile"] .krack::after{width:16px;right:0;background-size:16px 97px}
 html[data-view="mobile"][data-area="kid"][data-night] .krack::before{background-size:18px 75px,18px 75px,18px 80px}html[data-view="mobile"][data-area="kid"][data-night] .krack::after{background-size:16px 85px,16px 85px,16px 97px}
+/* home: four places in a row, then the pet and the computer */
+.hcards{grid-template-columns:repeat(4,minmax(0,1fr))}
+.hicon{flex:none;display:flex;align-items:center;justify-content:center;width:72px;border-left:1px dashed rgba(58,44,36,.25);background:rgba(255,255,255,.35)}.hicon .ktoy{width:44px;height:44px;align-self:center}
+.hbottom{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:12px;align-items:stretch}.hbottom>:first-child{min-width:0}.hbottom .hcard{min-height:0}.hbottom .hgo{align-content:center}
+html[data-view="mobile"] .hcards{grid-template-columns:repeat(2,minmax(0,1fr))}html[data-view="mobile"] .hicon{width:auto;border-left:0;border-top:1px dashed rgba(58,44,36,.25);padding:2px 0}html[data-view="mobile"] .hicon .ktoy{width:22px;height:22px}
+html[data-view="mobile"] .hbottom{grid-template-columns:minmax(0,1fr);gap:8px}
+/* one line of blocks per word */
+.kname{gap:4px 10px}.kword{display:inline-flex;gap:3px;white-space:nowrap}html[data-view="mobile"] .kword{gap:2px}

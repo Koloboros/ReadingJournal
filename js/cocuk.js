@@ -19,7 +19,7 @@ const Kid={idx:null,loading:null,id:null,data:null,sha:null,
   },
   book(id){return this.data?.books.find(b=>b.id===id)}
 };
-const kidCards=pid=>`<div class="hcard c5"><button class="hgo" data-act="kid-open"><b>Çocuk Rafı</b><span>${Kid.of(pid).length?'Kitaplar ve haftanın rafı':'Boş oda'}</span></button></div>`;
+const kidCards=pid=>`<div class="hcard c5"><button class="hgo" data-act="kid-open"><b>Çocuk Rafı</b><span>${Kid.of(pid).length?'Kitaplar ve haftanın rafı':'Boş oda'}</span></button><span class="hicon" aria-hidden="true">${toy('blocks')}</span></div>`;
 const KID_CHEST=()=>{return Kid.idx?`<g class="spot" data-act="kid-open" role="button" tabindex="0" aria-label="Çocuk Rafı"><rect class="halo" x="828" y="470" width="136" height="112" rx="12"/><ellipse cx="896" cy="574" rx="60" ry="7" fill="rgba(60,40,25,.14)"/><rect x="848" y="528" width="44" height="44" rx="6" fill="#EFD9A0"/><rect x="848" y="564" width="44" height="8" rx="4" fill="#D6BC80"/><text x="870" y="559" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">B</text><rect x="896" y="528" width="44" height="44" rx="6" fill="#B7C9A8"/><rect x="896" y="564" width="44" height="8" rx="4" fill="#62A980"/><text x="918" y="559" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">C</text><g transform="rotate(-7 894 506)"><rect x="872" y="484" width="44" height="44" rx="6" fill="#E8B9A6"/><rect x="872" y="520" width="44" height="8" rx="4" fill="#D98896"/><text x="894" y="515" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">A</text></g></g>`:''};
 const kidDate=d=>{const x=new Date(d+'T12:00:00');return`${x.getDate()} ${AYLAR[x.getMonth()].toLocaleLowerCase('tr')}`};
 const addDays=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`};
@@ -42,7 +42,7 @@ const TOYS={
 };
 const toy=k=>`<svg class="ktoy" viewBox="0 0 80 80" aria-hidden="true">${TOYS[k]}</svg>`;
 const KID_BLOCKS=['#E8B9A6','#EFD9A0','#B7C9A8','#B9CBD3','#D8CBDD','#E2B08A'];
-const nameBlocks=n=>[...n].map((c,i)=>c===' '?'<span class="kgap"></span>':`<span class="kblock" style="--c:${KID_BLOCKS[i%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][i%5]}deg">${esc(c)}</span>`).join('');
+const nameBlocks=n=>{let i=0;return n.trim().split(' ').filter(Boolean).map(w=>`<span class="kword">${[...w].map(c=>{const k=i++;return`<span class="kblock" style="--c:${KID_BLOCKS[k%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][k%5]}deg">${esc(c)}</span>`}).join('')}</span>`).join('')};
 /* a series stays together; everything else falls in by title */
 /* each shelf row takes the next colour of the arch; rows depend on the screen, so they are counted after layout */
 function kidTint(){
