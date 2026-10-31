@@ -1,6 +1,24 @@
 {
+ "pet": {
+  "type": "kirpi",
+  "coat": 1,
+  "name": "Tufi tuf"
+ },
+ "schema": 2,
  "books": [],
+ "films": [],
+ "games": [],
  "settings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "filmSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "gameSettings": {
   "goals": {},
   "bingoCards": [],
   "bingoActive": {}
