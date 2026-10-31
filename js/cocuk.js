@@ -71,7 +71,7 @@ function kidRug(){
   return`<svg class="ksc-rugart" viewBox="0 0 640 170" aria-hidden="true"><g fill="var(--r1)">${dots}</g>${ring(300,68,'r1')}${ring(246,55,'r2')}${ring(190,43,'r3')}${ring(132,30,'r2')}${ring(74,17,'r1')}</svg>`;
 }
 function kidWeek(){
-  const d=Kid.data,w=d.week,edit=Kid.canEdit(),head=`<h3 class="ksc-t">Haftanın Kitapları</h3><small class="ksc-d">${w?`${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'birlikte seçelim'}</small>`;
+  const d=Kid.data,w=d.week,edit=Kid.canEdit(),head=`<h3 class="ksc-t">Haftanın Kitapları</h3><small class="ksc-d">${w?`${w.theme?`Konu: ${esc(w.theme)} · `:''}${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'birlikte seçelim'}</small>`;
   const floor=`<div class="ksc-rug">${kidRug()}<div class="ksc-toys">${toy('basket')}${toy('bunny')}${toy('stack')}</div></div>`;
   if(!w)return`<section class="ksc">${KID_CLOUD}<div class="ksc-wall">${KID_ARCH}<div class="ksc-in">${head}<p class="ksc-p">Ulaşabileceği rafa koyacağınız 5-6 kitabı seçin. Sesli, uyku, dokunma gibi türlerden önereyim.</p>${edit?'<button class="btn primary" data-act="kid-plan">Bu rafı hazırla</button>':''}</div></div>${floor}</section>`;
   const items=w.items.map(id=>Kid.book(id)).filter(Boolean),over=todayISO()>=addDays(w.start,w.days);let rows='';
@@ -104,6 +104,28 @@ function openKidBook(id){
   <div class="field"><span class="lbl">Okuma listeleri</span><div class="gchips">${d.lists.map(l=>`<button type="button" class="gchip" data-act="kid-inlist" data-id="${esc(id)}" data-l="${esc(l.id)}" aria-pressed="${l.items.includes(id)}">${esc(l.name)}</button>`).join('')}<button type="button" class="gchip" data-act="kid-newlist" data-id="${esc(id)}">+ Yeni liste</button></div></div>
   <div class="ed-foot"><button class="btn danger ghost" data-act="kid-del" data-id="${esc(id)}">Sil</button><div style="display:flex;gap:8px"><button class="btn" data-act="kid-edit" data-id="${esc(id)}">Düzenle</button></div></div>`:''}</div>`);
 }
+/* a weekly topic from the playgroup: no ready list, so a topic word pulls in its everyday relatives, then titles, series and summaries are searched */
+const KID_TOPICS=[
+ ['uzay',['uzay','gezegen','astronot','roket','galaksi','güneş sistemi']],['deniz',['deniz','okyanus','balık','balina','yunus','ahtapot','yengeç','köpekbalığı','denizanası','mercan']],
+ ['sonbahar',['sonbahar','mevsim','yaprak','güz','kestane','meşe','palamut','sincap','yağmur']],['kış',['kış','kar','mevsim','kardan','soğuk','penguen','kutup']],['ilkbahar',['ilkbahar','bahar','mevsim','çiçek','tırtıl','kelebek']],['yaz',['yaz','mevsim','güneş','plaj','tatil','deniz']],['mevsim',['mevsim','sonbahar','kış','ilkbahar','yaz']],
+ ['meslek',['meslek','doktor','hemşire','itfaiye','polis','öğretmen','aşçı','çiftçi','pilot','veteriner','mühendis','kaptan','ressam','astronot']],
+ ['panda',['panda','bambu','ayı']],['ayı',['ayı','panda','pıtır','monti']],['hayvan',['hayvan','orman','çiftlik','ayı','tavşan','kedi','köpek','kuş']],['orman',['orman','ağaç','hayvan','sincap','tilki','baykuş']],['çiftlik',['çiftlik','inek','tavuk','koyun','at','traktör','horoz','farm']],
+ ['böcek',['böcek','tırtıl','kelebek','arı','karınca','uğur']],['kuş',['kuş','baykuş','serçe','ördek','penguen','horoz']],['dinozor',['dinozor']],['araç',['araç','araba','tren','uçak','kamyon','otobüs','taşıt','gemi','bisiklet','roket']],
+ ['beden',['beden','vücut','göz','kulak','diş','burun','el','ayak','anatomi','saç']],['aile',['aile','anne','baba','kardeş','dede','nine','anneanne','bebek']],['duygu',['duygu','mutlu','üzgün','kızgın','korku','öfke','sevgi','kaygı','ağla','endişe']],['arkadaş',['arkadaş','paylaş','dost']],
+ ['yemek',['yemek','meyve','sebze','elma','havuç','yiyecek','tat']],['meyve',['meyve','elma','çilek','muz','armut']],['sebze',['sebze','havuç','domates','patates']],['sayı',['sayı','saymak','rakam','say']],['şekil',['şekil','daire','kare','üçgen']],['harf',['harf','alfabe','abc']],['müzik',['müzik','şarkı','nota','orkestra','çalgı','enstrüman']],['su',['su','yağmur','deniz','damla']],['ev',['ev','oda','banyo','mutfak']],['uyku',['uyku','gece','yatak','ninni','uyu']],['zıt',['zıt','zıtlık']],
+ ['mor',['mor','renkler']],['kırmızı',['kırmızı','renk','elma','çilek']],['mavi',['mavi','renk','deniz','gökyüzü']],['sarı',['sarı','renk','güneş']],['yeşil',['yeşil','renk','orman','yaprak']],['turuncu',['turuncu','renk','havuç']],['pembe',['pembe','renk']],['renk',['renk','gökkuşağı']]
+];
+const KID_WEAK=['hayvan','reng','renk','kitap','konu'];
+const kidStem=w=>{w=w.replace(/(da|de)ki$/,'').replace(/(lar|ler)(ı|i|u|ü|ın|in|un|ün|a|e|da|de|dan|den)?$/,'');return w.length>4?w.replace(/(nın|nin|nun|nün|dan|den|ın|in|un|ün|ı|i|u|ü)$/,''):w};
+const kidHit=(words,k)=>k.length<=3?words.includes(k):words.some(w=>w.startsWith(k));
+function kidTopic(q){
+  let raw=norm(q).split(' ').filter(w=>w.length>1).map(kidStem);const strong=raw.filter(w=>!KID_WEAK.includes(w));if(strong.length)raw=strong;const main=[...new Set(raw)],near=new Set();
+  KID_TOPICS.forEach(([key,list])=>{if(raw.some(w=>key===w||(w.length>3&&key.startsWith(w))||(key.length>3&&w.startsWith(key))))list.forEach(x=>norm(x).split(' ').length===1&&near.add(norm(x)))});
+  main.forEach(w=>near.delete(w));
+  const score=b=>{const T=norm(b.title).split(' '),S=norm((b.series||[]).join(' ')).split(' '),A=norm(b.about||'').split(' '),L=norm((b.tags||[]).map(t=>KID_TAGS[t]).join(' ')).split(' ');let n=0;
+    main.forEach(k=>{if(kidHit(T,k))n+=12;if(kidHit(S,k))n+=8;if(kidHit(A,k))n+=6;if(kidHit(L,k))n+=3});near.forEach(k=>{if(kidHit(T,k))n+=4;if(kidHit(S,k))n+=3;if(kidHit(A,k))n+=2});return n};
+  return Kid.data.books.map(b=>[b,score(b)]).filter(x=>x[1]>=3).sort((a,b)=>b[1]-a[1]).map(x=>x[0].id);
+}
 /* plan: one book per chosen kind; books that sat on the shelf lately and much-read ones wait their turn */
 let KP=null;
 function kidPick(tag,used){
@@ -111,12 +133,13 @@ function kidPick(tag,used){
   const pool=d.books.filter(b=>b.tags?.includes(tag)&&!used.includes(b.id));if(!pool.length)return null;
   const score=b=>(recent.has(b.id)?100:0)+(+b.reads||0)+Math.random()*3;return pool.sort((a,b)=>score(a)-score(b))[0].id;
 }
-function startPlan(){const d=Kid.data,used=[];KP={days:d.week?.days||7,slots:KID_SLOTS.map(t=>{const id=kidPick(t,used);if(id)used.push(id);return{t,id}})};drawPlan()}
+function startPlan(){const d=Kid.data,used=[];KP={days:d.week?.days||7,theme:'',matches:[],note:'',slots:KID_SLOTS.map(t=>{const id=kidPick(t,used);if(id)used.push(id);return{t,id}})};drawPlan()}
 function drawPlan(){
   openSheet(`<div class="sheet-h"><h2>Haftanın Kitapları</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
-  <div class="sheet-b"><p class="muted" style="margin:0">Her türden bir kitap önerdim. Yeni öner ile değiştir, ya da satırı çıkar. Yaşa bakmıyorum.</p>
+  <div class="sheet-b"><form id="kp-form" class="field"><label for="kp-q">Bu haftanın konusu (isteğe bağlı)</label><div class="pcrow"><input id="kp-q" value="${esc(KP.theme)}" placeholder="panda, sonbahar, uzay, mor rengi…" autocomplete="off" style="flex:1;min-width:0"><button class="btn primary" type="submit">Kitap bul</button></div>${KP.note?`<span class="note">${esc(KP.note)}</span>`:''}</form>
+  <p class="muted" style="margin:0">Yeni öner ile değiştir, ya da satırı çıkar. Yaşa bakmıyorum.</p>
   <div class="seg">${[[7,'1 hafta'],[14,'2 hafta']].map(([v,l])=>`<button type="button" data-act="kp-days" data-v="${v}" aria-pressed="${KP.days===v}">${l}</button>`).join('')}</div>
-  <div class="kplan">${KP.slots.map((s,i)=>{const b=Kid.book(s.id);return`<div class="kprow">${b?kidCover(b):'<span class="kcov"></span>'}<div><b>${esc(KID_TAGS[s.t])}</b><span>${b?esc(b.title):'Bu türde kitap yok'}</span></div><button class="btn" data-act="kp-new" data-i="${i}">Yeni öner</button><button class="x" data-act="kp-del" data-i="${i}" aria-label="Çıkar">×</button></div>`}).join('')}</div>
+  <div class="kplan">${KP.slots.map((s,i)=>{const b=Kid.book(s.id);return`<div class="kprow">${b?kidCover(b):'<span class="kcov"></span>'}<div><b>${s.m?'Konuya uygun':esc(KID_TAGS[s.t])}</b><span>${b?esc(b.title):'Bu türde kitap yok'}</span></div><button class="btn" data-act="kp-new" data-i="${i}">Yeni öner</button><button class="x" data-act="kp-del" data-i="${i}" aria-label="Çıkar">×</button></div>`}).join('')}</div>
   <div class="gchips">${Object.entries(KID_TAGS).filter(([t])=>!KP.slots.some(s=>s.t===t)).map(([t,l])=>`<button type="button" class="gchip" data-act="kp-add" data-v="${t}">+ ${esc(l)}</button>`).join('')}</div>
   <div class="ed-foot"><span></span><button class="btn primary" data-act="kp-save">Rafı kur</button></div></div>`);
 }
@@ -186,9 +209,9 @@ Object.assign(ACT,{
   'kid-newlist':a=>{const id=a.dataset.id,box=a.parentElement;box.insertAdjacentHTML('beforeend',`<form id="klist-form" data-id="${esc(id)}" class="pcrow"><input id="klist-n" placeholder="Liste adı" maxlength="40"><button class="btn" type="submit">Oluştur</button></form>`);a.remove();$('#klist-n').focus()},
   'kid-del':a=>{if(!a.dataset.sure){a.dataset.sure='1';a.textContent='Emin misin? Evet, sil';return}const id=a.dataset.id;closeSheet();Kid.change(d=>{d.books=d.books.filter(b=>b.id!==id);d.lists.forEach(l=>l.items=l.items.filter(i=>i!==id));if(d.week)d.week.items=d.week.items.filter(i=>i!==id)},'kitap silindi')},
   'kid-plan':()=>startPlan(),'kp-days':a=>{KP.days=+a.dataset.v;drawPlan()},
-  'kp-new':a=>{const s=KP.slots[+a.dataset.i],used=KP.slots.map(x=>x.id).filter(Boolean);s.id=kidPick(s.t,used)||s.id;drawPlan()},'kp-del':a=>{KP.slots.splice(+a.dataset.i,1);drawPlan()},
+  'kp-new':a=>{const s=KP.slots[+a.dataset.i],used=KP.slots.map(x=>x.id).filter(Boolean);s.id=(s.m?KP.matches.find(i=>!used.includes(i)):kidPick(s.t,used))||s.id;drawPlan()},'kp-del':a=>{KP.slots.splice(+a.dataset.i,1);drawPlan()},
   'kp-add':a=>{const t=a.dataset.v;KP.slots.push({t,id:kidPick(t,KP.slots.map(x=>x.id).filter(Boolean))});drawPlan()},
-  'kp-save':()=>{const items=KP.slots.map(s=>s.id).filter(Boolean),days=KP.days,t=todayISO();if(!items.length)return toast('En az bir kitap seç.');closeSheet();Kid.change(d=>{if(d.week)d.history=[...(d.history||[]),d.week].slice(-30);d.week={start:t,days,items}},'haftanın kitapları değişti').then(ok=>{if(ok)toast('Raf hazır.')})},
+  'kp-save':()=>{const items=KP.slots.map(s=>s.id).filter(Boolean),days=KP.days,t=todayISO(),theme=KP.theme.trim();if(!items.length)return toast('En az bir kitap seç.');closeSheet();Kid.change(d=>{if(d.week)d.history=[...(d.history||[]),d.week].slice(-30);d.week={start:t,days,items,...(theme?{theme}:{})}},'haftanın kitapları değişti').then(ok=>{if(ok)toast('Raf hazır.')})},
   'kf-tag':a=>{kfSync();const t=a.dataset.v;KF.tags=KF.tags.includes(t)?KF.tags.filter(x=>x!==t):[...KF.tags,t];a.setAttribute('aria-pressed',KF.tags.includes(t))},
   'kf-age':a=>{KF.age=a.dataset.v;a.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===a))},
   'kf-pick':a=>{const r=KF._res?.[+a.dataset.i];if(!r)return;kfSync();Object.assign(KF,{title:r.title,author:KF.author||r.author,about:KF.about||r.about});if(r.cover)KF.cover=KF.cover||r.cover;openKidForm(KF.id&&!KF._new?KF:{...KF});},
@@ -200,6 +223,10 @@ document.addEventListener('change',async e=>{
   if(e.target.id==='kid-series'){S.kseries=e.target.value;render()}if(e.target.id==='kid-list'){S.klist=e.target.value;render()}
   if(e.target.id==='kf-photo'){const f=e.target.files[0];if(!f)return;const r=await resizeImg(f,900,.8);KF._blob=r.data.split(',')[1];KF._preview=r.data;$('#kf-ph').textContent='Fotoğraf hazır.'}
 });
+document.addEventListener('submit',e=>{if(e.target.id!=='kp-form')return;e.preventDefault();const q=$('#kp-q').value.trim();KP.theme=q;
+  if(!q){KP.note='';return startPlan()}
+  const m=kidTopic(q);KP.matches=m;const pick=m.slice(0,6),used=[...pick],rest=[];for(const t of KID_SLOTS){if(pick.length+rest.length>=6)break;const id=kidPick(t,used);if(id){used.push(id);rest.push({t,id})}}
+  KP.slots=[...pick.map(id=>({t:'konu',id,m:true})),...rest];KP.note=m.length?`“${q}” için ${m.length} kitap buldum.${m.length<6?' Kalan yerleri farklı türlerden doldurdum.':''}`:`“${q}” ile ilgili kitap bulamadım, her türden önerdim.`;drawPlan()});
 document.addEventListener('submit',async e=>{
   if(e.target.id==='klist-form'){e.preventDefault();const n=$('#klist-n').value.trim(),id=e.target.dataset.id;if(!n)return;const lid='l'+newId();await Kid.change(d=>{d.lists.push({id:lid,name:n,items:[id]})},'yeni okuma listesi');return openKidBook(id)}
   if(e.target.id==='kid-form'){e.preventDefault();kfSync();const o={...KF},id=o.id;if(!o.title.trim())return;closeSheet();
