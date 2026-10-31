@@ -29,6 +29,11 @@
    "name": "Melih",
    "color": "#A0C3DB",
    "avatar": "baykus"
+  },
+  {
+   "id": "misafir",
+   "name": "Misafir",
+   "color": "#8EBDB0"
   }
  ]
 }
