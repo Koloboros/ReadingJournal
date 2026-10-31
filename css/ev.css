@@ -3,7 +3,7 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--wall:#3A3358;--wall-2:#332C4E;--wall-dot:#463E68;--trim:#5B5078;--floor:#54402F;--floor-2:#463425;--case:#3F3026;--rug:#3F5A55;--rug-2:#567A72;--win-1:#1E2148;--win-2:#4A3F73;--night:1;--day:0}}
 :root[data-theme="dark"]{--wall:#3A3358;--wall-2:#332C4E;--wall-dot:#463E68;--trim:#5B5078;--floor:#54402F;--floor-2:#463425;--case:#3F3026;--rug:#3F5A55;--rug-2:#567A72;--win-1:#1E2148;--win-2:#4A3F73;--night:1;--day:0}
 /* the room replaces tabs, year and add while at home */
-html[data-area="home"] .tabs,html[data-area="home"] #btn-add,html[data-area="home"] .yearsel{display:none}
+html[data-area="home"] .tabs,html[data-area="home"] #btn-add,html[data-area="home"] .yearsel,html[data-area="kid"] .tabs,html[data-area="kid"] #btn-add,html[data-area="kid"] .yearsel{display:none}
 html[data-area="home"] main{padding-bottom:40px}
 .homebtn{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:color-mix(in srgb,var(--sheet) 82%,transparent);border-radius:999px;padding:6px 12px;font-weight:700}
 .homebtn svg{width:17px;height:17px}

@@ -307,19 +307,21 @@ addEventListener('resize',()=>{if(viewPref()==='auto'){const was=document.docume
 function render(){
   $('#view').classList.toggle('all-years',filmAll());
   if(S.mode==='ready'&&!Peers.ready&&!Peers.loading)Peers.ensure().then(render);
+  if(S.mode==='ready'&&!Kid.idx&&!Kid.loading)Kid.loadIdx();
   if(S.mode==='ready'&&partnerOf()&&!Home.data&&!Home.loading)Home.load();
   $('#yr').textContent=S.year;
   const addT=document.querySelector('#btn-add .add-txt');if(addT)addT.textContent=curArea()==='film'&&S.tab==='shelf'?A().formats[S.fmt]+' ekle':A().add;
-  $('#brandname').textContent=S.area==='home'||S.mode==='pick'?'Bizim Ev':A().brand;
+  $('#brandname').textContent=S.area==='home'||S.mode==='pick'?'Bizim Ev':S.area==='kid'?'Çocuk Rafı':A().brand;
   $('#tabs').innerHTML=A().tabs.map(([k,l,i,s])=>`<button class="tab" data-act="tab" data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${ico(i)}<span class="lf">${l}</span><span class="ls">${s}</span></button>`).join('');
   if(!A().tabs.some(t=>t[0]===S.tab))S.tab='shelf';
   const vf={shelf:vShelf,covers:vCovers,notes:vNotes,stats:vStats,tbr:vTbr,stamps:vStamps,bingo:vBingo,kesfet:vKesfet}[S.tab];
-  const v=['stats','stamps','bingo'].includes(S.tab)?areaWords(S.area==='home'||S.mode==='pick'?'':vf()):S.area==='home'||S.mode==='pick'?'':vf();
+  const skip=S.area==='home'||S.area==='kid'||S.mode==='pick',v=skip?'':['stats','stamps','bingo'].includes(S.tab)?areaWords(vf()):vf();
   document.documentElement.toggleAttribute('data-readonly',!S.canEdit);
   document.documentElement.dataset.area=S.mode==='pick'?'home':S.area;
   setSync();
   if(S.mode==='pick'){$('#view').innerHTML=vPick();return}
   if(S.area==='home'&&S.mode==='ready'){$('#view').innerHTML=vHome();Pet.mount();return}
+  if(S.area==='kid'&&S.mode==='ready'){clearTimeout(Pet.t);$('#view').innerHTML=vKid();return}
   const who=esc(personName(S.viewing));
   const ban=S.mode==='loading'?`<div class="banner"><span class="busy"><span class="spin"></span>Yükleniyor…</span></div>`
     :S.mode==='offline'?`<div class="banner"><span>Veriler şu an yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.</span></div>`

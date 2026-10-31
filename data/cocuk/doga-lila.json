@@ -1,0 +1,2566 @@
+{
+ "books": [
+  {
+   "id": "b001",
+   "title": "Annemin Bavulu",
+   "tags": [
+    "gunluk",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Pip Jones, Laura Hughes",
+   "publisher": "Beyaz Balina",
+   "about": "Bir abla ile küçük kardeşinin, annelerinin yolculuk bavulu etrafında yaşadığı neşeli bir ev hikâyesi. Bavula girip çıkan eşyalar, kediyle birlikte küçük bir kargaşaya dönüşür.",
+   "cover": "data/cocuk/kapak/doga-lila/b001.jpg"
+  },
+  {
+   "id": "b002",
+   "title": "Hikâye Orkestrası: Bir Günde Dört Mevsim",
+   "tags": [
+    "sesli",
+    "masal",
+    "bilim"
+   ],
+   "age": "1-2",
+   "author": "Resimleyen: Jessica Courtney-Tickle",
+   "publisher": "Eolo",
+   "series": [
+    "Hikâye Orkestrası"
+   ],
+   "about": "Bir kız ve köpeği tek bir günde ilkbahardan kışa dört mevsimi dolaşır. Sayfalardaki notalara basınca Vivaldi'nin Dört Mevsim'inden bölümler çalar; çocuk hem mevsimleri hem klasik müziği tanır.",
+   "cover": "data/cocuk/kapak/doga-lila/b002.jpg"
+  },
+  {
+   "id": "b003",
+   "title": "Ağladığımda",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Canan Kuloğlu, Merve Ergenoğlu",
+   "publisher": "Sincap Kitap",
+   "about": "Ağlamanın ayıp değil, duyguları dışa vurmanın doğal bir yolu olduğunu anlatır. Bir kız çocuğu hangi durumlarda ağladığını ve gözyaşlarının ona nasıl iyi geldiğini paylaşır.",
+   "cover": "data/cocuk/kapak/doga-lila/b003.jpg"
+  },
+  {
+   "id": "b004",
+   "title": "Komik Şapkalar Karnavalı",
+   "tags": [
+    "mizah",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Resimleyen: Emine Metin",
+   "publisher": "Neobebek",
+   "about": "Birbirinden tuhaf şapkalar takmış çocukların karnavalı: mantar, ananas, uzay gemisi, hatta yengeç şapka! Bol renkli sayfalarda nesneleri tanımaya ve gülmeye davet eden bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b004.jpg"
+  },
+  {
+   "id": "b005",
+   "title": "Görünmez İp",
+   "tags": [
+    "duygu",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Patrice Karst, Joanne Lew-Vriethoff",
+   "publisher": "Mundi Çocuk",
+   "about": "Fırtınalı bir gece annelerinin yanına koşan ikizlere annesi, sevdiğimiz herkese bizi bağlayan görünmez bir sevgi ipi olduğunu anlatır. Ayrılık ve özlem anlarında içi rahatlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b005.jpg"
+  },
+  {
+   "id": "b006",
+   "title": "Masal Battaniyesi",
+   "tags": [
+    "duygu",
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Ferida Wolff, Harriet May Savitz, Elena Odriozola",
+   "publisher": "Nesin Yayınevi",
+   "about": "Köyün çocuklarına masallarını kocaman bir battaniyenin üstünde anlatan Babba Zarah, bir çocuğun çorabının delik olduğunu görünce battaniyesinden yün söküp örgü örmeye başlar. Paylaşmanın ve iyiliğin döngüsünü anlatan sıcacık bir öykü.",
+   "cover": "data/cocuk/kapak/doga-lila/b006.jpg"
+  },
+  {
+   "id": "b007",
+   "title": "Monet: Arkadaşım Claude",
+   "tags": [
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Anna Obiols, Subi",
+   "publisher": "1001 Çiçek",
+   "about": "Küçük bir çocuk, Giverny'deki bahçede resim yapan yaşlı bir ressamla arkadaş olur. Nilüferler, köprü ve ışık üzerinden çocuk Claude Monet'nin dünyasını ve empresyonizmi keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b007.jpg"
+  },
+  {
+   "id": "b008",
+   "title": "Sarıl Bana!",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "İki sevimli canavar üzerinden sarılmanın, dostluğun ve birbirine yakın olmanın güzelliğini anlatan kısa, sıcak bir resimli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b008.jpg"
+  },
+  {
+   "id": "b009",
+   "title": "Ornitorenk",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Çizer: Anastasia Kurtuluş",
+   "publisher": "Subadap",
+   "about": "Ördek gagalı, kunduz kuyruklu ornitorenk, diğer hayvanlara benzemediği için kendini farklı hisseder. Farklılıkların bizi özel kıldığını anlatan bir hikâye.",
+   "cover": "data/cocuk/kapak/doga-lila/b009.jpg"
+  },
+  {
+   "id": "b010",
+   "title": "Gofret ile Babası",
+   "tags": [
+    "uyku",
+    "duygu"
+   ],
+   "age": "2-3",
+   "author": "Ian Whybrow, Rosie Reeve",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Küçük fare Gofret ile babasının akşam rutini ve uyku öncesi yakınlığı. Baba ile çocuk arasındaki sevgiyi anlatan, uyku vaktine uygun bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b010.jpg"
+  },
+  {
+   "id": "b011",
+   "title": "Kimse Bakmazken Duygular Ne Yapar?",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Tina Oziewicz, Aleksandra Zając",
+   "publisher": "Domingo",
+   "about": "Korku, öfke, sevinç, merak... Duygular kimse bakmazken ne yapar? Her sayfada bir duygu sevimli bir yaratık olarak karşımıza çıkar; duyguları adlandırmayı ve tanımayı kolaylaştırır.",
+   "cover": "data/cocuk/kapak/doga-lila/b011.jpg"
+  },
+  {
+   "id": "b012",
+   "title": "Zorbalığa Karşı Taktiklerim Var",
+   "tags": [
+    "duygu",
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Saniye Bencik Kangal, Cansu Erkan",
+   "publisher": "Turta Kitap",
+   "about": "Arkadaşlarının alay ettiği bir çocuk üzerinden zorbalıkla karşılaşınca ne yapılabileceğini anlatır. Kendini ifade etme, yardım isteme ve sınır koyma için somut taktikler sunar.",
+   "cover": "data/cocuk/kapak/doga-lila/b012.jpg"
+  },
+  {
+   "id": "b013",
+   "title": "Elif Bale Yapıyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Eva Wenzel-Bürger",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif bale derslerine başlar: ilk kıyafet, ilk adımlar ve sonunda gösteri heyecanı. Yeni bir etkinliğe başlamanın hem zorluğunu hem keyfini anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b013.jpg"
+  },
+  {
+   "id": "b014",
+   "title": "Elmer",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "David McKee",
+   "publisher": "Mundi Çocuk",
+   "about": "Rengârenk kareli fil Elmer, sürüdeki diğer gri fillere benzemek ister ve kendini griye boyar. Sonunda farklılığının arkadaşlarını ne kadar mutlu ettiğini fark eder.",
+   "cover": "data/cocuk/kapak/doga-lila/b014.jpg"
+  },
+  {
+   "id": "b015",
+   "title": "Çalışkan Doğa: İlkbahar",
+   "tags": [
+    "sesli",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "1-2",
+   "author": "S&S Alliance, Maria Vyshinskaya",
+   "publisher": "Yapı Kredi Yayınları",
+   "series": [
+    "Çalışkan Doğa"
+   ],
+   "about": "Kademeli sayfaları ve ses düğmesiyle ilkbaharda doğada neler olduğunu gösteren bir bebek kitabı. Uyanan hayvanlar, yuva yapan kuşlar ve açan çiçekler.",
+   "cover": "data/cocuk/kapak/doga-lila/b015.jpg"
+  },
+  {
+   "id": "b016",
+   "title": "Her Güne Bir Masal",
+   "tags": [
+    "masal",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Derleyen ve çeviren: Tarık Demirkan, Resimleyen: Feridun Oral",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Dünyanın dört bir yanından derlenmiş kısa masallar. Her akşam bir tane okunabilecek uzunlukta; uyku öncesi okumaları için klasik bir başucu kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b016.jpg"
+  },
+  {
+   "id": "b017",
+   "title": "Hikâye Orkestrası: Kuğu Gölü",
+   "tags": [
+    "sesli",
+    "masal"
+   ],
+   "age": "1-2",
+   "author": "Resimleyen: Jessica Courtney-Tickle",
+   "publisher": "Eolo",
+   "series": [
+    "Hikâye Orkestrası"
+   ],
+   "about": "Büyü ile kuğuya dönüştürülen prenses Odette ve Prens Siegfried'in hikâyesi. Notalara basınca Çaykovski'nin Kuğu Gölü balesinden bölümler çalar.",
+   "cover": "data/cocuk/kapak/doga-lila/b017.jpg"
+  },
+  {
+   "id": "b018",
+   "title": "Hikâye Orkestrası: Fındıkkıran",
+   "tags": [
+    "sesli",
+    "masal"
+   ],
+   "age": "1-2",
+   "author": "Resimleyen: Jessica Courtney-Tickle",
+   "publisher": "Eolo",
+   "series": [
+    "Hikâye Orkestrası"
+   ],
+   "about": "Noel gecesi hediye edilen fındıkkıran oyuncak canlanır; Clara onunla fare kralına karşı savaşır ve Şekerler Ülkesi'ne gider. Notalara basınca Çaykovski'nin müziği çalar.",
+   "cover": "data/cocuk/kapak/doga-lila/b018.jpg"
+  },
+  {
+   "id": "b019",
+   "title": "Babasının Bir Tanesi",
+   "tags": [
+    "duygu",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Zack Bush, Gregorio De Lauretis",
+   "publisher": "Beyaz Balina",
+   "about": "Bir babanın bebeğine duyduğu sevgiyi anlatan şiirsel bir kitap: Onun için yapılanlar, hayalleri ve \"sen benim bir tanemsin\" demenin binbir yolu.",
+   "cover": "data/cocuk/kapak/doga-lila/b019.jpg"
+  },
+  {
+   "id": "b020",
+   "title": "Bir Sevgi Masalı",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Lori Haskins Houran, Sydney Hanson",
+   "publisher": "Beyaz Balina",
+   "about": "Bir su aygırı yavrusu ve etrafındaki hayvan dostları üzerinden sevginin farklı hallerini anlatan tatlı bir resimli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b020.jpg"
+  },
+  {
+   "id": "b021",
+   "title": "Mış Gibi",
+   "tags": [
+    "masal",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Peter H. Reynolds",
+   "publisher": "Altın Kitaplar",
+   "about": "Resim yapmayı çok seven Ramon, abisi çizimleriyle alay edince kalemi bırakır. Kız kardeşinin odasında kendi resimlerini asılı bulunca \"vazo gibi\", \"ağaç gibi\" çizmenin de harika olduğunu anlar.",
+   "cover": "data/cocuk/kapak/doga-lila/b021.jpg"
+  },
+  {
+   "id": "b022",
+   "title": "Uykusu Gelen Minikler",
+   "tags": [
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Frauke Weldin, Katja Reider",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Su samurlarından tavşanlara, hayvan yavruları anne ve babalarının yanında uykuya dalar. Uyku öncesi okumak için yumuşak, ritmik bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b022.jpg"
+  },
+  {
+   "id": "b023",
+   "title": "Balyanaklar İçin Mahremiyet Kitabı",
+   "tags": [
+    "gunluk",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Saniye Bencik Kangal, Cansu Erkan",
+   "publisher": "Turta Kitap",
+   "about": "Bedenimizin bize ait olduğunu, \"hayır\" deme hakkını, iyi ve kötü dokunuşu ve güvendiğimiz yetişkinlere anlatmanın önemini çocuğun anlayacağı bir dille işler.",
+   "cover": "data/cocuk/kapak/doga-lila/b023.jpg"
+  },
+  {
+   "id": "b024",
+   "title": "Ne Görürsün Bir Ağaca Bakınca?",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Emma Carlisle",
+   "publisher": "Domingo",
+   "about": "Bir çocuk bir ağaca yakından bakar: kabuğu, yaprakları, içinde yaşayan böcekler ve kuşlar. Doğayı dikkatle gözlemlemeye davet eden, Waterstones ödülü finalisti bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b024.jpg"
+  },
+  {
+   "id": "b025",
+   "title": "Höt ile Zöt: İki Mağara Adamının Hikâyesi",
+   "tags": [
+    "mizah",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Alastair Chisholm, David Roberts",
+   "publisher": "Domingo",
+   "about": "İki mağara adamı Höt ile Zöt'ün komik hikâyesi. Birbirine çok benzeyen iki komşunun anlaşmazlıkları ve sonunda dostluğun galip gelmesi.",
+   "cover": "data/cocuk/kapak/doga-lila/b025.jpg"
+  },
+  {
+   "id": "b026",
+   "title": "Sen ve Ben",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Evelyn Daviddi",
+   "publisher": "Büyülü Fener",
+   "about": "Çamaşır ipinde asılı bir çift çorap üzerinden birlikteliği, birbirini tamamlamayı ve dostluğu anlatan sade ve şiirsel bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b026.jpg"
+  },
+  {
+   "id": "b027",
+   "title": "Küçük Cesur Tavşan Hopi",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Nicola Kinnear",
+   "publisher": "Beyaz Balina",
+   "about": "Her şeyden korkan küçük tavşan Hopi, bir gün arkadaşlarının yardıma ihtiyacı olunca içindeki cesareti keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b027.jpg"
+  },
+  {
+   "id": "b028",
+   "title": "Tarçın'ın Kaybolan Havuçları",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Andreas König, Günther Jakobs",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Tavşan Tarçın'ın havuçları kaybolunca büyüteciyle dedektifliğe soyunur. Ormandaki hayvanları tek tek sorgularken ipuçlarını takip eden eğlenceli bir gizem.",
+   "cover": "data/cocuk/kapak/doga-lila/b028.jpg"
+  },
+  {
+   "id": "b029",
+   "title": "Utangaç Ayı Monti",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Duncan Beedie",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Utangaç ayı Monti, ormandaki hayvanlarla nasıl konuşacağını bilemez ve sadece onlara bakar; bu da herkesi rahatsız eder. Bilge bir kuş ona gülümsemenin ve \"merhaba\" demenin gücünü öğretir.",
+   "cover": "data/cocuk/kapak/doga-lila/b029.jpg"
+  },
+  {
+   "id": "b030",
+   "title": "Küçük Yağmur Damlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Doğanın Eşsiz Hikâyeleri"
+   ],
+   "about": "Bulutlardan düşen küçük bir damlanın yolculuğu: toprağa, nehre, denize ve yeniden gökyüzüne. Su döngüsünü küçük çocuklara anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b030.jpg"
+  },
+  {
+   "id": "b031",
+   "title": "Adrian'ın Atı Yok",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Marcy Campbell, Corinna Luyken",
+   "publisher": "4 Kitap",
+   "about": "Chloe, sınıf arkadaşı Adrian'ın atı olduğunu söylemesine inanmaz ve onu yalancılıkla suçlar. Adrian'ın evini görünce onun hayal gücünü ve yoksulluğunu anlar; empati üzerine derin bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b031.jpg"
+  },
+  {
+   "id": "b032",
+   "title": "Merhabacık Cesareti",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Deniz Işık, Ayşegül Babalı Ekşioğlu",
+   "publisher": "Igloo",
+   "about": "Karlı bir günde atkılı bir kedi üzerinden \"merhaba\" diyebilmek için gereken küçük cesareti, utangaçlığı aşmayı ve arkadaşlık kurmayı anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b032.jpg"
+  },
+  {
+   "id": "b033",
+   "title": "Küçük Dinozorun Büyük Soruları",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Serap Şahin, Damla Eyvazoğlu",
+   "publisher": "İndigo Çocuk",
+   "about": "Gözlüklü meraklı küçük dinozor dünyayı anlamak için sorular sorar. Çocukların merakını ve soru sorma isteğini destekleyen bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b033.jpg"
+  },
+  {
+   "id": "b034",
+   "title": "Paylaşmak İstemeyen Ayı",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Oakley Graham, Lizzie Walkley",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Ayı hiçbir şeyini, en çok da kekini, ormandaki arkadaşlarıyla paylaşmak istemez. Yalnız kalınca paylaşmanın mutluluğu ve arkadaşlığı nasıl büyüttüğünü öğrenir.",
+   "cover": "data/cocuk/kapak/doga-lila/b034.jpg"
+  },
+  {
+   "id": "b035",
+   "title": "Cesur Fırfır",
+   "tags": [
+    "duygu",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Angela McAllister, Tiphanie Beeke",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Küçük tavşan Fırfır, kış uykusuna yatacak kocaman ayının yolunu bulmasına yardım eder. Mevsimler boyunca süren küçük-büyük bir dostluğun hikâyesi.",
+   "cover": "data/cocuk/kapak/doga-lila/b035.jpg"
+  },
+  {
+   "id": "b036",
+   "title": "Peppa Pig: Doğum Günü Partisi",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "publisher": "Doğan Çocuk",
+   "about": "Peppa'nın doğum günü geldi: pasta, mumlar, arkadaşlar ve sürprizler. Çizgi filmden tanıdık karakterlerle kısa, neşeli bir hikâye.",
+   "cover": "data/cocuk/kapak/doga-lila/b036.jpg"
+  },
+  {
+   "id": "b037",
+   "title": "Neşeli Çalgıcılar",
+   "tags": [
+    "masal",
+    "mizah"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Artık işe yaramadıkları düşünülen bir eşek, köpek, kedi ve horoz birlikte müzisyen olmak için yola çıkar. Bremen Mızıkacıları masalının çocuklar için anlatımı.",
+   "cover": "data/cocuk/kapak/doga-lila/b037.jpg"
+  },
+  {
+   "id": "b038",
+   "title": "Duygular Pırt Gibidir",
+   "tags": [
+    "duygu",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Christopher Willard, Tara Wosiski, Toshiki Nakamura",
+   "about": "Duygular da tıpkı pırt gibi gelir, bazen ses çıkarır ve sonra geçip gider. Güldürürken duyguları kabullenmeyi ve bilinçli farkındalığı anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b038.jpg"
+  },
+  {
+   "id": "b039",
+   "title": "Köpük ile Pıtır",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "David Bedford, Steve Lavis",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Kutup ayısı yavrusu Pıtır ve annesi Köpük karlar arasında oynar. Küçük ayı, annesinin yanında kaymayı, yüzmeyi ve cesaretle keşfetmeyi öğrenir.",
+   "cover": "data/cocuk/kapak/doga-lila/b039.jpg"
+  },
+  {
+   "id": "b040",
+   "title": "Neyin Var Porsuk?",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Constanze von Kitzing",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Porsuk"
+   ],
+   "about": "Porsuk küçük bir yara alınca üzülür; arkadaşları onu teselli etmeye koşar. Küçük acıları, bakım göstermeyi ve arkadaşlığı anlatan 2+ yaş kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b040.jpg"
+  },
+  {
+   "id": "b041",
+   "title": "Bavulumdaki Kırık Fincan",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Chris Naylor-Ballesteros",
+   "publisher": "Domingo",
+   "about": "Yorgun bir yabancı, koca bir bavulla gelir; hayvanlar içinde ne olduğunu merak eder. Bavulu zorla açınca bir kırık fincan bulurlar ve yabancının geride bıraktığı evin hikâyesini anlarlar. Göç ve misafirperverlik üzerine incelikli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b041.jpg"
+  },
+  {
+   "id": "b042",
+   "title": "Kuş Sesleri",
+   "tags": [
+    "sesli",
+    "bilim",
+    "bebek"
+   ],
+   "age": "0-1",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Sayfalardaki düğmelere basınca bahçedeki kuşların ötüşleri duyulur. Bebeklere kuşları hem görerek hem sesleriyle tanıtan kalın sayfalı bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b042.jpg"
+  },
+  {
+   "id": "b043",
+   "title": "İlk Dokun Hisset Kitabım: Çiftliğe Dokun",
+   "tags": [
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Melek Dinçer, Damla Tutan",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Dokun Hisset"
+   ],
+   "about": "Horozun tüyleri, koyunun yünü... Çiftlik hayvanlarını farklı dokulara dokunarak tanıtan bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b043.jpg"
+  },
+  {
+   "id": "b044",
+   "title": "Cesur Kızlar İçin Büyük Sözler",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çeviren: Sinem Çavuşlar",
+   "publisher": "Yakamoz Çocuk",
+   "about": "Bilim insanı, şair, sanatçı, kaşif... \"Öncü\", \"eşitlik\", \"hayal\" gibi büyük kelimeleri tarihin cesur kadınlarıyla eşleştirerek tanıtan bir kavram kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b044.jpg"
+  },
+  {
+   "id": "b045",
+   "title": "Kedi Suki: Dansçı",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Grace Habib",
+   "publisher": "Büyülü Fener",
+   "about": "Kaydır, çek, çevir! Kedi Suki ve arkadaşları sahnede dans eder; küçükler hareketli parçalarla gösteriye katılır.",
+   "cover": "data/cocuk/kapak/doga-lila/b045.jpg"
+  },
+  {
+   "id": "b046",
+   "title": "Hikâye Orkestrası: Dağ Kralının Salonunda",
+   "tags": [
+    "sesli",
+    "masal"
+   ],
+   "age": "1-2",
+   "author": "Resimleyen: Jessica Courtney-Tickle",
+   "publisher": "Eolo",
+   "series": [
+    "Hikâye Orkestrası"
+   ],
+   "about": "Peer Gynt'in dağlarda trollerle karşılaşmasını anlatan masal. Notalara basınca Grieg'in ünlü eserinden bölümler çalar.",
+   "cover": "data/cocuk/kapak/doga-lila/b046.jpg"
+  },
+  {
+   "id": "b047",
+   "title": "İyi Geceler Aydede",
+   "tags": [
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Gillian Lobel, Tim Warnes",
+   "publisher": "Beyaz Balina",
+   "about": "Dolunay altında bir ayı yavrusu, tavşan ve fare dostlarıyla gecenin sessizliğine ve aya iyi geceler der. Uyku öncesi için sakin bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b047.jpg"
+  },
+  {
+   "id": "b048",
+   "title": "Yazı Yazan İnekler",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Doreen Cronin, Betsy Lewin",
+   "publisher": "Beyaz Balina",
+   "about": "Çiftlikteki inekler eski bir daktilo bulur ve çiftçiye istek notları yazmaya başlar: \"Ahır çok soğuk, battaniye istiyoruz!\" Pazarlığı ve iletişimi anlatan çok komik bir klasik.",
+   "cover": "data/cocuk/kapak/doga-lila/b048.jpg"
+  },
+  {
+   "id": "b049",
+   "title": "Pezzettino",
+   "tags": [
+    "duygu",
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Leo Lionni",
+   "publisher": "Elma Çocuk",
+   "about": "Minik bir parça olan Pezzettino, kendisinin daha büyük birinin parçası olduğuna inanır ve kime ait olduğunu aramaya çıkar. Sonunda kendisinin de bütün olduğunu keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b049.jpg"
+  },
+  {
+   "id": "b050",
+   "title": "Hayvanat Bahçesinde Diş Fırçalama Günü",
+   "tags": [
+    "gunluk",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Sophie Schoenwald, Günther Jakobs",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Hayvanat bahçesinde dişlerin fırçalanma günü! Aslandan zürafaya herkes sırayla dişini fırçalar; diş fırçalamayı eğlenceli hâle getiren bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b050.jpg"
+  },
+  {
+   "id": "b051",
+   "title": "Çekirdek ile Yumurta",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Alex Latimer, David Litchfield",
+   "publisher": "Domingo",
+   "about": "Bir çekirdek ile bir yumurta en yakın arkadaştır. Biri ağaca, diğeri kuşa dönüşürken yolları ayrılır gibi olsa da dostlukları değişip büyür.",
+   "cover": "data/cocuk/kapak/doga-lila/b051.jpg"
+  },
+  {
+   "id": "b052",
+   "title": "Petra",
+   "tags": [
+    "duygu",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Marianna Coppo",
+   "publisher": "Nesin Yayınevi",
+   "about": "Kendini koca bir dağ sanan küçük taş Petra, bir köpeğin onu alıp götürmesiyle bir yumurta, bir ada olur. Değişime uyum sağlamayı neşeyle anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b052.jpg"
+  },
+  {
+   "id": "b053",
+   "title": "Avucundaki Öpücük",
+   "tags": [
+    "duygu",
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Audrey Penn, Ruth E. Harper, Nancy M. Leak",
+   "publisher": "Doğan Çocuk",
+   "about": "Okula başlamaktan korkan rakun Chester'a annesi avucuna bir öpücük kondurur; özlediğinde elini yanağına bastırması yeter. Ayrılık kaygısı için klasik bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b053.jpg"
+  },
+  {
+   "id": "b054",
+   "title": "Boncuk ile Böö!",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Megan Brewis",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Boncuk ve arkadaşı Böö'nün oyun dolu, neşeli dostluğu. Saklambaç ve sürprizlerle dolu kısa bir resimli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b054.jpg"
+  },
+  {
+   "id": "b055",
+   "title": "Dünyanın En Güzel Yeri",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Şeyma Akkurt, Nilay Çınar",
+   "publisher": "Doğan Çocuk",
+   "about": "Çiçeklerle, meyvelerle ve hayvanlarla dolu bir bahçenin içindeki ev üzerinden \"dünyanın en güzel yeri\" neresi sorusunun peşine düşen bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b055.jpg"
+  },
+  {
+   "id": "b056",
+   "title": "Küçük Fil Zencefil",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Karen Sapp, Rachel Elliot",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Küçük fil Zencefil'in suyla oyunları ve öğrenme dolu günleri. Sulu boya resimlerle anlatılan sıcak bir hayvan hikâyesi.",
+   "cover": "data/cocuk/kapak/doga-lila/b056.jpg"
+  },
+  {
+   "id": "b057",
+   "title": "Tombik Ayı'nın Yeni Arkadaşı",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Karma Wilson, Jane Chapman",
+   "publisher": "Altın Kitaplar",
+   "about": "Tombik Ayı ormanda yeni bir arkadaş bulmak ister ama saklanan utangaç biri vardır. Arkadaşları onu bulup aralarına katmak için birlikte uğraşır.",
+   "cover": "data/cocuk/kapak/doga-lila/b057.jpg"
+  },
+  {
+   "id": "b058",
+   "title": "Komik Hayvan İsimleri Bakanlığı",
+   "tags": [
+    "mizah",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Kes Gray, Nikki Dyson",
+   "publisher": "Domingo",
+   "about": "Mavi ayaklı sümsük kuşu gibi komik isimli gerçek hayvanlar bakanlığa isimlerini değiştirmek için başvurur. Hem güldüren hem gerçek hayvanları tanıtan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b058.jpg"
+  },
+  {
+   "id": "b059",
+   "title": "Bütün Havuçlar Benim",
+   "tags": [
+    "duygu",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Katy Hudson",
+   "publisher": "Timaş Çocuk",
+   "about": "Tavşan havuçlarını o kadar çok sever ki hepsini biriktirir; sonunda evine sığamaz ve arkadaşlarının evlerine sığınır. Paylaşmayı ve fazlasını istememeyi anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b059.jpg"
+  },
+  {
+   "id": "b060",
+   "title": "Çekirdeksiz Domates",
+   "tags": [
+    "duygu",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Çizer: Anastasia Kurtuluş",
+   "publisher": "Subadap",
+   "about": "Çekirdeklerini kavanozda saklayan bir domates üzerinden farklı olmayı ve paylaşmayı anlatan bir hikâye.",
+   "cover": "data/cocuk/kapak/doga-lila/b060.jpg"
+  },
+  {
+   "id": "b061",
+   "title": "Bazen Olur Böyle: Biraz Kızdım Sanki!",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Klinik Psikolog Mehmet Teber, Burcu Güdücü",
+   "publisher": "Sincap Kitap",
+   "about": "Küçük köpek bir şeye çok kızar; annesi öfkesini tanıması ve sakinleşmesi için ona yardım eder. Bir psikolog tarafından yazılmış, öfke duygusunu anlatan kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b061.jpg"
+  },
+  {
+   "id": "b062",
+   "title": "Her Zaman Yanında Olacağım",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Christopher Cheng, Stephen Michael King",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Kocaman bir panda ile küçük bir farenin dostluğu. Birbirine destek olmayı ve zor zamanda yanında olmayı anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b062.jpg"
+  },
+  {
+   "id": "b063",
+   "title": "Kaygı Ne Diyor?",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Allison Edwards, Ayesha L. Rubio",
+   "publisher": "İthaki Çocuk",
+   "about": "Kız çocuğunun içindeki kaygı tüylü bir canavar gibi kulağına \"yapamazsın\" diye fısıldar. Kaygının sesini tanımayı ve onu sakinleştirmeyi öğreten kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b063.jpg"
+  },
+  {
+   "id": "b064",
+   "title": "Kipper'ın Oyuncak Kutusu",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Mick Inkpen",
+   "publisher": "Uçan Fil",
+   "about": "Köpek Kipper oyuncak kutusunda bir delik bulur ve oyuncaklarını sayar, ama her seferinde sayı değişir. Meğer kutuya iki fare yerleşmiş! Sayı saymayla oynayan komik bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b064.jpg"
+  },
+  {
+   "id": "b065",
+   "title": "Hortumuma Çörek Kaçtı!",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Hortumuna çörek kaçan bir fil ile ağlayan papağan arkadaşının komik macerası.",
+   "cover": "data/cocuk/kapak/doga-lila/b065.jpg"
+  },
+  {
+   "id": "b066",
+   "title": "Bir Kabuğu Paylaşmak",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Julia Donaldson, Lydia Monks",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Minik keşiş yengeç yeni kabuğunu kimseyle paylaşmak istemez; ama bir deniz anemonu ve kıllı solucan kabuğa taşınınca birlikte yaşamayı öğrenir.",
+   "cover": "data/cocuk/kapak/doga-lila/b066.jpg"
+  },
+  {
+   "id": "b067",
+   "title": "Krokodali",
+   "tags": [
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Lucy Volpin",
+   "publisher": "Domingo",
+   "about": "Ressam timsah Krokodali bir başyapıt yapmak ister. Okuyucu kitabı eğip döndürüp sallayarak ona yardım eder.",
+   "cover": "data/cocuk/kapak/doga-lila/b067.jpg"
+  },
+  {
+   "id": "b068",
+   "title": "Nokta",
+   "tags": [
+    "masal",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Peter H. Reynolds",
+   "publisher": "Altın Kitaplar",
+   "about": "Resim yapamayacağını düşünen Vashti, öğretmeninin teşvikiyle kâğıda bir nokta koyar ve imzalar. O nokta çerçevelenince her şey değişir; yaratıcılık ve cesaret üzerine sevilen bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b068.jpg"
+  },
+  {
+   "id": "b069",
+   "title": "Bekçi Amos'un Hastalandığı Gün",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Philip C. Stead, Erin E. Stead",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Hayvanat bahçesi bekçisi Amos her gün arkadaşlarını ziyaret eder. Bir gün hastalanıp işe gidemeyince fil, kaplumbağa, penguen, gergedan ve baykuş onu evinde ziyarete gelir. Caldecott ödüllü, dostluk üzerine bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b069.jpg"
+  },
+  {
+   "id": "b070",
+   "title": "Biber ve Ben",
+   "tags": [
+    "duygu",
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Beatrice Alemagna",
+   "publisher": "Can Çocuk",
+   "about": "Kızıl saçlı bir kız ile Biber adını verdiği küçük bir dostun hikâyesi. Beatrice Alemagna'nın pastel resimleriyle hayal gücü ve dostluk.",
+   "cover": "data/cocuk/kapak/doga-lila/b070.jpg"
+  },
+  {
+   "id": "b071",
+   "title": "Elif Asla Yabancılarla Gitmez",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif, tanımadığı bir adamın \"annen seni almamı istedi\" demesine rağmen onunla gitmez. Çocuklara güvenlik kurallarını ve kiminle gidilebileceğini anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b071.jpg"
+  },
+  {
+   "id": "b072",
+   "title": "Minik Elif Kitapları Keşfediyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif kitapların dünyasını keşfeder: resimlere bakar, masal dinler, kütüphaneye gider. Okuma sevgisini anlatan bir Elif kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b072.jpg"
+  },
+  {
+   "id": "b073",
+   "title": "Elif Hayvanat Bahçesinde",
+   "tags": [
+    "gunluk",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Eva Wenzel-Bürger",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif ve arkadaşı hayvanat bahçesini gezer, fokları besleyen bakıcıyla tanışır. Hayvanları ve bakımlarını tanıtan bir gün.",
+   "cover": "data/cocuk/kapak/doga-lila/b073.jpg"
+  },
+  {
+   "id": "b074",
+   "title": "Elif Diş Bakımını Öğreniyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Janina Görrissen",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif ayıcığıyla birlikte diş hekimine gider. Diş fırçalamayı ve diş hekimi ziyaretini korkusuzca anlatır.",
+   "cover": "data/cocuk/kapak/doga-lila/b074.jpg"
+  },
+  {
+   "id": "b075",
+   "title": "London Sounds",
+   "tags": [
+    "sesli",
+    "ingilizce"
+   ],
+   "age": "1-2",
+   "author": "Sam Taplin, Jean Claude",
+   "publisher": "Usborne",
+   "about": "Big Ben, kırmızı otobüsler, kraliyet muhafızlarının bandosu... Düğmelere basınca Londra'nın sesleri çalar. İngilizce sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b075.jpg"
+  },
+  {
+   "id": "b076",
+   "title": "Tadını Çıkar: Bağ Bahçe",
+   "tags": [
+    "bebek",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Ceren Çukadar, Dilek Altıntaş Birben",
+   "publisher": "Sincap Kitap",
+   "about": "Tak-çıkar parçalarla bahçede tırmık, sulama kabı ve sebzelerle oynayan bir bebek kitabı. Bağ bahçe işlerini ve sebzeleri tanıtır.",
+   "cover": "data/cocuk/kapak/doga-lila/b076.jpg"
+  },
+  {
+   "id": "b077",
+   "title": "Küçük Trenin Büyük Yolculuğu",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Timothy Knapman, Ben Mantle",
+   "publisher": "Beyaz Balina",
+   "about": "Kırmızı küçük bir tren ormanlar ve tepeler arasında uzun bir yolculuğa çıkar. Yolda karşılaştığı zorlukları cesaretle aşan küçük trenin hikâyesi.",
+   "cover": "data/cocuk/kapak/doga-lila/b077.jpg"
+  },
+  {
+   "id": "b078",
+   "title": "Üzüm: Sürünün En Küçük İneği",
+   "tags": [
+    "duygu",
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Miriam Busch, Larry Day",
+   "publisher": "Beyaz Balina",
+   "about": "Sürünün en küçük ineği Üzüm, küçük olmasına rağmen büyük işler yapabileceğini gösterir.",
+   "cover": "data/cocuk/kapak/doga-lila/b078.jpg"
+  },
+  {
+   "id": "b079",
+   "title": "Şapkamı Geri İstiyorum",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Jon Klassen",
+   "publisher": "Usturlab",
+   "about": "Ayı kaybolan şapkasını arar ve her hayvana \"şapkamı gördün mü?\" diye sorar. Kırmızı şapkalı tavşanın cevabı ise pek inandırıcı değildir! Az sözle çok güldüren bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b079.jpg"
+  },
+  {
+   "id": "b080",
+   "title": "Dedektif Zebra ve Kayıp Kurabiyelerin Gizemi",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Gill McLean",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Kurabiyeler kaybolunca Dedektif Zebra büyüteciyle iz sürmeye başlar. İpuçlarını takip ederek gizemi çözmeye çalışan eğlenceli bir hikâye.",
+   "cover": "data/cocuk/kapak/doga-lila/b080.jpg"
+  },
+  {
+   "id": "b081",
+   "title": "Aç Tırtıl",
+   "tags": [
+    "bilim",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Eric Carle",
+   "publisher": "Mavibulut",
+   "about": "Yumurtadan çıkan minik tırtıl bir hafta boyunca elmadan pastaya her şeyi yer, sonra koza örer ve kelebeğe dönüşür. Günleri, sayıları ve dönüşümü anlatan klasik.",
+   "cover": "data/cocuk/kapak/doga-lila/b081.jpg"
+  },
+  {
+   "id": "b082",
+   "title": "Elif Yüzme Öğreniyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Eva Wenzel-Bürger",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif havuzda yüzme dersine başlar; önce korkar, sonra adım adım yüzmeyi öğrenir.",
+   "cover": "data/cocuk/kapak/doga-lila/b082.jpg"
+  },
+  {
+   "id": "b083",
+   "title": "Elif Müzisyen",
+   "tags": [
+    "gunluk",
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Eva Wenzel-Bürger",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif mutfaktaki tencerelerle müzik yapar, sonra gerçek çalgıları tanır. Müzik yapma keyfini anlatan bir Elif kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b083.jpg"
+  },
+  {
+   "id": "b084",
+   "title": "Minik Elif Anaokuluna Başlıyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Eva Wenzel-Bürger",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif anaokuluna başlar: annesinden ayrılmak, yeni arkadaşlar ve öğretmen. İlk okul günü için hazırlayan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b084.jpg"
+  },
+  {
+   "id": "b085",
+   "title": "Çocuk Üniversitesi: Işık",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Fizik kitabı. Işığın nereden geldiğini, gölgeyi, renkleri ve yansımayı küçük çocukların anlayacağı sade resimlerle anlatır."
+  },
+  {
+   "id": "b086",
+   "title": "Çocuk Üniversitesi: Çekim Yasası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Fizik kitabı. Nesneler neden yere düşer? Yerçekimini ve Newton'un elmasını basit örneklerle anlatır."
+  },
+  {
+   "id": "b087",
+   "title": "Çocuk Üniversitesi: Enerji Kaynakları",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Fizik kitabı. Güneş, rüzgâr, su gibi enerji kaynaklarını ve enerjinin günlük hayattaki yerini tanıtır."
+  },
+  {
+   "id": "b088",
+   "title": "Çocuk Üniversitesi: Üreme",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Biyoloji kitabı. Canlıların nasıl çoğaldığını, tohumdan bitkiye, yumurtadan yavruya basitçe anlatır."
+  },
+  {
+   "id": "b089",
+   "title": "Çocuk Üniversitesi: Genetik",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Biyoloji kitabı. Neden anneye ya da babaya benzeriz? Genleri ve kalıtımı küçükler için sadeleştirir."
+  },
+  {
+   "id": "b090",
+   "title": "Çocuk Üniversitesi: Anatomi",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Çocuk Üniversitesi"
+   ],
+   "about": "Biyoloji kitabı. Vücudumuzun bölümlerini, kalbi, akciğerleri ve iskeleti tanıtır."
+  },
+  {
+   "id": "b091",
+   "title": "Story Path",
+   "tags": [
+    "ingilizce",
+    "masal"
+   ],
+   "age": "2-3",
+   "author": "Madalena Matoso",
+   "publisher": "Big Picture Press",
+   "about": "Her sayfada bir kahraman, bir yer ve bir macera seç, kendi hikâyeni kur! 200 milyondan fazla hikâye kombinasyonu sunan, anlatıcılığı geliştiren İngilizce bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b091.jpg"
+  },
+  {
+   "id": "b092",
+   "title": "Bebeğimle Hayvanlar Âleminde: Uzun, Uzun, Çok Uzun",
+   "tags": [
+    "bilim",
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Hairun Sunshine",
+   "publisher": "Uçan Fil",
+   "about": "Aç, bak, şaşır! Uzun kuyruklar, uzun boyunlar, uzun kollar... Hayvanların uzun uzun özelliklerini açılır sayfalarla tanıtır.",
+   "cover": "data/cocuk/kapak/doga-lila/b092.jpg"
+  },
+  {
+   "id": "b093",
+   "title": "Look Inside an Airport",
+   "tags": [
+    "ingilizce",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "1-2",
+   "author": "Rob Lloyd Jones, Stefano Tognetti",
+   "publisher": "Usborne",
+   "about": "Kapakçıkları kaldırarak bir havalimanının içini gez: bagajlar nereye gider, pilotlar ne yapar, uçak nasıl kalkar? İngilizce kapakçıklı kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b093.jpg"
+  },
+  {
+   "id": "b094",
+   "title": "Atlas: Kıtalar, Denizler ve Kültürler Arası Yolculuk Rehberi",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Aleksandra Mizielinska ve Daniel Mizielinski",
+   "publisher": "Domingo Yayınevi",
+   "about": "Ülkelerin sadece sınırlarını değil; yerel yemeklerini, kıyafetlerini, tarihi figürlerini ve endemik hayvanlarını devasa el çizimi görsel haritalarla anlatır",
+   "cover": "data/cocuk/kapak/doga-lila/b094.jpg"
+  },
+  {
+   "id": "b095",
+   "title": "Tıpkısının Aynısı",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Haag, Rohrbeck",
+   "about": "Birbirine çok benzeyen şeyleri karşılaştırmaya ve farkları bulmaya davet eden resimli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b095.jpg"
+  },
+  {
+   "id": "b096",
+   "title": "Büyük Mitoloji Atlası",
+   "tags": [
+    "masal"
+   ],
+   "age": "5+",
+   "author": "Marzia Accatino",
+   "publisher": "İthaki Çocuk",
+   "about": "Dünyanın dört bir yanından tanrılar, kahramanlar ve efsanevi yaratıklar. Mitolojiyi haritalar ve resimlerle tanıtan büyük bir atlas.",
+   "cover": "data/cocuk/kapak/doga-lila/b096.jpg"
+  },
+  {
+   "id": "b097",
+   "title": "Genel Kültür Kitabım: Tanıyorum",
+   "tags": [
+    "bilim",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Genel Kültür Kitabım"
+   ],
+   "about": "Nesneleri, hayvanları ve çevreyi tanıyıp adlandırmayı destekleyen ilk genel kültür kitabı."
+  },
+  {
+   "id": "b098",
+   "title": "Genel Kültür Kitabım: Fark Ediyorum",
+   "tags": [
+    "bilim",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Genel Kültür Kitabım"
+   ],
+   "about": "Benzerlikleri ve farkları fark etmeye, dikkatle bakmaya yönlendiren bir genel kültür kitabı."
+  },
+  {
+   "id": "b099",
+   "title": "Genel Kültür Kitabım: Büyüyorum",
+   "tags": [
+    "bilim",
+    "bebek",
+    "gunluk"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Genel Kültür Kitabım"
+   ],
+   "about": "Büyümeyi, bedeni ve günlük becerileri tanıtan bir genel kültür kitabı."
+  },
+  {
+   "id": "b100",
+   "title": "Genel Kültür Kitabım: Konuşuyorum",
+   "tags": [
+    "bebek",
+    "gunluk"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Genel Kültür Kitabım"
+   ],
+   "about": "Kelime dağarcığını ve kendini ifade etmeyi destekleyen bir genel kültür kitabı."
+  },
+  {
+   "id": "b101",
+   "title": "Böcek Atlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Dr. Fatih Dikmen",
+   "publisher": "Taze Kitap",
+   "series": [
+    "Atlaslar"
+   ],
+   "about": "Karıncadan uğur böceğine, böceklerin yaşam alanlarını ve özelliklerini resimlerle tanıtan atlas."
+  },
+  {
+   "id": "b102",
+   "title": "Hayvan Atlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Dr. Fatih Dikmen, Zeynep Sevde",
+   "publisher": "Taze Kitap",
+   "series": [
+    "Atlaslar"
+   ],
+   "about": "Dünyanın farklı bölgelerinde yaşayan hayvanları haritalar ve resimlerle tanıtan atlas."
+  },
+  {
+   "id": "b103",
+   "title": "Kuş Atlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Emrah Çoraman",
+   "publisher": "Taze Kitap",
+   "series": [
+    "Atlaslar"
+   ],
+   "about": "Kuşların türlerini, yuvalarını ve göç yollarını tanıtan resimli atlas."
+  },
+  {
+   "id": "b104",
+   "title": "Uzay Atlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Süleyman Akgüneş",
+   "publisher": "Taze Kitap",
+   "series": [
+    "Atlaslar"
+   ],
+   "about": "Güneş Sistemi, gezegenler, yıldızlar ve uzay yolculukları hakkında resimli bir atlas."
+  },
+  {
+   "id": "b105",
+   "title": "Ağaç Atlası",
+   "tags": [
+    "bilim"
+   ],
+   "age": "5+",
+   "author": "Dr. Fatih Dikmen",
+   "publisher": "Taze Kitap",
+   "series": [
+    "Atlaslar"
+   ],
+   "about": "Farklı ağaç türlerini, yapraklarını, meyvelerini ve ağaçların doğadaki yerini tanıtan atlas."
+  },
+  {
+   "id": "b106",
+   "title": "Big Book of English Words",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Mairi Mackinnon",
+   "publisher": "Usborne Publishing",
+   "about": "Ev, park, okul gibi sahnelerde yüzlerce İngilizce kelimeyi resimleriyle tanıtan büyük bir sözlük kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b106.jpg"
+  },
+  {
+   "id": "b107",
+   "title": "Sen Canavar mısın Acaba?",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Guilherme Karsten",
+   "publisher": "Domingo",
+   "about": "Kitaptaki çocuk okuyucudan şüphelenir: Yoksa sen bir canavar mısın? Okuyucuyu testlere sokan, BookTrust ödüllü etkileşimli ve çok komik bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b107.jpg"
+  },
+  {
+   "id": "b108",
+   "title": "Şu Yaramaz Tavşanlar",
+   "tags": [
+    "duygu",
+    "mizah",
+    "kaydir"
+   ],
+   "age": "1-2",
+   "author": "Ciara Flood",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Yalnızlığı seven Koca Ayı'nın yanına gürültücü tavşan komşular taşınır. Ayı onları istemese de tavşanlar ona dostluğun değerini öğretir. Kapakçıklı bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b108.jpg"
+  },
+  {
+   "id": "b109",
+   "title": "Uç, Paytak, Uç",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Melanie Joyce, Julia Seal",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Minik penguen Paytak kuşlar gibi uçmayı hayal eder. Denemeleri başarısız olsa da sonunda kendine özgü \"uçuşunu\" keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b109.jpg"
+  },
+  {
+   "id": "b110",
+   "title": "Ejderhaları Nasıl Tanırız?",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Véronique Cauchy, Lili la baleine",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Ejderhalar nasıl bir yaratıktır, nerede yaşar, ne yer, nasıl tanınır? Esprili bir rehber gibi yazılmış eğlenceli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b110.jpg"
+  },
+  {
+   "id": "b111",
+   "title": "Penguen Annesini Özlüyor",
+   "tags": [
+    "duygu",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Michael Dahl, Oriol Vidal",
+   "publisher": "1001 Çiçek",
+   "series": [
+    "Merhaba Küçük Deha"
+   ],
+   "about": "Yavru penguen, annesi yanında olmadığında onu özler. Ayrılık kaygısını ve annenin geri döneceğini güvenle anlatan 2+ yaş kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b111.jpg"
+  },
+  {
+   "id": "b112",
+   "title": "Hayaller Bir Baloncuğa Sığar mı?",
+   "tags": [
+    "duygu",
+    "masal"
+   ],
+   "age": "3-5",
+   "author": "Deniz Ergen, Sezen Aksu Taşyürek",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Sormazsam Olmaz!"
+   ],
+   "about": "Baloncuk üfleyen kız, her baloncuğun içine bir hayal koyar: Eyfel Kulesi, yıldızlar, bir ejderha... Hayal kurmayı ve merak etmeyi anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b112.jpg"
+  },
+  {
+   "id": "b113",
+   "title": "Yemek Seçen Kirpi",
+   "tags": [
+    "gunluk",
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Andrea Reitmeyer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Kirpi hiçbir yemeği beğenmez. Ormandaki arkadaşlarının sunduğu yiyecekleri denedikçe yeni tatların keyfini keşfeder. Kitabın sonunda kirpiler hakkında bilgi sayfaları var.",
+   "cover": "data/cocuk/kapak/doga-lila/b113.jpg"
+  },
+  {
+   "id": "b114",
+   "title": "Küçük Meşe Palamudu",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Doğanın Eşsiz Hikâyeleri"
+   ],
+   "about": "Ağaçtan düşen küçük bir meşe palamudunun toprağa karışıp yıllar içinde kocaman bir meşe ağacına dönüşme yolculuğu.",
+   "cover": "data/cocuk/kapak/doga-lila/b114.jpg"
+  },
+  {
+   "id": "b115",
+   "title": "Uykusu Gelmeyen Porsuk",
+   "tags": [
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Constanze von Kitzing",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Porsuk"
+   ],
+   "about": "Porsuk yatma vakti geldiği hâlde bir türlü uyuyamaz. Uyku öncesi rutinini adım adım anlatan 2+ yaş kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b115.jpg"
+  },
+  {
+   "id": "b116",
+   "title": "Kaybolan Eldiven",
+   "tags": [
+    "masal",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Sharon Harmer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "about": "Karların arasında kaybolan mavi bir eldiven, üşüyen hayvanlar için sıcacık bir yuva olur. Kış masalının yeni bir anlatımı.",
+   "cover": "data/cocuk/kapak/doga-lila/b116.jpg"
+  },
+  {
+   "id": "b117",
+   "title": "Bir Tuhaf Balık",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Naomi Jones, James Jones",
+   "publisher": "Domingo",
+   "about": "Okyanusta tuhaf bir \"balık\" görülür: Aslında bir plastik şişedir! Deniz canlılarının gözünden plastik kirliliğini anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b117.jpg"
+  },
+  {
+   "id": "b118",
+   "title": "Sakın Kaplanı Düşünme",
+   "tags": [
+    "mizah",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Alex Latimer",
+   "publisher": "Domingo",
+   "about": "Sakın bir kaplanı düşünme! Ama ne kadar düşünmemeye çalışırsan kaplan o kadar büyür... Düşünceleri yönetmeyi güldürerek anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b118.jpg"
+  },
+  {
+   "id": "b119",
+   "title": "Durmadan Konuşan Lila",
+   "tags": [
+    "gunluk",
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Christianne Jones, Richard Watson",
+   "publisher": "1001 Çiçek",
+   "series": [
+    "Minik Adımlar"
+   ],
+   "about": "Baykuş Lila hep konuşur, hiç dinlemez. Arkadaşlarını dinlemenin ve sırasını beklemenin önemini keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b119.jpg"
+  },
+  {
+   "id": "b120",
+   "title": "İyi Geceler Kelebek",
+   "tags": [
+    "uyku",
+    "mizah"
+   ],
+   "age": "2-3",
+   "author": "Ross Burach",
+   "publisher": "Beyaz Balina",
+   "series": [
+    "Sabırsız Tırtıl"
+   ],
+   "about": "Sabırsız Tırtıl'dan kelebeğe dönüşen kahramanımız ilk gecesinde hiç uyumak istemez. Uyku rutinini güldürerek anlatan bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b120.jpg"
+  },
+  {
+   "id": "b121",
+   "title": "Çılgın Dinozorlar",
+   "tags": [
+    "bebek",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Uçan Fil",
+   "about": "Pencereli sayfalarla renk renk dinozorları tanıtan kalın sayfalı bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b121.jpg"
+  },
+  {
+   "id": "b122",
+   "title": "Hiç Hata Yapmayan Kız",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Mark Pett, Gary Rubinstein",
+   "publisher": "1001 Çiçek",
+   "about": "Beatrice hiç hata yapmaz, herkes onu bu yüzden tanır. Bir gün yetenek gösterisinde ilk hatasını yapar ve güldüğünde hatanın dünyanın sonu olmadığını keşfeder.",
+   "cover": "data/cocuk/kapak/doga-lila/b122.jpg"
+  },
+  {
+   "id": "b123",
+   "title": "Elif'in Dişi Sallanıyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif'in ilk süt dişi sallanmaya başlar. Diş değiştirmeyi ve bu heyecanı anlatan bir Elif kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b123.jpg"
+  },
+  {
+   "id": "b124",
+   "title": "Elif Kurabiye Yapıyor",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Elif mutfakta kurabiye yapar: hamur, kalıplar, fırın ve bolca un! Birlikte yemek yapmanın keyfi.",
+   "cover": "data/cocuk/kapak/doga-lila/b124.jpg"
+  },
+  {
+   "id": "b125",
+   "title": "Elif'in Kış Macerası",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif"
+   ],
+   "about": "Kar yağınca Elif kızağıyla dışarı çıkar; kardan adam, kar topu ve kış oyunları.",
+   "cover": "data/cocuk/kapak/doga-lila/b125.jpg"
+  },
+  {
+   "id": "b126",
+   "title": "Minik Elif'in Tuvalet Eğitimi",
+   "tags": [
+    "gunluk"
+   ],
+   "age": "3-5",
+   "author": "Liane Schneider, Annette Steinhauer",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Elif",
+    "Tuvalet Eğitimi"
+   ],
+   "about": "Elif bezi bırakıp tuvaleti kullanmayı öğrenir. Tuvalet eğitimine başlayan çocuklar için destekleyici bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b126.jpg"
+  },
+  {
+   "id": "b127",
+   "title": "İnsan Vücudu Tiyatrosu",
+   "tags": [
+    "bilim"
+   ],
+   "age": "3-5",
+   "author": "Maris Wicks",
+   "publisher": "Domingo",
+   "about": "Bir iskelet sahneye çıkar ve vücudumuzu bölüm bölüm anlatan bir gösteri sunar: kemikler, kaslar, kalp, akciğerler, sindirim... Çizgi roman biçiminde, daha büyük çocuklar için.",
+   "cover": "data/cocuk/kapak/doga-lila/b127.jpg"
+  },
+  {
+   "id": "b128",
+   "title": "Around the Farm",
+   "tags": [
+    "sesli",
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Eric Carle",
+   "publisher": "World of Eric Carle",
+   "about": "Düğmelere basınca inek, horoz, domuz gibi çiftlik hayvanlarının sesleri çalar. Eric Carle resimleriyle İngilizce sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b128.jpg"
+  },
+  {
+   "id": "b129",
+   "title": "Hear Bear Roar",
+   "tags": [
+    "sesli",
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Eric Carle",
+   "publisher": "World of Eric Carle",
+   "about": "Dünyanın dört bir yanından 30 hayvanın sesi: kükreme, uluma, havlama, vızıltı... Eric Carle resimleriyle İngilizce sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b129.jpg"
+  },
+  {
+   "id": "b130",
+   "title": "Amazing Animals!",
+   "tags": [
+    "sesli",
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Baby Einstein",
+   "publisher": "Pi Kids",
+   "about": "Baby Einstein karakterleriyle hayvanları ve seslerini tanıtan düğmeli, İngilizce sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b130.jpg"
+  },
+  {
+   "id": "b131",
+   "title": "İlk Dokun Hisset Kitabım: Ormana Dokun",
+   "tags": [
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Melek Dinçer, Damla Tutan",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Dokun Hisset"
+   ],
+   "about": "Ormandaki hayvanları farklı dokulara dokunarak tanıtan bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b131.jpg"
+  },
+  {
+   "id": "b132",
+   "title": "İlk Dokun Hisset Kitabım: Okyanusa Dokun",
+   "tags": [
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Melek Dinçer, Damla Tutan",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Dokun Hisset"
+   ],
+   "about": "Denizdeki canlıları dokulu sayfalarla tanıtan bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b132.jpg"
+  },
+  {
+   "id": "b133",
+   "title": "Don't Tickle the Puppy!",
+   "tags": [
+    "sesli",
+    "ingilizce",
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Sam Taplin",
+   "publisher": "Usborne",
+   "series": [
+    "Dokun Hisset"
+   ],
+   "about": "Yumuşak yerlere dokununca köpek yavrusu \"hav\" der! Dokun-duy türünde İngilizce sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b133.jpg"
+  },
+  {
+   "id": "b134",
+   "title": "Ayıyı Gıdıklamayın!",
+   "tags": [
+    "sesli",
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "publisher": "Yapı Kredi Yayınları",
+   "series": [
+    "Dokun Hisset"
+   ],
+   "about": "Kumaş parçalarına basınca ayı ve arkadaşları ses çıkarır. Dokun hisset sesli kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b134.jpg"
+  },
+  {
+   "id": "b135",
+   "title": "Yavru Hayvanların Sesleri",
+   "tags": [
+    "sesli",
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Düğmelere basınca penguen, zürafa, kaplan gibi yavru hayvanların sesleri duyulur.",
+   "cover": "data/cocuk/kapak/doga-lila/b135.jpg"
+  },
+  {
+   "id": "b136",
+   "title": "TıkTak: Duygu Baloncuklarını Patlat!",
+   "tags": [
+    "duygu",
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "about": "Sayfalardaki baloncukları patlatarak duyguları tanıyan, motor becerileri de destekleyen bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b136.jpg"
+  },
+  {
+   "id": "b137",
+   "title": "Bebek Üniversitesi 1: Büyük-Küçük",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Büyük ve küçük kavramlarını sade resimlerle tanıtan ilk kavram kitabı."
+  },
+  {
+   "id": "b138",
+   "title": "Bebek Üniversitesi 2: İletişim",
+   "tags": [
+    "bebek",
+    "duygu"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Selamlaşma, işaretler, konuşma: iletişimin ilk adımlarını tanıtır."
+  },
+  {
+   "id": "b139",
+   "title": "Bebek Üniversitesi 3: Renkler",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Temel renkleri çevremizdeki nesnelerle tanıtır."
+  },
+  {
+   "id": "b140",
+   "title": "Bebek Üniversitesi 4: Şekiller",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Daire, kare, üçgen gibi temel şekilleri tanıtır."
+  },
+  {
+   "id": "b141",
+   "title": "Bebek Üniversitesi 5: Sayılar",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Saymayı ve ilk sayıları resimlerle tanıtır."
+  },
+  {
+   "id": "b142",
+   "title": "Bebek Üniversitesi 6: Zıtlıklar",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Açık-kapalı, sıcak-soğuk gibi zıt kavramları tanıtır."
+  },
+  {
+   "id": "b143",
+   "title": "Bebek Üniversitesi 7: Duyular",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Görme, işitme, dokunma, tatma ve koklama duyularını tanıtır."
+  },
+  {
+   "id": "b144",
+   "title": "Bebek Üniversitesi 8: Hava Durumu",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Güneş, yağmur, rüzgâr, kar: hava durumlarını tanıtır."
+  },
+  {
+   "id": "b145",
+   "title": "Bebek Üniversitesi 9: Öz Bakım",
+   "tags": [
+    "bebek",
+    "gunluk"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "El yıkama, diş fırçalama, giyinme gibi öz bakım becerilerini tanıtır."
+  },
+  {
+   "id": "b146",
+   "title": "Bebek Üniversitesi 10: Günlük Rutinim",
+   "tags": [
+    "bebek",
+    "gunluk"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Uyanmaktan uyumaya günün akışını ve rutinleri tanıtır."
+  },
+  {
+   "id": "b147",
+   "title": "Bebek Üniversitesi 11: Duygular",
+   "tags": [
+    "bebek",
+    "duygu"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Mutluluk, üzüntü, öfke, şaşkınlık gibi temel duyguları yüz ifadeleriyle tanıtır."
+  },
+  {
+   "id": "b148",
+   "title": "Bebek Üniversitesi 12: Oyun",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Oyunun çeşitlerini ve oyun oynamanın keyfini tanıtır."
+  },
+  {
+   "id": "b149",
+   "title": "Bebek Üniversitesi 13: Kar",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Karın nasıl oluştuğunu ve kış oyunlarını basitçe anlatır."
+  },
+  {
+   "id": "b150",
+   "title": "Bebek Üniversitesi 14: Su",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Suyun hayatımızdaki yerini ve farklı hallerini tanıtır."
+  },
+  {
+   "id": "b151",
+   "title": "Bebek Üniversitesi 15: Tohum",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Tohumdan filize, filizden bitkiye büyümeyi anlatır."
+  },
+  {
+   "id": "b152",
+   "title": "Bebek Üniversitesi 16: Güneş Sistemi",
+   "tags": [
+    "bebek",
+    "bilim"
+   ],
+   "age": "0-1",
+   "author": "Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "series": [
+    "Bebek Üniversitesi"
+   ],
+   "about": "Güneş'i, Dünya'yı ve diğer gezegenleri basitçe tanıtır."
+  },
+  {
+   "id": "b153",
+   "title": "Güle Güle Bez",
+   "tags": [
+    "gunluk",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Bernette Ford, Sam Williams",
+   "publisher": "Doğan Çocuk",
+   "series": [
+    "Küçük Adımlar",
+    "Tuvalet Eğitimi"
+   ],
+   "about": "Ördek yavrusu bezine veda edip tuvaleti kullanmayı öğrenir. Tuvalet eğitimine eşlik eden sevimli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b153.jpg"
+  },
+  {
+   "id": "b154",
+   "title": "Minik Kitaplarım: Taşıtlar",
+   "tags": [
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Feridun Oral",
+   "publisher": "Yapı Kredi Yayınları",
+   "about": "Gemi, tren, uçak, ambulans... Feridun Oral'ın resimleriyle taşıtları tanıtan kalın sayfalı bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b154.jpg"
+  },
+  {
+   "id": "b155",
+   "title": "Çalışkan Doğa: Yaz",
+   "tags": [
+    "sesli",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "1-2",
+   "author": "S&S Alliance, Maria Vyshinskaya",
+   "publisher": "Yapı Kredi Yayınları",
+   "series": [
+    "Çalışkan Doğa"
+   ],
+   "about": "Kademeli sayfaları ve ses düğmesiyle yazın doğada neler olduğunu gösteren bebek kitabı: ağustosböcekleri, kurbağalar, çiçekler.",
+   "cover": "data/cocuk/kapak/doga-lila/b155.jpg"
+  },
+  {
+   "id": "b156",
+   "title": "Bu Kitap Yanıyor!",
+   "tags": [
+    "mizah"
+   ],
+   "age": "3-5",
+   "author": "Ron Keres, Arthur Lin",
+   "publisher": "Floki Çocuk",
+   "about": "Kitabın kahramanı yemek yaparken işler çığırından çıkar ve kitap yanmaya başlar! Okuyucuyu yangını söndürmeye davet eden eğlenceli, etkileşimli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b156.jpg"
+  },
+  {
+   "id": "b157",
+   "title": "Baby Einstein: Let's Listen!",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Baby Einstein",
+   "publisher": "Pi Kids",
+   "series": [
+    "Baby Einstein Mini Kitaplık"
+   ],
+   "about": "Seslerle tanışma üzerine küçük, kalın sayfalı İngilizce bebek kitabı."
+  },
+  {
+   "id": "b158",
+   "title": "Baby Einstein: Let's Move!",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Baby Einstein",
+   "publisher": "Pi Kids",
+   "series": [
+    "Baby Einstein Mini Kitaplık"
+   ],
+   "about": "Hareket etmeyi ve vücudu tanımayı konu alan küçük İngilizce bebek kitabı."
+  },
+  {
+   "id": "b159",
+   "title": "Baby Einstein: Let's Learn!",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Baby Einstein",
+   "publisher": "Pi Kids",
+   "series": [
+    "Baby Einstein Mini Kitaplık"
+   ],
+   "about": "İlk kavramları öğrenmeye yönelik küçük İngilizce bebek kitabı."
+  },
+  {
+   "id": "b160",
+   "title": "Baby Einstein: Let's Look!",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Baby Einstein",
+   "publisher": "Pi Kids",
+   "series": [
+    "Baby Einstein Mini Kitaplık"
+   ],
+   "about": "Bak ve bul türünde, gözlem becerisini destekleyen küçük İngilizce bebek kitabı."
+  },
+  {
+   "id": "b161",
+   "title": "Haydi Uçalım",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Uçan Fil",
+   "about": "Sürgülü parçalarla ayıcığın uçağını hareket ettir! Kaydırmalı, hareketli bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b161.jpg"
+  },
+  {
+   "id": "b162",
+   "title": "Hareketli Bahçe",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "Hareketli Kitaplar"
+   ],
+   "about": "Çekip kaydırılan parçalarla bahçede top oynayan çocuk ve köpeğini hareket ettiren bir bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b162.jpg"
+  },
+  {
+   "id": "b163",
+   "title": "Puppy, Puppy Peekaboo",
+   "tags": [
+    "ingilizce",
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Campbell",
+   "about": "Çek-kaydır parçalarla ve aynasıyla cee-ee oyunu oynatan İngilizce bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b163.jpg"
+  },
+  {
+   "id": "b164",
+   "title": "Bizzy Bear: Racing Driver",
+   "tags": [
+    "ingilizce",
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Benji Davies",
+   "publisher": "Campbell",
+   "about": "Bizzy Bear yarış arabasıyla pistte! Çek-kaydır parçalarla yarışa katılan İngilizce bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b164.jpg"
+  },
+  {
+   "id": "b165",
+   "title": "Kirpicik: Peki Şimdi Ne Yapacak? Uyku Zamanı",
+   "tags": [
+    "uyku",
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Canan Kuloğlu, Çağrı Odabaşı",
+   "publisher": "Sincap Kitap",
+   "about": "Cırt cırtlı parçalarla Kirpicik'in uyku hazırlığına katıl: pijama, diş fırçalama, yatak. İnteraktif bir uyku rutini kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b165.jpg"
+  },
+  {
+   "id": "b166",
+   "title": "Bay Kukule'nin Çantası",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Özlem Fedai Korçak",
+   "publisher": "Uçan Fil",
+   "about": "Tavşan Bay Kukule'nin çantasında neler var? Pencereleri açarak içindeki sürprizleri keşfet.",
+   "cover": "data/cocuk/kapak/doga-lila/b166.jpg"
+  },
+  {
+   "id": "b167",
+   "title": "Kim Bu Kuşlar?",
+   "tags": [
+    "bebek",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Eolo",
+   "series": [
+    "Kaydır Bul"
+   ],
+   "about": "Sürgüyü itince kuşlar yuvalarından çıkıyor! Kaydırmalı sayfalarla kuşları tanıtan bebek kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b167.jpg"
+  },
+  {
+   "id": "b168",
+   "title": "Denizde Yaşam",
+   "tags": [
+    "bebek",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Eolo",
+   "series": [
+    "Kaydır Bul"
+   ],
+   "about": "Sürgüyü itince yengeç, balık ve diğer deniz canlıları ortaya çıkar.",
+   "cover": "data/cocuk/kapak/doga-lila/b168.jpg"
+  },
+  {
+   "id": "b169",
+   "title": "Kim Bu Evcil Hayvanlar?",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Eolo",
+   "series": [
+    "Kaydır Bul"
+   ],
+   "about": "Kedi, köpek ve diğer evcil hayvanları kaydırmalı sayfalarla tanıtır.",
+   "cover": "data/cocuk/kapak/doga-lila/b169.jpg"
+  },
+  {
+   "id": "b170",
+   "title": "Kim Bu Kutup Hayvanları?",
+   "tags": [
+    "bebek",
+    "bilim",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "publisher": "Eolo",
+   "series": [
+    "Kaydır Bul"
+   ],
+   "about": "Kutup ayısı, penguen, fok... Kutup hayvanlarını kaydırmalı sayfalarla tanıtır.",
+   "cover": "data/cocuk/kapak/doga-lila/b170.jpg"
+  },
+  {
+   "id": "b171",
+   "title": "Bak-Bul Sobe: Oyuncu Zürafa",
+   "tags": [
+    "bebek",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Resimleyen: Dilek Altıntaş Birben",
+   "publisher": "Sincap Kitap",
+   "about": "Zürafa saklambaç oynuyor! Sürpriz pencereleri açıp hayvan arkadaşlarını bul.",
+   "cover": "data/cocuk/kapak/doga-lila/b171.jpg"
+  },
+  {
+   "id": "b172",
+   "title": "Vurmak Yok",
+   "tags": [
+    "duygu",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Bernette Ford, Sam Williams",
+   "publisher": "Doğan Çocuk",
+   "series": [
+    "Küçük Adımlar"
+   ],
+   "about": "Hamster yavrusu öfkelenince vurmak yerine ne yapabileceğini öğrenir. Küçük yaşta davranış kuralları için.",
+   "cover": "data/cocuk/kapak/doga-lila/b172.jpg"
+  },
+  {
+   "id": "b173",
+   "title": "Bayan Molli Nezaket Okulu",
+   "tags": [
+    "gunluk",
+    "duygu"
+   ],
+   "age": "3-5",
+   "publisher": "İş Bankası Kültür Yayınları",
+   "series": [
+    "İyi Davranışlar İçin Rehberler"
+   ],
+   "about": "Bayan Molli'nin okulunda hayvan öğrenciler nezaketi öğreniyor: teşekkür etmek, sıra beklemek, özür dilemek. Detaylı sahnelerle görgü kuralları.",
+   "cover": "data/cocuk/kapak/doga-lila/b173.jpg"
+  },
+  {
+   "id": "b174",
+   "title": "Baby Penguin: Finger Puppet Book",
+   "tags": [
+    "ingilizce",
+    "bebek",
+    "dokun"
+   ],
+   "age": "0-1",
+   "author": "Yu-Hsuan Huang",
+   "publisher": "Chronicle Books",
+   "about": "Parmak kuklalı minik İngilizce bebek kitabı. Penguen yavrusunun kısa hikâyesini kuklayla canlandırın.",
+   "cover": "data/cocuk/kapak/doga-lila/b174.jpg"
+  },
+  {
+   "id": "b175",
+   "title": "Little Learning Library",
+   "tags": [
+    "ingilizce",
+    "bebek"
+   ],
+   "age": "0-1",
+   "author": "Eric Carle",
+   "publisher": "World of Eric Carle",
+   "about": "Eric Carle'ın dört mini kitaptan oluşan kutu seti: Animal Sounds, Words, Numbers ve Colors. Hayvanları ve seslerini, ilk İngilizce kelimeleri, sayıları ve renkleri Aç Tırtıl'ın tanıdık resimleriyle tanıtır. Küçük ellere uygun, kalın sayfalı minik kitaplar.",
+   "cover": "data/cocuk/kapak/doga-lila/b175.jpg"
+  },
+  {
+   "id": "b179",
+   "title": "Minik Kızlar İçin Tuvalet Eğitimi",
+   "tags": [
+    "gunluk",
+    "bebek"
+   ],
+   "age": "0-1",
+   "publisher": "Teleskop",
+   "series": [
+    "Tuvalet Eğitimi"
+   ],
+   "about": "Küçük bir kız ve oyuncak ayısı üzerinden lazımlığı tanımayı ve bezi bırakma sürecini anlatan kalın sayfalı bir kitap. Tuvalet eğitimine başlarken birlikte bakmak için.",
+   "cover": "data/cocuk/kapak/doga-lila/b179.jpg"
+  },
+  {
+   "id": "b180",
+   "title": "Bezine Bakabilir miyim?",
+   "tags": [
+    "gunluk",
+    "bebek",
+    "mizah",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Guido van Genechten",
+   "publisher": "Mabel Çocuk",
+   "series": [
+    "Tuvalet Eğitimi"
+   ],
+   "about": "Meraklı fare, arkadaşlarından bezlerinin içine bakmak için izin ister; her pencerenin ardında başka bir sürpriz çıkar. Sonunda kendisi lazımlığını gösterir. Bezden lazımlığa geçişi güldürerek anlatan pencereli bir kitap.",
+   "cover": "data/cocuk/kapak/doga-lila/b180.jpg"
+  },
+  {
+   "id": "b181",
+   "title": "Lazımlığına Bakabilir miyim?",
+   "tags": [
+    "gunluk",
+    "bebek",
+    "mizah",
+    "kaydir"
+   ],
+   "age": "0-1",
+   "author": "Guido van Genechten",
+   "publisher": "Mabel Çocuk",
+   "series": [
+    "Tuvalet Eğitimi"
+   ],
+   "about": "Fare bu kez arkadaşlarının lazımlıklarını merak ediyor. Pencereleri açtıkça lazımlıktan tuvalete geçişin adımlarını görüyoruz. \"Bezine Bakabilir miyim?\" kitabının devamı.",
+   "cover": "data/cocuk/kapak/doga-lila/b181.jpg"
+  },
+  {
+   "id": "b182",
+   "title": "Kendini Okuyabilen Sen",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Prof. Dr. Zeynep Cihangir Çankaya, Psk. Dan. Ezgi Aksoy Emer",
+   "publisher": "Yakın Kitabevi",
+   "series": [
+    "SEN"
+   ],
+   "about": "Çocuğun kendi duygularını, düşüncelerini ve ihtiyaçlarını fark etmesini, yani kendini tanımayı konu alan bir kitap. Bir psikolojik danışman tarafından yazılmış SEN serisinden.",
+   "cover": "data/cocuk/kapak/doga-lila/b182.jpg"
+  },
+  {
+   "id": "b183",
+   "title": "Karmaşık Duygularınla Sen",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Prof. Dr. Zeynep Cihangir Çankaya, Psk. Dan. Ezgi Aksoy Emer",
+   "publisher": "Yakın Kitabevi",
+   "series": [
+    "SEN"
+   ],
+   "about": "Aynı anda birden çok duyguyu hissetmenin normal olduğunu anlatır. Karışık duyguları adlandırmaya ve onlarla baş etmeye yardım eden SEN serisi kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b183.jpg"
+  },
+  {
+   "id": "b184",
+   "title": "Esnek ve Dayanıklı Sen",
+   "tags": [
+    "duygu"
+   ],
+   "age": "3-5",
+   "author": "Prof. Dr. Zeynep Cihangir Çankaya, Psk. Dan. Ezgi Aksoy Emer",
+   "publisher": "Yakın Kitabevi",
+   "series": [
+    "SEN"
+   ],
+   "about": "Zorluklar ve değişimler karşısında esnek kalmayı, düştükten sonra yeniden ayağa kalkabilmeyi, yani psikolojik dayanıklılığı çocuklara anlatan SEN serisi kitabı.",
+   "cover": "data/cocuk/kapak/doga-lila/b184.jpg"
+  },
+  {
+   "id": "b185",
+   "title": "An'da ve Farkında Olan Sen",
+   "tags": [
+    "duygu",
+    "uyku"
+   ],
+   "age": "2-3",
+   "author": "Prof. Dr. Zeynep Cihangir Çankaya, Psk. Dan. Ezgi Aksoy Emer",
+   "publisher": "Yakın Kitabevi",
+   "series": [
+    "SEN"
+   ],
+   "about": "Nefese, bedene ve şu ana dikkat vermeyi, yani bilinçli farkındalığı çocuklara tanıtan SEN serisi kitabı. Sakinleşmek için basit farkındalık önerileri içerir.",
+   "cover": "data/cocuk/kapak/doga-lila/b185.jpg"
+  }
+ ],
+ "lists": [
+  {
+   "id": "lmufk2101dwc",
+   "name": "Buğra Selim ile okunacaklar",
+   "items": [
+    "b031",
+    "b003",
+    "b041",
+    "b092",
+    "b069",
+    "b070",
+    "b066",
+    "b020",
+    "b117",
+    "b156",
+    "b059",
+    "b035",
+    "b051",
+    "b060",
+    "b121",
+    "b080",
+    "b110",
+    "b010",
+    "b112",
+    "b065",
+    "b116",
+    "b063",
+    "b064",
+    "b004",
+    "b039",
+    "b067",
+    "b033",
+    "b056",
+    "b006",
+    "b032",
+    "b021",
+    "b024",
+    "b007",
+    "b037",
+    "b009",
+    "b049",
+    "b118",
+    "b008",
+    "b107",
+    "b026",
+    "b028",
+    "b057",
+    "b109",
+    "b029",
+    "b022",
+    "b113",
+    "b082"
+   ]
+  }
+ ],
+ "week": null,
+ "history": []
+}

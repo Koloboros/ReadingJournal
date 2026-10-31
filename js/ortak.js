@@ -39,7 +39,7 @@ function homePanel(){
   else if(inv)body=homeInvite();
   else if(sent)body=`<p class="muted">${esc(sent.name)} onayını bekliyorsun.</p><button class="btn ghost" data-act="home-cancel" data-id="${esc(sent.id)}">Daveti geri al</button>`;
   else{const free=S.people.filter(p=>p.id!==me.id&&!p.partner);body=`<p class="muted">Eşini ya da evi paylaştığın kişiyi seç. O da onaylayınca ortak listeleriniz açılır.</p>${free.length?`<div class="pcrow">${free.map(p=>`<button class="btn" data-act="home-invite" data-id="${esc(p.id)}">${esc(p.name)}</button>`).join('')}</div>`:'<p class="note">Şu an davet edilebilecek kimse yok.</p>'}`}
-  return`<section class="pcbox"><h3>Ortak Ev</h3>${body}</section>`;
+  return`<section class="pcbox"><h3>Ortak Ev</h3>${body}${GH.token()?'<button class="btn ghost" data-act="kid-add">Çocuk ekle</button>':''}</section>`;
 }
 function homeInvite(){const me=mePerson(),inv=me?.partnerInvite&&by(S.people,me.partnerInvite);return inv&&!me.partner?`<div class="banner"><span><b>${esc(inv.name)} seni Ortak Ev’e çağırıyor.</b> Ortak kitaplık, arşiv ve izlenecek listeniz olur; kendi rafların aynı kalır.</span><div class="pcrow"><button class="btn primary" data-act="home-accept">Kabul et</button><button class="btn ghost" data-act="home-decline">Reddet</button></div></div>`:''}
 const homeRows=b=>[mePerson(),partnerOf()].map(p=>({p,x:Peers.list(p.id,curArea()).find(i=>sameItem(i,b))}));

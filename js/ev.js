@@ -116,6 +116,7 @@ const ROOM=()=>`<svg class="room-svg" viewBox="0 0 1000 600" preserveAspectRatio
   <circle cx="330" cy="244" r="80" fill="url(#lamp)" class="lampglow"/><path d="M330 450V250" stroke="var(--wood-2)" stroke-width="5"/><path d="M304 252l12-40h28l12 40z" fill="#FBE3A6"/><ellipse cx="330" cy="452" rx="24" ry="6" fill="var(--wood-2)"/>
   <!-- rug -->
   <ellipse cx="500" cy="530" rx="330" ry="54" fill="var(--rug)"/><ellipse cx="500" cy="530" rx="292" ry="44" fill="none" stroke="var(--rug-2)" stroke-width="7" stroke-dasharray="4 13" stroke-linecap="round"/>
+  ${KID_CHEST()}
 </svg>`;
 
 
@@ -126,7 +127,7 @@ function vHome(){
   return `<section class="home">
   <div class="home-hi"><h2 class="hand">${mine?`Hoş geldin, ${esc(who)}`:`${esc(gen(who))} evi`}</h2><p class="muted">${mine?'Bugün ne yapıyoruz? Odada neye tıklarsan oraya gidersin.':'Arkadaşının odasına bakıyorsun. Rafını gezebilirsin.'}</p></div>
   ${mine?homeInvite():''}<div class="room">${ROOM()}${!pet&&mine?`<span class="peeksay" id="peeksay">${esc(PEEK_LINES[0])}</span>`:''}<div class="pet-layer" id="petlayer">${pet?`<button class="petwrap" id="petwrap" aria-label="${esc(pet.name)} ile konuş"><span class="bubble" id="bubble" hidden></span><span class="petflip">${petSVG(pet.type,pet.coat)}</span></button>`:''}</div></div>
-  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}<div class="hcard c4"><button class="hgo" data-act="pc"><b>Bilgisayar</b><span>Excel’e al ya da yükle</span></button></div></div>
+  <div class="hcards">${card('book','Kitap Rafı',`${L.book.length} kitap · ${cnt('book')}`,'c1')}${card('film','Seyir Defteri',`${L.film.length} film · ${cnt('film')}`,'c2')}${card('game','Oyunlar',`${L.game.length} oyun · ${cnt('game')}`,'c3')}<div class="hcard c4"><button class="hgo" data-act="pc"><b>Bilgisayar</b><span>Excel’e al ya da yükle</span></button></div>${kidCards(S.viewing)}</div>
   ${pet?`<div class="petbar"><span class="petmini">${petSVG(pet.type,pet.coat)}</span><div><b>${esc(pet.name)}</b><span class="muted"> · ${PETS[pet.type]?.n||''}</span><p>${esc(PETS[pet.type]?.tag||'')}</p></div><div class="petbtns"><button class="btn" data-act="taste">Zevkimi yorumla</button>${mine&&S.canEdit?'<button class="btn ghost" data-act="pet-setup">Değiştir</button>':''}</div></div>`
    :mine?`<p class="note" style="text-align:center;margin:0">Pencereden biri bakıyor. Gözlerine tıkla, içeri al.</p>`:''}
   </section>`;

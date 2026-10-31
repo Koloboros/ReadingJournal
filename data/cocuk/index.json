@@ -1,0 +1,13 @@
+{
+ "cocuklar": [
+  {
+   "id": "doga-lila",
+   "name": "Doğa Lila",
+   "avatar": "tavsan",
+   "parents": [
+    "can",
+    "duygu"
+   ]
+  }
+ ]
+}
