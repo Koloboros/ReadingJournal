@@ -23,16 +23,29 @@ const kidCards=pid=>Kid.of(pid).map(k=>`<div class="hcard c5"><button class="hgo
 const KID_CHEST=()=>{const k=Kid.of(S.viewing)[0];return k?`<g class="spot" data-act="kid-open" data-id="${esc(k.id)}" role="button" tabindex="0" aria-label="${esc(k.name)}: Çocuk Rafı"><rect class="halo" x="836" y="486" width="130" height="94" rx="12"/><rect x="850" y="522" width="102" height="48" rx="6" fill="#F6C9D0"/><path d="M846 524q55-34 110 0z" fill="#EBA3AF"/><rect x="890" y="516" width="22" height="14" rx="3" fill="#FBE3A6"/><circle cx="901" cy="546" r="9" fill="#FFF6EA"/><path d="M901 553c-8-5-8-11-4-12 2 0 3 1 4 3 1-2 2-3 4-3 4 1 4 7-4 12z" fill="#E8798A"/></g>`:''};
 const kidDate=d=>{const x=new Date(d+'T12:00:00');return`${x.getDate()} ${AYLAR[x.getMonth()].toLocaleLowerCase('tr')}`};
 const addDays=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`};
-const kidCover=(b,big)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c}">${src?`<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
-function kidBook(b,inWeek){return`<button class="kbook" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${kidCover(b)}<span class="kmeta">${b.fav?'<b class="kfav">♥</b>':''}${b.reads?`<span>${b.reads} kez</span>`:''}${inWeek?'<span class="kwk">bu hafta</span>':''}</span></button>`}
-/* the low shelf she can reach */
+const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
+function kidBook(b,inWeek,now){return`<button class="kbook" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${kidCover(b,false,now)}<span class="kmeta">${b.fav?'<b class="kfav">♥</b>':''}${b.reads?`<span>${b.reads} kez</span>`:''}${inWeek?'<span class="kwk">bu hafta</span>':''}</span></button>`}
+/* little painted toys for the nursery shelves, all on one 80x80 canvas */
+const TOYS={
+ stack:'<rect x="24" y="70" width="32" height="7" rx="3" fill="#C9A06C"/><rect x="37" y="12" width="6" height="60" rx="3" fill="#D9B48B"/><rect x="18" y="58" width="44" height="12" rx="6" fill="#E8798A"/><rect x="22" y="46" width="36" height="12" rx="6" fill="#F4A05A"/><rect x="26" y="34" width="28" height="12" rx="6" fill="#F4CF5E"/><rect x="30" y="22" width="20" height="12" rx="6" fill="#7FC29B"/><circle cx="40" cy="15" r="7" fill="#7FB4E0"/>',
+ teddy:'<circle cx="24" cy="24" r="8" fill="#B98A5E"/><circle cx="56" cy="24" r="8" fill="#B98A5E"/><circle cx="24" cy="24" r="4" fill="#E7C7A3"/><circle cx="56" cy="24" r="4" fill="#E7C7A3"/><ellipse cx="40" cy="60" rx="18" ry="17" fill="#B98A5E"/><ellipse cx="40" cy="62" rx="10" ry="10" fill="#E7C7A3"/><circle cx="40" cy="31" r="17" fill="#C79A6B"/><ellipse cx="40" cy="36" rx="8" ry="6" fill="#EFD7BA"/><circle cx="33" cy="28" r="2" fill="#3A2C24"/><circle cx="47" cy="28" r="2" fill="#3A2C24"/><path d="M38 34h4l-2 3z" fill="#3A2C24"/><ellipse cx="22" cy="66" rx="7" ry="9" fill="#B98A5E"/><ellipse cx="58" cy="66" rx="7" ry="9" fill="#B98A5E"/>',
+ bunny:'<ellipse cx="31" cy="16" rx="6" ry="15" fill="#F2E9DE"/><ellipse cx="49" cy="16" rx="6" ry="15" fill="#F2E9DE"/><ellipse cx="31" cy="16" rx="3" ry="11" fill="#F6C9D0"/><ellipse cx="49" cy="16" rx="3" ry="11" fill="#F6C9D0"/><ellipse cx="40" cy="62" rx="17" ry="16" fill="#E6D8C8"/><circle cx="40" cy="38" r="15" fill="#F2E9DE"/><circle cx="34" cy="36" r="2" fill="#3A2C24"/><circle cx="46" cy="36" r="2" fill="#3A2C24"/><path d="M38 41h4l-2 3z" fill="#E8798A"/><circle cx="30" cy="42" r="3" fill="#F6C9D0" opacity=".7"/><circle cx="50" cy="42" r="3" fill="#F6C9D0" opacity=".7"/>',
+ blocks:'<rect x="6" y="46" width="30" height="30" rx="4" fill="#F4CF5E"/><rect x="42" y="46" width="30" height="30" rx="4" fill="#7FC29B"/><rect x="24" y="16" width="30" height="30" rx="4" fill="#EBA3AF"/><g font-family="Baloo 2,sans-serif" font-weight="800" font-size="20" fill="#fff" text-anchor="middle"><text x="21" y="68">B</text><text x="57" y="68">C</text><text x="39" y="38">A</text></g>',
+ ball:'<circle cx="40" cy="48" r="29" fill="#FFF3D6"/><path d="M40 19a29 29 0 0 1 0 58c12-14 12-44 0-58z" fill="#7FB4E0"/><path d="M40 19a29 29 0 0 0 0 58c-12-14-12-44 0-58z" fill="#EBA3AF"/>',
+ duck:'<ellipse cx="38" cy="58" rx="27" ry="17" fill="#F4CF5E"/><circle cx="52" cy="32" r="15" fill="#F4CF5E"/><path d="M65 30l11 4-11 5z" fill="#F4A05A"/><circle cx="56" cy="29" r="2.200" fill="#3A2C24"/><path d="M12 54l-10-8 4 16z" fill="#F4CF5E"/><path d="M26 54q12 10 24 0" fill="none" stroke="#E0B23F" stroke-width="3"/>',
+ basket:'<ellipse cx="28" cy="34" rx="15" ry="14" fill="#F6C9D0"/><circle cx="52" cy="32" r="13" fill="#BFE0D8"/><path d="M8 42h64l-7 34H15z" fill="#D9B48B"/><path d="M10 50h60M12 60h56M14 70h52" stroke="#B98A5E" stroke-width="3"/><path d="M6 42h68" stroke="#B98A5E" stroke-width="6" stroke-linecap="round"/>'
+};
+const toy=k=>`<svg class="ktoy" viewBox="0 0 80 80" aria-hidden="true">${TOYS[k]}</svg>`;
+const KID_BLOCKS=['#EBA3AF','#F4CF5E','#7FC29B','#7FB4E0','#C3AEDD','#F4A05A'];
+const nameBlocks=n=>[...n].map((c,i)=>c===' '?'<span class="kgap"></span>':`<span class="kblock" style="--c:${KID_BLOCKS[i%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][i%5]}deg">${esc(c)}</span>`).join('');
+/* the low shelf she can reach: books face out, toys in between, a slatted cabinet below */
 function kidWeek(){
-  const d=Kid.data,w=d.week,edit=Kid.canEdit();
-  if(!w)return`<section class="kweek"><div class="kw-h"><h3>Haftanın Kitapları</h3></div><p class="muted">Ulaşabileceği rafa koyacağınız 5-6 kitabı seçin. Sesli, uyku, dokunma gibi farklı türlerden ben önereyim, siz değiştirin.</p>${edit?'<button class="btn primary" data-act="kid-plan">Bu rafı hazırla</button>':''}</section>`;
-  const items=w.items.map(id=>Kid.book(id)).filter(Boolean),end=addDays(w.start,w.days),over=todayISO()>=end;
-  return`<section class="kweek"><div class="kw-h"><h3>Haftanın Kitapları</h3><span class="muted">${kidDate(w.start)} – ${kidDate(end)}</span>${edit?`<button class="btn" data-act="kid-plan">${over?'Rafı değiştir':'Planı düzenle'}</button>`:''}</div>
-  ${over?'<p class="kw-due">Raf değişme zamanı geldi. Kitaplarını özlemiş olabilir.</p>':''}
-  <div class="kwgrid">${items.map(b=>`<div class="kwitem">${kidBook(b,false)}${edit?`<button class="btn kdid" data-act="kid-read" data-id="${esc(b.id)}">Okuduk</button>`:''}</div>`).join('')}</div></section>`;
+  const d=Kid.data,w=d.week,edit=Kid.canEdit(),top=`<div class="ks-top">${toy('basket')}${toy('teddy')}${toy('blocks')}<span class="ks-sign"><b>Haftanın Kitapları</b><small>${w?`${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'bu rafı birlikte hazırlayalım'}</small></span>${toy('stack')}${toy('bunny')}</div>`;
+  const cab=`<div class="ks-board"></div><div class="ks-cab"><i></i><i></i></div>`;
+  if(!w)return`<section class="kshelf">${top}<div class="ks-board"></div><div class="ks-empty"><p>Ulaşabileceği rafa koyacağınız 5-6 kitabı seçin. Sesli, uyku, dokunma gibi farklı türlerden önereyim, siz değiştirin.</p>${edit?'<button class="btn primary" data-act="kid-plan">Bu rafı hazırla</button>':''}</div>${cab}</section>`;
+  const items=w.items.map(id=>Kid.book(id)).filter(Boolean),over=todayISO()>=addDays(w.start,w.days),T=['duck','ball','stack','teddy'];let rows='';
+  for(let i=0,r=0;i<items.length;i+=3,r++){const row=items.slice(i,i+3).map(b=>`<div class="kwitem">${kidBook(b,false,true)}${edit?`<button class="kdid" data-act="kid-read" data-id="${esc(b.id)}">Okuduk</button>`:''}</div>`);row.splice(1+r%2,0,toy(T[r%T.length]));rows+=`<div class="ks-board"></div><div class="ks-row">${row.join('')}</div>`}
+  return`<section class="kshelf">${top}${over?'<p class="ks-due">Raf değişme zamanı geldi. Kitaplarını özlemiş olabilir.</p>':''}${rows}${edit?`<div class="ks-act"><button class="btn" data-act="kid-plan">${over?'Rafı değiştir':'Planı düzenle'}</button></div>`:''}${cab}</section>`;
 }
 S.kq='';S.ktag='';S.kage='';S.kseries='';S.klist='';
 function vKid(){
@@ -42,13 +55,13 @@ function vKid(){
   const series=[...new Set(d.books.flatMap(b=>b.series||[]))].sort(cmp);
   const chip=(act,v,l,cur)=>`<button class="chip" data-act="${act}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`;
   const month=todayISO().slice(0,7),ml=(d.log||[]).filter(x=>x.d.startsWith(month)),cnt={};ml.forEach(x=>cnt[x.b]=(cnt[x.b]||0)+1);const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0];
-  return`<div class="khead"><span class="kav">${avatarSVG(k.avatar)||esc(initial(k.name))}</span><div><h2 class="hand">${esc(k.name)}</h2><p class="muted">${d.books.length} kitap · ${series.length} seri${ml.length?` · bu ay ${ml.length} kez okudunuz${top&&Kid.book(top[0])?`, en çok: ${esc(Kid.book(top[0]).title)}`:''}`:''}</p></div>${Kid.canEdit()?'<button class="btn primary" data-act="kid-new">Kitap ekle</button>':''}</div>
+  return`<div class="khead"><span class="kav">${avatarSVG(k.avatar)||esc(initial(k.name))}</span><div><h2 class="kname" aria-label="${esc(k.name)}">${nameBlocks(k.name)}</h2><p class="muted">${d.books.length} kitap · ${series.length} seri${ml.length?` · bu ay ${ml.length} kez okudunuz${top&&Kid.book(top[0])?`, en çok: ${esc(Kid.book(top[0]).title)}`:''}`:''}</p></div>${Kid.canEdit()?'<button class="btn primary" data-act="kid-new">Kitap ekle</button>':''}</div>
   ${sibs.length>1?`<div class="chips" style="margin-bottom:10px">${sibs.map(s=>`<button class="chip" data-act="kid-open" data-id="${esc(s.id)}" aria-pressed="${s.id===k.id}">${esc(s.name)}</button>`).join('')}</div>`:''}
   ${kidWeek()}
   <div class="ktools"><input type="text" id="kid-q" value="${esc(S.kqk||'')}" placeholder="Kitap, yazar ya da konu ara" autocomplete="off">${series.length?`<select id="kid-series" aria-label="Seri"><option value="">Tüm seriler</option>${series.map(s=>`<option ${S.kseries===s?'selected':''}>${esc(s)}</option>`).join('')}</select>`:''}${d.lists.length?`<select id="kid-list" aria-label="Okuma listesi"><option value="">Tüm kitaplar</option>${d.lists.map(l=>`<option value="${esc(l.id)}" ${S.klist===l.id?'selected':''}>${esc(l.name)}</option>`).join('')}</select>`:''}</div>
-  <div class="chips kchips">${chip('kid-tag','','Hepsi',S.ktag)}${Object.entries(KID_TAGS).map(([t,l])=>chip('kid-tag',t,l,S.ktag)).join('')}</div>
-  <div class="chips kchips"><span class="muted">Yaş (sadece süzer):</span>${chip('kid-age','','Tümü',S.kage)}${KID_AGES.map(a=>chip('kid-age',a,a,S.kage)).join('')}</div>
-  <div class="kids-grid" id="kid-grid">${L.map(b=>kidBook(b,inWk.has(b.id))).join('')||'<div class="empty">Bu seçimde kitap yok.</div>'}</div>`;
+  <h3 class="kroom-h">Bütün kitaplar</h3><div class="chips kchips ktoychips">${chip('kid-tag','','Hepsi',S.ktag)}${Object.entries(KID_TAGS).map(([t,l])=>chip('kid-tag',t,l,S.ktag)).join('')}</div>
+  <div class="chips kchips"><span class="muted" style="white-space:nowrap;align-self:center">Yaş:</span>${chip('kid-age','','Tümü',S.kage)}${KID_AGES.map(a=>chip('kid-age',a,a,S.kage)).join('')}</div>
+  <div class="krack"><div class="kids-grid" id="kid-grid">${L.map(b=>kidBook(b,inWk.has(b.id))).join('')||'<div class="empty">Bu seçimde kitap yok.</div>'}</div></div><div class="kfloor">${toy('ball')}${toy('duck')}${toy('basket')}</div>`;
 }
 function openKidBook(id){
   const b=Kid.book(id);if(!b)return;const d=Kid.data,edit=Kid.canEdit(),wk=d.week?.items.includes(id);
@@ -57,7 +70,7 @@ function openKidBook(id){
   ${b.about?`<div class="about">${esc(b.about)}</div>`:''}${b.note?`<p class="rtext">${esc(b.note)}</p>`:''}
   ${edit?`<div class="pcrow"><button class="btn primary" data-act="kid-read" data-id="${esc(id)}">Okuduk</button><button class="btn" data-act="kid-fav" data-id="${esc(id)}">${b.fav?'♥ En sevdikleri':'♡ En sevdiklerine ekle'}</button><button class="btn" data-act="kid-toweek" data-id="${esc(id)}">${wk?'Bu haftadan çıkar':'Bu haftaya ekle'}</button></div>
   <div class="field"><span class="lbl">Okuma listeleri</span><div class="gchips">${d.lists.map(l=>`<button type="button" class="gchip" data-act="kid-inlist" data-id="${esc(id)}" data-l="${esc(l.id)}" aria-pressed="${l.items.includes(id)}">${esc(l.name)}</button>`).join('')}<button type="button" class="gchip" data-act="kid-newlist" data-id="${esc(id)}">+ Yeni liste</button></div></div>
-  <div class="ed-foot"><button class="btn danger ghost" data-act="kid-del" data-id="${esc(id)}">Sil</button><button class="btn" data-act="kid-edit" data-id="${esc(id)}">Düzenle</button></div>`:''}</div>`);
+  <div class="ed-foot"><button class="btn danger ghost" data-act="kid-del" data-id="${esc(id)}">Sil</button><div style="display:flex;gap:8px">${b.cover?`<button class="btn" data-act="kid-crop" data-id="${esc(id)}">Kapağı düzelt</button>`:''}<button class="btn" data-act="kid-edit" data-id="${esc(id)}">Düzenle</button></div></div>`:''}</div>`);
 }
 /* plan: one book per chosen kind; books that sat on the shelf lately and much-read ones wait their turn */
 let KP=null;
@@ -95,6 +108,30 @@ async function kidUpload(id,b64){
   const sha=await GH.sha(p),r=await fetch(API+p,{method:'PUT',headers:{...GH.headers(),'Content-Type':'application/json'},body:JSON.stringify({message:`${Kid.cur().name}: kapak fotoğrafı`,content:b64,branch:REPO.branch,...(sha?{sha}:{})})});if(!r.ok)throw 0;return p;
 }
 const kidKey=s=>slug(s);
+/* straighten a crooked photo: drag the four corners onto the cover */
+let KC=null;
+function homography(from,to){const A=[];for(let i=0;i<4;i++){const[x,y]=from[i],[u,v]=to[i];A.push([x,y,1,0,0,0,-u*x,-u*y,u],[0,0,0,x,y,1,-v*x,-v*y,v])}
+  for(let i=0;i<8;i++){let p=i;for(let r=i+1;r<8;r++)if(Math.abs(A[r][i])>Math.abs(A[p][i]))p=r;[A[i],A[p]]=[A[p],A[i]];for(let r=0;r<8;r++)if(r!==i){const f=A[r][i]/A[i][i];for(let c=i;c<9;c++)A[r][c]-=f*A[i][c]}}
+  return A.map((r,i)=>r[8]/r[i])}
+function drawCrop(){const{ctx,img,w,h,pts}=KC;ctx.drawImage(img,0,0,w,h);ctx.fillStyle='rgba(30,20,40,.35)';ctx.beginPath();ctx.rect(0,0,w,h);pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fill('evenodd');ctx.strokeStyle='#F4CF5E';ctx.lineWidth=2;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.stroke();pts.forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],9,0,7);ctx.fillStyle='#E8798A';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#fff';ctx.stroke()})}
+function openKidCrop(id){
+  const b=Kid.book(id),img=new Image();img.onload=()=>{
+    const W=Math.min(560,innerWidth-48),s=W/img.naturalWidth,w=W,h=Math.round(img.naturalHeight*s),m=Math.min(w,h)*.08;
+    openSheet(`<div class="sheet-h"><h2>Kapağı düzelt</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div><div class="sheet-b"><p class="muted" style="margin:0">Dört noktayı kapağın köşelerine sürükle.</p><canvas id="kc" width="${w}" height="${h}" style="touch-action:none;max-width:100%;border-radius:8px"></canvas><div class="ed-foot"><button class="btn" data-act="kid-book" data-id="${esc(id)}">Vazgeç</button><button class="btn primary" data-act="kc-save">Kaydet</button></div></div>`);
+    const c=$('#kc');KC={id,img,s,w,h,ctx:c.getContext('2d',{willReadFrequently:true}),pts:[[m,m],[w-m,m],[w-m,h-m],[m,h-m]],drag:-1};drawCrop();
+    const pos=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*w/r.width,(e.clientY-r.top)*h/r.height]};
+    c.onpointerdown=e=>{const p=pos(e);let best=-1,bd=1e9;KC.pts.forEach((q,i)=>{const d=Math.hypot(q[0]-p[0],q[1]-p[1]);if(d<bd){bd=d;best=i}});if(bd<44){KC.drag=best;c.setPointerCapture(e.pointerId)}};
+    c.onpointermove=e=>{if(KC?.drag<0)return;const[x,y]=pos(e);KC.pts[KC.drag]=[Math.max(0,Math.min(w,x)),Math.max(0,Math.min(h,y))];drawCrop()};c.onpointerup=()=>{if(KC)KC.drag=-1};
+  };img.onerror=()=>toast('Fotoğraf açılamadı.');img.src=b.cover;
+}
+async function saveCrop(){
+  const{id,img,s,pts}=KC,P=pts.map(p=>[p[0]/s,p[1]/s]),dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]),W=Math.round(Math.min(800,Math.max(dist(P[0],P[1]),dist(P[3],P[2])))),H=Math.round(W*Math.max(dist(P[0],P[3]),dist(P[1],P[2]))/Math.max(dist(P[0],P[1]),dist(P[3],P[2])));
+  const sc=document.createElement('canvas');sc.width=img.naturalWidth;sc.height=img.naturalHeight;const sx=sc.getContext('2d');sx.drawImage(img,0,0);const src=sx.getImageData(0,0,sc.width,sc.height).data,dc=document.createElement('canvas');dc.width=W;dc.height=H;const dx=dc.getContext('2d'),out=dx.createImageData(W,H),h=homography([[0,0],[W,0],[W,H],[0,H]],P);
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const z=h[6]*x+h[7]*y+1,u=Math.round((h[0]*x+h[1]*y+h[2])/z),v=Math.round((h[3]*x+h[4]*y+h[5])/z);if(u<0||v<0||u>=sc.width||v>=sc.height)continue;const a=(v*sc.width+u)*4,o=(y*W+x)*4;out.data[o]=src[a];out.data[o+1]=src[a+1];out.data[o+2]=src[a+2];out.data[o+3]=255}
+  dx.putImageData(out,0,0);const data=dc.toDataURL('image/jpeg',.85);closeSheet();
+  try{const p=await kidUpload(id,data.split(',')[1]),book=Kid.book(id);if(LOCAL)book._preview=data;await Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=p+'?v='+Date.now()},'kapak düzeltildi');const b=Kid.book(id);if(b)b._preview=data;render();toast('Kapak düzeltildi.')}catch{toast('Kaydedilemedi. Tekrar dene.')}
+}
+ACT['kid-crop']=a=>openKidCrop(a.dataset.id);ACT['kc-save']=()=>saveCrop();
 function openKidAdd(){
   S.kadd=S.kadd||{};openSheet(`<div class="sheet-h"><h2>Çocuk ekle</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <form class="sheet-b" id="kadd-form"><div class="field"><label for="kadd-n">Adı</label><input id="kadd-n" required maxlength="30"></div><div class="avgrid">${Object.entries(AVATARS).map(([k,v])=>`<button type="button" class="avopt" data-act="kadd-av" data-v="${k}" aria-pressed="${S.kadd.av===k}">${avatarSVG(k)}<span>${v.n}</span></button>`).join('')}</div><div class="ed-foot"><span></span><button class="btn primary" type="submit">Rafı oluştur</button></div></form>`);
