@@ -267,3 +267,10 @@ html[data-view="mobile"] .kpile{padding:8px 5px 20px}html[data-view="mobile"] .k
 .knook .ktoy{width:min(56px,48%);height:auto;aspect-ratio:1}.knook .ktoy:only-child{width:min(84px,70%)}
 .kfloor{position:relative;justify-content:center;flex-wrap:wrap;margin-top:14px;padding:12px 10px;border-radius:50%/34px;background:repeating-radial-gradient(ellipse at center,#FBD5DC 0 16px,#FCEBB0 16px 32px,#C9EBD4 32px 48px,#CFE4F6 48px 64px)}
 html[data-view="mobile"] .knook{padding:8px 2px 20px}html[data-view="mobile"] .knook::after{height:20px}html[data-view="mobile"] .krack-top{height:16px}html[data-view="mobile"] .krack-top i{width:15px;height:15px}html[data-view="mobile"] .kfloor .ktoy{width:44px;height:44px}
+/* weekly shelf in proportion to its books */
+.kshelf{max-width:820px}.ks-row{justify-content:center;gap:10px;padding-top:8px}
+.kwitem{flex:0 1 104px}.ks-row .ktoy{width:44px;height:44px}.ks-top .ktoy{width:48px;height:48px}
+.ks-sign{margin-bottom:3px}.ks-act{padding:6px 0}.ks-act .btn{font-size:.78rem;padding:4px 12px}.ks-cab i{height:36px}
+.kdid{bottom:4px;font-size:.66rem;padding:3px 8px}
+.kwitem .kcov:not(:has(img)){height:auto!important;aspect-ratio:3/4}
+html[data-view="mobile"] .kwitem{flex:0 1 92px}html[data-view="mobile"] .ks-row{gap:4px}html[data-view="mobile"] .ks-row .ktoy{width:26px;height:26px}html[data-view="mobile"] .ks-top .ktoy{width:36px;height:36px}html[data-view="mobile"] .ks-cab i{height:24px}html[data-view="mobile"] .kdid{font-size:.58rem;padding:2px 6px}html[data-view="mobile"] .kwitem .kcov:not(:has(img)){height:auto!important}
