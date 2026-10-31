@@ -322,7 +322,7 @@ function render(){
   setSync();
   if(S.mode==='pick'){$('#view').innerHTML=vPick();return}
   if(S.area==='home'&&S.mode==='ready'){$('#view').innerHTML=vHome();Pet.mount();return}
-  if(S.area==='kid'&&S.mode==='ready'){clearTimeout(Pet.t);$('#view').innerHTML=vKid();return}
+  if(S.area==='kid'&&S.mode==='ready'){clearTimeout(Pet.t);$('#view').innerHTML=vKid();kidTint();return}
   const who=esc(personName(S.viewing));
   const ban=S.mode==='loading'?`<div class="banner"><span class="busy"><span class="spin"></span>Yükleniyor…</span></div>`
     :S.mode==='offline'?`<div class="banner"><span>Veriler şu an yüklenemedi. İnternet bağlantını kontrol edip sayfayı yenile.</span></div>`

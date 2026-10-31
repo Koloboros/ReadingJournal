@@ -44,6 +44,12 @@ const toy=k=>`<svg class="ktoy" viewBox="0 0 80 80" aria-hidden="true">${TOYS[k]
 const KID_BLOCKS=['#E8B9A6','#EFD9A0','#B7C9A8','#B9CBD3','#D8CBDD','#E2B08A'];
 const nameBlocks=n=>[...n].map((c,i)=>c===' '?'<span class="kgap"></span>':`<span class="kblock" style="--c:${KID_BLOCKS[i%KID_BLOCKS.length]};--r:${[-3,2,-2,3,-1][i%5]}deg">${esc(c)}</span>`).join('');
 /* a series stays together; everything else falls in by title */
+/* each shelf row takes the next colour of the arch; rows depend on the screen, so they are counted after layout */
+function kidTint(){
+  const g=$('#kid-grid');if(!g)return;let row=-1,top=null;
+  [...g.children].forEach(c=>{if(c.offsetTop!==top){top=c.offsetTop;row++}c.style.setProperty('--lip',`var(--l${row%5})`)});
+}
+addEventListener('resize',()=>{clearTimeout(S.ktT);S.ktT=setTimeout(kidTint,150)});
 const kidColl=new Intl.Collator('tr',{numeric:true,sensitivity:'base'});
 const kidKeyOf=b=>b.series?.[0]||b.title;
 const kidOrder=(a,b)=>kidColl.compare(kidKeyOf(a),kidKeyOf(b))||kidColl.compare(a.title,b.title);
