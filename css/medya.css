@@ -305,3 +305,26 @@ html[data-area="kid"]:not([data-night]) .scene .knightband{display:none}
 .kcovtag{position:absolute;right:6px;bottom:6px;width:30px;height:30px;border-radius:50%;background:var(--sheet);color:var(--ink);display:grid;place-items:center;box-shadow:0 2px 5px rgba(60,40,30,.3)}.kcovtag svg{width:16px;height:16px}
 .kcmenu{display:grid;gap:8px;padding:10px;border:1px dashed var(--line);border-radius:12px;background:var(--paper)}.kcmenu[hidden]{display:none}
 .kcov.big,.kcov.big:has(img){min-width:0;width:100%;height:auto;aspect-ratio:3/4}
+/* the weekly shelf: a thin metal stand with bunny ears and slung fabric pockets */
+.kshelf{--rail:#FBF7F0;--cloth:#D5DDE8;--pocket:#BCC8D8;position:relative;max-width:640px;margin:34px auto 34px;padding:8px 14px 0;background:var(--cloth);border:0;border-left:6px solid var(--rail);border-right:6px solid var(--rail);border-top:6px solid var(--rail);border-radius:6px 6px 0 0;box-shadow:0 4px 12px rgba(80,60,40,.14),inset 0 0 0 1px rgba(90,100,120,.08);filter:none}
+.ks-ears{position:absolute;left:50%;top:-44px;transform:translateX(-50%);width:200px;height:44px;overflow:visible}.ks-ears path{fill:none;stroke:var(--rail);stroke-width:7;stroke-linecap:round;filter:drop-shadow(0 1px 1px rgba(80,60,40,.35))}
+.ks-legs{position:absolute;left:-8px;right:-8px;bottom:-26px;width:calc(100% + 16px);height:26px;overflow:visible}.ks-legs path{fill:none;stroke:var(--rail);stroke-width:6;stroke-linecap:round;filter:drop-shadow(0 1px 1px rgba(80,60,40,.35))}
+.ks-top{padding-top:2px}.ks-sign{background:#fff;border-width:2px;border-color:var(--pocket)}
+.ks-row{position:relative;padding-top:10px}
+.ks-board{position:relative;z-index:2;height:24px;margin:-18px -14px 0;background:linear-gradient(var(--pocket),#AEBBCD);border-radius:0 0 12px 12px/0 0 8px 8px;box-shadow:0 3px 5px rgba(60,70,90,.2)}
+.ks-top+.ks-board,.ks-due+.ks-board{margin-top:0;height:14px}
+.kwitem{transform:none}.kwitem:nth-child(even){transform:none}
+.kdid{bottom:24px;z-index:3}
+.ks-tray{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:12px;min-height:58px;margin:0 -14px;padding:6px 14px 8px;background:#C7D1DE;border-top:0;border-bottom:6px solid var(--rail)}.ks-tray .ktoy{width:46px;height:46px}
+.ks-act{padding:0 0 18px;margin-top:-10px}
+html[data-area="kid"][data-night] .kshelf{--rail:#CFC7E6;--cloth:#34386A;--pocket:#4C5288;background:var(--cloth);box-shadow:inset 0 0 26px rgba(255,215,140,.08)}
+html[data-area="kid"][data-night] .ks-board{background:linear-gradient(var(--pocket),#40467A);box-shadow:0 3px 5px rgba(0,0,0,.3)}html[data-area="kid"][data-night] .ks-tray{background:#3A3F72}html[data-area="kid"][data-night] .ks-sign{background:#34315C;border-color:var(--pocket)}
+html[data-view="mobile"] .kshelf{margin:30px 0 30px;padding:6px 8px 0;border-width:5px 5px 0}html[data-view="mobile"] .ks-board{margin-left:-8px;margin-right:-8px}html[data-view="mobile"] .ks-tray{margin:0 -8px;min-height:44px;gap:8px}html[data-view="mobile"] .ks-tray .ktoy{width:34px;height:34px}html[data-view="mobile"] .ks-ears{width:150px;height:34px;top:-33px}html[data-view="mobile"] .kdid{bottom:20px}
+/* a soft cream rug with a pink edge and tassels */
+.kfloor{position:relative;justify-content:center;flex-wrap:wrap;gap:10px;margin:18px 16px 18px;padding:14px 12px 16px;border:9px solid #F6C9D0;border-radius:14px;background-color:#FFFDF9;background-image:radial-gradient(rgba(190,170,160,.26) 1.2px,transparent 1.6px),radial-gradient(rgba(190,170,160,.18) 1.2px,transparent 1.6px);background-size:7px 7px,7px 7px;background-position:0 0,3.5px 3.5px;box-shadow:0 5px 10px rgba(80,60,40,.14)}
+.kfloor::before,.kfloor::after{content:"";position:absolute;top:-4px;bottom:-4px;width:14px;background:repeating-linear-gradient(180deg,#EFAFBD 0 4px,transparent 4px 8px)}
+.kfloor::before{left:-22px}.kfloor::after{right:-22px}
+html[data-area="kid"][data-night] .kfloor{background-color:#4A4670;border-color:#8E6A8C;background-image:radial-gradient(rgba(255,255,255,.12) 1.2px,transparent 1.6px),radial-gradient(rgba(255,255,255,.08) 1.2px,transparent 1.6px)}
+html[data-area="kid"][data-night] .kfloor::before,html[data-area="kid"][data-night] .kfloor::after{background:repeating-linear-gradient(180deg,#A67FA2 0 4px,transparent 4px 8px)}
+html[data-view="mobile"] .kfloor{margin:14px 14px;border-width:7px}html[data-view="mobile"] .kfloor::before{left:-19px;width:12px}html[data-view="mobile"] .kfloor::after{right:-19px;width:12px}
+.kwitem .kbook{padding:0}.kwitem .kbook::after{display:none}

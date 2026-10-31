@@ -58,12 +58,13 @@ function kidShelf(L,inWk){
 }
 /* the low shelf she can reach: books face out, toys in between, a slatted cabinet below */
 function kidWeek(){
-  const d=Kid.data,w=d.week,edit=Kid.canEdit(),top=`<div class="ks-top">${toy('basket')}${toy('teddy')}${toy('blocks')}<span class="ks-sign"><b>Haftanın Kitapları</b><small>${w?`${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'bu rafı birlikte hazırlayalım'}</small></span>${toy('stack')}${toy('bunny')}</div>`;
-  const cab=`<div class="ks-board"></div><div class="ks-cab"><i></i><i></i></div>`;
-  if(!w)return`<section class="kshelf">${top}<div class="ks-board"></div><div class="ks-empty"><p>Ulaşabileceği rafa koyacağınız 5-6 kitabı seçin. Sesli, uyku, dokunma gibi farklı türlerden önereyim, siz değiştirin.</p>${edit?'<button class="btn primary" data-act="kid-plan">Bu rafı hazırla</button>':''}</div>${cab}</section>`;
+  const d=Kid.data,w=d.week,edit=Kid.canEdit(),top=`<div class="ks-top">${toy('basket')}${toy('teddy')}<span class="ks-sign"><b>Haftanın Kitapları</b><small>${w?`${kidDate(w.start)} – ${kidDate(addDays(w.start,w.days))}`:'bu rafı birlikte hazırlayalım'}</small></span>${toy('ball')}${toy('plant')}</div>`;
+  const EARS='<svg class="ks-ears" viewBox="0 0 220 46" aria-hidden="true"><path d="M26 46C22 14 46 2 66 8c17 5 22 22 22 38M132 46c0-16 5-33 22-38 20-6 44 6 40 38"/></svg>',LEGS='<svg class="ks-legs" viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 0 0 30M396 0l4 30" vector-effect="non-scaling-stroke"/></svg>';
+  const cab=`<div class="ks-board"></div><div class="ks-tray">${toy('bunny')}${toy('blocks')}${toy('stack')}${toy('duck')}</div>`;
+  if(!w)return`<section class="kshelf">${EARS}${top}<div class="ks-board"></div><div class="ks-empty"><p>Ulaşabileceği rafa koyacağınız 5-6 kitabı seçin. Sesli, uyku, dokunma gibi farklı türlerden önereyim, siz değiştirin.</p>${edit?'<button class="btn primary" data-act="kid-plan">Bu rafı hazırla</button>':''}</div>${cab}${LEGS}</section>`;
   const items=w.items.map(id=>Kid.book(id)).filter(Boolean),over=todayISO()>=addDays(w.start,w.days),T=['duck','ball','stack','teddy'];let rows='';
   const per=document.documentElement.dataset.view==='mobile'?3:6;for(let i=0,r=0;i<items.length;i+=per,r++){const row=items.slice(i,i+per).map(b=>`<div class="kwitem">${kidBook(b,false,true)}${edit?`<button class="kdid" data-act="kid-read" data-id="${esc(b.id)}">Okuduk</button>`:''}</div>`);row.splice(Math.min(1+r%2,row.length),0,toy(T[r%T.length]));rows+=`<div class="ks-board"></div><div class="ks-row">${row.join('')}</div>`}
-  return`<section class="kshelf">${top}${over?'<p class="ks-due">Raf değişme zamanı geldi. Kitaplarını özlemiş olabilir.</p>':''}${rows}${edit?`<div class="ks-act"><button class="btn" data-act="kid-plan">${over?'Rafı değiştir':'Planı düzenle'}</button></div>`:''}${cab}</section>`;
+  return`<section class="kshelf">${EARS}${top}${over?'<p class="ks-due">Raf değişme zamanı geldi. Kitaplarını özlemiş olabilir.</p>':''}${rows}${cab}${LEGS}</section>${edit?`<div class="ks-act"><button class="btn" data-act="kid-plan">${over?'Rafı değiştir':'Planı düzenle'}</button></div>`:''}`;
 }
 S.kq='';S.ktag='';S.kage='';S.kseries='';S.klist='';
 function vKid(){
