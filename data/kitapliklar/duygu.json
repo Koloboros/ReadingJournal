@@ -2094,7 +2094,8 @@
    "series": "ACOTAR",
    "startDate": "2026-08-02",
    "color": "#b9cfe8",
-   "updatedAt": 1793711850345
+   "updatedAt": 1793711850345,
+   "infoTried": true
   },
   {
    "id": "bmw0pnrtlml5p3",
@@ -2112,7 +2113,8 @@
    "color": "#c3cfa8",
    "pages": 626,
    "startDate": "2026-08-08",
-   "updatedAt": 1793711799148
+   "updatedAt": 1793711799148,
+   "infoTried": true
   },
   {
    "id": "bmw0pvyrexugnn",
@@ -2128,7 +2130,8 @@
    "updatedAt": 1793712436376,
    "pages": 394,
    "year": 2010,
-   "color": "#8ebdb0"
+   "color": "#8ebdb0",
+   "infoTried": true
   }
  ],
  "films": [
