@@ -26,8 +26,15 @@ const addDays=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);r
 /* covers keep their own shape: ar is width/height, held within book-like limits */
 const KID_AR={};
 const kidAr=r=>Math.min(1.6,Math.max(.62,r||.75)).toFixed(3);
+/* books of one series are the same size on a real shelf, so they share the middle shape of the series */
+const KID_SAR=new WeakMap();
+function kidSeriesAr(b){
+  const all=Kid.data?.books,k=b.series?.[0];if(!all||!k)return 0;
+  let m=KID_SAR.get(all);if(!m){const g={};for(const x of all)if(x.series?.[0]&&x.ar&&x.cover)(g[x.series[0]]??=[]).push(x.ar);m={};for(const[s,v]of Object.entries(g))if(v.length>1){v.sort((p,q)=>p-q);m[s]=v[v.length>>1]}KID_SAR.set(all,m)}
+  return m[k]||0;
+}
 function kidArSeen(img){const r=img.naturalWidth/img.naturalHeight;KID_AR[img.getAttribute('src')]=r;img.parentNode.style.setProperty('--ar',kidAr(r))}
-const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c};--ar:${kidAr(b._preview?0:b.ar||KID_AR[src])}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onload="kidArSeen(this)" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
+const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title),sa=b._preview?0:kidSeriesAr(b);return`<span class="kcov ${big?'big':''}" style="--c:${c};--ar:${kidAr(sa||(b._preview?0:b.ar||KID_AR[src]))}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}"${sa?'':' onload="kidArSeen(this)"'} onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
 function kidBook(b,inWeek,now){return`<button class="kbook" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${kidCover(b,false,now)}<span class="kmeta">${b.fav?'<b class="kfav">♥</b>':''}${b.reads?`<span>${b.reads} kez</span>`:''}${inWeek?'<span class="kwk">bu hafta</span>':''}</span></button>`}
 /* little painted toys for the nursery shelves, all on one 80x80 canvas */
 const TOYS={
@@ -60,10 +67,11 @@ const kidOrder=(a,b)=>kidColl.compare(kidKeyOf(a),kidKeyOf(b))||kidColl.compare(
 /* books without a photo lie flat in piles; every so often a nook of toys breaks up the wall */
 const KID_NOOKS=[['stack','plant'],['train'],['teddy','ball'],['rocket'],['giraffe','blocks'],['bunny','duck'],['basket','star']];
 function kidShelf(L,inWk){
-  const recent=[];let out='',buf=[],cells=0,nook=0,next=9;
-  const add=h=>{out+=h;if(++cells===next){out+=`<div class="knook">${KID_NOOKS[nook++%KID_NOOKS.length].map(toy).join('')}</div>`;next+=[11,7,14,9,12][nook%5];}};
-  const flush=()=>{if(!buf.length)return;add(`<div class="kpile">${buf.map(b=>{const c=pileColor(b,recent);return`<button class="kspine" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%9-4}px" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${b.fav?'<b>♥</b>':''}<span>${esc(b.title.includes(': ')?b.title.split(': ').pop():b.title)}</span></button>`}).join('')}</div>`);buf=[]};
-  L.forEach(b=>{if(b.cover||b._preview){if(buf.length&&kidKeyOf(buf[0])!==kidKeyOf(b))flush();add(kidBook(b,inWk.has(b.id)))}else{if(buf.length&&(buf.length>=5||kidKeyOf(buf[0])!==kidKeyOf(b))&&b.series)flush();buf.push(b);if(buf.length>=5)flush()}});
+  const recent=[];let out='',buf=[],cells=0,nook=0,next=9,due=false,last=null;
+  /* a toy nook falls due every few books but waits for the end of a series, so a series stays together */
+  const add=(h,k)=>{if(due&&k!==last){out+=`<div class="knook">${KID_NOOKS[nook++%KID_NOOKS.length].map(toy).join('')}</div>`;next=cells+[11,7,14,9,12][nook%5];due=false}out+=h;last=k;if(++cells>=next)due=true};
+  const flush=()=>{if(!buf.length)return;add(`<div class="kpile">${buf.map(b=>{const c=pileColor(b,recent);return`<button class="kspine" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%9-4}px" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${b.fav?'<b>♥</b>':''}<span>${esc(b.title.includes(': ')?b.title.split(': ').pop():b.title)}</span></button>`}).join('')}</div>`,kidKeyOf(buf[0]));buf=[]};
+  L.forEach(b=>{if(b.cover||b._preview){if(buf.length&&kidKeyOf(buf[0])!==kidKeyOf(b))flush();add(kidBook(b,inWk.has(b.id)),kidKeyOf(b))}else{if(buf.length&&(buf.length>=5||kidKeyOf(buf[0])!==kidKeyOf(b))&&b.series)flush();buf.push(b);if(buf.length>=5)flush()}});
   flush();return out;
 }
 /* the reading corner: a rainbow arch painted on the wall, two slim ledges, a round braided rug in front */
