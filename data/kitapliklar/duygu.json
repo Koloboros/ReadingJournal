@@ -2115,6 +2115,24 @@
    "addedAt": 1793711257103,
    "coverUrl": "https://covers.openlibrary.org/b/id/12206011-M.jpg",
    "updatedAt": 1793711503518
+  },
+  {
+   "id": "bmw0pmnfk92rvx",
+   "title": "Dikenler ve Güller Sarayı",
+   "format": "print",
+   "genre": "Fantastik",
+   "author": "Sarah J. Maas",
+   "publisher": "DEX Yayınevi",
+   "pages": 540,
+   "owned": true,
+   "rating": 5,
+   "status": "read",
+   "endDate": "2026-08-06",
+   "seriesNo": 1,
+   "series": "ACOTAR",
+   "startDate": "2026-08-02",
+   "color": "#b9cfe8",
+   "updatedAt": 1793711739097
   }
  ],
  "films": [
