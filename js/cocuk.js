@@ -23,7 +23,11 @@ const kidCards=pid=>`<div class="hcard c5"><button class="hgo" data-act="kid-ope
 const KID_CHEST=()=>{return Kid.idx?`<g class="spot" data-act="kid-open" role="button" tabindex="0" aria-label="Çocuk Rafı"><rect class="halo" x="828" y="470" width="136" height="112" rx="12"/><ellipse cx="896" cy="574" rx="60" ry="7" fill="rgba(60,40,25,.14)"/><rect x="848" y="528" width="44" height="44" rx="6" fill="#EFD9A0"/><rect x="848" y="564" width="44" height="8" rx="4" fill="#D6BC80"/><text x="870" y="559" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">B</text><rect x="896" y="528" width="44" height="44" rx="6" fill="#B7C9A8"/><rect x="896" y="564" width="44" height="8" rx="4" fill="#62A980"/><text x="918" y="559" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">C</text><g transform="rotate(-7 894 506)"><rect x="872" y="484" width="44" height="44" rx="6" fill="#E8B9A6"/><rect x="872" y="520" width="44" height="8" rx="4" fill="#D98896"/><text x="894" y="515" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#fff">A</text></g></g>`:''};
 const kidDate=d=>{const x=new Date(d+'T12:00:00');return`${x.getDate()} ${AYLAR[x.getMonth()].toLocaleLowerCase('tr')}`};
 const addDays=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`};
-const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onload="if(this.naturalWidth>this.naturalHeight*1.15)this.classList.add('wide')" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
+/* covers keep their own shape: ar is width/height, held within book-like limits */
+const KID_AR={};
+const kidAr=r=>Math.min(1.6,Math.max(.62,r||.75)).toFixed(3);
+function kidArSeen(img){const r=img.naturalWidth/img.naturalHeight;KID_AR[img.getAttribute('src')]=r;img.parentNode.style.setProperty('--ar',kidAr(r))}
+const kidCover=(b,big,now)=>{const src=b._preview||b.cover,c=autoColor(b.title);return`<span class="kcov ${big?'big':''}" style="--c:${c};--ar:${kidAr(b._preview?0:b.ar||KID_AR[src])}">${src?`<img src="${esc(src)}" alt="" loading="${now?'eager':'lazy'}" onload="kidArSeen(this)" onerror="this.remove()">`:''}<i>${esc(b.title)}</i></span>`};
 function kidBook(b,inWeek,now){return`<button class="kbook" data-act="kid-book" data-id="${esc(b.id)}" title="${esc(b.title)}">${kidCover(b,false,now)}<span class="kmeta">${b.fav?'<b class="kfav">♥</b>':''}${b.reads?`<span>${b.reads} kez</span>`:''}${inWeek?'<span class="kwk">bu hafta</span>':''}</span></button>`}
 /* little painted toys for the nursery shelves, all on one 80x80 canvas */
 const TOYS={
@@ -193,14 +197,36 @@ async function saveCrop(){
 }
 ACT['kid-crop']=a=>openKidCrop(a.dataset.id);ACT['kc-save']=()=>saveCrop();
 /* a new cover: the photo is seen at once; the published copy takes a minute to appear */
-async function setKidCover(id,data,msg){
-  try{const p=await kidUpload(id,data.split(',')[1]);await Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=p+'?v='+Date.now()},msg);const b=Kid.book(id);if(b)b._preview=data;render();toast('Kapak güncellendi.')}catch{toast('Fotoğraf yüklenemedi. Tekrar dene.')}
+/* light, flat padding that shops put around a cover photo is cut away; it must sit on both opposite sides */
+function trimPad(c){
+  const w=c.width,h=c.height,d=c.getContext('2d').getImageData(0,0,w,h).data,at=(x,y)=>(y*w+x)*4;
+  const line=(s,i)=>{const n=s==='t'||s==='b'?w:h,o=[];for(let j=0;j<n;j++)o.push(s==='t'?at(j,i):s==='b'?at(j,h-1-i):s==='l'?at(i,j):at(w-1-i,j));return o};
+  const edge=s=>{const lim=Math.floor((s==='t'||s==='b'?h:w)*.22),L0=line(s,0),ref=[0,1,2].map(k=>L0.map(p=>d[p+k]).sort((x,y)=>x-y)[L0.length>>1]);
+    if(ref[0]+ref[1]+ref[2]<450)return 0;let k=0;
+    for(;k<lim;k++){const L=line(s,k);let ok=0;for(const p of L)if(Math.abs(d[p]-ref[0])<=16&&Math.abs(d[p+1]-ref[1])<=16&&Math.abs(d[p+2]-ref[2])<=16)ok++;if(ok/L.length<.975)break}
+    return k};
+  let t=edge('t'),b=edge('b'),l=edge('l'),r=edge('r');const mh=Math.max(2,h*.015),mw=Math.max(2,w*.015);
+  if(!(t>=mh&&b>=mh))t=b=0;if(!(l>=mw&&r>=mw))l=r=0;if(!t&&!l)return c;
+  const o=document.createElement('canvas');o.width=w-l-r;o.height=h-t-b;o.getContext('2d').drawImage(c,l,t,o.width,o.height,0,0,o.width,o.height);return o;
+}
+async function kidImg(src,cors){
+  const img=await new Promise((res,rej)=>{const i=new Image();if(cors)i.crossOrigin='anonymous';i.onload=()=>res(i);i.onerror=rej;i.src=src});
+  const s=Math.min(1,900/Math.max(img.naturalWidth,img.naturalHeight)),c=document.createElement('canvas');c.width=Math.round(img.naturalWidth*s);c.height=Math.round(img.naturalHeight*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+  const o=trimPad(c);return{data:o.toDataURL('image/jpeg',.84),ar:+(o.width/o.height).toFixed(3)};
+}
+const kidFileImg=async f=>{const u=URL.createObjectURL(f);try{return await kidImg(u)}finally{URL.revokeObjectURL(u)}};
+async function setKidCover(id,data,msg,ar){
+  ar??=await new Promise(r=>{const i=new Image();i.onload=()=>r(+(i.width/i.height).toFixed(3));i.onerror=()=>r(0);i.src=data});
+  try{const p=await kidUpload(id,data.split(',')[1]);await Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b){b.cover=p+'?v='+Date.now();if(ar)b.ar=ar;else delete b.ar}},msg);const b=Kid.book(id);if(b)b._preview=data;render();toast('Kapak güncellendi.')}catch{toast('Fotoğraf yüklenemedi. Tekrar dene.')}
 }
 ACT['kid-cmenu']=a=>{const m=$('#kcmenu');m.hidden=!m.hidden;a.setAttribute('aria-expanded',!m.hidden)};
 ACT['kid-url']=()=>{const f=$('#ku-form');f.hidden=false;$('#ku-in').focus()};
-ACT['kid-nocover']=a=>{if(!a.dataset.sure){a.dataset.sure='1';a.textContent='Emin misin? Evet';return}const id=a.dataset.id;closeSheet();Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)delete b.cover},'kapak kaldırıldı').then(()=>{const b=Kid.book(id);if(b)delete b._preview;render()})};
-document.addEventListener('change',async e=>{if(e.target.id!=='kb-photo')return;const f=e.target.files[0],id=e.target.dataset.id;if(!f)return;closeSheet();toast('Fotoğraf yükleniyor…');const r=await resizeImg(f,900,.82);setKidCover(id,r.data,'yeni kapak')});
-document.addEventListener('submit',e=>{if(e.target.id!=='ku-form')return;e.preventDefault();const u=$('#ku-in').value.trim(),id=e.target.dataset.id;if(!/^https:\/\//.test(u))return toast('https ile başlayan bir resim adresi yapıştır.');closeSheet();Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b)b.cover=u},'internetten kapak').then(ok=>{if(ok)toast('Kapak eklendi.')})});
+ACT['kid-nocover']=a=>{if(!a.dataset.sure){a.dataset.sure='1';a.textContent='Emin misin? Evet';return}const id=a.dataset.id;closeSheet();Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b){delete b.cover;delete b.ar}},'kapak kaldırıldı').then(()=>{const b=Kid.book(id);if(b)delete b._preview;render()})};
+document.addEventListener('change',async e=>{if(e.target.id!=='kb-photo')return;const f=e.target.files[0],id=e.target.dataset.id;if(!f)return;closeSheet();toast('Fotoğraf yükleniyor…');const r=await kidFileImg(f);setKidCover(id,r.data,'yeni kapak',r.ar)});
+document.addEventListener('submit',async e=>{if(e.target.id!=='ku-form')return;e.preventDefault();const u=$('#ku-in').value.trim(),id=e.target.dataset.id;if(!/^https:\/\//.test(u))return toast('https ile başlayan bir resim adresi yapıştır.');closeSheet();
+  /* when the site lets us read the picture, keep a trimmed copy of our own; otherwise just point at it */
+  try{const r=await kidImg(u,true);return setKidCover(id,r.data,'internetten kapak',r.ar)}catch{}
+  Kid.change(d=>{const b=d.books.find(x=>x.id===id);if(b){b.cover=u;delete b.ar}},'internetten kapak').then(ok=>{if(ok)toast('Kapak eklendi.')})});
 function openKidAdd(){
   S.kadd=S.kadd||{};openSheet(`<div class="sheet-h"><h2>Çocuk ekle</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>
   <form class="sheet-b" id="kadd-form"><div class="field"><label for="kadd-n">Adı</label><input id="kadd-n" required maxlength="30"></div><div class="avgrid">${Object.entries(AVATARS).map(([k,v])=>`<button type="button" class="avopt" data-act="kadd-av" data-v="${k}" aria-pressed="${S.kadd.av===k}">${avatarSVG(k)}<span>${v.n}</span></button>`).join('')}</div><div class="ed-foot"><span></span><button class="btn primary" type="submit">Rafı oluştur</button></div></form>`);
@@ -227,7 +253,7 @@ document.addEventListener('input',e=>{if(e.target.id==='kid-q'){S.kqk=e.target.v
   if(e.target.id==='kf-t'&&KF?._new){clearTimeout(S.kfT);const q=e.target.value.trim();if(q.length<3)return;S.kfT=setTimeout(async()=>{const r=await searchBooks(q);KF._res=r.slice(0,5);const el=$('#kf-res');if(el)el.innerHTML=`<div class="results">${KF._res.map((x,i)=>`<button type="button" class="res" data-act="kf-pick" data-i="${i}">${x.cover?`<img src="${esc(x.cover)}" alt="" referrerpolicy="no-referrer">`:'<i></i>'}<span><b>${esc(x.title)}</b>${esc(x.author||'')}</span></button>`).join('')}</div>`},450)}});
 document.addEventListener('change',async e=>{
   if(e.target.id==='kid-series'){S.kseries=e.target.value;render()}if(e.target.id==='kid-list'){S.klist=e.target.value;render()}
-  if(e.target.id==='kf-photo'){const f=e.target.files[0];if(!f)return;const r=await resizeImg(f,900,.8);KF._blob=r.data.split(',')[1];KF._preview=r.data;$('#kf-ph').textContent='Fotoğraf hazır.'}
+  if(e.target.id==='kf-photo'){const f=e.target.files[0];if(!f)return;const r=await kidFileImg(f);KF._blob=r.data.split(',')[1];KF._preview=r.data;KF.ar=r.ar;$('#kf-ph').textContent='Fotoğraf hazır.'}
 });
 document.addEventListener('submit',e=>{if(e.target.id!=='kp-form')return;e.preventDefault();const q=$('#kp-q').value.trim();KP.theme=q;
   if(!q){KP.note='';return startPlan()}

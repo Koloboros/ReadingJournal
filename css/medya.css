@@ -343,3 +343,8 @@ html[data-view="mobile"] .kname{flex-direction:column;align-items:flex-start;gap
 .gs-row{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;border:0;background:none;padding:5px 4px;border-radius:10px;text-align:left;color:var(--ink)}.gs-row:hover{background:var(--paper)}
 .gs-row .cover{width:36px;height:50px;font-size:0}.gs-row .cover *:not(img){display:none}.gs-row span{display:grid;min-width:0}.gs-row b{font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gs-row small{font-size:.76rem;color:var(--ink-2)}.gs-row em{font-style:normal;font-size:.72rem;color:var(--ink-2);background:var(--paper);border-radius:999px;padding:1px 8px}
 html[data-view="mobile"] #gsbtn{padding:5px 7px}html[data-view="mobile"] #gsbtn svg{width:15px;height:15px}html[data-view="mobile"] .sq-box{max-width:none}
+
+/* covers in their own shape, standing on the ledge */
+.kids-grid .kbook{display:flex;flex-direction:column;justify-content:flex-end}
+.kids-grid .kcov:has(img),.kwitem .kcov:has(img),.kcov.big:has(img){aspect-ratio:var(--ar,3/4)}
+.kcov img.wide{object-fit:cover}
