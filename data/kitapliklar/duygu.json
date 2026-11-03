@@ -393,25 +393,6 @@
    "year": 2014
   },
   {
-   "author": "Sarah J. Maas",
-   "endDate": "2026-08-19",
-   "genre": "Fantastik",
-   "owned": false,
-   "rating": 5,
-   "series": "A Court of Thorns and Roses",
-   "seriesNo": 2,
-   "status": "read",
-   "title": "A Court of Mist and Fury",
-   "id": "g22",
-   "infoTried": true,
-   "pages": 626,
-   "coverUrl": "https://covers.openlibrary.org/b/id/14315081-M.jpg",
-   "year": 2014,
-   "color": "#c29db4",
-   "format": "ebook",
-   "updatedAt": 1793390642608
-  },
-  {
    "author": "Malcolm Gladwell",
    "endDate": "2026-08-06",
    "genre": "Kişisel gelişim",
