@@ -308,10 +308,10 @@
    "genre": "Fantastik",
    "owned": false,
    "rating": 5,
-   "series": "A Court of Thorns and Roses",
+   "series": "ACOTAR",
    "seriesNo": 5,
    "status": "read",
-   "title": "A Court of Silver Flames",
+   "title": "Gümüş Alevler ve Sarayı",
    "id": "g17",
    "infoTried": true,
    "pages": 768,
@@ -319,7 +319,7 @@
    "year": 2021,
    "color": "#beafd3",
    "format": "ebook",
-   "updatedAt": 1793176929931
+   "updatedAt": 1793712048272
   },
   {
    "author": "Sarah J. Maas",
