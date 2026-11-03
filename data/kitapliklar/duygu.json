@@ -2133,6 +2133,24 @@
    "startDate": "2026-08-02",
    "color": "#b9cfe8",
    "updatedAt": 1793711739097
+  },
+  {
+   "id": "bmw0pnrtlml5p3",
+   "title": "Sis ve Öfke Sarayı",
+   "format": "print",
+   "genre": "Fantastik",
+   "author": "Sarah J. Maas",
+   "publisher": "DEX Yayınevi",
+   "owned": true,
+   "rating": 5,
+   "status": "read",
+   "endDate": "2026-08-19",
+   "series": "ACOTAR",
+   "seriesNo": 2,
+   "color": "#c3cfa8",
+   "pages": 626,
+   "startDate": "2026-08-08",
+   "updatedAt": 1793711799148
   }
  ],
  "films": [
