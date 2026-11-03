@@ -429,25 +429,6 @@
    "updatedAt": 1793176874008
   },
   {
-   "author": "Sarah J. Maas",
-   "endDate": "2026-08-06",
-   "genre": "Fantastik",
-   "owned": false,
-   "rating": 5,
-   "series": "A Court of Thorns and Roses",
-   "seriesNo": 1,
-   "status": "read",
-   "title": "A Court of Thorns and Roses",
-   "id": "g24",
-   "infoTried": true,
-   "pages": 454,
-   "coverUrl": "https://covers.openlibrary.org/b/id/15254465-M.jpg",
-   "year": 2013,
-   "color": "#c9a27a",
-   "format": "print",
-   "updatedAt": 1793390729582
-  },
-  {
    "author": "Aylin Balboa",
    "endDate": "2026-08-02",
    "genre": "Roman",
