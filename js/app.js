@@ -93,7 +93,8 @@ const T=TABS.map(t=>t[0]);if(T.includes(location.hash.slice(1)))S.tab=location.h
 const demo=()=>false;
 const BOOKS=()=>S.books;
 /* Seyir Defteri can look at every year and one type at a time; its dates are approximate, so all years is the default */
-const filmAll=()=>curArea()==='film'&&S.filmAll;
+/* all years: Seyir Defteri uses it on several tabs (its dates are approximate), books and games only on the yearly summary */
+const filmAll=()=>curArea()==='film'?!!S.filmAll:S.tab==='stats'&&!!S.statAll?.[curArea()];
 const fmtOk=b=>S.statFmt==='all'||(b.format||'film')===S.statFmt;
 const viewBase=y=>filmAll()?BOOKS().filter(b=>b.status==='read').sort((a,b)=>(a.endDate||'')<(b.endDate||'')?-1:1):readIn(y);
 const viewRead=y=>curArea()==='film'?viewBase(y).filter(fmtOk):readIn(y);
@@ -446,8 +447,8 @@ const GCOL=['#9CC59A','#9FC1E3','#EBA798','#C3AEDD','#EFCB7C','#8FCBC2'],GOTHER=
 const gName=genreOf;
 const chunk=(a,n)=>a.reduce((r,x,i)=>(i%n?r[r.length-1].push(x):r.push([x]),r),[]);
 function vStats(){
-  const y=S.year,film=curArea()==='film',allR=film?viewBase(y):readIn(y),R=film?allR.filter(fmtOk):allR;
-  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${yearLabel()}</small></h2>${film?yearChips():''}</div>${film?statCards(allR):''}`;
+  const y=S.year,film=curArea()==='film',allR=viewBase(y),R=film?allR.filter(fmtOk):allR;
+  const head=`<div class="head"><h2 class="hand">Yıl Özeti <small>${yearLabel()}</small></h2>${yearChips()}</div>${film?statCards(allR):''}`;
   if(!R.length)return head+`<div class="empty">${decor(3)}<p>${filmAll()?'Bu seçimde':y+' yılında'} bitirilmiş kitap yok. Kitap bitirdikçe tür, puan ve ay grafiklerin burada oluşur.</p></div>`;
   const cnt={};R.forEach(b=>{const g=gName(b);cnt[g]=(cnt[g]||0)+1});
   const sorted=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||cmp(a[0],b[0]));
@@ -853,7 +854,7 @@ function openSetup(){
 async function pickMe(id){S.me=id;ls.set(K.me,id);await Store.open(id)}
 
 /* ---------- read-only book card for visitors ---------- */
-const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','u-seen','u-want','bingo-cell','bingo-shuffle','bingo-reset','bingo-size','bingo-new','bingo-del','bingo-accept','bingo-accept-all','fill-missing']);
+const READONLY_BLOCKED=new Set(['add','tbr-done','tbr-start','tbr-own','u-seen','u-want','u-hide','bingo-cell','bingo-shuffle','bingo-reset','bingo-size','bingo-new','bingo-del','bingo-accept','bingo-accept-all','fill-missing']);
 function openDetail(b){
   const meta=[b.author,b.pages?b.pages+' '+A().unit:'',b.imdb?'IMDb '+b.imdb:'',b.year,b.genre,b.series?`${b.series}${b.seriesNo?' #'+b.seriesNo:''}`:''].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
   openSheet(`<div class="sheet-h"><h2>${esc(A().status[b.status]||A().Item)}</h2><button class="x" data-act="close" aria-label="Kapat">×</button></div>

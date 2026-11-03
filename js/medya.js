@@ -83,13 +83,15 @@ ACT['item-tab']=a=>{$('#sheet').classList.toggle('show-fr',a.dataset.t==='fr');d
 S.ulimit=60;
 function unratedSec(sec,T){
   if(!Peers.ready)return`<section class="notebook"><div class="busy"><span class="spin"></span>Oylamadıkların toplanıyor…</div></section>`;
-  const mine=new Set(BOOKS().map(itemKey)),L=catalog('film').filter(e=>!mine.has(e.k)&&!BOOKS().some(b=>sameItem(b,e.item))).sort((x,y)=>cmp(x.item.title,y.item.title)),a=L.slice(0,S.ulimit);
-  const rows=a.map((e,i)=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="u-seen" data-k="${esc(e.k)}" aria-label="${esc(e.item.title)}: ${T.unrated[3]}" title="${T.unrated[3]}">${ico('tick',3)}</button><button class="tt" data-act="k-open" data-k="${esc(e.k)}">${esc(e.item.title)}<small>${esc([e.item.yearLabel||e.item.year,e.item.author].filter(Boolean).join(' · '))}</small></button><button class="mini" data-act="u-want" data-k="${esc(e.k)}">İstiyorum</button></li>`).join('');
+  const mine=new Set(BOOKS().map(itemKey)),hidden=new Set(S.settings.hideUnrated||[]),L=catalog('film').filter(e=>!mine.has(e.k)&&!hidden.has(e.k)&&!BOOKS().some(b=>sameItem(b,e.item))).sort((x,y)=>cmp(x.item.title,y.item.title)),a=L.slice(0,S.ulimit);
+  const rows=a.map((e,i)=>`<li class="trow" style="--c:${PCOLS[i%PCOLS.length]}"><button class="chk" data-act="u-seen" data-k="${esc(e.k)}" aria-label="${esc(e.item.title)}: ${T.unrated[3]}" title="${T.unrated[3]}">${ico('tick',3)}</button><button class="tt" data-act="k-open" data-k="${esc(e.k)}">${esc(e.item.title)}<small>${esc([e.item.yearLabel||e.item.year,e.item.author].filter(Boolean).join(' · '))}</small></button><button class="mini" data-act="u-want" data-k="${esc(e.k)}">İstiyorum</button><button class="mini" data-act="u-hide" data-k="${esc(e.k)}" title="Bu listeden kaldır" aria-label="${esc(e.item.title)}: listeden kaldır">×</button></li>`).join('');
   return sec([T.unrated[0],L.length+' '+T.unrated[1],T.unrated[2],T.unrated[3],T.unrated[4]],L,shelfIllu(1),rows)+(L.length>S.ulimit?'<div class="bactions"><button class="btn" data-act="u-more">Daha fazla göster</button></div>':'');
 }
 const unratedPick=a=>catalog('film').find(x=>x.k===a.dataset.k)?.item;
 Object.assign(ACT,{'u-more':()=>{S.ulimit+=60;render()},
   'u-seen':a=>{const b=unratedPick(a);if(b)openEditor({...myCopy(b,{status:'read'}),endDate:todayISO()})},
+  /* hiding only takes the title off this viewer's list; friends' shelves and Keşfet keep it */
+  'u-hide':a=>{const k=a.dataset.k,b=unratedPick(a),prev=S.settings;S.settings={...prev,hideUnrated:[...new Set([...(prev.hideUnrated||[]),k])]};Store.saveSettings();render();toast(`“${b?.title||'Film'}” listeden kaldırıldı.`,()=>{S.settings={...S.settings,hideUnrated:(S.settings.hideUnrated||[]).filter(x=>x!==k)};Store.saveSettings();render()})},
   'u-want':a=>{const b=unratedPick(a);if(b){Store.saveBook(myCopy(b,{status:'want'}));toast(`“${b.title}” izlemek istediklerine eklendi.`)}}});
 /* film boxes pile up by genre on low TV stands; friendly colours, never the same twice in a row */
 const pileColor=(b,recent)=>{let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent.splice(0,2,c,recent[0]);return c};
@@ -98,7 +100,7 @@ const byGenre=(list,size)=>{const m=new Map();list.forEach(b=>{const g=genreOf(b
 const TVSET=`<svg class="tvset" viewBox="0 0 150 120" aria-hidden="true"><rect x="6" y="6" width="138" height="92" rx="9" fill="var(--wood-2)"/><rect x="14" y="14" width="122" height="76" rx="5" fill="#3B4A5C"/><path d="M14 90 136 14v76z" fill="#fff" opacity=".06"/><path d="M28 30q20-10 42-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".28"/><rect x="62" y="98" width="26" height="12" fill="var(--wood-2)"/><rect x="42" y="109" width="66" height="7" rx="3" fill="var(--wood-2)"/></svg>`;
 /* film, series and animation never share a stand; stats can be cut the same way */
 S.fmt='film';S.statFmt='all';S.filmAll=true;
-const yearChips=()=>`<div class="chips"><button class="chip" data-act="film-all" data-v="1" aria-pressed="${S.filmAll}">Tüm yıllar</button><button class="chip" data-act="film-all" data-v="" aria-pressed="${!S.filmAll}">${S.year}</button></div>`;
+const yearChips=()=>`<div class="chips"><button class="chip" data-act="film-all" data-v="1" aria-pressed="${filmAll()}">Tüm yıllar</button><button class="chip" data-act="film-all" data-v="" aria-pressed="${!filmAll()}">${S.year}</button></div>`;
 function seyirBar(L){return `<div class="seyirbar"><div class="fmtbar" role="group" aria-label="Tip">${[['all','Tümü'],...Object.entries(A().formatsPl)].map(([k,l])=>`<button data-act="stat-fmt" data-v="${k}" aria-pressed="${S.statFmt===k}">${l}<small>${k==='all'?L.length:L.filter(b=>(b.format||'film')===k).length}</small></button>`).join('')}</div>${yearChips()}</div>`}
 function fmtBar(L){return `<div class="fmtbar" role="group" aria-label="Tip">${Object.entries(A().formatsPl).map(([k,l])=>`<button data-act="fmt" data-v="${k}" aria-pressed="${S.fmt===k}">${l}<small>${L.filter(b=>(b.format||'film')===k).length}</small></button>`).join('')}</div>`}
 function statCards(R){
@@ -106,7 +108,7 @@ function statCards(R){
   const card=(k,l,L)=>`<button class="fmtcard" data-act="stat-fmt" data-v="${k}" aria-pressed="${S.statFmt===k}"><b>${L.length}</b><span>${l}</span><small>ortalama ${avg(L)}</small></button>`;
   return `<div class="fmtcards">${card('all','Tümü',R)}${Object.entries(A().formatsPl).map(([k,l])=>card(k,l,R.filter(b=>(b.format||'film')===k))).join('')}</div>`;
 }
-Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()},'film-all':a=>{S.filmAll=!!a.dataset.v;render()}});
+Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()},'film-all':a=>{if(curArea()==='film')S.filmAll=!!a.dataset.v;else S.statAll={...S.statAll,[curArea()]:!!a.dataset.v};render()}});
 const FILM_PROPS=['popcorn','glasses','stanley','remote','clapper'];
 function filmStand(list){
   const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
