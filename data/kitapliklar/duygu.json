@@ -2275,16 +2275,20 @@
   {
    "id": "bmw222bwu7omdk",
    "title": "İstanbul’un Bodrum Katları",
+   "author": "Ceren Ceran",
    "status": "reading",
    "owned": false,
-   "format": "print",
-   "color": "#F2C4C0",
+   "format": "audio",
+   "color": "#f2c4c0",
    "addedAt": 1793793045198,
    "rating": 0,
-   "updatedAt": 1793793051515,
+   "updatedAt": 1793793137328,
    "startDate": "2026-11-04",
    "fromTbr": true,
-   "infoTried": true
+   "infoTried": true,
+   "pages": 244,
+   "year": 2022,
+   "genre": "Roman"
   }
  ],
  "films": [
