@@ -2283,7 +2283,8 @@
    "rating": 0,
    "updatedAt": 1793793051515,
    "startDate": "2026-11-04",
-   "fromTbr": true
+   "fromTbr": true,
+   "infoTried": true
   }
  ],
  "films": [
