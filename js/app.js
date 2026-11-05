@@ -289,16 +289,17 @@ const isPhone=()=>matchMedia('(pointer:coarse)').matches&&Math.min(screen.width,
 function setViewport(content){let m=document.querySelector('meta[name="viewport"]');if(!m){m=document.createElement('meta');m.name='viewport';document.head.appendChild(m)}if(m.content!==content)m.content=content}
 function applyView(){
   document.documentElement.toggleAttribute('data-night',isDark());
-  const pref=viewPref(),phone=isPhone(),root=document.documentElement;
-  if(phone)setViewport(pref==='desktop'?'width=1100':'width=device-width,initial-scale=1,viewport-fit=cover');
+  /* a phone always gets the phone layout; the switch is offered only on a computer */
+  const phone=isPhone(),pref=phone?'auto':viewPref(),root=document.documentElement;
+  if(phone)setViewport('width=device-width,initial-scale=1,viewport-fit=cover');
   const mode=pref!=='auto'?pref:(phone||innerWidth<=720?'mobile':'desktop');
   root.dataset.view=mode;
   root.toggleAttribute('data-narrow',mode==='mobile'&&!phone&&innerWidth>720);
   const devW=Math.min(screen.width,screen.height,innerWidth);
   const clamp=mode==='mobile'&&phone&&innerWidth>devW+40;
   root.toggleAttribute('data-clamp',clamp);if(clamp)root.style.setProperty('--phone-w',devW+'px');
-  const vs=$('#viewsel');if(vs)vs.innerHTML=[['mobile','phone','Telefon görünümü'],['desktop','desktop','Masaüstü görünümü']].map(([v,i,l])=>`<button data-act="view" data-v="${v}" aria-pressed="${mode===v}" title="${l}" aria-label="${l}">${ico(i)}</button>`).join('')
-    +`<span class="vs-sep"></span><button data-act="theme" title="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}" aria-label="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}">${ico(isDark()?'sun':'moon')}</button>`;
+  const vs=$('#viewsel');if(vs)vs.innerHTML=(phone?'':[['mobile','phone','Telefon görünümü'],['desktop','desktop','Masaüstü görünümü']].map(([v,i,l])=>`<button data-act="view" data-v="${v}" aria-pressed="${mode===v}" title="${l}" aria-label="${l}">${ico(i)}</button>`).join('')+'<span class="vs-sep"></span>')
+    +`<button data-act="theme" title="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}" aria-label="${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}">${ico(isDark()?'sun':'moon')}</button>`;
 }
 /* light / dark: follows the device until chosen here; the choice is remembered on this device */
 const THEME_KEY='rj-theme';

@@ -348,3 +348,9 @@ html[data-view="mobile"] #gsbtn{padding:5px 7px}html[data-view="mobile"] #gsbtn 
 .kids-grid .kbook{display:flex;flex-direction:column;justify-content:flex-end}
 .kids-grid .kcov:has(img),.kwitem .kcov:has(img),.kcov.big:has(img){aspect-ratio:var(--ar,3/4)}
 .kcov img.wide{object-fit:cover}
+
+/* on a phone the add button floats above the tab bar, where a thumb finds it; the suggestion pill moves up */
+html[data-view="mobile"] #btn-add{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:31;width:54px;height:54px;padding:0;border-radius:50%;justify-content:center;box-shadow:0 6px 16px rgba(40,25,20,.28)}
+html[data-view="mobile"] #btn-add svg{width:24px;height:24px}html[data-view="mobile"] #btn-add .add-txt{display:none}
+html[data-view="mobile"] .fab{bottom:calc(142px + env(safe-area-inset-bottom,0px))}
+html[data-view="mobile"]:is([data-area="home"],[data-area="kid"],[data-readonly]) .fab{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
