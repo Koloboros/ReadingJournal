@@ -374,3 +374,7 @@ html[data-view="mobile"] .shelf-stats{gap:4px 12px;margin:6px 0 2px;font-size:.7
 /* phone: two wide piles a row so film names can be read; the suggestion pill stays off */
 html[data-view="mobile"] .pile{max-width:none}html[data-view="mobile"] .dvd span{font-size:.7rem}
 html[data-view="mobile"] .fab{display:none}
+/* phone: the film type switch and the filters are as small as the rest of the shelf head */
+html[data-view="mobile"] .fmtbar{padding:3px;margin-bottom:8px;border-radius:12px}html[data-view="mobile"] .fmtbar button{padding:4px 10px;font-size:.78rem;border-radius:9px}
+html[data-view="mobile"] .seyirbar{margin-bottom:8px}
+html[data-view="mobile"] .head .chips{gap:4px}html[data-view="mobile"] .head .chips .chip{padding:4px 9px;font-size:.76rem}

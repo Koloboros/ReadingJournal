@@ -380,7 +380,8 @@ function vShelf(){
   let list=(f==='owned'?[...pool.filter(b=>!film&&b.owned&&b.status!=='skip'),...shared()]:f==='unread'?pool.filter(b=>b.status==='want'):all.filter(b=>f==='all'||f===b.status)).sort(shelfOrder);
   list=list.filter(shelfMatch);
   const readN=all.filter(b=>b.status==='read').length, waitN=all.filter(b=>b.owned&&b.status==='want').length, readingN=all.filter(b=>b.status==='reading').length;
-  const chip=(k,l)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${l}</button>`;
+  /* a phone shows the short label (sh) so all four filters fit on one line */
+  const chip=(k,l,sh)=>`<button class="chip" data-act="shelf-f" data-f="${k}" aria-pressed="${f===k}">${sh?`<span class="lf">${l}</span><span class="ls">${sh}</span>`:l}</button>`;
   let prevG=null,gi=0,recent=[];
   let spines=area!=='book'?'':list.map((b,i)=>{
     const w=Math.max(24,Math.min(48,Math.round((+b.pages||250)/14)));const h=118+hash(b.title)%46;
@@ -390,7 +391,7 @@ function vShelf(){
     let c=b.color||autoColor(b.title),k=PCOLS.indexOf(c);while(recent.includes(c)&&k>=0){k=(k+5)%PCOLS.length;c=PCOLS[k]}recent=[c,recent[0]];
     return deco+`<div class="slot"><button class="spine ${cls}" style="--c:${esc(c)};--cink:${inkFor(c)};width:${w}px;height:${h}px" data-act="${b._home?'home-open':'open'}" data-id="${b.id}" title="${esc(b.title)} — ${b._home?'ortak':A().status[b.status]||''}"><span class="st">${esc(b.title)}</span></button></div>`;
   }).join('');
-  return `${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Benim rafım')}${chip('read',A().doneTitle)}${chip('unread','Bekleyenler')}${!film?chip('owned','Sahip olduklarım'):homeOpen()?chip('owned',A().share.title):''}</div></div>
+  return `${film?fmtBar(seen):''}<div class="head"><h2 class="hand">${film?A().formatsPl[S.fmt]:A().shelf}</h2><div class="chips">${chip('all','Benim rafım','Rafım')}${chip('read',A().doneTitle)}${chip('unread','Bekleyenler')}${!film?chip('owned','Sahip olduklarım','Evdekiler'):homeOpen()?chip('owned',A().share.title,'Birlikte'):''}</div></div>
   ${shelfSearch(list.length)}
   ${area==='game'?'':`<div class="legend"><span><i style="background:${PALETTE.sage}"></i>${A().legend[0]}</span>${film?'':`<span><i style="border:1.5px solid var(--ink-2)"></i>${A().legend[1]}</span>`}<span><i style="background:var(--postmark);width:6px"></i>${A().legend[2]}</span></div>`}
   <div class="shelf-stats"><span><b>${f==='owned'||f==='unread'?list.length:all.length}</b> toplam ${film?A().formats[S.fmt].toLocaleLowerCase('tr'):A().item}</span><span><b>${readN}</b> ${A().done}</span>${readingN?`<span><b>${readingN}</b> ${A().status.reading.toLocaleLowerCase('tr')}</span>`:''}${film?'':`<span><b>${waitN}</b> ${A().waitLabel}</span>`}</div>
