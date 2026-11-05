@@ -367,9 +367,10 @@ html[data-view="mobile"] .sq-add{display:inline-flex;flex:none;background:var(--
 html[data-readonly] .sq-add{display:none!important}
 /* phone: filters on one sliding row, legend and counts in small single lines */
 html[data-view="mobile"] .head{margin-bottom:8px;gap:6px}
-html[data-view="mobile"] .head .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;width:calc(100% + 32px)}
-html[data-view="mobile"] .head .chips::-webkit-scrollbar{display:none}
 html[data-view="mobile"] .head .chips .chip{flex:none;padding:4px 11px;font-size:.8rem}
 html[data-view="mobile"] .shelfq{margin:0 0 8px;gap:8px;flex-wrap:nowrap}html[data-view="mobile"] .shelfq .chip{padding:4px 11px;font-size:.8rem}
 html[data-view="mobile"] .legend{gap:2px 10px;font-size:.72rem}html[data-view="mobile"] .legend i{width:9px;height:13px;vertical-align:-2px;margin-right:4px}
 html[data-view="mobile"] .shelf-stats{gap:4px 12px;margin:6px 0 2px;font-size:.78rem}
+/* phone: two wide piles a row so film names can be read; the suggestion pill stays off */
+html[data-view="mobile"] .pile{max-width:none}html[data-view="mobile"] .dvd span{font-size:.7rem}
+html[data-view="mobile"] .fab{display:none}

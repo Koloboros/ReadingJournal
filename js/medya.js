@@ -111,7 +111,8 @@ function statCards(R){
 Object.assign(ACT,{fmt:a=>{S.fmt=a.dataset.v;render()},'stat-fmt':a=>{S.statFmt=a.dataset.v;render()},'film-all':a=>{if(curArea()==='film')S.filmAll=!!a.dataset.v;else S.statAll={...S.statAll,[curArea()]:!!a.dataset.v};render()}});
 const FILM_PROPS=['popcorn','glasses','stanley','remote','clapper'];
 function filmStand(list){
-  const per=Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
+  /* a phone gets two wide piles a row, whatever width it lays the page out at, so the names stay readable */
+  const per=document.documentElement.dataset.view==="mobile"?2:Math.max(2,Math.floor((Math.min(innerWidth,1120)-48)/176)),recent=[];
   const piles=byGenre(list,10).map(({g,n,items,first})=>`<div class="pile">${first?`<span class="ptag">${esc(g)} · ${n}</span>`:''}${items.map(b=>{const c=pileColor(b,recent);return `<button class="dvd ${b.status==='reading'?'reading':''} ${b._home?'home':''}" style="--c:${esc(c)};--cink:${inkFor(c)};--off:${hash(b.title)%11-5}px" data-act="${b._home?'home-open':'open'}" data-id="${b.id}" title="${esc(b.title)} — ${b._home?'ortak':A().status[b.status]||''}"><span>${esc(b.title)}</span>${b.rating?`<b>${String(b.rating).replace('.',',')}</b>`:''}</button>`}).join('')}</div>`);
   piles.splice(Math.min(per-1,piles.length),0,`<div class="pile tvpile">${TVSET}</div>`);
   let out='';for(let i=0,r=0;i<piles.length;i+=per,r++){const row=piles.slice(i,i+per);row.splice(r%2?0:row.length,0,prop(FILM_PROPS[r%FILM_PROPS.length]));if(row.length>3)row.splice(r%2?row.length:0,0,prop(FILM_PROPS[(r+2)%FILM_PROPS.length]));out+=`<div class="stand"><div class="piles">${row.join('')}</div>${r?'':petRail()}<div class="stand-top"></div><div class="stand-body"><i></i><i></i></div></div>`}
