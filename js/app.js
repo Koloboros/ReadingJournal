@@ -336,7 +336,10 @@ function render(){
     :S.keyProblem&&S.viewing===S.me?`<div class="banner warn"><span><b>Kayıt anahtarı çalışmıyor (${S.keyProblem}).</b> Süresi dolmuş ya da iptal edilmiş olabilir. Kurulum ekranından yeni anahtar gir.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :!GH.token()?`<div class="banner"><span><b>Bu cihazda kayıt anahtarı yok.</b> ${A().Item} ekleyebilmek için bir kez kurulum yap ya da arkadaşının gönderdiği kurulum bağlantısını aç.</span><button class="btn primary" data-act="setup">Kurulum</button></div>`
     :S.mode==='ready'&&!S.books.length?`<div class="banner"><span><b>Rafın boş.</b> İlk ${A().item} kaydını ekle; her değişiklik GitHub’a otomatik kaydedilir.</span><button class="btn primary" data-act="add">Ekle</button></div>`:'';
-  $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Raflar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button><br>${A().credit||''}</p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
+    $('#view').innerHTML=ban+(['shelf','stamps','covers'].includes(S.tab)?fillBanner():'')+v+`<p class="foot">Raflar GitHub’daki <a href="https://github.com/${REPO.owner}/${REPO.repo}" target="_blank" rel="noopener">${REPO.owner}/${REPO.repo}</a> reposunda saklanıyor. <button class="linkbtn" data-act="setup">Kurulum</button><br>${A().credit||''}</p><button class="fab" data-act="rec" aria-label="Öneri al">${(()=>{const p=Store.extra?.pet;return p?petSVG(p.type,p.coat):ico('sparkle')})()}<span>Öneri al</span></button>`;
+  /* on a phone the year picker sits in the page title instead of the crowded top bar */
+  const ys=document.documentElement.dataset.view==='mobile'&&YEAR_TABS.includes(S.tab)&&!filmAll()&&$('#view .head h2 small');
+  if(ys)ys.outerHTML=`<span class="yearsel" aria-label="Yıl seç"><button data-act="year" data-d="-1" aria-label="Önceki yıl">‹</button><span>${S.year}</span><button data-act="year" data-d="1" aria-label="Sonraki yıl">›</button></span>`;
   if($('#petwrap'))Pet.mount();else clearTimeout(Pet.t);
 }
 
@@ -365,6 +368,8 @@ const DECOR=[
 DECOR.push(PROPS.glasses,PROPS.stanley);
 const decor=i=>`<svg class="dec" viewBox="0 0 60 82" aria-hidden="true">${DECOR[i%DECOR.length]}</svg>`;
 const IVY=`<svg class="ivy" viewBox="0 0 130 170" aria-hidden="true"><path d="M2 8C40 16 80 4 130 14" fill="none" stroke="#5F8A57" stroke-width="2"/><path d="M8 10C24 40 8 70 24 100S30 145 40 170" fill="none" stroke="#5F8A57" stroke-width="2"/><g fill="#6E9A5E">${[[30,10,-20],[58,11,10],[86,8,-15],[112,12,15],[14,30,-40],[20,52,35],[12,74,-40],[23,96,30],[28,120,-35],[34,142,30],[39,164,-20]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r}) scale(1.25)"/>`).join('')}</g><g fill="#8DB97A">${[[44,14,25],[100,10,-10],[18,42,-20],[16,86,25],[31,131,-25]].map(([x,y,r])=>`<path d="M0 0c-6-4-7-11-2-12 2 0 2 2 2 2s0-2 2-2c5 1 4 8-2 12z" transform="translate(${x} ${y}) rotate(${r})"/>`).join('')}</g></svg>`;
+/* pages whose content changes with the chosen year */
+const YEAR_TABS=['covers','notes','stats','stamps','bingo'];
 function vShelf(){
   const area=curArea(),film=area==='film';
   const seen=film?BOOKS().filter(b=>b.status==='read'||b.status==='reading'):[];
@@ -835,6 +840,7 @@ function openPeople(){
   <div class="sheet-b"><div class="people">${peopleCards('person')}</div>
   ${homePanel()}
   <p class="note">Bu cihazda sen: <b>${esc(S.me?personName(S.me):'seçilmedi')}</b>. Yalnızca kendi evini düzenleyebilirsin. <button class="linkbtn" data-act="me-change">Değiştir</button> · <button class="linkbtn" data-act="avatar-change">Profil resmi</button> · <button class="linkbtn" data-act="tour">Tanıtımı izle</button></p>
+  <div class="pcrow"><button class="btn ghost" data-act="theme" id="ppl-theme">${ico(isDark()?'sun':'moon')}<span>${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}</span></button>${isPhone()?'':`<button class="btn ghost" data-act="view" data-v="${document.documentElement.dataset.view==='mobile'?'desktop':'mobile'}">${ico(document.documentElement.dataset.view==='mobile'?'desktop':'phone')}<span>${document.documentElement.dataset.view==='mobile'?'Masaüstü görünümü':'Telefon görünümü'}</span></button>`}</div>
   ${GH.token()?`<form class="newp" id="newp-form"><input type="text" id="newp-in" placeholder="Yeni kişinin adı" maxlength="30"><button class="btn" type="submit">Kişi ekle</button></form>`:''}
   <div class="ed-foot"><button class="btn ghost" data-act="setup">Kurulum</button></div></div>`);
 }
@@ -937,7 +943,7 @@ const ACT={
     const keep=cur.cells.filter((c,i)=>i!==fi).sort((x,y)=>!!y.b-!!x.b).slice(0,n*n-(n%2));
     const prev=structuredClone(cur);saveBingo({...cur,...genCard(n,Date.now(),keep)});toast(`Kart ${n}×${n} oldu.`,()=>saveBingo(prev))},
   undo:()=>{const f=undoFn;undoFn=null;toast('');if(f){f();toast('Geri alındı.')}},
-  theme:()=>{const next=isDark()?'light':'dark';try{localStorage.setItem(THEME_KEY,next)}catch{}applyTheme();applyView()},
+  theme:()=>{const next=isDark()?'light':'dark';try{localStorage.setItem(THEME_KEY,next)}catch{}applyTheme();applyView();const t=$('#ppl-theme');if(t)t.innerHTML=`${ico(isDark()?'sun':'moon')}<span>${isDark()?'Aydınlık moda geç':'Karanlık moda geç'}</span>`},
   'ed-genre':a=>{syncInputs();F.genre=F.genre&&genreOf(F)===a.dataset.v?'':a.dataset.v;renderEditor()},
   'bingo-pick':a=>{BC.pick=a.dataset.id||null;const p=$('#bp')?.value;if(p!=null)BC.p=p;renderBingoSheet()},
   'bingo-save':()=>{const c=BC.card.cells[BC.i];c.p=($('#bp')?.value||BC.p).trim()||BC.p;c.b=BC.pick||null;saveBingo(BC.card);closeSheet()},

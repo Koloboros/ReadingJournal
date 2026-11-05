@@ -354,3 +354,11 @@ html[data-view="mobile"] #btn-add{position:fixed;right:max(14px,env(safe-area-in
 html[data-view="mobile"] #btn-add svg{width:24px;height:24px}html[data-view="mobile"] #btn-add .add-txt{display:none}
 html[data-view="mobile"] .fab{bottom:calc(142px + env(safe-area-inset-bottom,0px))}
 html[data-view="mobile"]:is([data-area="home"],[data-area="kid"],[data-readonly]) .fab{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+
+/* phone header: the page name on the left, then home, search and your picture; everything else lives elsewhere */
+html[data-view="mobile"] .top .viewsel,html[data-view="mobile"] .top .yearsel,html[data-view="mobile"] #sync{display:none}
+html[data-view="mobile"] .who>span:not(.whoav){display:none}
+html[data-view="mobile"] .who{padding:3px;max-width:none;border-radius:50%}html[data-view="mobile"] .whoav{width:26px;height:26px}
+html[data-view="mobile"] .brand h1{overflow:hidden;text-overflow:ellipsis}
+.head h2 .yearsel{display:inline-flex;vertical-align:middle;margin-left:6px;font:600 1rem var(--f-body);padding:1px}
+.head h2 .yearsel button{width:28px;height:28px}
