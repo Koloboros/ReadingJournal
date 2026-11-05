@@ -349,22 +349,27 @@ html[data-view="mobile"] #gsbtn{padding:5px 7px}html[data-view="mobile"] #gsbtn 
 .kids-grid .kcov:has(img),.kwitem .kcov:has(img),.kcov.big:has(img){aspect-ratio:var(--ar,3/4)}
 .kcov img.wide{object-fit:cover}
 
-/* on a phone the add button floats above the tab bar, where a thumb finds it; the suggestion pill moves up */
-html[data-view="mobile"] #btn-add{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:31;width:54px;height:54px;padding:0;border-radius:50%;justify-content:center;box-shadow:0 6px 16px rgba(40,25,20,.28)}
-html[data-view="mobile"] #btn-add svg{width:24px;height:24px}html[data-view="mobile"] #btn-add .add-txt{display:none}
-html[data-view="mobile"] .fab{bottom:calc(142px + env(safe-area-inset-bottom,0px))}
-html[data-view="mobile"]:is([data-area="home"],[data-area="kid"],[data-readonly]) .fab{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
 
 /* phone header: the page name on the left, then home, search and your picture; everything else lives elsewhere */
 html[data-view="mobile"] .top .viewsel,html[data-view="mobile"] .top .yearsel,html[data-view="mobile"] #sync{display:none}
 html[data-view="mobile"] .who>span:not(.whoav){display:none}
-html[data-view="mobile"] .who{padding:3px;max-width:none;border-radius:50%}html[data-view="mobile"] .whoav{width:26px;height:26px}
 html[data-view="mobile"] .brand h1{overflow:hidden;text-overflow:ellipsis}
 .head h2 .yearsel{display:inline-flex;vertical-align:middle;margin-left:6px;font:600 1rem var(--f-body);padding:1px}
 .head h2 .yearsel button{width:28px;height:28px}
-/* the picture fills the whole round profile button */
-html[data-view="mobile"] .who{padding:0;width:34px;height:34px;justify-content:center;overflow:hidden}
-html[data-view="mobile"] .who .whoav{width:100%;height:100%}html[data-view="mobile"] .who .whoav>*{width:100%;height:100%;display:block}
-/* when the page is laid out wider than the phone screen, float the buttons inside the visible strip */
-html[data-view="mobile"][data-clamp] #btn-add{right:calc(100% - var(--phone-w) + 14px)}
-html[data-view="mobile"][data-clamp] .fab{right:calc(100% - var(--phone-w) + 12px)}
+/* phone: the profile picture sits small inside a round button, the same size as home and search */
+html[data-view="mobile"] .who{width:31px;height:31px;padding:0;justify-content:center;border-radius:50%;max-width:none}
+html[data-view="mobile"] .who .whoav{width:19px;height:19px}
+/* phone: adding happens beside the shelf search, not in the top bar */
+.sq-add{display:none}
+html[data-view="mobile"] #btn-add{display:none}
+html[data-view="mobile"] .sq-add{display:inline-flex;flex:none;background:var(--rose-pill);border-color:var(--rose-pill-2);color:var(--ink)}
+.sq-add svg{width:14px;height:14px}
+html[data-readonly] .sq-add{display:none!important}
+/* phone: filters on one sliding row, legend and counts in small single lines */
+html[data-view="mobile"] .head{margin-bottom:8px;gap:6px}
+html[data-view="mobile"] .head .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;width:calc(100% + 32px)}
+html[data-view="mobile"] .head .chips::-webkit-scrollbar{display:none}
+html[data-view="mobile"] .head .chips .chip{flex:none;padding:4px 11px;font-size:.8rem}
+html[data-view="mobile"] .shelfq{margin:0 0 8px;gap:8px;flex-wrap:nowrap}html[data-view="mobile"] .shelfq .chip{padding:4px 11px;font-size:.8rem}
+html[data-view="mobile"] .legend{gap:2px 10px;font-size:.72rem}html[data-view="mobile"] .legend i{width:9px;height:13px;vertical-align:-2px;margin-right:4px}
+html[data-view="mobile"] .shelf-stats{gap:4px 12px;margin:6px 0 2px;font-size:.78rem}

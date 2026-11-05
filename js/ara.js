@@ -3,10 +3,12 @@ const SEARCH_ICO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 const searchText=b=>norm([b.title,b.author,Array.isArray(b.series)?b.series.join(' '):b.series,b.genre,b.publisher].filter(Boolean).join(' '));
 const shelfMatch=b=>{const q=norm(S.shelfQ||'');return!q||searchText(b).includes(q)};
 /* the shelf box: always open on a wide screen, behind a magnifier on a phone until used */
+/* the add button rides beside the search box; CSS shows it only on a phone */
+const addChip=()=>`<button class="chip sq-add" data-act="add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>${curArea()==='film'?A().formats[S.fmt]+' ekle':A().add}</button>`;
 function shelfSearch(n){
   const open=S.shelfQOpen||S.shelfQ||document.documentElement.dataset.view!=='mobile';
-  if(!open)return`<div class="shelfq"><button class="chip sq-btn" data-act="sq-open" aria-label="Rafta ara">${SEARCH_ICO}Rafta ara</button></div>`;
-  return`<div class="shelfq"><label class="sq-box">${SEARCH_ICO}<input type="text" id="shelf-q" value="${esc(S.shelfQ||'')}" placeholder="Rafta ara: ad, ${A().who.toLocaleLowerCase('tr')}, seri, tür" autocomplete="off"></label>${S.shelfQ?`<span class="muted">${n} ${A().item} bulundu</span><button class="linkbtn" data-act="sq-clear">Temizle</button>`:''}</div>`;
+  if(!open)return`<div class="shelfq"><button class="chip sq-btn" data-act="sq-open" aria-label="Rafta ara">${SEARCH_ICO}Rafta ara</button>${addChip()}</div>`;
+  return`<div class="shelfq"><label class="sq-box">${SEARCH_ICO}<input type="text" id="shelf-q" value="${esc(S.shelfQ||'')}" placeholder="Rafta ara: ad, ${A().who.toLocaleLowerCase('tr')}, seri, tür" autocomplete="off"></label>${S.shelfQ?`<span class="muted">${n} ${A().item} bulundu</span><button class="linkbtn" data-act="sq-clear">Temizle</button>`:addChip()}</div>`;
 }
 document.addEventListener('input',e=>{if(e.target.id!=='shelf-q')return;S.shelfQ=e.target.value;clearTimeout(S.sqT);S.sqT=setTimeout(()=>{const pos=e.target.selectionStart;render();const i=$('#shelf-q');if(i){i.focus();i.setSelectionRange(pos,pos)}},220)});
 /* the top box looks through this person's books, films, games and the shared household list */
