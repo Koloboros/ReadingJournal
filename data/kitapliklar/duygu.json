@@ -6857,10 +6857,118 @@
       "b": null
      }
     ]
+   },
+   {
+    "id": "bmw6m4oko",
+    "year": 2026,
+    "name": "Kart 3",
+    "size": 5,
+    "cells": [
+     {
+      "p": "Mavi kapaklı",
+      "b": null
+     },
+     {
+      "p": "Başlığında hayvan var",
+      "b": null
+     },
+     {
+      "p": "Çeviri kitap",
+      "b": null
+     },
+     {
+      "p": "Hiç okumadığın tür",
+      "b": null
+     },
+     {
+      "p": "Öykü kitabı",
+      "b": null
+     },
+     {
+      "p": "Aşk hikâyesi",
+      "b": null
+     },
+     {
+      "p": "Masal / efsane",
+      "b": null
+     },
+     {
+      "p": "Deneme",
+      "b": null
+     },
+     {
+      "p": "Doğa / bilim",
+      "b": null
+     },
+     {
+      "p": "Fantastik",
+      "b": null
+     },
+     {
+      "p": "Şiir kitabı",
+      "b": null
+     },
+     {
+      "p": "Aynı yazardan ikinci kitap",
+      "b": null
+     },
+     {
+      "p": "SERBEST",
+      "b": null
+     },
+     {
+      "p": "Çocuk anlatıcı",
+      "b": null
+     },
+     {
+      "p": "Tek kelimelik başlık",
+      "b": null
+     },
+     {
+      "p": "Arkadaşınla birlikte okuduğun",
+      "b": null
+     },
+     {
+      "p": "Yazarın son kitabı",
+      "b": null
+     },
+     {
+      "p": "Bir günde biten",
+      "b": null
+     },
+     {
+      "p": "500+ sayfa",
+      "b": null
+     },
+     {
+      "p": "Kurgu dışı",
+      "b": null
+     },
+     {
+      "p": "Diziye uyarlanmış",
+      "b": null
+     },
+     {
+      "p": "Başlıkta bir isim",
+      "b": null
+     },
+     {
+      "p": "Hep ertelediğin",
+      "b": null
+     },
+     {
+      "p": "Arkadaş önerisi",
+      "b": null
+     },
+     {
+      "p": "Hediye gelen",
+      "b": null
+     }
+    ]
    }
   ],
   "bingoActive": {
-   "2026": "y2026"
+   "2026": "bmw6m4oko"
   }
  },
  "filmSettings": {
