@@ -2276,19 +2276,21 @@
    "id": "bmw222bwu7omdk",
    "title": "İstanbul’un Bodrum Katları",
    "author": "Ceren Ceran",
-   "status": "reading",
+   "status": "read",
    "owned": false,
    "format": "audio",
    "color": "#f2c4c0",
    "addedAt": 1793793045198,
-   "rating": 0,
-   "updatedAt": 1793793137328,
+   "rating": 4,
+   "updatedAt": 1794075456420,
    "startDate": "2026-11-04",
    "fromTbr": true,
    "infoTried": true,
    "pages": 244,
    "year": 2022,
-   "genre": "Roman"
+   "genre": "Roman",
+   "endDate": "2026-11-07",
+   "review": "Ömer taşradan İstanbul’a gelmiş ve kurtuluşunun burada olacağına inanan bir genç. Kitapta İstanbul da bir karakter, yorumlarını okumak güzeldi. Biraz arabesk biraz da neden bunlar normalleşti dediğimiz konular ele alınıyor. Günümüzden bir kitap okumak iyi oldu."
   }
  ],
  "films": [
