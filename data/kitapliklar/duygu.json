@@ -2291,6 +2291,21 @@
    "genre": "Roman",
    "endDate": "2026-11-07",
    "review": "Ömer taşradan İstanbul’a gelmiş ve kurtuluşunun burada olacağına inanan bir genç. Kitapta İstanbul da bir karakter, yorumlarını okumak güzeldi. Biraz arabesk biraz da neden bunlar normalleşti dediğimiz konular ele alınıyor. Günümüzden bir kitap okumak iyi oldu."
+  },
+  {
+   "id": "bmwgoaahj6rgb3",
+   "title": "Biri daha var",
+   "author": "Şermin Yaşar",
+   "pages": 248,
+   "year": 2025,
+   "genre": "Öykü",
+   "color": "#f1e2a0",
+   "status": "want",
+   "owned": false,
+   "format": "audio",
+   "rating": 0,
+   "addedAt": 1794676894615,
+   "updatedAt": 1794677047730
   }
  ],
  "films": [
