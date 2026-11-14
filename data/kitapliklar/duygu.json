@@ -2300,12 +2300,15 @@
    "year": 2025,
    "genre": "Öykü",
    "color": "#f1e2a0",
-   "status": "want",
+   "status": "read",
    "owned": false,
    "format": "audio",
-   "rating": 0,
+   "startDate": "2026-11-09",
+   "endDate": "2026-11-14",
+   "rating": 3.5,
    "addedAt": 1794676894615,
-   "updatedAt": 1794677047730
+   "updatedAt": 1794677122047,
+   "fromTbr": true
   }
  ],
  "films": [
