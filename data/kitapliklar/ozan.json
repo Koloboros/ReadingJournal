@@ -31,7 +31,9 @@
    "title": "1984",
    "author": "George Orwell",
    "pages": 350,
+   "year": 2013,
    "genre": "Distopya",
+   "about": "75th ANNIVERSARY EDITION “Orwell saw, to his credit, that the act of falsifying reality is only secondarily a way of changing perceptions. It is, above all, a way of asserting power.”—The New Yorker In 1984, London is a grim city in the totalitarian state of O",
    "color": "#f1e2a0",
    "status": "reading",
    "owned": true,
@@ -40,7 +42,9 @@
    "rating": 0,
    "addedAt": 1794741175009,
    "updatedAt": 1794741227472,
-   "fromTbr": true
+   "fromTbr": true,
+   "infoTried": true,
+   "coverUrl": "https://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
   }
  ],
  "films": [],
