@@ -29,13 +29,18 @@
   {
    "id": "bmwhqk1jzppf3p",
    "title": "1984",
+   "author": "George Orwell",
+   "pages": 350,
+   "genre": "Distopya",
    "color": "#f1e2a0",
-   "status": "want",
+   "status": "reading",
    "owned": true,
    "format": "print",
+   "startDate": "2026-11-14",
    "rating": 0,
    "addedAt": 1794741175009,
-   "updatedAt": 1794741187406
+   "updatedAt": 1794741227472,
+   "fromTbr": true
   }
  ],
  "films": [],
