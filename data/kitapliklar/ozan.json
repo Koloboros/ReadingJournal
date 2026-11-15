@@ -47,7 +47,21 @@
    "coverUrl": "https://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
   }
  ],
- "films": [],
+ "films": [
+  {
+   "id": "bmwhqme5sn1t0p",
+   "title": "Esaretin Bedeli",
+   "genre": "Drama",
+   "color": "#f1e2a0",
+   "status": "read",
+   "owned": false,
+   "format": "film",
+   "endDate": "2026-11-15",
+   "rating": 8,
+   "addedAt": 1794741284656,
+   "updatedAt": 1794741312565
+  }
+ ],
  "games": [],
  "settings": {
   "goals": {},
