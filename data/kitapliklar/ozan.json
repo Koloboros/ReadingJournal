@@ -1,4 +1,10 @@
 {
+ "pet": {
+  "type": "kedi",
+  "coat": 0,
+  "name": "Fıstık"
+ },
+ "schema": 2,
  "books": [
   {
    "id": "bmvtf2rbzy39fl",
@@ -21,7 +27,19 @@
    "infoTried": true
   }
  ],
+ "films": [],
+ "games": [],
  "settings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "filmSettings": {
+  "goals": {},
+  "bingoCards": [],
+  "bingoActive": {}
+ },
+ "gameSettings": {
   "goals": {},
   "bingoCards": [],
   "bingoActive": {}
